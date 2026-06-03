@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Trust Benchmarking and Maturity Framework (AITBM)</title>
+  <meta name="description" content="AITBM is a bias-resistant, multi-dimensional framework for quantifying AI system security risk — eliminating assessor subjectivity through granular scoring rubrics and a three-layer architecture." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:title" content="AI Trust Benchmarking and Maturity Framework (AITBM)" />
+  <meta property="og:description" content="A bias-resistant, multi-dimensional framework for quantifying AI system security risk." />
+  <meta name="twitter:card" content="summary" />
+  <!-- After choosing a domain: set absolute og:url + og:image and add <link rel="canonical">. -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { DEFAULT: "#1F3864", light: "#2E5090", dark: "#152743" },
+            muted: "#555555",
+          },
+          fontFamily: { sans: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"] },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="font-sans antialiased bg-white">
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-navy text-white font-bold text-sm">AI</span>
+          <span class="font-bold text-navy tracking-tight">AI Trust Benchmarking and Maturity Framework</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-7 text-sm text-gray-700">
+          <a href="index.html" class="nav-link active hover:text-navy">Overview</a>
+          <a href="framework.html" class="nav-link hover:text-navy">Framework</a>
+          <a href="gap-analysis.html" class="nav-link hover:text-navy">Gap Analysis</a>
+          <a href="aidefend.html" class="nav-link hover:text-navy">AIDEFEND</a>
+          <a href="calculator.html" class="nav-link hover:text-navy">Calculator</a>
+          <a href="resources.html" class="nav-link hover:text-navy">Resources</a>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="md:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden md:hidden pb-4 space-y-1 text-sm">
+        <a href="index.html" class="block rounded px-3 py-2 text-navy font-semibold bg-gray-50">Overview</a>
+        <a href="framework.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="gap-analysis.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="aidefend.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="calculator.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="resources.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-navy text-white">
+    <div class="absolute inset-0 hero-grid opacity-60"></div>
+    <div class="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28">
+      <p class="inline-flex items-center rounded-full border border-white/25 px-3 py-1 text-xs font-medium tracking-wide text-blue-100">
+        AI Trust Benchmarking and Maturity Framework
+      </p>
+      <h1 class="mt-5 max-w-3xl text-4xl sm:text-5xl font-bold leading-tight">
+        Quantify AI security risk — without assessor guesswork.
+      </h1>
+      <p class="mt-5 max-w-2xl text-lg text-blue-100">
+        AITBM is a bias-resistant, multi-dimensional evaluation framework. It replaces
+        subjective "low / medium / high" judgments with granular five-level scoring rubrics,
+        a three-layer architecture that preserves signal, and a mathematically grounded
+        composite score.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="framework.html" class="rounded-md bg-white px-5 py-2.5 font-semibold text-navy hover:bg-blue-50">Explore the framework</a>
+        <a href="gap-analysis.html" class="rounded-md border border-white/30 px-5 py-2.5 font-semibold text-white hover:bg-white/10">Read the gap analysis</a>
+      </div>
+      <dl class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl">
+        <div><dt class="text-3xl font-bold">21</dt><dd class="text-sm text-blue-100">IVP sub-metrics</dd></div>
+        <div><dt class="text-3xl font-bold">5</dt><dd class="text-sm text-blue-100">security axes</dd></div>
+        <div><dt class="text-3xl font-bold">3</dt><dd class="text-sm text-blue-100">assessment layers</dd></div>
+        <div><dt class="text-3xl font-bold">0–4</dt><dd class="text-sm text-blue-100">rubric, no discretion</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-20">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold text-navy">The problem AITBM solves</h2>
+      <p class="mt-3 text-muted">
+        Existing AI security methodologies — CVSS adaptations, OWASP AIVSS, the OWASP Top 10
+        for LLMs — share four structural failure modes.
+      </p>
+    </div>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="card rounded-xl border border-gray-200 p-6">
+        <div class="axis-bar bg-navy w-10 mb-4"></div>
+        <h3 class="font-bold text-navy">Assessor subjectivity</h3>
+        <p class="mt-2 text-sm text-muted">Ambiguous severity language drives 15–30% inter-assessor variance on the same system.</p>
+      </article>
+      <article class="card rounded-xl border border-gray-200 p-6">
+        <div class="axis-bar bg-navy w-10 mb-4"></div>
+        <h3 class="font-bold text-navy">Context blindness</h3>
+        <p class="mt-2 text-sm text-muted">A medical-diagnosis model and a recipe chatbot with identical flaws score identically.</p>
+      </article>
+      <article class="card rounded-xl border border-gray-200 p-6">
+        <div class="axis-bar bg-navy w-10 mb-4"></div>
+        <h3 class="font-bold text-navy">Scope blindness</h3>
+        <p class="mt-2 text-sm text-muted">Static-model assumptions miss agentic and MCP threats — tool poisoning, rogue agents, identity spoofing.</p>
+      </article>
+      <article class="card rounded-xl border border-gray-200 p-6">
+        <div class="axis-bar bg-navy w-10 mb-4"></div>
+        <h3 class="font-bold text-navy">Zero-risk fallacy</h3>
+        <p class="mt-2 text-sm text-muted">Frameworks imply sufficient controls eliminate risk. Emergent behavior makes that structurally impossible.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="bg-gray-50 border-y border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-20">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold text-navy">A three-layer architecture</h2>
+        <p class="mt-3 text-muted">
+          Single scores collapse important trade-offs. AITBM keeps the signal across three
+          distinct layers, then composes them transparently.
+        </p>
+      </div>
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        <article class="card rounded-xl border border-gray-200 bg-white p-7">
+          <p class="text-xs font-semibold tracking-wider text-navy-light">LAYER 1</p>
+          <h3 class="mt-1 text-xl font-bold text-navy">IVP — Intrinsic Vulnerability Profile</h3>
+          <p class="mt-2 text-sm text-muted">21 sub-metrics across Robustness, Fairness, Transparency, Privacy, and Containment. Each scored 0–4 against a fully specified rubric.</p>
+        </article>
+        <article class="card rounded-xl border border-gray-200 bg-white p-7">
+          <p class="text-xs font-semibold tracking-wider text-navy-light">LAYER 2</p>
+          <h3 class="mt-1 text-xl font-bold text-navy">ORP — Operational Risk Posture</h3>
+          <p class="mt-2 text-sm text-muted">Four deployment-context dimensions produce a Compound Risk Multiplier (CRM) in the 0.75–1.75 range that intrinsic scoring cannot capture.</p>
+        </article>
+        <article class="card rounded-xl border border-gray-200 bg-white p-7">
+          <p class="text-xs font-semibold tracking-wider text-navy-light">LAYER 3</p>
+          <h3 class="mt-1 text-xl font-bold text-navy">ACI — Assurance Confidence Index</h3>
+          <p class="mt-2 text-sm text-muted">Beta-Binomial-informed temporal decay models how evidence goes stale, with tier-specific re-assessment triggers.</p>
+        </article>
+      </div>
+      <div class="mt-10 rounded-xl border border-gray-200 bg-white p-7">
+        <p class="text-sm font-semibold text-navy">Evaluated Risk Score (ERS)</p>
+        <pre class="formula mt-3 overflow-x-auto p-4 text-sm">ERS = α + (1 − α) × f(IVP, ORP, ACI)      where α = 0.15</pre>
+        <p class="mt-3 text-sm text-muted">
+          The residual risk floor (α = 0.15) is deliberate: even perfect controls leave an
+          irreducible 15% of risk. AI risk cannot be zeroed out.
+        </p>
+        <a href="framework.html" class="mt-4 inline-block text-sm font-semibold text-navy hover:text-navy-light">See the full scoring model →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Differentiators -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-20">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold text-navy">What makes AITBM different</h2>
+    </div>
+    <div class="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+      <div class="flex gap-4">
+        <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span>
+        <div><h3 class="font-bold text-navy">Deterministic rubrics</h3><p class="mt-1 text-sm text-muted">Five fully specified levels per sub-metric drive inter-assessor variance toward zero.</p></div>
+      </div>
+      <div class="flex gap-4">
+        <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span>
+        <div><h3 class="font-bold text-navy">Multi-dimensional signal</h3><p class="mt-1 text-sm text-muted">IVP / ORP / ACI are never silently collapsed into one number without justification.</p></div>
+      </div>
+      <div class="flex gap-4">
+        <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span>
+        <div><h3 class="font-bold text-navy">Operational context, mathematically</h3><p class="mt-1 text-sm text-muted">The CRM encodes deployment risk so critical systems separate from low-stakes ones.</p></div>
+      </div>
+      <div class="flex gap-4">
+        <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span>
+        <div><h3 class="font-bold text-navy">Identity as first-class</h3><p class="mt-1 text-sm text-muted">Cn-5 (Agent Identity Integrity) addresses agentic identity gaps, validated against SPIFFE and OIDC-A.</p></div>
+      </div>
+      <div class="flex gap-4">
+        <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span>
+        <div><h3 class="font-bold text-navy">Temporal honesty</h3><p class="mt-1 text-sm text-muted">ACI degrades confidence as evidence ages, triggering re-assessment before scores mislead.</p></div>
+      </div>
+      <div class="flex gap-4">
+        <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span>
+        <div><h3 class="font-bold text-navy">Complementary, not competitive</h3><p class="mt-1 text-sm text-muted">Other frameworks define what controls should exist; AITBM quantifies how risky the system is.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Validation anchor -->
+  <section class="bg-navy text-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <div class="grid gap-8 lg:grid-cols-3 items-center">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl font-bold">Validated against a worked example</h2>
+          <p class="mt-3 text-blue-100 max-w-2xl">
+            The Finbot scenario — a financial advisory agent combining RAG and tool calling —
+            is AITBM's canonical validation anchor. Multiple independent assessors reach the
+            same result: an Evaluated Risk Score of 10.0, CRM of 1.35, Critical severity.
+          </p>
+        </div>
+        <div class="grid grid-cols-3 gap-4 text-center">
+          <div class="rounded-lg bg-white/10 p-4"><div class="text-2xl font-bold">10.0</div><div class="text-xs text-blue-100">ERS</div></div>
+          <div class="rounded-lg bg-white/10 p-4"><div class="text-2xl font-bold">1.35</div><div class="text-xs text-blue-100">CRM</div></div>
+          <div class="rounded-lg bg-white/10 p-4"><div class="text-2xl font-bold">0.00</div><div class="text-xs text-blue-100">variance</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-20 text-center">
+    <h2 class="text-3xl font-bold text-navy">Built on current research, aligned to the standards you use</h2>
+    <p class="mx-auto mt-3 max-w-2xl text-muted">
+      AITBM maps against OWASP, MITRE ATLAS, NIST AI RMF, ISO 42001/42005, the EU AI Act, and
+      the AIDEFEND defensive taxonomy — turning controls into measurable evidence.
+    </p>
+    <div class="mt-8 flex justify-center gap-3">
+      <a href="resources.html" class="rounded-md bg-navy px-5 py-2.5 font-semibold text-white hover:bg-navy-light">Resources &amp; standards</a>
+      <a href="framework.html" class="rounded-md border border-navy px-5 py-2.5 font-semibold text-navy hover:bg-gray-50">Framework detail</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded bg-navy text-white font-bold text-xs">AI</span>
+          <span class="font-bold text-navy">AI Trust Benchmarking and Maturity Framework</span>
+        </div>
+        <p class="mt-3 text-sm text-muted max-w-xs">AI Trust Benchmarking and Maturity Framework — a community-driven, volunteer effort.</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-navy">Explore</h4>
+        <ul class="mt-3 space-y-2 text-sm text-muted">
+          <li><a href="framework.html" class="hover:text-navy">Framework</a></li>
+          <li><a href="gap-analysis.html" class="hover:text-navy">Gap Analysis</a></li>
+          <li><a href="aidefend.html" class="hover:text-navy">AIDEFEND Mapping</a></li>
+          <li><a href="resources.html" class="hover:text-navy">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-navy">Project</h4>
+        <ul class="mt-3 space-y-2 text-sm text-muted">
+          <li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li>
+          <li>OWASP Taiwan Chapter</li>
+          <li>Auriga Security, Inc.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-200">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">
+        © <span data-year>2026</span> AITBM. Content licensed under CC BY 4.0.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

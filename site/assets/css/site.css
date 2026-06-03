@@ -1,0 +1,57 @@
+/* AITBM site — shared styles layered on top of Tailwind (Play CDN) */
+
+:root {
+  --navy: #1F3864;
+  --navy-light: #2E5090;
+  --navy-dark: #152743;
+  --muted: #555555;
+  --line: #e5e7eb;
+}
+
+html { scroll-behavior: smooth; }
+body { color: #333333; }
+
+/* Anchor offset so section headings clear the sticky nav */
+:target { scroll-margin-top: 6rem; }
+
+/* Formula / code presentation */
+.formula {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: var(--navy-dark);
+  color: #e8eefb;
+  border-radius: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Subtle card lift */
+.card {
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -12px rgba(31, 56, 100, .35);
+  border-color: var(--navy-light);
+}
+
+/* Axis accent bar */
+.axis-bar { height: 4px; border-radius: 9999px; }
+
+/* Active nav link */
+.nav-link.active { color: var(--navy); font-weight: 700; }
+.nav-link.active::after {
+  content: ""; display: block; height: 2px; background: var(--navy);
+  margin-top: 2px; border-radius: 2px;
+}
+
+/* Hero grid backdrop */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Table polish */
+.spec-table th { background: var(--navy); color: #fff; }
+.spec-table td, .spec-table th { border: 1px solid var(--line); }
+.spec-table tbody tr:nth-child(even) { background: #f7f9fc; }

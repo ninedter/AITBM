@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIDEFEND Mapping — AI Trust Benchmarking and Maturity Framework</title>
+  <meta name="description" content="Complete mapping of 85 AIDEFEND defensive techniques to AITBM's 21 sub-metrics — translating defensive controls into measurable risk reduction." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:title" content="AIDEFEND Mapping — AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:description" content="Translates AIDEFEND defensive techniques into measurable evidence for AITBM sub-metric scoring." />
+  <meta name="twitter:card" content="summary" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { navy: { DEFAULT: "#1F3864", light: "#2E5090", dark: "#152743" }, muted: "#555555" },
+        fontFamily: { sans: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"] },
+      } },
+    };
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="font-sans antialiased bg-white">
+
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-navy text-white font-bold text-sm">AI</span>
+          <span class="font-bold text-navy tracking-tight">AI Trust Benchmarking and Maturity Framework</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-7 text-sm text-gray-700">
+          <a href="index.html" class="nav-link hover:text-navy">Overview</a>
+          <a href="framework.html" class="nav-link hover:text-navy">Framework</a>
+          <a href="gap-analysis.html" class="nav-link hover:text-navy">Gap Analysis</a>
+          <a href="aidefend.html" class="nav-link active hover:text-navy">AIDEFEND</a>
+          <a href="calculator.html" class="nav-link hover:text-navy">Calculator</a>
+          <a href="resources.html" class="nav-link hover:text-navy">Resources</a>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="md:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden md:hidden pb-4 space-y-1 text-sm">
+        <a href="index.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="framework.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="gap-analysis.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="aidefend.html" class="block rounded px-3 py-2 text-navy font-semibold bg-gray-50">AIDEFEND</a>
+        <a href="calculator.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="resources.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page header -->
+  <section class="bg-navy text-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14">
+      <h1 class="text-4xl font-bold">AIDEFEND Mapping</h1>
+      <p class="mt-3 max-w-2xl text-blue-100">
+        Translating AIDEFEND defensive techniques into measurable risk reduction
+        through AITBM's 21 sub-metrics.
+      </p>
+      <nav class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-blue-100">
+        <a href="#overview" class="hover:text-white underline-offset-4 hover:underline">Overview</a>
+        <a href="#tactics" class="hover:text-white underline-offset-4 hover:underline">7 Tactics</a>
+        <a href="#top10" class="hover:text-white underline-offset-4 hover:underline">Top 10 Controls</a>
+        <a href="#threat-coverage" class="hover:text-white underline-offset-4 hover:underline">Threat Coverage</a>
+        <a href="#worked-example" class="hover:text-white underline-offset-4 hover:underline">Worked Example</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section id="overview" class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+    <div class="grid gap-10 lg:grid-cols-5">
+      <div class="lg:col-span-3">
+        <h2 class="text-3xl font-bold text-navy">About AIDEFEND</h2>
+        <p class="mt-3 text-muted">
+          AIDEFEND (AI Defense Framework) is an open-source knowledge base of defensive
+          countermeasures for protecting AI and machine learning systems. It organizes practical
+          defenses across seven high-level tactics aligned with MITRE D3FEND and maps each
+          technique to known threats from nine major industry frameworks.
+        </p>
+        <p class="mt-4 text-muted">
+          AIDEFEND answers <em>"what defensive controls should exist"</em>; AITBM answers
+          <em>"how risky is this system."</em> Together, deploying an AIDEFEND technique
+          translates into a measurable change in an AITBM Evaluated Risk Score (ERS).
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3 text-sm">
+          <a href="https://aidefend.net/" class="rounded-md bg-navy px-4 py-2 text-white hover:bg-navy-light">AIDEFEND Knowledge Base</a>
+          <a href="https://github.com/edward-playground/aidefense-framework" class="rounded-md border border-navy px-4 py-2 text-navy hover:bg-gray-50">Source Repository</a>
+        </div>
+      </div>
+      <div class="lg:col-span-2">
+        <div class="rounded-xl border border-gray-200 bg-gray-50 p-6">
+          <p class="text-sm font-semibold text-navy">Framework at a glance</p>
+          <dl class="mt-4 space-y-3 text-sm">
+            <div class="flex justify-between"><dt class="text-muted">Total techniques</dt><dd class="font-bold text-navy">85</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">Tactics</dt><dd class="font-bold text-navy">7</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">Pillars</dt><dd class="font-bold text-navy">4</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">Lifecycle phases</dt><dd class="font-bold text-navy">6</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">External frameworks mapped</dt><dd class="font-bold text-navy">9</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">AITBM sub-metrics covered</dt><dd class="font-bold text-navy">21 / 21</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mapping philosophy -->
+  <section class="bg-gray-50 border-y border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <h2 class="text-3xl font-bold text-navy">How the mapping works</h2>
+      <p class="mt-3 max-w-3xl text-muted">
+        AITBM serves as the universal quantification layer for AIDEFEND. Each defensive
+        technique is mapped to the AITBM sub-metrics it affects, with before/after scoring
+        impacts and ERS deltas.
+      </p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-xl border border-gray-200 bg-white p-6">
+          <div class="axis-bar bg-navy w-10 mb-4"></div>
+          <h3 class="font-bold text-navy">Quantitative scoring</h3>
+          <p class="mt-2 text-sm text-muted">Five-level rubrics (0.00 &ndash; 4.00) across 21 sub-metrics produce a 0 &ndash; 10 ERS. Each AIDEFEND control shifts specific sub-metric scores by measurable amounts.</p>
+        </article>
+        <article class="rounded-xl border border-gray-200 bg-white p-6">
+          <div class="axis-bar bg-navy w-10 mb-4"></div>
+          <h3 class="font-bold text-navy">Multi-dimensional profiles</h3>
+          <p class="mt-2 text-sm text-muted">Trade-offs across Robustness, Fairness, Transparency, Privacy, and Containment are preserved &mdash; a single aggregate never hides where a control matters most.</p>
+        </article>
+        <article class="rounded-xl border border-gray-200 bg-white p-6">
+          <div class="axis-bar bg-navy w-10 mb-4"></div>
+          <h3 class="font-bold text-navy">Operational context</h3>
+          <p class="mt-2 text-sm text-muted">ORP captures deployment-specific risk amplification (CRM 0.75 &ndash; 1.75) and ACI tracks assessment staleness &mdash; controls that improve operational posture reduce CRM directly.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 Tactics -->
+  <section id="tactics" class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+    <h2 class="text-3xl font-bold text-navy">Seven defensive tactics</h2>
+    <p class="mt-3 max-w-3xl text-muted">
+      AIDEFEND organizes 85 techniques across seven tactics aligned with MITRE D3FEND.
+      Each tactic maps to different AITBM layers and sub-metrics.
+    </p>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="rounded-xl border border-gray-200 p-5">
+        <p class="text-2xl font-bold text-navy">10</p>
+        <h3 class="mt-1 font-bold text-navy text-sm">Model</h3>
+        <p class="mt-2 text-xs text-muted">Asset inventory, provenance, threat modeling, HITL mapping, autonomy governance.</p>
+      </article>
+      <article class="rounded-xl border border-gray-200 p-5">
+        <p class="text-2xl font-bold text-navy">34</p>
+        <h3 class="mt-1 font-bold text-navy text-sm">Harden</h3>
+        <p class="mt-2 text-xs text-muted">Adversarial training, input validation, RAG security, output filtering, permission restriction.</p>
+      </article>
+      <article class="rounded-xl border border-gray-200 p-5">
+        <p class="text-2xl font-bold text-navy">16</p>
+        <h3 class="mt-1 font-bold text-navy text-sm">Detect</h3>
+        <p class="mt-2 text-xs text-muted">Prompt injection detection, drift monitoring, agent behavior attestation, leakage detection.</p>
+      </article>
+      <article class="rounded-xl border border-gray-200 p-5">
+        <p class="text-2xl font-bold text-navy">8</p>
+        <h3 class="mt-1 font-bold text-navy text-sm">Isolate</h3>
+        <p class="mt-2 text-xs text-muted">Network segmentation, client-side sandboxing, browser session isolation.</p>
+      </article>
+      <article class="rounded-xl border border-gray-200 p-5">
+        <p class="text-2xl font-bold text-navy">7</p>
+        <h3 class="mt-1 font-bold text-navy text-sm">Deceive</h3>
+        <p class="mt-2 text-xs text-muted">Honeypot AI services, decoy models, canary data for attacker detection.</p>
+      </article>
+      <article class="rounded-xl border border-gray-200 p-5">
+        <p class="text-2xl font-bold text-navy">5</p>
+        <h3 class="mt-1 font-bold text-navy text-sm">Evict</h3>
+        <p class="mt-2 text-xs text-muted">Automated threat response, session termination, compromised state purging.</p>
+      </article>
+      <article class="rounded-xl border border-gray-200 p-5">
+        <p class="text-2xl font-bold text-navy">5</p>
+        <h3 class="mt-1 font-bold text-navy text-sm">Restore</h3>
+        <p class="mt-2 text-xs text-muted">Model versioning, rollback, recovery from poisoning and compromise.</p>
+      </article>
+      <article class="rounded-xl border-2 border-navy/30 bg-gray-50 p-5">
+        <p class="text-2xl font-bold text-navy">85</p>
+        <h3 class="mt-1 font-bold text-navy text-sm">Total techniques</h3>
+        <p class="mt-2 text-xs text-muted">All 21 AITBM sub-metrics covered with 1 &ndash; 8 AIDEFEND techniques each (avg 3.5).</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Top 10 controls -->
+  <section id="top10" class="bg-gray-50 border-y border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <h2 class="text-3xl font-bold text-navy">Top 10 highest-impact controls</h2>
+      <p class="mt-3 max-w-3xl text-muted">
+        Ranked by ERS reduction. Agentic controls (Cn-1, Cn-2, Cn-5) deliver the highest
+        risk reduction &mdash; six agentic-focused controls account for 55% of total risk
+        reduction capacity.
+      </p>
+      <div class="mt-8 overflow-x-auto">
+        <table class="spec-table w-full border-collapse text-sm">
+          <thead>
+            <tr>
+              <th class="px-4 py-3 text-left w-10">#</th>
+              <th class="px-4 py-3 text-left">AIDEFEND Control</th>
+              <th class="px-4 py-3 text-left">AITBM Sub-Metrics</th>
+              <th class="px-4 py-3 text-right w-28">ERS Reduction</th>
+              <th class="px-4 py-3 text-left hidden lg:table-cell">Severity Drop</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+            <tr>
+              <td class="px-4 py-3 font-bold text-navy">1</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-H-019</span> Agent Permission Restriction</td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td>
+              <td class="px-4 py-3 text-right font-bold text-navy">5.8 pts</td>
+              <td class="px-4 py-3 hidden lg:table-cell">Critical &rarr; Low-Moderate</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-bold text-navy">2</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-M-009</span> Agent Autonomy Governance</td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td>
+              <td class="px-4 py-3 text-right font-bold text-navy">5.4 pts</td>
+              <td class="px-4 py-3 hidden lg:table-cell">Critical &rarr; Low-Moderate</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-bold text-navy">3</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-M-006</span> HITL Control Point Mapping</td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td>
+              <td class="px-4 py-3 text-right font-bold text-navy">4.3 pts</td>
+              <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Moderate-Low</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-bold text-navy">4</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-H-021</span> Secure RAG Implementation</td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span></span></td>
+              <td class="px-4 py-3 text-right font-bold text-navy">3.9 pts</td>
+              <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Moderate-Low</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-bold text-navy">5</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-M-002</span> Data Provenance Tracking</td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span></span></td>
+              <td class="px-4 py-3 text-right font-bold text-navy">3.7 pts</td>
+              <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Moderate-Low</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-bold text-navy">6</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-D-011</span> Agent Behavior Monitoring</td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td>
+              <td class="px-4 py-3 text-right font-bold text-navy">3.6 pts</td>
+              <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Low-Moderate</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-bold text-navy">7</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-H-006</span> Output Content Filtering</td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span></span></td>
+              <td class="px-4 py-3 text-right font-bold text-navy">3.5 pts</td>
+              <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Moderate-Low</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-bold text-navy">8</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-H-001</span> Adversarial Robustness Training</td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td>
+              <td class="px-4 py-3 text-right font-bold text-navy">3.4 pts</td>
+              <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Moderate-Low</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-bold text-navy">9</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-H-002</span> Input Sanitization &amp; Validation</td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span></span></td>
+              <td class="px-4 py-3 text-right font-bold text-navy">3.3 pts</td>
+              <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Moderate</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-bold text-navy">10</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-D-003</span> Sensitive Data Leakage Detection</td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span></span></td>
+              <td class="px-4 py-3 text-right font-bold text-navy">3.0 pts</td>
+              <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Moderate-Low</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Threat coverage -->
+  <section id="threat-coverage" class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+    <h2 class="text-3xl font-bold text-navy">OWASP LLM Top 10 threat coverage</h2>
+    <p class="mt-3 max-w-3xl text-muted">
+      AIDEFEND provides strongest defensive depth for Excessive Agency (18 controls) and
+      Data/Model Poisoning (18 controls), reflecting the framework's emphasis on agentic AI
+      security and supply chain integrity.
+    </p>
+    <div class="mt-8 grid gap-3 sm:grid-cols-2">
+      <div class="rounded-xl border border-gray-200 p-5">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-navy text-sm">LLM06 Excessive Agency</h3>
+          <span class="rounded bg-navy px-2 py-0.5 text-xs font-semibold text-white">18 controls</span>
+        </div>
+        <div class="mt-3 h-2 rounded-full bg-gray-200"><div class="h-2 rounded-full bg-navy" style="width:100%"></div></div>
+      </div>
+      <div class="rounded-xl border border-gray-200 p-5">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-navy text-sm">LLM04 Data &amp; Model Poisoning</h3>
+          <span class="rounded bg-navy px-2 py-0.5 text-xs font-semibold text-white">18 controls</span>
+        </div>
+        <div class="mt-3 h-2 rounded-full bg-gray-200"><div class="h-2 rounded-full bg-navy" style="width:100%"></div></div>
+      </div>
+      <div class="rounded-xl border border-gray-200 p-5">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-navy text-sm">LLM01 Prompt Injection</h3>
+          <span class="rounded bg-navy-light px-2 py-0.5 text-xs font-semibold text-white">12 controls</span>
+        </div>
+        <div class="mt-3 h-2 rounded-full bg-gray-200"><div class="h-2 rounded-full bg-navy-light" style="width:67%"></div></div>
+      </div>
+      <div class="rounded-xl border border-gray-200 p-5">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-navy text-sm">LLM02 Sensitive Info Disclosure</h3>
+          <span class="rounded bg-navy-light px-2 py-0.5 text-xs font-semibold text-white">12 controls</span>
+        </div>
+        <div class="mt-3 h-2 rounded-full bg-gray-200"><div class="h-2 rounded-full bg-navy-light" style="width:67%"></div></div>
+      </div>
+      <div class="rounded-xl border border-gray-200 p-5">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-navy text-sm">LLM03 Supply Chain</h3>
+          <span class="rounded bg-navy-light px-2 py-0.5 text-xs font-semibold text-white">12 controls</span>
+        </div>
+        <div class="mt-3 h-2 rounded-full bg-gray-200"><div class="h-2 rounded-full bg-navy-light" style="width:67%"></div></div>
+      </div>
+      <div class="rounded-xl border border-gray-200 p-5">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-navy text-sm">LLM08 Vector &amp; Embedding Weaknesses</h3>
+          <span class="rounded bg-gray-400 px-2 py-0.5 text-xs font-semibold text-white">8 controls</span>
+        </div>
+        <div class="mt-3 h-2 rounded-full bg-gray-200"><div class="h-2 rounded-full bg-gray-400" style="width:44%"></div></div>
+      </div>
+      <div class="rounded-xl border border-gray-200 p-5">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-navy text-sm">LLM05 Improper Output Handling</h3>
+          <span class="rounded bg-gray-400 px-2 py-0.5 text-xs font-semibold text-white">8 controls</span>
+        </div>
+        <div class="mt-3 h-2 rounded-full bg-gray-200"><div class="h-2 rounded-full bg-gray-400" style="width:44%"></div></div>
+      </div>
+      <div class="rounded-xl border border-gray-200 p-5">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-navy text-sm">LLM10 Unbounded Consumption</h3>
+          <span class="rounded bg-gray-400 px-2 py-0.5 text-xs font-semibold text-white">6 controls</span>
+        </div>
+        <div class="mt-3 h-2 rounded-full bg-gray-200"><div class="h-2 rounded-full bg-gray-400" style="width:33%"></div></div>
+      </div>
+      <div class="rounded-xl border border-gray-200 p-5">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-navy text-sm">LLM09 Misinformation</h3>
+          <span class="rounded bg-gray-400 px-2 py-0.5 text-xs font-semibold text-white">6 controls</span>
+        </div>
+        <div class="mt-3 h-2 rounded-full bg-gray-200"><div class="h-2 rounded-full bg-gray-400" style="width:33%"></div></div>
+      </div>
+      <div class="rounded-xl border border-gray-200 p-5">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-navy text-sm">LLM07 System Prompt Leakage</h3>
+          <span class="rounded bg-gray-400 px-2 py-0.5 text-xs font-semibold text-white">6 controls</span>
+        </div>
+        <div class="mt-3 h-2 rounded-full bg-gray-200"><div class="h-2 rounded-full bg-gray-400" style="width:33%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Worked example -->
+  <section id="worked-example" class="bg-navy text-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <h2 class="text-3xl font-bold">Worked example: Financial services agentic RAG</h2>
+      <p class="mt-3 max-w-3xl text-blue-100">
+        An internet-facing, Tier I financial advisory agent with RAG and L3 conditional
+        autonomy. Twelve AIDEFEND controls applied &mdash; 8 &ndash; 12 weeks concurrent
+        deployment.
+      </p>
+      <div class="mt-10 grid gap-8 lg:grid-cols-2">
+        <!-- Baseline -->
+        <div class="rounded-xl bg-white/10 p-7">
+          <p class="text-xs font-semibold tracking-wider text-red-300">BASELINE &mdash; NO CONTROLS</p>
+          <dl class="mt-4 grid grid-cols-2 gap-4">
+            <div><dt class="text-sm text-blue-100">IVP</dt><dd class="text-2xl font-bold">0.32</dd></div>
+            <div><dt class="text-sm text-blue-100">CRM</dt><dd class="text-2xl font-bold">1.60</dd></div>
+            <div><dt class="text-sm text-blue-100">ACI</dt><dd class="text-2xl font-bold">0.40</dd></div>
+            <div><dt class="text-sm text-blue-100">ERS</dt><dd class="text-2xl font-bold text-red-300">9.7</dd></div>
+          </dl>
+          <p class="mt-4 rounded bg-red-500/20 px-3 py-2 text-sm font-semibold text-red-200">Critical MVT &mdash; Unacceptable risk</p>
+        </div>
+        <!-- Mitigated -->
+        <div class="rounded-xl bg-white/10 p-7">
+          <p class="text-xs font-semibold tracking-wider text-emerald-300">MITIGATED &mdash; 12 AIDEFEND CONTROLS</p>
+          <dl class="mt-4 grid grid-cols-2 gap-4">
+            <div><dt class="text-sm text-blue-100">IVP</dt><dd class="text-2xl font-bold">0.68</dd></div>
+            <div><dt class="text-sm text-blue-100">CRM</dt><dd class="text-2xl font-bold">1.00</dd></div>
+            <div><dt class="text-sm text-blue-100">ACI</dt><dd class="text-2xl font-bold">0.90</dd></div>
+            <div><dt class="text-sm text-blue-100">ERS</dt><dd class="text-2xl font-bold text-emerald-300">3.2</dd></div>
+          </dl>
+          <p class="mt-4 rounded bg-emerald-500/20 px-3 py-2 text-sm font-semibold text-emerald-200">Low-Moderate &mdash; Acceptable for Tier I</p>
+        </div>
+      </div>
+      <!-- Summary stats -->
+      <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl">
+        <div><dt class="text-3xl font-bold">6.5</dt><dd class="text-sm text-blue-100">ERS reduction</dd></div>
+        <div><dt class="text-3xl font-bold">67%</dt><dd class="text-sm text-blue-100">risk reduced</dd></div>
+        <div><dt class="text-3xl font-bold">3</dt><dd class="text-sm text-blue-100">severity tiers dropped</dd></div>
+        <div><dt class="text-3xl font-bold">0.54</dt><dd class="text-sm text-blue-100">avg ERS per control</dd></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-framework -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+    <h2 class="text-3xl font-bold text-navy">Cross-framework alignment</h2>
+    <p class="mt-3 max-w-3xl text-muted">
+      AIDEFEND already maps to nine external frameworks. AITBM adds the quantification
+      layer &mdash; turning control presence into measurable risk scores.
+    </p>
+    <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">MITRE ATLAS</span><p class="text-muted mt-0.5">15 tactics, 143 techniques</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">OWASP LLM Top 10 (2025)</span><p class="text-muted mt-0.5">10 threats, 85 controls mapped</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">OWASP Agentic AI Top 10</span><p class="text-muted mt-0.5">ASI threat classes (2026)</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">MAESTRO (CSA)</span><p class="text-muted mt-0.5">7 layers, 85 controls mapped</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">NIST Adversarial ML 2025</span><p class="text-muted mt-0.5">Adversarial threat taxonomy</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">Cisco AI Security Framework</span><p class="text-muted mt-0.5">Integrated safety &amp; security</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">Google SAIF 2.0</span><p class="text-muted mt-0.5">Secure AI Framework</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">Databricks DASF 3.0</span><p class="text-muted mt-0.5">AI security framework</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">OWASP ML Top 10 (2023)</span><p class="text-muted mt-0.5">ML-specific threats</p></div>
+    </div>
+    <div class="mt-8">
+      <a href="https://github.com/ninedter/AITBM/blob/main/docs/framework-mappings/AIDEFEND-to-AITBM.md" class="rounded-md bg-navy px-5 py-2.5 font-semibold text-white hover:bg-navy-light inline-block">Full mapping on GitHub</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded bg-navy text-white font-bold text-xs">AI</span>
+          <span class="font-bold text-navy">AI Trust Benchmarking and Maturity Framework</span>
+        </div>
+        <p class="mt-3 text-sm text-muted max-w-xs">AI Trust Benchmarking and Maturity Framework — a community-driven, volunteer effort.</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-navy">Explore</h4>
+        <ul class="mt-3 space-y-2 text-sm text-muted">
+          <li><a href="framework.html" class="hover:text-navy">Framework</a></li>
+          <li><a href="gap-analysis.html" class="hover:text-navy">Gap Analysis</a></li>
+          <li><a href="aidefend.html" class="hover:text-navy">AIDEFEND Mapping</a></li>
+          <li><a href="resources.html" class="hover:text-navy">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-navy">Project</h4>
+        <ul class="mt-3 space-y-2 text-sm text-muted">
+          <li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li>
+          <li>OWASP Taiwan Chapter</li>
+          <li>Auriga Security, Inc.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-200">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">
+        &copy; <span data-year>2026</span> AITBM. Content licensed under CC BY 4.0.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

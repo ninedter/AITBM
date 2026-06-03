@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resources — AI Trust Benchmarking and Maturity Framework</title>
+  <meta name="description" content="AITBM documentation, standards alignment, and project information — framework specification, gap analysis, and cross-framework mappings." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:title" content="Resources — AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:description" content="AITBM documentation, standards alignment, and project information." />
+  <meta name="twitter:card" content="summary" />
+  <!-- After choosing a domain: set absolute og:url + og:image and add <link rel="canonical">. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { navy: { DEFAULT: "#1F3864", light: "#2E5090", dark: "#152743" }, muted: "#555555" },
+        fontFamily: { sans: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"] },
+      } },
+    };
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="font-sans antialiased bg-white">
+
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-navy text-white font-bold text-sm">AI</span>
+          <span class="font-bold text-navy tracking-tight">AI Trust Benchmarking and Maturity Framework</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-7 text-sm text-gray-700">
+          <a href="index.html" class="nav-link hover:text-navy">Overview</a>
+          <a href="framework.html" class="nav-link hover:text-navy">Framework</a>
+          <a href="gap-analysis.html" class="nav-link hover:text-navy">Gap Analysis</a>
+          <a href="aidefend.html" class="nav-link hover:text-navy">AIDEFEND</a>
+          <a href="calculator.html" class="nav-link hover:text-navy">Calculator</a>
+          <a href="resources.html" class="nav-link active hover:text-navy">Resources</a>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="md:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden md:hidden pb-4 space-y-1 text-sm">
+        <a href="index.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="framework.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="gap-analysis.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="aidefend.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="calculator.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="resources.html" class="block rounded px-3 py-2 text-navy font-semibold bg-gray-50">Resources</a>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-navy text-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14">
+      <h1 class="text-4xl font-bold">Resources</h1>
+      <p class="mt-3 max-w-2xl text-blue-100">Documentation, standards alignment, and project information.</p>
+    </div>
+  </section>
+
+  <!-- Documents -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+    <h2 class="text-3xl font-bold text-navy">Documentation</h2>
+    <p class="mt-3 text-muted">Source documents live in the GitHub repository.</p>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2">
+      <a href="https://github.com/ninedter/AITBM/tree/main/outputs/docx/framework" class="card block rounded-xl border border-gray-200 p-6">
+        <h3 class="font-bold text-navy">Framework Specification</h3>
+        <p class="mt-2 text-sm text-muted">Complete technical reference — all 21 sub-metrics, five-level rubrics, test methods, ORP/ACI, and the Finbot validation.</p>
+        <span class="mt-4 inline-block text-sm font-semibold text-navy-light">View on GitHub →</span>
+      </a>
+      <a href="https://github.com/ninedter/AITBM/tree/main/outputs/docx/analysis" class="card block rounded-xl border border-gray-200 p-6">
+        <h3 class="font-bold text-navy">Gap Analysis</h3>
+        <p class="mt-2 text-sm text-muted">The twelve-gap structural analysis with 2025–2026 evidence and the AITBM-to-framework coverage mapping.</p>
+        <span class="mt-4 inline-block text-sm font-semibold text-navy-light">View on GitHub →</span>
+      </a>
+      <a href="https://github.com/ninedter/AITBM/blob/main/docs/framework-mappings/AIDEFEND-to-AITBM.md" class="card block rounded-xl border border-gray-200 p-6">
+        <h3 class="font-bold text-navy">AIDEFEND → AITBM Mapping</h3>
+        <p class="mt-2 text-sm text-muted">Translates AIDEFEND defensive techniques into measurable evidence for AITBM sub-metric scoring.</p>
+        <span class="mt-4 inline-block text-sm font-semibold text-navy-light">View on GitHub →</span>
+      </a>
+      <a href="https://github.com/ninedter/AITBM/tree/main/outputs/markdown" class="card block rounded-xl border border-gray-200 p-6">
+        <h3 class="font-bold text-navy">Summaries &amp; quick references</h3>
+        <p class="mt-2 text-sm text-muted">Executive summaries, quick-reference cards, and changelogs in Markdown.</p>
+        <span class="mt-4 inline-block text-sm font-semibold text-navy-light">View on GitHub →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Standards alignment -->
+  <section class="bg-gray-50 border-y border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <h2 class="text-3xl font-bold text-navy">Standards alignment</h2>
+      <p class="mt-3 max-w-3xl text-muted">
+        AITBM aligns to, maps against, or explicitly addresses gaps in the standards and
+        frameworks security teams already rely on.
+      </p>
+      <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">OWASP Top 10 for LLMs</span><p class="text-muted mt-0.5">Severity quantification</p></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">OWASP Top 10 for Agentic Apps</span><p class="text-muted mt-0.5">Agentic threat coverage</p></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">OWASP AISVS</span><p class="text-muted mt-0.5">Control-verification input (pending)</p></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">MITRE ATLAS</span><p class="text-muted mt-0.5">Threat taxonomy alignment</p></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">NIST AI RMF</span><p class="text-muted mt-0.5">Risk-management alignment</p></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">NIST Cyber AI Profile (IR 8596)</span><p class="text-muted mt-0.5">Cyber-AI intersection</p></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">ISO 42001 / 42005</span><p class="text-muted mt-0.5">Governance &amp; impact assessment</p></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">EU AI Act</span><p class="text-muted mt-0.5">High-risk classification mapping</p></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">AIDEFEND</span><p class="text-muted mt-0.5">Defensive-control evidence</p></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">MITRE D3FEND</span><p class="text-muted mt-0.5">Defensive taxonomy</p></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">CVSS</span><p class="text-muted mt-0.5">Prior art — why it is insufficient for AI</p></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><span class="font-semibold text-navy">MCP</span><p class="text-muted mt-0.5">Primary agentic deployment class</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / contact -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <h2 class="text-3xl font-bold text-navy">About the project</h2>
+        <p class="mt-3 text-muted">
+          AITBM is a community-driven, volunteer effort built for OWASP practitioners, AI
+          security assessors, ML engineers, and compliance teams. It carries no commercial
+          licensing and no paid-tooling dependencies, and is designed to be usable by assessors
+          without an ML research background — every rubric is operationally concrete.
+        </p>
+        <p class="mt-4 text-muted">
+          Led from the OWASP Taiwan Chapter, AITBM is developed in the open and its
+          documentation is licensed under CC BY 4.0.
+        </p>
+      </div>
+      <div class="rounded-xl border border-gray-200 p-6">
+        <h3 class="font-bold text-navy">Get involved</h3>
+        <ul class="mt-4 space-y-3 text-sm text-muted">
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span> Pilot an AITBM assessment on an agentic deployment and compare ERS to your existing scores.</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span> Validate inter-assessor consistency on a shared system.</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span> Open an issue or pull request with feedback and case studies.</li>
+        </ul>
+        <a href="https://github.com/ninedter/AITBM" class="mt-6 inline-block rounded-md bg-navy px-5 py-2.5 font-semibold text-white hover:bg-navy-light">Contribute on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded bg-navy text-white font-bold text-xs">AI</span>
+          <span class="font-bold text-navy">AI Trust Benchmarking and Maturity Framework</span>
+        </div>
+        <p class="mt-3 text-sm text-muted max-w-xs">AI Trust Benchmarking and Maturity Framework — a community-driven, volunteer effort.</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-navy">Explore</h4>
+        <ul class="mt-3 space-y-2 text-sm text-muted">
+          <li><a href="framework.html" class="hover:text-navy">Framework</a></li>
+          <li><a href="gap-analysis.html" class="hover:text-navy">Gap Analysis</a></li>
+          <li><a href="aidefend.html" class="hover:text-navy">AIDEFEND Mapping</a></li>
+          <li><a href="resources.html" class="hover:text-navy">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-navy">Project</h4>
+        <ul class="mt-3 space-y-2 text-sm text-muted">
+          <li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li>
+          <li>OWASP Taiwan Chapter</li>
+          <li>Auriga Security, Inc.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-200">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">
+        © <span data-year>2026</span> AITBM. Content licensed under CC BY 4.0.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

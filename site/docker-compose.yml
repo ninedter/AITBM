@@ -1,0 +1,10 @@
+# Run the AITBM site locally:  docker compose up --build
+# Then open http://localhost:8080
+services:
+  aitbm-site:
+    build: .
+    image: aitbm-site:local
+    container_name: aitbm-site
+    ports:
+      - "8080:80"
+    restart: unless-stopped
