@@ -1,6 +1,7 @@
 # Framework Comparison
 
 The table below compares AITBM with prior and adjacent AI security frameworks and shows where AITBM closes their structural gaps.
+
 *Table 59: 10. Framework Comparison*
 
 | Capability | CVSS 4.0 | AIVSS v0.5 | RAISE | AITBM |
@@ -20,4 +21,3 @@ The table below compares AITBM with prior and adjacent AI security frameworks an
 | Jurisdictional fairness | No |  |  | Yes |
 | Architecture classification tree | No |  |  | Yes |
 | Inter-rater reliability targets | No |  |  | Yes |
-

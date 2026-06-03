@@ -1,14 +1,23 @@
 # AIDEFEND Integration
 
 Mapping AIDEFEND Defensive Techniques to AITBM Sub-Metrics
+
 ## Overview
+
 AIDEFEND (https://aidefend.net/) is a structured knowledge base of defensive countermeasures for AI systems. The current public AIDEFEND data reviewed for this section uses schema 2.0 and data version 2026.05.18. It contains 85 top-level defensive techniques and 204 sub-techniques, for 289 total defensive records across tactics, pillars, lifecycle phases, and external framework mappings. This section maps AIDEFEND evidence to AITBM's 21 sub-metrics, enabling organizations to use AIDEFEND as the operational evaluation layer and AITBM as the scoring framework.
+
 1. Translate defensive implementations into AITBM scores — Organizations implementing AIDEFEND controls can objectively score their security posture
+
 2. Identify control gaps — By cross-referencing AIDEFEND coverage against AITBM sub-metrics, security teams can pinpoint missing defensive layers
+
 3. Prioritize defensive investments — Understanding which AIDEFEND techniques impact multiple AITBM axes helps optimize security resource allocation
+
 4. Bridge CVE/CVSS to AI-specific risk — AIDEFEND maps to traditional vulnerability frameworks, while AITBM provides AI-specific risk quantification
+
 ## AIDEFEND Tactical Structure
+
 AIDEFEND organizes 85 top-level defensive techniques and 204 sub-techniques across 7 tactics:
+
 *Table 60: AIDEFEND Tactical Structure*
 
 | Tactic | Code | Techniques | Purpose |
@@ -22,14 +31,23 @@ AIDEFEND organizes 85 top-level defensive techniques and 204 sub-techniques acro
 | Restore | R | 5 | Return to known-good models, data, vector indexes, identity state, and operating configuration. |
 
 ## Mapping Methodology
+
 Each AITBM sub-metric is mapped to one or more AIDEFEND techniques based on:
+
 • Direct impact — The AIDEFEND technique directly improves the security property measured by the AITBM sub-metric
+
 • Evidence generation — The AIDEFEND technique produces artifacts or telemetry required to score the AITBM sub-metric
+
 • Test coverage — The AIDEFEND technique enables testing methods specified in AITBM rubrics
+
 Scoring Guidance: Implementation of mapped AIDEFEND techniques contributes evidence for AITBM sub-metric scoring on the 0.00-1.00 rubric scale. Top-level technique coverage establishes scope; sub-technique evidence, telemetry, and AITBM required test results determine the defensible score. Multiple techniques provide defense-in-depth, but the final score is determined by measured effectiveness rather than control presence.
+
 ## Current AIDEFEND Depth Review
+
 The current AIDEFEND structure is deeper than a flat control catalog. Each AIDEFEND record can carry tactic, pillar, phase, threat-framework, keyword, implementation guidance, tool, and sub-technique metadata. AITBM uses this structure to decide not only which defensive technique is relevant, but also which evidence artifact must be inspected and which AITBM layer is affected.
+
 The mapping rule is intentionally conservative: AIDEFEND identifies measurable defensive evidence, while AITBM assigns the score. A technique or sub-technique may support a score only when its implementation produces evidence that satisfies the relevant AITBM required test method.
+
 *Table 61: Current AIDEFEND Depth Review*
 
 | Profile Element | Current AIDEFEND Value | AITBM Assessment Use |
@@ -43,7 +61,9 @@ The mapping rule is intentionally conservative: AIDEFEND identifies measurable d
 | External mappings | MITRE ATLAS, MAESTRO, OWASP LLM 2025, OWASP ML 2023, OWASP Agentic AI 2026, NIST AML 2025, Cisco AI Security, Google SAIF 2.0, and Databricks DASF 3.0. | Supports threat traceability; does not replace AITBM scoring thresholds. |
 
 ### Depth Mapping Model
+
 AITBM interprets AIDEFEND through six mapping layers. The deeper layers are used to prevent over-scoring when a broad technique exists but the specific evidence needed by the AITBM rubric is missing.
+
 *Table 62: Depth Mapping Model*
 
 | Mapping Layer | AIDEFEND Field | AITBM Use | Scoring Rule |
@@ -56,7 +76,9 @@ AITBM interprets AIDEFEND through six mapping layers. The deeper layers are used
 | L6 Threat Traceability | Mapped external framework items. | Documents why the technique is relevant to the threat model. | Threat mapping supports rationale but does not substitute for AITBM measurement. |
 
 ### AITBM Layer Interpretation
+
 AIDEFEND tactics are not all scored the same way inside AITBM. Some tactics directly improve IVP sub-metrics, while others primarily reduce operational uncertainty, improve reassessment triggers, or support confidence in the evidence package.
+
 *Table 63: AITBM Layer Interpretation*
 
 | AIDEFEND Tactic | Primary AITBM Layer | Direct Scoring Use | ORP / ACI Use |
@@ -70,7 +92,9 @@ AIDEFEND tactics are not all scored the same way inside AITBM. Some tactics dire
 | Restore | ORP and ACI | Supports recovery to known-good models, data, indexes, identity state, and hardened configuration. | Improves recovery maturity and post-incident evidence freshness. |
 
 ### Current Mapping Updates
+
 The current AIDEFEND data adds or clarifies several agentic, gateway, generated-code, browser-isolation, and lifecycle-governance controls that should be reflected in AITBM scoring. These updates strengthen the Containment, Privacy, Transparency, and Robustness mappings.
+
 *Table 64: Current Mapping Updates*
 
 | Current AIDEFEND Update | AITBM Mapping Change | Reason |
@@ -84,7 +108,9 @@ The current AIDEFEND data adds or clarifies several agentic, gateway, generated-
 | AID-E-005 Compromised Session Termination & State Purging and AID-M-010 | Replace the obsolete Evict-family minimization reference for Pr-3. | State purging and lifecycle governance are the current evidence sources for retention, deletion, and minimization controls. |
 
 ### Sub-Technique Evidence Examples
+
 The examples below show how AIDEFEND sub-techniques become measurable AITBM evidence. The assessor should record the specific sub-technique, observed artifact, test result, timestamp, owner, and any unresolved exception.
+
 *Table 65: Sub-Technique Evidence Examples*
 
 | AITBM Area | Current AIDEFEND Sub-Technique Evidence | Measurement Use |
@@ -98,8 +124,11 @@ The examples below show how AIDEFEND sub-techniques become measurable AITBM evid
 | Cn-5 / ACI | AID-M-001.003 Agentic Skill Asset Inventory & Lifecycle Governance; AID-I-004.006 Agent Identity & Persistent State File Write Protection. | Verify agent or skill inventory completeness, identity binding, ownership, stale-skill remediation, and persistent-state protection. |
 
 ## AIDEFEND-to-AITBM Evaluation Process
+
 AIDEFEND is used as the evaluation-metrics and evidence layer for AITBM. AIDEFEND identifies defensive techniques, expected artifacts, and telemetry that can be inspected or tested. AITBM remains the scoring framework: the assessor assigns the AITBM sub-metric score only after measuring whether the mapped AIDEFEND controls actually produce the security property required by the AITBM rubric.
+
 Control presence alone is not sufficient for a high AITBM score. A deployed AIDEFEND technique creates candidate evidence; the AITBM required test method determines whether the evidence is complete, current, and effective. If an AIDEFEND control exists but fails the AITBM test, the score must follow the observed test result rather than the claimed implementation.
+
 *Table 66: AIDEFEND-to-AITBM Evaluation Process*
 
 | Layer | Primary Function | Assessment Output |
@@ -111,7 +140,9 @@ Control presence alone is not sufficient for a high AITBM score. A deployed AIDE
 | ACI Treatment | Evaluates evidence completeness, coverage, and freshness. | Pc, Ec, and Tf adjustments to confidence in the score. |
 
 ### Evidence-to-Score Workflow
+
 The following workflow should be used whenever AIDEFEND is treated as the operational evaluation source for AITBM scoring. The workflow preserves AITBM's bias-resistant scoring model by preventing assessors from awarding points merely because a named control exists.
+
 *Table 67: Evidence-to-Score Workflow*
 
 | Step | Evaluation Action | Required Output |
@@ -124,7 +155,9 @@ The following workflow should be used whenever AIDEFEND is treated as the operat
 | 6. Adjust Confidence | Evaluate whether AIDEFEND evidence is complete, independently verified, and fresh enough for the assessment tier. | ACI Pc, Ec, and Tf inputs, plus any reassessment trigger. |
 
 ### AIDEFEND Evidence-to-AITBM Score Guide
+
 The score guide below is a translation aid. It does not replace the specific AITBM rubric thresholds. When a sub-metric has a quantitative threshold, the quantitative threshold governs. The AIDEFEND evidence condition establishes the maximum defensible score when test data is incomplete.
+
 *Table 68: AIDEFEND Evidence-to-AITBM Score Guide*
 
 | AITBM Score | AIDEFEND Evidence Condition | Assessor Rule |
@@ -136,7 +169,9 @@ The score guide below is a translation aid. It does not replace the specific AIT
 | 1.00 | Control is continuously monitored, regression-tested, independently verifiable, and tied to automated response or release gates. | Use 1.00 only when the AITBM test result, evidence freshness, and operational enforcement all support full assurance. |
 
 ### Worked Example: Scoring Cn-5 Agent Identity Integrity
+
 Scenario: Finbot is assessed as an agentic/MCP financial assistant that invokes payment, CRM, and document-retrieval tools. The AIDEFEND evidence review identifies seven mapped Cn-5 techniques. The assessor uses those techniques as the evidence source, then applies the AITBM Cn-5 required test method to determine the score.
+
 *Table 69: Worked Example: Scoring Cn-5 Agent Identity Integrity*
 
 | AIDEFEND Technique | Evidence Observed | AITBM Measurement Use |
@@ -150,6 +185,7 @@ Scenario: Finbot is assessed as an agentic/MCP financial assistant that invokes 
 | AID-H-025 Tool & MCP Resolution Integrity | Tool manifests are hashed and reviewed during deployment; continuous attestation is not yet enabled. | Supports signed tool-call evidence but prevents a full 1.00 score. |
 
 Observed test result: identity spoofing succeeded in 3 of 25 attempts (ISSR = 12%). Detection occurred in 22 of 25 attempts (88%). Mean Time to Quarantine was 8 minutes. Token replay attempts failed for signed production agents, but one legacy connector still used an emergency shared key. Continuous attestation was implemented for production agents but not for all MCP servers.
+
 *Table 70: Worked Example: Scoring Cn-5 Agent Identity Integrity*
 
 | Scoring Factor | Observed Result | Scoring Interpretation |
@@ -161,9 +197,13 @@ Observed test result: identity spoofing succeeded in 3 of 25 attempts (ISSR = 12
 | Final Cn-5 score | 0.75 | Final score is 0.75. Full 1.00 requires continuous attestation for every MCP server and removal of shared-key exceptions. |
 
 Resulting AITBM treatment: the Cn-5 sub-metric score is set to 0.75. The unresolved shared-key exception and incomplete MCP attestation are recorded as residual gaps. In ACI, provenance completeness is reduced if the shared-key exception lacks an owner or expiration date, evaluation coverage is reduced if only production agents were tested, and temporal freshness follows the Tier-specific drift rule because identity evidence can become stale quickly in agentic environments.
+
 #### Axis: Robustness
+
 ##### Ro-1: Adversarial Input Resistance
+
 Mapped AIDEFEND Techniques (10):
+
 *Table 71: Ro-1 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -180,7 +220,9 @@ Mapped AIDEFEND Techniques (10):
 | AID-H-032 | AI-Generated Code Admission Control & Safe Promotion |
 
 ##### Ro-2: Distribution Shift Resilience
+
 Mapped AIDEFEND Techniques (5):
+
 *Table 72: Ro-2 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -192,7 +234,9 @@ Mapped AIDEFEND Techniques (5):
 | AID-D-014 | RAG Content & Relevance Monitoring |
 
 ##### Ro-3: Output Consistency
+
 Mapped AIDEFEND Techniques (6):
+
 *Table 73: Ro-3 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -205,7 +249,9 @@ Mapped AIDEFEND Techniques (6):
 | AID-H-034 | AI Gateway Routing Integrity & Policy-Preserving Failover |
 
 ##### Ro-4: Poisoning Attack Resistance
+
 Mapped AIDEFEND Techniques (13):
+
 *Table 74: Ro-4 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -225,8 +271,11 @@ Mapped AIDEFEND Techniques (13):
 | AID-R-002 | Data Integrity Recovery for AI Systems |
 
 #### Axis: Fairness
+
 ##### Fa-1: Demographic Parity
+
 Mapped AIDEFEND Techniques (4):
+
 *Table 75: Fa-1 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -237,7 +286,9 @@ Mapped AIDEFEND Techniques (4):
 | AID-H-002 | AI-Contextualized Data Sanitization & Input Validation |
 
 ##### Fa-2: Calibration Consistency
+
 Mapped AIDEFEND Techniques (3):
+
 *Table 76: Fa-2 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -247,7 +298,9 @@ Mapped AIDEFEND Techniques (3):
 | AID-D-002 | AI Model Anomaly & Performance Drift Detection |
 
 ##### Fa-3: Representation Bias
+
 Mapped AIDEFEND Techniques (3):
+
 *Table 77: Fa-3 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -257,7 +310,9 @@ Mapped AIDEFEND Techniques (3):
 | AID-M-001 | AI Asset Inventory & Mapping |
 
 ##### Fa-4: Counterfactual Fairness
+
 Mapped AIDEFEND Techniques (3):
+
 *Table 78: Fa-4 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -267,8 +322,11 @@ Mapped AIDEFEND Techniques (3):
 | AID-M-004 | AI Threat Modeling & Risk Assessment |
 
 #### Axis: Transparency
+
 ##### Tr-1: Explainability Depth
+
 Mapped AIDEFEND Techniques (3):
+
 *Table 79: Tr-1 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -278,7 +336,9 @@ Mapped AIDEFEND Techniques (3):
 | AID-M-004 | AI Threat Modeling & Risk Assessment |
 
 ##### Tr-2: Confidence Calibration
+
 Mapped AIDEFEND Techniques (3):
+
 *Table 80: Tr-2 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -288,7 +348,9 @@ Mapped AIDEFEND Techniques (3):
 | AID-D-002 | AI Model Anomaly & Performance Drift Detection |
 
 ##### Tr-3: Audit Trail Completeness
+
 Mapped AIDEFEND Techniques (7):
+
 *Table 81: Tr-3 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -302,7 +364,9 @@ Mapped AIDEFEND Techniques (7):
 | AID-H-034 | AI Gateway Routing Integrity & Policy-Preserving Failover |
 
 ##### Tr-4: Model Lineage Disclosure
+
 Mapped AIDEFEND Techniques (4):
+
 *Table 82: Tr-4 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -313,8 +377,11 @@ Mapped AIDEFEND Techniques (4):
 | AID-M-010 | AI Asset Retirement, Transfer & End-of-Life Governance |
 
 #### Axis: Privacy
+
 ##### Pr-1: Training Data Leakage Risk
+
 Mapped AIDEFEND Techniques (5):
+
 *Table 83: Pr-1 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -326,7 +393,9 @@ Mapped AIDEFEND Techniques (5):
 | AID-M-010 | AI Asset Retirement, Transfer & End-of-Life Governance |
 
 ##### Pr-2: Inference Attack Resistance
+
 Mapped AIDEFEND Techniques (5):
+
 *Table 84: Pr-2 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -338,7 +407,9 @@ Mapped AIDEFEND Techniques (5):
 | AID-I-008 | Task-Scoped Browser Session & Origin Isolation for Agents |
 
 ##### Pr-3: Data Minimization Compliance
+
 Mapped AIDEFEND Techniques (5):
+
 *Table 85: Pr-3 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -350,7 +421,9 @@ Mapped AIDEFEND Techniques (5):
 | AID-H-034 | AI Gateway Routing Integrity & Policy-Preserving Failover |
 
 ##### Pr-4: Re-identification Risk
+
 Mapped AIDEFEND Techniques (4):
+
 *Table 86: Pr-4 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -361,8 +434,11 @@ Mapped AIDEFEND Techniques (4):
 | AID-H-030 | AI Data-Use Authorization & Lifecycle-Stage Boundary Enforcement |
 
 #### Axis: Containment
+
 ##### Cn-1: Scope Enforcement
+
 Mapped AIDEFEND Techniques (7):
+
 *Table 87: Cn-1 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -376,7 +452,9 @@ Mapped AIDEFEND Techniques (7):
 | AID-I-008 | Task-Scoped Browser Session & Origin Isolation for Agents |
 
 ##### Cn-2: Escalation Prevention
+
 Mapped AIDEFEND Techniques (7):
+
 *Table 88: Cn-2 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -390,7 +468,9 @@ Mapped AIDEFEND Techniques (7):
 | AID-H-034 | AI Gateway Routing Integrity & Policy-Preserving Failover |
 
 ##### Cn-3: Output Filtering Robustness
+
 Mapped AIDEFEND Techniques (5):
+
 *Table 89: Cn-3 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -402,7 +482,9 @@ Mapped AIDEFEND Techniques (5):
 | AID-H-034 | AI Gateway Routing Integrity & Policy-Preserving Failover |
 
 ##### Cn-4: Side-Channel Resistance
+
 Mapped AIDEFEND Techniques (5):
+
 *Table 90: Cn-4 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -414,7 +496,9 @@ Mapped AIDEFEND Techniques (5):
 | AID-H-033 | Multi-Tenant Inference Isolation & Leakage Prevention |
 
 ##### Cn-5: Agent Identity Integrity
+
 Mapped AIDEFEND Techniques (10):
+
 *Table 91: Cn-5 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
@@ -431,13 +515,23 @@ Mapped AIDEFEND Techniques (10):
 | AID-M-001 | AI Asset Inventory & Mapping |
 
 ## Operational Guidance for Using This Mapping
+
 ### For Security Assessors:
+
 1. Review implemented AIDEFEND controls in the target system
+
 2. Cross-reference against AITBM sub-metric mappings
+
 3. Use AIDEFEND implementation depth as evidence for AITBM rubric scoring
+
 4. Document control gaps where AIDEFEND coverage is missing
+
 ### For Security Engineers:
+
 1. Identify AITBM sub-metrics with low scores
+
 2. Review mapped AIDEFEND techniques for that sub-metric
+
 3. Prioritize AIDEFEND implementations that impact multiple AITBM axes
+
 4. Validate improvements through AITBM re-assessment

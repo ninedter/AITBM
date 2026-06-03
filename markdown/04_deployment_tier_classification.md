@@ -1,6 +1,7 @@
 # Deployment Tier Classification
 
 Deployment tiers eliminate subjective weight selection. Organizations classify each AI deployment into exactly one tier, and all weights, thresholds, and decay constants are deterministically derived.
+
 *Table 44: 4. Deployment Tier Classification*
 
 | Tier | Definition | Examples | Cadence |
@@ -11,7 +12,9 @@ Deployment tiers eliminate subjective weight selection. Organizations classify e
 | Tier 4: Research | Non-production: development, testing, experimentation | Prototyping, academic research, sandboxed experiments | Annual |
 
 ## 4.1 IVP Weight Profiles (W_ivp)
+
 IVP axis weights are deployment-architecture-specific. The following profiles are applied when compositing the IVP score across the five axes.
+
 *Table 45: 4.1 IVP Weight Profiles (W_ivp)*
 
 | Axis | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
@@ -24,7 +27,9 @@ IVP axis weights are deployment-architecture-specific. The following profiles ar
 | Sum | 1.00 |  |  |  |
 
 ## 4.2 ORP Weight Profiles (W_orp)
+
 ORP dimension weights are deployment-architecture-specific. The following profiles are applied when compositing the ORP score across the four dimensions.
+
 *Table 46: 4.2 ORP Weight Profiles (W_orp)*
 
 | Dimension | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
@@ -36,9 +41,17 @@ ORP dimension weights are deployment-architecture-specific. The following profil
 | Sum | 1.00 |  |  |  |
 
 ## 4.3 ACI Weight Profile (W_aci)
+
 ACI uses a fixed component weight profile across deployment tiers. This is intentional after explicit definition: tier sensitivity is already captured through the Temporal Freshness (Tf) decay constants, event caps, monitoring caps, and reassessment cadence. Re-weighting Pc, Ec, and Tf by tier would double-count deployment criticality and would break comparability across assessments.
+
 ACI weighted geometric mean:
+
+```
+ACI_(composite) = Pc^(w_(pc)) × Ec^(w_(ec)) × Tf^(w_(tf)),wherew_(pc)+w_(ec)+w_(tf) = 1.00
+```
+
 Table: 4.3 ACI Weight Profile (W_aci)
+
 *Table 47: 4.3 ACI Weight Profile (W_aci)*
 
 | ACI Component | Tier 1 | Tier 2 | Tier 3 | Tier 4 | Rationale |
@@ -49,9 +62,13 @@ Table: 4.3 ACI Weight Profile (W_aci)
 | Sum | 1.00 |  |  |  | Weights are fixed to preserve cross-tier comparability. |
 
 Operational Rule: Deployment tier changes Tf behavior, not W_aci. Tier 1 systems decay faster and face stricter event and monitoring caps; Tier 4 systems decay more slowly. The component composition remains equal because Pc, Ec, and Tf represent independent assurance prerequisites.
+
 ## 4.4 Architecture Classification Decision Tree
+
 The assessor answers the following questions in order. The first YES answer assigns the architecture class. If all questions are answered NO until Q6, classify the system as Traditional ML / Classifier. Evidence for each answer must be documented in the assessment workpapers.
+
 Table: 4.4 Architecture Classification Decision Tree
+
 *Table 48: 4.4 Architecture Classification Decision Tree*
 
 | Question | Classification if YES | Required Evidence | Examples |
@@ -64,8 +81,11 @@ Table: 4.4 Architecture Classification Decision Tree
 | Q6. Is the system a bounded predictive or classification model using fixed feature inputs and deterministic application logic, with no generative interface, retrieval layer, tool execution, or autonomous planning? | Traditional ML / Classifier | Feature schema, model card, inference pipeline, application logic, and confirmation that no generative or agentic component is in scope. | Fraud classifier, churn predictor, credit risk scorecard, image classifier. |
 
 Hybrid System Rule
+
 Systems spanning multiple categories are classified by the highest-risk qualifying architecture. Order: Multi-Agent / MCP > Agentic / MCP > Tool-Calling LLM > RAG > Standalone LLM / GenAI > Traditional ML / Classifier. Components excluded from scope must be documented with an explicit boundary statement.
+
 Table: 4.4 Architecture Weighting Guidance
+
 *Table 49: 4.4 Architecture Classification Decision Tree*
 
 | Architecture Class | Primary Risk Emphasis | Weighting Guidance |
@@ -78,6 +98,9 @@ Table: 4.4 Architecture Weighting Guidance
 | Multi-Agent / MCP System | Cross-agent collusion, cascading failure, shared-memory poisoning, delegated authority, identity boundary failure. | Apply highest-risk agentic weights plus explicit ORP cascade review. Cn-5, Tr-3, Cn-2, and ACI drift monitoring are mandatory. |
 
 Classification Output Format
+
 Assessors must record: Architecture Class, YES question number, evidence artifacts reviewed, excluded components, and rationale for any NOT APPLICABLE sub-metric. Example: Architecture Classification: Agentic / MCP System (Q2 = YES; autonomous multi-step financial workflow with RAG and tool calls; evidence: tool registry, approval policy, execution logs).
+
 Weight Derivation Basis
+
 Architecture-specific weights are deterministic after classification. They are derived from the deployment tier, architecture class, and mandatory applicability rules above; assessors may not manually adjust weights outside the documented NOT APPLICABLE redistribution rule.
