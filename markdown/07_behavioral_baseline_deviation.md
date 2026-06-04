@@ -29,6 +29,12 @@ Behavioral drift is quantified as the Jensen–Shannon divergence between the ba
 BBD(t) = D_(JS)(P_(baseline)||P_(current)(t))
 ```
 
+Basis. Behavioral drift is measured as the statistical distance between how the system behaved when it was assessed and how it behaves now: zero means identical, higher means diverging. Crossing the thresholds (0.15, 0.35, 0.60) triggers escalating action, up to automated quarantine.
+
+Variables. P_baseline is the behavioral distribution recorded at assessment (decision patterns, tool-call targets, output intent, and memory-access patterns); P_current(t) is the same set of distributions measured at time t; D_JS is the Jensen-Shannon divergence between them.
+
+Why this form. Jensen-Shannon divergence is chosen over alternatives such as Kullback-Leibler divergence for three reasons. It is symmetric, so drift measured baseline-to-current equals current-to-baseline, which matters when neither distribution is privileged as 'true'. It is bounded on the [0, 1] interval (with log base 2), so fixed thresholds such as 0.15, 0.35, and 0.60 stay stable and comparable across systems, whereas an unbounded measure could not anchor them. And it stays finite even when one distribution assigns zero probability to an event the other allows, a common situation when a new tool-call target or a novel output appears, where Kullback-Leibler divergence would diverge to infinity. This operationalizes the principle that risk is cumulative and monitored continuously, not captured only at assessment time (Design Principle 2.5).
+
 *Table 54: 7.2 Drift Detection*
 
 | BBD Threshold | Classification | Automated Action | ACI Impact |

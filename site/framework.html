@@ -72,6 +72,7 @@
         <a href="#orp" class="hover:text-white underline-offset-4 hover:underline">ORP</a>
         <a href="#aci" class="hover:text-white underline-offset-4 hover:underline">ACI</a>
         <a href="#ers" class="hover:text-white underline-offset-4 hover:underline">ERS &amp; tiers</a>
+        <a href="#formulas" class="hover:text-white underline-offset-4 hover:underline">Formula basis</a>
       </nav>
     </div>
   </section>
@@ -283,6 +284,168 @@
         Tier II evaluates at the axis level; Tier III uses a simplified profile for internal,
         lower-stakes systems.
       </p>
+    </div>
+  </section>
+
+  <!-- Formula basis -->
+  <section id="formulas" class="bg-gray-50 border-y border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <p class="text-xs font-semibold tracking-wider text-navy-light">WHY THESE FORMULAS</p>
+      <h2 class="mt-1 text-3xl font-bold text-navy">Formula basis &amp; variables</h2>
+      <p class="mt-3 max-w-3xl text-muted">
+        Every score in AITBM is computed, not judged. Each formula below is paired with a
+        plain-language reading of what it does and what each variable means, plus the design
+        reasoning for its shape — why a geometric mean here, a hard floor there, a conservative
+        minimum somewhere else. Expand <span class="font-semibold text-gray-800">Why this form</span>
+        for the deeper mathematical justification.
+      </p>
+
+      <div class="mt-10 grid gap-6 lg:grid-cols-2">
+
+        <!-- Axis aggregation -->
+        <article class="rounded-xl border border-gray-200 bg-white p-6">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-bold text-navy">Axis score — weighted mean</h3>
+            <span class="shrink-0 text-xs font-semibold text-navy-light">Layer 1 · IVP</span>
+          </div>
+          <pre class="formula mt-3 overflow-x-auto p-3 text-sm">Axis = Σ(wᵢ × SubMetricᵢ) / Σ(wᵢ)</pre>
+          <p class="mt-3 text-sm text-muted"><span class="font-semibold text-gray-800">Basis.</span> A weighted average of an axis's sub-metric scores. Weights reflect what matters for the architecture, and dividing by the sum of weights redistributes any non-applicable sub-metric instead of dragging the axis toward zero.</p>
+          <p class="mt-2 text-sm text-muted"><span class="font-semibold text-gray-800">Variables.</span> <span class="font-mono text-xs">SubMetricᵢ</span> sub-metric score (0–1); <span class="font-mono text-xs">wᵢ</span> its fixed weight for the architecture class (LLM / Classifier / Agentic); denominator the sum of active weights (axis weights total 1.00).</p>
+          <details class="mt-3"><summary class="cursor-pointer text-sm font-semibold text-navy hover:text-navy-light">Why this form</summary>
+            <p class="mt-2 text-sm text-muted">A weighted arithmetic mean fits sub-metrics on a shared 0–1 scale where strength in one can partly offset weakness in another <em>within</em> the axis; that intra-axis compensation is acceptable, which is precisely why the five axes themselves are never averaged together. Normalising by Σwᵢ keeps the score architecture-invariant — removing a non-applicable sub-metric never changes the achievable maximum — and weights fixed by tier and architecture (not chosen by the assessor) make two assessors compute the same number.</p>
+          </details>
+        </article>
+
+        <!-- IVP vector -->
+        <article class="rounded-xl border border-gray-200 bg-white p-6">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-bold text-navy">IVP — output vector</h3>
+            <span class="shrink-0 text-xs font-semibold text-navy-light">Layer 1 · IVP</span>
+          </div>
+          <pre class="formula mt-3 overflow-x-auto p-3 text-sm">IVP = (Ro, Fa, Tr, Pr, Cn)</pre>
+          <p class="mt-3 text-sm text-muted"><span class="font-semibold text-gray-800">Basis.</span> The Layer-1 result is a five-number profile, read like a radar chart — not a single score.</p>
+          <p class="mt-2 text-sm text-muted"><span class="font-semibold text-gray-800">Variables.</span> <span class="font-mono text-xs">Ro, Fa, Tr, Pr, Cn</span> the five weighted axis scores (0–1; higher = stronger intrinsic assurance).</p>
+          <details class="mt-3"><summary class="cursor-pointer text-sm font-semibold text-navy hover:text-navy-light">Why this form</summary>
+            <p class="mt-2 text-sm text-muted">Accuracy, adversarial robustness, and fairness provably cannot be maximised at once, so any scalar that fuses the axes necessarily hides a trade-off the reader needs to see. Keeping IVP a vector preserves that signal; a single number is derived only when unavoidable, as the architecture-weighted projection <span class="font-mono text-xs">W_ivp · IVP</span> inside the ERS — and even then the vector stays primary.</p>
+          </details>
+        </article>
+
+        <!-- CRM -->
+        <article class="rounded-xl border border-gray-200 bg-white p-6">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-bold text-navy">Compound Risk Multiplier</h3>
+            <span class="shrink-0 text-xs font-semibold text-navy-light">Layer 2 · ORP</span>
+          </div>
+          <pre class="formula mt-3 overflow-x-auto p-3 text-sm">N_elevated = count{ Aa, As, Cp, Rf : score &gt; 0.75 }
+CRM:  2 → 1.15   3 → 1.35   4 → 1.60</pre>
+          <p class="mt-3 text-sm text-muted"><span class="font-semibold text-gray-800">Basis.</span> Count how many operational dimensions are simultaneously elevated (above 0.75); the more there are, the more risk compounds beyond what a simple average shows. Two or more also raise a mandatory Compound Risk Alert.</p>
+          <p class="mt-2 text-sm text-muted"><span class="font-semibold text-gray-800">Variables.</span> <span class="font-mono text-xs">Aa, As, Cp, Rf</span> the four ORP dimensions; 0.75 the elevated threshold; <span class="font-mono text-xs">N_elevated</span> the count (0–4) → CRM (1.00–1.60, 1.75 absolute cap).</p>
+          <details class="mt-3"><summary class="cursor-pointer text-sm font-semibold text-navy hover:text-navy-light">Why this form</summary>
+            <p class="mt-2 text-sm text-muted">A weighted sum is additive and treats risks as substitutable; <em>counting</em> isolates the interaction effect — not how high any one dimension is (the weighted sum already captures that) but how many are high at once, which is what compounds. The CRM is a bounded, super-additive step function of the count, published as a table so the correction stays auditable and reproducible.</p>
+          </details>
+        </article>
+
+        <!-- ORP effective -->
+        <article class="rounded-xl border border-gray-200 bg-white p-6">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-bold text-navy">Effective operational risk</h3>
+            <span class="shrink-0 text-xs font-semibold text-navy-light">Layer 2 · ORP</span>
+          </div>
+          <pre class="formula mt-3 overflow-x-auto p-3 text-sm">ORP_effective = (W_orp · ORP) × CRM</pre>
+          <p class="mt-3 text-sm text-muted"><span class="font-semibold text-gray-800">Basis.</span> Combine the four dimensions under the tier weights, then amplify by the compounding multiplier — the single operational score the ERS consumes.</p>
+          <p class="mt-2 text-sm text-muted"><span class="font-semibold text-gray-800">Variables.</span> <span class="font-mono text-xs">W_orp · ORP</span> the tier-weighted sum of the four dimensions; <span class="font-mono text-xs">CRM</span> the compound multiplier.</p>
+          <details class="mt-3"><summary class="cursor-pointer text-sm font-semibold text-navy hover:text-navy-light">Why this form</summary>
+            <p class="mt-2 text-sm text-muted">Separating the linear part (the weighted sum) from the interaction part (the multiplier) keeps each interpretable: the sum answers how much operational risk on average, the multiplier how strongly those risks reinforce one another. Applying CRM multiplicatively makes it a proportional surcharge that means the same thing whether the base score is high or low.</p>
+          </details>
+        </article>
+
+        <!-- Ec -->
+        <article class="rounded-xl border border-gray-200 bg-white p-6">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-bold text-navy">Evaluation Coverage</h3>
+            <span class="shrink-0 text-xs font-semibold text-navy-light">Layer 3 · ACI</span>
+          </div>
+          <pre class="formula mt-3 overflow-x-auto p-3 text-sm">Ec = Base_Coverage × Independence × Fidelity</pre>
+          <p class="mt-3 text-sm text-muted"><span class="font-semibold text-gray-800">Basis.</span> Evaluation quality is the product of how much was tested, how independent the tester was, and how production-like the environment was — a weakness in any one drags the whole score down.</p>
+          <p class="mt-2 text-sm text-muted"><span class="font-semibold text-gray-800">Variables.</span> <span class="font-mono text-xs">Base_Coverage</span> fraction of applicable sub-metrics tested; <span class="font-mono text-xs">Independence</span> 0.60 self / 0.80 internal / 1.00 external; <span class="font-mono text-xs">Fidelity</span> 0.70 dev / 0.85 staging / 0.95 verified / 1.00 production.</p>
+          <details class="mt-3"><summary class="cursor-pointer text-sm font-semibold text-navy hover:text-navy-light">Why this form</summary>
+            <p class="mt-2 text-sm text-muted">A product encodes necessity, not trade-off: self-assessment (0.60) caps Ec at 0.60 even with full coverage in production. It is the same weakest-link logic the ACI geometric mean uses one level up, applied here to the inputs of a single component — and the multipliers are discrete, evidence-anchored levels, so the result is reproducible rather than a judgment call.</p>
+          </details>
+        </article>
+
+        <!-- Tf -->
+        <article class="rounded-xl border border-gray-200 bg-white p-6">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-bold text-navy">Temporal Freshness</h3>
+            <span class="shrink-0 text-xs font-semibold text-navy-light">Layer 3 · ACI</span>
+          </div>
+          <pre class="formula mt-3 overflow-x-auto p-3 text-sm">Tf = min(T_calendar, C_event, C_monitor, C_evidence)
+T_calendar = e^(−λ_eff · Δt_days)</pre>
+          <p class="mt-3 text-sm text-muted"><span class="font-semibold text-gray-800">Basis.</span> Freshness is the most pessimistic of a calendar decay term and three event ceilings — a base-model swap or a monitoring blackout caps it regardless of the calendar. The lowest cap wins.</p>
+          <p class="mt-2 text-sm text-muted"><span class="font-semibold text-gray-800">Variables.</span> <span class="font-mono text-xs">T_calendar</span> time decay; <span class="font-mono text-xs">C_event / C_monitor / C_evidence</span> caps for change events, monitoring gaps, unresolved drift; <span class="font-mono text-xs">λ_eff = λ_tier × M_TDI × M_threat</span>; <span class="font-mono text-xs">Δt_days</span> days since sign-off.</p>
+          <details class="mt-3"><summary class="cursor-pointer text-sm font-semibold text-navy hover:text-navy-light">Why this form</summary>
+            <p class="mt-2 text-sm text-muted">The caps are independent invalidating conditions, so <span class="font-mono text-xs">min()</span> is the conservative, non-compensatory combinator — a strong calendar score cannot paper over a model swap. Exponential decay gives a constant, interpretable half-life per tier (Tier 1 ≈ 30 days … Tier 4 ≈ 365 days), and a multiplicative λ_eff lets drift and threat accelerate ageing proportionally — a system drifting under active threat ages far faster.</p>
+          </details>
+        </article>
+
+        <!-- TDI -->
+        <article class="rounded-xl border border-gray-200 bg-white p-6">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-bold text-navy">Time Drift Index</h3>
+            <span class="shrink-0 text-xs font-semibold text-navy-light">Layer 3 · ACI</span>
+          </div>
+          <pre class="formula mt-3 overflow-x-auto p-3 text-sm">TDI = 0.25·CSD + 0.30·BOD + 0.20·DRD + 0.15·TCD + 0.10·MGD</pre>
+          <p class="mt-3 text-sm text-muted"><span class="font-semibold text-gray-800">Basis.</span> One 0–1 number for how far the system has drifted from what was assessed, weighting observed behavioural change highest and monitoring gaps lowest. It feeds the modifier that accelerates freshness decay.</p>
+          <p class="mt-2 text-sm text-muted"><span class="font-semibold text-gray-800">Variables.</span> <span class="font-mono text-xs">CSD</span> config, <span class="font-mono text-xs">BOD</span> behaviour, <span class="font-mono text-xs">DRD</span> data/retrieval, <span class="font-mono text-xs">TCD</span> threat/control, <span class="font-mono text-xs">MGD</span> monitoring gap (each 0–1).</p>
+          <details class="mt-3"><summary class="cursor-pointer text-sm font-semibold text-navy hover:text-navy-light">Why this form</summary>
+            <p class="mt-2 text-sm text-muted">A weighted sum is right here — unlike the CRM — because small drifts across several categories should accumulate into a moderate index. Fixed weights summing to 1.00 keep it on [0, 1] and reproducible, and the ordering (BOD &gt; CSD &gt; DRD &gt; TCD &gt; MGD) encodes that observed behavioural change is the strongest evidence an assessment is stale, while a monitoring gap is a weaker, indirect signal.</p>
+          </details>
+        </article>
+
+        <!-- ACI composite -->
+        <article class="rounded-xl border border-gray-200 bg-white p-6">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-bold text-navy">ACI — composite confidence</h3>
+            <span class="shrink-0 text-xs font-semibold text-navy-light">Layer 3 · ACI</span>
+          </div>
+          <pre class="formula mt-3 overflow-x-auto p-3 text-sm">ACI = (Pc × Ec × Tf)^(1/3)</pre>
+          <p class="mt-3 text-sm text-muted"><span class="font-semibold text-gray-800">Basis.</span> Assurance is the geometric mean of the three evidence dimensions — if any one is near zero, overall confidence is near zero. Unknown provenance cannot be out-tested.</p>
+          <p class="mt-2 text-sm text-muted"><span class="font-semibold text-gray-800">Variables.</span> <span class="font-mono text-xs">Pc</span> provenance, <span class="font-mono text-xs">Ec</span> evaluation coverage, <span class="font-mono text-xs">Tf</span> freshness (each 0–1). Weights are fixed at ⅓ (general form <span class="font-mono text-xs">Pc^w·Ec^w·Tf^w</span>, Σw = 1).</p>
+          <details class="mt-3"><summary class="cursor-pointer text-sm font-semibold text-navy hover:text-navy-light">Why this form</summary>
+            <p class="mt-2 text-sm text-muted">The geometric mean is correct for jointly necessary, non-substitutable prerequisites: it is zero whenever any factor is zero, it rewards a balanced profile over a lopsided one, and on [0, 1] it always sits at or below the arithmetic mean — the conservative choice. Equal, tier-independent weights are deliberate: deployment criticality is already carried inside Tf (its decay constant and caps), so re-weighting by tier would double-count it and break cross-assessment comparability.</p>
+          </details>
+        </article>
+
+        <!-- ERS -->
+        <article class="rounded-xl border-2 border-navy/30 bg-white p-6 lg:col-span-2">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-bold text-navy">ERS — the Evaluated Risk Score</h3>
+            <span class="shrink-0 text-xs font-semibold text-navy-light">Composite</span>
+          </div>
+          <pre class="formula mt-3 overflow-x-auto p-3 text-sm">ERS = min(10,  ORP_eff × [ α + (1−α)(1 − W_ivp·IVP) ] × (1 / ACI) × S )
+α = 0.15      S = 10</pre>
+          <p class="mt-3 text-sm text-muted"><span class="font-semibold text-gray-800">Basis.</span> Start from operational risk, reduce it by intrinsic security but only down to a floor (never to zero), inflate it for low assurance confidence, scale to 0–10, and cap at 10. ORP sets the stakes, IVP mitigates, ACI adjusts for how much is actually known.</p>
+          <p class="mt-2 text-sm text-muted"><span class="font-semibold text-gray-800">Variables.</span> <span class="font-mono text-xs">ORP_eff</span> operational score; <span class="font-mono text-xs">W_ivp·IVP</span> intrinsic-security scalar (0–1); <span class="font-mono text-xs">α = 0.15</span> residual floor; <span class="font-mono text-xs">1/ACI</span> epistemic inflation; <span class="font-mono text-xs">S = 10</span> scale; <span class="font-mono text-xs">min(·,10)</span> hard cap.</p>
+          <details class="mt-3"><summary class="cursor-pointer text-sm font-semibold text-navy hover:text-navy-light">Why this form</summary>
+            <p class="mt-2 text-sm text-muted">The bracket <span class="font-mono text-xs">α + (1−α)(1 − W_ivp·IVP)</span> maps intrinsic security onto the [α, 1] interval — 1.0 at zero intrinsic security (full risk), α = 0.15 at perfect (15% irreducible) — encoding that intrinsic quality <em>reduces but cannot eliminate</em> operational risk; a zero would be a false guarantee for a probabilistic system. Dividing by ACI makes opacity inflate the score proportionally rather than be ignored. The hard cap keeps ERS bounded and stops a near-zero ACI from blowing up — which signals "assessment invalid, refresh it", not "infinitely risky". α = 0.15 is calibrated against the Finbot anchor and earmarked for sensitivity validation.</p>
+          </details>
+        </article>
+
+        <!-- BBD -->
+        <article class="rounded-xl border border-gray-200 bg-white p-6 lg:col-span-2">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-bold text-navy">Behavioral Baseline Deviation</h3>
+            <span class="shrink-0 text-xs font-semibold text-navy-light">Monitoring</span>
+          </div>
+          <pre class="formula mt-3 overflow-x-auto p-3 text-sm">BBD(t) = D_JS( P_baseline ‖ P_current(t) )</pre>
+          <p class="mt-3 text-sm text-muted"><span class="font-semibold text-gray-800">Basis.</span> The statistical distance between how the system behaved when assessed and how it behaves now. Crossing thresholds (0.15 / 0.35 / 0.60) escalates from alert to mandatory reassessment to automated quarantine.</p>
+          <p class="mt-2 text-sm text-muted"><span class="font-semibold text-gray-800">Variables.</span> <span class="font-mono text-xs">P_baseline</span> behaviour at assessment (decision patterns, tool-call targets, output intent, memory access); <span class="font-mono text-xs">P_current(t)</span> the same distributions now; <span class="font-mono text-xs">D_JS</span> the Jensen–Shannon divergence.</p>
+          <details class="mt-3"><summary class="cursor-pointer text-sm font-semibold text-navy hover:text-navy-light">Why this form</summary>
+            <p class="mt-2 text-sm text-muted">Jensen–Shannon divergence is chosen over Kullback–Leibler for three reasons: it is <em>symmetric</em> (neither distribution is privileged as "true"), it is <em>bounded</em> on [0, 1] so fixed thresholds stay stable and comparable across systems, and it stays <em>finite</em> even when one distribution assigns zero probability to an event the other allows — common when a new tool-call target or novel output appears, where KL divergence would diverge to infinity.</p>
+          </details>
+        </article>
+
+      </div>
     </div>
   </section>
 

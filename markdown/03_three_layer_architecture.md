@@ -20,6 +20,12 @@ The IVP measures the inherent security characteristics of an AI system independe
 Axis_(Score) = Σ(w_i × SubMetric_i)/Σ(w_i)
 ```
 
+Basis. An axis score is the weighted average of its sub-metric scores. Sub-metrics that matter more for a given architecture carry more weight, and dividing by the sum of the weights renormalizes the result whenever a sub-metric is not applicable, redistributing its weight across the rest rather than dragging the axis toward zero.
+
+Variables. SubMetric_i is the 0.00-1.00 score of sub-metric i from its five-level rubric; w_i is that sub-metric's fixed weight for the system's architecture class (LLM/GenAI, Classifier/ML, or Agentic); the denominator is the sum of the weights actually in play. Weights within an axis sum to 1.00 before any redistribution.
+
+Why this form. A weighted arithmetic mean is the natural aggregator when sub-metrics sit on the same 0-1 scale and a shortfall in one can be partially offset by strength in another within the same axis; intra-axis compensation is acceptable, which is why the five axes are kept as a vector rather than averaged together. Normalizing by the sum of weights keeps the score on the [0, 1] interval and architecture-invariant, so removing a non-applicable sub-metric never changes the achievable maximum. Because the weights are fixed by tier and architecture rather than chosen by the assessor, two assessors compute the same number (Design Principle 2.3).
+
 Where w_i = weight of sub-metric i (defined per axis). If a sub-metric is NOT APPLICABLE to a given architecture (per the Architecture Classification Decision Tree in Section 4.4), its weight is redistributed proportionally among remaining sub-metrics. Sub-metric weights within each axis sum to 1.00. Intermediate scores are permitted when a system falls between rubric levels; the assessor must document justification.
 
 Conflicting Evidence Resolution Protocol
@@ -41,6 +47,12 @@ IVP Output Vector:
 ```
 IVP = (Ro,Fa,Tr,Pr,Cn)
 ```
+
+Basis. The authoritative Layer 1 output is a five-number profile, not a single score. It is read like a radar chart: a system can be strong on Privacy yet weak on Containment, and that contrast stays visible.
+
+Variables. Ro, Fa, Tr, Pr, and Cn are the weighted axis scores for Robustness, Fairness, Transparency, Privacy, and Containment, each on 0.00-1.00, where 1.00 denotes stronger intrinsic assurance and therefore lower intrinsic vulnerability.
+
+Why this form. Keeping IVP a vector is a deliberate refusal to collapse signal (Design Principle 2.2). Impossibility results guarantee that accuracy, adversarial robustness, and fairness cannot be maximized simultaneously, so any scalar that fuses these axes necessarily hides a trade-off the reader needs to see. A single number is derived only when unavoidable, as the architecture-weighted projection W_ivp . IVP inside the ERS, and even then the vector remains the primary output.
 
 Where Ro, Fa, Tr, Pr, and Cn are the weighted axis scores for Robustness, Fairness, Transparency, Privacy, and Containment. Each axis score ranges from 0.00 to 1.00, where 1.00 represents stronger intrinsic assurance and lower intrinsic vulnerability for that axis.
 
@@ -568,6 +580,12 @@ CRM Calculation: Count the number of ORP dimensions scoring above 0.75 (the “e
 N_(elevated) = countof{Aa,As,Cp,Rf}wherescore>0.75
 ```
 
+Basis. This counts how many operational-risk dimensions sit in the danger zone (a score above 0.75). That count drives the Compound Risk Multiplier (CRM): a system that is at once highly autonomous, highly exposed, and on a critical cascade path is more dangerous than a simple weighted sum of those dimensions would suggest, so the CRM applies the corresponding premium (two elevated dimensions raise the score by 15%, three by 35%, four by 60%). Two or more elevated dimensions also raise a mandatory Compound Risk Alert.
+
+Variables. Aa, As, Cp, and Rf are the four ORP dimension scores (Autonomy Amplification, Attack Surface Exposure, Cascade Potential, and Remediation Feasibility); 0.75 is the shared 'elevated' threshold, matching the 'significant/critical' band of the ORP rubrics; N_elevated is how many of the four exceed it, from 0 to 4.
+
+Why this form. A weighted sum is linear and additive, treating operational risks as independent and substitutable. Counting, rather than summing magnitudes, isolates the interaction effect: the question is not how high any one dimension is (the weighted sum already captures that) but how many are simultaneously high, which is what compounds. The CRM is therefore a super-additive correction, a monotonic step function of N_elevated in which each additional simultaneously-elevated dimension adds a growing premium, bounded above (1.60 from the count, 1.75 as the absolute framework cap) so it cannot run away. A published step table keeps the correction auditable and reproducible.
+
 *Table 34: 3.2.2 Compound Risk Multiplier (CRM)*
 
 | N_elevated | CRM | Rationale |
@@ -586,6 +604,12 @@ The Operational Risk Posture is reported as a single effective score that the ER
 ```
 ORP_(effective) = (W_(orp) · ORP) × CRM
 ```
+
+Basis. The four operational dimensions are first combined under the tier's weight profile into one operational score, then amplified by the compounding multiplier. This single number is what the ERS consumes.
+
+Variables. W_orp . ORP is the tier-weighted sum (inner product) of the four ORP dimension scores; CRM is the Compound Risk Multiplier from Section 3.2.2, in the range 1.00-1.60 (1.75 absolute cap).
+
+Why this form. Separating the linear part (the weighted sum) from the interaction part (the multiplier) keeps each interpretable: the weighted sum answers how much operational risk exists on average, while the multiplier answers how strongly those risks reinforce one another. Applying the CRM multiplicatively makes it a proportional surcharge that scales with the underlying risk, so a 35% compounding premium means the same thing whether the base operational score is high or low.
 
 where W_orp · ORP is the tier-weighted sum of the four ORP dimension scores and CRM (1.00–1.60) amplifies the score when multiple dimensions are simultaneously elevated. The table below summarizes the four ORP dimensions — each dimension's scale direction, the conservative default assumed when evidence is unavailable, and the primary evidence used to score it.
 
@@ -628,6 +652,12 @@ Definition: Breadth, depth, independence, and environment fidelity of the securi
 Ec = Base_(Coverage) × Independence_(Multiplier) × Fidelity_(Factor)
 ```
 
+Basis. Evaluation quality is the product of three things: how much was tested, how independent the tester was, and how production-like the test environment was. Because they multiply, a weakness in any one drags the whole score down, so thorough testing that is self-assessed in a development sandbox cannot earn a high coverage score.
+
+Variables. Base_Coverage is the breadth and depth of testing (the fraction of applicable sub-metrics exercised); Independence_Multiplier is 0.60 self-assessed, 0.80 internal-independent, or 1.00 external-independent; Fidelity_Factor is 0.70 dev/test, 0.85 staging, 0.95 verified-equivalent, or 1.00 live production.
+
+Why this form. A product, rather than a sum or average, encodes necessity: each factor is a prerequisite, not a tradeable contributor. Self-assessment (0.60) caps Ec at 0.60 even with full coverage in production. This is the same weakest-link logic the ACI geometric mean applies one level up, here applied to the inputs of a single ACI component, and the multipliers are discrete, evidence-anchored levels so the result is reproducible rather than a judgment call.
+
 Table: Scoring Rubric - 3.3.2 Evaluation Coverage (Ec)
 
 *Table 37: Scoring Rubric - 3.3.2 Evaluation Coverage (Ec)*
@@ -653,6 +683,12 @@ Definition: Currency of the assessment relative to the current system state. Tf 
 ```
 Tf = min(T_(calendar),C_(event),C_(monitor),C_(evidence))
 ```
+
+Basis. Freshness is the most pessimistic of several signals: a calendar decay term plus three event-driven ceilings. A six-week-old assessment may still look fresh on the calendar, but a base-model swap or a monitoring blackout caps freshness regardless; the lowest cap wins.
+
+Variables. T_calendar is the time-decay term; C_event caps freshness after model or system change events; C_monitor caps it for monitoring-coverage gaps; C_evidence caps it for unresolved behavioral-drift evidence. Within T_calendar = e^(-lambda_eff x delta_t_days), delta_t_days is the number of days since assessment sign-off and lambda_eff = lambda_tier x M_TDI x M_threat, where lambda_tier is the tier base decay rate (Tier 1 0.0231 down to Tier 4 0.0019), M_TDI is the drift modifier, and M_threat is the threat modifier.
+
+Why this form. The min() combinator is used because the caps are independent invalidating conditions and freshness can be no better than the worst of them; unlike an average, a strong calendar term cannot paper over a model swap, consistent with the 'lower defensible score' stance (Design Principle 2.7). Exponential decay is used for the calendar term because evidence loses representativeness at a rate proportional to how much remains valid (the memoryless property), giving a constant, interpretable half-life per tier; lambda_eff is multiplicative so drift and threat accelerate decay proportionally rather than additively, and a system drifting under active threat ages much faster.
 
 T_calendar = e^(-lambda_eff x delta_t_days), where lambda_eff = lambda_tier x M_TDI x M_threat. delta_t_days is measured from final assessment sign-off or the most recent completed targeted revalidation. Systems with no completed assessment default to Tf = 0.10.
 
@@ -690,6 +726,12 @@ TDI is the normalized measurement of how far the current system has drifted from
 ```
 TDI = 0.25(CSD)+0.30(BOD)+0.20(DRD)+0.15(TCD)+0.10(MGD)
 ```
+
+Basis. The Time Drift Index is a single 0.00-1.00 measure of how far the system has drifted from the state that was assessed, blending five drift signals. Behavioral output drift (what the system actually does now) carries the most weight; monitoring gaps the least. TDI feeds the M_TDI modifier that accelerates freshness decay.
+
+Variables. The five weighted signals are CSD Configuration Surface Drift (weight 0.25), BOD Behavioral Output Drift (0.30), DRD Data and Retrieval Drift (0.20), TCD Threat and Control Drift (0.15), and MGD Monitoring Gap Drift (0.10), each scored 0.00-1.00.
+
+Why this form. A weighted sum is appropriate here, unlike the CRM, because these signals are meant to accumulate: small drifts across several categories should add up to a moderate TDI. The weights are fixed and sum to 1.00, keeping TDI on the [0, 1] interval and reproducible, and the ordering (BOD above CSD above DRD above TCD above MGD) encodes a deliberate priority, since observed behavioral change is the strongest evidence that an assessment is stale while a monitoring gap is a weaker, indirect signal.
 
 Table: 3.3.3.2 Time Drift Index (TDI)
 
@@ -741,6 +783,12 @@ Finbot validation note: For the canonical Finbot example, delta_t_days = 5, Tier
 ```
 ACI_(composite) = (Pc × Ec × Tf)^(1/3)
 ```
+
+Basis. Overall assurance is the geometric mean of the three evidence dimensions. If any one is near zero the whole ACI is near zero: confidence in a system whose provenance is unknown cannot be bought by testing it harder, exactly as the surrounding text states.
+
+Variables. Pc is Provenance Completeness, Ec is Evaluation Coverage, and Tf is Temporal Freshness, each on 0.00-1.00; the cube root restores the result to the [0, 1] scale.
+
+Why this form. The geometric mean is the correct aggregator for jointly necessary, non-substitutable prerequisites. Three properties make it fit: it is zero whenever any factor is zero (one unknown collapses confidence); for a fixed total it is maximized when the three values are equal, so it rewards balanced evidence and penalizes a lopsided profile; and on the [0, 1] interval it always sits at or below the arithmetic mean, making it the conservative choice. The equal one-third weights are deliberate (Section 4.3): tier urgency is already expressed inside Tf through lambda and the caps, so re-weighting by tier would double-count criticality and break comparability across assessments.
 
 The geometric mean is chosen deliberately: if any component is near zero, overall confidence must be near zero. Thorough testing cannot compensate for unknown provenance, and fresh telemetry cannot compensate for inadequate evaluation coverage.
 

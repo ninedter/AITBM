@@ -50,6 +50,12 @@ ACI weighted geometric mean:
 ACI_(composite) = Pc^(w_(pc)) × Ec^(w_(ec)) × Tf^(w_(tf)),wherew_(pc)+w_(ec)+w_(tf) = 1.00
 ```
 
+Basis. This is the general form of the ACI composite, allowing component weights while keeping the geometric-mean structure. In this release every weight is fixed at one-third, so it reduces to the cube-root form in Section 3.3.4.
+
+Variables. w_pc, w_ec, and w_tf are the weights of Provenance Completeness, Evaluation Coverage, and Temporal Freshness; they sum to 1.00. With equal weights the expression is the cube root of the product Pc x Ec x Tf.
+
+Why this form. A weighted geometric mean preserves the weakest-link behavior of the equal-weight version while leaving room for future, empirically justified re-weighting. The weights are held equal and tier-independent on purpose: deployment criticality is already carried by Tf through its decay constant and caps, so moving it into the ACI weights as well would count the same factor twice and make scores from different tiers no longer comparable.
+
 Table: 4.3 ACI Weight Profile (W_aci)
 
 *Table 47: 4.3 ACI Weight Profile (W_aci)*
