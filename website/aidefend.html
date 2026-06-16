@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AIDEFEND Mapping — AI Trust Benchmarking and Maturity Framework</title>
-  <meta name="description" content="Complete mapping of 85 AIDEFEND defensive techniques to AITBM's 21 sub-metrics — translating defensive controls into measurable risk reduction." />
+  <meta name="description" content="Complete mapping of the 86-technique AIDEFEND defensive catalog to AITBM's 21 sub-metrics — translating defensive controls into measurable risk reduction." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
@@ -62,7 +62,8 @@
       <h1 class="text-4xl font-bold">AIDEFEND Mapping</h1>
       <p class="mt-3 max-w-2xl text-blue-100">
         Translating AIDEFEND defensive techniques into measurable risk reduction
-        through AITBM's 21 sub-metrics.
+        through AITBM's 21 sub-metrics — so you can see exactly which risk scores a
+        control improves, and by how much.
       </p>
       <nav class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-blue-100">
         <a href="#overview" class="hover:text-white underline-offset-4 hover:underline">Overview</a>
@@ -88,7 +89,7 @@
         <p class="mt-4 text-muted">
           AIDEFEND answers <em>"what defensive controls should exist"</em>; AITBM answers
           <em>"how risky is this system."</em> Together, deploying an AIDEFEND technique
-          translates into a measurable change in an AITBM Evaluated Risk Score (ERS).
+          translates into a measurable change in an AITBM Effective Risk Score (ERS).
         </p>
         <div class="mt-6 flex flex-wrap gap-3 text-sm">
           <a href="https://aidefend.net/" class="rounded-md bg-navy px-4 py-2 text-white hover:bg-navy-light">AIDEFEND Knowledge Base</a>
@@ -99,13 +100,14 @@
         <div class="rounded-xl border border-gray-200 bg-gray-50 p-6">
           <p class="text-sm font-semibold text-navy">Framework at a glance</p>
           <dl class="mt-4 space-y-3 text-sm">
-            <div class="flex justify-between"><dt class="text-muted">Total techniques</dt><dd class="font-bold text-navy">85</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">Total techniques</dt><dd class="font-bold text-navy">86</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Tactics</dt><dd class="font-bold text-navy">7</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Pillars</dt><dd class="font-bold text-navy">4</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Lifecycle phases</dt><dd class="font-bold text-navy">6</dd></div>
             <div class="flex justify-between"><dt class="text-muted">External frameworks mapped</dt><dd class="font-bold text-navy">9</dd></div>
             <div class="flex justify-between"><dt class="text-muted">AITBM sub-metrics covered</dt><dd class="font-bold text-navy">21 / 21</dd></div>
           </dl>
+          <p class="mt-4 text-xs text-gray-500">Review baseline: AIDEFEND data version 2026.06.11 (reconciled June 12, 2026). Includes AID-H-035 — MCP Server Runtime Boundary &amp; Tool Exposure Governance — mapped to Tr-3, Cn-1, Cn-2, and Cn-5.</p>
         </div>
       </div>
     </div>
@@ -134,7 +136,7 @@
         <article class="rounded-xl border border-gray-200 bg-white p-6">
           <div class="axis-bar bg-navy w-10 mb-4"></div>
           <h3 class="font-bold text-navy">Operational context</h3>
-          <p class="mt-2 text-sm text-muted">ORP captures deployment-specific risk amplification (CRM 0.75 &ndash; 1.75) and ACI tracks assessment staleness &mdash; controls that improve operational posture reduce CRM directly.</p>
+          <p class="mt-2 text-sm text-muted">ORP captures deployment-specific risk amplification (CRM step table 1.00 &ndash; 1.60, capped at 1.75) and ACI tracks assessment staleness &mdash; controls that improve operational posture reduce CRM directly.</p>
         </article>
       </div>
     </div>
@@ -144,7 +146,7 @@
   <section id="tactics" class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
     <h2 class="text-3xl font-bold text-navy">Seven defensive tactics</h2>
     <p class="mt-3 max-w-3xl text-muted">
-      AIDEFEND organizes 85 techniques across seven tactics aligned with MITRE D3FEND.
+      AIDEFEND organizes 86 techniques across seven tactics aligned with MITRE D3FEND.
       Each tactic maps to different AITBM layers and sub-metrics.
     </p>
     <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -154,9 +156,9 @@
         <p class="mt-2 text-xs text-muted">Asset inventory, provenance, threat modeling, HITL mapping, autonomy governance.</p>
       </article>
       <article class="rounded-xl border border-gray-200 p-5">
-        <p class="text-2xl font-bold text-navy">34</p>
+        <p class="text-2xl font-bold text-navy">35</p>
         <h3 class="mt-1 font-bold text-navy text-sm">Harden</h3>
-        <p class="mt-2 text-xs text-muted">Adversarial training, input validation, RAG security, output filtering, permission restriction.</p>
+        <p class="mt-2 text-xs text-muted">Adversarial training, input validation, RAG security, output filtering, MCP server boundary governance.</p>
       </article>
       <article class="rounded-xl border border-gray-200 p-5">
         <p class="text-2xl font-bold text-navy">16</p>
@@ -184,9 +186,9 @@
         <p class="mt-2 text-xs text-muted">Model versioning, rollback, recovery from poisoning and compromise.</p>
       </article>
       <article class="rounded-xl border-2 border-navy/30 bg-gray-50 p-5">
-        <p class="text-2xl font-bold text-navy">85</p>
+        <p class="text-2xl font-bold text-navy">86</p>
         <h3 class="mt-1 font-bold text-navy text-sm">Total techniques</h3>
-        <p class="mt-2 text-xs text-muted">All 21 AITBM sub-metrics covered with 1 &ndash; 8 AIDEFEND techniques each (avg 3.5).</p>
+        <p class="mt-2 text-xs text-muted">All 21 AITBM sub-metrics covered with 3 &ndash; 13 AIDEFEND techniques each (avg 5.8).</p>
       </article>
     </div>
   </section>
@@ -432,7 +434,7 @@
       <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">OWASP ML Top 10 (2023)</span><p class="text-muted mt-0.5">ML-specific threats</p></div>
     </div>
     <div class="mt-8">
-      <a href="https://github.com/ninedter/AITBM/blob/main/docs/framework-mappings/AIDEFEND-to-AITBM.md" class="rounded-md bg-navy px-5 py-2.5 font-semibold text-white hover:bg-navy-light inline-block">Full mapping on GitHub</a>
+      <a href="https://github.com/ninedter/AITBM/blob/main/specification/sections/14_aidefend_integration.md" class="rounded-md bg-navy px-5 py-2.5 font-semibold text-white hover:bg-navy-light inline-block">Full mapping on GitHub</a>
     </div>
   </section>
 

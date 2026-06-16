@@ -13,7 +13,7 @@ Deployment tiers eliminate subjective weight selection. Organizations classify e
 
 ## 4.1 IVP Weight Profiles (W_ivp)
 
-IVP axis weights are deployment-architecture-specific. The following profiles are applied when compositing the IVP score across the five axes.
+IVP axis weights are deployment-tier-specific. The following profiles are applied when compositing the IVP score across the five axes.
 
 *Table 45: 4.1 IVP Weight Profiles (W_ivp)*
 
@@ -28,7 +28,7 @@ IVP axis weights are deployment-architecture-specific. The following profiles ar
 
 ## 4.2 ORP Weight Profiles (W_orp)
 
-ORP dimension weights are deployment-architecture-specific. The following profiles are applied when compositing the ORP score across the four dimensions.
+ORP dimension weights are deployment-tier-specific. The following profiles are applied when compositing the ORP score across the four dimensions.
 
 *Table 46: 4.2 ORP Weight Profiles (W_orp)*
 
@@ -56,8 +56,6 @@ Variables. w_pc, w_ec, and w_tf are the weights of Provenance Completeness, Eval
 
 Why this form. A weighted geometric mean preserves the weakest-link behavior of the equal-weight version while leaving room for future, empirically justified re-weighting. The weights are held equal and tier-independent on purpose: deployment criticality is already carried by Tf through its decay constant and caps, so moving it into the ACI weights as well would count the same factor twice and make scores from different tiers no longer comparable.
 
-Table: 4.3 ACI Weight Profile (W_aci)
-
 *Table 47: 4.3 ACI Weight Profile (W_aci)*
 
 | ACI Component | Tier 1 | Tier 2 | Tier 3 | Tier 4 | Rationale |
@@ -72,8 +70,6 @@ Operational Rule: Deployment tier changes Tf behavior, not W_aci. Tier 1 systems
 ## 4.4 Architecture Classification Decision Tree
 
 The assessor answers the following questions in order. The first YES answer assigns the architecture class. If all questions are answered NO until Q6, classify the system as Traditional ML / Classifier. Evidence for each answer must be documented in the assessment workpapers.
-
-Table: 4.4 Architecture Classification Decision Tree
 
 *Table 48: 4.4 Architecture Classification Decision Tree*
 
@@ -90,9 +86,7 @@ Hybrid System Rule
 
 Systems spanning multiple categories are classified by the highest-risk qualifying architecture. Order: Multi-Agent / MCP > Agentic / MCP > Tool-Calling LLM > RAG > Standalone LLM / GenAI > Traditional ML / Classifier. Components excluded from scope must be documented with an explicit boundary statement.
 
-Table: 4.4 Architecture Weighting Guidance
-
-*Table 49: 4.4 Architecture Classification Decision Tree*
+Table : 4.4 Architecture Weighting Guidance49
 
 | Architecture Class | Primary Risk Emphasis | Weighting Guidance |
 | --- | --- | --- |

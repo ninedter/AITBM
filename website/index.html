@@ -78,7 +78,8 @@
         AITBM is a bias-resistant, multi-dimensional evaluation framework. It replaces
         subjective "low / medium / high" judgments with granular five-level scoring rubrics,
         a three-layer architecture that preserves signal, and a mathematically grounded
-        composite score.
+        composite score. The result is one defensible 0–10 risk score — with the
+        dimensional detail behind it still visible.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="framework.html" class="rounded-md bg-white px-5 py-2.5 font-semibold text-navy hover:bg-blue-50">Explore the framework</a>
@@ -98,8 +99,8 @@
     <div class="max-w-2xl">
       <h2 class="text-3xl font-bold text-navy">The problem AITBM solves</h2>
       <p class="mt-3 text-muted">
-        Existing AI security methodologies — CVSS adaptations, OWASP AIVSS, the OWASP Top 10
-        for LLMs — share four structural failure modes.
+        Existing AI security methodologies — CVSS adaptations, OWASP AIVSS, and the
+        OWASP Top 10 for LLMs — share four structural failure modes.
       </p>
     </div>
     <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -145,16 +146,16 @@
         <article class="card rounded-xl border border-gray-200 bg-white p-7">
           <p class="text-xs font-semibold tracking-wider text-navy-light">LAYER 2</p>
           <h3 class="mt-1 text-xl font-bold text-navy">ORP — Operational Risk Posture</h3>
-          <p class="mt-2 text-sm text-muted">Four deployment-context dimensions produce a Compound Risk Multiplier (CRM) in the 0.75–1.75 range that intrinsic scoring cannot capture.</p>
+          <p class="mt-2 text-sm text-muted">Four deployment-context dimensions (autonomy, attack surface, cascade, remediation) produce a Compound Risk Multiplier (CRM) that intrinsic scoring cannot capture.</p>
         </article>
         <article class="card rounded-xl border border-gray-200 bg-white p-7">
           <p class="text-xs font-semibold tracking-wider text-navy-light">LAYER 3</p>
           <h3 class="mt-1 text-xl font-bold text-navy">ACI — Assurance Confidence Index</h3>
-          <p class="mt-2 text-sm text-muted">Beta-Binomial-informed temporal decay models how evidence goes stale, with tier-specific re-assessment triggers.</p>
+          <p class="mt-2 text-sm text-muted">Models how assessment evidence goes stale over time, triggering re-assessment before a score quietly drifts out of date.</p>
         </article>
       </div>
       <div class="mt-10 rounded-xl border border-gray-200 bg-white p-7">
-        <p class="text-sm font-semibold text-navy">Evaluated Risk Score (ERS)</p>
+        <p class="text-sm font-semibold text-navy">Effective Risk Score (ERS)</p>
         <pre class="formula mt-3 overflow-x-auto p-4 text-sm">ERS = α + (1 − α) × f(IVP, ORP, ACI)      where α = 0.15</pre>
         <p class="mt-3 text-sm text-muted">
           The residual risk floor (α = 0.15) is deliberate: even perfect controls leave an
@@ -185,7 +186,7 @@
       </div>
       <div class="flex gap-4">
         <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span>
-        <div><h3 class="font-bold text-navy">Identity as first-class</h3><p class="mt-1 text-sm text-muted">Cn-5 (Agent Identity Integrity) addresses agentic identity gaps, validated against SPIFFE and OIDC-A.</p></div>
+        <div><h3 class="font-bold text-navy">Identity as first-class</h3><p class="mt-1 text-sm text-muted">Cn-5 (Agent Identity Integrity) addresses identity gaps in agentic and multi-agent systems — who an agent is, and whether it can be impersonated.</p></div>
       </div>
       <div class="flex gap-4">
         <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span>
@@ -207,7 +208,7 @@
           <p class="mt-3 text-blue-100 max-w-2xl">
             The Finbot scenario — a financial advisory agent combining RAG and tool calling —
             is AITBM's canonical validation anchor. Multiple independent assessors reach the
-            same result: an Evaluated Risk Score of 10.0, CRM of 1.35, Critical severity.
+            same result: an Effective Risk Score of 10.0, CRM of 1.35, Critical severity.
           </p>
         </div>
         <div class="grid grid-cols-3 gap-4 text-center">

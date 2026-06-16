@@ -4,7 +4,7 @@ Mapping AIDEFEND Defensive Techniques to AITBM Sub-Metrics
 
 ## Overview
 
-AIDEFEND (https://aidefend.net/) is a structured knowledge base of defensive countermeasures for AI systems. The current public AIDEFEND data reviewed for this section uses schema 2.0 and data version 2026.05.18. It contains 85 top-level defensive techniques and 204 sub-techniques, for 289 total defensive records across tactics, pillars, lifecycle phases, and external framework mappings. This section maps AIDEFEND evidence to AITBM's 21 sub-metrics, enabling organizations to use AIDEFEND as the operational evaluation layer and AITBM as the scoring framework.
+AIDEFEND (https://aidefend.net/) is a structured knowledge base of defensive countermeasures for AI systems. The AIDEFEND data reviewed for this section (June 12, 2026) uses schema 2.0 and data version 2026.06.11. It contains 86 top-level defensive techniques and 210 sub-techniques, for 296 total defensive records across tactics, pillars, lifecycle phases, and external framework mappings. This section maps AIDEFEND evidence to AITBM's 21 sub-metrics, enabling organizations to use AIDEFEND as the operational evaluation layer and AITBM as the scoring framework.
 
 1. Translate defensive implementations into AITBM scores — Organizations implementing AIDEFEND controls can objectively score their security posture
 
@@ -16,14 +16,14 @@ AIDEFEND (https://aidefend.net/) is a structured knowledge base of defensive cou
 
 ## AIDEFEND Tactical Structure
 
-AIDEFEND organizes 85 top-level defensive techniques and 204 sub-techniques across 7 tactics:
+The reviewed data version organizes 86 top-level defensive techniques and 210 sub-techniques across 7 tactics:
 
 *Table 60: AIDEFEND Tactical Structure*
 
 | Tactic | Code | Techniques | Purpose |
 | --- | --- | --- | --- |
 | Model | M | 10 | Comprehensive understanding and mapping of AI assets, data flows, dependencies, behavior, and lifecycle state. |
-| Harden | H | 34 | Preventive hardening of models, data paths, agents, tools, gateways, skills, code, and execution surfaces. |
+| Harden | H | 35 | Preventive hardening of models, data paths, agents, tools, gateways, skills, code, MCP servers, and execution surfaces. |
 | Detect | D | 16 | Runtime monitoring, attestation, anomaly detection, policy enforcement, and threat hunting. |
 | Isolate | I | 8 | Containment of execution, memory, network, browser, interaction, and session boundaries. |
 | Deceive | DV | 7 | Canaries, decoys, telemetry traps, and controlled deception for high-confidence detection. |
@@ -52,10 +52,10 @@ The mapping rule is intentionally conservative: AIDEFEND identifies measurable d
 
 | Profile Element | Current AIDEFEND Value | AITBM Assessment Use |
 | --- | --- | --- |
-| Source baseline | Schema 2.0; data version 2026.05.18; public AIDEFEND data source. | Records the baseline used for traceable AITBM mapping and future drift review. |
-| Technique depth | 85 top-level techniques; 204 sub-techniques; 289 total defensive records. | Top-level techniques define control families; sub-techniques define concrete evidence selectors. |
+| Source baseline | Schema 2.0; data version 2026.06.11; public AIDEFEND data source. | Records the baseline used for traceable AITBM mapping and future drift review. |
+| Technique depth | 86 top-level techniques; 210 sub-techniques; 296 total defensive records. | Top-level techniques define control families; sub-techniques define concrete evidence selectors. |
 | Strategic views | Tactics, pillars, phases, and framework mappings. | Allows AITBM to map evidence by security objective, protected component, lifecycle timing, and threat rationale. |
-| Tactics | Model 10; Harden 34; Detect 16; Isolate 8; Deceive 7; Evict 5; Restore 5. | Separates preventive IVP evidence from operational ORP evidence and freshness-supporting ACI evidence. |
+| Tactics | Model 10; Harden 35; Detect 16; Isolate 8; Deceive 7; Evict 5; Restore 5. | Separates preventive IVP evidence from operational ORP evidence and freshness-supporting ACI evidence. |
 | Pillars | Data, Model, Infrastructure, and Application. | Aligns evidence collection to AITBM axes: Robustness, Fairness, Transparency, Privacy, and Containment. |
 | Lifecycle phases | Scoping, building, validation, operation, response, and improvement. | Determines when evidence must be collected and whether it remains fresh enough for ACI. |
 | External mappings | MITRE ATLAS, MAESTRO, OWASP LLM 2025, OWASP ML 2023, OWASP Agentic AI 2026, NIST AML 2025, Cisco AI Security, Google SAIF 2.0, and Databricks DASF 3.0. | Supports threat traceability; does not replace AITBM scoring thresholds. |
@@ -93,7 +93,7 @@ AIDEFEND tactics are not all scored the same way inside AITBM. Some tactics dire
 
 ### Current Mapping Updates
 
-The current AIDEFEND data adds or clarifies several agentic, gateway, generated-code, browser-isolation, and lifecycle-governance controls that should be reflected in AITBM scoring. These updates strengthen the Containment, Privacy, Transparency, and Robustness mappings.
+The current AIDEFEND data adds or clarifies several agentic, gateway, generated-code, browser-isolation, lifecycle-governance, and MCP server runtime boundary controls that should be reflected in AITBM scoring. These updates strengthen the Containment, Privacy, Transparency, and Robustness mappings.
 
 *Table 64: Current Mapping Updates*
 
@@ -103,6 +103,7 @@ The current AIDEFEND data adds or clarifies several agentic, gateway, generated-
 | AID-H-031 Agentic Skill Admission Security Analysis & Control Pipeline | Added to Ro-1, Tr-3, Cn-1, Cn-2, and Cn-5. | Skill manifest validation, semantic security analysis, loader hardening, and continuous re-scan evidence address prompt, permission, identity, and audit gaps in agentic systems. |
 | AID-H-032 AI-Generated Code Admission Control & Safe Promotion | Added to Ro-1, Tr-3, Cn-2, and Cn-3. | Generated-code provenance, static gates, sandbox validation, and evidence-bound promotion reduce unsafe code execution and escalation risk. |
 | AID-H-034 AI Gateway Routing Integrity & Policy-Preserving Failover | Added to Ro-3, Tr-3, Pr-3, Cn-1, Cn-2, and Cn-3. | Requested-vs-effective model binding, no silent safety downgrade, residency-aware routing, and route policy rollback support output consistency, auditability, privacy, and containment. |
+| AID-H-035 MCP Server Runtime Boundary & Tool Exposure Governance | Added to Tr-3, Cn-1, Cn-2, and Cn-5. | Server-side tool invocation validation, OAuth token audience and delegation safety, governed publication of the model-visible tool and descriptor surface, and structured session and telemetry hooks provide measurable scope, escalation, identity, and audit evidence for MCP server deployments. |
 | AID-I-008 Task-Scoped Browser Session & Origin Isolation for Agents | Added to Pr-2, Cn-1, and Cn-4. | Ephemeral browser contexts, origin segmentation, and download or clipboard quarantine provide measurable containment and leakage-resistance evidence. |
 | AID-DV-007 Poisoning Detection Canaries & Decoy Data | Used for Ro-4 and Pr-1; replaces the obsolete Deceive-family poisoning reference. | The current data uses AID-DV-007 for canary and decoy data evidence supporting poisoning detection and leakage assessment. |
 | AID-E-005 Compromised Session Termination & State Purging and AID-M-010 | Replace the obsolete Evict-family minimization reference for Pr-3. | State purging and lifecycle governance are the current evidence sources for retention, deletion, and minimization controls. |
@@ -117,8 +118,8 @@ The examples below show how AIDEFEND sub-techniques become measurable AITBM evid
 | --- | --- | --- |
 | Ro-1 / Cn-2 | AID-H-031.002 Instruction-Layer Semantic Security Analysis; AID-H-032.003 Dynamic Promotion Validation with Ephemeral Sandboxes. | Measure attack success rate against malicious skills, injected instructions, and generated-code promotion attempts. |
 | Ro-3 / Tr-3 | AID-H-034.001 Requested-vs-Effective Model Binding Records; AID-H-034.004 Route Policy Bundle Versioning, Approval, Canary & Rollback. | Verify output consistency, model routing integrity, policy rollback, and audit trail completeness. |
-| Ro-4 | AID-H-021.001 RAG Chunk-Level Integrity Verification; AID-DV-007 Poisoning Detection Canaries & Decoy Data. | Measure poisoning detection rate, corpus tamper detection, and canary-trigger coverage. |
-| Pr-2 / Cn-4 | AID-I-004.002 Persistent Memory Partitioning; AID-I-008.001 Ephemeral Browser Context Lifecycle & Storage Partitioning. | Measure tenant, memory, browser-session, and origin-isolation leakage under adversarial tests. |
+| Ro-4 | AID-H-021.001 Chunk-Level Integrity Signing; AID-DV-007 Poisoning Detection Canaries & Decoy Data. | Measure poisoning detection rate, corpus tamper detection, and canary-trigger coverage. |
+| Pr-2 / Cn-4 | AID-I-004.002 Persistent Memory Partitioning (Trust & Tenant Isolation); AID-I-008.001 Ephemeral Browser Context Lifecycle & Storage Partitioning. | Measure tenant, memory, browser-session, and origin-isolation leakage under adversarial tests. |
 | Pr-3 | AID-H-030.003 Consent Scope Tracking, Expiry Enforcement & Withdrawal Response; AID-M-010.001 Cryptographic Erasure & Media Sanitization. | Verify data-use authorization, deletion, consent expiry, and minimization evidence. |
 | Cn-1 / Cn-5 | AID-H-019.007 Skill-Level Permission Manifest Validation & Runtime Enforcement; AID-H-029.001 MCP Server Authenticity Validation & Connection Pinning. | Measure tool-scope enforcement, MCP identity validation, and unauthorized tool invocation failure rate. |
 | Cn-5 / ACI | AID-M-001.003 Agentic Skill Asset Inventory & Lifecycle Governance; AID-I-004.006 Agent Identity & Persistent State File Write Protection. | Verify agent or skill inventory completeness, identity binding, ownership, stale-skill remediation, and persistent-state protection. |
@@ -170,27 +171,27 @@ The score guide below is a translation aid. It does not replace the specific AIT
 
 ### Worked Example: Scoring Cn-5 Agent Identity Integrity
 
-Scenario: Finbot is assessed as an agentic/MCP financial assistant that invokes payment, CRM, and document-retrieval tools. The AIDEFEND evidence review identifies seven mapped Cn-5 techniques. The assessor uses those techniques as the evidence source, then applies the AITBM Cn-5 required test method to determine the score.
+Scenario: Finbot is assessed as an agentic/MCP financial assistant that invokes payment, CRM, and document-retrieval tools. The AIDEFEND evidence review identifies the eleven mapped Cn-5 techniques listed in the Cn-5 mapping table; the seven that produce inspectable evidence for this deployment are reviewed below. The assessor uses those techniques as the evidence source, then applies the AITBM Cn-5 required test method to determine the score.
 
 *Table 69: Worked Example: Scoring Cn-5 Agent Identity Integrity*
 
 | AIDEFEND Technique | Evidence Observed | AITBM Measurement Use |
 | --- | --- | --- |
-| AID-H-004 IAM for AI Systems | Agents and tools use scoped OIDC identities; shared emergency API key still exists for one legacy connector. | Supports identity verification evidence but creates a residual replay and exception-management gap. |
+| AID-H-004 Identity & Access Management (IAM) for AI Systems | Agents and tools use scoped OIDC identities; shared emergency API key still exists for one legacy connector. | Supports identity verification evidence but creates a residual replay and exception-management gap. |
 | AID-H-018 Secure Agent Architecture | Agent roles, tool permissions, and delegation boundaries are documented and enforced by policy middleware. | Supports scoped delegation and least-privilege review for Cn-5. |
-| AID-H-022 Agent Configuration Integrity | Signed agent manifests are used for production agents; staging agents are not consistently signed. | Supports configuration integrity but limits confidence for cross-environment consistency. |
-| AID-D-011 Behavioral Attestation | Runtime agent behavior is compared against baseline action patterns; rogue behavior alerts are generated. | Provides detection-rate evidence for identity misuse and rogue-agent scenarios. |
-| AID-D-016 Rogue Agent Discovery | Unknown agent identifiers are quarantined automatically, but quarantine notification is manual. | Provides MTTQ evidence and response-gap evidence. |
-| AID-H-029 MCP & Tool Client Hardening | MCP clients pin trusted tool endpoints and enforce allowlisted tool schemas. | Supports tool identity and tool-resolution integrity. |
+| AID-H-022 AI Agent Configuration Integrity & Hardening | Signed agent manifests are used for production agents; staging agents are not consistently signed. | Supports configuration integrity but limits confidence for cross-environment consistency. |
+| AID-D-011 Agent Behavioral Attestation & Rogue Detection | Runtime agent behavior is compared against baseline action patterns; rogue behavior alerts are generated. | Provides detection-rate evidence for identity misuse and rogue-agent scenarios. |
+| AID-D-016 Rogue Agent Discovery, Reputation & Quarantine Pipeline | Unknown agent identifiers are quarantined automatically, but quarantine notification is manual. | Provides MTTQ evidence and response-gap evidence. |
+| AID-H-029 MCP & Tool Client Security Hardening | MCP clients pin trusted tool endpoints and enforce allowlisted tool schemas. | Supports tool identity and tool-resolution integrity. |
 | AID-H-025 Tool & MCP Resolution Integrity | Tool manifests are hashed and reviewed during deployment; continuous attestation is not yet enabled. | Supports signed tool-call evidence but prevents a full 1.00 score. |
 
 Observed test result: identity spoofing succeeded in 3 of 25 attempts (ISSR = 12%). Detection occurred in 22 of 25 attempts (88%). Mean Time to Quarantine was 8 minutes. Token replay attempts failed for signed production agents, but one legacy connector still used an emergency shared key. Continuous attestation was implemented for production agents but not for all MCP servers.
 
-*Table 70: Worked Example: Scoring Cn-5 Agent Identity Integrity*
+Table : Worked Example: Cn-5 Scoring Interpretation70
 
 | Scoring Factor | Observed Result | Scoring Interpretation |
 | --- | --- | --- |
-| Identity verification | Scoped OIDC identities and signed production manifests. | Exceeds 0.50 because identity is cryptographically bound for production agents. |
+| Identity verification | Scoped OIDC identities and signed production manifests. | Exceeds the 0.50 evidence cap because verified production L2 evidence (scoped OIDC identities, signed manifests) is present. |
 | Delegation and tool identity | Tool allowlists, pinned MCP endpoints, and hashed manifests. | Supports 0.75 because signed tool and delegation controls are present. |
 | Continuous attestation | Partial; not enabled for all MCP servers. | Prevents 1.00 because attestation is not complete across the trust boundary. |
 | Detection and quarantine | 88% detection; MTTQ = 8 minutes; one legacy shared-key exception. | Supports 0.75 but records residual risk and a remediation requirement. |
@@ -349,7 +350,7 @@ Mapped AIDEFEND Techniques (3):
 
 ##### Tr-3: Audit Trail Completeness
 
-Mapped AIDEFEND Techniques (7):
+Mapped AIDEFEND Techniques (8):
 
 *Table 81: Tr-3 - AIDEFEND Mapping*
 
@@ -362,6 +363,7 @@ Mapped AIDEFEND Techniques (7):
 | AID-H-031 | Agentic Skill Admission Security Analysis & Control Pipeline |
 | AID-H-032 | AI-Generated Code Admission Control & Safe Promotion |
 | AID-H-034 | AI Gateway Routing Integrity & Policy-Preserving Failover |
+| AID-H-035 | MCP Server Runtime Boundary & Tool Exposure Governance |
 
 ##### Tr-4: Model Lineage Disclosure
 
@@ -437,7 +439,7 @@ Mapped AIDEFEND Techniques (4):
 
 ##### Cn-1: Scope Enforcement
 
-Mapped AIDEFEND Techniques (7):
+Mapped AIDEFEND Techniques (8):
 
 *Table 87: Cn-1 - AIDEFEND Mapping*
 
@@ -450,10 +452,11 @@ Mapped AIDEFEND Techniques (7):
 | AID-H-031 | Agentic Skill Admission Security Analysis & Control Pipeline |
 | AID-H-034 | AI Gateway Routing Integrity & Policy-Preserving Failover |
 | AID-I-008 | Task-Scoped Browser Session & Origin Isolation for Agents |
+| AID-H-035 | MCP Server Runtime Boundary & Tool Exposure Governance |
 
 ##### Cn-2: Escalation Prevention
 
-Mapped AIDEFEND Techniques (7):
+Mapped AIDEFEND Techniques (8):
 
 *Table 88: Cn-2 - AIDEFEND Mapping*
 
@@ -466,6 +469,7 @@ Mapped AIDEFEND Techniques (7):
 | AID-H-031 | Agentic Skill Admission Security Analysis & Control Pipeline |
 | AID-H-032 | AI-Generated Code Admission Control & Safe Promotion |
 | AID-H-034 | AI Gateway Routing Integrity & Policy-Preserving Failover |
+| AID-H-035 | MCP Server Runtime Boundary & Tool Exposure Governance |
 
 ##### Cn-3: Output Filtering Robustness
 
@@ -497,7 +501,7 @@ Mapped AIDEFEND Techniques (5):
 
 ##### Cn-5: Agent Identity Integrity
 
-Mapped AIDEFEND Techniques (10):
+Mapped AIDEFEND Techniques (11):
 
 *Table 91: Cn-5 - AIDEFEND Mapping*
 
@@ -513,6 +517,7 @@ Mapped AIDEFEND Techniques (10):
 | AID-H-031 | Agentic Skill Admission Security Analysis & Control Pipeline |
 | AID-M-009 | Agent Autonomy & Authority Governance |
 | AID-M-001 | AI Asset Inventory & Mapping |
+| AID-H-035 | MCP Server Runtime Boundary & Tool Exposure Governance |
 
 ## Operational Guidance for Using This Mapping
 

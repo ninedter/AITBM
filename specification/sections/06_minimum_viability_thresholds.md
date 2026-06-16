@@ -4,8 +4,6 @@ MVTs establish per-axis, per-tier floors. If any single IVP axis falls below its
 
 Note on Transparency Tier 4 Threshold: Tier 4 research systems receive a lower operational burden but still require minimum transparency so results can be reproduced before promotion to Tier 3 or higher.
 
-Table: 6. Minimum Viability Thresholds (MVTs)
-
 *Table 50: 6. Minimum Viability Thresholds (MVTs)*
 
 | Axis | Tier 1 MVT | Tier 2 MVT | Tier 3 MVT | Tier 4 MVT | Rationale |
@@ -28,9 +26,7 @@ AITBM introduces a three-level severity classification for MVT breaches, replaci
 | Major | 2 axes below MVT, OR any axis 0.15–0.29 below MVT | FAIL — Major MVT Breach |
 | Minor | 1 axis below MVT by < 0.15 | FAIL — Minor (Conditional Eligible) |
 
-Remediation Requirements by Severity
-
-*Table 52: 6.1 Graduated MVT Severity Classification*
+Table : Remediation Requirements by Severity52
 
 | Severity | Deployment Status | Required Actions | Reassessment Deadline |
 | --- | --- | --- | --- |

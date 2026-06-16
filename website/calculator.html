@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ERS Calculator — AI Trust Benchmarking and Maturity Framework</title>
-  <meta name="description" content="Interactive Evaluated Risk Score calculator — toggle AIDEFEND defensive controls and see how they reduce AI system risk across AITBM's three-layer architecture." />
+  <meta name="description" content="Interactive Effective Risk Score calculator — toggle AIDEFEND defensive controls and see how they reduce AI system risk across AITBM's three-layer architecture." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
@@ -75,7 +75,7 @@
       <h1 class="text-3xl font-bold">ERS Calculator</h1>
       <p class="mt-2 max-w-2xl text-blue-100 text-sm">
         Toggle AIDEFEND defensive controls and adjust deployment context to see how they
-        change the Evaluated Risk Score in real time. For estimation and educational use.
+        change the Effective Risk Score in real time. For estimation and educational use.
       </p>
     </div>
   </section>
@@ -244,9 +244,10 @@
 
           <!-- ERS formula -->
           <div class="rounded-xl border border-gray-200 p-5">
-            <p class="text-xs font-semibold text-navy mb-2">Formula</p>
+            <p class="text-xs font-semibold text-navy mb-2">Formula (simplified)</p>
             <pre class="formula p-3 text-xs overflow-x-auto">ERS = 1.5 + 8.5 &times; (1 &minus; IVP) &times; CRM<sub>n</sub> &times; ACI<sub>mod</sub></pre>
             <p class="mt-2 text-xs text-muted">Residual risk floor &alpha; = 0.15 (1.5 on 0&ndash;10 scale). Risk cannot be zeroed out.</p>
+            <p class="mt-2 text-xs text-muted">This calculator uses a simplified affine calibration of the normative ERS formula (Framework Specification &sect;5), anchored to the Finbot validation case (ERS = 10.0). Use the specification formula for assessments of record.</p>
           </div>
 
         </div>

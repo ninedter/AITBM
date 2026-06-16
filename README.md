@@ -82,7 +82,7 @@ where alpha = 0.15 (residual risk floor -- AI risk cannot be zeroed out)
 - **Agentic-native** -- Cn-5 (Agent Identity Integrity) and the Containment axis address MCP, tool-use, and multi-agent threats.
 - **Evidence-aware** -- The ACI penalizes opaque systems and stale assessments rather than trusting them at face value.
 - **Tiered pathways** -- Full, Standard, and Lite assessment tracks so startups and SMEs can participate alongside enterprises.
-- **AIDEFEND integration** -- 85 AIDEFEND defensive techniques mapped to all 21 sub-metrics for evidence-based scoring.
+- **AIDEFEND integration** -- AIDEFEND's 86-technique defensive catalog mapped to all 21 sub-metrics for evidence-based scoring.
 
 ---
 
@@ -112,7 +112,7 @@ The **Finbot** worked example validates the full framework pipeline:
 - **Result:** ERS = 10.0, CRM = 1.35, Severity = Critical MVT
 - Containment failure (Cn = 0.30 vs MVT 0.65) and compound operational risk drive the maximum score.
 
-See [markdown/09_worked_example_finbot.md](markdown/09_worked_example_finbot.md) for the full worked example.
+See [specification/sections/09_worked_example_finbot.md](specification/sections/09_worked_example_finbot.md) for the full worked example.
 
 ---
 
@@ -120,36 +120,37 @@ See [markdown/09_worked_example_finbot.md](markdown/09_worked_example_finbot.md)
 
 ```
 AITBM/
-├── README.md                 This file
-├── site/                     Project website (static HTML + Tailwind CSS)
-│   ├── index.html            Overview and landing page
-│   ├── framework.html        Three-layer architecture (IVP/ORP/ACI/ERS)
-│   ├── gap-analysis.html     12 structural gaps across 4 domains
-│   ├── aidefend.html         AIDEFEND mapping and worked examples
-│   ├── calculator.html       Interactive ERS calculator
-│   ├── resources.html        Documentation links and standards alignment
-│   ├── assets/               CSS and JavaScript assets
-│   ├── Dockerfile            Docker container configuration
-│   └── docker-compose.yml    Local development (docker compose up --build)
-├── docs/                     Framework specification documents
-│   ├── AITBM_Framework_Specification.docx
-│   └── AITBM_Framework_Specification.pdf
-└── markdown/                 Per-section framework reference (Markdown)
-    ├── 00_revision_history.md
-    ├── 01_executive_summary.md
-    ├── 02_design_principles.md
-    ├── 03_three_layer_architecture.md
-    ├── 04_deployment_tier_classification.md
-    ├── 05_effective_risk_score.md
-    ├── 06_minimum_viability_thresholds.md
-    ├── 07_behavioral_baseline_deviation.md
-    ├── 08_tiered_assessment_pathways.md
-    ├── 09_worked_example_finbot.md
-    ├── 10_framework_comparison.md
-    ├── 11_implementation_roadmap.md
-    ├── 12_conclusion.md
-    ├── 13_references.md
-    └── 14_aidefend_integration.md
+├── README.md                          This file
+├── specification/                     The framework specification, in every form
+│   ├── AITBM_Framework_Specification.pdf        Read it as one document
+│   ├── AITBM_Framework_Specification.docx       Editable Word source
+│   └── sections/                                The same spec, section by section (Markdown)
+│       ├── README.md                            Section index
+│       ├── 00_revision_history.md
+│       ├── 01_executive_summary.md
+│       ├── 02_design_principles.md
+│       ├── 03_three_layer_architecture.md
+│       ├── 04_deployment_tier_classification.md
+│       ├── 05_effective_risk_score.md
+│       ├── 06_minimum_viability_thresholds.md
+│       ├── 07_behavioral_baseline_deviation.md
+│       ├── 08_tiered_assessment_pathways.md
+│       ├── 09_worked_example_finbot.md
+│       ├── 10_framework_comparison.md
+│       ├── 11_implementation_roadmap.md
+│       ├── 12_conclusion.md
+│       ├── 13_references.md
+│       └── 14_aidefend_integration.md
+└── website/                           Project website (static HTML + Tailwind CSS)
+    ├── index.html            Overview and landing page
+    ├── framework.html        Three-layer architecture (IVP/ORP/ACI/ERS)
+    ├── gap-analysis.html     12 structural gaps across 4 domains
+    ├── aidefend.html         AIDEFEND mapping and worked examples
+    ├── calculator.html       Interactive ERS calculator
+    ├── resources.html        Documentation links and standards alignment
+    ├── assets/               CSS and JavaScript assets
+    ├── Dockerfile            Docker container configuration
+    └── docker-compose.yml    Local development (docker compose up --build)
 ```
 
 ---
@@ -157,7 +158,7 @@ AITBM/
 ## Running the Website Locally
 
 ```bash
-cd site
+cd website
 docker compose up --build -d
 ```
 
@@ -180,7 +181,7 @@ The site is static HTML with Tailwind CSS (CDN) and vanilla JavaScript -- no bui
 | NIST AI RMF | Risk management framework alignment |
 | NIST Cyber AI Profile IR 8596 | Cyber-AI intersection alignment |
 | EU AI Act | Regulatory compliance mapping |
-| AIDEFEND | Defensive countermeasure mapping (85 techniques) |
+| AIDEFEND | Defensive countermeasure mapping (86 techniques) |
 | D3FEND 1.0 | Defensive countermeasure taxonomy |
 
 ---

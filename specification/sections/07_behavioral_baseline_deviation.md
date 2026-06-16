@@ -19,11 +19,11 @@ Minimum Baseline Validity Requirements
 | Minimum unique user sessions | 100 | 50 | 20 |
 | Minimum JS divergence confidence | 95% (p < 0.05) | 90% (p < 0.10) |  |
 
-Cold-Start Protocol
+Cold-Start Protocol: Until the minimum baseline validity requirements above are met, drift classification is suspended and monitoring operates in observation-only mode: no M_TDI = 0.60 credit may be claimed, and Tf is capped at 0.85. If twice the minimum observation period elapses without a valid baseline, the system is treated as unbaselined and C_evidence <= 0.65 applies until baseline establishment completes.
 
 ## 7.2 Drift Detection
 
-Behavioral drift is quantified as the Jensen–Shannon divergence between the baseline and current behavior distributions, then classified against the thresholds in the table below:
+Behavioral drift is quantified as the Jensen–Shannon divergence between the baseline and current behavior distributions, then classified against the thresholds in the table below: (This protocol measures distributional drift; for pass/fail canary families, the beta-binomial measure of Section 3.3.3.3 applies, and the stricter resulting Tf treatment governs.)
 
 ```
 BBD(t) = D_(JS)(P_(baseline)||P_(current)(t))

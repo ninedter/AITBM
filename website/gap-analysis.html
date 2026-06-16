@@ -112,7 +112,7 @@
             <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Incomplete scoring guidance</span></td><td class="px-4 py-3">Implementation paralysis</td><td class="px-4 py-3">Test methods + tool integration per sub-metric</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
 
             <tr><td colspan="4" class="px-4 py-2 font-bold text-navy bg-blue-50/60">Operational reality</td></tr>
-            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Context-blind scoring</span></td><td class="px-4 py-3">Critical vs. low-risk indistinguishable</td><td class="px-4 py-3">ORP layer; CRM (0.75–1.75)</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Context-blind scoring</span></td><td class="px-4 py-3">Critical vs. low-risk indistinguishable</td><td class="px-4 py-3">ORP layer + Compound Risk Multiplier (CRM)</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
             <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Temporal evidence decay</span></td><td class="px-4 py-3">Stale assessments, false confidence</td><td class="px-4 py-3">ACI decay + re-assessment triggers</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
             <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Operational vs. intrinsic conflation</span></td><td class="px-4 py-3">Zero-risk fallacy</td><td class="px-4 py-3">IVP + ORP separation; α = 0.15 floor</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
 
@@ -172,6 +172,94 @@
       Figures are drawn from published 2025–2026 security research cited in the AITBM gap
       analysis. See the Resources page for the full documentation.
     </p>
+  </section>
+
+  <!-- Standards re-validation -->
+  <section class="bg-gray-50 border-y border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <p class="text-sm font-semibold uppercase tracking-wide text-navy-light">June 2026 re-validation</p>
+      <h2 class="mt-1 text-3xl font-bold text-navy">Still ahead: AIVSS v0.8 and AIUC-1</h2>
+      <p class="mt-3 max-w-3xl text-muted">
+        The comparison was re-verified against <span class="font-semibold">OWASP AIVSS v0.8</span>
+        (released March 2026 — CVSS 4.0 baseline plus ten equal-weight agentic amplification
+        factors) and extended with <span class="font-semibold">AIUC-1</span> (January 2026 — the
+        AI-agent certification standard with a Lloyd's-backed insurance backstop). Verdicts below
+        reflect v0.8's genuine improvements; all twelve structural gaps remain open.
+      </p>
+
+      <div class="mt-8 overflow-x-auto">
+        <table class="spec-table w-full border-collapse text-sm">
+          <thead>
+            <tr>
+              <th class="px-4 py-3 text-left">Capability</th>
+              <th class="px-4 py-3 text-center hidden lg:table-cell">CVSS 4.0</th>
+              <th class="px-4 py-3 text-center">AIVSS v0.8</th>
+              <th class="px-4 py-3 text-center hidden lg:table-cell">RAISE</th>
+              <th class="px-4 py-3 text-center">AIUC-1</th>
+              <th class="px-4 py-3 text-center">AITBM</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+            <tr><td class="px-4 py-2.5">AI-native (non-deterministic)</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">Yes</td><td class="px-4 py-2.5 text-center">Yes</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Multi-dimensional profile</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">Yes</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Deterministic weights</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">N/A</td><td class="px-4 py-2.5 text-center">Yes</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">Partial</td><td class="px-4 py-2.5 text-center">N/A</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Epistemic confidence scoring</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Behavioral drift monitoring</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Supply chain integration (AIBOM)</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Tiered SME pathway</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">N/A</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Stateful/agentic risk modeling</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Yes</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">MVT enforcement per dimension</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Compound operational risk</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Residual deployment risk floor</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Graduated MVT severity</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Jurisdictional fairness</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Architecture classification tree</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">Partial</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+            <tr><td class="px-4 py-2.5">Inter-rater reliability targets</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center hidden lg:table-cell">No</td><td class="px-4 py-2.5 text-center">No</td><td class="px-4 py-2.5 text-center font-bold text-navy">Yes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs text-gray-500">
+        Verdicts mirror Section 10 of the framework specification (June 2026). CVSS 4.0 and RAISE
+        columns are hidden on small screens.
+      </p>
+
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-xl border border-gray-200 bg-white p-6">
+          <h3 class="font-bold text-navy">All twelve gaps persist in v0.8</h3>
+          <p class="mt-2 text-sm text-muted">
+            v0.8 fixes factor weights and adds a relative 0.67 mitigation floor, but keeps a single
+            0–10 score by design, rates factors on three-point single-phrase anchors with no test
+            methods, and drops fairness, privacy, and transparency entirely.
+          </p>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6">
+          <h3 class="font-bold text-navy">AIUC-1 independently validates Cn-5</h3>
+          <p class="mt-2 text-sm text-muted">
+            The official AIVSS↔AIUC-1 crosswalk maps zero AIUC-1 controls to Agent Identity
+            Impersonation and Multi-Agent Orchestration, and the standard is single-agent scoped —
+            exactly the exposure Cn-5 and AITBM's agentic weighting quantify.
+          </p>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6">
+          <h3 class="font-bold text-navy">Insurance is not measurement</h3>
+          <p class="mt-2 text-sm text-muted">
+            AIUC-1's Lloyd's-backed insurance is the economic counterpart of AITBM's α = 0.15
+            residual-risk floor: it transfers residual risk financially, while AITBM quantifies it —
+            so a certified, insured agent still warrants a full ERS profile.
+          </p>
+        </div>
+      </div>
+
+      <p class="mt-8 max-w-3xl text-muted">
+        <span class="font-semibold text-navy">Verdict:</span> AITBM is the only framework with full
+        coverage on 11 of the 15 compared capabilities — four of which (epistemic confidence,
+        compound operational risk, graduated MVT severity, inter-rater reliability targets) no
+        compared framework addresses at all — and the only one with five-level rubrics and required
+        test methods per sub-metric. Both standards strengthen the ecosystem AITBM plugs into:
+        AIVSS quantifies vulnerabilities, AIUC-1 certifies controls, and AITBM measures system risk
+        across dimensions, context, and time.
+      </p>
+    </div>
   </section>
 
   <!-- Footer -->

@@ -45,8 +45,8 @@ The ACI assessment scores how much is known about Finbot's evidence across prove
 
 | Component | Score | Justification |
 | --- | --- | --- |
-| Provenance Completeness (Pc) | 0.60 | Partial AIBOM exists: base model documented (GPT-4 via API), but RAG corpus provenance incomplete. Email ingestion pipeline has no data lineage. Completeness ~55%. |
-| Evaluation Coverage (Ec) | 0.40 | Self-assessed (Independence Multiplier = 0.60) with Base_Coverage approximately 0.76 (16 of 21 sub-metrics tested) in staging environment (Fidelity Factor = 0.85). Ec = 0.76 x 0.60 x 0.85 = 0.388, rounded to 0.40. |
+| Provenance Completeness (Pc) | 0.60 | Partial AIBOM exists: base model documented (GPT-4 via API), but RAG corpus provenance incomplete. Email ingestion pipeline has no data lineage. Completeness ~60%. |
+| Evaluation Coverage (Ec) | 0.40 | Self-assessed (Independence Multiplier = 0.60) with Base_Coverage approximately 0.76 (16 of 21 sub-metrics tested) in staging environment (Fidelity Factor = 0.85). Ec = 0.76 x 0.60 x 0.85 = 0.388, rounded to 0.40 (nearest 0.05). |
 | Temporal Freshness (Tf) | 0.85 | Assessment evidence is 5 days old. Tier 1 lambda = 0.0231, so T_calendar = e^(-0.0231 x 5) = 0.891. Because unresolved identity/tool evidence caps confidence at C_evidence = 0.85, Tf = min(0.891, 0.85) = 0.85. |
 
 ## 9.4 ERS Calculation

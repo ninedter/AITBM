@@ -6,7 +6,7 @@ AITBM inverts the design assumption of existing frameworks. Rather than beginnin
 
 ## 2.2 Multi-Dimensionality as Primary Output
 
-The framework produces vector-based profiles, not scalar scores, as its authoritative output. This preserves the visibility of trade-offs that mathematical impossibility theorems guarantee cannot be resolved: it is provably impossible to simultaneously maximize accuracy, adversarial robustness, and fairness.
+The framework produces vector-based profiles, not scalar scores, as its authoritative output. This preserves the visibility of trade-offs that formal results show cannot be resolved in general: common fairness criteria are mutually incompatible except in degenerate cases, and demonstrated accuracy-robustness trade-offs mean that accuracy, adversarial robustness, and fairness cannot in general be maximized simultaneously.
 
 ## 2.3 Deterministic Weights via Deployment Tiering
 
