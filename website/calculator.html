@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ERS Calculator — AI Trust Benchmarking and Maturity Framework</title>
-  <meta name="description" content="Interactive Effective Risk Score calculator — toggle AIDEFEND defensive controls and see how they reduce AI system risk across AITBM's three-layer architecture." />
+  <title>AI Risk Score (ERS) Calculator — AITBM</title>
+  <meta name="description" content="Free interactive AI security risk calculator: toggle AIDEFEND controls and deployment context to see the AITBM Effective Risk Score (ERS) change across the three layers." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
@@ -18,15 +18,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
   <link rel="canonical" href="https://aitbm.org/calculator.html" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: { extend: {
-        colors: { navy: { DEFAULT: "#1F3864", light: "#2E5090", dark: "#152743" }, muted: "#555555" },
-        fontFamily: { sans: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"] },
-      } },
-    };
-  </script>
+  <link rel="stylesheet" href="assets/css/tailwind.css" />
   <link rel="stylesheet" href="assets/css/site.css" />
   <style>
     .bar-fill { transition: width .3s ease, background-color .3s ease; }
@@ -41,6 +33,92 @@
     .range-input::-moz-range-thumb { height: 18px; width: 18px; border-radius: 50%; background: var(--navy); cursor: pointer; border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
     @media (max-width: 1023px) { .results-panel { position: relative !important; top: auto !important; } }
   </style>
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "description": "An open, bias-resistant framework for AI security risk scoring and assessment.",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aitbm.org/calculator.html#webpage",
+      "url": "https://aitbm.org/calculator.html",
+      "name": "AI Risk Score (ERS) Calculator — AITBM",
+      "description": "Free interactive AI security risk calculator: toggle AIDEFEND controls and deployment context to see the AITBM Effective Risk Score (ERS) change across the three layers.",
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "about": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "primaryImageOfPage": "https://aitbm.org/assets/og-image.png",
+      "inLanguage": "en",
+      "keywords": "AI risk calculator, AI security risk score, Effective Risk Score, AIDEFEND controls, agentic AI security",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/calculator.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/calculator.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Calculator",
+          "item": "https://aitbm.org/calculator.html"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://aitbm.org/calculator.html#app",
+      "name": "AITBM ERS Risk Score Calculator",
+      "url": "https://aitbm.org/calculator.html",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript",
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free interactive AI security risk calculator: toggle AIDEFEND controls and deployment context to see the AITBM Effective Risk Score (ERS) change across the three layers."
+    }
+  ]
+}
+  </script>
 </head>
 <body class="font-sans antialiased bg-paper">
 

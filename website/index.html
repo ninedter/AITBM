@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Trust Benchmarking and Maturity Framework (AITBM)</title>
-  <meta name="description" content="AITBM is a bias-resistant, multi-dimensional framework for quantifying AI system security risk — eliminating assessor subjectivity through granular scoring rubrics and a three-layer architecture." />
+  <title>AITBM — AI Security Risk Scoring & Maturity Framework</title>
+  <meta name="description" content="AITBM is an open, bias-resistant framework for AI security risk scoring and assessment — turning subjective low/medium/high judgments into one defensible 0–10 score." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
@@ -18,22 +18,55 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
   <link rel="canonical" href="https://aitbm.org/" />
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { DEFAULT: "#1F3864", light: "#2E5090", dark: "#152743" },
-            muted: "#555555",
-          },
-          fontFamily: { sans: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"] },
-        },
-      },
-    };
-  </script>
+  <link rel="stylesheet" href="assets/css/tailwind.css" />
   <link rel="stylesheet" href="assets/css/site.css" />
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "description": "An open, bias-resistant framework for AI security risk scoring and assessment.",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aitbm.org/#webpage",
+      "url": "https://aitbm.org/",
+      "name": "AITBM — AI Security Risk Scoring & Maturity Framework",
+      "description": "AITBM is an open, bias-resistant framework for AI security risk scoring and assessment — turning subjective low/medium/high judgments into one defensible 0–10 score.",
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "about": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "primaryImageOfPage": "https://aitbm.org/assets/og-image.png",
+      "inLanguage": "en",
+      "keywords": "AI security risk scoring, AI security assessment, AI risk framework, AI trust framework, LLM security, agentic AI security, OWASP AI security"
+    }
+  ]
+}
+  </script>
 </head>
 <body class="font-sans antialiased bg-paper">
 
