@@ -21,6 +21,16 @@ body { color: #333333; }
   color: #e8eefb;
   border-radius: 0.5rem;
   line-height: 1.6;
+  max-width: 100%;        /* never wider than its container */
+}
+/* On phones, wrap long formulas so they fit instead of running off-screen
+   (wider screens keep them on one line, scrolling via overflow-x-auto). */
+@media (max-width: 640px) {
+  .formula {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
 }
 
 /* Subtle card lift */
