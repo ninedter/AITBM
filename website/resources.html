@@ -26,35 +26,40 @@
   </script>
   <link rel="stylesheet" href="assets/css/site.css" />
 </head>
-<body class="font-sans antialiased bg-white">
+<body class="font-sans antialiased bg-paper">
 
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-200">
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <div class="flex h-16 items-center justify-between">
-        <a href="index.html" class="flex items-center gap-2">
-          <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-navy text-white font-bold text-sm">AI</span>
-          <span class="font-bold text-navy tracking-tight">AI Trust Benchmarking and Maturity Framework</span>
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy"><svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><rect x="18" y="16" width="64" height="13" rx="6.5" fill="#ffffff"/><rect x="28" y="35" width="44" height="13" rx="6.5" fill="#b9c6e0"/><rect x="38" y="54" width="24" height="13" rx="6.5" fill="#7e95c4"/><circle cx="50" cy="84" r="9" fill="#d98a5f"/></svg></span>
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
         </a>
-        <nav class="hidden md:flex items-center gap-7 text-sm text-gray-700">
-          <a href="index.html" class="nav-link hover:text-navy">Overview</a>
-          <a href="framework.html" class="nav-link hover:text-navy">Framework</a>
-          <a href="gap-analysis.html" class="nav-link hover:text-navy">Gap Analysis</a>
-          <a href="aidefend.html" class="nav-link hover:text-navy">AIDEFEND</a>
-          <a href="calculator.html" class="nav-link hover:text-navy">Calculator</a>
-          <a href="resources.html" class="nav-link active hover:text-navy">Resources</a>
+        <nav class="hidden lg:flex items-center gap-6 text-sm text-gray-700">
+          <a href="index.html" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="framework.html" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="gap-analysis.html" data-nav="gap-analysis" class="nav-link hover:text-navy">Gap Analysis</a>
+          <a href="aidefend.html" data-nav="aidefend" class="nav-link hover:text-navy">AIDEFEND</a>
+          <a href="calculator.html" data-nav="calculator" class="nav-link hover:text-navy">Calculator</a>
+          <a href="glossary.html" data-nav="glossary" class="nav-link hover:text-navy">Glossary</a>
+          <a href="resources.html" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
           <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
         </nav>
-        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="md:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
-      <div data-nav-menu class="hidden md:hidden pb-4 space-y-1 text-sm">
-        <a href="index.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
-        <a href="framework.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
-        <a href="gap-analysis.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
-        <a href="aidefend.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
-        <a href="calculator.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
-        <a href="resources.html" class="block rounded px-3 py-2 text-navy font-semibold bg-gray-50">Resources</a>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="index.html" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="framework.html" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="gap-analysis.html" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="aidefend.html" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="calculator.html" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="glossary.html" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="resources.html" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
         <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
       </div>
     </div>
@@ -154,18 +159,24 @@
   <footer class="border-t border-gray-200 bg-gray-50">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
       <div>
-        <div class="flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded bg-navy text-white font-bold text-xs">AI</span>
-          <span class="font-bold text-navy">AI Trust Benchmarking and Maturity Framework</span>
+        <div class="flex items-center gap-2.5">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy"><svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><rect x="18" y="16" width="64" height="13" rx="6.5" fill="#ffffff"/><rect x="28" y="35" width="44" height="13" rx="6.5" fill="#b9c6e0"/><rect x="38" y="54" width="24" height="13" rx="6.5" fill="#7e95c4"/><circle cx="50" cy="84" r="9" fill="#d98a5f"/></svg></span>
+          <span class="leading-tight">
+            <span class="block font-bold text-navy">AITBM</span>
+            <span class="block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
         </div>
-        <p class="mt-3 text-sm text-muted max-w-xs">AI Trust Benchmarking and Maturity Framework — a community-driven, volunteer effort.</p>
+        <p class="mt-3 text-sm text-muted max-w-xs">A bias-resistant, multi-dimensional framework for quantifying AI system security risk — community-driven and volunteer-built.</p>
       </div>
       <div>
         <h4 class="text-sm font-semibold text-navy">Explore</h4>
         <ul class="mt-3 space-y-2 text-sm text-muted">
           <li><a href="framework.html" class="hover:text-navy">Framework</a></li>
+          <li><a href="submetrics.html" class="hover:text-navy">Sub-metrics reference</a></li>
           <li><a href="gap-analysis.html" class="hover:text-navy">Gap Analysis</a></li>
           <li><a href="aidefend.html" class="hover:text-navy">AIDEFEND Mapping</a></li>
+          <li><a href="calculator.html" class="hover:text-navy">ERS Calculator</a></li>
+          <li><a href="glossary.html" class="hover:text-navy">Glossary</a></li>
           <li><a href="resources.html" class="hover:text-navy">Resources</a></li>
         </ul>
       </div>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="AITBM">
+  <rect x="18" y="16" width="64" height="13" rx="6.5" fill="#ffffff"></rect>
+  <rect x="28" y="35" width="44" height="13" rx="6.5" fill="#b9c6e0"></rect>
+  <rect x="38" y="54" width="24" height="13" rx="6.5" fill="#7e95c4"></rect>
+  <circle cx="50" cy="84" r="9" fill="#d98a5f"></circle>
+</svg>

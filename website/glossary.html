@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glossary — AI Trust Benchmarking and Maturity Framework</title>
+  <meta name="description" content="Plain-English definitions of every AITBM term and acronym — the three layers (IVP, ORP, ACI), the ERS score, the five security axes, and the standards AITBM aligns to." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/glossary.html" />
+  <meta property="og:title" content="Glossary — AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:description" content="Plain-English definitions of every AITBM term and acronym." />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="canonical" href="https://aitbm.org/glossary.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { navy: { DEFAULT: "#1F3864", light: "#2E5090", dark: "#152743" }, muted: "#555555" },
+        fontFamily: { sans: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"] },
+      } },
+    };
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="font-sans antialiased bg-paper">
+
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy"><svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><rect x="18" y="16" width="64" height="13" rx="6.5" fill="#ffffff"/><rect x="28" y="35" width="44" height="13" rx="6.5" fill="#b9c6e0"/><rect x="38" y="54" width="24" height="13" rx="6.5" fill="#7e95c4"/><circle cx="50" cy="84" r="9" fill="#d98a5f"/></svg></span>
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-6 text-sm text-gray-700">
+          <a href="index.html" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="framework.html" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="gap-analysis.html" data-nav="gap-analysis" class="nav-link hover:text-navy">Gap Analysis</a>
+          <a href="aidefend.html" data-nav="aidefend" class="nav-link hover:text-navy">AIDEFEND</a>
+          <a href="calculator.html" data-nav="calculator" class="nav-link hover:text-navy">Calculator</a>
+          <a href="glossary.html" data-nav="glossary" class="nav-link hover:text-navy">Glossary</a>
+          <a href="resources.html" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="index.html" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="framework.html" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="gap-analysis.html" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="aidefend.html" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="calculator.html" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="glossary.html" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="resources.html" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page header -->
+  <section class="bg-navy text-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14">
+      <span class="inline-flex items-center rounded-full border border-white/25 px-3 py-1 text-xs font-semibold tracking-wide text-blue-100">PLAIN ENGLISH</span>
+      <h1 class="mt-4 text-4xl font-bold">Glossary</h1>
+      <p class="mt-3 max-w-2xl text-blue-100">
+        Every AITBM term and acronym, defined without jargon. Hover any
+        <abbr title="Like this — dotted underlines across the site link back here." class="text-white">underlined term</abbr>
+        on the site for a quick definition, or search below.
+      </p>
+      <div class="mt-6 max-w-md">
+        <label for="gloss-search" class="sr-only">Search terms</label>
+        <input id="gloss-search" type="search" placeholder="Search terms — e.g. CRM, freshness, containment…"
+          class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-white placeholder:text-blue-200/70 focus:bg-white focus:text-gray-900 focus:placeholder:text-gray-400 focus:outline-none" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Jump nav -->
+  <section class="border-b border-gray-200 bg-white sticky top-16 z-30">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-gray-600">
+      <a href="#core" class="subnav-link hover:text-navy">Core architecture</a>
+      <a href="#axes" class="subnav-link hover:text-navy">The five axes</a>
+      <a href="#confidence" class="subnav-link hover:text-navy">Confidence &amp; freshness</a>
+      <a href="#severity" class="subnav-link hover:text-navy">Risk &amp; assessment</a>
+      <a href="#tests" class="subnav-link hover:text-navy">Test methods</a>
+      <a href="#standards" class="subnav-link hover:text-navy">Standards</a>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-12 space-y-14">
+
+    <!-- Core architecture -->
+    <section id="core" class="gloss-section scroll-mt-32">
+      <h2 class="text-2xl font-bold text-navy">Core architecture</h2>
+      <p class="mt-2 text-sm text-muted max-w-2xl">The framework and the three layers that feed its final score.</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="aitbm" data-term="aitbm framework name trust benchmarking maturity">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">AITBM</h3><span class="text-sm font-semibold text-gray-700">AI Trust Benchmarking and Maturity Framework</span></div>
+          <p class="mt-2 text-sm text-muted">The whole framework — a repeatable method for scoring how risky an AI system is, from 0 to 10, without relying on assessor opinion.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ers" data-term="ers effective risk score final number composite">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">ERS</h3><span class="text-sm font-semibold text-gray-700">Effective Risk Score</span></div>
+          <p class="mt-2 text-sm text-muted">The final 0–10 number. It combines all three layers; higher means more residual risk. It can never reach zero because of the α floor.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ivp" data-term="ivp intrinsic vulnerability profile layer 1 system">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">IVP</h3><span class="text-sm font-semibold text-gray-700">Intrinsic Vulnerability Profile · Layer 1</span></div>
+          <p class="mt-2 text-sm text-muted">How strong the system is on its own. 21 checks across five security areas, each scored 0–4. Reported as a five-number profile, not a single score.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="orp" data-term="orp operational risk posture layer 2 deployment context">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">ORP</h3><span class="text-sm font-semibold text-gray-700">Operational Risk Posture · Layer 2</span></div>
+          <p class="mt-2 text-sm text-muted">How risky the deployment is: autonomy, exposure, blast radius, and how hard it is to fix. Produces the Compound Risk Multiplier (CRM).</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="aci" data-term="aci assurance confidence index layer 3 evidence trust">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">ACI</h3><span class="text-sm font-semibold text-gray-700">Assurance Confidence Index · Layer 3</span></div>
+          <p class="mt-2 text-sm text-muted">How much we can trust the evidence, given how it was gathered and how old it is. Low confidence inflates the score and triggers re-assessment.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="crm" data-term="crm compound risk multiplier elevated dimensions">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">CRM</h3><span class="text-sm font-semibold text-gray-700">Compound Risk Multiplier</span></div>
+          <p class="mt-2 text-sm text-muted">A step-up factor (1.00–1.60, capped at 1.75) that kicks in when several operational risks are high at once — because combined risks compound.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="alpha" data-term="alpha residual risk floor 0.15 zero">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">α &nbsp;<span class="font-normal text-gray-500">(alpha)</span></h3><span class="text-sm font-semibold text-gray-700">Residual risk floor = 0.15</span></div>
+          <p class="mt-2 text-sm text-muted">The irreducible 15% of risk that remains even with perfect controls. It stops any score from reaching zero — AI risk can't be fully eliminated.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Five axes -->
+    <section id="axes" class="gloss-section scroll-mt-32">
+      <h2 class="text-2xl font-bold text-navy">The five IVP axes</h2>
+      <p class="mt-2 text-sm text-muted max-w-2xl">The security areas inside Layer 1. Each holds several 0–4 sub-metrics.</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ro" data-term="ro robustness adversarial poisoning distribution shift">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Ro</h3><span class="text-sm font-semibold text-gray-700">Robustness</span></div>
+          <p class="mt-2 text-sm text-muted">Resistance to adversarial input, distribution shift, inconsistent output, and data poisoning. (4 sub-metrics)</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="fa" data-term="fa fairness bias demographic parity calibration">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Fa</h3><span class="text-sm font-semibold text-gray-700">Fairness</span></div>
+          <p class="mt-2 text-sm text-muted">Demographic parity, calibration consistency, representation bias, and counterfactual fairness. (4 sub-metrics)</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="tr" data-term="tr transparency explainability audit trail lineage">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Tr</h3><span class="text-sm font-semibold text-gray-700">Transparency</span></div>
+          <p class="mt-2 text-sm text-muted">Explainability, confidence calibration, audit-trail completeness, and model-lineage disclosure. (4 sub-metrics)</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="pr" data-term="pr privacy leakage inference re-identification minimization">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Pr</h3><span class="text-sm font-semibold text-gray-700">Privacy</span></div>
+          <p class="mt-2 text-sm text-muted">Training-data leakage, inference-attack resistance, data minimization, and re-identification risk. (4 sub-metrics)</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="cn" data-term="cn containment scope escalation agentic side channel">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Cn</h3><span class="text-sm font-semibold text-gray-700">Containment</span></div>
+          <p class="mt-2 text-sm text-muted">Keeping an agent inside its limits: scope, escalation, output filtering, side channels, and identity. The axis that carries AITBM's agentic-systems coverage. (5 sub-metrics)</p>
+        </div>
+        <div class="term-row rounded-xl border-2 border-navy/25 bg-white p-5" id="cn5" data-term="cn-5 agent identity integrity impersonation spiffe oidc agentic mcp">
+          <div class="flex flex-wrap items-center gap-x-3"><h3 class="text-lg font-bold text-navy">Cn-5</h3><span class="text-sm font-semibold text-gray-700">Agent Identity Integrity</span></div>
+          <p class="mt-2 text-sm text-muted">A Containment sub-metric. Can the system prove which agent is acting, and resist impersonation? Critical for agentic and MCP systems where agents call each other and external tools.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Confidence & freshness -->
+    <section id="confidence" class="gloss-section scroll-mt-32">
+      <h2 class="text-2xl font-bold text-navy">Confidence &amp; freshness</h2>
+      <p class="mt-2 text-sm text-muted max-w-2xl">The inputs to Layer 3 — how AITBM tracks whether an assessment can still be trusted.</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="pc" data-term="pc provenance aibom lineage supply chain">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Pc</h3><span class="text-sm font-semibold text-gray-700">Provenance</span></div>
+          <p class="mt-2 text-sm text-muted">How well the system's origins and supply chain are documented — for example, via an AI Bill of Materials (AIBOM).</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ec" data-term="ec evaluation coverage testing independence fidelity">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Ec</h3><span class="text-sm font-semibold text-gray-700">Evaluation Coverage</span></div>
+          <p class="mt-2 text-sm text-muted">How much was tested, how independent the tester was, and how production-like the test environment was. A weak link in any one drags it down.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="tf" data-term="tf temporal freshness decay recency half-life">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Tf</h3><span class="text-sm font-semibold text-gray-700">Temporal Freshness</span></div>
+          <p class="mt-2 text-sm text-muted">How recent the evidence is. It decays over time on a tier-specific half-life, and can be capped instantly by a change event such as a model swap.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="tdi" data-term="tdi time drift index drift change behaviour config">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">TDI</h3><span class="text-sm font-semibold text-gray-700">Time Drift Index</span></div>
+          <p class="mt-2 text-sm text-muted">A 0–1 measure of how far the system has drifted from what was assessed. Higher drift makes freshness decay faster.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="bbd" data-term="bbd behavioral baseline deviation jensen shannon divergence monitoring">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">BBD</h3><span class="text-sm font-semibold text-gray-700">Behavioral Baseline Deviation</span></div>
+          <p class="mt-2 text-sm text-muted">The statistical distance between how the system behaved at assessment and how it behaves now. Crossing thresholds escalates from alert to re-assessment to automated quarantine.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Risk & assessment -->
+    <section id="severity" class="gloss-section scroll-mt-32">
+      <h2 class="text-2xl font-bold text-navy">Risk &amp; assessment</h2>
+      <p class="mt-2 text-sm text-muted max-w-2xl">How AITBM turns a score into a required level of scrutiny.</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="mvt" data-term="mvt minimum viable threshold floor severity critical">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">MVT</h3><span class="text-sm font-semibold text-gray-700">Minimum Viable Threshold</span></div>
+          <p class="mt-2 text-sm text-muted">A floor a dimension must meet. Failing one flags a severity on its own, regardless of the overall score. A "Critical MVT" means unacceptable risk.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="tiers" data-term="deployment tiers critical consumer internal research cadence">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Tiers I–IV</h3><span class="text-sm font-semibold text-gray-700">Deployment tiers</span></div>
+          <p class="mt-2 text-sm text-muted">Risk-based assessment cadence: Tier 1 Critical (most frequent) through Tier 4 Research (annual). Higher tiers re-assess more often and let evidence decay faster.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5 sm:col-span-2" id="pathways" data-term="assessment pathways full standard lite sme depth">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Pathways</h3><span class="text-sm font-semibold text-gray-700">Full · Standard · Lite</span></div>
+          <p class="mt-2 text-sm text-muted">Three assessment depths. <span class="font-semibold text-gray-800">Full</span> evaluates all five axes; <span class="font-semibold text-gray-800">Standard</span> uses reduced test batteries; <span class="font-semibold text-gray-800">Lite</span> covers the core axes only — a practical on-ramp for smaller teams.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test methods -->
+    <section id="tests" class="gloss-section scroll-mt-32">
+      <h2 class="text-2xl font-bold text-navy">Test methods</h2>
+      <p class="mt-2 text-sm text-muted max-w-2xl">Concrete measurements that feed the rubrics — shown here for the new identity sub-metric.</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="issr" data-term="issr identity spoofing success rate impersonation cn-5">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">ISSR</h3><span class="text-sm font-semibold text-gray-700">Identity Spoofing Success Rate</span></div>
+          <p class="mt-2 text-sm text-muted">How often an attacker can successfully impersonate an agent. A core test for Cn-5 — lower is better.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="mttq" data-term="mttq mean time to quarantine detection isolate cn-5">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">MTTQ</h3><span class="text-sm font-semibold text-gray-700">Mean Time to Quarantine</span></div>
+          <p class="mt-2 text-sm text-muted">How quickly a compromised agent is detected and isolated. Another Cn-5 test — faster is better.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Standards -->
+    <section id="standards" class="gloss-section scroll-mt-32">
+      <h2 class="text-2xl font-bold text-navy">Related standards &amp; frameworks</h2>
+      <p class="mt-2 text-sm text-muted max-w-2xl">The ecosystem AITBM aligns to, maps against, or improves upon. See <a href="resources.html" class="font-semibold text-navy hover:text-navy-light">Resources</a> for the full alignment.</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="aidefend" data-term="aidefend ai defense framework controls techniques">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">AIDEFEND</h3><span class="text-xs font-semibold text-gray-700">AI Defense Framework</span></div>
+          <p class="mt-2 text-sm text-muted">Open catalog of defensive techniques. AITBM turns each control into a measurable change in the score.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="aivss" data-term="aivss ai vulnerability scoring system owasp predecessor">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">AIVSS</h3><span class="text-xs font-semibold text-gray-700">AI Vulnerability Scoring System</span></div>
+          <p class="mt-2 text-sm text-muted">OWASP's AI scoring system and AITBM's predecessor. AITBM addresses its structural gaps.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="aisvs" data-term="aisvs ai security verification standard owasp checklist controls">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">AISVS</h3><span class="text-xs font-semibold text-gray-700">AI Security Verification Standard</span></div>
+          <p class="mt-2 text-sm text-muted">An OWASP control checklist ("what controls should exist") — a planned input layer for AITBM scoring.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="aiuc1" data-term="aiuc-1 certification insurance lloyds agent audit">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">AIUC-1</h3><span class="text-xs font-semibold text-gray-700">AI agent certification</span></div>
+          <p class="mt-2 text-sm text-muted">A pass/fail certification with a Lloyd's-backed insurance backstop. It certifies controls; AITBM measures risk — they complement each other.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="cvss" data-term="cvss common vulnerability scoring system prior art">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">CVSS</h3><span class="text-xs font-semibold text-gray-700">Common Vulnerability Scoring System</span></div>
+          <p class="mt-2 text-sm text-muted">The traditional software-severity score. AITBM explains why it falls short for non-deterministic AI.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="mcp" data-term="mcp model context protocol agentic tools">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">MCP</h3><span class="text-xs font-semibold text-gray-700">Model Context Protocol</span></div>
+          <p class="mt-2 text-sm text-muted">A standard for connecting agents to tools and data. A primary agentic deployment class AITBM is built to assess.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="rag" data-term="rag retrieval augmented generation documents">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">RAG</h3><span class="text-xs font-semibold text-gray-700">Retrieval-Augmented Generation</span></div>
+          <p class="mt-2 text-sm text-muted">An architecture where a model retrieves documents before answering. AITBM has a dedicated weighting profile for it.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="atlas" data-term="mitre atlas threat taxonomy case studies">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">MITRE ATLAS</h3><span class="text-xs font-semibold text-gray-700">Adversarial threat taxonomy</span></div>
+          <p class="mt-2 text-sm text-muted">A taxonomy of real-world attacks on AI systems. AITBM aligns its threat coverage and sources case studies from it.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="nist" data-term="nist ai rmf risk management framework">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">NIST AI RMF</h3><span class="text-xs font-semibold text-gray-700">AI Risk Management Framework</span></div>
+          <p class="mt-2 text-sm text-muted">The U.S. NIST framework for managing AI risk. AITBM aligns its method to it.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="iso" data-term="iso 42001 42005 governance impact assessment management system">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">ISO 42001 / 42005</h3><span class="text-xs font-semibold text-gray-700">AI governance &amp; impact</span></div>
+          <p class="mt-2 text-sm text-muted">AI management-system and impact-assessment standards. AITBM aligns its governance and impact methodology to them.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="euai" data-term="eu ai act regulation high risk classification">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">EU AI Act</h3><span class="text-xs font-semibold text-gray-700">EU regulation</span></div>
+          <p class="mt-2 text-sm text-muted">EU law classifying AI systems by risk. AITBM maps to its high-risk classification requirements.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="spiffe" data-term="spiffe oidc-a agent identity standards cn-5">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-base font-bold text-navy">SPIFFE / OIDC-A</h3><span class="text-xs font-semibold text-gray-700">Agent-identity standards</span></div>
+          <p class="mt-2 text-sm text-muted">Cryptographic identity standards for workloads and agents, mapped onto the top levels of the Cn-5 rubric.</p>
+        </div>
+      </div>
+    </section>
+
+    <p id="gloss-empty" class="hidden rounded-xl border border-dashed border-gray-300 bg-white p-8 text-center text-muted">No terms match your search. Try a shorter word — like "score", "identity", or "drift".</p>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+      <div>
+        <div class="flex items-center gap-2.5">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy"><svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><rect x="18" y="16" width="64" height="13" rx="6.5" fill="#ffffff"/><rect x="28" y="35" width="44" height="13" rx="6.5" fill="#b9c6e0"/><rect x="38" y="54" width="24" height="13" rx="6.5" fill="#7e95c4"/><circle cx="50" cy="84" r="9" fill="#d98a5f"/></svg></span>
+          <span class="leading-tight">
+            <span class="block font-bold text-navy">AITBM</span>
+            <span class="block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </div>
+        <p class="mt-3 text-sm text-muted max-w-xs">A bias-resistant, multi-dimensional framework for quantifying AI system security risk — community-driven and volunteer-built.</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-navy">Explore</h4>
+        <ul class="mt-3 space-y-2 text-sm text-muted">
+          <li><a href="framework.html" class="hover:text-navy">Framework</a></li>
+          <li><a href="submetrics.html" class="hover:text-navy">Sub-metrics reference</a></li>
+          <li><a href="gap-analysis.html" class="hover:text-navy">Gap Analysis</a></li>
+          <li><a href="aidefend.html" class="hover:text-navy">AIDEFEND Mapping</a></li>
+          <li><a href="calculator.html" class="hover:text-navy">ERS Calculator</a></li>
+          <li><a href="glossary.html" class="hover:text-navy">Glossary</a></li>
+          <li><a href="resources.html" class="hover:text-navy">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-navy">Project</h4>
+        <ul class="mt-3 space-y-2 text-sm text-muted">
+          <li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li>
+          <li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-200">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">
+        © <span data-year>2026</span> AITBM. Content licensed under CC BY 4.0.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+  (function () {
+    var input = document.getElementById("gloss-search");
+    var rows = Array.prototype.slice.call(document.querySelectorAll(".term-row"));
+    var sections = Array.prototype.slice.call(document.querySelectorAll(".gloss-section"));
+    var empty = document.getElementById("gloss-empty");
+    if (!input) return;
+    input.addEventListener("input", function () {
+      var q = input.value.trim().toLowerCase();
+      var anyVisible = false;
+      rows.forEach(function (row) {
+        var hay = (row.getAttribute("data-term") + " " + row.textContent).toLowerCase();
+        var match = q === "" || hay.indexOf(q) !== -1;
+        row.style.display = match ? "" : "none";
+        if (match) anyVisible = true;
+      });
+      sections.forEach(function (sec) {
+        var visible = sec.querySelectorAll('.term-row:not([style*="display: none"])').length;
+        sec.style.display = visible ? "" : "none";
+      });
+      empty.classList.toggle("hidden", anyVisible);
+    });
+  })();
+  </script>
+</body>
+</html>

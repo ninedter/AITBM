@@ -55,3 +55,69 @@ body { color: #333333; }
 .spec-table th { background: var(--navy); color: #fff; }
 .spec-table td, .spec-table th { border: 1px solid var(--line); }
 .spec-table tbody tr:nth-child(even) { background: #f7f9fc; }
+
+/* ───────────────────────────────────────────────────────────
+   Newcomer-clarity additions (2026 refresh)
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+  --paper: #faf9f7;        /* warm off-white page tone */
+  --accent: #b06a43;       /* warm clay — newcomer wayfinding ONLY */
+  --accent-soft: #f5ebe4;  /* clay tint */
+  --accent-line: #e7d6ca;
+}
+
+/* Warmer page background (cards stay white/gray for contrast) */
+.bg-paper { background-color: var(--paper); }
+
+/* Acronym tooltips — hover any term for its plain-English meaning */
+abbr[title] {
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #9aa6bd;
+  text-underline-offset: 3px;
+  cursor: help;
+  font-variant: none;
+}
+
+/* Mobile nav active state */
+.mobile-link.active { background: #eef2f9; color: var(--navy); font-weight: 700; }
+
+/* Warm "new here / start" affordances */
+.accent-pill {
+  display: inline-flex; align-items: center; gap: .4rem;
+  border-radius: 9999px; padding: .25rem .7rem;
+  background: var(--accent-soft); color: var(--accent);
+  font-size: .72rem; font-weight: 700; letter-spacing: .02em;
+  border: 1px solid var(--accent-line);
+}
+.step-chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 2rem; width: 2rem; border-radius: 9999px;
+  background: var(--accent-soft); color: var(--accent);
+  border: 1px solid var(--accent-line);
+  font-weight: 700; font-size: .85rem; flex: none;
+}
+
+/* Architecture flow diagram */
+.flow-card {
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.flow-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px -16px rgba(31, 56, 100, .45);
+  border-color: var(--navy-light);
+}
+.flow-arrow { color: #b9c2d4; }
+.flow-rail { background: #b9c2d4; }
+.layer-tab {
+  font-size: .68rem; font-weight: 700; letter-spacing: .08em;
+  padding: .15rem .55rem; border-radius: 9999px; display: inline-block;
+}
+
+/* Quiet anchor links inside dense pages */
+.subnav-link { transition: color .15s ease; }
+
+/* Definition list rows on the glossary */
+.term-row { scroll-margin-top: 6rem; }
+.term-row:target { background: var(--accent-soft); border-color: var(--accent-line); }

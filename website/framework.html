@@ -26,35 +26,40 @@
   </script>
   <link rel="stylesheet" href="assets/css/site.css" />
 </head>
-<body class="font-sans antialiased bg-white">
+<body class="font-sans antialiased bg-paper">
 
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-200">
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <div class="flex h-16 items-center justify-between">
-        <a href="index.html" class="flex items-center gap-2">
-          <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-navy text-white font-bold text-sm">AI</span>
-          <span class="font-bold text-navy tracking-tight">AI Trust Benchmarking and Maturity Framework</span>
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy"><svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><rect x="18" y="16" width="64" height="13" rx="6.5" fill="#ffffff"/><rect x="28" y="35" width="44" height="13" rx="6.5" fill="#b9c6e0"/><rect x="38" y="54" width="24" height="13" rx="6.5" fill="#7e95c4"/><circle cx="50" cy="84" r="9" fill="#d98a5f"/></svg></span>
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
         </a>
-        <nav class="hidden md:flex items-center gap-7 text-sm text-gray-700">
-          <a href="index.html" class="nav-link hover:text-navy">Overview</a>
-          <a href="framework.html" class="nav-link active hover:text-navy">Framework</a>
-          <a href="gap-analysis.html" class="nav-link hover:text-navy">Gap Analysis</a>
-          <a href="aidefend.html" class="nav-link hover:text-navy">AIDEFEND</a>
-          <a href="calculator.html" class="nav-link hover:text-navy">Calculator</a>
-          <a href="resources.html" class="nav-link hover:text-navy">Resources</a>
+        <nav class="hidden lg:flex items-center gap-6 text-sm text-gray-700">
+          <a href="index.html" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="framework.html" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="gap-analysis.html" data-nav="gap-analysis" class="nav-link hover:text-navy">Gap Analysis</a>
+          <a href="aidefend.html" data-nav="aidefend" class="nav-link hover:text-navy">AIDEFEND</a>
+          <a href="calculator.html" data-nav="calculator" class="nav-link hover:text-navy">Calculator</a>
+          <a href="glossary.html" data-nav="glossary" class="nav-link hover:text-navy">Glossary</a>
+          <a href="resources.html" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
           <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
         </nav>
-        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="md:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
-      <div data-nav-menu class="hidden md:hidden pb-4 space-y-1 text-sm">
-        <a href="index.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
-        <a href="framework.html" class="block rounded px-3 py-2 text-navy font-semibold bg-gray-50">Framework</a>
-        <a href="gap-analysis.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
-        <a href="aidefend.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
-        <a href="calculator.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
-        <a href="resources.html" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="index.html" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="framework.html" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="gap-analysis.html" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="aidefend.html" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="calculator.html" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="glossary.html" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="resources.html" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
         <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
       </div>
     </div>
@@ -71,11 +76,12 @@
       <nav class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-blue-100">
         <a href="#ivp" class="hover:text-white underline-offset-4 hover:underline">IVP</a>
         <a href="#rubric" class="hover:text-white underline-offset-4 hover:underline">Scoring rubrics</a>
-        <a href="#cn5" class="hover:text-white underline-offset-4 hover:underline">Cn-5 identity</a>
+        <a href="submetrics.html" class="hover:text-white underline-offset-4 hover:underline">All 21 sub-metrics</a>
         <a href="#orp" class="hover:text-white underline-offset-4 hover:underline">ORP</a>
         <a href="#aci" class="hover:text-white underline-offset-4 hover:underline">ACI</a>
         <a href="#ers" class="hover:text-white underline-offset-4 hover:underline">ERS &amp; tiers</a>
         <a href="#formulas" class="hover:text-white underline-offset-4 hover:underline">Formula basis</a>
+        <a href="glossary.html" class="hover:text-white underline-offset-4 hover:underline text-blue-200">New to the terms? Glossary &rarr;</a>
       </nav>
     </div>
   </section>
@@ -95,6 +101,40 @@
     </div>
   </section>
 
+  <!-- Model at a glance (reading map) -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 pt-12">
+    <span class="accent-pill">THE MODEL AT A GLANCE</span>
+    <h2 class="mt-3 text-2xl font-bold text-navy">Three lenses, combined into one score</h2>
+    <p class="mt-2 max-w-3xl text-muted text-sm">Each card jumps to its section below. A strong result in one lens cannot hide a weak result in another.</p>
+    <div class="mt-8 grid gap-5 lg:grid-cols-3">
+      <a href="#ivp" class="flow-card block rounded-2xl border border-gray-200 bg-white p-6">
+        <span class="layer-tab text-white" style="background:#1F3864">LAYER 1 &middot; THE SYSTEM</span>
+        <div class="mt-3 flex items-baseline gap-2"><h3 class="text-2xl font-bold text-navy">IVP</h3><span class="text-sm font-semibold text-gray-700">Intrinsic Vulnerability Profile</span></div>
+        <p class="mt-3 text-sm"><span class="font-semibold text-navy">Asks:</span> <span class="text-muted">how strong is the system itself?</span></p>
+      </a>
+      <a href="#orp" class="flow-card block rounded-2xl border border-gray-200 bg-white p-6">
+        <span class="layer-tab text-white" style="background:#2E5090">LAYER 2 &middot; THE DEPLOYMENT</span>
+        <div class="mt-3 flex items-baseline gap-2"><h3 class="text-2xl font-bold text-navy">ORP</h3><span class="text-sm font-semibold text-gray-700">Operational Risk Posture</span></div>
+        <p class="mt-3 text-sm"><span class="font-semibold text-navy">Asks:</span> <span class="text-muted">how risky is where and how it's used?</span></p>
+      </a>
+      <a href="#aci" class="flow-card block rounded-2xl border border-gray-200 bg-white p-6">
+        <span class="layer-tab text-white" style="background:#4773bd">LAYER 3 &middot; THE EVIDENCE</span>
+        <div class="mt-3 flex items-baseline gap-2"><h3 class="text-2xl font-bold text-navy">ACI</h3><span class="text-sm font-semibold text-gray-700">Assurance Confidence Index</span></div>
+        <p class="mt-3 text-sm"><span class="font-semibold text-navy">Asks:</span> <span class="text-muted">how much can we trust what we know?</span></p>
+      </a>
+    </div>
+    <div class="mt-6 flex flex-col items-center" aria-hidden="true">
+      <span class="text-xs font-semibold tracking-wider text-muted">COMBINED INTO</span>
+      <svg width="26" height="34" viewBox="0 0 26 34" fill="none" class="mt-1 flow-arrow"><path d="M13 0v26M5 19l8 9 8-9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <a href="#ers" class="flow-card block rounded-2xl border-2 border-navy/25 bg-white p-6">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-baseline gap-2"><h3 class="text-2xl font-bold text-navy">ERS</h3><span class="text-sm font-semibold text-gray-700">Effective Risk Score — one number, 0–10</span></div>
+        <span class="text-sm font-semibold text-navy-light">Jump to the formula &rarr;</span>
+      </div>
+    </a>
+  </section>
+
   <!-- IVP -->
   <section id="ivp" class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
     <p class="text-xs font-semibold tracking-wider text-navy-light">LAYER 1</p>
@@ -107,7 +147,7 @@
 
     <div class="mt-10 grid gap-6 lg:grid-cols-2">
       <!-- Robustness -->
-      <article class="rounded-xl border border-gray-200 p-6">
+      <article class="rounded-xl border-2 border-navy/30 p-6">
         <div class="axis-bar w-12 mb-3" style="background:#1F3864"></div>
         <h3 class="font-bold text-navy">Axis 1 — Robustness (Ro)</h3>
         <ul class="mt-3 space-y-2 text-sm text-muted">
@@ -118,7 +158,7 @@
         </ul>
       </article>
       <!-- Fairness -->
-      <article class="rounded-xl border border-gray-200 p-6">
+      <article class="rounded-xl border-2 border-navy/30 p-6">
         <div class="axis-bar w-12 mb-3" style="background:#2E5090"></div>
         <h3 class="font-bold text-navy">Axis 2 — Fairness (Fa)</h3>
         <ul class="mt-3 space-y-2 text-sm text-muted">
@@ -129,7 +169,7 @@
         </ul>
       </article>
       <!-- Transparency -->
-      <article class="rounded-xl border border-gray-200 p-6">
+      <article class="rounded-xl border-2 border-navy/30 p-6">
         <div class="axis-bar w-12 mb-3" style="background:#3a63a8"></div>
         <h3 class="font-bold text-navy">Axis 3 — Transparency (Tr)</h3>
         <ul class="mt-3 space-y-2 text-sm text-muted">
@@ -140,7 +180,7 @@
         </ul>
       </article>
       <!-- Privacy -->
-      <article class="rounded-xl border border-gray-200 p-6">
+      <article class="rounded-xl border-2 border-navy/30 p-6">
         <div class="axis-bar w-12 mb-3" style="background:#4773bd"></div>
         <h3 class="font-bold text-navy">Axis 4 — Privacy (Pr)</h3>
         <ul class="mt-3 space-y-2 text-sm text-muted">
@@ -151,7 +191,7 @@
         </ul>
       </article>
       <!-- Containment -->
-      <article class="rounded-xl border-2 border-navy/30 p-6 lg:col-span-2 bg-gray-50">
+      <article class="rounded-xl border-2 border-navy/30 p-6 lg:col-span-2">
         <div class="axis-bar w-12 mb-3" style="background:#152743"></div>
         <h3 class="font-bold text-navy">Axis 5 — Containment (Cn)</h3>
         <p class="mt-1 text-sm text-muted">The axis carrying AITBM's agentic-systems coverage.</p>
@@ -163,11 +203,44 @@
           <li class="sm:col-span-2">
             <span class="inline-flex items-center gap-2">
               <span class="font-semibold text-gray-800">Cn-5</span> Agent Identity Integrity
-              <span class="rounded bg-navy px-1.5 py-0.5 text-[10px] font-semibold text-white">NEW</span>
             </span>
           </li>
         </ul>
       </article>
+    </div>
+
+    <!-- Why these axes / how chosen -->
+    <div class="mt-14 grid gap-8 lg:grid-cols-2">
+      <div>
+        <h3 class="text-xl font-bold text-navy">Why these five axes?</h3>
+        <p class="mt-3 text-sm text-muted">
+          The axes aren't a wish-list. Each one names a <span class="font-semibold text-gray-800">distinct category of AI failure</span>
+          that the others can't account for, drawn from the trust properties established in AI-assurance literature and the threat
+          taxonomies AITBM maps to (MITRE ATLAS, OWASP, NIST AI RMF).
+        </p>
+        <ul class="mt-4 space-y-2.5 text-sm text-muted">
+          <li class="flex gap-2.5"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style="background:#1F3864"></span><span><span class="font-semibold text-gray-800">Robustness</span> &mdash; does it hold up under adversarial or shifting inputs? <span class="text-gray-500">(attack-resistance failures)</span></span></li>
+          <li class="flex gap-2.5"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style="background:#2E5090"></span><span><span class="font-semibold text-gray-800">Fairness</span> &mdash; does it treat groups equitably? <span class="text-gray-500">(discrimination &amp; harm failures)</span></span></li>
+          <li class="flex gap-2.5"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style="background:#3a63a8"></span><span><span class="font-semibold text-gray-800">Transparency</span> &mdash; can a human understand and audit its decisions? <span class="text-gray-500">(accountability failures)</span></span></li>
+          <li class="flex gap-2.5"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style="background:#4773bd"></span><span><span class="font-semibold text-gray-800">Privacy</span> &mdash; does it protect the data it touches? <span class="text-gray-500">(data-exposure failures)</span></span></li>
+          <li class="flex gap-2.5"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style="background:#152743"></span><span><span class="font-semibold text-gray-800">Containment</span> &mdash; does it stay within its authorized scope and identity? <span class="text-gray-500">(control failures, most acute in agentic systems)</span></span></li>
+        </ul>
+        <p class="mt-4 text-sm text-muted">
+          They are kept separate on purpose: robustness, fairness, and accuracy provably cannot all be maximized at once, so
+          collapsing them into one number would hide a trade-off the reviewer needs to see. <a href="#formulas" class="font-semibold text-navy hover:text-navy-light">See the math &rarr;</a>
+        </p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold text-navy">How each criterion earns its place</h3>
+        <p class="mt-3 text-sm text-muted">A candidate property only becomes one of the 21 sub-metrics if it passes four tests &mdash; which is why there are 21 and not 50.</p>
+        <ol class="mt-4 space-y-3 text-sm text-muted">
+          <li class="flex gap-3"><span class="step-chip">1</span><span><span class="font-semibold text-gray-800">Measurable.</span> A concrete test or signal produces evidence &mdash; not an assessor's opinion.</span></li>
+          <li class="flex gap-3"><span class="step-chip">2</span><span><span class="font-semibold text-gray-800">Independently scorable.</span> It maps cleanly onto five distinguishable, operationally concrete 0&ndash;4 levels.</span></li>
+          <li class="flex gap-3"><span class="step-chip">3</span><span><span class="font-semibold text-gray-800">Non-overlapping.</span> It isn't already captured by another sub-metric, so nothing is double-counted.</span></li>
+          <li class="flex gap-3"><span class="step-chip">4</span><span><span class="font-semibold text-gray-800">Threat-anchored.</span> It maps to a documented threat or control in a standard AITBM aligns to.</span></li>
+        </ol>
+        <p class="mt-4 text-sm text-muted">Each axis then carries an <span class="font-semibold text-gray-800">architecture-specific weight</span> &mdash; agentic and MCP systems weight Containment most heavily, RAG systems weight Privacy &mdash; so the same 21 criteria adapt to what actually matters for the system in front of you.</p>
+      </div>
     </div>
   </section>
 
@@ -190,34 +263,17 @@
     </div>
   </section>
 
-  <!-- Cn-5 -->
-  <section id="cn5" class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
-    <div class="flex items-center gap-3">
-      <h2 class="text-3xl font-bold text-navy">Cn-5 — Agent Identity Integrity</h2>
-      <span class="rounded bg-navy px-2 py-0.5 text-xs font-semibold text-white">NEW</span>
-    </div>
-    <p class="mt-3 max-w-3xl text-muted">
-      Identity is a first-class security concern in agentic systems. Cn-5 was added to the
-      Containment axis to close the gap, with test methods including Identity Spoofing Success
-      Rate (ISSR), detection rate, and Mean Time to Quarantine (MTTQ). It is weighted higher in
-      agentic and MCP architectures than in standalone LLM deployments.
-    </p>
-    <div class="mt-8 overflow-x-auto">
-      <table class="spec-table w-full border-collapse text-sm">
-        <thead>
-          <tr>
-            <th class="px-4 py-3 text-left w-20">Score</th>
-            <th class="px-4 py-3 text-left">Scoring criteria</th>
-          </tr>
-        </thead>
-        <tbody class="text-muted">
-          <tr><td class="px-4 py-3 font-bold text-navy">0.00</td><td class="px-4 py-3">No identity verification; agents accept arbitrary identities.</td></tr>
-          <tr><td class="px-4 py-3 font-bold text-navy">1.00</td><td class="px-4 py-3">Basic API key authentication; no agent-to-agent verification.</td></tr>
-          <tr><td class="px-4 py-3 font-bold text-navy">2.00</td><td class="px-4 py-3">Token-based identity with some verification but no cryptographic binding.</td></tr>
-          <tr><td class="px-4 py-3 font-bold text-navy">3.00</td><td class="px-4 py-3">Cryptographically bound identity; limited cross-session persistence.</td></tr>
-          <tr><td class="px-4 py-3 font-bold text-navy">4.00</td><td class="px-4 py-3">Full PKI/SPIFFE-class identity; continuous attestation; immutable audit trail.</td></tr>
-        </tbody>
-      </table>
+  <!-- Sub-metrics CTA -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+    <div class="rounded-2xl border-2 border-navy/25 bg-white p-7 sm:p-8 grid gap-6 lg:grid-cols-3 lg:items-center">
+      <div class="lg:col-span-2">
+        <span class="accent-pill">LAYER 1 · GO DEEPER</span>
+        <h2 class="mt-3 text-2xl font-bold text-navy">Every one of the 21 sub-metrics, explained</h2>
+        <p class="mt-2 text-muted">See what each metric across all five axes measures and how it's tested &mdash; plus how the shared five-level rubric is applied, with a fully worked example.</p>
+      </div>
+      <div class="lg:text-right">
+        <a href="submetrics.html" class="inline-block rounded-md bg-navy px-5 py-2.5 font-semibold text-white hover:bg-navy-light">Open the sub-metrics reference</a>
+      </div>
     </div>
   </section>
 
@@ -232,10 +288,10 @@
         Multiplier (CRM).
       </p>
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-xl border border-gray-200 bg-white p-5"><h3 class="font-bold text-navy text-sm">Aa — Autonomy Amplification</h3><p class="mt-1 text-xs text-muted">Independent decision authority</p></div>
-        <div class="rounded-xl border border-gray-200 bg-white p-5"><h3 class="font-bold text-navy text-sm">As — Attack Surface Exposure</h3><p class="mt-1 text-xs text-muted">Exposure to untrusted inputs</p></div>
-        <div class="rounded-xl border border-gray-200 bg-white p-5"><h3 class="font-bold text-navy text-sm">Cp — Cascade Potential</h3><p class="mt-1 text-xs text-muted">Maximum downstream impact</p></div>
-        <div class="rounded-xl border border-gray-200 bg-white p-5"><h3 class="font-bold text-navy text-sm">Rf — Remediation Feasibility</h3><p class="mt-1 text-xs text-muted">Difficulty of fixing once found</p></div>
+        <div class="rounded-xl border-2 border-navy/30 bg-white p-5"><h3 class="font-bold text-navy text-sm">Aa — Autonomy Amplification</h3><p class="mt-1 text-xs text-muted">Independent decision authority</p></div>
+        <div class="rounded-xl border-2 border-navy/30 bg-white p-5"><h3 class="font-bold text-navy text-sm">As — Attack Surface Exposure</h3><p class="mt-1 text-xs text-muted">Exposure to untrusted inputs</p></div>
+        <div class="rounded-xl border-2 border-navy/30 bg-white p-5"><h3 class="font-bold text-navy text-sm">Cp — Cascade Potential</h3><p class="mt-1 text-xs text-muted">Maximum downstream impact</p></div>
+        <div class="rounded-xl border-2 border-navy/30 bg-white p-5"><h3 class="font-bold text-navy text-sm">Rf — Remediation Feasibility</h3><p class="mt-1 text-xs text-muted">Difficulty of fixing once found</p></div>
       </div>
       <div class="mt-6 rounded-xl border border-gray-200 bg-white p-6">
         <p class="text-sm text-muted">
@@ -259,12 +315,12 @@
       decay faster and re-assess sooner.
     </p>
     <div class="mt-8 grid gap-6 lg:grid-cols-2">
-      <div class="rounded-xl border border-gray-200 p-6">
+      <div class="rounded-xl border-2 border-navy/30 p-6">
         <p class="text-sm font-semibold text-navy">Decay model</p>
         <pre class="formula mt-3 overflow-x-auto p-4 text-sm">ACI(t) = ACI₀ × e^(−λt)</pre>
         <p class="mt-3 text-sm text-muted">λ is tier-specific — larger for Tier I (high-risk) systems, smaller for Tier III.</p>
       </div>
-      <div class="rounded-xl border border-gray-200 p-6">
+      <div class="rounded-xl border-2 border-navy/30 p-6">
         <p class="text-sm font-semibold text-navy">Re-assessment triggers</p>
         <ul class="mt-3 space-y-2 text-sm text-muted">
           <li><span class="font-semibold text-gray-800">ACI &lt; 0.70</span> — Warning: schedule re-assessment.</li>
@@ -284,6 +340,35 @@
         cannot be zeroed out.
       </p>
       <pre class="formula mt-6 overflow-x-auto p-5 text-base bg-navy-dark">ERS = α + (1 − α) × f(IVP, ORP, ACI)      where α = 0.15</pre>
+
+      <!-- Why alpha = 0.15 -->
+      <div class="mt-6 rounded-xl border border-white/15 bg-white/5 p-6">
+        <h3 class="text-lg font-bold">Why α = 0.15?</h3>
+        <p class="mt-2 text-sm text-blue-100 max-w-3xl">
+          α (alpha) is the <span class="font-semibold text-white">residual-risk floor</span> — the share of risk
+          that remains even when every control is in place and the system scores perfectly on intrinsic security.
+          In the formula it pins the bottom of the scale: the <span class="font-mono text-xs">α</span> term is the
+          risk that can't be removed, and the <span class="font-mono text-xs">(1 − α)</span> term is the portion that
+          strong controls can actually reduce. Setting α &gt; 0 is what stops a confident assessment from ever
+          claiming <em>zero</em> risk.
+        </p>
+        <div class="mt-5 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-lg bg-white/10 p-4">
+            <p class="text-sm font-semibold">It reflects reality</p>
+            <p class="mt-1 text-sm text-blue-100">AI systems are probabilistic and can behave emergently. Some irreducible risk always survives — a zero would be a false guarantee.</p>
+          </div>
+          <div class="rounded-lg bg-white/10 p-4">
+            <p class="text-sm font-semibold">0.15 is calibrated, not arbitrary</p>
+            <p class="mt-1 text-sm text-blue-100">The value is fixed against the Finbot validation case so the worked example reproduces its known result — and it stays consistent across every assessment.</p>
+          </div>
+          <div class="rounded-lg bg-white/10 p-4">
+            <p class="text-sm font-semibold">It's a deliberate default</p>
+            <p class="mt-1 text-sm text-blue-100">~15% residual risk is a conservative, defensible floor: high enough to be honest about uncertainty, low enough that real mitigation still moves the score. It's earmarked for ongoing sensitivity validation.</p>
+          </div>
+        </div>
+        <p class="mt-4 text-xs text-blue-200/80">A worked illustration: a system with perfect intrinsic security still floors at α — about 1.5 on the 0–10 scale — never 0.</p>
+      </div>
+
       <div class="mt-8 grid gap-4 sm:grid-cols-3">
         <div class="rounded-xl bg-white/10 p-5">
           <p class="text-sm font-semibold">ERS ≥ 9.0</p>
@@ -472,18 +557,24 @@ T_calendar = e^(−λ_eff · Δt_days)</pre>
   <footer class="border-t border-gray-200 bg-gray-50">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
       <div>
-        <div class="flex items-center gap-2">
-          <span class="inline-flex h-7 w-7 items-center justify-center rounded bg-navy text-white font-bold text-xs">AI</span>
-          <span class="font-bold text-navy">AI Trust Benchmarking and Maturity Framework</span>
+        <div class="flex items-center gap-2.5">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy"><svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><rect x="18" y="16" width="64" height="13" rx="6.5" fill="#ffffff"/><rect x="28" y="35" width="44" height="13" rx="6.5" fill="#b9c6e0"/><rect x="38" y="54" width="24" height="13" rx="6.5" fill="#7e95c4"/><circle cx="50" cy="84" r="9" fill="#d98a5f"/></svg></span>
+          <span class="leading-tight">
+            <span class="block font-bold text-navy">AITBM</span>
+            <span class="block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
         </div>
-        <p class="mt-3 text-sm text-muted max-w-xs">AI Trust Benchmarking and Maturity Framework — a community-driven, volunteer effort.</p>
+        <p class="mt-3 text-sm text-muted max-w-xs">A bias-resistant, multi-dimensional framework for quantifying AI system security risk — community-driven and volunteer-built.</p>
       </div>
       <div>
         <h4 class="text-sm font-semibold text-navy">Explore</h4>
         <ul class="mt-3 space-y-2 text-sm text-muted">
           <li><a href="framework.html" class="hover:text-navy">Framework</a></li>
+          <li><a href="submetrics.html" class="hover:text-navy">Sub-metrics reference</a></li>
           <li><a href="gap-analysis.html" class="hover:text-navy">Gap Analysis</a></li>
           <li><a href="aidefend.html" class="hover:text-navy">AIDEFEND Mapping</a></li>
+          <li><a href="calculator.html" class="hover:text-navy">ERS Calculator</a></li>
+          <li><a href="glossary.html" class="hover:text-navy">Glossary</a></li>
           <li><a href="resources.html" class="hover:text-navy">Resources</a></li>
         </ul>
       </div>
