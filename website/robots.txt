@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Once a domain is chosen, add an absolute sitemap reference, e.g.:
-# Sitemap: https://your-domain.example/sitemap.xml
+Sitemap: https://aitbm.org/sitemap.xml
