@@ -460,8 +460,9 @@
       <h2 class="text-3xl font-bold">Worked example: Financial services agentic RAG</h2>
       <p class="mt-3 max-w-3xl text-blue-100">
         An internet-facing, Tier I financial advisory agent with RAG and L3 conditional
-        autonomy. Twelve AIDEFEND controls applied &mdash; 8 &ndash; 12 weeks concurrent
-        deployment.
+        autonomy &mdash; Critical risk with no controls in place. Applying twelve AIDEFEND
+        controls (the highest-impact set above) moves all three AITBM layers at once and
+        drops the Effective Risk Score from 9.7 to 3.2.
       </p>
       <div class="mt-10 grid gap-8 lg:grid-cols-2">
         <!-- Baseline -->
@@ -493,6 +494,53 @@
         <div><dt class="text-3xl font-bold">67%</dt><dd class="text-sm text-blue-100">risk reduced</dd></div>
         <div><dt class="text-3xl font-bold">3</dt><dd class="text-sm text-blue-100">severity tiers dropped</dd></div>
         <div><dt class="text-3xl font-bold">0.54</dt><dd class="text-sm text-blue-100">avg ERS per control</dd></div>
+      </div>
+
+      <!-- How AIDEFEND resolves it, layer by layer -->
+      <div class="mt-14">
+        <h3 class="text-2xl font-bold">How the controls bring 9.7 down to 3.2</h3>
+        <p class="mt-3 max-w-3xl text-sm text-blue-100">
+          The reduction is not a project schedule &mdash; it is the scoring mechanism.
+          Each control raises the specific sub-metrics it maps to (the table above); those
+          sub-metrics recompute the three layers; and the ERS formula combines them. Here
+          is what moves each layer.
+        </p>
+        <div class="mt-8 grid gap-6 lg:grid-cols-3">
+          <div class="rounded-xl bg-white/10 p-6">
+            <p class="text-sm font-semibold text-emerald-200">Intrinsic security &middot; IVP 0.32 &rarr; 0.68</p>
+            <p class="mt-3 text-sm text-blue-100">
+              Adversarial Robustness Training (AID-H-001) and Input Sanitization (AID-H-002)
+              make the model hold up under prompt injection (Ro-1); Secure RAG
+              Implementation (AID-H-021) grounds retrieval against poisoned context (Ro-4);
+              Output Content Filtering (AID-H-006) and Leakage Detection (AID-D-003) stop the
+              agent disclosing retrieved client data (Cn-3, Pr-1). The model stops obeying
+              injected instructions and stops leaking what it reads.
+            </p>
+          </div>
+          <div class="rounded-xl bg-white/10 p-6">
+            <p class="text-sm font-semibold text-emerald-200">Deployment risk &middot; CRM 1.60 &rarr; 1.00</p>
+            <p class="mt-3 text-sm text-blue-100">
+              The baseline had all four operational dimensions elevated &mdash; internet
+              exposure, L3 autonomy, financial blast radius, hard remediation &mdash;
+              compounding risk 1.60&times;. Agent Permission Restriction (AID-H-019), Autonomy
+              Governance (AID-M-009) and human-in-the-loop control points (AID-M-006) bound
+              what the agent may do (Cn-1, Cn-2), and cryptographic agent identity (Cn-5)
+              proves who is acting. Bounded and attributable, enough dimensions fall below the
+              elevation threshold that the multiplier steps back to 1.00 &mdash; no
+              amplification.
+            </p>
+          </div>
+          <div class="rounded-xl bg-white/10 p-6">
+            <p class="text-sm font-semibold text-emerald-200">Assurance confidence &middot; ACI 0.40 &rarr; 0.90</p>
+            <p class="mt-3 text-sm text-blue-100">
+              A one-off assessment decays quickly on a Tier I system, so low confidence
+              inflates the score. Agent Behavior Monitoring (AID-D-011) and Data Provenance
+              Tracking (AID-M-002) replace that snapshot with continuous, attributable
+              evidence (Cn-5, Tr-4), and behavioral-baseline deviation flags drift as it
+              happens &mdash; so the confidence index stops discounting the result.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
