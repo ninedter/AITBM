@@ -124,7 +124,6 @@ AITBM/
 ├── specification/                     The framework specification, in every form
 │   ├── AITBM_Framework_Specification.pdf        Read it as one document
 │   ├── AITBM_Framework_Specification.docx       Editable Word source
-│   ├── AITBM_Quick_Assessment.xlsx              Offline yes/no self-assessment (Excel)
 │   └── sections/                                The same spec, section by section (Markdown)
 │       ├── README.md                            Section index
 │       ├── 00_revision_history.md
