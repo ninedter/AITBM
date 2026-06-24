@@ -27,8 +27,8 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
   <link rel="canonical" href="https://aitbm.org/framework" />
-  <link rel="stylesheet" href="assets/css/tailwind.css" />
-  <link rel="stylesheet" href="assets/css/site.css" />
+  <link rel="stylesheet" href="assets/css/tailwind.css?v=b675da1f" />
+  <link rel="stylesheet" href="assets/css/site.css?v=7817cdaa" />
   <script type="application/ld+json" data-seo>
 {
   "@context": "https://schema.org",
@@ -322,8 +322,8 @@
       <h2 class="text-3xl font-bold text-navy">Five-level scoring rubrics</h2>
       <p class="mt-3 max-w-3xl text-muted">
         Every sub-metric is scored against five fully specified levels. There are no partial
-        rubrics and no discretionary bands — the criteria are operationally concrete so two
-        assessors land on the same number. Scores are recorded to two decimals (0.00–4.00).
+        rubrics and no discretionary bands — the criteria are operationally concrete, which narrows how
+        much the score depends on the assessor's experience or judgment. Scores are recorded to two decimals (0.00–4.00).
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <span class="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm"><span class="font-bold text-navy">0.00</span> — absent</span>
@@ -488,7 +488,7 @@
           <p class="mt-3 text-sm text-muted"><span class="font-semibold text-gray-800">Basis.</span> A weighted average of an axis's sub-metric scores. Weights reflect what matters for the architecture, and dividing by the sum of weights redistributes any non-applicable sub-metric instead of dragging the axis toward zero.</p>
           <p class="mt-2 text-sm text-muted"><span class="font-semibold text-gray-800">Variables.</span> <span class="font-mono text-xs">SubMetricᵢ</span> sub-metric score (0–1); <span class="font-mono text-xs">wᵢ</span> its fixed weight for the architecture class (LLM / Classifier / Agentic); denominator the sum of active weights (axis weights total 1.00).</p>
           <details class="mt-3"><summary class="cursor-pointer text-sm font-semibold text-navy hover:text-navy-light">Why this form</summary>
-            <p class="mt-2 text-sm text-muted">A weighted arithmetic mean fits sub-metrics on a shared 0–1 scale where strength in one can partly offset weakness in another <em>within</em> the axis; that intra-axis compensation is acceptable, which is precisely why the five axes themselves are never averaged together. Normalising by Σwᵢ keeps the score architecture-invariant — removing a non-applicable sub-metric never changes the achievable maximum — and weights fixed by tier and architecture (not chosen by the assessor) make two assessors compute the same number.</p>
+            <p class="mt-2 text-sm text-muted">A weighted arithmetic mean fits sub-metrics on a shared 0–1 scale where strength in one can partly offset weakness in another <em>within</em> the axis; that intra-axis compensation is acceptable, which is precisely why the five axes themselves are never averaged together. Normalising by Σwᵢ keeps the score architecture-invariant — removing a non-applicable sub-metric never changes the achievable maximum — and weights fixed by tier and architecture (not chosen by the assessor) take the weighting out of the assessor's hands, removing one major source of inter-assessor variance.</p>
           </details>
         </article>
 
@@ -665,6 +665,6 @@ T_calendar = e^(−λ_eff · Δt_days)</pre>
     </div>
   </footer>
 
-  <script src="assets/js/site.js"></script>
+  <script src="assets/js/site.js?v=3a481267"></script>
 </body>
 </html>
