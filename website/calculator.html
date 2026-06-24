@@ -199,7 +199,12 @@
         <!-- Questions -->
         <div class="lg:col-span-2 space-y-6">
           <div class="rounded-xl border border-gray-200 p-5 bg-blue-50/40">
-            <p class="text-sm text-gray-700">Answer <span class="font-semibold">Yes</span> or <span class="font-semibold">No</span> to each statement about your AI system. Your risk score updates live on the right. Nothing is sent anywhere — this runs entirely in your browser.</p>
+            <p class="text-sm text-gray-700">Pick the scenario closest to your system, then answer <span class="font-semibold">Yes</span> or <span class="font-semibold">No</span> to each statement. The questions adapt to the scenario, and your risk score updates live on the right. Nothing is sent anywhere — this runs entirely in your browser.</p>
+          </div>
+          <div class="rounded-xl border border-gray-200 p-4 flex flex-wrap items-center gap-3">
+            <label for="survey-arch" class="text-sm font-semibold text-navy">Scenario:</label>
+            <select id="survey-arch" class="rounded border border-gray-300 px-3 py-1.5 text-sm bg-white"></select>
+            <span id="survey-arch-hint" class="text-xs text-muted">The 15 questions are tailored to the architecture you choose.</span>
           </div>
           <div id="survey-panel" class="space-y-6"></div>
         </div>

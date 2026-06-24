@@ -1,4 +1,4 @@
-/* AITBM Quick Yes/No survey — renders questions and drives the shared ERS engine. */
+/* AITBM Quick Yes/No survey — scenario-targeted questions driving the shared ERS engine. */
 (function () {
   "use strict";
   var ENG = window.AITBM_ERS;
@@ -6,36 +6,61 @@
   if (!ENG || !SURVEY) return;
 
   var panel = document.getElementById("survey-panel");
-  if (!panel) return;
+  var archSelect = document.getElementById("survey-arch");
+  if (!panel || !archSelect) return;
 
-  var answers = {};           // qid -> true(Yes)/false(No)
-  SURVEY.questions.forEach(function (q) { answers[q.id] = false; });
+  var currentArch = SURVEY.archOrder[0];   // default: agentic
+  var answers = {};                        // qid -> true(Yes)/false(No), reset per scenario
 
-  /* ---- Render questions grouped by section ---- */
-  SURVEY.sections.forEach(function (sec) {
-    var block = document.createElement("div");
-    block.className = "rounded-xl border border-gray-200 overflow-hidden";
-    block.innerHTML =
-      '<div class="px-5 py-3 bg-gray-50 border-b border-gray-200">' +
-        '<h2 class="font-bold text-navy text-sm">' + sec.title + '</h2>' +
-        '<p class="text-xs text-muted mt-0.5">' + sec.blurb + '</p>' +
-      '</div>';
-    var list = document.createElement("div");
-    list.className = "divide-y divide-gray-100";
-    SURVEY.questions.filter(function (q) { return q.section === sec.id; }).forEach(function (q) {
-      var row = document.createElement("div");
-      row.className = "flex items-start gap-3 px-5 py-3";
-      row.innerHTML =
-        '<p class="text-sm text-gray-700 flex-1">' + q.text + '</p>' +
-        '<div class="shrink-0 inline-flex rounded-lg border border-gray-300 overflow-hidden" role="group" data-q="' + q.id + '">' +
-          '<button type="button" data-val="yes" class="px-3 py-1.5 text-xs font-semibold text-gray-600">Yes</button>' +
-          '<button type="button" data-val="no"  class="px-3 py-1.5 text-xs font-semibold bg-navy text-white">No</button>' +
-        '</div>';
-      list.appendChild(row);
-    });
-    block.appendChild(list);
-    panel.appendChild(block);
+  function survey() { return SURVEY.surveys[currentArch]; }
+
+  /* ---- Populate the scenario dropdown ---- */
+  SURVEY.archOrder.forEach(function (arch) {
+    var opt = document.createElement("option");
+    opt.value = arch;
+    opt.textContent = SURVEY.surveys[arch].label;
+    archSelect.appendChild(opt);
   });
+  archSelect.value = currentArch;
+  archSelect.addEventListener("change", function () {
+    currentArch = archSelect.value;
+    loadScenario();
+  });
+
+  /* ---- (Re)render the current scenario's questions ---- */
+  function loadScenario() {
+    answers = {};
+    survey().questions.forEach(function (q) { answers[q.id] = false; });
+    panel.innerHTML = "";
+
+    survey().sections.forEach(function (sec) {
+      var block = document.createElement("div");
+      block.className = "rounded-xl border border-gray-200 overflow-hidden";
+      block.innerHTML =
+        '<div class="px-5 py-3 bg-gray-50 border-b border-gray-200">' +
+          '<h2 class="font-bold text-navy text-sm">' + sec.title + '</h2>' +
+          '<p class="text-xs text-muted mt-0.5">' + sec.blurb + '</p>' +
+        '</div>';
+      var list = document.createElement("div");
+      list.className = "divide-y divide-gray-100";
+      survey().questions.filter(function (q) { return q.section === sec.id; }).forEach(function (q) {
+        var row = document.createElement("div");
+        row.className = "flex items-start gap-3 px-5 py-3";
+        row.innerHTML =
+          '<p class="text-sm text-gray-700 flex-1">' + q.text + '</p>' +
+          '<div class="shrink-0 inline-flex rounded-lg border border-gray-300 overflow-hidden" role="group" data-q="' + q.id + '">' +
+            '<button type="button" data-val="yes" class="px-3 py-1.5 text-xs font-semibold text-gray-600">Yes</button>' +
+            '<button type="button" data-val="no"  class="px-3 py-1.5 text-xs font-semibold bg-navy text-white">No</button>' +
+          '</div>';
+        list.appendChild(row);
+      });
+      block.appendChild(list);
+      panel.appendChild(block);
+    });
+
+    applyDependencies();
+    recalc();
+  }
 
   /* ---- Answer button handling ---- */
   panel.addEventListener("click", function (e) {
@@ -56,9 +81,9 @@
     noBtn.className = "px-3 py-1.5 text-xs font-semibold" + (!isYes ? " bg-navy text-white" : " text-gray-600");
   }
 
-  /* Disable q18 when its dependency (q17) is No */
+  /* Disable a question whose dependency (e.g. "recent testing" needs "tested") is No */
   function applyDependencies() {
-    SURVEY.questions.forEach(function (q) {
+    survey().questions.forEach(function (q) {
       if (!q.depends_on) return;
       var group = panel.querySelector('[data-q="' + q.id + '"]');
       if (!group) return;
@@ -69,11 +94,10 @@
     });
   }
 
-  /* ---- Build engine inputs from answers ---- */
+  /* ---- Build engine inputs from answers (architecture = current scenario) ---- */
   function buildInputs(ans) {
-    var arch = ans.q1 ? "agentic" : (ans.q2 ? "rag" : "standalone");
     var orp = {}, aci = {}, controlIds = [];
-    SURVEY.questions.forEach(function (q) {
+    survey().questions.forEach(function (q) {
       var a = !!ans[q.id];
       if (q.kind === "orp") orp[q.dim] = a ? q.yes : q.no;
       else if (q.kind === "safeguard") { if (a) controlIds = controlIds.concat(q.controls); }
@@ -82,7 +106,7 @@
         else aci[q.dim] = a ? q.yes : q.no;
       }
     });
-    return { arch: arch, controlIds: controlIds, orp: orp, aci: aci };
+    return { arch: currentArch, controlIds: controlIds, orp: orp, aci: aci };
   }
 
   /* ---- Recalculate and paint the result ---- */
@@ -102,7 +126,7 @@
     badge.className = "severity-badge mt-4 inline-block rounded-full px-4 py-1.5 text-sm font-bold " + sev.bg + " " + sev.text;
     document.getElementById("q-tier-label").textContent = sev.tier;
 
-    document.getElementById("q-arch").textContent = inp.arch;
+    document.getElementById("q-arch").textContent = survey().label;
     document.getElementById("q-ivp-val").textContent = res.ivp.toFixed(2);
     document.getElementById("q-ivp-bar").style.width = (res.ivp * 100) + "%";
     document.getElementById("q-crm-val").textContent = res.crm.toFixed(2);
@@ -110,22 +134,30 @@
     document.getElementById("q-aci-val").textContent = res.aci.toFixed(2);
     document.getElementById("q-aci-bar").style.width = (res.aci * 100) + "%";
 
-    renderInterpretation(ers, sev, inp);
-    renderFixes(ers, inp);
+    renderInterpretation(ers, sev);
+    renderFixes(ers);
   }
 
   /* ---- Plain-English interpretation ---- */
-  var DRIVER_PHRASES = { q3: "it can act on its own without human approval", q4: "it's exposed to untrusted or public input", q5: "a failure could cause serious harm", q6: "problems would be slow or hard to fix" };
+  var DRIVER_PHRASES = {
+    aa: "it can act on its own without human approval",
+    as: "it's exposed to untrusted or public input",
+    cp: "a failure could cause serious harm",
+    rf: "problems would be slow or hard to fix"
+  };
 
-  function renderInterpretation(ers, sev, inp) {
+  function renderInterpretation(ers, sev) {
     var el = document.getElementById("q-interpretation");
-    var drivers = ["q3", "q4", "q5", "q6"].filter(function (id) { return answers[id]; }).map(function (id) { return DRIVER_PHRASES[id]; });
+    var drivers = survey().questions.filter(function (q) {
+      return q.kind === "orp" && answers[q.id];
+    }).map(function (q) { return DRIVER_PHRASES[q.dim]; });
 
-    var missing = SURVEY.questions.filter(function (q) {
+    var missing = survey().questions.filter(function (q) {
       return (q.kind === "safeguard" || q.kind === "aci") && !answers[q.id] && !(q.depends_on && !answers[q.depends_on]);
     }).length;
 
-    var s = "This looks like a <strong>" + sev.label.toLowerCase() + "</strong> deployment (ERS " + ers.toFixed(1) + " / 10). ";
+    var s = "This looks like a <strong>" + sev.label.toLowerCase() + "</strong> " + survey().label +
+            " deployment (ERS " + ers.toFixed(1) + " / 10). ";
     if (drivers.length) {
       s += "The main risk drivers are " + joinList(drivers) + ". ";
     } else {
@@ -145,16 +177,16 @@
     return items.slice(0, -1).join(", ") + ", and " + items[items.length - 1];
   }
 
-  /* ---- Top-3 fixes ---- */
-  function renderFixes(ers, inp) {
+  /* ---- Top-3 fixes (scenario-aware, ranked by actual ERS reduction) ---- */
+  function renderFixes(ers) {
     var ol = document.getElementById("q-fixes");
     var empty = document.getElementById("q-fixes-empty");
     ol.innerHTML = "";
 
-    var candidates = SURVEY.questions.filter(function (q) {
+    var candidates = survey().questions.filter(function (q) {
       if (q.kind !== "safeguard" && q.kind !== "aci") return false;
       if (answers[q.id]) return false;                                  // already in place
-      if (q.depends_on && !answers[q.depends_on]) return q.id !== "q18";// q18 only meaningful if q17 Yes
+      if (q.depends_on && !answers[q.depends_on]) return false;         // dependency unmet — not actionable yet
       return true;
     });
 
@@ -178,7 +210,7 @@
     });
   }
 
-  /* ---- Mode toggle ---- */
+  /* ---- Mode toggle (Quick / Detailed) ---- */
   var quickView = document.getElementById("quick-view");
   var detailedView = document.getElementById("detailed-view");
   var btnQuick = document.getElementById("mode-quick");
@@ -199,6 +231,5 @@
   var bk = document.getElementById("q-breakdown");
   if (bkToggle && bk) bkToggle.addEventListener("click", function () { bk.classList.toggle("hidden"); });
 
-  applyDependencies();
-  recalc();
+  loadScenario();
 })();
