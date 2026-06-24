@@ -27,7 +27,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
   <link rel="canonical" href="https://aitbm.org/gap-analysis" />
-  <link rel="stylesheet" href="assets/css/tailwind.css?v=7cf04177" />
+  <link rel="stylesheet" href="assets/css/tailwind.css?v=9b4cd2c4" />
   <link rel="stylesheet" href="assets/css/site.css?v=7817cdaa" />
   <script type="application/ld+json" data-seo>
 {
@@ -153,7 +153,7 @@
       <p class="text-xs font-semibold tracking-wider text-navy-light">THE BOTTOM LINE</p>
       <p class="mt-2 text-muted max-w-3xl">
         Existing AI security frameworks each leave the same structural gaps. AITBM is the only compared
-        framework with <span class="font-semibold text-navy">full coverage on 11 of 15 capabilities</span> —
+        framework with <span class="font-semibold text-navy">full coverage across all fifteen capabilities</span> —
         and the only one with five-level rubrics and required test methods per sub-metric. It doesn't replace
         OWASP <abbr title="AI Vulnerability Scoring System">AIVSS</abbr> or AIUC-1; it measures system risk
         across dimensions, context, and time where they don't.
@@ -161,7 +161,7 @@
       <div class="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><div class="text-2xl font-bold text-navy">12</div><div class="text-xs text-muted">structural gaps identified</div></div>
         <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><div class="text-2xl font-bold text-navy">10 / 12</div><div class="text-xs text-muted">fully addressed today</div></div>
-        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><div class="text-2xl font-bold text-navy">11 / 15</div><div class="text-xs text-muted">capabilities at full coverage</div></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><div class="text-2xl font-bold text-navy">10</div><div class="text-xs text-muted">frameworks compared</div></div>
         <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><div class="text-2xl font-bold text-navy">43+</div><div class="text-xs text-muted">research sources</div></div>
       </div>
     </div>
@@ -194,170 +194,41 @@
   <section class="bg-gray-50 border-y border-gray-200">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <h2 class="text-3xl font-bold text-navy">The twelve gaps</h2>
-      <p class="mt-3 max-w-3xl text-muted">
-        Ten are fully addressed today; two are partially addressed with planned enhancements. Each gap
-        is re-checked (June 2026) against <abbr title="AI Vulnerability Scoring System">OWASP AIVSS</abbr>
-        v0.8 — March 2026, a CVSS 4.0 baseline plus ten equal-weight agentic amplification factors — and
-        <strong>AIUC-1</strong> — January 2026, the AI-agent certification standard with a Lloyd's-backed
-        insurance backstop. Expand any gap to see where those standards still fall short and how AITBM
-        closes it.
-      </p>
-        <h3 class="mt-10 text-xl font-bold text-navy">1. Methodological foundations</h3>
-        <div class="mt-4 space-y-3">
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Subjectivity in scoring
-            <span class="ml-1.5 rounded bg-navy/10 text-navy px-2 py-0.5 text-xs font-semibold align-middle">Full</span>
-            <span class="mt-1 block text-sm font-normal text-muted">15–30% inter-assessor variance</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>Every existing AI scoring system — CVSS adapted for AI, ad-hoc severity tiers — leans on assessor judgment. “High” versus “medium” is defined in prose that admits several valid readings, so security firms report 15–30% variance between assessors scoring the same system, and regulators referencing “high-risk AI” are left with no operational definition.</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> AIVSS v0.8 fixes its factor <em>weights</em> (a genuine improvement) but still rates each factor on a three-point, single-phrase anchor with no test method — the discretion just moves down a level. AIUC-1 is a pass/fail control audit: consistent for “is the control present?” but it produces no comparable risk score and sets no inter-rater reliability target.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> Five-level rubrics (0–4) with explicit criteria and a required test method per sub-metric (ISSR, ASR, MTTQ, and so on) leave far less room for interpretation, <strong>narrowing</strong> inter-assessor variance rather than leaving it to discretion.</p>
-          </div>
-        </details>
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Single-score reductionism
-            <span class="ml-1.5 rounded bg-navy/10 text-navy px-2 py-0.5 text-xs font-semibold align-middle">Full</span>
-            <span class="mt-1 block text-sm font-normal text-muted">Multi-dimensional signal loss</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>CVSS and its AI derivatives collapse risk into one 0–10 number. A system with critical privacy risk but strong robustness scores the same as its inverse, and decision-makers lose sight of which dimension actually drives the risk — so compensating controls cannot be aimed.</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> AIVSS v0.8 keeps a single 0–10 score by design; multi-dimensional profiling is explicitly out of scope. AIUC-1 certifies across domains but as pass/fail, not a risk fingerprint — so neither surfaces the trade-off.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> The three-layer IVP / ORP / ACI architecture preserves the signal: 21 sub-metrics across five axes give a per-dimension fingerprint, ORP captures deployment context separately, and ACI tracks evidence freshness — so remediation targets the exact failing axis.</p>
-          </div>
-        </details>
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Incomplete scoring guidance
-            <span class="ml-1.5 rounded bg-navy/10 text-navy px-2 py-0.5 text-xs font-semibold align-middle">Full</span>
-            <span class="mt-1 block text-sm font-normal text-muted">Implementation paralysis</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>Even where frameworks define tiers, they rarely say how to measure them — “assess poisoning resistance” with no test, threshold, or tool. 68% of AI security teams (CSA, 2025) report they cannot translate framework requirements into a concrete test plan.</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> AIVSS v0.8 scores factors on three-point anchors with no specified test methods. AIUC-1's ~130 controls are auditable pass/fail but do not define per-sub-metric measurement for a risk score.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> Each sub-metric ships with a named test method and tool integration (Ro-1 → ASR via FuzzyAI / ART; Ro-4 → MCPTox; Cn-5 → ISSR, Detection Rate, MTTQ) plus quantitative thresholds baked into the rubric levels.</p>
-          </div>
-        </details>
-        </div>
-        <h3 class="mt-10 text-xl font-bold text-navy">2. Operational reality</h3>
-        <div class="mt-4 space-y-3">
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Context-blind scoring
-            <span class="ml-1.5 rounded bg-navy/10 text-navy px-2 py-0.5 text-xs font-semibold align-middle">Full</span>
-            <span class="mt-1 block text-sm font-normal text-muted">Critical vs. low-risk indistinguishable</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>Assessments score intrinsic model properties and ignore where the system runs. A prompt-injection-susceptible medical-diagnosis AI and a recipe chatbot both land at CVSS 8.5, despite orders-of-magnitude difference in actual consequence.</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> AIVSS v0.8 adds agentic amplification factors but compounds them into the single score; it does not model deployment context — regulatory exposure, blast radius, control maturity — as a separate layer. AIUC-1 certification is context-agnostic pass/fail.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> The ORP layer scores four deployment dimensions independently, and the Compound Risk Multiplier turns elevated context into a multiplier — so the same model in a hospital and a hobby app reach very different ERS.</p>
-          </div>
-        </details>
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Temporal evidence decay
-            <span class="ml-1.5 rounded bg-navy/10 text-navy px-2 py-0.5 text-xs font-semibold align-middle">Full</span>
-            <span class="mt-1 block text-sm font-normal text-muted">Stale assessments, false confidence</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>Assessments are point-in-time snapshots that quietly expire as models drift and the threat landscape moves. A January-2025 review that called MCP infrastructure “adequately secured” was silently invalidated by 30+ CVEs and an 84% tool-poisoning rate a year later — yet no framework graded the staleness.</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> AIVSS v0.8 produces a point-in-time score with no decay model. AIUC-1's 12-month certificate with quarterly re-testing is binary and mechanical — valid or expired — not a confidence that degrades continuously between checks.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> The ACI layer applies a BBD-informed, tier-specific decay (λ) to evidence and modulates the final ERS, with explicit re-assessment triggers (warning below 0.70, invalid below 0.30) so confidence falls as evidence ages.</p>
-          </div>
-        </details>
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Operational vs. intrinsic conflation
-            <span class="ml-1.5 rounded bg-navy/10 text-navy px-2 py-0.5 text-xs font-semibold align-middle">Full</span>
-            <span class="mt-1 block text-sm font-normal text-muted">Zero-risk fallacy</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>Frameworks credit runtime controls (monitoring, access control) as if they reduced intrinsic risk — so a system rated “low risk” becomes critically exposed the moment monitoring is bypassed or disabled during a maintenance window.</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> AIVSS v0.8 adds a relative 0.67 mitigation floor but does not separate intrinsic security from operational controls in the score. AIUC-1 certifies controls and, via insurance, transfers residual risk — but neither isolates the intrinsic baseline that remains if controls fail.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> IVP scores only intrinsic properties (assuming zero operational controls); ORP captures control maturity separately; and the α = 0.15 floor guarantees risk never zeroes out — so a control failure cannot be hidden behind a strong operational posture.</p>
-          </div>
-        </details>
-        </div>
-        <h3 class="mt-10 text-xl font-bold text-navy">3. Scope blindness</h3>
-        <div class="mt-4 space-y-3">
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Agentic autonomy risks
-            <span class="ml-1.5 rounded bg-navy/10 text-navy px-2 py-0.5 text-xs font-semibold align-middle">Full</span>
-            <span class="mt-1 block text-sm font-normal text-muted">Agentic threat classes unaddressed</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>Frameworks built for static models do not address agents that act autonomously, hold state, call tools, and coordinate — leaving goal hijacking (ASI01), rogue agents (ASI02), and multi-agent collusion (ASI09) unscored. One compromised agent poisoned 87% of downstream decisions in four hours (Galileo, 2026).</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> This is AIVSS v0.8's real strength — its ten agentic amplification factors model stateful/agentic risk. But it still folds them into a single score with no fairness, privacy, or transparency axis. AIUC-1 is single-agent scoped and maps zero controls to multi-agent orchestration.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> The Containment axis (Cn-1 Scope Enforcement through Cn-5 Agent Identity) targets these threats directly, and the ORP multiplier weights agentic/MCP architectures higher (As = 1.35, from breach data).</p>
-          </div>
-        </details>
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Identity security gaps
-            <span class="ml-1.5 rounded bg-navy/10 text-navy px-2 py-0.5 text-xs font-semibold align-middle">Full</span>
-            <span class="mt-1 block text-sm font-normal text-muted">Agent impersonation; no IAM for agents</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>Human IAM (OAuth, OIDC, SAML) mismatches autonomous agents — ephemeral, dynamically permissioned, delegating across boundaries. Researchers found 8,000+ MCP servers exposed with no identity verification at all (Feb 2026).</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> Neither standard scores agent identity as a dimension. The official AIVSS↔AIUC-1 crosswalk maps <strong>zero</strong> AIUC-1 controls to Agent Identity Impersonation — exactly the exposure left open.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> Cn-5 (Agent Identity Integrity), a sub-metric added specifically for this gap, scores 0–4 against real standards — Level 0 is the exposed-MCP case, Level 4 is SPIFFE / OIDC-A continuous attestation — with ISSR, Detection Rate, and MTTQ as test methods.</p>
-          </div>
-        </details>
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Tool / function-calling security
-            <span class="ml-1.5 rounded bg-navy/10 text-navy px-2 py-0.5 text-xs font-semibold align-middle">Full</span>
-            <span class="mt-1 block text-sm font-normal text-muted">Tool poisoning; MCP CVEs</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>Agents act through tool and function calls (MCP), a surface existing frameworks do not assess. The MCPTox benchmark reports an 84.2% tool-poisoning success rate; 30+ MCP CVEs landed in a two-month window, including a CVSS 9.6 remote-code-execution flaw.</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> AIVSS v0.8's agentic factors touch tool use but specify no tool-poisoning test method. AIUC-1's controls cover some tool security but as single-agent pass/fail.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> Ro-4 (Poisoning Resistance, with MCPTox as a test method), Cn-1 / Cn-2 (scope enforcement and escalation prevention → MCP02), and Tr-3 (audit trail → MCP08) together score the tool surface, weighted up for agentic/MCP architectures.</p>
-          </div>
-        </details>
-        </div>
-        <h3 class="mt-10 text-xl font-bold text-navy">4. Structural impossibilities</h3>
-        <div class="mt-4 space-y-3">
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Residual risk floor
-            <span class="ml-1.5 rounded bg-navy/10 text-navy px-2 py-0.5 text-xs font-semibold align-middle">Full</span>
-            <span class="mt-1 block text-sm font-normal text-muted">False belief in zero risk</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>Frameworks imply that enough controls drive risk to zero. They cannot: emergent behaviour, semantic attacks (“persuade the model to leak”), and deep supply chains make some risk irreducible — “five nines” reliability at scale still leaves thousands of failures a day.</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> AIVSS v0.8's mitigation floor is <em>relative</em> (0.67), not an absolute irreducible floor. AIUC-1's Lloyd's-backed insurance is the economic counterpart — it transfers residual risk financially rather than quantifying it — so a certified, insured agent still carries un-scored residual risk.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> α = 0.15 is baked into the ERS formula: no combination of perfect controls drops ERS below 1.5. Risk is acknowledged as irreducible, not assumed away.</p>
-          </div>
-        </details>
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Emergent-behavior unpredictability
-            <span class="ml-1.5 rounded bg-amber-100 text-amber-800 px-2 py-0.5 text-xs font-semibold align-middle">Partial</span>
-            <span class="mt-1 block text-sm font-normal text-muted">Non-deterministic risk underestimated</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>Agentic systems show behaviour not predictable from component tests — steganographic collusion, memory poisoning that compounds over weeks, cross-layer interactions. 43% of MAESTRO-observed vulnerabilities were not detectable by testing layers in isolation.</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> AIUC-1 acknowledges non-determinism at the certification level but monitors drift only mechanically; AIVSS v0.8 remains deterministic. Neither quantifies emergent risk.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> The α = 0.15 floor and Cn-4 (side-channel / steganography detection) cover part of it, and ACI decay forces re-assessment of long-running agents — but AITBM's deterministic rubrics cannot fully quantify emergent risk, so explicit emergent-behaviour modelling is flagged for Phase 4.</p>
-          </div>
-        </details>
-        <details class="rounded-xl border border-gray-200 bg-white px-5 py-4">
-          <summary class="cursor-pointer font-semibold text-gray-900">Cross-layer cascading failures
-            <span class="ml-1.5 rounded bg-amber-100 text-amber-800 px-2 py-0.5 text-xs font-semibold align-middle">Partial</span>
-            <span class="mt-1 block text-sm font-normal text-muted">Amplification not modeled</span>
-          </summary>
-          <div class="mt-3 border-t border-gray-100 pt-3 text-sm text-muted space-y-3">
-            <p>Vulnerabilities amplify across the agent stack — a moderate Layer-1 prompt injection plus a moderate Layer-4 tool flaw can cascade to critical (EchoLeak: one email → full mailbox, CVSS 9.3). MAESTRO measured roughly a 3.2× risk increase per layer traversed, which independent layer scoring misses.</p>
-            <p><span class="font-semibold text-navy">Where AIVSS v0.8 and AIUC-1 stand.</span> Neither AIVSS v0.8 nor AIUC-1 models compound, cross-layer risk — both score factors or controls independently.</p>
-            <p><span class="font-semibold text-navy">How AITBM closes it.</span> The ORP multiplier and agentic weighting act as an attack-surface proxy that implicitly raises cascading-architecture risk (Finbot CRM = 1.35), but an explicit cascade-amplification factor in ORP is planned for Phase 4.</p>
-          </div>
-        </details>
-        </div>
-      <div class="mt-10 flex flex-wrap gap-4 text-sm">
+      <p class="mt-3 max-w-3xl text-muted">Twelve structural deficiencies across four domains, each with a short read on what it means. Ten are fully addressed today; two are partially addressed with planned enhancements. The framework comparison below shows how every other framework we’ve mapped fares on the same capabilities.</p>
+      <div class="mt-8 overflow-x-auto">
+        <table class="spec-table w-full border-collapse text-sm bg-white">
+          <thead>
+            <tr>
+              <th class="px-4 py-3 text-left">Gap</th>
+              <th class="px-4 py-3 text-left">Impact</th>
+              <th class="px-4 py-3 text-left">AITBM solution</th>
+              <th class="px-4 py-3 text-left w-28">Coverage</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted align-top">
+            <tr><td colspan="4" class="px-4 py-2 font-bold text-navy bg-blue-50/60">Methodological foundations</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Subjectivity in scoring</span><span class="mt-0.5 block text-xs text-gray-500">Severity words like “high”/“medium” admit several readings, so assessors diverge on the same system.</span></td><td class="px-4 py-3">15–30% inter-assessor variance</td><td class="px-4 py-3">Five-level quantitative rubrics</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Single-score reductionism</span><span class="mt-0.5 block text-xs text-gray-500">One 0–10 number hides which dimension actually drives the risk, so controls can’t be aimed.</span></td><td class="px-4 py-3">Multi-dimensional signal loss</td><td class="px-4 py-3">Three-layer IVP / ORP / ACI architecture</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Incomplete scoring guidance</span><span class="mt-0.5 block text-xs text-gray-500">Tiers are defined but with no test method, threshold, or tool to measure them.</span></td><td class="px-4 py-3">Implementation paralysis</td><td class="px-4 py-3">Test methods + tool integration per sub-metric</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td colspan="4" class="px-4 py-2 font-bold text-navy bg-blue-50/60">Operational reality</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Context-blind scoring</span><span class="mt-0.5 block text-xs text-gray-500">Intrinsic model risk is scored while where the system is deployed is ignored.</span></td><td class="px-4 py-3">Critical vs. low-risk indistinguishable</td><td class="px-4 py-3">ORP layer + Compound Risk Multiplier (CRM)</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Temporal evidence decay</span><span class="mt-0.5 block text-xs text-gray-500">Point-in-time assessments quietly go stale as models drift and threats evolve.</span></td><td class="px-4 py-3">Stale assessments, false confidence</td><td class="px-4 py-3">ACI decay + re-assessment triggers</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Operational vs. intrinsic conflation</span><span class="mt-0.5 block text-xs text-gray-500">Runtime controls are credited as if they reduced intrinsic risk, hiding control failure.</span></td><td class="px-4 py-3">Zero-risk fallacy</td><td class="px-4 py-3">IVP + ORP separation; α = 0.15 floor</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td colspan="4" class="px-4 py-2 font-bold text-navy bg-blue-50/60">Scope blindness</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Agentic autonomy risks</span><span class="mt-0.5 block text-xs text-gray-500">Static-model frameworks don’t score autonomous, tool-using, coordinating agents.</span></td><td class="px-4 py-3">Agentic threat classes unaddressed</td><td class="px-4 py-3">Containment axis (Cn-1 … Cn-5)</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Identity security gaps</span><span class="mt-0.5 block text-xs text-gray-500">Human IAM doesn’t fit ephemeral, delegating agents; agent identity goes unscored.</span></td><td class="px-4 py-3">Agent impersonation; no IAM for agents</td><td class="px-4 py-3">Cn-5 Agent Identity Integrity</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Tool / function-calling security</span><span class="mt-0.5 block text-xs text-gray-500">The MCP and tool-calling surface — poisoning, CVEs — goes unassessed.</span></td><td class="px-4 py-3">Tool poisoning; MCP CVEs</td><td class="px-4 py-3">Ro-4 + Cn-1/Cn-2 + Tr-3</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td colspan="4" class="px-4 py-2 font-bold text-navy bg-blue-50/60">Structural impossibilities</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Residual risk floor</span><span class="mt-0.5 block text-xs text-gray-500">Frameworks imply controls can reach zero risk; emergent and semantic risk make that false.</span></td><td class="px-4 py-3">False belief in zero risk</td><td class="px-4 py-3">α = 0.15 irreducible risk</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Emergent-behavior unpredictability</span><span class="mt-0.5 block text-xs text-gray-500">Behaviour not predictable from component tests — collusion, drift, memory poisoning.</span></td><td class="px-4 py-3">Non-deterministic risk underestimated</td><td class="px-4 py-3">α = 0.15 + Cn-4 detection</td><td class="px-4 py-3 font-semibold text-amber-600">Partial</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Cross-layer cascading failures</span><span class="mt-0.5 block text-xs text-gray-500">Vulnerabilities amplify across the agent stack; independent layer scoring misses it.</span></td><td class="px-4 py-3">Amplification not modeled</td><td class="px-4 py-3">Attack-surface proxy; enhancement planned</td><td class="px-4 py-3 font-semibold text-amber-600">Partial</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-4 text-sm">
         <span class="rounded-lg border border-gray-300 bg-white px-4 py-2"><span class="font-bold text-navy">10 / 12</span> fully addressed</span>
         <span class="rounded-lg border border-gray-300 bg-white px-4 py-2"><span class="font-bold text-amber-600">2 / 12</span> partially addressed (enhancements planned)</span>
       </div>
-      <p class="mt-8 max-w-3xl text-muted">
-        <span class="font-semibold text-navy">Verdict:</span> AITBM is the only compared framework with
-        full coverage on 11 of 15 capabilities — four of which (epistemic confidence, compound operational
-        risk, graduated MVT severity, inter-rater reliability targets) no compared framework addresses at
-        all — and the only one with five-level rubrics and required test methods per sub-metric. The two
-        standards strengthen the ecosystem AITBM plugs into: AIVSS v0.8 quantifies vulnerabilities, AIUC-1
-        certifies controls, and AITBM measures system risk across dimensions, context, and time.
-      </p>
     </div>
   </section>
 
@@ -400,6 +271,263 @@
     </p>
   </section>
 
+
+  <!-- Framework comparison -->
+  <section class="bg-gray-50 border-y border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <p class="text-sm font-semibold uppercase tracking-wide text-navy-light">June 2026 re-validation</p>
+      <h2 class="mt-1 text-3xl font-bold text-navy">Framework comparison</h2>
+      <p class="mt-3 max-w-3xl text-muted">How AITBM compares with every framework we’ve mapped, across the same capabilities the twelve gaps describe. Most are a different kind of artefact — vulnerability catalogs (OWASP LLM Top 10), control checklists (OWASP AISVS), threat taxonomies (MITRE ATLAS), governance frameworks (NIST AI RMF, ISO 42001), regulation (EU AI Act), or certification (AIUC-1) — so a “No” on a scoring capability is a scope difference, not a criticism. AITBM is the quantitative layer the others don’t provide, and it ingests their outputs as scoring evidence. Re-validated against OWASP AIVSS v0.8 (March 2026) and extended with AIUC-1 (January 2026).</p>
+      <div class="mt-8 overflow-x-auto">
+        <table class="spec-table w-full border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr>
+              <th class="px-3 py-3 text-left">Capability</th>
+              <th class="px-3 py-3 text-center">CVSS 4.0</th>
+              <th class="px-3 py-3 text-center">LLM Top 10</th>
+              <th class="px-3 py-3 text-center">AISVS</th>
+              <th class="px-3 py-3 text-center">ATLAS</th>
+              <th class="px-3 py-3 text-center">AIVSS v0.8</th>
+              <th class="px-3 py-3 text-center">RAISE</th>
+              <th class="px-3 py-3 text-center">NIST RMF</th>
+              <th class="px-3 py-3 text-center">ISO 42001</th>
+              <th class="px-3 py-3 text-center">EU AI Act</th>
+              <th class="px-3 py-3 text-center">AIUC-1</th>
+              <th class="px-3 py-3 text-center bg-navy-light">AITBM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">AI-native (non-deterministic)</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-emerald-700 font-semibold">Yes</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-emerald-700 font-semibold">Yes</td>
+              <td class="px-3 py-2 text-center text-emerald-700 font-semibold">Yes</td>
+              <td class="px-3 py-2 text-center text-emerald-700 font-semibold">Yes</td>
+              <td class="px-3 py-2 text-center text-emerald-700 font-semibold">Yes</td>
+              <td class="px-3 py-2 text-center text-emerald-700 font-semibold">Yes</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Multi-dimensional profile</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-emerald-700 font-semibold">Yes</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Deterministic weights</td>
+              <td class="px-3 py-2 text-center text-gray-300">N/A</td>
+              <td class="px-3 py-2 text-center text-gray-300">N/A</td>
+              <td class="px-3 py-2 text-center text-gray-300">N/A</td>
+              <td class="px-3 py-2 text-center text-gray-300">N/A</td>
+              <td class="px-3 py-2 text-center text-emerald-700 font-semibold">Yes</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-300">N/A</td>
+              <td class="px-3 py-2 text-center text-gray-300">N/A</td>
+              <td class="px-3 py-2 text-center text-gray-300">N/A</td>
+              <td class="px-3 py-2 text-center text-gray-300">N/A</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Epistemic confidence scoring</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Behavioral drift monitoring</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Supply chain integration (AIBOM)</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Tiered SME pathway</td>
+              <td class="px-3 py-2 text-center text-gray-300">N/A</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Stateful/agentic risk modeling</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-emerald-700 font-semibold">Yes</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">MVT enforcement per dimension</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Compound operational risk</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Residual deployment risk floor</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Graduated MVT severity</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Jurisdictional fairness</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Architecture classification tree</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center text-amber-600">Partial</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-left font-medium text-gray-700">Inter-rater reliability targets</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center text-gray-400">No</td>
+              <td class="px-3 py-2 text-center font-bold text-navy bg-blue-50/50">Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs text-gray-500">Verdicts for CVSS, AIVSS v0.8, RAISE, AIUC-1 and AITBM mirror Section 10 of the framework specification (June 2026); the catalog, governance and regulatory frameworks are rated on the same capabilities for completeness. Scroll horizontally to see all columns.</p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-xl border border-gray-200 bg-white p-6">
+          <h3 class="font-bold text-navy">Scoring systems</h3>
+          <p class="mt-2 text-sm text-muted">CVSS 4.0, OWASP AIVSS v0.8 and RAISE produce a number, but collapse it to a single dimension with no deployment-context, evidence-freshness, or confidence layer. AIVSS v0.8 fixes its factor weights and adds a relative 0.67 mitigation floor, yet keeps a single 0–10 score rated on three-point anchors with no test methods, and drops fairness, privacy and transparency.</p>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6">
+          <h3 class="font-bold text-navy">Catalogs &amp; taxonomies</h3>
+          <p class="mt-2 text-sm text-muted">OWASP LLM Top 10, OWASP AISVS and MITRE ATLAS enumerate threats and controls but do not measure risk — there is no score, profile, or temporal model. AITBM turns each of their elements into sub-metric scores (e.g. LLM01 → Ro-1 + Cn-3), so a checklist or a threat technique becomes a quantified, trackable risk.</p>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6">
+          <h3 class="font-bold text-navy">Governance, regulation &amp; certification</h3>
+          <p class="mt-2 text-sm text-muted">NIST AI RMF, ISO 42001, the EU AI Act and AIUC-1 govern, regulate and certify — they classify risk qualitatively or issue pass/fail certificates, but produce no quantitative, time-aware score. The AIVSS–AIUC-1 crosswalk even maps zero AIUC-1 controls to agent-identity impersonation, the exposure Cn-5 quantifies. AITBM ingests their attestations and test reports as scoring evidence, and its α = 0.15 floor is the measurement counterpart of AIUC-1’s insurance-backed risk transfer.</p>
+        </div>
+      </div>
+      <p class="mt-8 max-w-3xl text-muted"><span class="font-semibold text-navy">Verdict:</span> across all fifteen capabilities AITBM is the only framework rated full coverage on every one — and the only one with five-level rubrics and required test methods per sub-metric. The others were never designed to produce a quantitative, multi-dimensional, time-aware risk score; AITBM doesn’t replace them, it quantifies their outputs across dimensions, context, and time.</p>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="border-t border-gray-200 bg-gray-50">
