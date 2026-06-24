@@ -173,15 +173,90 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 py-10">
       <h1 class="text-3xl font-bold">ERS Calculator</h1>
       <p class="mt-2 max-w-2xl text-blue-100 text-sm">
-        Toggle <abbr title="AI Defense Framework — open catalog of defensive techniques" class="text-blue-100">AIDEFEND</abbr>
-        defensive controls and adjust deployment context to see how they change the Effective Risk Score
-        (<abbr title="Effective Risk Score — AITBM's final 0–10 composite" class="text-blue-100">ERS</abbr>)
-        in real time. For estimation and educational use.
+        Estimate your AI system's Effective Risk Score (<abbr title="Effective Risk Score — AITBM's final 0–10 composite" class="text-blue-100">ERS</abbr>) using either a plain-language <strong>Quick check (Yes/No)</strong> or the full <strong>Detailed calculator</strong> — switch between them with the toggle below.
         <a href="glossary" class="underline underline-offset-2 hover:text-white">Unfamiliar with a term?</a>
       </p>
     </div>
   </section>
 
+  <!-- Mode toggle -->
+  <section class="bg-white border-b border-gray-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-3 flex items-center gap-2">
+      <span class="text-sm font-semibold text-navy mr-1">Mode:</span>
+      <div class="inline-flex rounded-lg border border-gray-300 p-0.5 bg-gray-50">
+        <button id="mode-quick" type="button" class="rounded-md px-3 py-1.5 text-sm font-semibold bg-navy text-white">Quick check (Yes/No)</button>
+        <button id="mode-detailed" type="button" class="rounded-md px-3 py-1.5 text-sm font-semibold text-gray-600">Detailed calculator</button>
+      </div>
+      <a href="assets/downloads/AITBM_Quick_Assessment.xlsx" id="download-xlsx" class="ml-auto text-sm font-semibold text-navy underline underline-offset-2 hover:text-navy-light">Download Excel version</a>
+    </div>
+  </section>
+
+  <!-- Quick view -->
+  <div id="quick-view">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+      <div class="grid gap-8 lg:grid-cols-3">
+
+        <!-- Questions -->
+        <div class="lg:col-span-2 space-y-6">
+          <div class="rounded-xl border border-gray-200 p-5 bg-blue-50/40">
+            <p class="text-sm text-gray-700">Answer <span class="font-semibold">Yes</span> or <span class="font-semibold">No</span> to each statement about your AI system. Your risk score updates live on the right. Nothing is sent anywhere — this runs entirely in your browser.</p>
+          </div>
+          <div id="survey-panel" class="space-y-6"></div>
+        </div>
+
+        <!-- Result -->
+        <div class="lg:col-span-1">
+          <div class="results-panel lg:sticky lg:top-24 space-y-5">
+            <div class="rounded-xl border-2 border-gray-200 p-6 text-center">
+              <p class="text-xs font-semibold tracking-wider text-muted">EFFECTIVE RISK SCORE (ERS)</p>
+              <div class="mt-3 flex items-center justify-center">
+                <svg width="160" height="160" viewBox="0 0 160 160" class="transform -rotate-90">
+                  <circle cx="80" cy="80" r="70" fill="none" stroke="#e5e7eb" stroke-width="10" />
+                  <circle id="q-score-ring" cx="80" cy="80" r="70" fill="none" stroke="#1F3864" stroke-width="10" stroke-dasharray="440" stroke-dashoffset="44" stroke-linecap="round" class="score-ring" />
+                </svg>
+                <div class="absolute flex flex-col items-center">
+                  <span id="q-ers-value" class="text-5xl font-bold text-navy">5.8</span>
+                  <span class="text-xs text-muted">/10.0</span>
+                </div>
+              </div>
+              <div id="q-severity-badge" class="severity-badge mt-4 inline-block rounded-full px-4 py-1.5 text-sm font-bold bg-yellow-500 text-gray-900">Moderate</div>
+              <p id="q-tier-label" class="mt-2 text-xs text-muted">Tier II — Standard assessment</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="text-sm font-bold text-navy mb-2">What this means</h3>
+              <p id="q-interpretation" class="text-sm text-gray-700 leading-relaxed"></p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="text-sm font-bold text-navy mb-3">Top things to improve</h3>
+              <ol id="q-fixes" class="space-y-2 text-sm text-gray-700 list-decimal list-inside"></ol>
+              <p id="q-fixes-empty" class="hidden text-sm text-muted">No high-impact gaps detected from your answers.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <button id="q-breakdown-toggle" type="button" class="w-full flex items-center justify-between text-sm font-bold text-navy">
+                <span>Show the score breakdown</span>
+                <svg class="w-4 h-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+              </button>
+              <div id="q-breakdown" class="hidden mt-4 space-y-3">
+                <p class="text-xs text-muted">Inferred architecture: <span id="q-arch" class="font-semibold text-navy">standalone</span></p>
+                <div><div class="flex justify-between text-sm"><span class="text-muted">IVP Composite</span><span id="q-ivp-val" class="font-bold text-navy">0.32</span></div><div class="mt-1 h-2 rounded-full bg-gray-200"><div id="q-ivp-bar" class="bar-fill h-2 rounded-full bg-navy" style="width:32%"></div></div></div>
+                <div><div class="flex justify-between text-sm"><span class="text-muted">CRM</span><span id="q-crm-val" class="font-bold text-navy">0.75</span></div><div class="mt-1 h-2 rounded-full bg-gray-200"><div id="q-crm-bar" class="bar-fill h-2 rounded-full bg-navy" style="width:0%"></div></div></div>
+                <div><div class="flex justify-between text-sm"><span class="text-muted">ACI</span><span id="q-aci-val" class="font-bold text-navy">0.20</span></div><div class="mt-1 h-2 rounded-full bg-gray-200"><div id="q-aci-bar" class="bar-fill h-2 rounded-full bg-navy" style="width:20%"></div></div></div>
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <p class="text-xs text-muted">This is a simplified, educational estimate calibrated to the AITBM Framework Specification (§5) and the Finbot validation case. Use the full specification for assessments of record. <a href="framework" class="underline underline-offset-2 hover:text-navy">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#quick-view -->
+
+  <div id="detailed-view" class="hidden">
   <!-- How to use -->
   <section class="bg-white border-b border-gray-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 py-6">
@@ -377,6 +452,8 @@
     </div>
   </div>
 
+  </div><!-- /#detailed-view -->
+
   <!-- Footer -->
   <footer class="border-t border-gray-200 bg-gray-50">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
@@ -417,98 +494,29 @@
     </div>
   </footer>
 
+  <script src="assets/js/ers-engine.js"></script>
+  <script src="assets/js/survey-data.js"></script>
+  <script src="assets/js/survey.js"></script>
   <script src="assets/js/site.js"></script>
   <script>
   (function () {
     "use strict";
 
-    /* ── Sub-metric definitions ── */
-    var METRICS = {
-      "Ro-1": { name: "Adversarial Input Resistance",   axis: "Ro", base: 0.20 },
-      "Ro-2": { name: "Distribution Shift Resilience",   axis: "Ro", base: 0.50 },
-      "Ro-3": { name: "Output Consistency",              axis: "Ro", base: 0.25 },
-      "Ro-4": { name: "Poisoning Attack Resistance",     axis: "Ro", base: 0.15 },
-      "Fa-1": { name: "Demographic Parity",              axis: "Fa", base: 0.50 },
-      "Fa-2": { name: "Calibration Consistency",         axis: "Fa", base: 0.50 },
-      "Fa-3": { name: "Representation Bias",             axis: "Fa", base: 0.50 },
-      "Fa-4": { name: "Counterfactual Fairness",         axis: "Fa", base: 0.50 },
-      "Tr-1": { name: "Explainability Depth",            axis: "Tr", base: 0.50 },
-      "Tr-2": { name: "Confidence Calibration",          axis: "Tr", base: 0.30 },
-      "Tr-3": { name: "Audit Trail Completeness",        axis: "Tr", base: 0.40 },
-      "Tr-4": { name: "Model Lineage Disclosure",        axis: "Tr", base: 0.00 },
-      "Pr-1": { name: "Training Data Leakage Risk",      axis: "Pr", base: 0.25 },
-      "Pr-2": { name: "Inference Attack Resistance",     axis: "Pr", base: 0.30 },
-      "Pr-3": { name: "Data Minimization Compliance",    axis: "Pr", base: 0.30 },
-      "Pr-4": { name: "Re-identification Risk",          axis: "Pr", base: 0.50 },
-      "Cn-1": { name: "Scope Enforcement",               axis: "Cn", base: 0.10 },
-      "Cn-2": { name: "Escalation Prevention",           axis: "Cn", base: 0.15 },
-      "Cn-3": { name: "Output Filtering Robustness",     axis: "Cn", base: 0.10 },
-      "Cn-4": { name: "Side-Channel Resistance",         axis: "Cn", base: 0.20 },
-      "Cn-5": { name: "Agent Identity Integrity",        axis: "Cn", base: 0.20 }
-    };
+    var ENG = window.AITBM_ERS;
+    var METRICS = ENG.METRICS;
+    var WEIGHTS = ENG.WEIGHTS;
+    var CONTROLS = ENG.CONTROLS;
+    var severity = ENG.severity;
+    var severityColor = ENG.severityColor;
 
-    /* ── Architecture weight profiles ── */
-    var WEIGHTS = {
-      agentic:    { Ro: 0.15, Fa: 0.10, Tr: 0.15, Pr: 0.15, Cn: 0.45 },
-      rag:        { Ro: 0.25, Fa: 0.10, Tr: 0.15, Pr: 0.30, Cn: 0.20 },
-      standalone: { Ro: 0.25, Fa: 0.20, Tr: 0.20, Pr: 0.20, Cn: 0.15 }
-    };
     var WEIGHT_HINTS = {
       agentic:    "Agentic weights: Cn 45%, Ro 15%",
       rag:        "RAG weights: Pr 30%, Ro 25%",
       standalone: "Standalone weights: Ro 25%, Fa/Tr/Pr 20%"
     };
 
-    /* ── AIDEFEND controls ── */
-    var CONTROLS = [
-      /* Model */
-      { id: "AID-M-001", name: "AI Asset Inventory & Mapping",              tactic: "Model",   impacts: { "Tr-4": 0.75, "Cn-1": 0.60 }, ers: 2.6 },
-      { id: "AID-M-002", name: "Data Provenance & Lineage Tracking",        tactic: "Model",   impacts: { "Ro-4": 0.70, "Tr-4": 0.80, "Pr-3": 0.70 }, ers: 3.7 },
-      { id: "AID-M-003", name: "Model Behavior Baseline & Documentation",   tactic: "Model",   impacts: { "Ro-3": 0.70, "Tr-1": 0.60, "Tr-2": 0.75 }, ers: 2.9 },
-      { id: "AID-M-006", name: "Human-in-the-Loop Control Points",          tactic: "Model",   impacts: { "Cn-2": 0.70, "Cn-1": 0.75 }, ers: 4.3 },
-      { id: "AID-M-009", name: "Agent Autonomy Level Governance",           tactic: "Model",   impacts: { "Cn-1": 0.80, "Cn-2": 0.75, "Cn-5": 0.70 }, ers: 5.4 },
-      /* Harden */
-      { id: "AID-H-001", name: "Adversarial Robustness Training",           tactic: "Harden",  impacts: { "Ro-1": 0.70, "Ro-4": 0.65 }, ers: 3.4 },
-      { id: "AID-H-002", name: "Input Sanitization & Validation",           tactic: "Harden",  impacts: { "Ro-1": 0.65, "Cn-3": 0.60 }, ers: 3.3 },
-      { id: "AID-H-006", name: "Output Content Filtering & Validation",     tactic: "Harden",  impacts: { "Cn-3": 0.75, "Pr-1": 0.60, "Tr-2": 0.70 }, ers: 3.5 },
-      { id: "AID-H-019", name: "Agent Permission & Capability Restriction", tactic: "Harden",  impacts: { "Cn-1": 0.80, "Cn-2": 0.75, "Cn-5": 0.70 }, ers: 5.8 },
-      { id: "AID-H-021", name: "Secure RAG Pipeline Implementation",        tactic: "Harden",  impacts: { "Ro-4": 0.70, "Pr-2": 0.65, "Cn-3": 0.70 }, ers: 3.9 },
-      { id: "AID-H-031", name: "Agentic Skill Admission Control",           tactic: "Harden",  impacts: { "Cn-1": 0.65, "Ro-4": 0.55 }, ers: 1.8 },
-      { id: "AID-H-032", name: "AI-Generated Code Admission Control",       tactic: "Harden",  impacts: { "Cn-3": 0.65, "Ro-4": 0.55 }, ers: 1.6 },
-      { id: "AID-H-034", name: "AI Gateway Routing Integrity",              tactic: "Harden",  impacts: { "Cn-1": 0.60, "Cn-4": 0.55 }, ers: 1.4 },
-      /* Detect */
-      { id: "AID-D-001", name: "Real-Time Prompt Injection Detection",      tactic: "Detect",  impacts: { "Ro-1": 0.75, "Tr-3": 0.65 }, ers: 1.4 },
-      { id: "AID-D-002", name: "Model Drift & Anomaly Detection",           tactic: "Detect",  impacts: { "Ro-3": 0.65, "Ro-4": 0.55, "Tr-2": 0.60 }, ers: 2.6 },
-      { id: "AID-D-003", name: "Sensitive Data Leakage Detection",          tactic: "Detect",  impacts: { "Pr-1": 0.70, "Pr-3": 0.65, "Cn-3": 0.70 }, ers: 3.0 },
-      { id: "AID-D-011", name: "Agent Behavior Monitoring & Attestation",   tactic: "Detect",  impacts: { "Cn-1": 0.75, "Cn-2": 0.70, "Cn-5": 0.80 }, ers: 3.6 },
-      /* Isolate */
-      { id: "AID-I-002", name: "AI System Network Segmentation",            tactic: "Isolate", impacts: { "Cn-1": 0.60, "Cn-4": 0.55 }, ers: 1.4 },
-      { id: "AID-I-007", name: "Client-Side AI Execution Isolation",        tactic: "Isolate", impacts: { "Cn-1": 0.70, "Cn-3": 0.65, "Cn-4": 0.60 }, ers: 2.6 },
-      { id: "AID-I-008", name: "Browser Session & Origin Isolation",        tactic: "Isolate", impacts: { "Cn-1": 0.65, "Cn-4": 0.60 }, ers: 1.5 },
-      /* Deceive */
-      { id: "AID-DV-001", name: "AI Honeypot & Canary Deployment",          tactic: "Deceive", impacts: { "Tr-3": 0.75 }, ers: 0.7 },
-      /* Evict */
-      { id: "AID-E-005", name: "Automated Threat Response & Termination",   tactic: "Evict",   impacts: { "Cn-2": 0.65 }, ers: 1.1 }
-    ];
-
     var TACTIC_ORDER = ["Model", "Harden", "Detect", "Isolate", "Deceive", "Evict"];
     var TACTIC_COLORS = { Model: "#1F3864", Harden: "#2E5090", Detect: "#3a63a8", Isolate: "#4773bd", Deceive: "#5a84c7", Evict: "#6d95d1" };
-
-    /* ── Severity table ── */
-    function severity(ers) {
-      if (ers >= 9.0) return { label: "Critical",      bg: "bg-red-600",    text: "text-white", tier: "Tier I — Full assessment required" };
-      if (ers >= 7.0) return { label: "High",           bg: "bg-orange-500", text: "text-white", tier: "Tier I/II — Comprehensive assessment" };
-      if (ers >= 5.0) return { label: "Moderate",       bg: "bg-yellow-500", text: "text-gray-900", tier: "Tier II — Standard assessment" };
-      if (ers >= 3.0) return { label: "Low-Moderate",   bg: "bg-emerald-500",text: "text-white", tier: "Tier III — Simplified assessment" };
-      return              { label: "Low",             bg: "bg-green-600",  text: "text-white", tier: "Tier III — Minimal assessment" };
-    }
-    function severityColor(ers) {
-      if (ers >= 9.0) return "#dc2626";
-      if (ers >= 7.0) return "#f97316";
-      if (ers >= 5.0) return "#eab308";
-      if (ers >= 3.0) return "#10b981";
-      return "#16a34a";
-    }
 
     /* ── Build controls UI ── */
     var panel = document.getElementById("controls-panel");
@@ -608,63 +616,33 @@
     /* ── Core calculation ── */
     function recalc() {
       var arch = document.getElementById("arch-select").value;
-      var w = WEIGHTS[arch];
 
       /* Collect enabled controls */
       var enabled = [];
       checkboxes.forEach(function (cb) { if (cb.checked) enabled.push(cb.dataset.ctrl); });
       document.getElementById("ctrl-count").textContent = enabled.length + " / " + CONTROLS.length + " selected";
 
-      /* Build control lookup */
-      var controlMap = {};
-      CONTROLS.forEach(function (c) { controlMap[c.id] = c; });
-
-      /* Compute effective sub-metric values */
-      var vals = {};
-      Object.keys(METRICS).forEach(function (m) { vals[m] = METRICS[m].base; });
-
-      enabled.forEach(function (id) {
-        var ctrl = controlMap[id];
-        if (!ctrl) return;
-        Object.keys(ctrl.impacts).forEach(function (m) {
-          if (ctrl.impacts[m] > vals[m]) vals[m] = ctrl.impacts[m];
-        });
-      });
-
-      /* Compute axis averages */
-      var axes = { Ro: [], Fa: [], Tr: [], Pr: [], Cn: [] };
-      Object.keys(vals).forEach(function (m) { axes[METRICS[m].axis].push(vals[m]); });
-      var axScores = {};
-      Object.keys(axes).forEach(function (ax) {
-        var arr = axes[ax];
-        axScores[ax] = arr.reduce(function (s, v) { return s + v; }, 0) / arr.length;
-      });
-
-      /* IVP composite */
-      var ivp = 0;
-      Object.keys(w).forEach(function (ax) { ivp += w[ax] * axScores[ax]; });
-
-      /* ORP / CRM */
+      /* Inputs from the detailed controls */
+      var enabledIds = enabled.slice();
       var aa = document.getElementById("orp-aa").value / 100;
       var as_ = document.getElementById("orp-as").value / 100;
       var cp = document.getElementById("orp-cp").value / 100;
       var rf = document.getElementById("orp-rf").value / 100;
-      var avg = (aa + as_ + cp + rf) / 4;
-      var nElev = (aa > 0.75 ? 1 : 0) + (as_ > 0.75 ? 1 : 0) + (cp > 0.75 ? 1 : 0) + (rf > 0.75 ? 1 : 0);
-      var crm = -0.129 + 1.882 * avg + 0.05 * nElev;
-      crm = Math.max(0.75, Math.min(1.75, crm));
-
-      /* ACI */
       var pc = document.getElementById("aci-pc").value / 100;
       var ec = document.getElementById("aci-ec").value / 100;
       var tf = document.getElementById("aci-tf").value / 100;
-      var aci = Math.pow(Math.max(pc, 0.01) * Math.max(ec, 0.01) * Math.max(tf, 0.01), 1 / 3);
 
-      /* ERS */
-      var aciMod = 1.1 - 0.525 * aci;
-      var crmNorm = crm;
-      var ers = 1.5 + 8.5 * (1 - ivp) * crmNorm * aciMod;
-      ers = Math.max(1.5, Math.min(10.0, ers));
+      var res = ENG.computeERS({
+        arch: arch,
+        controlIds: enabledIds,
+        orp: { aa: aa, as: as_, cp: cp, rf: rf },
+        aci: { pc: pc, ec: ec, tf: tf }
+      });
+      var axScores = res.axisScores;
+      var ivp = res.ivp;
+      var crm = res.crm;
+      var aci = res.aci;
+      var ers = res.ers;
 
       /* ── Update UI ── */
       /* Slider labels */

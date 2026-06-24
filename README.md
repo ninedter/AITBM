@@ -124,6 +124,7 @@ AITBM/
 ├── specification/                     The framework specification, in every form
 │   ├── AITBM_Framework_Specification.pdf        Read it as one document
 │   ├── AITBM_Framework_Specification.docx       Editable Word source
+│   ├── AITBM_Quick_Assessment.xlsx              Offline yes/no self-assessment (Excel)
 │   └── sections/                                The same spec, section by section (Markdown)
 │       ├── README.md                            Section index
 │       ├── 00_revision_history.md
@@ -146,7 +147,7 @@ AITBM/
     ├── framework.html        Three-layer architecture (IVP/ORP/ACI/ERS)
     ├── gap-analysis.html     12 structural gaps across 4 domains
     ├── aidefend.html         AIDEFEND mapping and worked examples
-    ├── calculator.html       Interactive ERS calculator
+    ├── calculator.html       ERS calculator -- quick yes/no survey + detailed mode
     ├── resources.html        Documentation links and standards alignment
     ├── assets/               CSS and JavaScript assets
     ├── Dockerfile            Docker container configuration
