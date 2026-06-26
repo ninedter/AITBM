@@ -17,4 +17,3 @@ The framework specification, split into one Markdown file per major section. The
 - [Conclusion](12_conclusion.md)
 - [References](13_references.md)
 - [AIDEFEND Integration](14_aidefend_integration.md)
-- [EXTERNAL FRAMEWORK MAPPINGS](external_framework_mappings.md)
