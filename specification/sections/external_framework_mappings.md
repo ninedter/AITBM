@@ -54,9 +54,9 @@ The OWASP Top 10 for LLMs provides a qualitative catalogue of the ten most criti
 
 Key findings:
 
-- All 10 LLM risks map cleanly to AITBM sub-metrics; average unmitigated ERS is 7.95 (High), with controls yielding an average 3.6-point (~45%) reduction.
+- All 10 LLM risks map cleanly to AITBM sub-metrics; average unmitigated ERS is 7.5 (High), with controls yielding an average 3.5-point (~47%) reduction.
 
-- LLM06 Excessive Agency is the highest-risk item (ERS 8.9) and is driven by a Containment-axis collapse; its worked example brings in Cn-5 (Agent Identity Integrity) alongside Cn-1/Cn-2, showing agentic identity as a load-bearing factor.
+- LLM06 Excessive Agency is the highest-risk item (ERS 8.4) and is driven by a Containment-axis collapse; its worked example brings in Cn-5 (Agent Identity Integrity) alongside Cn-1/Cn-2, showing agentic identity as a load-bearing factor.
 
 - AITBM extends the catalogue with a Fairness dimension (Fa-1..Fa-4) that OWASP does not systematically address, plus ACI temporal decay for the otherwise-static OWASP classification.
 
@@ -96,7 +96,7 @@ Key findings:
 
 OWASP AI Security Verification Standard (AISVS). Maintained by OWASP Foundation.
 
-AISVS is a community-driven catalogue of testable AI security requirements (14 chapters, 170+ controls, levels L1/L2/L3) answering 'what controls should exist', and AITBM consumes its control-verification evidence to score 'how risky is this system', turning binary checklists into quantitative ERS and selecting assessment tier from AISVS level.
+AISVS is a community-driven catalogue of testable AI security requirements (12 chapters, 191 verifiable requirements, levels L1/L2/L3) answering 'what controls should exist', and AITBM consumes its control-verification evidence to score 'how risky is this system', turning binary checklists into quantitative ERS and selecting assessment tier from AISVS level.
 
 *Table 95: OWASP AISVS to AITBM Mapping*
 
@@ -118,7 +118,7 @@ Key findings:
 
 - AISVS C5, C9.4, and C10.2 directly target Cn-5 (Agent Identity Integrity), confirming AITBM's decision to add agent identity as a first-class sub-metric; C9+C10 are 87 requirements (~48% of the standard), validating the elevated agentic Containment weight.
 
-- Worked example: full AISVS L3 compliance on an agentic/RAG/MCP financial-advisory system drops ERS from 10.0 (Critical MVT) to 1.63 (Low), an 8.4-point reduction; the result stays above 0 because of the alpha=0.15 residual risk floor.
+- Worked example: full AISVS L3 compliance on an agentic/RAG/MCP financial-advisory system drops ERS from 10.0 (Critical MVT) to 1.75 (Low), an 8.25-point reduction; the result stays above 0 because of the alpha=0.15 residual risk floor.
 
 - AISVS levels map to AITBM tiers (L1->Tier III, L2->Tier II, L3->Tier I), and C6 (AIBOM) + C13 (continuous monitoring) drive the ACI provenance (Pc) and temporal-freshness (Tf) terms.
 
@@ -148,7 +148,7 @@ Key findings:
 
 - The emerging MCP technique Agent Identity Spoofing scores Cn-5=0.00 and ERS 9.7, and remediating Cn-5 to full PKI/SPIFFE (1.00) yields a 6.9-point drop, the single largest remediation impact in the framework, validating Cn-5.
 
-- Case-study retrospectives align with real severities: CVE-2025-32711 EchoLeak (CVSS 9.3) scores ERS 9.2 and the Postmark MCP supply-chain breach scores ERS 9.5, both driven by Containment/Cn-5 collapse and reaching CRM 1.60-1.75.
+- Case-study retrospectives align with real severities: CVE-2025-32711 EchoLeak (CVSS 9.3) scores ERS 8.0 and the Postmark MCP supply-chain breach scores ERS 8.7, both driven by Containment/Cn-5 collapse and reaching the N=4 CRM cap of 1.60.
 
 - ATLAS has thin coverage of Fairness/Transparency attacks; AITBM fills this with the Fa axis (e.g., AML.T0048 Societal Harm maps to Fa-1/Fa-2/Fa-3) and adds ACI temporal-freshness decay the static ATLAS catalogue lacks.
 
@@ -237,7 +237,7 @@ Key findings:
 
 - AITBM's deterministic rubrics narrow inter-assessor variance and make MEASURE outputs comparable across teams/systems/time (it narrows variance, it does not eliminate it), and its ACI temporal decay supplies the decay model the RMF's continuous-monitoring expectation lacks.
 
-- Worked example (Agentic-MCP bank assistant, RMF done as process only): AITBM converts a qualitative 'treatment in progress' into ERS 7.1 (High) to 3.1 (Low-Moderate) after sensitivity-ranked remediation, with the residual floor (alpha=0.15) preventing a zero score; Containment (Cn-5, Cn-1) is the dominant weakness at 45% agentic weight.
+- Worked example (Agentic-MCP bank assistant, RMF done as process only): AITBM converts a qualitative 'treatment in progress' into ERS 7.1 (High) to 2.9 (Low) after sensitivity-ranked remediation, with the residual floor (alpha=0.15) preventing a zero score; Containment (Cn-5, Cn-1) is the dominant weakness at 45% agentic weight.
 
 ### ISO/IEC 42001 and 42005
 
@@ -312,16 +312,16 @@ CSA supplies cloud-specific AI security via MAESTRO (7-layer agentic threat taxo
 | L1 Foundation Models | Ro-1, Ro-4, Pr-1, Pr-2, Cn-1 | Unmitigated ERS ~8.1 (High) |
 | L2 Data Operations | Ro-2, Ro-4, Pr-1, Pr-3 | Multi-tenant vector DB ~7.9 (High) |
 | L3 Agent Frameworks | Cn-1, Cn-2, Cn-3, Cn-5, Ro-1 | Tool misuse ~9.2 (Critical) to 5.3 mitigated |
-| L4 Deployment & Infrastructure | Cn-2, Cn-4, Pr-1, Pr-2 | Multi-tenant GPU side-channel ~8.9 to 4.6 |
+| L4 Deployment & Infrastructure | Cn-2, Cn-4, Pr-1, Pr-2 | Multi-tenant GPU side-channel ~8.1 to 4.0 |
 | L5 Evaluation & Observability | Tr-2, Tr-3, Pr-1, Cn-2 | Weak observability ~7.2 (High) |
-| L6 Security & Compliance | Cn-5 (mainly ORP Dim 4) | Strong controls cut CRM 1.40 to 1.15 |
-| L7 Agent Ecosystem | Cn-1, Cn-2, Cn-5, Ro-3 | Multi-agent collusion ~9.6 (Critical) to 6.1 |
+| L6 Security & Compliance | Cn-5 (mainly ORP Dim 4) | Strong controls cut CRM 1.35 to 1.15 |
+| L7 Agent Ecosystem | Cn-1, Cn-2, Cn-5, Ro-3 | Multi-agent collusion ~8.4 (High) to 6.0 |
 
 Key findings:
 
-- MAESTRO Layer 7 (Agent Ecosystem) drives Containment collapse (Cn composite ~0.12, ERS up to 9.6 Critical); SPIFFE/SPIRE agent-to-agent identity attestation raises Cn-5 from 0.10 to 0.85, directly validating AITBM's Cn-5 and its agentic Containment weighting (30-45%).
+- MAESTRO Layer 7 (Agent Ecosystem) drives Containment collapse (Cn composite ~0.12, ERS up to 8.4 High); SPIFFE/SPIRE agent-to-agent identity attestation raises Cn-5 from 0.10 to 0.85, directly validating AITBM's Cn-5 and its agentic Containment weighting (30-45%).
 
-- Cloud-specific threats quantified across 4 worked examples: multi-tenant GPU timing/NVBleed (8.9 to 4.6), cross-border data transfer (6.0 to 3.8), AI supply-chain compromise (6.4 to 4.2), and multi-agent collusion (9.0 to 5.8); average AICM-driven reduction ~-3.0 ERS.
+- Cloud-specific threats quantified across 4 worked examples: multi-tenant GPU timing/NVBleed (8.1 to 4.0), cross-border data transfer (5.7 to 3.5), AI supply-chain compromise (6.0 to 4.0), and multi-agent collusion (8.4 to 6.0); average AICM-driven reduction ~-2.7 ERS.
 
 - ORP validation: 7 of 8 CSA cloud risk factors (87.5%) fully covered by AITBM's four ORP dimensions; the one gap (supply-chain trust boundary) prompts a proposed ORP Dimension 2 sub-factor.
 
