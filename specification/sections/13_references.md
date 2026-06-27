@@ -20,7 +20,7 @@
 
 [10] European Union. (2024). Regulation (EU) 2024/1689 on Artificial Intelligence (AI Act). Official Journal of the European Union.
 
-[11] OWASP. (2025). AI Security Verification Standard (AISVS) v0.1-DRAFT. Retrieved from https://github.com/OWASP/AISVS
+[11] OWASP. (2026). AI Security Verification Standard (AISVS) 1.0. Retrieved from https://github.com/OWASP/AISVS
 
 [12] AIDEFEND Framework. (2026). AI Defense Framework for Security Controls. Retrieved from https://aidefend.net/
 

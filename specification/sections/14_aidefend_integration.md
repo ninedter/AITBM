@@ -4,7 +4,7 @@ Mapping AIDEFEND Defensive Techniques to AITBM Sub-Metrics
 
 ## Overview
 
-AIDEFEND (https://aidefend.net/) is a structured knowledge base of defensive countermeasures for AI systems. The AIDEFEND data reviewed for this section (June 12, 2026) uses schema 2.0 and data version 2026.06.11. It contains 86 top-level defensive techniques and 210 sub-techniques, for 296 total defensive records across tactics, pillars, lifecycle phases, and external framework mappings. This section maps AIDEFEND evidence to AITBM's 21 sub-metrics, enabling organizations to use AIDEFEND as the operational evaluation layer and AITBM as the scoring framework.
+AIDEFEND (https://aidefend.net/) is an independent open-source knowledge base of defensive countermeasures for AI systems, created by Edward Lee and not affiliated with OWASP or MITRE. The AIDEFEND data reviewed for this section (June 12, 2026) uses schema 2.0 and data version 2026.06.11. It contains 86 top-level defensive techniques and 210 sub-techniques, for 296 total defensive records across tactics, pillars, lifecycle phases, and external framework mappings. The current upstream catalog has since advanced to data version 2026.06.25 (88 techniques, 213 sub-techniques); reconciliation of that delta is pending. This section maps AIDEFEND evidence to AITBM's 21 sub-metrics, enabling organizations to use AIDEFEND as the operational evaluation layer and AITBM as the scoring framework.
 
 1. Translate defensive implementations into AITBM scores — Organizations implementing AIDEFEND controls can objectively score their security posture
 

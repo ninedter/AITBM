@@ -13,7 +13,7 @@
     gtag('config', 'G-K7VDS29BQ0');
   </script>
   <title>AIDEFEND → AITBM Defensive Control Mapping</title>
-  <meta name="description" content="Map the 86-technique AIDEFEND defensive catalog to AITBM's 21 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction." />
+  <meta name="description" content="Map the 88-technique AIDEFEND defensive catalog to AITBM's 21 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
@@ -62,7 +62,7 @@
       "@id": "https://aitbm.org/aidefend#webpage",
       "url": "https://aitbm.org/aidefend",
       "name": "AIDEFEND → AITBM Defensive Control Mapping",
-      "description": "Map the 86-technique AIDEFEND defensive catalog to AITBM's 21 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction.",
+      "description": "Map the 88-technique AIDEFEND defensive catalog to AITBM's 21 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction.",
       "isPartOf": {
         "@id": "https://aitbm.org/#website"
       },
@@ -118,6 +118,7 @@
           <a href="framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
           <a href="gap-analysis" data-nav="gap-analysis" class="nav-link hover:text-navy">Gap Analysis</a>
           <a href="aidefend" data-nav="aidefend" class="nav-link hover:text-navy">AIDEFEND</a>
+          <a href="mappings" data-nav="mappings" class="nav-link hover:text-navy">Mappings</a>
           <a href="calculator" data-nav="calculator" class="nav-link hover:text-navy">Calculator</a>
           <a href="glossary" data-nav="glossary" class="nav-link hover:text-navy">Glossary</a>
           <a href="resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
@@ -132,6 +133,7 @@
         <a href="framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
         <a href="gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
         <a href="aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
         <a href="calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
         <a href="glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
         <a href="resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
@@ -166,10 +168,11 @@
       <div class="lg:col-span-3">
         <h2 class="text-3xl font-bold text-navy">About AIDEFEND</h2>
         <p class="mt-3 text-muted">
-          AIDEFEND (AI Defense Framework) is an open-source knowledge base of defensive
-          countermeasures for protecting AI and machine learning systems. It organizes practical
-          defenses across seven high-level tactics aligned with MITRE D3FEND and maps each
-          technique to known threats from nine major industry frameworks.
+          AIDEFEND (AI Defense Framework) is an independent open-source knowledge base of
+          defensive countermeasures for protecting AI and machine learning systems, created by
+          Edward Lee (not affiliated with OWASP or MITRE). It organizes practical defenses across
+          seven high-level tactics aligned with MITRE D3FEND and maps each technique to known
+          threats from nine major industry frameworks.
         </p>
         <p class="mt-4 text-muted">
           AIDEFEND answers <em>"what defensive controls should exist"</em>; AITBM answers
@@ -185,14 +188,14 @@
         <div class="rounded-xl border border-gray-200 bg-gray-50 p-6">
           <p class="text-sm font-semibold text-navy">Framework at a glance</p>
           <dl class="mt-4 space-y-3 text-sm">
-            <div class="flex justify-between"><dt class="text-muted">Total techniques</dt><dd class="font-bold text-navy">86</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">Total techniques</dt><dd class="font-bold text-navy">88</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Tactics</dt><dd class="font-bold text-navy">7</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Pillars</dt><dd class="font-bold text-navy">4</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Lifecycle phases</dt><dd class="font-bold text-navy">6</dd></div>
             <div class="flex justify-between"><dt class="text-muted">External frameworks mapped</dt><dd class="font-bold text-navy">9</dd></div>
             <div class="flex justify-between"><dt class="text-muted">AITBM sub-metrics covered</dt><dd class="font-bold text-navy">21 / 21</dd></div>
           </dl>
-          <p class="mt-4 text-xs text-gray-500">Review baseline: AIDEFEND data version 2026.06.11 (reconciled June 12, 2026). Includes AID-H-035 — MCP Server Runtime Boundary &amp; Tool Exposure Governance — mapped to Tr-3, Cn-1, Cn-2, and Cn-5.</p>
+          <p class="mt-4 text-xs text-gray-500">AIDEFEND upstream: data version 2026.06.25 (88 techniques, 213 sub-techniques). The AITBM↔AIDEFEND mapping was last reconciled against data version 2026.06.11 (86 techniques, June 12, 2026) — including AID-H-035, MCP Server Runtime Boundary &amp; Tool Exposure Governance, mapped to Tr-3, Cn-1, Cn-2, and Cn-5; reconciliation of the 2026.06.25 delta is pending.</p>
         </div>
       </div>
     </div>
@@ -203,7 +206,7 @@
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <h2 class="text-3xl font-bold text-navy">How the mapping works</h2>
       <p class="mt-3 text-muted">
-        AITBM serves as the universal quantification layer for AIDEFEND. Each defensive
+        AITBM serves as the complementary quantification layer for AIDEFEND. Each defensive
         technique is mapped to the AITBM sub-metrics it affects, with before/after scoring
         impacts and ERS deltas.
       </p>
@@ -231,7 +234,7 @@
   <section id="tactics" class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
     <h2 class="text-3xl font-bold text-navy">Seven defensive tactics</h2>
     <p class="mt-3 text-muted">
-      AIDEFEND organizes 86 techniques across seven tactics aligned with MITRE D3FEND.
+      AIDEFEND organizes 88 techniques across seven tactics aligned with MITRE D3FEND.
       Each tactic maps to different AITBM layers and sub-metrics.
     </p>
     <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -556,7 +559,7 @@
       layer &mdash; turning control presence into measurable risk scores.
     </p>
     <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
-      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">MITRE ATLAS</span><p class="text-muted mt-0.5">15 tactics, 143 techniques</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">MITRE ATLAS</span><p class="text-muted mt-0.5">16 tactics, 101 techniques</p></div>
       <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">OWASP LLM Top 10 (2025)</span><p class="text-muted mt-0.5">10 threats, 85 controls mapped</p></div>
       <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">OWASP Agentic AI Top 10</span><p class="text-muted mt-0.5">ASI threat classes (2026)</p></div>
       <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">MAESTRO (CSA)</span><p class="text-muted mt-0.5">7 layers, 85 controls mapped</p></div>
@@ -591,6 +594,7 @@
           <li><a href="submetrics" class="hover:text-navy">Sub-metrics reference</a></li>
           <li><a href="gap-analysis" class="hover:text-navy">Gap Analysis</a></li>
           <li><a href="aidefend" class="hover:text-navy">AIDEFEND Mapping</a></li>
+          <li><a href="mappings" class="hover:text-navy">Framework Mappings</a></li>
           <li><a href="calculator" class="hover:text-navy">ERS Calculator</a></li>
           <li><a href="glossary" class="hover:text-navy">Glossary</a></li>
           <li><a href="resources" class="hover:text-navy">Resources</a></li>

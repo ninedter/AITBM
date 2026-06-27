@@ -118,6 +118,7 @@
           <a href="framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
           <a href="gap-analysis" data-nav="gap-analysis" class="nav-link hover:text-navy">Gap Analysis</a>
           <a href="aidefend" data-nav="aidefend" class="nav-link hover:text-navy">AIDEFEND</a>
+          <a href="mappings" data-nav="mappings" class="nav-link hover:text-navy">Mappings</a>
           <a href="calculator" data-nav="calculator" class="nav-link hover:text-navy">Calculator</a>
           <a href="glossary" data-nav="glossary" class="nav-link hover:text-navy">Glossary</a>
           <a href="resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
@@ -132,6 +133,7 @@
         <a href="framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
         <a href="gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
         <a href="aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
         <a href="calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
         <a href="glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
         <a href="resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
@@ -244,24 +246,24 @@
     </p>
     <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <div class="rounded-xl border border-gray-200 p-6">
-        <div class="text-3xl font-bold text-navy">84.2%</div>
-        <p class="mt-2 text-sm text-muted">tool-poisoning attack success rate reported by the MCPTox benchmark.</p>
+        <div class="text-3xl font-bold text-navy">72.8%</div>
+        <p class="mt-2 text-sm text-muted">tool-poisoning attack success rate reported by the MCPTox benchmark (arXiv 2508.14925).</p>
       </div>
       <div class="rounded-xl border border-gray-200 p-6">
-        <div class="text-3xl font-bold text-navy">8,000+</div>
-        <p class="mt-2 text-sm text-muted">MCP servers found exposed without authentication — Cn-5 Level 0.</p>
+        <div class="text-3xl font-bold text-navy">8,758</div>
+        <p class="mt-2 text-sm text-muted">MCP server hosts exposed on the public internet (Censys, 2026) — about 40% without authentication (Cn-5 Level 0).</p>
       </div>
       <div class="rounded-xl border border-gray-200 p-6">
-        <div class="text-3xl font-bold text-navy">30+</div>
-        <p class="mt-2 text-sm text-muted">CVEs filed against MCP infrastructure in a two-month window.</p>
+        <div class="text-3xl font-bold text-navy">82%</div>
+        <p class="mt-2 text-sm text-muted">of 2,614 analyzed MCP servers were prone to path-traversal flaws (Endor Labs, 2026).</p>
       </div>
       <div class="rounded-xl border border-gray-200 p-6">
         <div class="text-3xl font-bold text-navy">CVSS 9.3</div>
-        <p class="mt-2 text-sm text-muted">EchoLeak (CVE-2025-32711) — a zero-click prompt-injection disclosure.</p>
+        <p class="mt-2 text-sm text-muted">EchoLeak (CVE-2025-32711) — zero-click prompt-injection in Microsoft 365 Copilot (Microsoft score; NVD base 7.5).</p>
       </div>
       <div class="rounded-xl border border-gray-200 p-6">
-        <div class="text-3xl font-bold text-navy">87%</div>
-        <p class="mt-2 text-sm text-muted">of downstream decisions poisoned within four hours from a single compromised agent.</p>
+        <div class="text-3xl font-bold text-navy">CVSS 9.6</div>
+        <p class="mt-2 text-sm text-muted">RCE in the mcp-remote connector (CVE-2025-6514; ~437k downloads) — JFrog, 2025.</p>
       </div>
       <div class="rounded-xl border border-gray-200 p-6">
         <div class="text-3xl font-bold text-navy">SPIFFE / OIDC-A</div>
@@ -280,7 +282,7 @@
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <p class="text-sm font-semibold uppercase tracking-wide text-navy-light">June 2026 re-validation</p>
       <h2 class="mt-1 text-3xl font-bold text-navy">Framework comparison</h2>
-      <p class="mt-3 text-muted">How AITBM compares with every framework we’ve mapped, across the same capabilities the twelve gaps describe. Most are a different kind of artefact — vulnerability catalogs (OWASP LLM Top 10), control checklists (OWASP AISVS), threat taxonomies (MITRE ATLAS), governance frameworks (NIST AI RMF, ISO 42001), regulation (EU AI Act), or certification (AIUC-1) — so a “No” on a scoring capability is a scope difference, not a criticism. AITBM is the quantitative layer the others don’t provide, and it ingests their outputs as scoring evidence. Re-validated against OWASP AIVSS v0.8 (March 2026) and extended with AIUC-1 (January 2026).</p>
+      <p class="mt-3 text-muted">How AITBM compares with every framework we’ve mapped, across the same capabilities the twelve gaps describe. Most are a different kind of artefact — vulnerability catalogs (OWASP LLM Top 10), control checklists (OWASP AISVS), threat taxonomies (MITRE ATLAS), governance frameworks (NIST AI RMF, ISO 42001), regulation (EU AI Act), or certification (AIUC-1) — so a “No” on a scoring capability is a scope difference, not a criticism. AITBM adds a quantitative layer the others are not designed to provide, and it ingests their outputs as scoring evidence. Re-validated against OWASP AIVSS v0.8 (March 2026) and extended with AIUC-1 (launched 2025).</p>
       <div class="mt-8 overflow-x-auto">
         <table class="spec-table w-full border-collapse text-xs sm:text-sm">
           <thead>
@@ -513,22 +515,23 @@
           </tbody>
         </table>
       </div>
-      <p class="mt-3 text-xs text-gray-500">Verdicts for CVSS, AIVSS v0.8, RAISE, AIUC-1 and AITBM mirror Section 10 of the framework specification (June 2026); the catalog, governance and regulatory frameworks are rated on the same capabilities for completeness. Scroll horizontally to see all columns.</p>
+      <p class="mt-3 text-xs text-gray-500">Verdicts for CVSS, AIVSS v0.8, RAISE, AIUC-1 and AITBM mirror Section 10 of the framework specification (June 2026); the catalog, governance and regulatory frameworks are rated on the same capabilities for completeness. RAISE is an academic responsible-AI evaluation framework (arXiv 2510.18559) — not a security/vulnerability scorer — included here only for breadth. Scroll horizontally to see all columns.</p>
       <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <div class="rounded-xl border border-gray-200 bg-white p-6">
           <h3 class="font-bold text-navy">Scoring systems</h3>
-          <p class="mt-2 text-sm text-muted">CVSS 4.0, OWASP AIVSS v0.8 and RAISE produce a number, but collapse it to a single dimension with no deployment-context, evidence-freshness, or confidence layer. AIVSS v0.8 fixes its factor weights and adds a relative 0.67 mitigation floor, yet keeps a single 0–10 score rated on three-point anchors with no test methods, and drops fairness, privacy and transparency.</p>
+          <p class="mt-2 text-sm text-muted">CVSS 4.0 and OWASP AIVSS v0.8 produce a single security-severity number, collapsed to one scalar with no standing evidence-freshness or confidence layer (CVSS 4.0's Environmental group does capture deployment context, but folds it into the same number rather than preserving it as a separate signal). AIVSS v0.8 fixes its factor weights and adds a 0.67 multiplicative mitigation floor, but keeps a single 0–10 score on three-point factor anchors without operational test methods, and scopes itself to security — by design it does not cover fairness, privacy or transparency. RAISE is a different kind of tool: an academic responsible-AI evaluator (Explainability, Fairness, Robustness, Sustainability) that also rolls up to one score, shown here for breadth rather than as a security scorer.</p>
+          <p class="mt-3 text-xs text-gray-500">CVSS 4.0 <em>does</em> have a time-varying dimension — its <span class="font-semibold">Threat</span> group (renamed from v3.x <span class="font-semibold">Temporal</span>; a single Exploit Maturity metric). But that scores a known vulnerability's <span class="font-semibold">exploitation state</span> — is there public exploit code, is it being attacked — set manually from threat intel, with no decay function. A CVSS score never ages on its own. That is a different concept from evidence-freshness decay: AITBM's ACI discounts <span class="font-semibold">assessment confidence</span> as evidence goes stale and the system drifts.</p>
         </div>
         <div class="rounded-xl border border-gray-200 bg-white p-6">
           <h3 class="font-bold text-navy">Catalogs &amp; taxonomies</h3>
-          <p class="mt-2 text-sm text-muted">OWASP LLM Top 10, OWASP AISVS and MITRE ATLAS enumerate threats and controls but do not measure risk — there is no score, profile, or temporal model. AITBM turns each of their elements into sub-metric scores (e.g. LLM01 → Ro-1 + Cn-3), so a checklist or a threat technique becomes a quantified, trackable risk.</p>
+          <p class="mt-2 text-sm text-muted">OWASP LLM Top 10, OWASP AISVS and MITRE ATLAS enumerate threats and controls; by design they don't output a quantitative score, profile, or temporal model. AITBM turns each of their elements into sub-metric scores (e.g. LLM01 → Ro-1 + Cn-3), so a checklist item or a threat technique becomes a quantified, trackable risk.</p>
         </div>
         <div class="rounded-xl border border-gray-200 bg-white p-6">
           <h3 class="font-bold text-navy">Governance, regulation &amp; certification</h3>
-          <p class="mt-2 text-sm text-muted">NIST AI RMF, ISO 42001, the EU AI Act and AIUC-1 govern, regulate and certify — they classify risk qualitatively or issue pass/fail certificates, but produce no quantitative, time-aware score. The AIVSS–AIUC-1 crosswalk even maps zero AIUC-1 controls to agent-identity impersonation, the exposure Cn-5 quantifies. AITBM ingests their attestations and test reports as scoring evidence, and its α = 0.15 floor is the measurement counterpart of AIUC-1’s insurance-backed risk transfer.</p>
+          <p class="mt-2 text-sm text-muted">NIST AI RMF, ISO 42001, the EU AI Act and AIUC-1 govern, regulate and certify — the EU AI Act imposes binding, risk-tiered obligations; the others classify risk qualitatively or issue pass/fail certificates — but none outputs a quantitative, time-aware score. AIUC-1's agent-identity coverage is thin: the AIVSS–AIUC-1 crosswalk maps about two controls (E016, F001) to agent-identity impersonation, and they are policy-and-disclosure oriented rather than a graduated cryptographic-identity rubric — the depth Cn-5 adds. AITBM ingests their attestations and test reports as scoring evidence, and its α = 0.15 floor is the measurement counterpart of AIUC-1's insurance-backed risk transfer.</p>
         </div>
       </div>
-      <p class="mt-8 text-muted"><span class="font-semibold text-navy">Verdict:</span> across all fifteen capabilities AITBM is the only framework rated full coverage on every one — and the only one with five-level rubrics and required test methods per sub-metric. The others were never designed to produce a quantitative, multi-dimensional, time-aware risk score; AITBM doesn’t replace them, it quantifies their outputs across dimensions, context, and time.</p>
+      <p class="mt-8 text-muted"><span class="font-semibold text-navy">Verdict:</span> across all fifteen capabilities AITBM is the only one of the compared artefacts designed to address every one in a single model, and it is distinctive in specifying a five-level rubric and a required test method for each sub-metric. The others were never intended to produce a quantitative, multi-dimensional, time-aware risk score; AITBM doesn’t replace them, it quantifies their outputs across dimensions, context, and time.</p>
     </div>
   </section>
 
@@ -552,6 +555,7 @@
           <li><a href="submetrics" class="hover:text-navy">Sub-metrics reference</a></li>
           <li><a href="gap-analysis" class="hover:text-navy">Gap Analysis</a></li>
           <li><a href="aidefend" class="hover:text-navy">AIDEFEND Mapping</a></li>
+          <li><a href="mappings" class="hover:text-navy">Framework Mappings</a></li>
           <li><a href="calculator" class="hover:text-navy">ERS Calculator</a></li>
           <li><a href="glossary" class="hover:text-navy">Glossary</a></li>
           <li><a href="resources" class="hover:text-navy">Resources</a></li>

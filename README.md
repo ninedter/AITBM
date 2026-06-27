@@ -83,6 +83,7 @@ where alpha = 0.15 (residual risk floor -- AI risk cannot be zeroed out)
 - **Evidence-aware** -- The ACI penalizes opaque systems and stale assessments rather than trusting them at face value.
 - **Tiered pathways** -- Full, Standard, and Lite assessment tracks so startups and SMEs can participate alongside enterprises.
 - **AIDEFEND integration** -- AIDEFEND's 86-technique defensive catalog mapped to all 21 sub-metrics for evidence-based scoring.
+- **Governing quantification layer** -- Sixteen external frameworks (OWASP Top 10 for LLMs and for Agentic Applications, OWASP AISVS, MITRE ATLAS, AIUC-1, AIDEFEND, NIST AI RMF, ISO/IEC 42001 & 42005, the EU AI Act, CSA AI Security, NIST Cyber AI Profile, AIMA, COMPASS, MITRE D3FEND, CVSS, and the GPAI Code of Practice) mapped element-by-element into AITBM sub-metrics and the ERS.
 
 ---
 
@@ -140,13 +141,17 @@ AITBM/
 │       ├── 11_implementation_roadmap.md
 │       ├── 12_conclusion.md
 │       ├── 13_references.md
-│       └── 14_aidefend_integration.md
+│       ├── 14_aidefend_integration.md
+│       └── external_framework_mappings.md          Sixteen external frameworks mapped to AITBM
 └── website/                           Project website (static HTML + Tailwind CSS)
     ├── index.html            Overview and landing page
     ├── framework.html        Three-layer architecture (IVP/ORP/ACI/ERS)
+    ├── submetrics.html       The 21 sub-metrics reference
     ├── gap-analysis.html     12 structural gaps across 4 domains
     ├── aidefend.html         AIDEFEND mapping and worked examples
+    ├── mappings.html         Sixteen external frameworks mapped to AITBM
     ├── calculator.html       ERS calculator -- quick yes/no survey + detailed mode
+    ├── glossary.html         AI security terms and acronyms
     ├── resources.html        Documentation links and standards alignment
     ├── assets/               CSS and JavaScript assets
     ├── Dockerfile            Docker container configuration
@@ -183,6 +188,8 @@ The site is static HTML with Tailwind CSS (CDN) and vanilla JavaScript -- no bui
 | EU AI Act | Regulatory compliance mapping |
 | AIDEFEND | Defensive countermeasure mapping (86 techniques) |
 | D3FEND 1.0 | Defensive countermeasure taxonomy |
+
+All of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the GPAI Code of Practice — are mapped element-by-element into AITBM sub-metrics on the [Framework Mappings](website/mappings.html) page and in the [External Framework Mappings](specification/sections/external_framework_mappings.md) section of the specification.
 
 ---
 
