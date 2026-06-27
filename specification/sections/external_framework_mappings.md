@@ -114,7 +114,7 @@ AISVS is a community-driven catalogue of testable AI security requirements (12 c
 
 Key findings:
 
-- AISVS gives strong coverage of 17/21 AITBM sub-metrics (81%), partial on 3 (Fa-1/Fa-2/Fa-3, security-relevant bias only), and a single intentional gap at Fa-4 counterfactual fairness, which AISVS defers to ISO 42001 / NIST AI RMF.
+- AISVS gives strong coverage of 15/21 AITBM sub-metrics (71%), partial on 2 (Tr-1 explainability, Pr-3 data minimization), and defers the 4 Fairness sub-metrics (Fa-1–Fa-4) by design to ISO 42001 / ISO 23894 / NIST AI RMF.
 
 - AISVS C5, C9.4, and C10.2 directly target Cn-5 (Agent Identity Integrity), confirming AITBM's decision to add agent identity as a first-class sub-metric; C9+C10 are 87 requirements (~48% of the standard), validating the elevated agentic Containment weight.
 
