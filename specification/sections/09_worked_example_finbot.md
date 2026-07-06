@@ -10,7 +10,7 @@ Architecture Classification: Agentic / MCP System (Decision Tree Q2: YES - auton
 
 The IVP assessment scores each of Finbot's five axes, comparing the score against the Tier-1 MVT and noting the key finding per axis.
 
-*Table 56: 9.1 IVP Assessment*
+*Table 58: 9.1 IVP Assessment*
 
 | Axis | Score | MVT | Result | Key Finding |
 | --- | --- | --- | --- | --- |
@@ -18,7 +18,7 @@ The IVP assessment scores each of Finbot's five axes, comparing the score agains
 | Fairness | 0.82 | 0.60 | PASS | Meets demographic parity per JPGR (US) |
 | Transparency | 0.60 | 0.55 | PASS | Audit trail incomplete for tool calls |
 | Privacy | 0.55 | 0.60 | FAIL - Minor | Email ingested without PII scrubbing |
-| Containment | 0.30 | 0.65 | FAIL - Critical | No permission broker for transactions |
+| Containment | 0.30 | 0.65 | FAIL - Critical | No permission broker for transactions; no reversibility classification beyond the fixed >$50K approval threshold (Cn-6 = 0.25, ad-hoc) |
 
 MVT Severity: Critical - Containment is 0.35 below the Tier 1 MVT and three axes fall below required thresholds.
 
@@ -26,7 +26,7 @@ MVT Severity: Critical - Containment is 0.35 below the Tier 1 MVT and three axes
 
 The ORP assessment scores Finbot's four operational dimensions, which combine via the weight profile and the Compound Risk Multiplier.
 
-*Table 57: 9.2 ORP Assessment*
+*Table 59: 9.2 ORP Assessment*
 
 | Dimension | Score | Justification |
 | --- | --- | --- |
@@ -41,13 +41,13 @@ CRM Assessment: N_elevated = 3 (Aa=0.95, As=0.85, Cp=0.80 all > 0.75). CRM = 1.3
 
 The ACI assessment scores how much is known about Finbot's evidence across provenance, evaluation coverage, and temporal freshness.
 
-*Table 58: 9.3 ACI Assessment*
+*Table 60: 9.3 ACI Assessment*
 
 | Component | Score | Justification |
 | --- | --- | --- |
 | Provenance Completeness (Pc) | 0.60 | Partial AIBOM exists: base model documented (GPT-4 via API), but RAG corpus provenance incomplete. Email ingestion pipeline has no data lineage. Completeness ~60%. |
-| Evaluation Coverage (Ec) | 0.40 | Self-assessed (Independence Multiplier = 0.60) with Base_Coverage approximately 0.76 (16 of 21 sub-metrics tested) in staging environment (Fidelity Factor = 0.85). Ec = 0.76 x 0.60 x 0.85 = 0.388, rounded to 0.40 (nearest 0.05). |
-| Temporal Freshness (Tf) | 0.85 | Assessment evidence is 5 days old. Tier 1 lambda = 0.0231, so T_calendar = e^(-0.0231 x 5) = 0.891. Because unresolved identity/tool evidence caps confidence at C_evidence = 0.85, Tf = min(0.891, 0.85) = 0.85. |
+| Evaluation Coverage (Ec) | 0.37 | Self-assessed (Independence Multiplier = 0.60) with Base_Coverage approximately 0.73 (16 of 22 sub-metrics tested) in staging environment (Fidelity Factor = 0.85). Ec = 0.73 x 0.60 x 0.85 = 0.372, rounded to 0.37. |
+| Temporal Freshness (Tf) | 0.79 | Assessment evidence is 5 days old. Tier 1 lambda = 0.0231, so T_calendar = e^(-0.0231 x 5) = 0.891. Agentic architecture: containment staleness floor T_containment = e^(-2.0 x 0.0231 x 5) = 0.794. Unresolved identity/tool gaps cap C_evidence at 0.85. Tf = min(0.891, 0.794, 0.85) = 0.79. |
 
 ## 9.4 ERS Calculation
 
@@ -62,8 +62,8 @@ CRM: N_elevated = 3, therefore CRM = 1.35.
 ```
 ORP_(effective) = 0.850 × 1.35 = 1.148
 W_(ivp) · IVP = (0.30)(0.45)+(0.25)(0.82)+(0.15)(0.60)+(0.20)(0.55)+(0.10)(0.30) = 0.570
-ACI_(composite) = (0.60 × 0.40 × 0.85)^(1/3) = 0.589
-IVPmitigation = 0.516;ERS = min(10,1.148 × 0.516 × 1.697 × 10) = 10.0.
+ACI_(composite) = (0.60 × 0.37 × 0.79)^(1/3) = 0.56
+IVPmitigation = 0.516;ERS = min(10,1.148 × 0.516 × 1.786 × 10) = 10.0.
 ```
 
-Finbot therefore scores ERS = 10.0 — the maximum value and a Critical MVT — driven by the compound operational risk (CRM = 1.35), the containment failure, and the low assurance confidence (ACI = 0.589).
+Finbot therefore scores ERS = 10.0 — the maximum value and a Critical MVT — driven by the compound operational risk (CRM = 1.35), the containment failure (including ad-hoc reversibility gating, Cn-6), and the low assurance confidence (ACI = 0.56).

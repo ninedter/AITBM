@@ -4,7 +4,7 @@ Mapping AIDEFEND Defensive Techniques to AITBM Sub-Metrics
 
 ## Overview
 
-AIDEFEND (https://aidefend.net/) is an independent open-source knowledge base of defensive countermeasures for AI systems, created by Edward Lee and not affiliated with OWASP or MITRE. The AIDEFEND data reviewed for this section (June 12, 2026) uses schema 2.0 and data version 2026.06.11. It contains 86 top-level defensive techniques and 210 sub-techniques, for 296 total defensive records across tactics, pillars, lifecycle phases, and external framework mappings. The current upstream catalog has since advanced to data version 2026.06.25 (88 techniques, 213 sub-techniques); reconciliation of that delta is pending. This section maps AIDEFEND evidence to AITBM's 21 sub-metrics, enabling organizations to use AIDEFEND as the operational evaluation layer and AITBM as the scoring framework.
+AIDEFEND (https://aidefend.net/) is an independent open-source knowledge base of defensive countermeasures for AI systems, created by Edward Lee and not affiliated with OWASP or MITRE. The AIDEFEND data reviewed for this section (June 12, 2026) uses schema 2.0 and data version 2026.06.11. It contains 86 top-level defensive techniques and 210 sub-techniques, for 296 total defensive records across tactics, pillars, lifecycle phases, and external framework mappings. The current upstream catalog has since advanced to data version 2026.06.25 (88 techniques, 213 sub-techniques); reconciliation of that delta is pending. This section maps AIDEFEND evidence to AITBM's 22 sub-metrics, enabling organizations to use AIDEFEND as the operational evaluation layer and AITBM as the scoring framework.
 
 1. Translate defensive implementations into AITBM scores — Organizations implementing AIDEFEND controls can objectively score their security posture
 
@@ -18,7 +18,7 @@ AIDEFEND (https://aidefend.net/) is an independent open-source knowledge base of
 
 The reviewed data version organizes 86 top-level defensive techniques and 210 sub-techniques across 7 tactics:
 
-*Table 60: AIDEFEND Tactical Structure*
+*Table 62: AIDEFEND Tactical Structure*
 
 | Tactic | Code | Techniques | Purpose |
 | --- | --- | --- | --- |
@@ -48,7 +48,7 @@ The current AIDEFEND structure is deeper than a flat control catalog. Each AIDEF
 
 The mapping rule is intentionally conservative: AIDEFEND identifies measurable defensive evidence, while AITBM assigns the score. A technique or sub-technique may support a score only when its implementation produces evidence that satisfies the relevant AITBM required test method.
 
-*Table 61: Current AIDEFEND Depth Review*
+*Table 63: Current AIDEFEND Depth Review*
 
 | Profile Element | Current AIDEFEND Value | AITBM Assessment Use |
 | --- | --- | --- |
@@ -64,7 +64,7 @@ The mapping rule is intentionally conservative: AIDEFEND identifies measurable d
 
 AITBM interprets AIDEFEND through six mapping layers. The deeper layers are used to prevent over-scoring when a broad technique exists but the specific evidence needed by the AITBM rubric is missing.
 
-*Table 62: Depth Mapping Model*
+*Table 64: Depth Mapping Model*
 
 | Mapping Layer | AIDEFEND Field | AITBM Use | Scoring Rule |
 | --- | --- | --- | --- |
@@ -79,7 +79,7 @@ AITBM interprets AIDEFEND through six mapping layers. The deeper layers are used
 
 AIDEFEND tactics are not all scored the same way inside AITBM. Some tactics directly improve IVP sub-metrics, while others primarily reduce operational uncertainty, improve reassessment triggers, or support confidence in the evidence package.
 
-*Table 63: AITBM Layer Interpretation*
+*Table 65: AITBM Layer Interpretation*
 
 | AIDEFEND Tactic | Primary AITBM Layer | Direct Scoring Use | ORP / ACI Use |
 | --- | --- | --- | --- |
@@ -95,7 +95,7 @@ AIDEFEND tactics are not all scored the same way inside AITBM. Some tactics dire
 
 The current AIDEFEND data adds or clarifies several agentic, gateway, generated-code, browser-isolation, lifecycle-governance, and MCP server runtime boundary controls that should be reflected in AITBM scoring. These updates strengthen the Containment, Privacy, Transparency, and Robustness mappings.
 
-*Table 64: Current Mapping Updates*
+*Table 66: Current Mapping Updates*
 
 | Current AIDEFEND Update | AITBM Mapping Change | Reason |
 | --- | --- | --- |
@@ -112,7 +112,7 @@ The current AIDEFEND data adds or clarifies several agentic, gateway, generated-
 
 The examples below show how AIDEFEND sub-techniques become measurable AITBM evidence. The assessor should record the specific sub-technique, observed artifact, test result, timestamp, owner, and any unresolved exception.
 
-*Table 65: Sub-Technique Evidence Examples*
+*Table 67: Sub-Technique Evidence Examples*
 
 | AITBM Area | Current AIDEFEND Sub-Technique Evidence | Measurement Use |
 | --- | --- | --- |
@@ -130,7 +130,7 @@ AIDEFEND is used as the evaluation-metrics and evidence layer for AITBM. AIDEFEN
 
 Control presence alone is not sufficient for a high AITBM score. A deployed AIDEFEND technique creates candidate evidence; the AITBM required test method determines whether the evidence is complete, current, and effective. If an AIDEFEND control exists but fails the AITBM test, the score must follow the observed test result rather than the claimed implementation.
 
-*Table 66: AIDEFEND-to-AITBM Evaluation Process*
+*Table 68: AIDEFEND-to-AITBM Evaluation Process*
 
 | Layer | Primary Function | Assessment Output |
 | --- | --- | --- |
@@ -144,7 +144,7 @@ Control presence alone is not sufficient for a high AITBM score. A deployed AIDE
 
 The following workflow should be used whenever AIDEFEND is treated as the operational evaluation source for AITBM scoring. The workflow preserves AITBM's bias-resistant scoring model by preventing assessors from awarding points merely because a named control exists.
 
-*Table 67: Evidence-to-Score Workflow*
+*Table 69: Evidence-to-Score Workflow*
 
 | Step | Evaluation Action | Required Output |
 | --- | --- | --- |
@@ -159,7 +159,7 @@ The following workflow should be used whenever AIDEFEND is treated as the operat
 
 The score guide below is a translation aid. It does not replace the specific AITBM rubric thresholds. When a sub-metric has a quantitative threshold, the quantitative threshold governs. The AIDEFEND evidence condition establishes the maximum defensible score when test data is incomplete.
 
-*Table 68: AIDEFEND Evidence-to-AITBM Score Guide*
+*Table 70: AIDEFEND Evidence-to-AITBM Score Guide*
 
 | AITBM Score | AIDEFEND Evidence Condition | Assessor Rule |
 | --- | --- | --- |
@@ -173,7 +173,7 @@ The score guide below is a translation aid. It does not replace the specific AIT
 
 Scenario: Finbot is assessed as an agentic/MCP financial assistant that invokes payment, CRM, and document-retrieval tools. The AIDEFEND evidence review identifies the eleven mapped Cn-5 techniques listed in the Cn-5 mapping table; the seven that produce inspectable evidence for this deployment are reviewed below. The assessor uses those techniques as the evidence source, then applies the AITBM Cn-5 required test method to determine the score.
 
-*Table 69: Worked Example: Scoring Cn-5 Agent Identity Integrity*
+*Table 71: Worked Example: Scoring Cn-5 Agent Identity Integrity*
 
 | AIDEFEND Technique | Evidence Observed | AITBM Measurement Use |
 | --- | --- | --- |
@@ -187,7 +187,7 @@ Scenario: Finbot is assessed as an agentic/MCP financial assistant that invokes 
 
 Observed test result: identity spoofing succeeded in 3 of 25 attempts (ISSR = 12%). Detection occurred in 22 of 25 attempts (88%). Mean Time to Quarantine was 8 minutes. Token replay attempts failed for signed production agents, but one legacy connector still used an emergency shared key. Continuous attestation was implemented for production agents but not for all MCP servers.
 
-Table : Worked Example: Cn-5 Scoring Interpretation70
+*Table 72: Worked Example: Cn-5 Scoring Interpretation*
 
 | Scoring Factor | Observed Result | Scoring Interpretation |
 | --- | --- | --- |
@@ -205,7 +205,7 @@ Resulting AITBM treatment: the Cn-5 sub-metric score is set to 0.75. The unresol
 
 Mapped AIDEFEND Techniques (10):
 
-*Table 71: Ro-1 - AIDEFEND Mapping*
+*Table 73: Ro-1 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -224,7 +224,7 @@ Mapped AIDEFEND Techniques (10):
 
 Mapped AIDEFEND Techniques (5):
 
-*Table 72: Ro-2 - AIDEFEND Mapping*
+*Table 74: Ro-2 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -238,7 +238,7 @@ Mapped AIDEFEND Techniques (5):
 
 Mapped AIDEFEND Techniques (6):
 
-*Table 73: Ro-3 - AIDEFEND Mapping*
+*Table 75: Ro-3 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -253,7 +253,7 @@ Mapped AIDEFEND Techniques (6):
 
 Mapped AIDEFEND Techniques (13):
 
-*Table 74: Ro-4 - AIDEFEND Mapping*
+*Table 76: Ro-4 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -277,7 +277,7 @@ Mapped AIDEFEND Techniques (13):
 
 Mapped AIDEFEND Techniques (4):
 
-*Table 75: Fa-1 - AIDEFEND Mapping*
+*Table 77: Fa-1 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -290,7 +290,7 @@ Mapped AIDEFEND Techniques (4):
 
 Mapped AIDEFEND Techniques (3):
 
-*Table 76: Fa-2 - AIDEFEND Mapping*
+*Table 78: Fa-2 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -302,7 +302,7 @@ Mapped AIDEFEND Techniques (3):
 
 Mapped AIDEFEND Techniques (3):
 
-*Table 77: Fa-3 - AIDEFEND Mapping*
+*Table 79: Fa-3 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -314,7 +314,7 @@ Mapped AIDEFEND Techniques (3):
 
 Mapped AIDEFEND Techniques (3):
 
-*Table 78: Fa-4 - AIDEFEND Mapping*
+*Table 80: Fa-4 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -328,7 +328,7 @@ Mapped AIDEFEND Techniques (3):
 
 Mapped AIDEFEND Techniques (3):
 
-*Table 79: Tr-1 - AIDEFEND Mapping*
+*Table 81: Tr-1 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -340,7 +340,7 @@ Mapped AIDEFEND Techniques (3):
 
 Mapped AIDEFEND Techniques (3):
 
-*Table 80: Tr-2 - AIDEFEND Mapping*
+*Table 82: Tr-2 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -352,7 +352,7 @@ Mapped AIDEFEND Techniques (3):
 
 Mapped AIDEFEND Techniques (8):
 
-*Table 81: Tr-3 - AIDEFEND Mapping*
+*Table 83: Tr-3 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -369,7 +369,7 @@ Mapped AIDEFEND Techniques (8):
 
 Mapped AIDEFEND Techniques (4):
 
-*Table 82: Tr-4 - AIDEFEND Mapping*
+*Table 84: Tr-4 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -384,7 +384,7 @@ Mapped AIDEFEND Techniques (4):
 
 Mapped AIDEFEND Techniques (5):
 
-*Table 83: Pr-1 - AIDEFEND Mapping*
+*Table 85: Pr-1 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -398,7 +398,7 @@ Mapped AIDEFEND Techniques (5):
 
 Mapped AIDEFEND Techniques (5):
 
-*Table 84: Pr-2 - AIDEFEND Mapping*
+*Table 86: Pr-2 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -412,7 +412,7 @@ Mapped AIDEFEND Techniques (5):
 
 Mapped AIDEFEND Techniques (5):
 
-*Table 85: Pr-3 - AIDEFEND Mapping*
+*Table 87: Pr-3 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -426,7 +426,7 @@ Mapped AIDEFEND Techniques (5):
 
 Mapped AIDEFEND Techniques (4):
 
-*Table 86: Pr-4 - AIDEFEND Mapping*
+*Table 88: Pr-4 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -441,7 +441,7 @@ Mapped AIDEFEND Techniques (4):
 
 Mapped AIDEFEND Techniques (8):
 
-*Table 87: Cn-1 - AIDEFEND Mapping*
+*Table 89: Cn-1 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -458,7 +458,7 @@ Mapped AIDEFEND Techniques (8):
 
 Mapped AIDEFEND Techniques (8):
 
-*Table 88: Cn-2 - AIDEFEND Mapping*
+*Table 90: Cn-2 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -475,7 +475,7 @@ Mapped AIDEFEND Techniques (8):
 
 Mapped AIDEFEND Techniques (5):
 
-*Table 89: Cn-3 - AIDEFEND Mapping*
+*Table 91: Cn-3 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -489,7 +489,7 @@ Mapped AIDEFEND Techniques (5):
 
 Mapped AIDEFEND Techniques (5):
 
-*Table 90: Cn-4 - AIDEFEND Mapping*
+*Table 92: Cn-4 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -503,7 +503,7 @@ Mapped AIDEFEND Techniques (5):
 
 Mapped AIDEFEND Techniques (11):
 
-*Table 91: Cn-5 - AIDEFEND Mapping*
+*Table 93: Cn-5 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
@@ -518,6 +518,21 @@ Mapped AIDEFEND Techniques (11):
 | AID-M-009 | Agent Autonomy & Authority Governance |
 | AID-M-001 | AI Asset Inventory & Mapping |
 | AID-H-035 | MCP Server Runtime Boundary & Tool Exposure Governance |
+
+##### Cn-6: Action Reversibility Classification Rate
+
+Mapped AIDEFEND Techniques (6):
+
+*Table 94: Cn-6 - AIDEFEND Mapping*
+
+| AIDEFEND ID | Defensive Technique Name | Relevance to Cn-6 |
+| --- | --- | --- |
+| AID-M-006 | Human-in-the-Loop (HITL) Control Point Mapping | Maps the human approval checkpoints that implement the delegated-irreversible gate before execution. |
+| AID-M-009 | Agent Autonomy & Authority Governance | Defines which reversibility classes an agent may execute autonomously and where authority must escalate to a human. |
+| AID-H-019 | Tool Authorization & Capability Scoping | Scopes tool capabilities so irreversible actions are technically unavailable outside an authorized gate. |
+| AID-H-035 | MCP Server Runtime Boundary & Tool Exposure Governance | Governs which tools an MCP server exposes at runtime, keeping irreversible tool actions off ungated invocation paths. |
+| AID-D-011 | Agent Behavioral Attestation & Rogue Detection | Attests agent behavior at runtime, detecting execution of actions outside the attested reversibility class. |
+| AID-D-015 | User Trust Calibration & High-Risk Action Confirmation | Enforces explicit confirmation of high-risk actions — the runtime mechanism of the pre-execution gate the ARCR measures. |
 
 ## Operational Guidance for Using This Mapping
 

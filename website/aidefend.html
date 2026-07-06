@@ -13,7 +13,7 @@
     gtag('config', 'G-K7VDS29BQ0');
   </script>
   <title>AIDEFEND → AITBM Defensive Control Mapping</title>
-  <meta name="description" content="Map the 88-technique AIDEFEND defensive catalog to AITBM's 21 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction." />
+  <meta name="description" content="Map the 88-technique AIDEFEND defensive catalog to AITBM's 22 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
@@ -62,7 +62,7 @@
       "@id": "https://aitbm.org/aidefend#webpage",
       "url": "https://aitbm.org/aidefend",
       "name": "AIDEFEND → AITBM Defensive Control Mapping",
-      "description": "Map the 88-technique AIDEFEND defensive catalog to AITBM's 21 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction.",
+      "description": "Map the 88-technique AIDEFEND defensive catalog to AITBM's 22 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction.",
       "isPartOf": {
         "@id": "https://aitbm.org/#website"
       },
@@ -148,7 +148,7 @@
       <h1 class="text-4xl font-bold">AIDEFEND Mapping</h1>
       <p class="mt-3 max-w-2xl text-blue-100">
         Translating AIDEFEND defensive techniques into measurable risk reduction
-        through AITBM's 21 sub-metrics — so you can see exactly which risk scores a
+        through AITBM's 22 sub-metrics — so you can see exactly which risk scores a
         control improves, and by how much.
       </p>
       <nav class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-blue-100">
@@ -193,9 +193,9 @@
             <div class="flex justify-between"><dt class="text-muted">Pillars</dt><dd class="font-bold text-navy">4</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Lifecycle phases</dt><dd class="font-bold text-navy">6</dd></div>
             <div class="flex justify-between"><dt class="text-muted">External frameworks mapped</dt><dd class="font-bold text-navy">9</dd></div>
-            <div class="flex justify-between"><dt class="text-muted">AITBM sub-metrics covered</dt><dd class="font-bold text-navy">21 / 21</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">AITBM sub-metrics covered</dt><dd class="font-bold text-navy">22 / 22</dd></div>
           </dl>
-          <p class="mt-4 text-xs text-gray-500">AIDEFEND upstream: data version 2026.06.25 (88 techniques, 213 sub-techniques). The AITBM↔AIDEFEND mapping was last reconciled against data version 2026.06.11 (86 techniques, June 12, 2026) — including AID-H-035, MCP Server Runtime Boundary &amp; Tool Exposure Governance, mapped to Tr-3, Cn-1, Cn-2, and Cn-5; reconciliation of the 2026.06.25 delta is pending.</p>
+          <p class="mt-4 text-xs text-gray-500">AIDEFEND upstream: data version 2026.06.25 (88 techniques, 213 sub-techniques). The AITBM↔AIDEFEND mapping was last reconciled against data version 2026.06.11 (86 techniques, June 12, 2026) — including AID-H-035, MCP Server Runtime Boundary &amp; Tool Exposure Governance, mapped to Tr-3, Cn-1, Cn-2, and Cn-5; reconciliation of the 2026.06.25 delta is pending. The Cn-6 (Action Reversibility Classification Rate) mapping adds six techniques — AID-M-006 Human-in-the-Loop (HITL) Control Point Mapping, AID-M-009 Agent Autonomy &amp; Authority Governance, AID-H-019 Tool Authorization &amp; Capability Scoping, AID-H-035 MCP Server Runtime Boundary &amp; Tool Exposure Governance, AID-D-011 Agent Behavioral Attestation &amp; Rogue Detection, and AID-D-015 User Trust Calibration &amp; High-Risk Action Confirmation — bringing the specification tables to 127 sub-metric mappings across 63 distinct techniques.</p>
         </div>
       </div>
     </div>
@@ -214,7 +214,7 @@
         <article class="rounded-xl border border-gray-200 bg-white p-6">
           <div class="axis-bar bg-navy w-10 mb-4"></div>
           <h3 class="font-bold text-navy">Quantitative scoring</h3>
-          <p class="mt-2 text-sm text-muted">Five-level rubrics (0.00 &ndash; 4.00) across 21 sub-metrics produce a 0 &ndash; 10 ERS. Each AIDEFEND control shifts specific sub-metric scores by measurable amounts.</p>
+          <p class="mt-2 text-sm text-muted">Five-level rubrics (0.00 &ndash; 4.00) across 22 sub-metrics produce a 0 &ndash; 10 ERS. Each AIDEFEND control shifts specific sub-metric scores by measurable amounts.</p>
         </article>
         <article class="rounded-xl border border-gray-200 bg-white p-6">
           <div class="axis-bar bg-navy w-10 mb-4"></div>
@@ -276,7 +276,7 @@
       <article class="rounded-xl border-2 border-navy/30 bg-gray-50 p-5">
         <p class="text-2xl font-bold text-navy">86</p>
         <h3 class="mt-1 font-bold text-navy text-sm">Total techniques</h3>
-        <p class="mt-2 text-xs text-muted">All 21 AITBM sub-metrics covered with 3 &ndash; 13 AIDEFEND techniques each (avg 5.8).</p>
+        <p class="mt-2 text-xs text-muted">All 22 AITBM sub-metrics covered with 3 &ndash; 13 AIDEFEND techniques each (avg &asymp;5.8).</p>
       </article>
     </div>
   </section>
@@ -286,7 +286,7 @@
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <h2 class="text-3xl font-bold text-navy">Top 10 highest-impact controls</h2>
       <p class="mt-3 text-muted">
-        Ranked by ERS reduction. Agentic controls (Cn-1, Cn-2, Cn-5) deliver the highest
+        Ranked by ERS reduction. Agentic controls (Cn-1, Cn-2, Cn-5, Cn-6) deliver the highest
         risk reduction &mdash; six agentic-focused controls account for 55% of total risk
         reduction capacity.
       </p>
@@ -305,21 +305,21 @@
             <tr>
               <td class="px-4 py-3 font-bold text-navy">1</td>
               <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-H-019</span> Agent Permission Restriction</td>
-              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td>
               <td class="px-4 py-3 text-right font-bold text-navy">5.8 pts</td>
               <td class="px-4 py-3 hidden lg:table-cell">Critical &rarr; Low-Moderate</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-bold text-navy">2</td>
               <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-M-009</span> Agent Autonomy Governance</td>
-              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td>
               <td class="px-4 py-3 text-right font-bold text-navy">5.4 pts</td>
               <td class="px-4 py-3 hidden lg:table-cell">Critical &rarr; Low-Moderate</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-bold text-navy">3</td>
               <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-M-006</span> HITL Control Point Mapping</td>
-              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td>
               <td class="px-4 py-3 text-right font-bold text-navy">4.3 pts</td>
               <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Moderate-Low</td>
             </tr>
@@ -340,7 +340,7 @@
             <tr>
               <td class="px-4 py-3 font-bold text-navy">6</td>
               <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-D-011</span> Agent Behavior Monitoring</td>
-              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td>
+              <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td>
               <td class="px-4 py-3 text-right font-bold text-navy">3.6 pts</td>
               <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Low-Moderate</td>
             </tr>

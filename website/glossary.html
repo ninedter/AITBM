@@ -103,7 +103,7 @@
         {
           "@type": "DefinedTerm",
           "name": "IVP",
-          "description": "Intrinsic Vulnerability Profile — 21 sub-metrics across five security axes that score how risky an AI model is in itself.",
+          "description": "Intrinsic Vulnerability Profile — 22 sub-metrics across five security axes that score how risky an AI model is in itself.",
           "inDefinedTermSet": "https://aitbm.org/glossary#terms"
         },
         {
@@ -233,7 +233,7 @@
         </div>
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ivp" data-term="ivp intrinsic vulnerability profile layer 1 system">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">IVP</h3><span class="text-sm font-semibold text-gray-700">Intrinsic Vulnerability Profile · Layer 1</span></div>
-          <p class="mt-2 text-sm text-muted">How strong the system is on its own. 21 checks across five security areas, each scored 0–4. Reported as a five-number profile, not a single score.</p>
+          <p class="mt-2 text-sm text-muted">How strong the system is on its own. 22 checks across five security areas, each scored 0–4. Reported as a five-number profile, not a single score.</p>
         </div>
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="orp" data-term="orp operational risk posture layer 2 deployment context">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">ORP</h3><span class="text-sm font-semibold text-gray-700">Operational Risk Posture · Layer 2</span></div>
@@ -277,11 +277,31 @@
         </div>
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="cn" data-term="cn containment scope escalation agentic side channel">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Cn</h3><span class="text-sm font-semibold text-gray-700">Containment</span></div>
-          <p class="mt-2 text-sm text-muted">Keeping an agent inside its limits: scope, escalation, output filtering, side channels, and identity. The axis that carries AITBM's agentic-systems coverage. (5 sub-metrics)</p>
+          <p class="mt-2 text-sm text-muted">Keeping an agent inside its limits: scope, escalation, output filtering, side channels, identity, and action reversibility. The axis that carries AITBM's agentic-systems coverage. (6 sub-metrics)</p>
         </div>
         <div class="term-row rounded-xl border-2 border-navy/25 bg-white p-5" id="cn5" data-term="cn-5 agent identity integrity impersonation spiffe oidc agentic mcp">
           <div class="flex flex-wrap items-center gap-x-3"><h3 class="text-lg font-bold text-navy">Cn-5</h3><span class="text-sm font-semibold text-gray-700">Agent Identity Integrity</span></div>
           <p class="mt-2 text-sm text-muted">A Containment sub-metric. Can the system prove which agent is acting, and resist impersonation? Critical for agentic and MCP systems where agents call each other and external tools.</p>
+        </div>
+        <div class="term-row rounded-xl border-2 border-navy/25 bg-white p-5" id="cn6" data-term="cn-6 action reversibility classification rate arcr gating irreversible agentic">
+          <div class="flex flex-wrap items-center gap-x-3"><h3 class="text-lg font-bold text-navy">Cn-6</h3><span class="text-sm font-semibold text-gray-700">Action Reversibility Classification Rate (ARCR)</span></div>
+          <p class="mt-2 text-sm text-muted">A Containment sub-metric. The fraction of automated actions whose reversibility class was determined and enforced before the system executed them, with multi-step or multi-agent chains governed by the worst-case (highest-impact) hop. Aligns with OWASP AISVS C9.2.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="bounded-reversible" data-term="bounded-reversible reversibility class cn-6 undoable">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Bounded-Reversible</h3><span class="text-sm font-semibold text-gray-700">Reversibility class</span></div>
+          <p class="mt-2 text-sm text-muted">The first of Cn-6's three reversibility classes: a state change the agent or an operator can cleanly undo within the deployment boundary.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="bounded-irreversible" data-term="bounded-irreversible reversibility class cn-6 contained">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Bounded-Irreversible</h3><span class="text-sm font-semibold text-gray-700">Reversibility class</span></div>
+          <p class="mt-2 text-sm text-muted">The second Cn-6 reversibility class: the action cannot be undone, but its impact scope stays contained within the deployment boundary.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="delegated-irreversible" data-term="delegated-irreversible reversibility class cn-6 human authority approval">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Delegated-Irreversible</h3><span class="text-sm font-semibold text-gray-700">Reversibility class</span></div>
+          <p class="mt-2 text-sm text-muted">The third Cn-6 reversibility class: an irreversible action with external impact. Executing one requires explicit human authority.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="worst-case-rule" data-term="worst-case composition rule chain multi-agent cn-6 hop">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Worst-Case Composition Rule</h3></div>
+          <p class="mt-2 text-sm text-muted">In a multi-step or multi-agent chain, the whole chain is governed by the reversibility class of its highest-impact hop — a single irreversible step makes the chain irreversible. Enforcing this rule before chain execution is what the top Cn-6 rubric levels require.</p>
         </div>
       </div>
     </section>
@@ -302,6 +322,10 @@
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="tf" data-term="tf temporal freshness decay recency half-life">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Tf</h3><span class="text-sm font-semibold text-gray-700">Temporal Freshness</span></div>
           <p class="mt-2 text-sm text-muted">How recent the evidence is. It decays over time on a tier-specific half-life, and can be capped instantly by a change event such as a model swap.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="mcn" data-term="m_cn containment staleness multiplier 2.0 floor agentic tool-augmented permission boundary">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">M<sub>Cn</sub></h3><span class="text-sm font-semibold text-gray-700">Containment Staleness Multiplier = 2.0</span></div>
+          <p class="mt-2 text-sm text-muted">Accelerates freshness decay for containment evidence in agentic and tool-augmented systems, where permission boundaries can change at runtime. It halves the containment evidence half-life relative to the tier half-life, putting a floor on Temporal Freshness.</p>
         </div>
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="tdi" data-term="tdi time drift index drift change behaviour config">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">TDI</h3><span class="text-sm font-semibold text-gray-700">Time Drift Index</span></div>
@@ -337,7 +361,7 @@
     <!-- Test methods -->
     <section id="tests" class="gloss-section scroll-mt-32">
       <h2 class="text-2xl font-bold text-navy">Test methods</h2>
-      <p class="mt-2 text-sm text-muted">Concrete measurements that feed the rubrics — shown here for the new identity sub-metric.</p>
+      <p class="mt-2 text-sm text-muted">Concrete measurements that feed the rubrics — shown here for the newest Containment sub-metrics.</p>
       <div class="mt-6 grid gap-4 sm:grid-cols-2">
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="issr" data-term="issr identity spoofing success rate impersonation cn-5">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">ISSR</h3><span class="text-sm font-semibold text-gray-700">Identity Spoofing Success Rate</span></div>
@@ -346,6 +370,14 @@
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="mttq" data-term="mttq mean time to quarantine detection isolate cn-5">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">MTTQ</h3><span class="text-sm font-semibold text-gray-700">Mean Time to Quarantine</span></div>
           <p class="mt-2 text-sm text-muted">How quickly a compromised agent is detected and isolated. Another Cn-5 test — faster is better.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="arcr" data-term="arcr action reversibility classification rate trace pre-execution cn-6">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">ARCR</h3><span class="text-sm font-semibold text-gray-700">Action Reversibility Classification Rate</span></div>
+          <p class="mt-2 text-sm text-muted">The percentage of actions in a representative action trace with a recorded pre-execution reversibility classification. The primary Cn-6 test — higher is better.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ccvr" data-term="ccvr chain composition violation rate inject hop worst-case cn-6">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">CCVR</h3><span class="text-sm font-semibold text-gray-700">Chain Composition Violation Rate</span></div>
+          <p class="mt-2 text-sm text-muted">A Cn-6 test that injects a bounded-irreversible hop into an otherwise bounded-reversible chain and checks that the chain's classification is governed by the injected hop. Lower is better.</p>
         </div>
       </div>
     </section>

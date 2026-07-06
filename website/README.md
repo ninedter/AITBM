@@ -13,7 +13,7 @@ Static introduction site for the **AI Trust Benchmarking and Maturity Framework 
 | Path | Purpose |
 |------|---------|
 | `index.html` | Overview / landing page |
-| `framework.html` | Three-layer architecture, 21 sub-metrics, Cn-5 rubric, ERS and tiers |
+| `framework.html` | Three-layer architecture, 22 sub-metrics, Cn-5/Cn-6 rubrics, ERS and tiers |
 | `gap-analysis.html` | Twelve structural gaps and 2025–2026 evidence |
 | `resources.html` | Documentation, standards alignment, project information |
 | `404.html` | Styled not-found page |

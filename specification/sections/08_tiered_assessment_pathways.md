@@ -2,7 +2,7 @@
 
 AITBM defines tiered assessment pathways calibrated to deployment risk. The table below summarizes each tier's definition, representative examples, and review cadence.
 
-*Table 55: 8. Tiered Assessment Pathways*
+*Table 57: 8. Tiered Assessment Pathways*
 
 | Characteristic | Full Assessment | Standard Assessment | Lite Assessment |
 | --- | --- | --- | --- |

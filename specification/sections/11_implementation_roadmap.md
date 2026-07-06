@@ -18,7 +18,7 @@ Develop industry-specific tier calibrations for healthcare, financial services, 
 
 Rubric Refinement: Based on Phase 2 IRR results, refine sub-metric rubrics below target thresholds.
 
-Sub-Metric Coverage Review: Evaluate candidate sub-metric extensions surfaced by the AIVSS v0.8 amplification-factor taxonomy — runtime memory and retrieval-context poisoning resistance, self-modification containment, multi-agent cascade containment, and explicit execution-autonomy gating — for inclusion without disturbing the validated Finbot anchor.
+Sub-Metric Coverage Review: Evaluate candidate sub-metric extensions surfaced by the AIVSS v0.8 amplification-factor taxonomy — runtime memory and retrieval-context poisoning resistance, self-modification containment, and multi-agent cascade containment — for inclusion without disturbing the validated Finbot anchor. Execution-autonomy gating is implemented as sub-metric Cn-6 (Action Reversibility Classification Rate) — Current.
 
 Weight Validation: Based on pilot data, validate or adjust architecture-specific weights with statistical justification.
 

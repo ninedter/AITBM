@@ -28,7 +28,8 @@
     "Cn-2": { name: "Escalation Prevention",           axis: "Cn", base: 0.15 },
     "Cn-3": { name: "Output Filtering Robustness",     axis: "Cn", base: 0.10 },
     "Cn-4": { name: "Side-Channel Resistance",         axis: "Cn", base: 0.20 },
-    "Cn-5": { name: "Agent Identity Integrity",        axis: "Cn", base: 0.20 }
+    "Cn-5": { name: "Agent Identity Integrity",        axis: "Cn", base: 0.20 },
+    "Cn-6": { name: "Action Reversibility Classification Rate", axis: "Cn", base: 0.10 }
   };
 
   var WEIGHTS = {
@@ -41,12 +42,12 @@
     { id: "AID-M-001", name: "AI Asset Inventory & Mapping",              tactic: "Model",   impacts: { "Tr-4": 0.75, "Cn-1": 0.60 }, ers: 2.6 },
     { id: "AID-M-002", name: "Data Provenance & Lineage Tracking",        tactic: "Model",   impacts: { "Ro-4": 0.70, "Tr-4": 0.80, "Pr-3": 0.70 }, ers: 3.7 },
     { id: "AID-M-003", name: "Model Behavior Baseline & Documentation",   tactic: "Model",   impacts: { "Ro-3": 0.70, "Tr-1": 0.60, "Tr-2": 0.75 }, ers: 2.9 },
-    { id: "AID-M-006", name: "Human-in-the-Loop Control Points",          tactic: "Model",   impacts: { "Cn-2": 0.70, "Cn-1": 0.75 }, ers: 4.3 },
-    { id: "AID-M-009", name: "Agent Autonomy Level Governance",           tactic: "Model",   impacts: { "Cn-1": 0.80, "Cn-2": 0.75, "Cn-5": 0.70 }, ers: 5.4 },
+    { id: "AID-M-006", name: "Human-in-the-Loop Control Points",          tactic: "Model",   impacts: { "Cn-2": 0.70, "Cn-1": 0.75, "Cn-6": 0.80 }, ers: 4.3 },
+    { id: "AID-M-009", name: "Agent Autonomy Level Governance",           tactic: "Model",   impacts: { "Cn-1": 0.80, "Cn-2": 0.75, "Cn-5": 0.70, "Cn-6": 0.75 }, ers: 5.4 },
     { id: "AID-H-001", name: "Adversarial Robustness Training",           tactic: "Harden",  impacts: { "Ro-1": 0.70, "Ro-4": 0.65 }, ers: 3.4 },
     { id: "AID-H-002", name: "Input Sanitization & Validation",           tactic: "Harden",  impacts: { "Ro-1": 0.65, "Cn-3": 0.60 }, ers: 3.3 },
     { id: "AID-H-006", name: "Output Content Filtering & Validation",     tactic: "Harden",  impacts: { "Cn-3": 0.75, "Pr-1": 0.60, "Tr-2": 0.70 }, ers: 3.5 },
-    { id: "AID-H-019", name: "Agent Permission & Capability Restriction", tactic: "Harden",  impacts: { "Cn-1": 0.80, "Cn-2": 0.75, "Cn-5": 0.70 }, ers: 5.8 },
+    { id: "AID-H-019", name: "Agent Permission & Capability Restriction", tactic: "Harden",  impacts: { "Cn-1": 0.80, "Cn-2": 0.75, "Cn-5": 0.70, "Cn-6": 0.60 }, ers: 5.8 },
     { id: "AID-H-021", name: "Secure RAG Pipeline Implementation",        tactic: "Harden",  impacts: { "Ro-4": 0.70, "Pr-2": 0.65, "Cn-3": 0.70 }, ers: 3.9 },
     { id: "AID-H-031", name: "Agentic Skill Admission Control",           tactic: "Harden",  impacts: { "Cn-1": 0.65, "Ro-4": 0.55 }, ers: 1.8 },
     { id: "AID-H-032", name: "AI-Generated Code Admission Control",       tactic: "Harden",  impacts: { "Cn-3": 0.65, "Ro-4": 0.55 }, ers: 1.6 },
@@ -54,7 +55,7 @@
     { id: "AID-D-001", name: "Real-Time Prompt Injection Detection",      tactic: "Detect",  impacts: { "Ro-1": 0.75, "Tr-3": 0.65 }, ers: 1.4 },
     { id: "AID-D-002", name: "Model Drift & Anomaly Detection",           tactic: "Detect",  impacts: { "Ro-3": 0.65, "Ro-4": 0.55, "Tr-2": 0.60 }, ers: 2.6 },
     { id: "AID-D-003", name: "Sensitive Data Leakage Detection",          tactic: "Detect",  impacts: { "Pr-1": 0.70, "Pr-3": 0.65, "Cn-3": 0.70 }, ers: 3.0 },
-    { id: "AID-D-011", name: "Agent Behavior Monitoring & Attestation",   tactic: "Detect",  impacts: { "Cn-1": 0.75, "Cn-2": 0.70, "Cn-5": 0.80 }, ers: 3.6 },
+    { id: "AID-D-011", name: "Agent Behavior Monitoring & Attestation",   tactic: "Detect",  impacts: { "Cn-1": 0.75, "Cn-2": 0.70, "Cn-5": 0.80, "Cn-6": 0.55 }, ers: 3.6 },
     { id: "AID-I-002", name: "AI System Network Segmentation",            tactic: "Isolate", impacts: { "Cn-1": 0.60, "Cn-4": 0.55 }, ers: 1.4 },
     { id: "AID-I-007", name: "Client-Side AI Execution Isolation",        tactic: "Isolate", impacts: { "Cn-1": 0.70, "Cn-3": 0.65, "Cn-4": 0.60 }, ers: 2.6 },
     { id: "AID-I-008", name: "Browser Session & Origin Isolation",        tactic: "Isolate", impacts: { "Cn-1": 0.65, "Cn-4": 0.60 }, ers: 1.5 },

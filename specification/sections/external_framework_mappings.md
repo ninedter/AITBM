@@ -6,7 +6,7 @@ AITBM is a governing quantification layer for AI security: it does not replace t
 
 The sixteen mapped frameworks span threat taxonomies, control verification standards, certification regimes, governance and regulatory instruments, maturity models, defensive ontologies, and prior-art scoring systems. The summary table below lists each framework with its tier, category, and the AITBM sub-metrics it most directly exercises; per-tier detail follows.
 
-*Table 92: External Framework Mapping Summary*
+*Table 95: External Framework Mapping Summary*
 
 | Framework | Tier | Framework Type | Representative AITBM Sub-Metrics |
 | --- | --- | --- | --- |
@@ -37,7 +37,7 @@ OWASP Top 10 for LLM Applications. Maintained by OWASP Foundation.
 
 The OWASP Top 10 for LLMs provides a qualitative catalogue of the ten most critical LLM application vulnerabilities, and AITBM adds quantitative 0-10 ERS scoring, multi-dimensional IVP profiles, operational-context amplification (ORP/CRM), and temporal confidence decay (ACI) on top of it.
 
-*Table 93: OWASP Top 10 for LLMs to AITBM Mapping*
+*Table 96: OWASP Top 10 for LLMs to AITBM Mapping*
 
 | OWASP LLM Risk | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -68,7 +68,7 @@ OWASP Agentic AI - Threats and Mitigations (T1-T15 taxonomy; companion OWASP Top
 
 The OWASP agentic taxonomy enumerates fifteen threats specific to autonomous, tool-calling, memory-bearing, and multi-agent systems, and AITBM adds deterministic five-level scoring, multi-dimensional IVP/ORP/ACI quantification, and a comparable 0-10 ERS per threat with remediation measured as an ERS delta.
 
-*Table 94: OWASP Top 10 for Agentic Applications to AITBM Mapping*
+*Table 97: OWASP Top 10 for Agentic Applications to AITBM Mapping*
 
 | Agentic Threat | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -98,7 +98,7 @@ OWASP AI Security Verification Standard (AISVS). Maintained by OWASP Foundation.
 
 AISVS is a community-driven catalogue of testable AI security requirements (12 chapters, 191 verifiable requirements, levels L1/L2/L3) answering 'what controls should exist', and AITBM consumes its control-verification evidence to score 'how risky is this system', turning binary checklists into quantitative ERS and selecting assessment tier from AISVS level.
 
-*Table 95: OWASP AISVS to AITBM Mapping*
+*Table 98: OWASP AISVS to AITBM Mapping*
 
 | AISVS Chapter | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -114,7 +114,9 @@ AISVS is a community-driven catalogue of testable AI security requirements (12 c
 
 Key findings:
 
-- AISVS gives strong coverage of 15/21 AITBM sub-metrics (71%), partial on 2 (Tr-1 explainability, Pr-3 data minimization), and defers the 4 Fairness sub-metrics (Fa-1–Fa-4) by design to ISO 42001 / ISO 23894 / NIST AI RMF.
+- AISVS gives strong coverage of 16/22 AITBM sub-metrics (73%), partial on 2 (Tr-1 explainability, Pr-3 data minimization), and defers the 4 Fairness sub-metrics (Fa-1–Fa-4) by design to ISO 42001 / ISO 23894 / NIST AI RMF.
+
+- AISVS C9.2 (High-Impact Action Approval and Irreversibility Controls) maps directly onto the new Cn-6 (Action Reversibility Classification Rate): C9.2.3 requires reversibility classification, C9.2.4 runtime enforcement by class, and C9.2.10 the worst-case chain composition rule - making Cn-6 the 16th strongly covered sub-metric.
 
 - AISVS C5, C9.4, and C10.2 directly target Cn-5 (Agent Identity Integrity), confirming AITBM's decision to add agent identity as a first-class sub-metric; C9+C10 are 87 requirements (~48% of the standard), validating the elevated agentic Containment weight.
 
@@ -128,7 +130,7 @@ MITRE ATLAS (Adversarial Threat Landscape for Artificial Intelligence Systems). 
 
 MITRE ATLAS is an ATT&CK-style knowledge base of adversarial AI tactics, techniques, and real-world case studies (14 tactics, 50+ techniques), and AITBM serves as its quantification layer, converting each tactic/technique into a 0-10 ERS with multi-dimensional IVP profiles, ORP amplification, and ACI temporal decay.
 
-*Table 96: MITRE ATLAS to AITBM Mapping*
+*Table 99: MITRE ATLAS to AITBM Mapping*
 
 | ATLAS Tactic | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -158,7 +160,7 @@ AIUC-1 (Artificial Intelligence Underwriting Company Standard 1). Maintained by 
 
 AIUC-1 is a pass/fail, Lloyd's-insured certification standard for AI agents that attests controls have been independently verified; AITBM adds the quantitative, multi-dimensional, confidence-graded risk score (IVP/ORP/ACI to ERS) that a binary certificate cannot express.
 
-*Table 97: AIUC-1 to AITBM Mapping*
+*Table 100: AIUC-1 to AITBM Mapping*
 
 | AIUC-1 Domain | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -185,7 +187,7 @@ AIDEFEND (AI Defense Framework). Maintained by Edward Lee (independent, communit
 
 AIDEFEND is an open-source catalogue of 86 defensive techniques across 7 tactics (aligned to MITRE D3FEND) answering what controls should exist; AITBM is the universal quantification layer that translates each deployed control into a measurable change in a multi-dimensional risk score (ERS).
 
-*Table 98: AIDEFEND to AITBM Mapping*
+*Table 101: AIDEFEND to AITBM Mapping*
 
 | AIDEFEND Tactic | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -199,13 +201,15 @@ AIDEFEND is an open-source catalogue of 86 defensive techniques across 7 tactics
 
 Key findings:
 
-- Agentic containment controls (Cn-1, Cn-2, Cn-5) deliver the highest risk reduction: the 6 agentic-focused techniques account for ~55% of total ERS-reduction capacity; the top two controls (AID-H-019 Permission Restriction -5.8, AID-M-009 Autonomy Governance -5.4) both validate Cn-5.
+- Agentic containment controls (Cn-1, Cn-2, Cn-5, Cn-6) deliver the highest risk reduction: the 6 agentic-focused techniques account for ~55% of total ERS-reduction capacity; the top two controls (AID-H-019 Permission Restriction -5.8, AID-M-009 Autonomy Governance -5.4) both validate Cn-5.
 
 - Worked example (financial-services agentic RAG, Tier I): a 12-control AIDEFEND stack drops ERS from 9.7 (Critical MVT) to 3.2 (Low-Moderate), a -6.5 / 67% reduction, with IVP +113%, CRM 1.60 to 1.00, and ACI +125%.
 
 - Drift/anomaly detection (AID-D-002) and Restore techniques are essential for sustaining the ACI Temporal Freshness (Tf) and ORP Remediation Feasibility (Rf) components, linking controls to AITBM's temporal model.
 
 - AIDEFEND has weak Fairness coverage (only ~2 of the catalog's techniques address bias/fairness), a flagged gap; the AITBM mapping was reconciled against data version 2026.06.11 (current upstream is 2026.06.25 / 88 techniques, delta pending), adding AID-H-035 (MCP Server Runtime Boundary) mapped to Tr-3/Cn-1/Cn-2/Cn-5.
+
+- The mapping now spans 127 sub-metric mappings using 63 distinct techniques (average ~5.8 per sub-metric), covering all 22 AITBM sub-metrics; the new Cn-6 (Action Reversibility Classification Rate) maps to 6 techniques (AID-M-006, AID-M-009, AID-H-019, AID-H-035, AID-D-011, AID-D-015).
 
 ## Tier 2: High-Priority Frameworks
 
@@ -215,9 +219,9 @@ Tier 2 frameworks are governance, risk-management, and regulatory regimes with s
 
 NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0). Maintained by National Institute of Standards and Technology (NIST), U.S. Department of Commerce.
 
-The NIST AI RMF is a voluntary, qualitative governance framework that names seven trustworthiness characteristics and a MEASURE function but prescribes no metrics; AITBM supplies the deterministic quantitative measurement instrument (21 rubrics, IVP/ORP/ACI to ERS) that the MEASURE function calls for but does not itself provide.
+The NIST AI RMF is a voluntary, qualitative governance framework that names seven trustworthiness characteristics and a MEASURE function but prescribes no metrics; AITBM supplies the deterministic quantitative measurement instrument (22 rubrics, IVP/ORP/ACI to ERS) that the MEASURE function calls for but does not itself provide.
 
-*Table 99: NIST AI RMF to AITBM Mapping*
+*Table 102: NIST AI RMF to AITBM Mapping*
 
 | RMF Trustworthiness Characteristic | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -245,7 +249,7 @@ ISO/IEC 42001:2023 (with ISO/IEC 42005:2025 impact assessment). Maintained by IS
 
 ISO/IEC 42001 certifies an organization's AI management system and ISO/IEC 42005 structures a per-system impact assessment, while AITBM adds the quantitative, multi-dimensional, time-aware residual-risk measurement (IVP/ORP/ACI to ERS) those processes call for but do not themselves produce.
 
-*Table 100: ISO/IEC 42001 and 42005 to AITBM Mapping*
+*Table 103: ISO/IEC 42001 and 42005 to AITBM Mapping*
 
 | ISO 42001 Annex A Control Objective | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -275,7 +279,7 @@ Artificial Intelligence Act - Regulation (EU) 2024/1689. Maintained by European 
 
 The EU AI Act is binding law establishing risk tiers and provider obligations enforced through conformity assessment and CE marking, while AITBM is a technical-risk quantification framework that helps providers prioritise and evidence the Act's Article 9 and Article 15 technical duties without ever certifying legal conformity.
 
-*Table 101: EU AI Act to AITBM Mapping*
+*Table 104: EU AI Act to AITBM Mapping*
 
 | EU AI Act Obligation | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -305,7 +309,7 @@ CSA AI Security (MAESTRO + AI Controls Matrix). Maintained by Cloud Security All
 
 CSA supplies cloud-specific AI security via MAESTRO (7-layer agentic threat taxonomy) and the AI Controls Matrix (18 domains / 243 control objectives); AITBM quantifies MAESTRO threats into IVP sub-metric scores and maps AICM controls into ORP/CRM, adding a deterministic 0-10 ERS and temporal decay for cloud deployments.
 
-*Table 102: CSA AI Security to AITBM Mapping*
+*Table 105: CSA AI Security to AITBM Mapping*
 
 | MAESTRO Layer / AICM Domain | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -337,7 +341,7 @@ NIST IR 8596 - Cybersecurity Framework Profile for Artificial Intelligence (Cybe
 
 NIST IR 8596 is a qualitative CSF 2.0 community profile naming which cybersecurity outcomes to pursue when AI is a target, a defensive tool, and an adversary capability, while AITBM supplies the deterministic, multi-dimensional, time-aware ERS that the Profile's 'measure/assess' outcomes leave open.
 
-*Table 103: NIST Cyber AI Profile (IR 8596) to AITBM Mapping*
+*Table 106: NIST Cyber AI Profile (IR 8596) to AITBM Mapping*
 
 | Cyber AI Profile Focus Area / CSF Function | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -357,7 +361,7 @@ Key findings:
 
 - The 'Thwart' lens flows through ORP (As elevator) and ACI (faster Tf decay) rather than IVP: AI-enabled adversaries should raise Attack Surface Exposure (e.g. 0.50 to 0.80), lifting N_elevated and CRM - operational and temporal dimensions a qualitative profile cannot express numerically.
 
-- Coverage is strongest where AITBM's Robustness and Containment axes live (Secure): 8/21 sub-metrics strong, 8/21 partial, 5/21 gaps (Fa-1, Fa-3, Fa-4, Pr-4, Cn-5); the Fairness axis sits outside a cybersecurity profile's scope and DETECT explicitly names model drift (Ro-3) and data poisoning (Ro-4).
+- Coverage is strongest where AITBM's Robustness and Containment axes live (Secure): 8/22 sub-metrics strong, 8/22 partial, 6/22 gaps (Fa-1, Fa-3, Fa-4, Pr-4, Cn-5, Cn-6); the Fairness axis sits outside a cybersecurity profile's scope and DETECT explicitly names model drift (Ro-3) and data poisoning (Ro-4).
 
 - IR 8596 is a preliminary draft (Dec 16, 2025) with no quantitative score or residual-risk floor; AITBM is the common quantitative denominator that turns its CSF outcomes into a comparable, confidence-graded ERS.
 
@@ -367,7 +371,7 @@ OWASP AI Maturity Assessment (AIMA). Maintained by OWASP Foundation.
 
 OWASP AIMA grades an organization's AI-program maturity qualitatively across eight lifecycle domains, while AITBM operationalizes that maturity quantitatively - turning the maturity grade into Tiered Assessment Pathway eligibility and, through the ACI components (Pc/Ec/Tf), into the confidence and freshness of a per-system ERS.
 
-*Table 104: AIMA to AITBM Mapping*
+*Table 107: AIMA to AITBM Mapping*
 
 | AIMA Domain | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -396,7 +400,7 @@ OWASP Threat Defense COMPASS. Maintained by OWASP GenAI Security Project.
 
 COMPASS supplies a fast OODA-loop threat-prioritization workflow that ranks known AI threats by Impact x Likelihood; AITBM adds the deterministic, multi-dimensional, confidence-graded ERS that quantifies each prioritized row across five axes instead of collapsing it into one priority cell.
 
-*Table 105: COMPASS to AITBM Mapping*
+*Table 108: COMPASS to AITBM Mapping*
 
 | COMPASS Dimension / Threat Class | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -426,7 +430,7 @@ MITRE D3FEND (Detection, Denial, and Disruption Framework Empowering Network Def
 
 D3FEND supplies a formal seven-tactic ontology of general defensive countermeasures (the defensive counterpart to ATT&CK); AITBM turns the fact of each control's implementation into deterministic sub-metric evidence and a measurable ERS reduction, acting as the single quantification layer for D3FEND and its AI-specific specialization AIDEFEND.
 
-*Table 106: MITRE D3FEND to AITBM Mapping*
+*Table 109: MITRE D3FEND to AITBM Mapping*
 
 | D3FEND Tactic | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -455,7 +459,7 @@ Common Vulnerability Scoring System (CVSS). Maintained by FIRST.org (CVSS Specia
 
 CVSS is the dominant prior-art 0-10 severity standard for discrete, patchable software vulnerabilities; AITBM is the AI-specific successor that improves on it by adding temporal decay, fairness/transparency/AI-privacy axes, poisoning and drift measurement, agent identity, and deployment-context weighting that CVSS structurally cannot represent.
 
-*Table 107: CVSS to AITBM Mapping*
+*Table 110: CVSS to AITBM Mapping*
 
 | CVSS Metric Group | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |
@@ -489,7 +493,7 @@ General-Purpose AI Code of Practice (GPAI CoP). Maintained by European Commissio
 
 The GPAI Code of Practice is the voluntary EU governance instrument through which GPAI model providers operationalize AI Act Articles 53-55 commitments; AITBM adds the technical-risk quantification beneath it, converting each commitment's evidence artifact into deterministic rubric scores and a graduated ERS - without ever signing the Code or discharging any legal obligation.
 
-*Table 108: GPAI Code of Practice to AITBM Mapping*
+*Table 111: GPAI Code of Practice to AITBM Mapping*
 
 | GPAI CoP Chapter | Primary AITBM Sub-Metrics | ERS / Notes |
 | --- | --- | --- |

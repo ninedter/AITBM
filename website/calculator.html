@@ -374,6 +374,7 @@
               <p class="text-xs text-muted mt-1">Stale assessment &rarr; recently validated</p>
             </div>
           </div>
+          <p class="mt-4 text-xs text-muted">For agentic and tool-augmented systems the specification applies a containment staleness floor (M<sub>Cn</sub> = 2.0): containment evidence ages at least twice as fast, so set Freshness (Tf) lower when that evidence is not recent.</p>
         </div>
       </div>
 
@@ -504,7 +505,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/ers-engine.js?v=baa792c9"></script>
+  <script src="assets/js/ers-engine.js?v=e726d55b"></script>
   <script src="assets/js/survey-data.js?v=fd1e6027"></script>
   <script src="assets/js/survey.js?v=7c874d60"></script>
   <script src="assets/js/site.js?v=3a481267"></script>
@@ -608,7 +609,8 @@
     });
     document.getElementById("btn-preset-finbot").addEventListener("click", function () {
       checkboxes.forEach(function (cb) { cb.checked = false; });
-      setSliders({ aa: 80, as: 90, cp: 85, rf: 90, pc: 15, ec: 45, tf: 75 });
+      /* Calibrated sliders (not raw spec values): tracks spec §9 Finbot Table 9.3 — Ec 0.40→0.37, Tf 0.85→0.79 (M_Cn staleness floor) scaled onto the preset's calibration (ec 45→42, tf 75→70). */
+      setSliders({ aa: 80, as: 90, cp: 85, rf: 90, pc: 15, ec: 42, tf: 70 });
       document.getElementById("arch-select").value = "agentic";
       recalc();
     });

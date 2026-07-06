@@ -2,7 +2,7 @@
 
 The table below compares AITBM with prior and adjacent AI security frameworks and shows where AITBM closes their structural gaps. The comparison reflects a June 2026 re-validation against OWASP AIVSS v0.8 (released March 2026) and now includes AIUC-1 (launched 2025), the AI-agent certification and insurance standard published by the Artificial Intelligence Underwriting Company. The comparison table also lists RAISE, an academic responsible-AI evaluation framework (Explainability, Fairness, Robustness, Sustainability), included for breadth rather than as a security scorer.
 
-*Table 59: 10. Framework Comparison*
+*Table 61: 10. Framework Comparison*
 
 | Capability | CVSS 4.0 | AIVSS v0.8 | RAISE | AIUC-1 | AITBM |
 | --- | --- | --- | --- | --- | --- |
