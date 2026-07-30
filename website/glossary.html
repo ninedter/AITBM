@@ -135,6 +135,114 @@
           "name": "MVT",
           "description": "Minimum Viability Threshold — the per-tier bar a system must clear on critical sub-metrics regardless of its overall score.",
           "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "BAW",
+          "description": "Behavioral Attestation Window — an ACI staleness floor for architectures with mutable behavioral state; behavioral evidence half-life is one third of the tier half-life (M_Em = 3.0).",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "BAB",
+          "description": "Behavioral Attestation Battery — the lightweight scheduled test whose pass resets the behavioral staleness clock: CTPR ≥ 0.95, zero critical invariant violations, BBD < 0.15, MPSR ≥ 0.90; binary, no partial credit.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "M_Em",
+          "description": "Emergent-Behavior Staleness Multiplier — the framework constant 3.0 that ages behavioral evidence at three times the tier rate.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "C_behavior",
+          "description": "Behavioral Monitoring Coverage — a five-band Temporal Freshness cap (1.00/0.90/0.75/0.60/0.40) reflecting how much behavior-specific instrumentation runs in production.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "CTPR",
+          "description": "Canary Task Pass Rate — the fraction of pre-registered canary tasks the system still passes at attestation time; a BAB pass requires ≥ 0.95.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "IVR",
+          "description": "Invariant Violation Rate — how often the system violates its pre-registered behavioral invariants; a BAB pass requires zero critical violations.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "CIC",
+          "description": "Cross-Agent Interaction Coverage — the fraction of live agent-pair × message-type channels and tool-action categories with invariant monitors, computed against the re-attestation artifact inventory.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "MPSR",
+          "description": "Memory Poisoning Success Rate — the fraction of injected, tagged memory-poisoning probes the system detects and quarantines; a BAB pass requires ≥ 0.90.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "GDCP",
+          "description": "Graph-Derived Cascade Potential — Cascade Potential (Cp) computed from a verified System Dependency Graph via layer reachability, privilege amplification, and fault-injection blast radius; the worst indicator governs.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "SDG",
+          "description": "System Dependency Graph — a directed graph of the deployment with privilege tiers on nodes and containment gates on edges; the evidence artifact from which Cascade Potential is derived.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "DGC",
+          "description": "Dependency Graph Completeness — the share of the deployed inventory present in the System Dependency Graph; below 0.90 the graph is inadmissible and Cp = 1.00.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "LRR",
+          "description": "Layer Reachability Ratio — the fraction of the four stack layers reachable from a compromise origin by transitive closure over the System Dependency Graph.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "PAD",
+          "description": "Privilege Amplification Depth — the maximum ordinal climb on the P1–P4 privilege ladder along any reachable path.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "FIBR",
+          "description": "Fault-Injection Blast Radius — the share of graph-predicted reachable nodes that injected taint markers actually reached across the trial set.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "GVR",
+          "description": "Graph Validation Rate — the fraction of injection trials where observed reach was a subset of predicted reach; any failure invalidates the System Dependency Graph.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "CBR",
+          "description": "Containment Block Rate — the fraction of injected propagation attempts halted at a declared gate; a gate may be claimed only at ≥ 0.95.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "QTR",
+          "description": "Quarantine Trigger Rate — the fraction of detected boundary crossings that triggered the required response; reported, not scored.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Cascade Reach Alert",
+          "description": "A reported diagnostic, mirroring the Compound Risk Alert, fired whenever any GDCP indicator triggers the 1.00 anchor; it does not change the score.",
+          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
         }
       ]
     }
@@ -244,6 +352,14 @@
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">CRM</h3><span class="text-sm font-semibold text-gray-700">Compound Risk Multiplier</span></div>
           <p class="mt-2 text-sm text-muted">A step-up factor (1.00–1.60, capped at 1.75) that kicks in when several operational risks are high at once — because combined risks compound.</p>
         </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="gdcp" data-term="gdcp graph-derived cascade potential cp dependency graph worst indicator orp">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">GDCP</h3><span class="text-sm font-semibold text-gray-700">Graph-Derived Cascade Potential</span></div>
+          <p class="mt-2 text-sm text-muted">How the ORP Cascade Potential (Cp) dimension is scored: computed from a verified System Dependency Graph via layer reachability, privilege amplification, and fault-injection blast radius — the worst indicator governs the score.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="sdg" data-term="sdg system dependency graph nodes edges privilege tiers gates inventory">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">SDG</h3><span class="text-sm font-semibold text-gray-700">System Dependency Graph</span></div>
+          <p class="mt-2 text-sm text-muted">A directed graph of the deployment — model, orchestration, tools, and downstream consumers as nodes with privilege tiers, and containment gates on edges. The evidence artifact from which Cascade Potential is derived.</p>
+        </div>
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="alpha" data-term="alpha residual risk floor 0.15 zero">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">α &nbsp;<span class="font-normal text-gray-500">(alpha)</span></h3><span class="text-sm font-semibold text-gray-700">Residual risk floor = 0.15</span></div>
           <p class="mt-2 text-sm text-muted">The irreducible 15% of risk that remains even with perfect controls. It stops any score from reaching zero — AI risk can't be fully eliminated.</p>
@@ -324,6 +440,22 @@
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">M<sub>Cn</sub></h3><span class="text-sm font-semibold text-gray-700">Containment Staleness Multiplier = 2.0</span></div>
           <p class="mt-2 text-sm text-muted">Accelerates freshness decay for containment evidence in agentic and tool-augmented systems, where permission boundaries can change at runtime. It halves the containment evidence half-life relative to the tier half-life, putting a floor on Temporal Freshness.</p>
         </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="baw" data-term="baw behavioral attestation window staleness floor mutable behavioral state memory agentic">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">BAW</h3><span class="text-sm font-semibold text-gray-700">Behavioral Attestation Window</span></div>
+          <p class="mt-2 text-sm text-muted">An ACI staleness floor for architectures with mutable behavioral state — writable memory, multi-agent messaging, self-modifying prompts, closed feedback loops. Behavioral evidence half-life is one third of the tier half-life (M<sub>Em</sub> = 3.0), and only a passing Behavioral Attestation Battery resets the clock.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="bab" data-term="bab behavioral attestation battery canary invariant bbd mpsr reset">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">BAB</h3><span class="text-sm font-semibold text-gray-700">Behavioral Attestation Battery</span></div>
+          <p class="mt-2 text-sm text-muted">The lightweight scheduled test whose pass resets the behavioral staleness clock (Δt_beh): CTPR ≥ 0.95, zero critical invariant violations, BBD &lt; 0.15, and MPSR ≥ 0.90. The pass is binary — no partial credit.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="mem" data-term="m_em emergent-behavior staleness multiplier 3.0 behavioral evidence half-life">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">M<sub>Em</sub></h3><span class="text-sm font-semibold text-gray-700">Emergent-Behavior Staleness Multiplier = 3.0</span></div>
+          <p class="mt-2 text-sm text-muted">The framework constant behind the Behavioral Attestation Window: behavioral state mutates through ordinary operation, so behavioral evidence ages at three times the tier rate — one third the half-life of calendar evidence.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="cbehavior" data-term="c_behavior behavioral monitoring coverage cap bands canary invariant cic">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">C<sub>behavior</sub></h3><span class="text-sm font-semibold text-gray-700">Behavioral Monitoring Coverage</span></div>
+          <p class="mt-2 text-sm text-muted">A five-band cap (1.00 / 0.90 / 0.75 / 0.60 / 0.40) on Temporal Freshness reflecting how much behavior-specific instrumentation — canaries, invariant monitors, drift computation, memory-write anomaly detection — actually runs in production. A system receives the highest band whose criteria are all met.</p>
+        </div>
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="tdi" data-term="tdi time drift index drift change behaviour config">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">TDI</h3><span class="text-sm font-semibold text-gray-700">Time Drift Index</span></div>
           <p class="mt-2 text-sm text-muted">A 0–1 measure of how far the system has drifted from what was assessed. Higher drift makes freshness decay faster.</p>
@@ -358,7 +490,7 @@
     <!-- Test methods -->
     <section id="tests" class="gloss-section scroll-mt-32">
       <h2 class="text-2xl font-bold text-navy">Test methods</h2>
-      <p class="mt-2 text-sm text-muted">Concrete measurements that feed the rubrics — shown here for the newest Containment sub-metrics.</p>
+      <p class="mt-2 text-sm text-muted">Concrete measurements that feed the rubrics — shown here for the newest Containment sub-metrics, the Behavioral Attestation Battery, and the Graph-Derived Cascade Potential.</p>
       <div class="mt-6 grid gap-4 sm:grid-cols-2">
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="issr" data-term="issr identity spoofing success rate impersonation cn-5">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">ISSR</h3><span class="text-sm font-semibold text-gray-700">Identity Spoofing Success Rate</span></div>
@@ -375,6 +507,54 @@
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ccvr" data-term="ccvr chain composition violation rate inject hop worst-case cn-6">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">CCVR</h3><span class="text-sm font-semibold text-gray-700">Chain Composition Violation Rate</span></div>
           <p class="mt-2 text-sm text-muted">A Cn-6 test that injects a bounded-irreversible hop into an otherwise bounded-reversible chain and checks that the chain's classification is governed by the injected hop. Lower is better.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ctpr" data-term="ctpr canary task pass rate bab behavioral attestation drift">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">CTPR</h3><span class="text-sm font-semibold text-gray-700">Canary Task Pass Rate</span></div>
+          <p class="mt-2 text-sm text-muted">The fraction of pre-registered canary tasks the system still passes at attestation time. A Behavioral Attestation Battery pass requires CTPR ≥ 0.95 — a lower rate means behavior has drifted.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ivr" data-term="ivr invariant violation rate scope schema budget whitelist bab">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">IVR</h3><span class="text-sm font-semibold text-gray-700">Invariant Violation Rate</span></div>
+          <p class="mt-2 text-sm text-muted">How often the system violates its pre-registered behavioral invariants — scope, schema, budget, and communication-whitelist classes. A Behavioral Attestation Battery pass requires zero critical violations.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="cic" data-term="cic cross-agent interaction coverage channels invariant monitors c_behavior">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">CIC</h3><span class="text-sm font-semibold text-gray-700">Cross-Agent Interaction Coverage</span></div>
+          <p class="mt-2 text-sm text-muted">The fraction of live agent-pair × message-type channels and tool-action categories with invariant monitors attached, computed against the re-attestation artifact inventory (tool manifests, permission scopes, agent rosters, orchestration configs). Feeds the C<sub>behavior</sub> band.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="mpsr" data-term="mpsr memory poisoning success rate probe detection quarantine bab">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">MPSR</h3><span class="text-sm font-semibold text-gray-700">Memory Poisoning Success Rate</span></div>
+          <p class="mt-2 text-sm text-muted">A memory-integrity probe: assessors inject tagged poisoning writes and measure the fraction the system detects and quarantines. A Behavioral Attestation Battery pass requires ≥ 0.90 over the pre-registered probe set.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="dgc" data-term="dgc dependency graph completeness inventory aibom manifests gate cp gdcp">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">DGC</h3><span class="text-sm font-semibold text-gray-700">Dependency Graph Completeness</span></div>
+          <p class="mt-2 text-sm text-muted">The share of the deployed inventory (from the AIBOM, tool/MCP manifests, and network configuration) present in the System Dependency Graph. DGC &lt; 0.90 makes the graph inadmissible and forces Cp = 1.00.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="lrr" data-term="lrr layer reachability ratio stack layers transitive closure gdcp">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">LRR</h3><span class="text-sm font-semibold text-gray-700">Layer Reachability Ratio</span></div>
+          <p class="mt-2 text-sm text-muted">The fraction of the four stack layers reachable from a compromise origin by transitive closure over the System Dependency Graph — the structural reach of a cascade.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="pad" data-term="pad privilege amplification depth ladder p1 p4 gdcp">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">PAD</h3><span class="text-sm font-semibold text-gray-700">Privilege Amplification Depth</span></div>
+          <p class="mt-2 text-sm text-muted">The maximum ordinal climb on the P1–P4 privilege ladder along any reachable path — how far above its origin privilege a compromise can end up.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="fibr" data-term="fibr fault-injection blast radius tainted nodes trials gdcp">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">FIBR</h3><span class="text-sm font-semibold text-gray-700">Fault-Injection Blast Radius</span></div>
+          <p class="mt-2 text-sm text-muted">The share of graph-predicted reachable nodes that injected taint markers actually reached across the trial set — measured propagation rather than modeled propagation.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="gvr" data-term="gvr graph validation rate observed predicted reach subset invalidate gdcp">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">GVR</h3><span class="text-sm font-semibold text-gray-700">Graph Validation Rate</span></div>
+          <p class="mt-2 text-sm text-muted">The fraction of injection trials in which observed reach was a subset of predicted reach. Any failure invalidates the System Dependency Graph, and Cp reverts to 1.00 until the graph is re-documented.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="cbr" data-term="cbr containment block rate gate canary trial gdcp">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">CBR</h3><span class="text-sm font-semibold text-gray-700">Containment Block Rate</span></div>
+          <p class="mt-2 text-sm text-muted">The fraction of injected propagation attempts halted at a declared gate. A gate may be claimed on a path only at CBR ≥ 0.95, and every declared gate must be exercised by at least one canary trial.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="qtr" data-term="qtr quarantine trigger rate boundary crossing response diagnostic reported">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">QTR</h3><span class="text-sm font-semibold text-gray-700">Quarantine Trigger Rate</span></div>
+          <p class="mt-2 text-sm text-muted">The fraction of detected boundary crossings that triggered the required quarantine response. Reported as a diagnostic alongside Cn-5's MTTQ — reported, not scored.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="cascade-reach-alert" data-term="cascade reach alert diagnostic indicator anchor compound risk alert gdcp">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Cascade Reach Alert</h3></div>
+          <p class="mt-2 text-sm text-muted">A reported diagnostic, mirroring the Compound Risk Alert, that fires whenever any GDCP indicator triggers the 1.00 anchor — surfacing the graph finding as an actionable driver line. It does not change the score.</p>
         </div>
       </div>
     </section>

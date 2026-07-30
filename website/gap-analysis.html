@@ -162,7 +162,7 @@
       </p>
       <div class="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><div class="text-2xl font-bold text-navy">12</div><div class="text-xs text-muted">structural gaps identified</div></div>
-        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><div class="text-2xl font-bold text-navy">10 / 12</div><div class="text-xs text-muted">fully addressed today</div></div>
+        <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><div class="text-2xl font-bold text-navy">11 / 12</div><div class="text-xs text-muted">fully addressed today</div></div>
         <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><div class="text-2xl font-bold text-navy">10</div><div class="text-xs text-muted">frameworks compared</div></div>
         <div class="rounded-lg border border-gray-200 bg-white px-4 py-3"><div class="text-2xl font-bold text-navy">43+</div><div class="text-xs text-muted">research sources</div></div>
       </div>
@@ -175,7 +175,7 @@
     <div class="mt-8 grid gap-6 sm:grid-cols-2">
       <article class="rounded-xl border border-gray-200 p-6">
         <h3 class="font-bold text-navy">1. Methodological foundations</h3>
-        <p class="mt-2 text-sm text-muted">Ambiguous severity language produces 15–30% inter-assessor variance and single-score reductionism that discards multi-dimensional signal.</p>
+        <p class="mt-2 text-sm text-muted">Ambiguous severity language produces measurable assessor divergence — in the largest CVSS consistency study, 68% of assessors re-scored identical vulnerabilities differently (Wunder et al., IEEE S&amp;P 2024) — plus single-score reductionism that discards multi-dimensional signal.</p>
       </article>
       <article class="rounded-xl border border-gray-200 p-6">
         <h3 class="font-bold text-navy">2. Operational reality</h3>
@@ -196,7 +196,7 @@
   <section class="bg-gray-50 border-y border-gray-200">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <h2 class="text-3xl font-bold text-navy">The twelve gaps</h2>
-      <p class="mt-3 text-muted">Twelve structural deficiencies across four domains, each with a short read on what it means. Ten are fully addressed today; two are partially addressed with planned enhancements. The framework comparison below shows how every other framework we’ve mapped fares on the same capabilities.</p>
+      <p class="mt-3 text-muted">Twelve structural deficiencies across four domains, each with a short read on what it means. Eleven are fully addressed today; one is partially addressed — a residual inherent to deterministic scoring, mitigated by the α floor and behavioral attestation decay. The framework comparison below shows how every other framework we’ve mapped fares on the same capabilities.</p>
       <div class="mt-8 overflow-x-auto">
         <table class="spec-table w-full border-collapse text-sm bg-white">
           <thead>
@@ -209,7 +209,7 @@
           </thead>
           <tbody class="text-muted align-top">
             <tr><td colspan="4" class="px-4 py-2 font-bold text-navy bg-blue-50/60">Methodological foundations</td></tr>
-            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Subjectivity in scoring</span><span class="mt-0.5 block text-xs text-gray-500">Severity words like “high”/“medium” admit several readings, so assessors diverge on the same system.</span></td><td class="px-4 py-3">15–30% inter-assessor variance</td><td class="px-4 py-3">Five-level quantitative rubrics</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Subjectivity in scoring</span><span class="mt-0.5 block text-xs text-gray-500">Severity words like “high”/“medium” admit several readings, so assessors diverge on the same system.</span></td><td class="px-4 py-3">68% re-score divergence (CVSS; Wunder et al., IEEE S&amp;P 2024)</td><td class="px-4 py-3">Five-level quantitative rubrics</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
             <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Single-score reductionism</span><span class="mt-0.5 block text-xs text-gray-500">One 0–10 number hides which dimension actually drives the risk, so controls can’t be aimed.</span></td><td class="px-4 py-3">Multi-dimensional signal loss</td><td class="px-4 py-3">Three-layer IVP / ORP / ACI architecture</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
             <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Incomplete scoring guidance</span><span class="mt-0.5 block text-xs text-gray-500">Tiers are defined but with no test method, threshold, or tool to measure them.</span></td><td class="px-4 py-3">Implementation paralysis</td><td class="px-4 py-3">Test methods + tool integration per sub-metric</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
             <tr><td colspan="4" class="px-4 py-2 font-bold text-navy bg-blue-50/60">Operational reality</td></tr>
@@ -222,14 +222,14 @@
             <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Tool / function-calling security</span><span class="mt-0.5 block text-xs text-gray-500">The MCP and tool-calling surface — poisoning, CVEs — goes unassessed.</span></td><td class="px-4 py-3">Tool poisoning; MCP CVEs</td><td class="px-4 py-3">Ro-4 + Cn-1/Cn-2 + Tr-3</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
             <tr><td colspan="4" class="px-4 py-2 font-bold text-navy bg-blue-50/60">Structural impossibilities</td></tr>
             <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Residual risk floor</span><span class="mt-0.5 block text-xs text-gray-500">Frameworks imply controls can reach zero risk; emergent and semantic risk make that false.</span></td><td class="px-4 py-3">False belief in zero risk</td><td class="px-4 py-3">α = 0.15 irreducible risk</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
-            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Emergent-behavior unpredictability</span><span class="mt-0.5 block text-xs text-gray-500">Behaviour not predictable from component tests — collusion, drift, memory poisoning.</span></td><td class="px-4 py-3">Non-deterministic risk underestimated</td><td class="px-4 py-3">α = 0.15 + Cn-4 detection</td><td class="px-4 py-3 font-semibold text-amber-600">Partial</td></tr>
-            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Cross-layer cascading failures</span><span class="mt-0.5 block text-xs text-gray-500">Vulnerabilities amplify across the agent stack; independent layer scoring misses it.</span></td><td class="px-4 py-3">Amplification not modeled</td><td class="px-4 py-3">Attack-surface proxy; Cn-6 worst-case chain rule (CCVR) now scores chain composition; further enhancement planned</td><td class="px-4 py-3 font-semibold text-amber-600">Partial</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Emergent-behavior unpredictability</span><span class="mt-0.5 block text-xs text-gray-500">Behaviour not predictable from component tests — collusion, drift, memory poisoning.</span></td><td class="px-4 py-3">Non-deterministic risk underestimated</td><td class="px-4 py-3">α = 0.15 floor + behavioral attestation decay (BAW: T_behavior, M_Em = 3.0) + C_behavior monitoring caps + §7 BBD drift protocol</td><td class="px-4 py-3 font-semibold text-amber-600">Partial</td></tr>
+            <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Cross-layer cascading failures</span><span class="mt-0.5 block text-xs text-gray-500">Vulnerabilities amplify across the agent stack; independent layer scoring misses it.</span></td><td class="px-4 py-3">Amplification not modeled</td><td class="px-4 py-3">Graph-derived Cp (GDCP): verified dependency graph, layer reachability, privilege amplification, fault-injection blast radius; worst indicator governs; Cn-6 chain rule retained</td><td class="px-4 py-3 font-semibold text-navy">Full</td></tr>
           </tbody>
         </table>
       </div>
       <div class="mt-6 flex flex-wrap gap-4 text-sm">
-        <span class="rounded-lg border border-gray-300 bg-white px-4 py-2"><span class="font-bold text-navy">10 / 12</span> fully addressed</span>
-        <span class="rounded-lg border border-gray-300 bg-white px-4 py-2"><span class="font-bold text-amber-600">2 / 12</span> partially addressed (enhancements planned)</span>
+        <span class="rounded-lg border border-gray-300 bg-white px-4 py-2"><span class="font-bold text-navy">11 / 12</span> fully addressed</span>
+        <span class="rounded-lg border border-gray-300 bg-white px-4 py-2"><span class="font-bold text-amber-600">1 / 12</span> partially addressed (inherent to deterministic scoring; mitigated by the α floor + behavioral attestation decay)</span>
       </div>
     </div>
   </section>

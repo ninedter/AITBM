@@ -10,7 +10,7 @@ At initial deployment and after each full assessment, a behavioral baseline is e
 
 Minimum Baseline Validity Requirements
 
-*Table 55: 7.1 Baseline Establishment*
+*Table 62: 7.1 Baseline Establishment*
 
 | Requirement | Tier 1 | Tier 2 | Tier 3 |
 | --- | --- | --- | --- |
@@ -35,7 +35,7 @@ Variables. P_baseline is the behavioral distribution recorded at assessment (dec
 
 Why this form. Jensen-Shannon divergence is chosen over alternatives such as Kullback-Leibler divergence for three reasons. It is symmetric, so drift measured baseline-to-current equals current-to-baseline, which matters when neither distribution is privileged as 'true'. It is bounded on the [0, 1] interval (with log base 2), so fixed thresholds such as 0.15, 0.35, and 0.60 stay stable and comparable across systems, whereas an unbounded measure could not anchor them. And it stays finite even when one distribution assigns zero probability to an event the other allows, a common situation when a new tool-call target or a novel output appears, where Kullback-Leibler divergence would diverge to infinity. This operationalizes the principle that risk is cumulative and monitored continuously, not captured only at assessment time (Design Principle 2.5).
 
-*Table 56: 7.2 Drift Detection*
+*Table 63: 7.2 Drift Detection*
 
 | BBD Threshold | Classification | Automated Action | ACI Impact |
 | --- | --- | --- | --- |
@@ -43,3 +43,5 @@ Why this form. Jensen-Shannon divergence is chosen over alternatives such as Kul
 | 0.15 <= BBD < 0.35 | Elevated Deviation | Alert + increased monitoring | Tf reduced by 25% |
 | 0.35 <= BBD < 0.60 | Significant Drift | Alert + mandatory reassessment 72h | Tf reduced by 60% |
 | BBD >= 0.60 | Critical Deviation | Alert + auto quarantine (HITL) + full reassessment | Tf reset to 0.10 |
+
+The Behavioral Attestation Battery (BAB, Section 3.3.3) reuses the BBD thresholds above unchanged; the Behavioral Attestation Window changes only how often a baseline comparison must occur.

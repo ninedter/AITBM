@@ -13,7 +13,7 @@
     gtag('config', 'G-K7VDS29BQ0');
   </script>
   <title>AIDEFEND → AITBM Defensive Control Mapping</title>
-  <meta name="description" content="Map the 88-technique AIDEFEND defensive catalog to AITBM's 22 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction." />
+  <meta name="description" content="Map the 92-technique AIDEFEND defensive catalog to AITBM's 22 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
@@ -62,7 +62,7 @@
       "@id": "https://aitbm.org/aidefend#webpage",
       "url": "https://aitbm.org/aidefend",
       "name": "AIDEFEND → AITBM Defensive Control Mapping",
-      "description": "Map the 88-technique AIDEFEND defensive catalog to AITBM's 22 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction.",
+      "description": "Map the 92-technique AIDEFEND defensive catalog to AITBM's 22 AI security sub-metrics — turning LLM and agentic AI defensive controls into measurable risk reduction.",
       "isPartOf": {
         "@id": "https://aitbm.org/#website"
       },
@@ -185,14 +185,14 @@
         <div class="rounded-xl border border-gray-200 bg-gray-50 p-6">
           <p class="text-sm font-semibold text-navy">Framework at a glance</p>
           <dl class="mt-4 space-y-3 text-sm">
-            <div class="flex justify-between"><dt class="text-muted">Total techniques</dt><dd class="font-bold text-navy">88</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">Total techniques</dt><dd class="font-bold text-navy">92</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Tactics</dt><dd class="font-bold text-navy">7</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Pillars</dt><dd class="font-bold text-navy">4</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Lifecycle phases</dt><dd class="font-bold text-navy">6</dd></div>
             <div class="flex justify-between"><dt class="text-muted">External frameworks mapped</dt><dd class="font-bold text-navy">9</dd></div>
             <div class="flex justify-between"><dt class="text-muted">AITBM sub-metrics covered</dt><dd class="font-bold text-navy">22 / 22</dd></div>
           </dl>
-          <p class="mt-4 text-xs text-gray-500">AIDEFEND upstream: data version 2026.06.25 (88 techniques, 213 sub-techniques). The AITBM↔AIDEFEND mapping was last reconciled against data version 2026.06.11 (86 techniques, June 12, 2026) — including AID-H-035, MCP Server Runtime Boundary &amp; Tool Exposure Governance, mapped to Tr-3, Cn-1, Cn-2, and Cn-5; reconciliation of the 2026.06.25 delta is pending. The Cn-6 (Action Reversibility Classification Rate) mapping adds six techniques — AID-M-006 Human-in-the-Loop (HITL) Control Point Mapping, AID-M-009 Agent Autonomy &amp; Authority Governance, AID-H-019 Tool Authorization &amp; Capability Scoping, AID-H-035 MCP Server Runtime Boundary &amp; Tool Exposure Governance, AID-D-011 Agent Behavioral Attestation &amp; Rogue Detection, and AID-D-015 User Trust Calibration &amp; High-Risk Action Confirmation — bringing the specification tables to 127 sub-metric mappings across 63 distinct techniques.</p>
+          <p class="mt-4 text-xs text-gray-500">The AITBM↔AIDEFEND mapping is reconciled against data version 2026.07.28 (92 techniques, 265 sub-techniques; July 30, 2026), superseding the prior 2026.07.04 basis (88 techniques, 218 sub-techniques). The 2026.07.28 release retired old AID-H-010 Transformer Architecture Defenses (removed from the Ro-1 mapping list) and renumbered the entire Harden tail down one slot, so AIDEFEND technique IDs are stable only within a data version — every ID cited on this page is on the 2026.07.28 basis. The reconciliation adds four newly mapped techniques: AID-D-018 Production AI-Security Detection Efficacy &amp; Scenario-Coverage Validation (mapped to Tr-3, with its measured detection efficacy substantiating the ACI continuous-monitoring factor), AID-H-036 Multilingual &amp; Locale-Stratified Prompt Safety Classifier Evaluation (mapped to Ro-1 and Cn-3), AID-H-037 Reasoning-State Security &amp; Compute Controls (mapped to Cn-3 and Cn-4), and AID-R-007 External Side-Effect Reconciliation &amp; Compensation (mapped to Cn-6). The Cn-6 (Action Reversibility Classification Rate) mapping now spans eight techniques — AID-M-006 Human-in-the-Loop Control Design &amp; Readiness, AID-M-009 Agent Autonomy &amp; Authority Governance, AID-H-018 Tool Authorization &amp; Capability Scoping, AID-H-034 MCP Server Runtime Boundary &amp; Tool Exposure Governance, AID-H-035 Defensive-Agent &amp; Response-Automation Hardening, AID-D-011 Registered Agent Behavior, Interaction &amp; Identity-Abuse Detection, AID-D-015 High-Risk Approval Bypass &amp; HITL Activity Detection, and AID-R-007 External Side-Effect Reconciliation &amp; Compensation — bringing the specification tables to 140 sub-metric mappings across 69 distinct techniques.</p>
         </div>
       </div>
     </div>
@@ -231,7 +231,7 @@
   <section id="tactics" class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
     <h2 class="text-3xl font-bold text-navy">Seven defensive tactics</h2>
     <p class="mt-3 text-muted">
-      AIDEFEND organizes 88 techniques across seven tactics aligned with MITRE D3FEND.
+      AIDEFEND organizes 92 techniques across seven tactics aligned with MITRE D3FEND.
       Each tactic maps to different AITBM layers and sub-metrics.
     </p>
     <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -241,12 +241,12 @@
         <p class="mt-2 text-xs text-muted">Asset inventory, provenance, threat modeling, HITL mapping, autonomy governance.</p>
       </article>
       <article class="rounded-xl border border-gray-200 p-5">
-        <p class="text-2xl font-bold text-navy">35</p>
+        <p class="text-2xl font-bold text-navy">37</p>
         <h3 class="mt-1 font-bold text-navy text-sm">Harden</h3>
         <p class="mt-2 text-xs text-muted">Adversarial training, input validation, RAG security, output filtering, MCP server boundary governance.</p>
       </article>
       <article class="rounded-xl border border-gray-200 p-5">
-        <p class="text-2xl font-bold text-navy">16</p>
+        <p class="text-2xl font-bold text-navy">18</p>
         <h3 class="mt-1 font-bold text-navy text-sm">Detect</h3>
         <p class="mt-2 text-xs text-muted">Prompt injection detection, drift monitoring, agent behavior attestation, leakage detection.</p>
       </article>
@@ -266,14 +266,14 @@
         <p class="mt-2 text-xs text-muted">Automated threat response, session termination, compromised state purging.</p>
       </article>
       <article class="rounded-xl border border-gray-200 p-5">
-        <p class="text-2xl font-bold text-navy">5</p>
+        <p class="text-2xl font-bold text-navy">7</p>
         <h3 class="mt-1 font-bold text-navy text-sm">Restore</h3>
         <p class="mt-2 text-xs text-muted">Model versioning, rollback, recovery from poisoning and compromise.</p>
       </article>
       <article class="rounded-xl border-2 border-navy/30 bg-gray-50 p-5">
-        <p class="text-2xl font-bold text-navy">86</p>
+        <p class="text-2xl font-bold text-navy">92</p>
         <h3 class="mt-1 font-bold text-navy text-sm">Total techniques</h3>
-        <p class="mt-2 text-xs text-muted">All 22 AITBM sub-metrics covered with 3 &ndash; 13 AIDEFEND techniques each (avg &asymp;5.8).</p>
+        <p class="mt-2 text-xs text-muted">All 22 AITBM sub-metrics covered with 3 &ndash; 13 AIDEFEND techniques each (avg &asymp;6.4).</p>
       </article>
     </div>
   </section>
@@ -301,7 +301,7 @@
           <tbody class="text-muted">
             <tr>
               <td class="px-4 py-3 font-bold text-navy">1</td>
-              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-H-019</span> Agent Permission Restriction</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-H-018</span> Agent Permission Restriction</td>
               <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td>
               <td class="px-4 py-3 text-right font-bold text-navy">5.8 pts</td>
               <td class="px-4 py-3 hidden lg:table-cell">Critical &rarr; Low-Moderate</td>
@@ -315,14 +315,14 @@
             </tr>
             <tr>
               <td class="px-4 py-3 font-bold text-navy">3</td>
-              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-M-006</span> HITL Control Point Mapping</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-M-006</span> HITL Control Design &amp; Readiness</td>
               <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td>
               <td class="px-4 py-3 text-right font-bold text-navy">4.3 pts</td>
               <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Moderate-Low</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-bold text-navy">4</td>
-              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-H-021</span> Secure RAG Implementation</td>
+              <td class="px-4 py-3"><span class="font-semibold text-gray-800">AID-H-020</span> Secure RAG Implementation</td>
               <td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span></span></td>
               <td class="px-4 py-3 text-right font-bold text-navy">3.9 pts</td>
               <td class="px-4 py-3 hidden lg:table-cell">High &rarr; Moderate-Low</td>
@@ -514,7 +514,7 @@
             <p class="mt-3 text-sm text-blue-100">
               Adversarial Robustness Training (AID-H-001) and Input Sanitization (AID-H-002)
               make the model hold up under prompt injection (Ro-1); Secure RAG
-              Implementation (AID-H-021) grounds retrieval against poisoned context (Ro-4);
+              Implementation (AID-H-020) grounds retrieval against poisoned context (Ro-4);
               Output Content Filtering (AID-H-006) and Leakage Detection (AID-D-003) stop the
               agent disclosing retrieved client data (Cn-3, Pr-1). The model stops obeying
               injected instructions and stops leaking what it reads.
@@ -525,7 +525,7 @@
             <p class="mt-3 text-sm text-blue-100">
               The baseline had all four operational dimensions elevated &mdash; internet
               exposure, L3 autonomy, financial blast radius, hard remediation &mdash;
-              compounding risk 1.60&times;. Agent Permission Restriction (AID-H-019), Autonomy
+              compounding risk 1.60&times;. Agent Permission Restriction (AID-H-018), Autonomy
               Governance (AID-M-009) and human-in-the-loop control points (AID-M-006) bound
               what the agent may do (Cn-1, Cn-2), and cryptographic agent identity (Cn-5)
               proves who is acting. Bounded and attributable, enough dimensions fall below the
@@ -556,7 +556,7 @@
       layer &mdash; turning control presence into measurable risk scores.
     </p>
     <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
-      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">MITRE ATLAS</span><p class="text-muted mt-0.5">16 tactics, 101 techniques</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">MITRE ATLAS</span><p class="text-muted mt-0.5">16 tactics, 103 techniques</p></div>
       <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">OWASP LLM Top 10 (2025)</span><p class="text-muted mt-0.5">10 threats, 85 controls mapped</p></div>
       <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">OWASP Agentic AI Top 10</span><p class="text-muted mt-0.5">ASI threat classes (2026)</p></div>
       <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">MAESTRO (CSA)</span><p class="text-muted mt-0.5">7 layers, 85 controls mapped</p></div>

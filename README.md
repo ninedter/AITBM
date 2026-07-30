@@ -186,7 +186,7 @@ The site is static HTML with Tailwind CSS (CDN) and vanilla JavaScript -- no bui
 | NIST AI RMF | Risk management framework alignment |
 | NIST Cyber AI Profile IR 8596 | Cyber-AI intersection alignment |
 | EU AI Act | Regulatory compliance mapping |
-| AIDEFEND | Defensive countermeasure mapping (86 techniques) |
+| AIDEFEND | Defensive countermeasure mapping (92 techniques, data version 2026.07.28) |
 | D3FEND 1.0 | Defensive countermeasure taxonomy |
 
 All of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the GPAI Code of Practice — are mapped element-by-element into AITBM sub-metrics on the [Framework Mappings](website/mappings.html) page and in the [External Framework Mappings](specification/sections/external_framework_mappings.md) section of the specification.

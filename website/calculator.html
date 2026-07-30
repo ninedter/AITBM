@@ -248,7 +248,7 @@
               <div id="q-breakdown" class="hidden mt-4 space-y-3">
                 <p class="text-xs text-muted">Inferred architecture: <span id="q-arch" class="font-semibold text-navy">standalone</span></p>
                 <div><div class="flex justify-between text-sm"><span class="text-muted">IVP Composite</span><span id="q-ivp-val" class="font-bold text-navy">0.32</span></div><div class="mt-1 h-2 rounded-full bg-gray-200"><div id="q-ivp-bar" class="bar-fill h-2 rounded-full bg-navy" style="width:32%"></div></div></div>
-                <div><div class="flex justify-between text-sm"><span class="text-muted">CRM</span><span id="q-crm-val" class="font-bold text-navy">0.75</span></div><div class="mt-1 h-2 rounded-full bg-gray-200"><div id="q-crm-bar" class="bar-fill h-2 rounded-full bg-navy" style="width:0%"></div></div></div>
+                <div><div class="flex justify-between text-sm"><span class="text-muted">CRM<sub>n</sub></span><span id="q-crm-val" class="font-bold text-navy">0.75</span></div><div class="mt-1 h-2 rounded-full bg-gray-200"><div id="q-crm-bar" class="bar-fill h-2 rounded-full bg-navy" style="width:0%"></div></div></div>
                 <div><div class="flex justify-between text-sm"><span class="text-muted">ACI</span><span id="q-aci-val" class="font-bold text-navy">0.20</span></div><div class="mt-1 h-2 rounded-full bg-gray-200"><div id="q-aci-bar" class="bar-fill h-2 rounded-full bg-navy" style="width:20%"></div></div></div>
               </div>
             </div>
@@ -322,7 +322,7 @@
         <div class="rounded-xl border border-gray-200 p-6">
           <div class="flex items-center gap-2 mb-4">
             <h2 class="text-lg font-bold text-navy">ORP &mdash; Operational Risk Posture</h2>
-            <span class="rounded bg-navy/10 px-2 py-0.5 text-xs font-semibold text-navy">CRM: <span id="crm-badge">1.60</span></span>
+            <span class="rounded bg-navy/10 px-2 py-0.5 text-xs font-semibold text-navy">CRM<sub>n</sub>: <span id="crm-badge">1.60</span></span>
           </div>
           <div class="grid gap-5 sm:grid-cols-2">
             <div>
@@ -338,7 +338,7 @@
             <div>
               <div class="flex justify-between text-sm mb-1"><label class="font-semibold text-gray-700">Cascade Potential (Cp)</label><span id="orp-cp-val" class="text-navy font-bold">0.80</span></div>
               <input type="range" id="orp-cp" min="0" max="100" value="80" class="range-input w-full" />
-              <p class="text-xs text-muted mt-1">Isolated impact &rarr; systemic financial/safety</p>
+              <p class="text-xs text-muted mt-1">Isolated impact &rarr; systemic financial/safety. Enter the GDCP graph-derived value (see the <a href="framework" class="underline underline-offset-2 hover:text-navy">framework page</a>) &mdash; the calculator does not compute the dependency graph.</p>
             </div>
             <div>
               <div class="flex justify-between text-sm mb-1"><label class="font-semibold text-gray-700">Remediation Feasibility (Rf)</label><span id="orp-rf-val" class="text-navy font-bold">0.85</span></div>
@@ -371,7 +371,7 @@
               <p class="text-xs text-muted mt-1">Stale assessment &rarr; recently validated</p>
             </div>
           </div>
-          <p class="mt-4 text-xs text-muted">For agentic and tool-augmented systems the specification applies a containment staleness floor (M<sub>Cn</sub> = 2.0): containment evidence ages at least twice as fast, so set Freshness (Tf) lower when that evidence is not recent.</p>
+          <p class="mt-4 text-xs text-muted">For agentic and tool-augmented systems the specification applies a containment staleness floor (M<sub>Cn</sub> = 2.0): containment evidence ages at least twice as fast, so set Freshness (Tf) lower when that evidence is not recent. For architectures with mutable behavioral state it also applies a behavioral staleness floor (M<sub>Em</sub> = 3.0): behavioral evidence ages three times as fast unless a Behavioral Attestation Battery has recently passed.</p>
         </div>
       </div>
 
@@ -408,7 +408,7 @@
                 <div class="mt-1 h-2 rounded-full bg-gray-200"><div id="ivp-bar" class="bar-fill h-2 rounded-full bg-navy" style="width:32%"></div></div>
               </div>
               <div>
-                <div class="flex justify-between text-sm"><span class="text-muted">CRM</span><span id="crm-val" class="font-bold text-navy">1.60</span></div>
+                <div class="flex justify-between text-sm"><span class="text-muted">CRM<sub>n</sub></span><span id="crm-val" class="font-bold text-navy">1.60</span></div>
                 <div class="mt-1 h-2 rounded-full bg-gray-200"><div id="crm-bar" class="bar-fill h-2 rounded-full bg-navy" style="width:85%"></div></div>
               </div>
               <div>
@@ -606,8 +606,8 @@
     });
     document.getElementById("btn-preset-finbot").addEventListener("click", function () {
       checkboxes.forEach(function (cb) { cb.checked = false; });
-      /* Calibrated sliders (not raw spec values): tracks spec §9 Finbot Table 9.3 — Ec 0.40→0.37, Tf 0.85→0.79 (M_Cn staleness floor) scaled onto the preset's calibration (ec 45→42, tf 75→70). */
-      setSliders({ aa: 80, as: 90, cp: 85, rf: 90, pc: 15, ec: 42, tf: 70 });
+      /* Calibrated sliders (not raw spec values): tracks spec §9 Finbot Table 9.3 — Ec 0.40→0.37 (ec 45→42), Tf 0.79→0.71 (BAW behavioral staleness floor, T_behavior binds; tf 70→63), Cp 0.85→1.00 (GDCP graph-derived: ungated sub-$50K path, LRR = 1.00, FIBR > 0.60). */
+      setSliders({ aa: 80, as: 90, cp: 100, rf: 90, pc: 15, ec: 42, tf: 63 });
       document.getElementById("arch-select").value = "agentic";
       recalc();
     });
