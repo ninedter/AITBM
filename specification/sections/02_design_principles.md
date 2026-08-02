@@ -10,7 +10,7 @@ The framework produces vector-based profiles, not scalar scores, as its authorit
 
 ## 2.3 Deterministic Weights via Deployment Tiering
 
-Weight selection is removed from the assessor’s discretion. Organizations classify their deployments into predefined tiers, and weights are deterministically derived from that classification. Two organizations scoring the same system in the same deployment context will produce identical results.
+Weight selection is removed from the assessor's discretion. Organizations classify deployments through the predefined architecture and tier rules, and the corresponding weights are fixed. Given the same evidence and the same rubric placements, two organizations compute the same weighted result; evidence interpretation or rubric placement can still differ and is governed by the conflict-resolution protocol.
 
 ## 2.4 Epistemic Penalty for Opacity
 

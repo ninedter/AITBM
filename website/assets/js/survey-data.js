@@ -123,8 +123,8 @@ window.AITBM_SURVEY = {
             "AID-H-002",
             "AID-H-006"
           ],
-          "text": "Do you filter and validate both the inputs the agent receives and the outputs/actions it produces?",
-          "fix": "Filter and validate both the agent's inputs and its outputs/actions."
+          "text": "Do you filter and validate both the inputs the agent receives and the outputs and actions it produces?",
+          "fix": "Filter and validate both the agent's inputs and its outputs and actions."
         },
         {
           "id": "s7",

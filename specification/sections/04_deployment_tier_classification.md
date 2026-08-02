@@ -94,8 +94,8 @@ Systems spanning multiple categories are classified by the highest-risk qualifyi
 | Standalone LLM / Generative AI | Prompt injection, adversarial inputs, hallucination, output filtering, privacy leakage. | Increase Robustness and Transparency emphasis. Containment remains applicable for output boundaries and policy enforcement. |
 | RAG / Retrieval-Augmented System | Corpus poisoning, retrieval manipulation, provenance, privacy leakage, stale or unauthorized context. | Increase Robustness, Privacy, and Transparency emphasis. Require RAG provenance and retrieval drift evidence in ACI. |
 | Tool-Calling LLM / Connected GenAI | Tool poisoning, excessive permission, unsafe API invocation, auditability, data exfiltration. | Increase Containment and Transparency emphasis. Cn-1, Cn-2, Cn-3, Tr-3, and Ro-4 are mandatory unless formally out of scope. |
-| Agentic / MCP System | Autonomous goal drift, multi-step escalation, memory poisoning, identity spoofing, MCP/tool supply chain. | Apply agentic weights. Cn-1 through Cn-5 are mandatory; ORP Attack Surface and Cascade Potential must account for tool authority and autonomy. |
-| Multi-Agent / MCP System | Cross-agent collusion, cascading failure, shared-memory poisoning, delegated authority, identity boundary failure. | Apply highest-risk agentic weights plus explicit ORP cascade review. Cn-5, Tr-3, Cn-2, and ACI drift monitoring are mandatory (operationalized by the Behavioral Attestation Window, §3.3.3). |
+| Agentic / MCP System | Autonomous goal drift, multi-step escalation, memory poisoning, identity spoofing, MCP/tool supply chain. | Apply agentic weights. Cn-1 through Cn-6 are mandatory; ORP Attack Surface and graph-derived Cascade Potential must account for tool authority and autonomy. |
+| Multi-Agent / MCP System | Cross-agent collusion, cascading failure, shared-memory poisoning, delegated authority, identity boundary failure. | Apply highest-risk agentic weights plus explicit graph-derived cascade review. Cn-2, Cn-5, Cn-6, Tr-3, and ACI behavioral-drift monitoring are mandatory (operationalized by the Behavioral Attestation Window, §3.3.3). |
 
 Classification Output Format
 

@@ -26,8 +26,9 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
   <link rel="canonical" href="https://aitbm.org/mappings" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
   <link rel="stylesheet" href="assets/css/tailwind.css?v=9b4cd2c4" />
-  <link rel="stylesheet" href="assets/css/site.css?v=7817cdaa" />
+  <link rel="stylesheet" href="assets/css/site.css?v=5d06d0e7" />
   <script type="application/ld+json" data-seo>
 {
   "@context": "https://schema.org",
@@ -99,40 +100,59 @@
 </head>
 <body class="font-sans antialiased bg-paper">
 
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
       <div class="flex h-16 items-center justify-between gap-4">
-        <a href="/" class="flex items-center gap-2.5 shrink-0">
-          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy"><svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><rect x="18" y="16" width="64" height="13" rx="6.5" fill="#ffffff"/><rect x="28" y="35" width="44" height="13" rx="6.5" fill="#b9c6e0"/><rect x="38" y="54" width="24" height="13" rx="6.5" fill="#7e95c4"/><circle cx="50" cy="84" r="9" fill="#d98a5f"/></svg></span>
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
           <span class="leading-tight">
             <span class="block font-bold text-navy tracking-tight">AITBM</span>
             <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
           </span>
         </a>
-        <nav class="hidden lg:flex items-center gap-6 text-sm text-gray-700">
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
           <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
           <a href="framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
-          <a href="gap-analysis" data-nav="gap-analysis" class="nav-link hover:text-navy">Gap Analysis</a>
-          <a href="aidefend" data-nav="aidefend" class="nav-link hover:text-navy">AIDEFEND</a>
-          <a href="mappings" data-nav="mappings" class="nav-link hover:text-navy">Mappings</a>
-          <a href="calculator" data-nav="calculator" class="nav-link hover:text-navy">Calculator</a>
-          <a href="glossary" data-nav="glossary" class="nav-link hover:text-navy">Glossary</a>
+          <a href="use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
           <a href="resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
           <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
         </nav>
         <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
         </button>
       </div>
       <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
         <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
         <a href="framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
         <a href="gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
         <a href="aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
         <a href="mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
         <a href="calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
         <a href="glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
         <a href="resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
         <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
       </div>
     </div>
@@ -144,10 +164,10 @@
       <h1 class="text-4xl font-bold">Framework Mappings</h1>
       <p class="mt-3 max-w-2xl text-blue-100">
         Sixteen external AI security frameworks — threat taxonomies, control standards,
-        regulations, certification regimes, and maturity models — mapped into AITBM's
-        quantitative scoring. The direction is always the same: an external framework
-        element becomes one or more AITBM sub-metric scores, and a 0&ndash;10 Effective
-        Risk Score (ERS).
+        regulations, certification regimes, and maturity models — mapped to relevant
+        AITBM evidence and assessment criteria. External elements guide what to test;
+        only evidence from the assessed system produces AITBM inputs and a 0&ndash;10
+        Effective Risk Score (ERS).
       </p>
       <nav class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-blue-100">
         <a href="#overview" class="hover:text-white underline-offset-4 hover:underline">Overview</a>
@@ -163,29 +183,27 @@
 
   <!-- Overview -->
   <section id="overview" class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
-    <h2 class="text-3xl font-bold text-navy">AITBM as the complementary quantification layer</h2>
+    <h2 class="text-3xl font-bold text-navy">Mapping external evidence into AITBM assessment</h2>
     <div class="mt-4 grid gap-6 lg:grid-cols-2">
       <p class="text-muted">
-        AITBM does not replace the frameworks below — it <span class="font-semibold text-gray-800">scores</span> them.
-        Other frameworks provide threat taxonomies, control checklists, qualitative risk
-        categories, or maturity ladders. AITBM provides deterministic 0.00&ndash;1.00 rubrics
-        across 22 sub-metrics, an architecture-weighted IVP, the ORP compound risk multiplier,
-        and ACI temporal confidence decay — composed into a comparable 0&ndash;10 ERS.
+        AITBM does not replace or score the frameworks below. Their threats, controls,
+        requirements, and practices identify evidence to collect or tests to perform.
+        The assessed system's implementation, effectiveness, deployment context, and
+        evidence quality determine AITBM's 22 rubric results, IVP, ORP, ACI, and ERS.
       </p>
       <p class="text-muted">
         Each mapping is <span class="font-semibold text-gray-800">complementary, not competitive</span>:
         use the external framework for its threat awareness, control guidance, or regulatory
-        force; use AITBM to quantify how risky a specific system actually is, across dimensions,
-        with what confidence, over time. The full per-framework mappings — detailed tables,
-        five-level scoring guidance, bidirectional gap analysis, and worked examples — live in
-        the project repository and the Framework Specification.
+        force; use AITBM to assess a specific system's risk across dimensions and over time.
+        The published cards below and the Framework Specification state each crosswalk's scope
+        boundary, evidence use, and dated-example limitations.
       </p>
     </div>
     <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       <article class="rounded-xl border border-gray-200 p-5"><p class="text-2xl font-bold text-navy">16</p><h3 class="mt-1 font-bold text-navy text-sm">Frameworks mapped</h3><p class="mt-2 text-xs text-muted">Across four priority tiers, from OWASP and MITRE to the EU AI Act.</p></article>
       <article class="rounded-xl border border-gray-200 p-5"><p class="text-2xl font-bold text-navy">22</p><h3 class="mt-1 font-bold text-navy text-sm">AITBM sub-metrics</h3><p class="mt-2 text-xs text-muted">The shared measurement substrate every framework maps onto.</p></article>
       <article class="rounded-xl border border-gray-200 p-5"><p class="text-2xl font-bold text-navy">0&ndash;10</p><h3 class="mt-1 font-bold text-navy text-sm">Effective Risk Score</h3><p class="mt-2 text-xs text-muted">A comparable, confidence-graded severity number per system.</p></article>
-      <article class="rounded-xl border-2 border-navy/30 bg-gray-50 p-5"><p class="text-2xl font-bold text-navy">Cn-5</p><h3 class="mt-1 font-bold text-navy text-sm">Validated frontier gap</h3><p class="mt-2 text-xs text-muted">Agentic identity integrity — the blind spot the agentic and certification frameworks confirm.</p></article>
+      <article class="rounded-xl border-2 border-navy/30 bg-gray-50 p-5"><p class="text-2xl font-bold text-navy">Cn-5</p><h3 class="mt-1 font-bold text-navy text-sm">Agent identity lens</h3><p class="mt-2 text-xs text-muted">A distinct measurement concern that maps to identity and trust controls across agentic frameworks.</p></article>
     </div>
   </section>
 
@@ -194,8 +212,9 @@
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <h2 class="text-3xl font-bold text-navy">Mapping summary</h2>
       <p class="mt-3 text-muted max-w-3xl">
-        Every mapped framework with its tier, category, and the AITBM sub-metrics it most
-        directly exercises. Per-tier detail follows below.
+        Every mapped framework with its mapping-priority tier, category, and representative
+        AITBM targets for which it may guide evidence collection or test selection. Per-tier
+        detail and explicit scope boundaries follow below.
       </p>
       <div class="mt-8 overflow-x-auto">
         <table class="spec-table w-full border-collapse text-sm">
@@ -207,7 +226,7 @@
           </tr></thead>
           <tbody class="text-muted">
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">OWASP Top 10 for LLMs</span></td><td class="px-4 py-3">Tier 1</td><td class="px-4 py-3">Vulnerability catalogue</td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">OWASP Top 10 for Agentic Applications</span></td><td class="px-4 py-3">Tier 1</td><td class="px-4 py-3">Agentic threat taxonomy</td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">OWASP Agentic AI — Threats and Mitigations</span></td><td class="px-4 py-3">Tier 1</td><td class="px-4 py-3">Seventeen-threat agentic taxonomy; companion crosswalk to ASI01–ASI10</td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">OWASP AISVS</span></td><td class="px-4 py-3">Tier 1</td><td class="px-4 py-3">Control verification standard</td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span></span></td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">MITRE ATLAS</span></td><td class="px-4 py-3">Tier 1</td><td class="px-4 py-3">Adversarial threat landscape</td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span></span></td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AIUC-1</span></td><td class="px-4 py-3">Tier 1</td><td class="px-4 py-3">Certification + insurance standard for AI agents</td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td></tr>
@@ -233,19 +252,19 @@
       <h2 class="text-3xl font-bold text-navy">Tier 1 — Critical frameworks</h2>
       <p class="mt-3 text-muted max-w-3xl">Core threat taxonomies, control standards, and certification regimes most directly relevant to AITBM positioning.</p>
       <div class="mt-8 grid gap-6">
-      <article id="owasp-llm" class="rounded-xl border border-gray-200 p-6">
+      <article id="owasp-llm" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">OWASP Top 10 for LLMs</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Vulnerability catalogue</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Vulnerability catalogue</span>
         </div>
         <p class="mt-1 text-xs text-muted">OWASP Top 10 for LLM Applications &middot; OWASP Foundation</p>
-        <p class="mt-3 text-sm text-muted">The OWASP Top 10 for LLMs provides a qualitative catalogue of the ten most critical LLM application vulnerabilities, and AITBM adds quantitative 0-10 ERS scoring, multi-dimensional IVP profiles, operational-context amplification (ORP/CRM), and temporal confidence decay (ACI) on top of it.</p>
+        <p class="mt-3 text-sm text-muted">The OWASP Top 10 for LLMs provides a qualitative catalogue of ten LLM application risks. AITBM maps those risks to sub-metrics and evidence roles. The ERS values below are dated illustrative unmitigated deployment scenarios retained from the mapping analysis; they are not generic scores assigned by OWASP or canonical scores for a risk class.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">OWASP LLM Risk</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">LLM01 Prompt Injection</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span></span></td><td class="px-4 py-3">ERS 8.2 (High)</td></tr>
@@ -263,62 +282,64 @@
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>All 10 LLM risks map cleanly to AITBM sub-metrics; average unmitigated ERS is 7.5 (High), with controls yielding an average 3.5-point (~47%) reduction.</li>
-                <li>LLM06 Excessive Agency is the highest-risk item (ERS 8.4) and is driven by a Containment-axis collapse; its worked example brings in Cn-5 (Agent Identity Integrity) alongside Cn-1/Cn-2, showing agentic identity as a load-bearing factor.</li>
+                <li>All 10 LLM risks map to AITBM sub-metrics. In the dated illustrative scenario set, average unmitigated ERS is 7.5 (High), with modeled controls yielding an average 3.5-point (~47%) reduction.</li>
+                <li>LLM06 Excessive Agency is the highest-scoring item in that dated scenario set (ERS 8.4) and is driven by a Containment-axis collapse; its worked example brings in Cn-5 (Agent Identity Integrity) alongside Cn-1/Cn-2.</li>
                 <li>AITBM extends the catalogue with a Fairness dimension (Fa-1..Fa-4) that OWASP does not systematically address, plus ACI temporal decay for the otherwise-static OWASP classification.</li>
                 <li>The residual risk floor (alpha=0.15) means even fully mitigated risks retain a non-zero ERS, reflecting irreducible operational risk.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" class="font-semibold text-navy hover:underline underline-offset-4">OWASP Top 10 for LLMs reference &rarr;</a></p>
       </article>
-      <article id="owasp-agentic-top10" class="rounded-xl border border-gray-200 p-6">
+      <article id="owasp-agentic-top10" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
-          <h3 class="text-xl font-bold text-navy">OWASP Top 10 for Agentic Applications</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Agentic threat taxonomy</span>
+          <h3 class="text-xl font-bold text-navy">OWASP Agentic AI — Threats and Mitigations</h3>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Agentic threat taxonomy</span>
         </div>
-        <p class="mt-1 text-xs text-muted">OWASP Agentic AI - Threats and Mitigations (T1-T15 taxonomy; companion OWASP Top 10 for Agentic Applications 2026, ASI01-ASI10) &middot; OWASP GenAI Security Project - Agentic Security Initiative (ASI)</p>
-        <p class="mt-3 text-sm text-muted">The OWASP agentic taxonomy enumerates fifteen threats specific to autonomous, tool-calling, memory-bearing, and multi-agent systems, and AITBM adds deterministic five-level scoring, multi-dimensional IVP/ORP/ACI quantification, and a comparable 0-10 ERS per threat with remediation measured as an ERS delta.</p>
+        <p class="mt-1 text-xs text-muted">OWASP Agentic AI - Threats and Mitigations v1.1 (T1-T17 taxonomy, December 2025; companion OWASP Top 10 for Agentic Applications 2026, ASI01-ASI10) &middot; OWASP GenAI Security Project - Agentic Security Initiative (ASI)</p>
+        <p class="mt-3 text-sm text-muted">The OWASP agentic taxonomy enumerates seventeen threats specific to autonomous, tool-calling, memory-bearing, and multi-agent systems. AITBM maps each threat to five-level sub-metric rubrics and the IVP/ORP/ACI architecture. The T1–T15 ERS values below are dated illustrative deployment scenarios retained on their original worked-example basis; T16 and T17 deliberately have no generic score. A current ERS must be derived from the assessed deployment.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">Agentic Threat</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T1 Memory Poisoning</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td><td class="px-4 py-3">ERS 7.0 (High)</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T3 Privilege Compromise</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td><td class="px-4 py-3">ERS 7.9 (High)</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T5 Cascading Hallucination Attacks</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span></span></td><td class="px-4 py-3">ERS 6.6 (Moderate)</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T6 Intent Breaking &amp; Goal Manipulation</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td><td class="px-4 py-3">ERS 7.0 (High)</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T9 Identity Spoofing &amp; Impersonation</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">ERS 8.3 (highest in taxonomy)</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T9 Identity Spoofing &amp; Impersonation</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">ERS 8.3 (highest in dated T1–T15 scenario set)</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T11 Unexpected RCE and Code Attacks</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span></span></td><td class="px-4 py-3">ERS 8.1 (High)</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T12 Agent Communication Poisoning</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td><td class="px-4 py-3">ERS 7.1 (High)</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T13 Rogue Agents in Multi-Agent Systems</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td><td class="px-4 py-3">ERS 8.2 (second-highest)</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T13 Rogue Agents in Multi-Agent Systems</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td><td class="px-4 py-3">ERS 8.2 (second-highest in dated T1–T15 scenario set)</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T15 Human Manipulation</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span></span></td><td class="px-4 py-3">ERS 5.8 (Moderate)</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T16 Insecure Inter-Agent Protocol Abuse</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td><td class="px-4 py-3">Deployment-specific; no generic ERS assigned</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">T17 Supply Chain Compromise</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td><td class="px-4 py-3">Deployment-specific; no generic ERS assigned</td></tr>
             </tbody>
           </table>
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>The three highest-ERS threats - T9 Identity Spoofing (8.3), T13 Rogue Agents (8.2), and T11 RCE (8.1) - are all Containment-dominated, and the top two are specifically Cn-5 (Agent Identity Integrity)-led, the strongest external validation of the Cn-5 sub-metric.</li>
-                <li>Eleven of the fifteen threats land primarily or secondarily on the Containment axis, empirically justifying the agentic architecture weight of Cn=0.45 (versus 0.15-0.20 for non-agentic classes).</li>
-                <li>Cascade-and-autonomy threats (T5, T13, T14) are modeled via ORP Aa (Autonomy Amplification) and Cp (Cascade Potential) with CRM stepping 1.00/1.15/1.35/1.60 as N_elevated rises, so identity/RCE threats reach N=4 (CRM 1.60).</li>
-                <li>The companion OWASP Top 10 for Agentic Applications 2026 (ASI01-ASI10, released Dec 9 2025) is a strict subset crosswalked to T1-T15; ASI03/ASI07/ASI10 are Cn-5-led, and ASI04 (supply chain) is flagged tentative with no dedicated T-item.</li>
+                <li>Within the dated T1-T15 illustrative set, T9 Identity Spoofing (8.3), T13 Rogue Agents (8.2), and T11 RCE (8.1) are Containment-dominated, and the top two are Cn-5-led. This is consistent with, but does not independently validate, AITBM&#x27;s agentic weighting; T16 and T17 remain deployment-specific.</li>
+                <li>Thirteen of the seventeen threats map primarily or secondarily to the Containment axis. This concentration is consistent with AITBM&#x27;s agentic Containment emphasis, but OWASP does not determine or validate the numeric Cn=0.45 weight.</li>
+                <li>Cascade-and-autonomy threats (T5, T13, T14) map to ORP Aa (Autonomy Amplification) and Cp (Cascade Potential). In the dated identity/RCE scenarios, all four ORP dimensions were elevated, producing CRM 1.60 under the step table.</li>
+                <li>The companion OWASP Top 10 for Agentic Applications 2026 (ASI01-ASI10, released December 9, 2025) is crosswalked to T1-T17. Version 1.1 gives ASI04 a direct T17 supply-chain counterpart and extends ASI07 with T16 protocol abuse; ASI03, ASI07, and ASI10 remain Cn-5-led in this mapping.</li>
         </ul>
-        <p class="mt-4 text-sm"><a href="https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/" class="font-semibold text-navy hover:underline underline-offset-4">OWASP Top 10 for Agentic Applications reference &rarr;</a></p>
+        <p class="mt-4 text-sm"><a href="https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/" class="font-semibold text-navy hover:underline underline-offset-4">OWASP Agentic AI Threats &amp; Mitigations reference &rarr;</a></p>
       </article>
-      <article id="owasp-aisvs" class="rounded-xl border border-gray-200 p-6">
+      <article id="owasp-aisvs" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">OWASP AISVS</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Control verification standard</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Control verification standard</span>
         </div>
         <p class="mt-1 text-xs text-muted">OWASP AI Security Verification Standard (AISVS) &middot; OWASP Foundation</p>
-        <p class="mt-3 text-sm text-muted">AISVS is a community-driven catalogue of testable AI security requirements (12 chapters C01-C12, 191 verifiable requirements, levels L1/L2/L3) answering &#x27;what controls should exist&#x27;, and AITBM consumes its control-verification evidence to score &#x27;how risky is this system&#x27;, turning binary checklists into quantitative ERS and selecting assessment tier from AISVS level.</p>
+        <p class="mt-3 text-sm text-muted">AISVS 1.0 is a community-driven catalogue of 191 testable AI security requirements across 12 chapters and three verification levels. AITBM can consume verified implementation evidence from those requirements; compliance status alone does not assign an AITBM anchor, ERS, or deployment tier. The numeric effects below are dated scenario results, not values inherent to an AISVS chapter.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">AISVS Chapter</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">C1 Training Data Integrity &amp; Traceability</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span></span></td><td class="px-4 py-3">~4.0-point reduction</td></tr>
@@ -338,101 +359,108 @@
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
                 <li>AISVS gives strong coverage of 16/22 AITBM sub-metrics (73%), partial on 2 (Tr-1 explainability, Pr-3 data minimization), and defers the 4 Fairness sub-metrics (Fa-1–Fa-4) by design to ISO 42001 / ISO 23894 / NIST AI RMF.</li>
                 <li>AISVS C9.2 (High-Impact Action Approval and Irreversibility Controls) maps directly onto the new Cn-6 (Action Reversibility Classification Rate): C9.2.3 requires reversibility classification, C9.2.4 runtime enforcement by class, and C9.2.10 the worst-case chain composition rule — making Cn-6 the 16th strongly covered sub-metric.</li>
-                <li>AISVS C5.1.2, C9.4, and C10.2 directly target Cn-5 (Agent Identity Integrity), confirming AITBM&#x27;s decision to add agent identity as a first-class sub-metric; C9+C10 dedicate roughly 63 requirements (~33% of the 191 total) to agentic/MCP security, validating the elevated agentic Containment weight.</li>
-                <li>Worked example: full AISVS L3 compliance on an agentic/RAG/MCP financial-advisory system drops ERS from 10.0 (Critical MVT) to 1.75 (Low), an 8.25-point reduction; the result stays above 0 because of the alpha=0.15 residual risk floor.</li>
-                <li>AISVS levels map to AITBM tiers (L1-&gt;Tier III, L2-&gt;Tier II, L3-&gt;Tier I), and C6 (AIBOM) + C12 (continuous monitoring) drive the ACI provenance (Pc) and temporal-freshness (Tf) terms.</li>
+                <li>AISVS C5.1.2, C9.4, and C10.2 directly target controls relevant to Cn-5. C9 and C10 contain 57 requirements in total (34 + 23, or 29.8% of 191). This is strong scope alignment, not an AISVS endorsement or validation of AITBM&#x27;s numeric weight.</li>
+                <li>The AISVS worked example is retained on its dated 21-sub-metric, pre-GDCP basis. A current assessment must derive Cn-6, Cp, ACI, and ERS under the current specification; compliance alone does not assign the displayed reduction.</li>
+                <li>AITBM uses AISVS levels as one input to its own pathway guidance (L1 to Tier III, L2 to Tier II, L3 to Tier I). C6 and C12 artifacts may support ACI provenance and freshness only when the evidence is applicable, complete, effective, and current.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://github.com/OWASP/AISVS" class="font-semibold text-navy hover:underline underline-offset-4">OWASP AISVS reference &rarr;</a></p>
       </article>
-      <article id="mitre-atlas" class="rounded-xl border border-gray-200 p-6">
+      <article id="mitre-atlas" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">MITRE ATLAS</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Adversarial threat landscape</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Adversarial threat landscape</span>
         </div>
-        <p class="mt-1 text-xs text-muted">MITRE ATLAS (Adversarial Threat Landscape for Artificial Intelligence Systems) &middot; MITRE Corporation</p>
-        <p class="mt-3 text-sm text-muted">MITRE ATLAS is an ATT&amp;CK-style knowledge base of adversarial AI tactics, techniques, and real-world case studies (14 tactics, 50+ techniques), and AITBM serves as its quantification layer, converting each tactic/technique into a 0-10 ERS with multi-dimensional IVP profiles, ORP amplification, and ACI temporal decay.</p>
+        <p class="mt-1 text-xs text-muted">MITRE ATLAS data v2026.06 &middot; MITRE Corporation</p>
+        <p class="mt-3 text-sm text-muted">The current released basis contains 16 tactics, 103 top-level techniques plus 70 sub-techniques, 35 mitigations, and 63 case studies. This AITBM-authored crosswalk routes ATLAS elements to assessment evidence; no tactic, technique, mitigation, or case study has a deployment-independent ERS.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
-              <th class="px-4 py-3 text-left">ATLAS Tactic</th>
-              <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Released ATLAS Tactic</th>
+              <th class="px-4 py-3 text-left">Primary AITBM Targets</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Boundary</th>
             </tr></thead>
             <tbody class="text-muted">
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0002 Initial Access</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span></span></td><td class="px-4 py-3">ERS 7.0-8.5</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0003 ML Attack Staging</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td><td class="px-4 py-3">ERS 7.5-9.5</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0004 Execution</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span></span></td><td class="px-4 py-3">ERS 7.0-9.0</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0006 Privilege Escalation</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">ERS 8.0-9.5</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0007 Defense Evasion</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">ERS 7.0-8.5</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0008 Credential Access</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span></span></td><td class="px-4 py-3">ERS 8.5-9.5</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0011 ML Model Access</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">ERS 7.5-9.0</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0012 Exfiltration</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">ERS 8.0-10.0</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0013 Impact</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td><td class="px-4 py-3">ERS 8.0-10.0</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0000 AI Model Access</span></td><td class="px-4 py-3">Pr-1, Pr-2, Tr-4; As</td><td class="px-4 py-3">Model-access paths select leakage, inference, lineage, and exposure tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0001 AI Attack Staging</span></td><td class="px-4 py-3">Ro-1, Ro-4, Tr-4</td><td class="px-4 py-3">Selects adversarial-input, poisoning, and provenance tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0002 Reconnaissance</span></td><td class="px-4 py-3">Tr-3, Tr-4; As</td><td class="px-4 py-3">Informs probing visibility and discoverable-origin evidence</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0003 Resource Development</span></td><td class="px-4 py-3">Ro-4, Tr-4; ACI Pc</td><td class="px-4 py-3">Identifies malicious artifacts and provenance paths to test</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0004 Initial Access</span></td><td class="px-4 py-3">Cn-1, Cn-5, Pr-2; As</td><td class="px-4 py-3">Selects trust-boundary, identity, and exposed-entry tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0005 Execution</span></td><td class="px-4 py-3">Cn-1, Cn-2, Cn-3, Cn-6; Aa</td><td class="px-4 py-3">Selects tool authority, output release, escalation, and action-gating tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0006 Persistence</span></td><td class="px-4 py-3">Cn-2, Cn-5, Tr-3; Rf</td><td class="px-4 py-3">Selects persistent-state, credential, audit, eviction, and recovery tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0007 Defense Evasion</span></td><td class="px-4 py-3">Cn-3, Cn-4, Tr-2, Tr-3; ACI C_monitor</td><td class="px-4 py-3">Selects bypass, detection-evasion, logging, and monitoring-health tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0008 Discovery</span></td><td class="px-4 py-3">Pr-1, Pr-2, Tr-4; As</td><td class="px-4 py-3">Selects model, data, service, and exposure discovery tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0009 Collection</span></td><td class="px-4 py-3">Pr-1, Pr-3, Pr-4; Tr-3</td><td class="px-4 py-3">Selects collection, minimization, re-identification, and audit tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0010 Exfiltration</span></td><td class="px-4 py-3">Pr-1, Pr-4, Cn-1, Cn-3; Tr-3</td><td class="px-4 py-3">Selects leakage, egress-boundary, release-gate, and detection tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0011 Impact</span></td><td class="px-4 py-3">Ro-2, Ro-3, Ro-4; Cp, Rf</td><td class="px-4 py-3">Selects integrity, availability, behavior, cascade, and recovery tests; Cp remains graph-derived</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0012 Privilege Escalation</span></td><td class="px-4 py-3">Cn-1, Cn-2, Cn-5, Cn-6</td><td class="px-4 py-3">Selects authority, delegated-identity, escalation, and gating tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0013 Credential Access</span></td><td class="px-4 py-3">Cn-5, Pr-2, Tr-3</td><td class="px-4 py-3">Selects token, key, workload-identity, and credential-use tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0014 Command and Control</span></td><td class="px-4 py-3">Cn-1, Cn-2, Tr-3; As</td><td class="px-4 py-3">Selects outbound-control, session, egress, and command-channel tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0015 Lateral Movement</span></td><td class="px-4 py-3">Cn-1, Cn-2, Cn-5; Cp</td><td class="px-4 py-3">Selects segmentation, delegated-access, identity, and graph-reachability tests</td></tr>
             </tbody>
           </table>
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>Technique-level scoring spans the full range: AML.T0051 LLM Prompt Injection at ERS 8.8 and AML.T0018 Backdoor ML Model at ERS 9.1, with controls typically cutting 4-6 ERS points.</li>
-                <li>The emerging MCP technique Agent Identity Spoofing scores Cn-5=0.00 and ERS 9.7, and remediating Cn-5 to full PKI/SPIFFE (1.00) yields a 6.9-point drop, the single largest remediation impact in the framework, validating Cn-5.</li>
-                <li>Case-study retrospectives align with real severities: CVE-2025-32711 EchoLeak (CVSS 9.3 per Microsoft; NVD base 7.5) scores ERS 8.0 and the postmark-mcp supply-chain backdoor scores ERS 8.7, both driven by Containment/Cn-5 collapse and reaching the N=4 CRM cap of 1.60.</li>
-                <li>ATLAS has thin coverage of Fairness/Transparency attacks; AITBM fills this with the Fa axis (e.g., AML.T0048 Societal Harm maps to Fa-1/Fa-2/Fa-3) and adds ACI temporal-freshness decay the static ATLAS catalogue lacks.</li>
+          <li>All 16 tactics in released data v2026.06 are accounted for; technique examples in the detailed mapping are illustrative, not a complete 173-technique crosswalk.</li>
+          <li>ATLAS provides threat and case-study context. AITBM scores only measured deployment evidence under its own rubrics and current Section 5 formula.</li>
+          <li>The main ATLAS data pointer stages 2026.07 data, but no corresponding release or tag existed at the 2026-08-02 access time; the published basis remains v2026.06.</li>
+          <li>AITBM does not create ATLAS-style identifiers for emerging MCP or agentic patterns and does not imply MITRE endorsement.</li>
         </ul>
-        <p class="mt-4 text-sm"><a href="https://atlas.mitre.org/" class="font-semibold text-navy hover:underline underline-offset-4">MITRE ATLAS reference &rarr;</a></p>
+        <p class="mt-4 text-sm"><a href="https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.06" class="font-semibold text-navy hover:underline underline-offset-4">MITRE ATLAS v2026.06 reference &rarr;</a></p>
       </article>
-      <article id="aiuc-1" class="rounded-xl border border-gray-200 p-6">
+      <article id="aiuc-1" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">AIUC-1</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Certification + insurance standard for AI agents</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Certification + insurance standard for AI agents</span>
         </div>
         <p class="mt-1 text-xs text-muted">AIUC-1 (Artificial Intelligence Underwriting Company Standard 1) &middot; Artificial Intelligence Underwriting Company (AIUC)</p>
-        <p class="mt-3 text-sm text-muted">AIUC-1 is a pass/fail, Lloyd&#x27;s-insured certification standard for AI agents that attests controls have been independently verified; AITBM adds the quantitative, multi-dimensional, confidence-graded risk score (IVP/ORP/ACI to ERS) that a binary certificate cannot express.</p>
+        <p class="mt-3 text-sm text-muted">AIUC-1 is a pass/fail, Lloyd&#x27;s-insured certification standard for AI agents. Its July 15, 2026 edition has 51 active requirements (43 mandatory and 8 optional); current total control counts are not published. AITBM adds a quantitative, multi-dimensional, confidence-graded risk score that a binary certificate does not express.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">AIUC-1 Domain</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">A - Data &amp; Privacy (7 req / 20 controls)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span></span></td><td class="px-4 py-3">Data sensitivity raises deployment tier</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">B - Security (9 req / 29 controls)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">B001 quarterly adversarial test feeds Ro-1 ASR</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">C - Safety (12 req / 29 controls)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td><td class="px-4 py-3">C003 bias testing feeds fairness rubrics</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">D - Reliability (4 req / 10 controls)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">D002 hallucination rate is direct Ro-3 input; quarterly resets ACI Tf</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">E - Accountability (17 req / 37 controls)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">E015 logging feeds Tr-3; improves ORP Rf</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">F - Society (2 req / 4 controls)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">Catastrophic-misuse exposure informs tier + ACI threat override</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">A - Data &amp; Privacy (8 requirements)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span></span></td><td class="px-4 py-3">Verified privacy and data-handling evidence may support the listed rubrics; the domain does not assign a tier</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">B - Security (10 requirements)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">Current adversarial-test evidence may support Ro-1 when coverage and effectiveness requirements are met</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">C - Safety (12 requirements)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td><td class="px-4 py-3">Measured safety and bias-test evidence may support applicable Cn, Fa, and Ro rubrics</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">D - Reliability (4 requirements)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">D002 testing may support Ro-3 and may refresh covered Tf evidence when AITBM admissibility rules are met</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">E - Accountability (15 requirements)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">Current accountability and logging evidence may support Tr-3/Tr-4 and inform Rf</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">F - Society (2 requirements)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">Misuse scenarios provide assessment context; they do not assign a tier or ACI cap automatically</td></tr>
             </tbody>
           </table>
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>AIUC-1 validates AITBM&#x27;s residual-risk floor (alpha=0.15): its entire insurance business model exists because controls cannot eliminate AI-agent risk, encoding the same truth financially that AITBM encodes mathematically.</li>
+                <li>AIUC-1&#x27;s insurance mechanism and AITBM&#x27;s residual-risk floor address different questions: risk transfer versus risk quantification. Their coexistence is conceptually consistent with non-zero residual risk, but it does not validate AITBM&#x27;s selected alpha=0.15 value.</li>
                 <li>The official AIVSS-AIUC-1 crosswalk maps only about two controls each to Agent Identity Impersonation (E016, F001) and Multi-Agent Orchestration (B006, E010); this coverage is thin and policy-and-disclosure oriented rather than a graduated cryptographic-identity rubric - the depth that AITBM&#x27;s Cn-5 (Agent Identity Integrity) and agentic/MCP weighting add.</li>
-                <li>AIUC-1&#x27;s quarterly third-party re-testing cadence (B001, C010, D002, D004) is a natural BBD/ACI refresh trigger: each quarterly report resets Temporal Freshness (Tf) for covered sub-metrics, complementing AITBM&#x27;s continuous temporal decay versus AIUC-1&#x27;s mechanical 12-month validity.</li>
+                <li>AIUC-1&#x27;s quarterly third-party re-testing cadence can provide refresh evidence for covered sub-metrics. Tf resets only when the report satisfies the applicable AITBM evidence-quality, coverage, and event rules.</li>
                 <li>Division of labor mirrors AISVS: AIUC-1 answers whether controls are implemented/verified and who pays if they fail (binary cert + Lloyd&#x27;s-backed insurance up to $50M); AITBM answers how risky the system is, across dimensions, with what confidence, over time.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://aiuc.com" class="font-semibold text-navy hover:underline underline-offset-4">AIUC-1 reference &rarr;</a></p>
       </article>
-      <article id="aidefend" class="rounded-xl border border-gray-200 p-6">
+      <article id="aidefend" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">AIDEFEND</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Defensive technique catalogue</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Defensive technique catalogue</span>
         </div>
         <p class="mt-1 text-xs text-muted">AIDEFEND (AI Defense Framework) &middot; Edward Lee (independent, community-driven; CC BY 4.0)</p>
-        <p class="mt-3 text-sm text-muted">AIDEFEND is an open-source catalogue of 92 defensive techniques across 7 tactics (aligned to MITRE D3FEND) answering what controls should exist; AITBM provides a complementary quantification layer that translates each deployed control into a measurable change in a multi-dimensional risk score (ERS).</p>
+        <p class="mt-3 text-sm text-muted">AIDEFEND is an independent open-source catalogue of 92 defensive techniques across seven D3FEND-inspired tactics. AITBM maps verified implementation and effectiveness evidence to applicable rubrics; a technique has no inherent anchor or fixed ERS reduction.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">AIDEFEND Tactic</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Model (10 techniques)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td><td class="px-4 py-3">AID-M-009 Autonomy Governance: -5.4 ERS</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Harden (37 techniques)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td><td class="px-4 py-3">AID-H-018 Permission Restriction: -5.8 ERS (top control)</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Detect (18 techniques)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">AID-D-011 Agent Behavior Monitoring: -3.6 ERS</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Model (10 techniques)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td><td class="px-4 py-3">AID-M-009 may supply authority, scope, identity, and action-gating evidence</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Harden (37 techniques)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td><td class="px-4 py-3">AID-H-018 may supply measured permission-enforcement evidence</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Detect (18 techniques)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">AID-D-011 may supply behavior, containment, audit, and monitoring evidence</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Isolate (8 techniques)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span></span></td><td class="px-4 py-3">Primarily reduces ORP/CRM, not IVP</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Deceive (7 techniques)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">Honeypots: modest -0.7 ERS, high detection ROI</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Deceive (7 techniques)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">Decoy telemetry may support detection and audit evidence; no fixed ERS change</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Evict (5 techniques)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">AID-E-005 auto session termination lowers ORP Rf</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Restore (7 techniques)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">AID-R-001 versioning/rollback improves ORP Rf</td></tr>
             </tbody>
@@ -440,11 +468,12 @@
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>Agentic containment controls (Cn-1, Cn-2, Cn-5, Cn-6) deliver the highest risk reduction: the 6 agentic-focused techniques account for ~55% of total ERS-reduction capacity; the top two controls (AID-H-018 Permission Restriction -5.8, AID-M-009 Autonomy Governance -5.4) both validate Cn-5.</li>
-                <li>Worked example (financial-services agentic RAG, Tier I): a 12-control AIDEFEND stack drops ERS from 9.7 (Critical MVT) to 3.2 (Low-Moderate), a -6.5 / 67% reduction, with IVP +113%, CRM 1.60 to 1.00, and ACI +125%.</li>
+                <li>In the AIDEFEND worked scenario, agentic containment controls (Cn-1, Cn-2, Cn-5, Cn-6) deliver the highest modeled risk reduction: the six agentic-focused techniques account for approximately 55% of the scenario&#x27;s ERS-reduction capacity. AID-H-018 Permission Restriction (-5.8) and AID-M-009 Autonomy Governance (-5.4) provide high-leverage containment evidence, including Cn-5 and Cn-6.</li>
+                <li>The AIDEFEND worked example is a dated scenario, not a control-to-score conversion. Its prior-basis Cp and ERS arithmetic are retained under the worked-example policy; current assessments use GDCP, Cn-6, BAW, and Section 5.</li>
                 <li>Drift/anomaly detection (AID-D-002) and Restore techniques are essential for sustaining the ACI Temporal Freshness (Tf) and ORP Remediation Feasibility (Rf) components, linking controls to AITBM&#x27;s temporal model.</li>
                 <li>AIDEFEND has weak Fairness coverage (only ~2 of the catalog's techniques address bias/fairness), a flagged gap; the AITBM mapping is reconciled against data version 2026.07.28 (92 techniques, 265 sub-techniques; July 30, 2026), superseding the prior 2026.07.04 basis (88 techniques). The 2026.07.28 release retired old AID-H-010 Transformer Architecture Defenses (removed from the Ro-1 list) and renumbered the entire Harden tail down one slot — AIDEFEND IDs are stable only within a data version, and every ID cited here is on the 2026.07.28 basis. The reconciliation adds AID-D-018 Production AI-Security Detection Efficacy &amp; Scenario-Coverage Validation (Tr-3 + ACI monitoring evidence), AID-H-036 Multilingual &amp; Locale-Stratified Prompt Safety Classifier Evaluation (Ro-1/Cn-3), AID-H-037 Reasoning-State Security &amp; Compute Controls (Cn-3/Cn-4), and AID-R-007 External Side-Effect Reconciliation &amp; Compensation (Cn-6).</li>
-                <li>The mapping now spans 140 sub-metric mappings using 69 distinct techniques (average ≈6.4 per sub-metric), covering all 22 AITBM sub-metrics; the Cn-6 (Action Reversibility Classification Rate) mapping now spans eight techniques — AID-M-006 Human-in-the-Loop Control Design &amp; Readiness, AID-M-009 Agent Autonomy &amp; Authority Governance, AID-H-018 Tool Authorization &amp; Capability Scoping, AID-H-034 MCP Server Runtime Boundary &amp; Tool Exposure Governance, AID-H-035 Defensive-Agent &amp; Response-Automation Hardening, AID-D-011 Registered Agent Behavior, Interaction &amp; Identity-Abuse Detection, AID-D-015 High-Risk Approval Bypass &amp; HITL Activity Detection, and AID-R-007 External Side-Effect Reconciliation &amp; Compensation.</li>
+                <li>The mapping now spans 152 sub-metric mappings using 76 distinct techniques (average ≈6.9 per sub-metric, range 3&ndash;15), covering all 22 AITBM sub-metrics; the Cn-6 (Action Reversibility Classification Rate) mapping now spans nine techniques — AID-M-006 Human-in-the-Loop Control Design &amp; Readiness, AID-M-009 Agent Autonomy &amp; Authority Governance, AID-H-018 Tool Authorization &amp; Capability Scoping, AID-H-034 MCP Server Runtime Boundary &amp; Tool Exposure Governance, AID-H-035 Defensive-Agent &amp; Response-Automation Hardening, AID-D-011 Registered Agent Behavior, Interaction &amp; Identity-Abuse Detection, AID-D-015 High-Risk Approval Bypass &amp; HITL Activity Detection, AID-I-003 Quarantine &amp; Throttling of AI Interactions, and AID-R-007 External Side-Effect Reconciliation &amp; Compensation.</li>
+                <li>A coverage extension at the same data version (July 30, 2026) maps seven further previously unmapped techniques — AID-H-019 Safe Fetch &amp; Web Content Admission for Agents, AID-H-022 Dependency Change Vetting &amp; Sandboxed Installation, AID-H-023 Publisher Integrity &amp; Workflow Hardening, AID-I-003 Quarantine &amp; Throttling of AI Interactions, AID-I-007 Client-Side AI Execution Isolation, AID-M-005 AI Secure Configuration Baselines &amp; Release Gates, and AID-DV-002 Honey Data, Decoy Artifacts &amp; Canary Tokens for AI — completing Model-tactic utilization at 10 of 10 and raising Harden to 35 of 37, Isolate to 6 of 8, and Deceive to 2 of 7; AID-E-004 and AID-R-004 were evaluated and recorded as ORP (Remediation Feasibility) and ACI evidence with no sub-metric placement.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://aidefend.net/" class="font-semibold text-navy hover:underline underline-offset-4">AIDEFEND reference &rarr;</a></p>
       </article>
@@ -457,19 +486,19 @@
       <h2 class="text-3xl font-bold text-navy">Tier 2 — High-priority frameworks</h2>
       <p class="mt-3 text-muted max-w-3xl">Governance, risk-management, and regulatory regimes with significant complementary scope.</p>
       <div class="mt-8 grid gap-6">
-      <article id="nist-ai-rmf" class="rounded-xl border border-gray-200 p-6">
+      <article id="nist-ai-rmf" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">NIST AI RMF</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Risk management framework</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Risk management framework</span>
         </div>
         <p class="mt-1 text-xs text-muted">NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0) &middot; National Institute of Standards and Technology (NIST), U.S. Department of Commerce</p>
-        <p class="mt-3 text-sm text-muted">The NIST AI RMF is a voluntary, qualitative governance framework that names seven trustworthiness characteristics and a MEASURE function but prescribes no metrics; AITBM supplies the deterministic quantitative measurement instrument (22 rubrics, IVP/ORP/ACI to ERS) that the MEASURE function calls for but does not itself provide.</p>
+        <p class="mt-3 text-sm text-muted">The NIST AI RMF is a voluntary governance framework that names seven trustworthiness characteristics and a MEASURE function without prescribing one universal scoring method. AITBM is one possible technical measurement companion, using 22 rubrics and IVP/ORP/ACI to produce a system-specific ERS.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">RMF Trustworthiness Characteristic</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Valid and Reliable</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span></span></td><td class="px-4 py-3">Foundational; affects all axes</td></tr>
@@ -484,53 +513,48 @@
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>MEASURE is the decisive interface: the AI RMF deliberately under-specifies measurement (no score, no thresholds, no aggregation), and AITBM fills exactly that gap, mapping the 4 Core functions to its workflow (GOVERN to tier/pathway + Tr-3/ORP Rf; MAP to architecture preset + ORP As/Cp; MEASURE to IVP + ACI Ec; MANAGE to ERS sensitivity + ACI decay).</li>
+                <li>MEASURE is the principal integration interface in this crosswalk. The AI RMF does not mandate a score, thresholds, or aggregation method; AITBM offers one compatible implementation by mapping GOVERN to tier/pathway and Tr-3/ORP Rf, MAP to architecture and ORP As/Cp, MEASURE to IVP and ACI Ec, and MANAGE to ERS sensitivity and ACI decay.</li>
                 <li>AI RMF 1.0 does not specifically address agent identity/impersonation; AITBM&#x27;s Cn-5 (Agent Identity Integrity) covers this frontier gap and should be scored explicitly for Agentic-MCP systems even when the RMF assessment is silent.</li>
                 <li>AITBM&#x27;s deterministic rubrics narrow inter-assessor variance and make MEASURE outputs comparable across teams/systems/time (it narrows variance, it does not eliminate it), and its ACI temporal decay supplies the decay model the RMF&#x27;s continuous-monitoring expectation lacks.</li>
-                <li>Worked example (Agentic-MCP bank assistant, RMF done as process only): AITBM converts a qualitative &#x27;treatment in progress&#x27; into ERS 7.1 (High) to 2.9 (Low) after sensitivity-ranked remediation, with the residual floor (alpha=0.15) preventing a zero score; Containment (Cn-5, Cn-1) is the dominant weakness at 45% agentic weight.</li>
+                <li>The NIST AI RMF worked example is retained on its dated 21-sub-metric, pre-GDCP basis. A current assessment must derive Cn-6, Cp, ACI, and ERS under the current specification.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://www.nist.gov/itl/ai-risk-management-framework" class="font-semibold text-navy hover:underline underline-offset-4">NIST AI RMF reference &rarr;</a></p>
       </article>
-      <article id="iso-42001" class="rounded-xl border border-gray-200 p-6">
+      <article id="iso-42001" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">ISO/IEC 42001 &amp; 42005</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">AI management system</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Management system and impact assessment</span>
         </div>
-        <p class="mt-1 text-xs text-muted">ISO/IEC 42001:2023 (with ISO/IEC 42005:2025 impact assessment) &middot; ISO/IEC JTC 1/SC 42</p>
-        <p class="mt-3 text-sm text-muted">ISO/IEC 42001 certifies an organization&#x27;s AI management system and ISO/IEC 42005 structures a per-system impact assessment, while AITBM adds the quantitative, multi-dimensional, time-aware residual-risk measurement (IVP/ORP/ACI to ERS) those processes call for but do not themselves produce.</p>
+        <p class="mt-1 text-xs text-muted">ISO/IEC 42001:2023 &middot; ISO/IEC 42005:2025 &middot; ISO/IEC 42006:2025</p>
+        <p class="mt-3 text-sm text-muted">ISO/IEC 42001 specifies an AI management system and ISO/IEC 42005 provides AI system impact-assessment guidance. This public-scope AITBM crosswalk does not reproduce the licensed normative text and does not claim clause-by-clause or control-by-control completeness.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
-              <th class="px-4 py-3 text-left">ISO 42001 Annex A Control Objective</th>
-              <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Publicly Described ISO Scope / Evidence</th>
+              <th class="px-4 py-3 text-left">Primary AITBM Relationship</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Boundary</th>
             </tr></thead>
             <tbody class="text-muted">
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">A.2 Policies related to AI</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td><td class="px-4 py-3">Sets autonomy and scope baseline; tier selection</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">A.5 Assessing impacts of AI systems</span></td><td class="px-4 py-3">ORP Cp, ACI Pc</td><td class="px-4 py-3">Anchors ERS severity band; bridges to ISO/IEC 42005</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">A.6 AI system life cycle</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td><td class="px-4 py-3">V&amp;V and monitoring raise robustness and freshness</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">A.7 Data for AI systems</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td><td class="px-4 py-3">Data controls feed privacy, representation, poisoning resistance</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">A.8 Information for interested parties</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">Disclosures and model cards raise transparency</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">A.9 Use of AI systems</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">Human oversight and use boundaries raise containment, lower Aa</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">A.10 Third-party and customer relationships</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td><td class="px-4 py-3">Supply-chain lineage, poisoning resistance, cascade scope</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">42005 Severity rating (1-5)</span></td><td class="px-4 py-3">ORP Cp</td><td class="px-4 py-3">Sets the expected ERS severity band</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">42005 impact-assessment record (whole)</span></td><td class="px-4 py-3">ACI Pc, ACI Tf</td><td class="px-4 py-3">First-class provenance evidence; monitoring sustains freshness</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Establishing and implementing an AI management system</span></td><td class="px-4 py-3">Tr-3, Tr-4; ACI provenance context</td><td class="px-4 py-3">Approved ownership and operating records may support applicable criteria; management-system existence is not proof of technical effectiveness</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Maintaining and continually improving an AI management system</span></td><td class="px-4 py-3">Rf; ACI event, coverage, freshness, and monitoring context</td><td class="px-4 py-3">Exercised corrective-action, reassessment, evaluation, and telemetry records remain subject to AITBM evidence rules</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AI system impact assessment</span></td><td class="px-4 py-3">SDG inputs for graph-derived Cp; Rf; ACI provenance</td><td class="px-4 py-3">Dependencies, affected parties, harm scenarios, reversibility, and mitigations may inform the assessment; impact labels do not set Cp or ERS</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Management-system audit and certification evidence</span></td><td class="px-4 py-3">Tr-3 and ACI provenance/independence context</td><td class="px-4 py-3">Certification artifacts may support provenance when applicable; certification is not an AITBM score and does not attest every technical rubric</td></tr>
             </tbody>
           </table>
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>Neither ISO standard contains an agentic-identity control, so AITBM&#x27;s Cn-5 (Agent Identity Integrity) measures a blind spot ISO governance cannot close - in the agentic underwriting worked example Cn-5=0.25 is the single largest drag on the agentic-weighted Containment axis.</li>
-                <li>ISO/IEC 42005 deliberately refuses to collapse impact into one score, mirroring AITBM&#x27;s architecture (IVP preserves five-axis signal; ORP and ACI stay separate) - AITBM is the quantitative impact-assessment instrument 42005 conceptually calls for.</li>
-                <li>ISO certification raises confidence in the evidence chain (better ACI Pc/Ec/Tf) but never lowers a system&#x27;s intrinsic risk; the alpha=0.15 residual-risk floor applies regardless of certification.</li>
-                <li>AITBM is not an accredited certification and defines no governance clauses; ISO produces no quantitative ERS, no temporal-decay model, and no architecture-specific weighting - the two are genuinely complementary at different altitudes.</li>
+          <li>ISO conformity, certification status, and impact ratings do not automatically change an IVP anchor, ORP value, ACI value, or ERS.</li>
+          <li>Cp remains graph-derived under GDCP; impact-assessment records may populate and verify the SDG but never directly assign Cp or an ERS band.</li>
+          <li>AITBM does not determine ISO conformity or certification and is not specified or endorsed by ISO or IEC.</li>
+          <li>EN ISO/IEC 42001:2026 is a European adoption identical to ISO/IEC 42001:2023, not a new ISO edition.</li>
         </ul>
-        <p class="mt-4 text-sm"><a href="https://www.iso.org/standard/42001" class="font-semibold text-navy hover:underline underline-offset-4">ISO/IEC 42001 &amp; 42005 reference &rarr;</a></p>
+        <p class="mt-4 text-sm"><a href="https://www.iso.org/standard/81230.html" class="font-semibold text-navy hover:underline underline-offset-4">ISO/IEC 42001 reference &rarr;</a></p>
       </article>
-      <article id="eu-ai-act" class="rounded-xl border border-gray-200 p-6">
+      <article id="eu-ai-act" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">EU AI Act</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Regulatory framework (binding law)</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Regulatory framework (binding law)</span>
         </div>
         <p class="mt-1 text-xs text-muted">Artificial Intelligence Act - Regulation (EU) 2024/1689 &middot; European Union (European Parliament and Council of the EU)</p>
         <p class="mt-3 text-sm text-muted">The EU AI Act is binding law establishing risk tiers and provider obligations enforced through conformity assessment and CE marking, while AITBM is a technical-risk quantification framework that helps providers prioritise and evidence the Act&#x27;s Article 9 and Article 15 technical duties without ever certifying legal conformity.</p>
@@ -539,63 +563,63 @@
             <thead><tr>
               <th class="px-4 py-3 text-left">EU AI Act Obligation</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Risk-management system</span></td><td class="px-4 py-3">Whole IVP, ORP, ERS</td><td class="px-4 py-3">Full AITBM assessment re-run on tier cadence</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Risk-management system</span></td><td class="px-4 py-3">Whole IVP, ORP, ERS</td><td class="px-4 py-3">May trigger a deployment-specific reassessment; the legal duty does not set an AITBM cadence</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Data and data governance</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span></span></td><td class="px-4 py-3">Dataset bias and representation testing; minimisation</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Technical documentation (Annex IV)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">Model lineage; documentation completeness</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Record-keeping (logging)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">Audit-trail coverage and tamper-evidence</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Transparency to deployers</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-1</span></span></td><td class="px-4 py-3">Explainability depth; instructions for use</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Human oversight</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">Intervention/override controls lower autonomy</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Human oversight</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">Intervention and override evidence informs the Aa authority assessment</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Accuracy, robustness and cybersecurity</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span></span></td><td class="px-4 py-3">Attack-success-rate; shift/consistency; security controls</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Limited-risk transparency obligations</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">AI-interaction disclosure; synthetic-content labelling</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">GPAI systemic-risk assessment</span></td><td class="px-4 py-3">ORP Cp, ORP Aa</td><td class="px-4 py-3">Systemic risk maps to cascade potential, elevating CRM</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">GPAI systemic-risk assessment</span></td><td class="px-4 py-3">ORP Cp, ORP Aa</td><td class="px-4 py-3">Risk scenarios and dependency evidence feed the SDG; Cp remains graph-derived</td></tr>
             </tbody>
           </table>
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
                 <li>The EU AI Act is binding law and AITBM is not: a favourable ERS does not certify conformity, replace conformity assessment, CE marking, or registration, and carries no legal standing - AITBM only supports the conformity dossier as a due-diligence artifact.</li>
-                <li>Legal tier and technical risk are different axes: the transparency-tier agentic customer-service assistant scores ERS 5.2 (Moderate), higher than the high-risk CV-screening system at 4.9, because weak Containment (Cn-1/Cn-2/Cn-5) plus elevated autonomy and attack surface make it technically riskier despite a lighter legal burden.</li>
-                <li>AITBM converts the Act&#x27;s qualitative &#x27;appropriate / state-of-the-art&#x27; expectations under Article 9 and Article 15 into deterministic 0.00-1.00 rubric scores, and ACI temporal decay forcing re-measurement directly evidences the Act&#x27;s continuous-risk-management and post-market-monitoring requirements.</li>
-                <li>The Act is technology-neutral and predates agentic/MCP identity threats, so it largely lacks the Cn-5 agent-identity-integrity and architecture-specific weighting that AITBM provides; the Digital Omnibus political agreement (7 May 2026) defers high-risk start dates but leaves transparency obligations intact.</li>
+                <li>The dated legal-tier comparison illustrates that legal classification and technical risk are separate. Its displayed scores retain their historical basis; a current assessment must recompute all AITBM inputs under the current specification.</li>
+                <li>This crosswalk routes evidence relevant to Articles 9 and 15 into applicable 0.00-1.00 technical rubrics. The Act does not specify AITBM, and AITBM results do not establish compliance with risk-management or post-market-monitoring duties.</li>
+                <li>The Act is technology-neutral and does not prescribe AITBM&#x27;s Cn-5 agent-identity metric or architecture-specific weighting. Regulation (EU) 2026/1744, published July 24 and in force July 27, 2026, defers Annex III high-risk duties to December 2, 2027 and Article 6(1)/Annex I duties to August 2, 2028, except Article 6(5). Article 50 generally applies from August 2, 2026, with a December 2, 2026 transition for Article 50(2) on generative systems already marketed before that date.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" class="font-semibold text-navy hover:underline underline-offset-4">EU AI Act reference &rarr;</a></p>
       </article>
-      <article id="csa-ai" class="rounded-xl border border-gray-200 p-6">
+      <article id="csa-ai" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">CSA AI Security</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Cloud AI security framework (threat model + controls)</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Cloud AI security framework (threat model + controls)</span>
         </div>
         <p class="mt-1 text-xs text-muted">CSA AI Security (MAESTRO + AI Controls Matrix) &middot; Cloud Security Alliance (CSA)</p>
-        <p class="mt-3 text-sm text-muted">CSA supplies cloud-specific AI security via MAESTRO (7-layer agentic threat taxonomy) and the AI Controls Matrix (v1.1: 18 domains / 247 control objectives; the AITBM mapping is anchored to the 243-objective v1.0 baseline); AITBM quantifies MAESTRO threats into IVP sub-metric scores and maps AICM controls into ORP/CRM, adding a deterministic 0-10 ERS and temporal decay for cloud deployments.</p>
+        <p class="mt-3 text-sm text-muted">CSA supplies cloud-specific AI security through MAESTRO&#x27;s seven-layer threat model and AICM v1.1&#x27;s 247 control objectives across 18 domains. This crosswalk routes CSA evidence into AITBM&#x27;s IVP, current Aa/As/Cp/Rf operational dimensions, and ACI. A CSA threat, control, domain, or maturity level never has an inherent ERS value or fixed ERS reduction.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">MAESTRO Layer / AICM Domain</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L1 Foundation Models</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td><td class="px-4 py-3">Unmitigated ERS ~8.1 (High)</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L2 Data Operations</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span></span></td><td class="px-4 py-3">Multi-tenant vector DB ~7.9 (High)</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L3 Agent Frameworks</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td><td class="px-4 py-3">Tool misuse ~9.2 (Critical) to 5.3 mitigated</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L4 Deployment &amp; Infrastructure</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span></span></td><td class="px-4 py-3">Multi-tenant GPU side-channel ~8.1 to 4.0</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L5 Evaluation &amp; Observability</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">Weak observability ~7.2 (High)</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L6 Security &amp; Compliance</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">Strong controls cut CRM 1.35 to 1.15</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L7 Agent Ecosystem</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td><td class="px-4 py-3">Multi-agent collusion ~8.4 (High) to 6.0</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L1 Foundation Models</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">Model-level attack paths and provenance evidence</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L2 Data Operations</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">Training, retrieval, memory, data-flow, and SDG evidence</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L3 Agent Frameworks</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td><td class="px-4 py-3">Tool authority, identity, execution, and action-gating evidence; also informs Aa</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L4 Deployment &amp; Infrastructure</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span></span></td><td class="px-4 py-3">Exposure informs As; dependencies feed graph-derived Cp; recovery evidence informs Rf</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L5 Evaluation &amp; Observability</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">Supports ACI Ec, Tf, C_monitor, and C_behavior when effectiveness is verified</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L6 Security &amp; Compliance</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">Policies and records can support IVP, ACI, and Rf; no retired controls-maturity dimension</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">L7 Agent Ecosystem</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td><td class="px-4 py-3">External-agent identity, authority, behavioral, As, and SDG evidence</td></tr>
             </tbody>
           </table>
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>MAESTRO Layer 7 (Agent Ecosystem) drives Containment collapse (Cn composite ~0.12, ERS up to 8.4 High); SPIFFE/SPIRE agent-to-agent identity attestation raises Cn-5 from 0.10 to 0.85, directly validating AITBM&#x27;s Cn-5 and its agentic Containment weighting (30-45%).</li>
-                <li>Cloud-specific threats quantified across 4 worked examples: multi-tenant GPU timing/NVBleed (8.1 to 4.0), cross-border data transfer (5.7 to 3.5), AI supply-chain compromise (6.0 to 4.0), and multi-agent collusion (8.4 to 6.0); average AICM-driven reduction ~-2.7 ERS.</li>
-                <li>ORP validation: 7 of 8 CSA cloud risk factors (87.5%) fully covered by AITBM&#x27;s four ORP dimensions; the one gap (supply-chain trust boundary) prompts a proposed ORP Dimension 2 sub-factor.</li>
-                <li>AICM Fairness &amp; Bias Management domain maps to the full AITBM Fairness axis (Fa-1 through Fa-4), and the AIBOM/supply-chain transparency domain feeds the ACI Provenance Completeness (Pc) component.</li>
+                <li>All seven MAESTRO layers and all 18 current AICM domains are routed; this is not a claim that all 247 AICM controls have identical targets or have been individually crosswalked.</li>
+                <li>Multi-tenancy, shared services, and agent marketplaces affect As and the System Dependency Graph; they do not set a generic ERS or Cp value.</li>
+                <li>AICM controls count as AITBM evidence only when the assessed deployment demonstrates the applicable rubric criterion and test method.</li>
+                <li>AISMM maturity levels provide organizational context and are not converted into IVP, ORP, ACI, or ERS values.</li>
         </ul>
-        <p class="mt-4 text-sm"><a href="https://cloudsecurityalliance.org/artifacts/ai-controls-matrix" class="font-semibold text-navy hover:underline underline-offset-4">CSA AI Security reference &rarr;</a></p>
+        <p class="mt-4 text-sm"><a href="https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1" class="font-semibold text-navy hover:underline underline-offset-4">CSA AI Security reference &rarr;</a></p>
       </article>
       </div>
     </div>
@@ -606,23 +630,23 @@
       <h2 class="text-3xl font-bold text-navy">Tier 3 — Specialized frameworks</h2>
       <p class="mt-3 text-muted max-w-3xl">Specialized cyber profiles, maturity models, defensive ontologies, and prior-art scoring systems.</p>
       <div class="mt-8 grid gap-6">
-      <article id="nist-ir8596" class="rounded-xl border border-gray-200 p-6">
+      <article id="nist-ir8596" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">NIST Cyber AI Profile (IR 8596)</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Cyber-AI CSF profile</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Cyber-AI CSF profile</span>
         </div>
         <p class="mt-1 text-xs text-muted">NIST IR 8596 - Cybersecurity Framework Profile for Artificial Intelligence (Cyber AI Profile) &middot; National Institute of Standards and Technology (NIST), with NCCoE and MITRE contributors</p>
-        <p class="mt-3 text-sm text-muted">NIST IR 8596 is a qualitative CSF 2.0 community profile naming which cybersecurity outcomes to pursue when AI is a target, a defensive tool, and an adversary capability, while AITBM supplies the deterministic, multi-dimensional, time-aware ERS that the Profile&#x27;s &#x27;measure/assess&#x27; outcomes leave open.</p>
+        <p class="mt-3 text-sm text-muted">NIST IR 8596 is a qualitative CSF 2.0 community profile naming cybersecurity outcomes to pursue when AI is a target, a defensive tool, and an adversary capability. This AITBM-authored crosswalk offers one multi-dimensional, time-aware way to measure selected outcomes; NIST does not prescribe or endorse ERS.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">Cyber AI Profile Focus Area / CSF Function</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Secure: securing AI systems</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span></span></td><td class="px-4 py-3">ERS 7.0-10.0 if dominant (exposed, autonomous)</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Defend: AI-enabled cyber defense</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td><td class="px-4 py-3">ERS 5.0-7.0 as a scored asset</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Secure: securing AI systems</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span></span></td><td class="px-4 py-3">Select applicable security and exposure tests; no generic ERS</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Defend: AI-enabled cyber defense</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td><td class="px-4 py-3">Assess the AI defender as a system; no generic ERS</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Thwart: thwarting AI-enabled attacks</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-2</span></span></td><td class="px-4 py-3">Drives CRM upward; faster evidence decay</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">GOVERN</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">Governance posture sets assessment depth</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">IDENTIFY</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">Architecture classification; provenance/AIBOM</td></tr>
@@ -635,17 +659,17 @@
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>The Profile&#x27;s principal acknowledged gap - agentic, multi-agent, inter-agent authentication and least-agency - is exactly the territory of AITBM&#x27;s Cn-5 (Agent Identity Integrity) and agentic architecture weighting.</li>
+                <li>The Profile brings agentic, multi-agent, inter-agent authentication, and least-agency outcomes into scope. This crosswalk maps those outcomes to Cn-5 and the agentic architecture profile; the numeric weights remain AITBM design choices.</li>
                 <li>The &#x27;Thwart&#x27; lens flows through ORP (As elevator) and ACI (faster Tf decay) rather than IVP: AI-enabled adversaries should raise Attack Surface Exposure (e.g. 0.50 to 0.80), lifting N_elevated and CRM - operational and temporal dimensions a qualitative profile cannot express numerically.</li>
                 <li>Coverage is strongest where AITBM&#x27;s Robustness and Containment axes live (Secure): 8/22 sub-metrics strong, 8/22 partial, 6/22 gaps (Fa-1, Fa-3, Fa-4, Pr-4, Cn-5, Cn-6); the Fairness axis sits outside a cybersecurity profile&#x27;s scope and DETECT explicitly names model drift (Ro-3) and data poisoning (Ro-4).</li>
-                <li>IR 8596 is a preliminary draft (Dec 16, 2025) with no quantitative score or residual-risk floor; AITBM is the common quantitative denominator that turns its CSF outcomes into a comparable, confidence-graded ERS.</li>
+                <li>IR 8596 remains an Initial Preliminary Draft (December 16, 2025) and does not prescribe a quantitative score or residual-risk floor. This crosswalk shows how AITBM can translate selected CSF outcomes into a comparable, confidence-graded ERS; NIST does not designate AITBM as a common denominator.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://csrc.nist.gov/pubs/ir/8596/iprd" class="font-semibold text-navy hover:underline underline-offset-4">NIST Cyber AI Profile (IR 8596) reference &rarr;</a></p>
       </article>
-      <article id="aima" class="rounded-xl border border-gray-200 p-6">
+      <article id="aima" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">AIMA</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Maturity model</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Maturity model</span>
         </div>
         <p class="mt-1 text-xs text-muted">OWASP AI Maturity Assessment (AIMA) &middot; OWASP Foundation</p>
         <p class="mt-3 text-sm text-muted">OWASP AIMA grades an organization&#x27;s AI-program maturity qualitatively across eight lifecycle domains, while AITBM operationalizes that maturity quantitatively - turning the maturity grade into Tiered Assessment Pathway eligibility and, through the ACI components (Pc/Ec/Tf), into the confidence and freshness of a per-system ERS.</p>
@@ -654,7 +678,7 @@
             <thead><tr>
               <th class="px-4 py-3 text-left">AIMA Domain</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Responsible AI</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-1</span></span></td><td class="px-4 py-3">Fairness/explainability artifacts; raises Ec</td></tr>
@@ -670,97 +694,97 @@
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>AIMA maturity maps to measurement confidence, not intrinsic risk: Level 1 to Lite/ACI ~0.30-0.55, Level 2 to Standard/ACI ~0.55-0.75, Level 3 to Full/ACI ~0.78-0.95 - a high AIMA score never zeros out a system&#x27;s residual risk (alpha=0.15 floor stands), it makes the ERS complete, comparable, and current.</li>
-                <li>The two-org worked example isolates the mechanism: an identical RAG system scores ERS ~4.9 at a Level-1 org versus ~4.0 at a Level-3 org purely through the ACI term (0.45 vs 0.90), since IVP and CRM are held identical - Level-1&#x27;s score is fragile and decays fast while Level-3&#x27;s is tight and self-refreshing.</li>
-                <li>AIMA&#x27;s SAMM-derived streams map cleanly to ACI: &#x27;Measure &amp; Improve&#x27; is a direct Tf/Ec generator and &#x27;Create &amp; Promote&#x27; feeds Pc - this is the CVE/CVSS-vs-drift problem ACI exists to solve, since a one-time deep assessment from an immature org goes stale.</li>
-                <li>The two frameworks barely overlap in output, so they compose cleanly: AIMA grades the organization and process; AITBM measures the deployed system. AIMA v1.0 lacks a quantitative ERS, multi-dimensional profile, ORP/CRM, temporal decay, and an explicit Cn-5 agent-identity practice. (Spot-check flag in source: secondary sources disagree on AIMA&#x27;s maturity-level count and 5-vs-8 domain set; mapping is by domain name so it holds either way.)</li>
+                <li>AIMA maturity provides organizational-process context. It does not assign an AITBM pathway or ACI range; only the system&#x27;s applicable provenance, evaluation, monitoring, and freshness evidence determines those values.</li>
+                <li>The two-organization example is a dated illustration. An AIMA level alone cannot justify its displayed ACI or ERS; a current assessment must score the underlying evidence independently.</li>
+                <li>AIMA practices may produce evaluation, monitoring, and provenance artifacts relevant to ACI. Practice maturity is contextual and never substitutes for AITBM admissibility, coverage, or freshness checks.</li>
+                <li>The frameworks operate at different levels: AIMA assesses organizational maturity and process, while AITBM assesses a deployed system. AIMA v1.0 and Toolkit 1.0.1 use eight lifecycle domains and do not define an ERS, IVP/ORP/ACI profile, or Cn-5 metric.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://owasp.org/www-project-ai-maturity-assessment/" class="font-semibold text-navy hover:underline underline-offset-4">AIMA reference &rarr;</a></p>
       </article>
-      <article id="compass" class="rounded-xl border border-gray-200 p-6">
+      <article id="compass" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">COMPASS</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Security maturity / scoring (threat prioritization workflow)</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Security maturity / scoring (threat prioritization workflow)</span>
         </div>
         <p class="mt-1 text-xs text-muted">OWASP Threat Defense COMPASS &middot; OWASP GenAI Security Project</p>
-        <p class="mt-3 text-sm text-muted">COMPASS supplies a fast OODA-loop threat-prioritization workflow that ranks known AI threats by Impact x Likelihood; AITBM adds the deterministic, multi-dimensional, confidence-graded ERS that quantifies each prioritized row across five axes instead of collapsing it into one priority cell.</p>
+        <p class="mt-3 text-sm text-muted">COMPASS supplies a fast OODA-loop threat-prioritization workflow that ranks known AI threats by Impact x Likelihood. AITBM can complement that workflow with multi-dimensional, confidence-graded system assessment; a COMPASS threat-row priority is not numerically interchangeable with an ERS.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">COMPASS Dimension / Threat Class</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Impact (1-5) dimension</span></td><td class="px-4 py-3">IVP sub-metric severity + ORP Cp</td><td class="px-4 py-3">Input construct; COMPASS blends failure severity with blast radius that AITBM separates</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Likelihood (1-5) dimension</span></td><td class="px-4 py-3">IVP sub-metric exposure + ORP As</td><td class="px-4 py-3">Input construct; maps to exploitability and deployment exposure</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Prompt injection (LLM01)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td><td class="px-4 py-3">ERS 6.5-8.5 (High); adversarial ASR + unauthorized-action rate</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Sensitive disclosure (LLM02)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span></span></td><td class="px-4 py-3">ERS 6.0-8.0 (High); membership-inference / leakage probes</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Excessive agency (LLM06)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">ERS 7.0-9.0 (High-Critical); unauthorized-action + identity-spoofing rate</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Misinformation / hallucination (LLM09)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span></span></td><td class="px-4 py-3">ERS 5.0-7.0 (Moderate-High); hallucination rate + calibration error</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Bias / discriminatory output</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-4</span></span></td><td class="px-4 py-3">ERS 4.5-6.5; demographic-parity + counterfactual-fairness tests</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Agent impersonation / multi-agent trust</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">ERS 7.0-9.0 (High-Critical); identity-spoofing success rate (ISSR), MTTQ</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">OODA cadence (continuous re-run)</span></td><td class="px-4 py-3">ACI Tf (Temporal Freshness)</td><td class="px-4 py-3">Each re-run resets Tf; BBD decay erodes confidence between runs</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Prompt injection (LLM01)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td><td class="px-4 py-3">Adversarial ASR and unauthorized-action evidence; no generic ERS</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Sensitive disclosure (LLM02)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span></span></td><td class="px-4 py-3">Membership-inference and leakage evidence; no generic ERS</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Excessive agency (LLM06)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">Unauthorized-action and identity-spoofing evidence; no generic ERS</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Misinformation / hallucination (LLM09)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span></span></td><td class="px-4 py-3">Hallucination-rate and calibration evidence; no generic ERS</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Bias / discriminatory output</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-4</span></span></td><td class="px-4 py-3">Demographic-parity and counterfactual-fairness evidence; no generic ERS</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Agent impersonation / multi-agent trust</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">ISSR and MTTQ evidence; no generic ERS</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">OODA cadence (continuous re-run)</span></td><td class="px-4 py-3">ACI Tf (Temporal Freshness)</td><td class="px-4 py-3">A qualifying re-run may refresh Tf for covered evidence; AITBM admissibility and event rules govern</td></tr>
             </tbody>
           </table>
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>COMPASS scores individual threat rows on two assessor-estimated 1-5 scales (Impact, Likelihood); AITBM replaces the lossy 1-25 priority cell with a deterministic 0-10 ERS plus a preserved per-axis profile.</li>
+                <li>COMPASS scores individual threat rows on two assessor-estimated 1-5 scales (Impact and Likelihood). In a combined workflow, AITBM supplements that priority cell with a system-level 0-10 ERS and preserved per-axis profile; it does not replace COMPASS&#x27;s threat-prioritization output.</li>
                 <li>A COMPASS Impact x Likelihood cell entangles failure severity, deployment context, and confidence; AITBM separates these into IVP, ORP/CRM, and ACI so remediation can target the weakest axis (e.g. Cn-1, Cn-5) rather than an opaque &#x27;4x4&#x27;.</li>
                 <li>There is no priority-to-ERS numeric crosswalk: COMPASS ranks one threat, ERS scores a whole system. The integration is evidence flow (score each row&#x27;s sub-metric -&gt; compose to ERS) and writing ERS-derived severity back into COMPASS.</li>
-                <li>Agentic worked example: two interchangeable-looking 4x4 rows resolve to ERS 7.3 (High), with the Cn axis (0.34, driven by Cn-1 and Cn-5) dominating under Agentic 45% Containment weighting; remediation drops it to ~3.9.</li>
+                <li>The COMPASS worked example is retained on its dated 21-sub-metric, pre-GDCP basis. A current assessment must derive Cn-6, Cp, ACI, and ERS under the current specification.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://genai.owasp.org/resource/owasp-genai-security-project-threat-defense-compass-1-0/" class="font-semibold text-navy hover:underline underline-offset-4">COMPASS reference &rarr;</a></p>
       </article>
-      <article id="d3fend" class="rounded-xl border border-gray-200 p-6">
+      <article id="d3fend" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">MITRE D3FEND</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Defensive countermeasure ontology</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Defensive countermeasure ontology</span>
         </div>
         <p class="mt-1 text-xs text-muted">MITRE D3FEND (Detection, Denial, and Disruption Framework Empowering Network Defense) &middot; The MITRE Corporation</p>
-        <p class="mt-3 text-sm text-muted">D3FEND supplies a formal seven-tactic ontology of general defensive countermeasures (the defensive counterpart to ATT&amp;CK); AITBM turns the fact of each control&#x27;s implementation into deterministic sub-metric evidence and a measurable ERS reduction, acting as the single quantification layer for D3FEND and its AI-specific specialization AIDEFEND.</p>
+        <p class="mt-3 text-sm text-muted">D3FEND supplies a seven-tactic ontology of general defensive countermeasures. This AITBM-authored crosswalk routes measured implementation evidence from the version-pinned D3FEND mapping and the independent, AI-specialized AIDEFEND catalogue, while counting overlapping evidence only once.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">D3FEND Tactic</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Model (Asset Inventory, System Mapping)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td><td class="px-4 py-3">Enables AIBOM; Pc 0.20-&gt;0.85; 2-3 pt as enabler</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Harden (Message/App Hardening, Agent Authentication)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td><td class="px-4 py-3">Highest IVP leverage; 3-5 pt in agentic; Cn-5 0.20-&gt;0.75</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Detect (Process/User Behavior Analysis, Monitoring)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">1.4-2.6 pt; sustains ACI Tf freshness</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Isolate (Execution Isolation, Network Isolation)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span></span></td><td class="px-4 py-3">2-2.6 pt + CRM step down (1.60-&gt;1.35-&gt;...)</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Deceive (Decoy Environment, Decoy Object)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">0.5-1 pt; high-ROI detection multiplier and Rf improver</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Evict (Process/Credential Eviction)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">1-1.5 pt; collapses MTTQ, steps CRM down</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Restore (Restore Object/rollback, Restore Access)</span></td><td class="px-4 py-3">ORP Rf</td><td class="px-4 py-3">~1.4 pt; turns weeks of retraining into hours of rollback</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Harden :: Agent Authentication (1.x) [standout]</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">ISSR + attestation coverage; the dimension certification schemes under-measure</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Model (Asset Inventory, System Mapping)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span></span></td><td class="px-4 py-3">Inventory and topology evidence may support Tr-4, Cn-1, ACI provenance, and the SDG; no automatic score</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Harden (Message/App Hardening, Agent Authentication)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td><td class="px-4 py-3">Measured hardening effectiveness may support the listed rubrics; no fixed anchor or ERS change</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Detect (Process/User Behavior Analysis, Monitoring)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">Telemetry may support Tr-3 and monitoring/freshness evidence when coverage and health rules are met</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Isolate (Execution Isolation, Network Isolation)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span></span></td><td class="px-4 py-3">Isolation evidence informs Cn-1/Cn-4, As, and SDG reachability; Cp remains graph-derived</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Deceive (Decoy Environment, Decoy Object)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">Decoy evidence may support detection, audit, and remediation testing; no fixed ERS change</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Evict (Process/Credential Eviction)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span></span></td><td class="px-4 py-3">Measured eviction and quarantine performance may inform Cn-2 and Rf</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Restore (Restore Object/rollback, Restore Access)</span></td><td class="px-4 py-3">ORP Rf</td><td class="px-4 py-3">Measured rollback and recovery evidence may inform Rf; no fixed ERS change</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Harden :: Agent Authentication (1.x) [standout]</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">ISSR and attestation-coverage evidence may support Cn-5; no automatic anchor</td></tr>
             </tbody>
           </table>
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>A D3FEND countermeasure is not a score but an implementable control: AITBM converts implementation into sub-metric rubric evidence (0.00-1.00) that flows through IVP/ORP/ACI into a measurable ERS drop.</li>
+                <li>A D3FEND countermeasure is an implementable control, not a score. Measured implementation evidence may support an AITBM rubric; no fixed anchor or ERS reduction is inherent to the control.</li>
                 <li>D3FEND (general cyber defense) and AIDEFEND (AI-specialized, modeled on D3FEND&#x27;s same seven tactics) are concentric, not redundant; a D3FEND control and its AIDEFEND twin targeting the same sub-metric are scored once, never double-counted.</li>
                 <li>Harden and Isolate carry the most IVP-moving weight (especially Agent Authentication -&gt; Cn-5), while Detect/Deceive/Evict/Restore act largely through the ORP layer (Rf, As, Cp) and by sustaining ACI freshness.</li>
-                <li>Worked example: a full D3FEND stack on an agentic Tier-I system drops ERS from 10.0 (Critical) to 3.2 (Low-Moderate) - IVP 0.27-&gt;0.69, CRM 1.60-&gt;1.00, ACI 0.43-&gt;0.90 - with Agent Authentication (Cn-5) the single highest-leverage control.</li>
+                <li>The D3FEND worked example is retained on its dated 21-sub-metric, pre-GDCP basis. A current assessment must derive Cn-6, Cp, ACI, and ERS under the current specification.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://d3fend.mitre.org/" class="font-semibold text-navy hover:underline underline-offset-4">MITRE D3FEND reference &rarr;</a></p>
       </article>
-      <article id="cvss" class="rounded-xl border border-gray-200 p-6">
+      <article id="cvss" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">CVSS</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">Vulnerability scoring (prior art)</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Vulnerability scoring (prior art)</span>
         </div>
         <p class="mt-1 text-xs text-muted">Common Vulnerability Scoring System (CVSS) &middot; FIRST.org (CVSS Special Interest Group)</p>
-        <p class="mt-3 text-sm text-muted">CVSS is the dominant prior-art 0-10 severity standard for discrete, patchable software vulnerabilities; AITBM is the AI-specific successor that improves on it by adding temporal decay, fairness/transparency/AI-privacy axes, poisoning and drift measurement, agent identity, and deployment-context weighting that CVSS structurally cannot represent.</p>
+        <p class="mt-3 text-sm text-muted">CVSS is the established 0-10 severity standard for discrete software vulnerabilities. AITBM is a complementary AI-system assessment framework, not a successor to CVSS; it adds fairness, transparency, AI-privacy, poisoning, drift, agent-identity, deployment-context, and evidence-confidence dimensions for risks not represented by a CVSS Base score.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">CVSS Metric Group</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Vulnerable System Confidentiality (VC/C)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span></span></td><td class="px-4 py-3">Loose; CVSS has no membership-inference / extraction concept</td></tr>
@@ -768,7 +792,7 @@
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Subsequent System / Scope (SC-SI-SA / S)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">Partial; ORP Cp models multi-agent blast radius, not a binary flag</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Attack Vector / Complexity / Requirements (AV/AC/AT)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td><td class="px-4 py-3">Partial; AI exploitability is empirical (attack-success-rate)</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Exploit Maturity (E, Threat group)</span></td><td class="px-4 py-3">ACI Tf</td><td class="px-4 py-3">Inverted; CVSS ages the exploit, ACI ages the defender&#x27;s evidence</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Environmental group (Security Reqs, Modified Base)</span></td><td class="px-4 py-3">ORP CRM + architecture-specific IVP weights</td><td class="px-4 py-3">Closest analogue but rarely populated in CVSS practice</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Environmental group (Security Reqs, Modified Base)</span></td><td class="px-4 py-3">ORP CRM + architecture-specific IVP weights</td><td class="px-4 py-3">Closest analogue; applies deployment-specific modifications</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Supplemental: Safety / Automatable / Recovery (v4.0)</span></td><td class="px-4 py-3">ORP Aa, Cp, Rf</td><td class="px-4 py-3">Gestural and non-scoring in CVSS; first-class scoring inputs in AITBM</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">(No CVSS metric)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">No correspondence; CVSS has no bias or explainability axis</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">(No CVSS metric)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-2</span></span></td><td class="px-4 py-3">No correspondence; CVSS cannot represent drift or assessment provenance</td></tr>
@@ -777,10 +801,10 @@
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>Why insufficient for AI: CVSS is static/point-in-time while AI drifts; it has no axis for fairness, transparency, or AI-specific privacy leakage; it cannot represent probabilistic poisoning or distribution-shift failure; it has no agent identity (Cn-5) or multi-agent blast radius; it collapses signal to one number; and its fixed weights ignore deployment context.</li>
-                <li>Founding motivation: a CVSS Base score is computed once and frozen, but a model&#x27;s robustness/fairness/containment posture decays continuously; AITBM&#x27;s ACI (BBD-informed temporal decay) is the direct structural answer.</li>
+                <li>Scope distinction: a CVSS Base score describes intrinsic vulnerability severity and is stable unless vulnerability facts change; CVSS v4.0 Threat and Environmental metrics can reflect exploitation state and deployment context. CVSS does not provide AITBM&#x27;s AI-system dimensions, and its standardized formula is not architecture-weighted for AI systems.</li>
+                <li>A CVSS Base score is intentionally stable, while Threat and Environmental metrics may change with exploitation and deployment context. AITBM&#x27;s ACI answers a different question by decaying confidence when evidence supporting an AI-system assessment becomes stale.</li>
                 <li>Complementary, not competitive: CVSS remains correct for conventional CVEs inside an AI stack (an unpatched serving-stack CVE even feeds AITBM&#x27;s ORP As); AITBM scores the AI-specific risk layer that has no CVE, patch, or static severity. Never average a CVSS Base score with an ERS.</li>
-                <li>Worked contrast (EchoLeak-class agentic injection): CVSS reports a frozen 9.3 forever and codes the Cn-5 root cause away as PR:None/SC:High; AITBM yields ERS 7.1 that climbs 6.7 -&gt; 7.6 as evidence ages, surfaces Cn-5=0.10 as the load-bearing failure, and quantifies remediation to 4.0.</li>
+                <li>Worked contrast (an EchoLeak-class scenario): Microsoft assigned CVSS 9.3 while the NVD Base score is 7.5. Those scores describe the vulnerability under their stated vectors; Threat and Environmental values can vary. The illustrative AITBM scenario yields ERS 7.1, with an evidence-age interval of 6.7-&gt;7.6, and models remediation to 4.0.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://www.first.org/cvss/" class="font-semibold text-navy hover:underline underline-offset-4">CVSS reference &rarr;</a></p>
       </article>
@@ -793,25 +817,25 @@
       <h2 class="text-3xl font-bold text-navy">Tier 4 — Governance reference</h2>
       <p class="mt-3 text-muted max-w-3xl">A general-purpose AI governance reference, mapped for completeness.</p>
       <div class="mt-8 grid gap-6">
-      <article id="gpai-cop" class="rounded-xl border border-gray-200 p-6">
+      <article id="gpai-cop" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">GPAI Code of Practice</h3>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">GPAI governance</span>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">GPAI governance</span>
         </div>
         <p class="mt-1 text-xs text-muted">General-Purpose AI Code of Practice (GPAI CoP) &middot; European Commission / EU AI Office</p>
-        <p class="mt-3 text-sm text-muted">The GPAI Code of Practice is the voluntary EU governance instrument through which GPAI model providers operationalize AI Act Articles 53-55 commitments; AITBM adds the technical-risk quantification beneath it, converting each commitment&#x27;s evidence artifact into deterministic rubric scores and a graduated ERS - without ever signing the Code or discharging any legal obligation.</p>
+        <p class="mt-3 text-sm text-muted">The GPAI Code of Practice is the voluntary EU governance instrument through which GPAI model providers operationalize AI Act Articles 53–55 commitments. This AITBM-authored crosswalk offers an optional technical-risk measurement approach for relevant evidence artifacts; it neither signs the Code nor establishes or discharges any legal obligation.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
               <th class="px-4 py-3 text-left">GPAI CoP Chapter</th>
               <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
-              <th class="px-4 py-3 text-left">ERS / Notes</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
             </tr></thead>
             <tbody class="text-muted">
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Transparency - Documentation / Model Documentation Form</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">ACI Pc; Tr axis + confidence; Art 53</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Copyright - copyright policy, TDM opt-out, lawful crawling</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">ACI Pc; Pr axis; Art 53 (legal lawfulness not scored)</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Safety &amp; Security - model evaluations + adversarial testing</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td><td class="px-4 py-3">ACI Ec + Tf reset on each re-run; Art 55</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Safety &amp; Security - systemic-risk identification / analysis / acceptance</span></td><td class="px-4 py-3">no equivalent (drives ORP)</td><td class="px-4 py-3">ORP Cp &gt;=0.90, Rf; CRM; Art 55</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Safety &amp; Security - systemic-risk identification / analysis / acceptance</span></td><td class="px-4 py-3">ORP Cp, Rf evidence</td><td class="px-4 py-3">Scenarios and dependency records feed the SDG; Cp remains graph-derived; Art 55</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Safety &amp; Security - safety mitigations (harmful output)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-4</span></span></td><td class="px-4 py-3">Cn / Fa axes; Art 55</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Safety &amp; Security - security mitigations (model-weight cybersecurity)</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">Cn axis; Art 55</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Safety &amp; Security - serious-incident reporting + documentation</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">ACI Pc; confidence; Art 55</td></tr>
@@ -821,10 +845,10 @@
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-                <li>The Code answers &#x27;has the provider committed to the right governance practices?&#x27; while AITBM answers &#x27;how risky is the model, across dimensions, with what confidence, and how stale is the evidence?&#x27;; the Code invokes &#x27;state-of-the-art&#x27; but prescribes no measurement methodology, which AITBM supplies.</li>
+                <li>The Code addresses provider commitments, while AITBM assesses technical risk, confidence, and evidence freshness. The Code does not prescribe one residual-risk score; this crosswalk offers AITBM as an optional measurement approach, not one specified or endorsed by the EU AI Office.</li>
                 <li>Each commitment produces a concrete artifact (Model Documentation Form, copyright policy, evaluation/red-team reports, Safety and Security Model Report, incident logs) that an assessor consumes as objective evidence, reducing assessor discretion; recurring evaluations are the ideal ACI Tf refresh input.</li>
                 <li>Boundary discipline: a favourable ERS does NOT demonstrate adherence, discharge any AI Act obligation, or carry standing before the AI Office; AITBM scores the evidence, not the signatory commitment - two signatories can have very different ERS profiles.</li>
-                <li>Worked example (systemic-risk frontier model, Standalone weights): full Code adoption lowers ERS from 6.9 to 5.0, but it stays Moderate (not Low) because systemic risk holds Cp at 0.90 / CRM at 1.35 and the alpha=0.15 floor applies - good governance narrows and lowers risk but never zeroes it.</li>
+                <li>The legacy worked example predates GDCP and the current ERS composition. A current assessment must rebuild the SDG, derive Aa/As/Cp/Rf, and use specification Section 5; systemic-risk designation alone does not set Cp.</li>
         </ul>
         <p class="mt-4 text-sm"><a href="https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai" class="font-semibold text-navy hover:underline underline-offset-4">GPAI Code of Practice reference &rarr;</a></p>
       </article>
@@ -837,9 +861,7 @@
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <h2 class="text-3xl font-bold">The full mappings</h2>
       <p class="mt-3 max-w-2xl text-blue-100">
-        The complete per-framework mappings — with five-level scoring guidance, bidirectional
-        gap analysis, and worked ERS examples — are part of the AITBM Framework Specification
-        and the project repository.
+        The complete per-framework mappings, declared coverage boundaries, dated examples, and evidence-routing guidance are part of the AITBM Framework Specification and project repository. External framework status or control presence never produces an automatic AITBM score.
       </p>
       <div class="mt-6 flex flex-wrap gap-3">
         <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-white px-5 py-2.5 font-semibold text-navy hover:bg-blue-50 inline-block">Project on GitHub</a>
@@ -865,6 +887,7 @@
         <h4 class="text-sm font-semibold text-navy">Explore</h4>
         <ul class="mt-3 space-y-2 text-sm text-muted">
           <li><a href="framework" class="hover:text-navy">Framework</a></li>
+          <li><a href="use-cases" class="hover:text-navy">Use cases</a></li>
           <li><a href="submetrics" class="hover:text-navy">Sub-metrics reference</a></li>
           <li><a href="gap-analysis" class="hover:text-navy">Gap Analysis</a></li>
           <li><a href="aidefend" class="hover:text-navy">AIDEFEND Mapping</a></li>
@@ -889,6 +912,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=3a481267"></script>
+  <script src="assets/js/site-search-index.js?v=b0ee16af"></script>
+  <script src="assets/js/site.js?v=f4bf5292"></script>
 </body>
 </html>

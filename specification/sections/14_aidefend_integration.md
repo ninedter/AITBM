@@ -6,13 +6,13 @@ Mapping AIDEFEND Defensive Techniques to AITBM Sub-Metrics
 
 AIDEFEND (https://aidefend.net/) is an independent open-source knowledge base of defensive countermeasures for AI systems, created by Edward Lee and not affiliated with OWASP or MITRE. The AIDEFEND data reviewed for this section (July 30, 2026) uses schema 2.3 and data version 2026.07.28. It contains 92 top-level defensive techniques and 265 sub-techniques, for 357 total defensive records across tactics, pillars, lifecycle phases, and external framework mappings. This section maps AIDEFEND evidence to AITBM's 22 sub-metrics, enabling organizations to use AIDEFEND as the operational evaluation layer and AITBM as the scoring framework.
 
-1. Translate defensive implementations into AITBM scores — Organizations implementing AIDEFEND controls can objectively score their security posture
+1. Translate defensive implementations into AITBM evidence — Organizations can test mapped AIDEFEND controls against the applicable AITBM rubric criteria
 
 2. Identify control gaps — By cross-referencing AIDEFEND coverage against AITBM sub-metrics, security teams can pinpoint missing defensive layers
 
 3. Prioritize defensive investments — Understanding which AIDEFEND techniques impact multiple AITBM axes helps optimize security resource allocation
 
-4. Bridge CVE/CVSS to AI-specific risk — AIDEFEND maps to traditional vulnerability frameworks, while AITBM provides AI-specific risk quantification
+4. Relate CVE/CVSS evidence to AI-system assessment — AIDEFEND supplies defensive context while AITBM measures system-level AI risk
 
 ## AIDEFEND Tactical Structure
 
@@ -119,6 +119,14 @@ The current AIDEFEND data adds or clarifies several agentic, gateway, generated-
 | AID-H-036 Multilingual & Locale-Stratified Prompt Safety Classifier Evaluation (new technique) | Added to Ro-1 and Cn-3. | Per-language and per-locale evaluation of injection, jailbreak, and harmful-content classifiers with fail-closed verification evidences the multilingual adversarial-input and output-filtering test surfaces. |
 | AID-H-037 Reasoning-State Security & Compute Controls (new technique) | Added to Cn-3 and Cn-4. | Raw reasoning-trace confidentiality prevents sensitive internal state escaping into outputs; trace storage integrity and reasoning-compute bounding close reasoning-state observation and compute-exhaustion side channels. |
 | AID-R-007 External Side-Effect Reconciliation & Compensation (new technique) | Added to Cn-6. | Idempotent reversal, compensation, or signed disposition of externally issued agent actions after containment evidences the reversibility taxonomy in operation. |
+| AID-H-019 Safe Fetch & Web Content Admission for Agents | Added to Ro-1, Cn-1, and Cn-3. | Destination authorization and URL allowlisting bound where an agent may reach; active-content demotion and sanitized observation export block indirect prompt injection carried by fetched web content and prevent rendered output from carrying exfiltration-triggering markup. |
+| AID-H-022 Dependency Change Vetting & Sandboxed Installation | Added to Ro-4. | Pre-merge dependency change risk review and deterministic installation of approved immutable package bytes close the dependency-borne supply-chain poisoning path into training and serving pipelines. |
+| AID-H-023 Publisher Integrity & Workflow Hardening | Added to Ro-4 and Tr-4. | Hardened CI/CD publication with short-lived identity-based tokens blocks credential-only package poisoning; the mandated verifiable provenance attestations are lineage-disclosure evidence. |
+| AID-I-003 Quarantine & Throttling of AI Interactions | Added to Cn-5 and Cn-6. | Detection-driven quarantine and safe-mode downgrade produce Mean Time to Quarantine evidence for the Cn-5 test method; high-risk agent action containment enforces per-action gating before side effects take place. |
+| AID-I-007 Client-Side AI Execution Isolation | Added to Cn-1 and Cn-4. | Browser, Electron, and native-runtime sandboxing with least capability and controlled inter-process communication enforces execution boundaries and denies cross-tab, local-context, and operating-system observation channels. |
+| AID-M-005 AI Secure Configuration Baselines & Release Gates | Added to Tr-3. | Signed policy-as-code baselines, measurable posture criteria, and build or release gate records are auditable configuration evidence, the preventive counterpart to detective runtime-configuration integrity monitoring. |
+| AID-DV-002 Honey Data, Decoy Artifacts & Canary Tokens for AI | Added to Pr-1. | Canary tokens seeded into training data are the direct test for training-data memorization and extraction, admitted under the Deceive-tactic provision granting direct scoring credit only when the evidence is tied to the sub-metric test. |
+| AID-E-004 Incident Exploit-Path Closure Verification and AID-R-004 Fleet Remediation Propagation & Technical Recurrence Prevention | Recorded as ORP and ACI evidence; no sub-metric placement. | Exploit-path closure verification supports post-incident re-attestation and staleness-window reset; fleet remediation propagation evidences the Remediation Feasibility dimension. Evict and Restore are ORP and ACI layers under the Layer Interpretation. |
 
 ### Sub-Technique Evidence Examples
 
@@ -218,7 +226,7 @@ Resulting AITBM treatment: the Cn-5 sub-metric score is set to 0.75. The unresol
 
 ##### Ro-1: Adversarial Input Resistance
 
-Mapped AIDEFEND Techniques (10):
+Mapped AIDEFEND Techniques (11):
 
 *Table 80: Ro-1 - AIDEFEND Mapping*
 
@@ -234,6 +242,7 @@ Mapped AIDEFEND Techniques (10):
 | AID-H-030 | Agentic Skill Admission Security Analysis & Control Pipeline |
 | AID-H-031 | AI-Generated Code Admission Control & Safe Promotion |
 | AID-H-036 | Multilingual & Locale-Stratified Prompt Safety Classifier Evaluation |
+| AID-H-019 | Safe Fetch & Web Content Admission for Agents |
 
 ##### Ro-2: Distribution Shift Resilience
 
@@ -266,7 +275,7 @@ Mapped AIDEFEND Techniques (6):
 
 ##### Ro-4: Poisoning Attack Resistance
 
-Mapped AIDEFEND Techniques (13):
+Mapped AIDEFEND Techniques (15):
 
 *Table 83: Ro-4 - AIDEFEND Mapping*
 
@@ -285,6 +294,8 @@ Mapped AIDEFEND Techniques (13):
 | AID-E-003 | Malicious AI Artifact Quarantine, Eviction & Recovery Routing |
 | AID-R-001 | Secure AI Model Restoration & Retraining |
 | AID-R-002 | Data Integrity Recovery for AI Systems |
+| AID-H-022 | Dependency Change Vetting & Sandboxed Installation |
+| AID-H-023 | Publisher Integrity & Workflow Hardening |
 
 #### Axis: Fairness
 
@@ -365,7 +376,7 @@ Mapped AIDEFEND Techniques (3):
 
 ##### Tr-3: Audit Trail Completeness
 
-Mapped AIDEFEND Techniques (10):
+Mapped AIDEFEND Techniques (11):
 
 *Table 90: Tr-3 - AIDEFEND Mapping*
 
@@ -381,10 +392,11 @@ Mapped AIDEFEND Techniques (10):
 | AID-H-034 | MCP Server Runtime Boundary & Tool Exposure Governance |
 | AID-D-017 | AI Detection SLO & Alert-Coverage Measurement |
 | AID-D-018 | Production AI-Security Detection Efficacy & Scenario-Coverage Validation |
+| AID-M-005 | AI Secure Configuration Baselines & Release Gates |
 
 ##### Tr-4: Model Lineage Disclosure
 
-Mapped AIDEFEND Techniques (4):
+Mapped AIDEFEND Techniques (5):
 
 *Table 91: Tr-4 - AIDEFEND Mapping*
 
@@ -394,12 +406,13 @@ Mapped AIDEFEND Techniques (4):
 | AID-M-002 | Data, Artifact & Knowledge Provenance, Integrity & Risk Characterization |
 | AID-H-003 | Secure ML Supply Chain Management |
 | AID-M-010 | AI Asset Retirement, Transfer & End-of-Life Governance |
+| AID-H-023 | Publisher Integrity & Workflow Hardening |
 
 #### Axis: Privacy
 
 ##### Pr-1: Training Data Leakage Risk
 
-Mapped AIDEFEND Techniques (5):
+Mapped AIDEFEND Techniques (6):
 
 *Table 92: Pr-1 - AIDEFEND Mapping*
 
@@ -410,6 +423,7 @@ Mapped AIDEFEND Techniques (5):
 | AID-DV-007 | Training-Data Provenance & Behavioral Canaries |
 | AID-H-029 | AI Data-Use Authorization & Lifecycle-Stage Boundary Enforcement |
 | AID-M-010 | AI Asset Retirement, Transfer & End-of-Life Governance |
+| AID-DV-002 | Honey Data, Decoy Artifacts & Canary Tokens for AI |
 
 ##### Pr-2: Inference Attack Resistance
 
@@ -457,7 +471,7 @@ Mapped AIDEFEND Techniques (4):
 
 ##### Cn-1: Scope Enforcement
 
-Mapped AIDEFEND Techniques (9):
+Mapped AIDEFEND Techniques (11):
 
 *Table 96: Cn-1 - AIDEFEND Mapping*
 
@@ -472,6 +486,8 @@ Mapped AIDEFEND Techniques (9):
 | AID-I-008 | Task-Scoped Browser & Computer-Use Workspace Isolation for Agents |
 | AID-H-034 | MCP Server Runtime Boundary & Tool Exposure Governance |
 | AID-H-035 | Defensive-Agent & Response-Automation Hardening |
+| AID-H-019 | Safe Fetch & Web Content Admission for Agents |
+| AID-I-007 | Client-Side AI Execution Isolation |
 
 ##### Cn-2: Escalation Prevention
 
@@ -494,7 +510,7 @@ Mapped AIDEFEND Techniques (10):
 
 ##### Cn-3: Output Filtering Robustness
 
-Mapped AIDEFEND Techniques (7):
+Mapped AIDEFEND Techniques (8):
 
 *Table 98: Cn-3 - AIDEFEND Mapping*
 
@@ -507,10 +523,11 @@ Mapped AIDEFEND Techniques (7):
 | AID-H-033 | AI Gateway Routing Integrity & Policy-Preserving Failover |
 | AID-H-036 | Multilingual & Locale-Stratified Prompt Safety Classifier Evaluation |
 | AID-H-037 | Reasoning-State Security & Compute Controls |
+| AID-H-019 | Safe Fetch & Web Content Admission for Agents |
 
 ##### Cn-4: Side-Channel Resistance
 
-Mapped AIDEFEND Techniques (6):
+Mapped AIDEFEND Techniques (7):
 
 *Table 99: Cn-4 - AIDEFEND Mapping*
 
@@ -522,10 +539,11 @@ Mapped AIDEFEND Techniques (6):
 | AID-I-008 | Task-Scoped Browser & Computer-Use Workspace Isolation for Agents |
 | AID-H-032 | Multi-Tenant Inference Isolation & Leakage Prevention |
 | AID-H-037 | Reasoning-State Security & Compute Controls |
+| AID-I-007 | Client-Side AI Execution Isolation |
 
 ##### Cn-5: Agent Identity Integrity
 
-Mapped AIDEFEND Techniques (13):
+Mapped AIDEFEND Techniques (14):
 
 *Table 100: Cn-5 - AIDEFEND Mapping*
 
@@ -544,10 +562,11 @@ Mapped AIDEFEND Techniques (13):
 | AID-H-034 | MCP Server Runtime Boundary & Tool Exposure Governance |
 | AID-E-001 | Compromised Credential, Session, Principal & Grant Eviction |
 | AID-H-035 | Defensive-Agent & Response-Automation Hardening |
+| AID-I-003 | Quarantine & Throttling of AI Interactions |
 
 ##### Cn-6: Action Reversibility Classification Rate
 
-Mapped AIDEFEND Techniques (8):
+Mapped AIDEFEND Techniques (9):
 
 Published upstream on 2026-07-04, AID-H-035 independently corroborates the design direction of Cn-6: it requires defensive agents to default to read-only operation, gate write and containment actions behind policy-controlled escalation, and preserve rollback paths for high-impact actions.
 
@@ -563,6 +582,7 @@ Published upstream on 2026-07-04, AID-H-035 independently corroborates the desig
 | AID-D-015 | High-Risk Approval Bypass & HITL Activity Detection | Enforces explicit confirmation of high-risk actions — the runtime mechanism of the pre-execution gate the ARCR measures. |
 | AID-H-035 | Defensive-Agent & Response-Automation Hardening | Defensive-agent execution is reversibility-gated: read-only default, policy-gated escalation for write and containment actions, and preserved rollback paths for high-impact actions. |
 | AID-R-007 | External Side-Effect Reconciliation & Compensation | Post-containment reconciliation of externally issued agent actions — idempotent reversal, compensation, or signed disposition per effect — is the recovery-side counterpart of pre-execution reversibility classification and evidences the three-class taxonomy in operation. |
+| AID-I-003 | Quarantine & Throttling of AI Interactions | High-risk agent action containment interrupts an action before its side effects take place, enforcing the per-class gate that Cn-6 measures; detection-driven safe-mode downgrade constrains which reversibility classes remain executable during containment. |
 
 ## Operational Guidance for Using This Mapping
 

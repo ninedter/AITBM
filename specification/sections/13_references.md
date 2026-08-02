@@ -4,7 +4,7 @@
 
 [2] OWASP. (2026). OWASP Top 10 for Agentic AI Applications 2026. Retrieved from https://genai.owasp.org/
 
-[3] MITRE Corporation. (2025). MITRE ATLAS: Adversarial Threat Landscape for Artificial-Intelligence Systems. Retrieved from https://atlas.mitre.org/
+[3] MITRE Corporation. (2026). MITRE ATLAS: Adversarial Threat Landscape for Artificial-Intelligence Systems, data version 2026.06. Retrieved from https://atlas.mitre.org/
 
 [4] Cloud Security Alliance. (2025). MAESTRO Framework: Multi-layered Agentic AI Threat Modeling. Retrieved from https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro
 

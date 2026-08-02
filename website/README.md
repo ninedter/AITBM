@@ -1,85 +1,93 @@
 # AITBM Website
 
-Static introduction site for the **AI Trust Benchmarking and Maturity Framework (AITBM)**.
+**Date:** 2026-08-02
+**Purpose:** Document the public static website for the AI Trust Benchmarking and Maturity Framework
+**Status:** Active; publication requires the project publishing procedure
 
-**Date:** 2026-06-02
-**Purpose:** Public-facing launch site introducing AITBM, its three-layer architecture, the gap analysis, and project resources
-**Status:** Initial build
+## Site Inventory
 
----
-
-## Structure
+The site contains ten public pages plus a not-found page:
 
 | Path | Purpose |
-|------|---------|
-| `index.html` | Overview / landing page |
-| `framework.html` | Three-layer architecture, 22 sub-metrics, Cn-5/Cn-6 rubrics, ERS and tiers |
-| `gap-analysis.html` | Twelve structural gaps and 2025–2026 evidence |
-| `resources.html` | Documentation, standards alignment, project information |
-| `404.html` | Styled not-found page |
-| `robots.txt` | Crawler directives (allow all) |
-| `assets/favicon.svg` | Site icon (navy "AI" monogram) |
-| `assets/css/site.css` | Shared styles layered on Tailwind |
-| `assets/js/site.js` | Mobile navigation and footer year |
-| `.nojekyll` | Disables Jekyll processing on GitHub Pages |
+|---|---|
+| `index.html` | Framework overview and project entry point |
+| `framework.html` | IVP, ORP, ACI, ERS, tiers, and assessment pathways |
+| `submetrics.html` | All 22 IVP sub-metrics |
+| `use-cases.html` | Evidence-bounded AIDEFEND in Action companion scenarios |
+| `gap-analysis.html` | Twelve-gap analysis and remediation status |
+| `aidefend.html` | AIDEFEND integration and control-to-evidence guidance |
+| `mappings.html` | External framework mappings |
+| `calculator.html` | Quick and detailed scoring calculators |
+| `glossary.html` | Framework terminology |
+| `resources.html` | Documents, references, and project resources |
+| `404.html` | Styled not-found response |
 
-The site is fully **static and host-agnostic** — every path is relative, so the `site/`
-directory can be served as-is from GitHub Pages, Netlify, Cloudflare Pages, a GoDaddy/static
-host, or any web server, with no build step.
+Shared assets are under `assets/`. The site uses precompiled Tailwind CSS, project CSS, vanilla JavaScript, SVG logo assets, an Open Graph image, the generated `assets/data/use-case-scores.json` dataset, and the generated global search index.
 
-## Tech
+## Runtime and URL Model
 
-- Hand-written static HTML with [Tailwind CSS](https://tailwindcss.com/) via the Play CDN — **no build step**.
-- Brand palette: `#1F3864` (navy), `#2E5090` (navy-light), `#555555` (muted body text).
-- Typography: Arial-forward sans-serif stack, matching the AITBM document standard.
+The website is static. Cloudflare Pages serves the public site with extensionless URLs such as `/framework`; each page carries an absolute canonical URL and matching Open Graph URL for `https://aitbm.org`.
 
-## Local preview
+The included nginx and Docker files provide a production-like local preview with clean URL handling and the project security headers. The public deployment configuration is managed by the `publish-AITBM` procedure rather than this source directory alone.
 
-Serve the folder over HTTP (the Tailwind CDN and relative assets need a server, not `file://`):
+## Local Preview
+
+From the repository root:
 
 ```bash
-cd site
-python3 -m http.server 8080
-# open http://localhost:8080
+python3 scripts/site/serve_local.py --port 8090
 ```
 
-### Run in Docker
+Then open `http://localhost:8090`.
 
-A `Dockerfile` (nginx) and `docker-compose.yml` are included for a production-like local run:
+For an nginx-based preview:
 
 ```bash
 cd site
 docker compose up --build
-# open http://localhost:8080   (Ctrl+C to stop, or: docker compose down)
 ```
 
-Or without compose:
+## Generated Content and Assets
+
+Use the repository scripts rather than editing generated data by hand:
 
 ```bash
-cd site
-docker build -t aitbm-site:local .
-docker run --rm -p 8080:80 aitbm-site:local
+python3 scripts/site/build_use_cases_page.py
+python3 scripts/site/build_survey_data_js.py
+python3 scripts/site/apply_shared_navigation.py
+python3 scripts/site/build_search_index.py
+python3 scripts/site/generate_sitemap.py
+python3 scripts/site/cachebust.py site
 ```
 
-The nginx config serves the styled `404.html` for unknown routes and sets basic security
-headers. If your network blocks Docker Hub, see the mirror note in the `Dockerfile`.
+- Run `generate_sitemap.py` after adding or removing a public page.
+- Edit `scripts/site/fragments/site_header.html`, then run `apply_shared_navigation.py`; do not hand-edit repeated page headers.
+- Run `build_search_index.py` after changing public page content, use-case data, or search indexing logic.
+- Run `cachebust.py` after changing any local JavaScript or CSS file. It stamps the first eight hexadecimal characters of each asset's SHA-1 digest into every HTML reference.
+- Rebuild the use-case page and JSON together when the scenario workpapers or scoring outputs change.
 
-## Deployment
+## Validation
 
-The site is host-agnostic and ships with no deployment automation. To publish, upload the
-contents of `site/` to any static host or custom domain (e.g. GoDaddy, Netlify, Cloudflare
-Pages, or a plain web server). No build step is required.
+Run the deterministic site and repository audit before committing:
 
-## Before launching on a custom domain
+```bash
+python3 scripts/analysis/audit_repository.py
+```
 
-1. In each page's `<head>`, set the absolute `og:url` and `og:image`, and add a
-   `<link rel="canonical">` (placeholders are marked with an HTML comment).
-2. Add an absolute `Sitemap:` line to `robots.txt` and, optionally, a `sitemap.xml`.
-3. Point the host's custom 404 to `404.html` (GitHub Pages does this automatically).
+It verifies the eleven-page inventory, local links, fragment targets, unique IDs, canonical and Open Graph URLs, sitemap parity, asset hashes, shared-header equivalence, global-search coverage and result targets, required collaboration files, and canonical deliverables.
 
-## Notes
+The scoring engines have separate tests:
 
-- The Tailwind Play CDN prints a console notice that it is intended for development. For a
-  high-traffic production launch, consider pre-compiling Tailwind to a static stylesheet; the
-  markup here is already compatible with that change.
-- Documentation links point at the GitHub repository's `main` branch.
+```bash
+node tests/ers-engine.test.cjs
+python3 tests/test_survey_engine.py
+python3 scripts/analysis/validate_use_cases.py
+```
+
+## Analytics
+
+Google Analytics is configured with measurement ID `G-K7VDS29BQ0`. Cloudflare Web Analytics uses the platform's automatic setup. Do not restore the retired manual Cloudflare beacon snippet; cross-origin ingestion did not record visits and the repository audit rejects the old token.
+
+## Publishing
+
+Publishing is a separate, user-approved operation to the public `ninedter/AITBM` repository. Use the `publish-AITBM` procedure, which stages the allowlisted deliverables, checks source completeness, removes assistant-specific material, validates links and anchors, and records the public commit. A commit to `AITBM-SRC` does not publish the public site.

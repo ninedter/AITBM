@@ -24,7 +24,7 @@ Basis. An axis score is the weighted average of its sub-metric scores. Sub-metri
 
 Variables. SubMetric_i is the 0.00-1.00 score of sub-metric i from its five-level rubric; w_i is that sub-metric's fixed weight for the system's architecture weight class (LLM/GenAI, Classifier/ML, or Agentic; the Section 4.4 decision tree maps the six recognized deployment architectures onto these three weight sets); the denominator is the sum of the weights actually in play. Weights within an axis sum to 1.00 before any redistribution.
 
-Why this form. A weighted arithmetic mean is the natural aggregator when sub-metrics sit on the same 0-1 scale and a shortfall in one can be partially offset by strength in another within the same axis; intra-axis compensation is acceptable, which is why the five axes are kept as a vector rather than averaged together. Normalizing by the sum of weights keeps the score on the [0, 1] interval and architecture-invariant, so removing a non-applicable sub-metric never changes the achievable maximum. Because the weights are fixed by tier and architecture rather than chosen by the assessor, two assessors compute the same number (Design Principle 2.3).
+Why this form. A weighted arithmetic mean is the natural aggregator when sub-metrics sit on the same 0-1 scale and a shortfall in one can be partially offset by strength in another within the same axis; intra-axis compensation is acceptable, which is why the five axes are kept as a vector rather than averaged together. Normalizing by the sum of weights keeps the score on the [0, 1] interval and architecture-invariant, so removing a non-applicable sub-metric never changes the achievable maximum. Because the weights are fixed by tier and architecture rather than chosen by the assessor, the computation is identical whenever the evidence and rubric placements are the same (Design Principle 2.3).
 
 Where w_i = weight of sub-metric i (defined per axis). If a sub-metric is NOT APPLICABLE to a given architecture (per the Architecture Classification Decision Tree in Section 4.4), its weight is redistributed proportionally among remaining sub-metrics. Sub-metric weights within each axis sum to 1.00. Intermediate scores are permitted when a system falls between rubric levels; the assessor must document justification.
 
@@ -152,7 +152,7 @@ The axis comprises demographic parity (Fa-1), calibration consistency (Fa-2), re
 
 Jurisdictional Protected Group Registry (JPGR)
 
-To eliminate assessor discretion in determining fairness evaluation scope, AITBM mandates use of a Jurisdictional Protected Group Registry (JPGR). Before any fairness sub-metric is scored, the assessor must document the system’s deployment jurisdictions and enumerate the legally protected classes from the JPGR. All enumerated classes are Primary—there is no secondary category. For multi-jurisdiction deployments, the union of all protected classes forms the evaluation scope and the strictest thresholds apply.
+To constrain assessor discretion in determining fairness-evaluation scope, AITBM mandates use of a Jurisdictional Protected Group Registry (JPGR). Before any fairness sub-metric is scored, the assessor must document the system's deployment jurisdictions and enumerate the legally protected classes from the JPGR. All enumerated classes are Primary—there is no secondary category. For multi-jurisdiction deployments, the union of all protected classes forms the evaluation scope and the strictest thresholds apply.
 
 *Table 8: Jurisdictional Protected Group Registry (JPGR)*
 

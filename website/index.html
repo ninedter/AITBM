@@ -27,8 +27,9 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
   <link rel="canonical" href="https://aitbm.org/" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
   <link rel="stylesheet" href="assets/css/tailwind.css?v=9b4cd2c4" />
-  <link rel="stylesheet" href="assets/css/site.css?v=7817cdaa" />
+  <link rel="stylesheet" href="assets/css/site.css?v=5d06d0e7" />
   <script type="application/ld+json" data-seo>
 {
   "@context": "https://schema.org",
@@ -80,40 +81,59 @@
 <body class="font-sans antialiased bg-paper">
 
   <!-- Nav -->
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
       <div class="flex h-16 items-center justify-between gap-4">
-        <a href="/" class="flex items-center gap-2.5 shrink-0">
-          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy"><svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><rect x="18" y="16" width="64" height="13" rx="6.5" fill="#ffffff"/><rect x="28" y="35" width="44" height="13" rx="6.5" fill="#b9c6e0"/><rect x="38" y="54" width="24" height="13" rx="6.5" fill="#7e95c4"/><circle cx="50" cy="84" r="9" fill="#d98a5f"/></svg></span>
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
           <span class="leading-tight">
             <span class="block font-bold text-navy tracking-tight">AITBM</span>
             <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
           </span>
         </a>
-        <nav class="hidden lg:flex items-center gap-6 text-sm text-gray-700">
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
           <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
           <a href="framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
-          <a href="gap-analysis" data-nav="gap-analysis" class="nav-link hover:text-navy">Gap Analysis</a>
-          <a href="aidefend" data-nav="aidefend" class="nav-link hover:text-navy">AIDEFEND</a>
-          <a href="mappings" data-nav="mappings" class="nav-link hover:text-navy">Mappings</a>
-          <a href="calculator" data-nav="calculator" class="nav-link hover:text-navy">Calculator</a>
-          <a href="glossary" data-nav="glossary" class="nav-link hover:text-navy">Glossary</a>
+          <a href="use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
           <a href="resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
           <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
         </nav>
         <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
         </button>
       </div>
       <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
         <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
         <a href="framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
         <a href="gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
         <a href="aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
         <a href="mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
         <a href="calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
         <a href="glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
         <a href="resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
         <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
       </div>
     </div>
@@ -265,15 +285,15 @@
       <span class="accent-pill">WHY IT EXISTS</span>
       <h2 class="mt-3 text-3xl font-bold text-navy">What today's frameworks miss</h2>
       <p class="mt-3 text-muted">
-        CVSS adaptations, OWASP <abbr title="AI Vulnerability Scoring System">AIVSS</abbr>, and the OWASP Top 10
-        for LLMs each leave the same four gaps. AITBM was designed to close them.
+        The comparison of CVSS adaptations, OWASP <abbr title="AI Vulnerability Scoring System">AIVSS</abbr>, and the OWASP Top 10
+        for LLMs identifies recurring scoring gaps across artifacts with different scopes. AITBM was designed to address them.
       </p>
     </div>
     <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       <article class="card rounded-xl border border-gray-200 bg-white p-6">
         <div class="axis-bar bg-navy w-10 mb-4"></div>
         <h3 class="font-bold text-navy">Guesswork</h3>
-        <p class="mt-2 text-sm text-muted">Vague severity language drives 15&ndash;30% disagreement between assessors on the same system.</p>
+        <p class="mt-2 text-sm text-muted">In the largest published CVSS consistency study, 68% of assessors changed at least one metric when re-scoring identical vulnerabilities (Wunder et al., IEEE S&amp;P 2024).</p>
         <p class="mt-3 text-xs font-semibold text-navy-light">AITBM &rarr; fixed 0&ndash;4 rubrics</p>
       </article>
       <article class="card rounded-xl border border-gray-200 bg-white p-6">
@@ -312,9 +332,10 @@
         <article class="card rounded-xl border border-gray-200 bg-white p-6 flex flex-col">
           <div class="step-chip">1</div>
           <h3 class="mt-4 font-bold text-navy">I assess AI systems</h3>
-          <p class="mt-2 text-sm text-muted flex-1">Understand the scoring model, then score a real system and watch controls move the number.</p>
+          <p class="mt-2 text-sm text-muted flex-1">Understand the scoring model, see it applied to real incidents with the evidence behind every sub-metric, then score a system of your own.</p>
           <div class="mt-4 flex flex-wrap gap-3 text-sm font-semibold">
             <a href="framework" class="text-navy hover:text-navy-light">The framework &rarr;</a>
+            <a href="use-cases" class="text-navy hover:text-navy-light">Worked examples &rarr;</a>
             <a href="calculator" class="text-navy hover:text-navy-light">Calculator &rarr;</a>
           </div>
         </article>
@@ -393,6 +414,7 @@
         <h4 class="text-sm font-semibold text-navy">Explore</h4>
         <ul class="mt-3 space-y-2 text-sm text-muted">
           <li><a href="framework" class="hover:text-navy">Framework</a></li>
+          <li><a href="use-cases" class="hover:text-navy">Use cases</a></li>
           <li><a href="submetrics" class="hover:text-navy">Sub-metrics reference</a></li>
           <li><a href="gap-analysis" class="hover:text-navy">Gap Analysis</a></li>
           <li><a href="aidefend" class="hover:text-navy">AIDEFEND Mapping</a></li>
@@ -417,6 +439,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=3a481267"></script>
+  <script src="assets/js/site-search-index.js?v=b0ee16af"></script>
+  <script src="assets/js/site.js?v=f4bf5292"></script>
 </body>
 </html>

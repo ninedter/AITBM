@@ -1,33 +1,33 @@
 # AITBM -- AI Trust Benchmarking and Maturity Framework
 
-**Quantify AI security risk -- without assessor guesswork.**
+**Quantify AI security risk with constrained, evidence-backed judgment.**
 
-AITBM is a bias-resistant, multi-dimensional evaluation framework for AI system security. It replaces subjective "low / medium / high" judgments with granular five-level scoring rubrics, a three-layer architecture that preserves signal, and a mathematically grounded composite score.
+AITBM is a bias-resistant, multi-dimensional evaluation framework for AI system security. It constrains subjective "low / medium / high" judgments with granular five-level scoring rubrics, a three-layer architecture that preserves signal, and a mathematically grounded composite score.
 
 | | |
 |---|---|
-| **21** IVP sub-metrics | **5** security axes |
-| **3** assessment layers | **0--4** rubric, no discretion |
+| **22** IVP sub-metrics | **5** security axes |
+| **3** assessment layers | **0.00--1.00** rubric with fixed anchors |
 
 ---
 
 ## The Problem AITBM Solves
 
-Existing AI security methodologies -- CVSS adaptations, OWASP AIVSS, the OWASP Top 10 for LLMs -- share structural failure modes:
+The AITBM comparison identifies recurring limitations across CVSS-based AI adaptations, OWASP AIVSS, and threat catalogs such as the OWASP Top 10 for LLMs. These artifacts have different scopes, so a limitation in a scoring capability is not necessarily a defect in the source framework:
 
-- **Assessor subjectivity:** Ambiguous severity language drives 15--30% inter-assessor variance on the same system.
-- **Context blindness:** A medical-diagnosis model and a recipe chatbot with identical flaws score identically.
+- **Assessor subjectivity:** In the largest published CVSS consistency study, 68% of assessors changed at least one metric when re-scoring identical vulnerabilities (Wunder et al., IEEE S&amp;P 2024).
+- **Context blindness:** A Base-only or otherwise context-blind score can assign the same result to a medical-diagnosis model and a recipe chatbot with identical intrinsic flaws despite different operational consequences.
 - **Scope blindness:** Static-model assumptions miss agentic and MCP threats -- tool poisoning, rogue agents, identity spoofing.
-- **Zero-risk fallacy:** Frameworks imply sufficient controls eliminate risk. Emergent behavior makes that structurally impossible.
+- **Zero-risk fallacy:** Some scoring formulations permit a zero-risk result after controls; AITBM instead retains an explicit residual-risk floor.
 
 AITBM addresses six fundamental deficiencies:
 
-1. **Deterministic Anchoring:** Existing frameworks bolt AI-specific adjustments onto CVSS, inheriting its inability to score emergent, behavioral, and stateful vulnerabilities.
-2. **Single-Score Collapse:** Flattening multi-dimensional risk into a single 0--10 number hides the trade-offs between robustness, fairness, and efficiency.
-3. **Subjective Weighting:** Configurable weights allow scorer bias to produce incomparable results across organizations.
-4. **Point-in-Time Blindness:** No mechanism exists to track behavioral drift, memory poisoning, or cumulative risk in stateful agentic systems.
-5. **Epistemic Blindness:** Frameworks do not distinguish between high-confidence assessments with full supply chain transparency and low-confidence assessments on opaque systems.
-6. **Accessibility Gap:** No tiered pathway exists for startups and SMEs to participate in standardized assessment.
+1. **Rubric Anchoring:** CVSS-based AI extensions inherit a vulnerability-centric model that does not directly score emergent, behavioral, and stateful system properties.
+2. **Single-Score Collapse:** Flattening multi-dimensional risk into a single 0--10 number hides trade-offs among robustness, fairness, privacy, transparency, and containment.
+3. **Subjective Weighting:** Where weights are assessor-configurable, the same evidence can produce incomparable results across organizations.
+4. **Point-in-Time Blindness:** Most comparison frameworks lack a standing mechanism for evidence-freshness decay across behavioral drift, memory poisoning, or cumulative stateful risk.
+5. **Epistemic Blindness:** Most do not score the distinction between high-confidence assessments with full supply-chain transparency and low-confidence assessments on opaque systems.
+6. **Accessibility Gap:** Most do not define a reduced-depth pathway for startups and SMEs within the same scoring architecture.
 
 ---
 
@@ -37,7 +37,7 @@ Single scores collapse important trade-offs. AITBM keeps the signal across three
 
 ### Layer 1: IVP -- Intrinsic Vulnerability Profile
 
-22 sub-metrics across five axes. Each is scored 0--4 against a fully specified five-level rubric, so the score reflects the system, not the assessor. Architecture-specific weights apply -- agentic and MCP systems weight Containment more heavily; RAG systems weight Privacy.
+22 sub-metrics across five axes. Each is scored at one of five normalized anchors from 0.00 to 1.00 against a fully specified rubric, narrowing the space for assessor interpretation while keeping evidence and judgment traceable. Architecture-specific weights apply -- agentic and MCP systems weight Containment more heavily; RAG systems weight Privacy.
 
 | Axis | Sub-Metrics |
 |---|---|
@@ -49,7 +49,7 @@ Single scores collapse important trade-offs. AITBM keeps the signal across three
 
 ### Layer 2: ORP -- Operational Risk Posture
 
-Four deployment-context dimensions produce a Compound Risk Multiplier (CRM) in the 0.75--1.75 range that intrinsic scoring cannot capture:
+Four deployment-context dimensions produce a Compound Risk Multiplier (CRM). The normative step table ranges from 1.00 to 1.60; 1.75 is reserved as an absolute framework cap:
 
 1. Autonomy Amplification (Aa)
 2. Attack Surface Exposure (As)
@@ -64,7 +64,7 @@ Beta-Binomial-informed temporal decay models how evidence goes stale, with tier-
 - **Evaluation Coverage (Ec)** -- breadth and independence of testing
 - **Temporal Freshness (Tf)** -- evidence age with exponential decay
 
-### Evaluated Risk Score (ERS)
+### Effective Risk Score (ERS)
 
 ```
 ERS = min(10, k x ORP_effective x (alpha + (1 - alpha) x (1 - W_ivp . IVP)) / ACI_composite)
@@ -76,36 +76,36 @@ where alpha = 0.15 (residual risk floor -- AI risk cannot be zeroed out)
 
 ## What Makes AITBM Different
 
-- **Deterministic rubrics** -- Five fully specified levels per sub-metric drive inter-assessor variance toward zero.
+- **Rubric-constrained scoring** -- Five fully specified levels per sub-metric narrow inter-assessor variance and make disagreements auditable.
 - **Multi-dimensional signal** -- IVP / ORP / ACI are never silently collapsed into one number without justification.
 - **Operational context, mathematically** -- The CRM encodes deployment risk so critical systems separate from low-stakes ones.
 - **Agentic-native** -- Cn-5 (Agent Identity Integrity), Cn-6 (Action Reversibility Classification Rate), and the Containment axis address MCP, tool-use, and multi-agent threats.
 - **Evidence-aware** -- The ACI penalizes opaque systems and stale assessments rather than trusting them at face value.
 - **Tiered pathways** -- Full, Standard, and Lite assessment tracks so startups and SMEs can participate alongside enterprises.
-- **AIDEFEND integration** -- AIDEFEND's 86-technique defensive catalog mapped to all 22 sub-metrics for evidence-based scoring.
-- **Governing quantification layer** -- Sixteen external frameworks (OWASP Top 10 for LLMs and for Agentic Applications, OWASP AISVS, MITRE ATLAS, AIUC-1, AIDEFEND, NIST AI RMF, ISO/IEC 42001 & 42005, the EU AI Act, CSA AI Security, NIST Cyber AI Profile, AIMA, COMPASS, MITRE D3FEND, CVSS, and the GPAI Code of Practice) mapped element-by-element into AITBM sub-metrics and the ERS.
+- **AIDEFEND integration** -- 76 of AIDEFEND's 92 techniques (data version 2026.07.28) contribute 152 evidence placements spanning all 22 sub-metrics.
+- **Complementary framework crosswalks** -- Sixteen external frameworks and standards are crosswalked to relevant AITBM sub-metrics and evidence roles; the mappings do not imply endorsement or replace the source frameworks.
 
 ---
 
 ## Framework Comparison
 
-| Capability | CVSS 4.0 | AIVSS v0.5 | RAISE | AITBM |
-|---|---|---|---|---|
-| AI-native (non-deterministic) | No | Partial | Yes | Yes |
-| Multi-dimensional profile | No | No | Yes | Yes |
-| Deterministic weights | N/A | No | Partial | Yes |
-| Epistemic confidence scoring | No | No | No | Yes |
-| Behavioral drift monitoring | No | No | No | Yes |
-| Supply chain integration (AIBOM) | No | No | No | Yes |
-| Tiered SME pathway | N/A | No | No | Yes |
-| Stateful/agentic risk modeling | No | Yes | No | Yes |
-| Residual deployment risk floor | No | No | No | Yes |
+This is a scope comparison, not a claim that one framework supersedes another.
+
+| Capability | CVSS 4.0 | OWASP AIVSS v0.8 | AITBM |
+|---|---|---|---|
+| Primary assessment unit | Discrete software vulnerability | Agentic AI vulnerability | Deployed AI system |
+| AI-specific factors | No | Yes | Yes |
+| Multi-dimensional system profile | No | No | Yes: IVP / ORP / ACI |
+| Dedicated agent-identity treatment | No | Dynamic Identity and Agent Identity Impersonation | Cn-5 Agent Identity Integrity |
+| Evidence-confidence and freshness decay | No | No | Yes |
+| Tiered assessment pathways | No | No | Full / Standard / Lite |
+| Explicit non-zero floor | No | 0.67 mitigation floor | alpha = 0.15 residual-risk floor |
 
 ---
 
 ## Validation Anchor
 
-The **Finbot** worked example validates the full framework pipeline:
+The **Finbot** worked example is the framework's internal calculation anchor and exercises the full pipeline:
 
 - **Scenario:** AI finance assistant compromised through multi-stage RAG-based memory poisoning
 - **Tier:** Tier 1 -- Critical (autonomous financial transaction execution)
@@ -147,6 +147,7 @@ AITBM/
     ├── index.html            Overview and landing page
     ├── framework.html        Three-layer architecture (IVP/ORP/ACI/ERS)
     ├── submetrics.html       The 22 sub-metrics reference
+    ├── use-cases.html        Evidence-bounded incident scenarios with uncertainty ranges
     ├── gap-analysis.html     12 structural gaps across 4 domains
     ├── aidefend.html         AIDEFEND mapping and worked examples
     ├── mappings.html         Sixteen external frameworks mapped to AITBM
@@ -177,19 +178,19 @@ The site is static HTML with Tailwind CSS (CDN) and vanilla JavaScript -- no bui
 
 | Framework | Relationship to AITBM |
 |---|---|
-| OWASP AISVS | Control checklist input layer |
+| OWASP AISVS | Requirement-verification evidence source |
 | OWASP Top 10 for LLMs | Threat coverage alignment |
-| OWASP Top 10 for Agentic Applications 2026 | Scope reference for agentic threat coverage |
-| MITRE ATLAS | Threat taxonomy alignment; case study sourcing |
-| OWASP AIVSS | Predecessor framework -- AITBM addresses its structural gaps |
+| OWASP Agentic AI — Threats and Mitigations v1.1 | T1--T17 threat-taxonomy crosswalk; companion ASI01--ASI10 Top 10 alignment |
+| MITRE ATLAS | Threat taxonomy alignment, test selection, and case study sourcing |
+| OWASP AIVSS | Prior art for agentic vulnerability severity; AITBM separately assesses broader system properties |
 | ISO 42001 / 42005 | Governance alignment; impact assessment methodology |
 | NIST AI RMF | Risk management framework alignment |
 | NIST Cyber AI Profile IR 8596 | Cyber-AI intersection alignment |
-| EU AI Act | Regulatory compliance mapping |
-| AIDEFEND | Defensive countermeasure mapping (92 techniques, data version 2026.07.28) |
-| D3FEND 1.0 | Defensive countermeasure taxonomy |
+| EU AI Act | Regulatory crosswalk and potential evidence support; not a compliance determination |
+| AIDEFEND | Defensive countermeasure evidence mapping (152 placements / 76 of 92 techniques, data version 2026.07.28) |
+| D3FEND 1.0 | Version-pinned defensive countermeasure crosswalk; current D3FEND release status is disclosed in the mapping |
 
-All of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the GPAI Code of Practice — are mapped element-by-element into AITBM sub-metrics on the [Framework Mappings](website/mappings.html) page and in the [External Framework Mappings](specification/sections/external_framework_mappings.md) section of the specification.
+All of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the GPAI Code of Practice — are crosswalked to relevant AITBM sub-metrics and evidence roles on the [Framework Mappings](website/mappings.html) page and in the [External Framework Mappings](specification/sections/external_framework_mappings.md) section of the specification.
 
 ---
 
