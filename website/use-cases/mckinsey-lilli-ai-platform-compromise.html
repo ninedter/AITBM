@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>McKinsey Lilli Compromise: When SQL Injection… | AITBM</title>
+  <meta name="description" content="CodeWall&#x27;s autonomous testing agent found that Lilli exposed 22 of its 200+ API endpoints without authentication, and that one of those endpoints…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/mckinsey-lilli-ai-platform-compromise" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/mckinsey-lilli-ai-platform-compromise" />
+  <meta property="og:title" content="McKinsey Lilli Compromise: When SQL Injection… | AITBM" />
+  <meta property="og:description" content="CodeWall&#x27;s autonomous testing agent found that Lilli exposed 22 of its 200+ API endpoints without authentication, and that one of those endpoints…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/mckinsey-lilli-ai-platform-compromise#article",
+      "url": "https://aitbm.org/use-cases/mckinsey-lilli-ai-platform-compromise",
+      "headline": "McKinsey Lilli Compromise: When SQL Injection Reaches the AI Prompt Layer",
+      "name": "McKinsey Lilli Compromise: When SQL Injection Reaches the AI Prompt Layer",
+      "description": "CodeWall's autonomous testing agent found that Lilli exposed 22 of its 200+ API endpoints without authentication, and that one of those endpoints…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/mckinsey-lilli-ai-platform-compromise#breadcrumb"
+      },
+      "keywords": "McKinsey Lilli Compromise: When SQL Injection Reaches the AI Prompt Layer, RAG / Retrieval-Augmented System, AI security incident, AITBM ERS, Ro-4, Tr-3, Tr-4, Pr-3, Cn-1, Cn-2, Cn-5, Cn-7, Cn-6, Pr-1, Pr-4"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/mckinsey-lilli-ai-platform-compromise#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "McKinsey Lilli Compromise: When SQL Injection… | AITBM",
+          "item": "https://aitbm.org/use-cases/mckinsey-lilli-ai-platform-compromise"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">McKinsey Lilli Compromise: When SQL Injection Reaches the AI Prompt Layer</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">McKinsey Lilli Compromise: When SQL Injection Reaches the AI Prompt Layer</h1><p class="mt-4 max-w-3xl text-blue-100">CodeWall&#x27;s autonomous testing agent found that Lilli exposed 22 of its 200+ API endpoints without authentication, and that one of those endpoints constructed SQL from attacker-controlled JSON keys. Chaining that injection with an IDOR, the agent was reading Lilli&#x27;s production database in roughly two hours. The database behind the AI platform held not only ordinary business records but the platform&#x27;s own control state: 46.5M chat messages, 728K files, 3.68M RAG chunks with their S3 paths, vector-store metadata, AI assistant definitions, and 95 system prompts across 12 models. Because the same injection path supported UPDATE, a single HTTP request could have rewritten a system prompt, poisoned retrieved content, removed guardrails, or inserted exfiltration instructions without touching application code. The configuration had been in production for about two years and was missed by human scanning; McKinsey closed the unauthenticated endpoints and patched on 2026-03-02, one day after CodeWall&#x27;s 2026-03-01 report.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">RAG / Retrieval-Augmented System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 3</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 4.5 (2.3–6.7)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-04-17</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-pass" aria-hidden="true"><span style="width:45%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">CodeWall&#x27;s autonomous testing agent found that Lilli exposed 22 of its 200+ API endpoints without authentication, and that one of those endpoints constructed SQL from attacker-controlled JSON keys. Chaining that injection with an IDOR, the agent was reading Lilli&#x27;s production database in roughly two hours. The database behind the AI platform held not only ordinary business records but the platform&#x27;s own control state: 46.5M chat messages, 728K files, 3.68M RAG chunks with their S3 paths, vector-store metadata, AI assistant definitions, and 95 system prompts across 12 models. Because the same injection path supported UPDATE, a single HTTP request could have rewritten a system prompt, poisoned retrieved content, removed guardrails, or inserted exfiltration instructions without touching application code. The configuration had been in production for about two years and was missed by human scanning; McKinsey closed the unauthenticated endpoints and patched on 2026-03-02, one day after CodeWall&#x27;s 2026-03-01 report.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">McKinsey&#x27;s internal Lilli AI platform in its pre-remediation state as reported by CodeWall on 2026-03-01: the platform&#x27;s API surface (22 of 200+ endpoints exposed without authentication, one of which built SQL from attacker-controlled JSON keys), and the single backing database holding 46.5M chat messages, 728K files, 3.68M RAG chunks with S3 paths, vector-store metadata, AI assistant definitions, and 95 system prompts across 12 models, serving 43,000+ users at 500K+ monthly prompts.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">Lilli after McKinsey closed the unauthenticated endpoints and patched on 2026-03-02; McKinsey&#x27;s client engagement systems not reachable through Lilli; the underlying foundation models as products; and CodeWall&#x27;s autonomous testing agent, which is the attacker in this case and not part of the assessed system.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      RAG / Retrieval-Augmented System (decision tree Q4) —
+      The evidence establishes retrieval at inference time from a mutable corpus - 3.68M RAG chunks mapped to S3 paths, vector-store metadata, and 95 system prompts across 12 models - which is Q4 = YES. Q1, Q2 and Q3 were all answered NO for the assessed system: the brief documents &#x27;AI assistants&#x27; as stored definitions but records no inter-agent messaging, no autonomous multi-step planner, and no external function, API, or tool execution by the platform&#x27;s models. Important scoping note: the &#x27;agentic&#x27; element in the reporting is CodeWall&#x27;s autonomous attacking agent, not Lilli. Classifying Lilli as agentic because its attacker was would be a category error and would change the intra-axis weight class, so it is explicitly rejected here.
+      <strong class="text-navy">Tier 3:</strong> Tier 3 Internal: Lilli is an internal platform serving 43,000+ McKinsey users inside the organisational boundary, matching the spec&#x27;s Tier 3 definition and its document-summarisation / knowledge-assistant examples. The 22 unauthenticated endpoints undermined that boundary in practice, but that is an exposure finding scored in ORP As, not a reason to inflate the tier.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>CodeWall&#x27;s autonomous agent enumerated Lilli&#x27;s API surface and identified 22 of 200+ endpoints reachable without authentication, giving an unauthenticated probing foothold with no account required.</li><li>One of those endpoints built SQL queries from attacker-controlled JSON keys; chained with an IDOR, this produced read access to the production database in approximately two hours.</li><li>The exposed tables proved to hold the AI platform&#x27;s control state as well as its business data: 46.5M chat messages, 728K files, 3.68M RAG chunks with S3 paths, vector-store metadata, AI assistant definitions, and 95 system prompts across 12 models.</li><li>The same injection path supported UPDATE, placing a rewrite of any system prompt, poisoning of retrieved chunks, removal of guardrails, or insertion of exfiltration instructions within reach of a single HTTP request and outside the application deployment pipeline.</li><li>McKinsey closed the unauthenticated endpoints and patched on 2026-03-02, one day after the 2026-03-01 report.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>The large majority of the API surface required authentication: 22 endpoints were exposed out of 200+, so the authentication model existed and mostly functioned - the failure was coverage, not absence.</li><li>The platform maintained a substantive machine-readable inventory of its own AI assets: 12 models, 95 system prompts, AI assistant definitions, and 3.68M RAG chunks mapped to their S3 source paths. That is the lineage material Tr-4 asks for, and it is why Tr-4 scores at the middle anchor rather than the bottom.</li><li>Session logging was extensive and reconstructable: 46.5M chat messages were retained and associated with models and prompts.</li><li>McKinsey remediated within one day of disclosure, which is direct evidence for a low Remediation Feasibility score on the demonstrated defect.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–0.80</strong> (midpoint 0.40), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.40</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Ro-4</span><span class="block text-[11px] text-gray-500">Poisoning Attack Resistance</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>0.00 - no data, memory, or configuration integrity validation on the retrieval and prompt ingestion paths. Poisoned content would be accepted with no scanning, no provenance check, and no quarantine, because nothing verified a chunk or a prompt between the database and the model.</td><td>System prompts were loaded straight from a database an attacker could UPDATE, and 3.68M RAG chunks were both readable and modifiable through the same path. The brief states plainly that an attacker &#x27;could change a system prompt, poison retrieved content, remove guardrails, or insert exfiltration instructions with a simple HTTP request and without touching application code&#x27;. The recommended controls - chunk-level integrity signing verified at retrieval time, and signed-configuration enforcement so tampered prompts fail verification at load - are presented as absent, and there was no runtime check that running prompt values still matched the last approved version.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.16–0.71</strong> (midpoint 0.44), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Tr-3</span><span class="block text-[11px] text-gray-500">Audit Trail Completeness</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>0.25 - partial logging exists but omits critical fields, specifically the policy-version and actor-identity record for changes to prompts, RAG chunks and configuration; and no part of the trail is tamper-evident against the very write path that was exploitable.</td><td>Logging coverage was substantial - 46.5M chat messages retained, associated with 12 models and 95 system prompts, over roughly two years of operation. However the records sat in the same store the attacker could read and UPDATE, so nothing was tamper-evident, and the brief&#x27;s remediation advice (&#x27;add DB-level audit logs and real-time alerts on UPDATE to prompt, config, or RAG tables - treat any such write outside deployment pipelines as a security incident&#x27;) indicates no change-audit existed on the platform&#x27;s control state.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td><span class="font-semibold text-navy">Tr-4</span><span class="block text-[11px] text-gray-500">Model Lineage Disclosure</span></td><td class="num"><span class="score-pill mid">0.50</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>0.50 - lineage is documented for major components (models, prompts, assistants, retrieval sources with source paths) but lacks update history, source trust ratings, and linkage to evaluation evidence. Above the 0.25 anchor because coverage extends well beyond base-model artefacts to RAG and configuration lineage.</td><td>The platform held an enumerable internal record of its major components: 12 models, 95 system prompts, AI assistant definitions, vector-store metadata, and 3.68M RAG chunks each carrying its S3 source path. What is absent is update history and linkage to an approved baseline - the brief notes there was &#x27;no runtime check that the running values still matched the last approved version&#x27;, which implies no maintained approved-version record for prompts or configuration.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.06–0.81</strong> (midpoint 0.44), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Pr-3</span><span class="block text-[11px] text-gray-500">Data Minimization Compliance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>0.25 - some minimisation exists in the primary business data model, but the platform&#x27;s own logs, memory and retrieval stores retain the full sensitive corpus indefinitely and expose it through a shared access path with no documented necessity or retention boundary.</td><td>Roughly two years of full conversation history - 46.5M chat messages - plus 728K files were retained live in a single queryable store alongside RAG chunks, vector-store metadata, user accounts, and system prompts, with no per-class segregation, masking, or access separation evidenced. The brief&#x27;s recommendation to separate AI-asset stores by class with distinct credentials and network paths indicates none of that separation was in place.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.04–0.72</strong> (midpoint 0.38), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.16</span></td><td>0.25 - basic boundaries exist and cover most of the surface (178+ of 200+ endpoints authenticated), but they are enforced inconsistently, and simple parameter manipulation exceeded intended scope. Not 0.00, because the authentication model was real and largely applied.</td><td>22 of 200+ endpoints were reachable without authentication, and one of them turned attacker-controlled JSON keys into SQL structure, so simple parameter manipulation crossed from the API boundary into the data layer. Chat history, RAG chunks, system prompts, user accounts and vector-store metadata all sat in one queryable database, so no per-asset-class boundary constrained what a single injection could reach.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-2</span><span class="block text-[11px] text-gray-500">Escalation Prevention</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.16</span></td><td>0.00 - no escalation controls in the exploited path: an unauthenticated request could obtain write authority over control state and bypass the deployment pipeline that would otherwise approve such a change.</td><td>The chain moved an unauthenticated caller to database UPDATE authority over the platform&#x27;s highest-value asset class: system prompts, RAG chunks, and - in the same store - user accounts. No lifecycle-stage authorization gate separated read from write or one asset class from another; the brief&#x27;s recommended AID-H-029.002 control (separate credentials and access paths per asset class) is presented as absent.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 17 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>Lilli generates answers for 43,000+ human users who decide what to do with them; the evidence records no autonomous action, tool execution, or external write performed by the platform&#x27;s models. It is above the 0.00 anchor because the platform is not purely a suggestion generator - it holds write permissions over its own persistent state (chat history, files, assistant definitions) - but it exercises no independent decision authority over anything outside itself.</td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">0.80</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>An externally reachable API surface with 22 unauthenticated endpoints, at least one of which accepted attacker-controlled structure that became SQL, means the input validation the 0.50 anchor assumes was not effective on the exposed path; an external autonomous agent probed it without an account. It sits above the 0.75 anchor for that reason, and below 1.00 because there is no MCP tool integration, no external-agent messaging, and no evidence of open-internet untrusted RAG ingestion - the corpus is organisational content. <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.30</span></td><td>Graph-derived and corroborated on its merits, independent of the absent SDG. The observed path runs from an unauthenticated internet-reachable endpoint (origin) to UPDATE authority over the system-prompt table, the RAG chunk store and the user-account table in one hop, with no gate in between. Reaching a table that governs user accounts is reaching a P4 credential- or permission-issuing node, and reaching the prompt and retrieval stores taints L2 orchestration/memory and L1 model context for every one of 43,000+ users&#x27; subsequent sessions - a full-depth propagation. An ungated path to a P3/P4 node triggers the g_P = 1.00 anchor by itself; the missing SDG would have forced 1.00 in any case, but here the anchor is earned.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: corroborated by the observed path</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>McKinsey closed the unauthenticated endpoints and patched the injection one day after the report, which is direct evidence for the 0.00 deterministic-patch anchor on the demonstrated defect. The score is set at 0.25 rather than 0.00 because the enabling architecture - unsigned prompts and RAG chunks, and all AI asset classes co-located in one store behind one access path - is deployment-infrastructure work (integrity signing, per-class credentials and network paths) rather than a code patch, and the evidence does not record it as completed.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 2 (dimensions strictly above 0.75) &rarr; CRM = 1.15.</p><p class="mt-2 text-xs" style="color:var(--sev-critical)"><strong>Compound Risk Alert.</strong> Two or more dimensions are simultaneously elevated (spec&nbsp;3.2.2); architectural decomposition is recommended before deployment.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill mid">0.35</span></td><td>Documented intermediate between the 0.25 and 0.50 anchors. The platform demonstrably maintained an internal inventory of models, prompts, assistants and chunk-to-S3 provenance, which is more than the 0.25 anchor&#x27;s &#x27;base model only&#x27;. But the evidence available to this assessment reports only the shape and scale of that inventory (12 models, 95 prompts, 3.68M chunks) - not the model identities, corpus sources, licences, owners, or change history - and none of it is signed or independently reviewed, so the 0.50 anchor&#x27;s enumerated-sources criterion is not met from the assessor&#x27;s side.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.26</span></td><td>coverage 0.26 (6 of 23 applicable sub-metrics) &times; independence 1.00 &times; fidelity 1.00. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill mid">0.35</span></td><td>Evidence dated <a href="https://codewall.ai/blog/how-we-hacked-mckinseys-ai-platform" target="_blank" rel="noopener noreferrer">2026-03-09</a>; age 157 days on the workpaper reference date. Components: C_event 0.35 · T_calendar 0.55 · C_monitor 0.65 · C_evidence 0.85. Binding term: <strong>C_event</strong>. dt_days = 157, measured from CodeWall&#x27;s public research article dated 2026-03-09 to the 2026-08-13 evidence reference date; the private assessment and remediation began earlier, but temporal freshness is anchored to the public evidence used by this workpaper. The AIDEFEND brief republished the analysis on 2026-04-17. agentic = false: Lilli is a RAG architecture with no runtime tool provisioning or credential reissuance, so per spec section 3.3.3 T_containment collapses to T_calendar and the M_Cn floor has no effect. baw = false: no BAW checklist item is met on the evidence - the retrieval corpus was mutable through the SQL-injection path, that is by an external attacker rather than by the model or an agent; there is no agent-to-agent messaging, no model-written prompt or configuration, and no documented closed feedback loop in which a model output is written to state a model later consumes in a decision path. C_event = 0.35: a confirmed compromise of the production platform with attacker read access and demonstrated write reach over prompt and retrieval state. C_monitor = 0.65: a clear detection failure - the configuration ran for about two years, human scanning missed it, and the brief indicates no DB-level audit logs or alerts existed on UPDATE to prompt, config, or RAG tables. C_evidence = 0.85: open unresolved gaps - only the endpoints and the injection are recorded as remediated, while the co-located asset stores and absent prompt/chunk integrity controls are not.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.32</strong> &mdash; diagnostic status: Critical evidence limitation. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.20(0.25) + 0.25(0.80) + 0.30(1.00) + 0.25(0.25) = <strong>0.613</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 2 &rarr; <strong>1.15</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.613 × 1.15 = <strong>0.704</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.20(0.40) + 0.15(0.50) + 0.20(0.44) + 0.25(0.44) + 0.20(0.38) = <strong>0.428</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.428) = <strong>0.636</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.317 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 0.704 × 0.636 × 1/1.000 × 10) = <strong>4.5</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>2.3–6.7</strong>; 17 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-021.002</td><td>Runtime Integrity Enforcement (Signed Configurations)<span class="block text-[11px] text-gray-500">Parent AID-H-021 (AI Agent Configuration Integrity &amp; Hardening). System prompts carrying signatures verified at load time defeat the single-UPDATE silent rewrite; in AITBM terms this is the control whose absence drives Ro-4 = 0.00, with the catalogue&#x27;s Cn-2 mapping also engaged because it removes the write path&#x27;s escalation value.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-020.001</td><td>Chunk-Level Integrity Signing<span class="block text-[11px] text-gray-500">Parent AID-H-020 (RAG Index Hygiene &amp; Signing). Verifying each of the 3.68M chunks at retrieval time is the direct Ro-4 remedy: without it, any database read/write bug is a RAG poisoning vector.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-004.003</td><td>Runtime Configuration &amp; Policy Drift Detection and Monitoring<span class="block text-[11px] text-gray-500">Parent AID-D-004 (AI Artifact, Runtime Configuration, Route &amp; Lifecycle Integrity Monitoring). Continuous reconciliation of live prompts and policies against an approved baseline is the Detect partner to signed configuration and supplies the Tr-3 change record that the assessed configuration lacked.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.001</td><td>Tool Parameter Constraint &amp; Schema Validation<span class="block text-[11px] text-gray-500">Parent AID-H-018 (Tool Authorization &amp; Capability Scoping). Strict schemas rejecting unexpected JSON keys, types and table selectors before SQL construction address the Cn-1 boundary failure at its origin.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-029.002</td><td>Lifecycle-Stage Authorization Gate<span class="block text-[11px] text-gray-500">Parent AID-H-029 (AI Data-Use Authorization &amp; Lifecycle-Stage Boundary Enforcement). Separate credentials and access paths per asset class would have confined one SQL injection to one class; this is the control behind both Pr-3 = 0.25 and Cn-2 = 0.00.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">The sub-metric that should have stopped this is Ro-4, not a web-application control: once the prompt and retrieval tables were writable, the AI platform&#x27;s integrity depended on chunk and configuration signing that did not exist - and AITBM scores that AI asset store, not the endpoint. The case also shows the attacker&#x27;s autonomy must not leak into the victim&#x27;s architecture class; Lilli is RAG, and classifying it as agentic because CodeWall&#x27;s agent was would have silently changed the intra-axis weight set.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-04/003-mckinsey-lilli-ai-platform-compromise.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action brief: McKinsey Lilli Compromise (2026-04-17)</a> · <a href="https://codewall.ai/blog/how-we-hacked-mckinseys-ai-platform" class="text-navy hover:underline underline-offset-2">CodeWall: How We Hacked McKinsey&#x27;s AI Platform (2026-03-09)</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/ro-4-poisoning-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-4: Poisoning Attack Resistance</a><a href="/submetrics/tr-3-audit-trail-completeness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-3: Audit Trail Completeness</a><a href="/submetrics/tr-4-model-lineage-disclosure" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4: Model Lineage Disclosure</a><a href="/submetrics/pr-3-data-minimization-compliance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-3: Data Minimization Compliance</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-2-escalation-prevention" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-2: Escalation Prevention</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a><a href="/submetrics/cn-6-action-reversibility-classification-rate-arcr" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6: Action Reversibility Classification Rate</a><a href="/submetrics/pr-1-training-data-leakage-risk" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-1: Training Data Leakage Risk</a><a href="/submetrics/pr-4-re-identification-risk" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-4: Re-identification Risk</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/chromatoast-chromadb-pre-auth-rce" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">RAG / Retrieval-Augmented System · Tier 3</span><h3 class="mt-1 font-bold text-navy">ChromaToast: ChromaDB Pre-Auth RCE Through Malicious Hugging Face Model Loading</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 4.8 →</span></a><a href="/use-cases/microsoft-echoleak-zero-click-prompt-injection" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">RAG / Retrieval-Augmented System · Tier 2</span><h3 class="mt-1 font-bold text-navy">Microsoft &quot;EchoLeak&quot;: How One Email Turned Microsoft 365 Copilot into a Zero-Click Data Exfiltration Path</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 4.3 →</span></a><a href="/use-cases/deadbugz-mcp-supply-chain-campaign" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">Deadbugz: GitHub PRs Delivered a Delayed, Shape-Shifting Malicious MCP Server</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 6.4 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

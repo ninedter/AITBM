@@ -25,6 +25,14 @@
       ].join(" "));
       casesBySlug[item.slug] = item;
     });
+    var legacySlug = location.hash ? location.hash.slice(1) : "";
+    var legacyCase = casesBySlug[legacySlug] || (data.notScored || []).find(function (item) {
+      return item.slug === legacySlug;
+    });
+    if (legacyCase) {
+      location.replace("/use-cases/" + encodeURIComponent(legacySlug));
+      return;
+    }
     rows.forEach(function (row) { rowsBySlug[row.dataset.slug] = row; });
 
     var state = {
@@ -425,11 +433,7 @@
   }
 
   function openCase(slug) {
-    var target = document.getElementById(slug);
-    if (!target) return;
-    if (target.tagName === "DETAILS") target.open = true;
-    history.pushState(null, "", "#" + slug);
-    target.scrollIntoView({ block: "start", behavior: "smooth" });
+    location.href = "/use-cases/" + encodeURIComponent(slug);
   }
 
   function scrollToDirectory() {

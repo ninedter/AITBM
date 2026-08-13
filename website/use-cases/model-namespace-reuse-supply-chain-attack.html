@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>Model Namespace Reuse Turns a Trusted Name Into a… | AITBM</title>
+  <meta name="description" content="Unit 42 showed that a deleted Hugging Face author namespace, or a transferred model whose former author namespace later becomes reclaimable, can leave…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/model-namespace-reuse-supply-chain-attack" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/model-namespace-reuse-supply-chain-attack" />
+  <meta property="og:title" content="Model Namespace Reuse Turns a Trusted Name Into a… | AITBM" />
+  <meta property="og:description" content="Unit 42 showed that a deleted Hugging Face author namespace, or a transferred model whose former author namespace later becomes reclaimable, can leave…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/model-namespace-reuse-supply-chain-attack#article",
+      "url": "https://aitbm.org/use-cases/model-namespace-reuse-supply-chain-attack",
+      "headline": "Model Namespace Reuse Turns a Trusted Name Into a Supply-Chain Redirect",
+      "name": "Model Namespace Reuse Turns a Trusted Name Into a Supply-Chain Redirect",
+      "description": "Unit 42 showed that a deleted Hugging Face author namespace, or a transferred model whose former author namespace later becomes reclaimable, can leave…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/model-namespace-reuse-supply-chain-attack#breadcrumb"
+      },
+      "keywords": "Model Namespace Reuse Turns a Trusted Name Into a Supply-Chain Redirect, Standalone LLM / Generative AI, AI security incident, AITBM ERS, Ro-4, Tr-4, Cn-1, Cn-7, Pr-2, Tr-3"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/model-namespace-reuse-supply-chain-attack#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Model Namespace Reuse Turns a Trusted Name Into a… | AITBM",
+          "item": "https://aitbm.org/use-cases/model-namespace-reuse-supply-chain-attack"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Model Namespace Reuse Turns a Trusted Name Into a Supply-Chain Redirect</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">Model Namespace Reuse Turns a Trusted Name Into a Supply-Chain Redirect</h1><p class="mt-4 max-w-3xl text-blue-100">Unit 42 showed that a deleted Hugging Face author namespace, or a transferred model whose former author namespace later becomes reclaimable, can leave stale references pointing to a name another party can register. In controlled tests, researchers reclaimed abandoned namespaces, recreated expected model paths, and made Vertex AI and Azure AI Foundry deployments load reverse-shell models. The original publisher account was not compromised. Defenders should bind deployments to immutable digests and signers, monitor namespace lifecycles, mirror approved artifacts internally, and isolate model loading.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Standalone LLM / Generative AI</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 1</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 4.0 (1.5–6.4)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-08-02</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-pass" aria-hidden="true"><span style="width:40%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">Unit 42 showed that a deleted Hugging Face author namespace, or a transferred model whose former author namespace later becomes reclaimable, can leave stale references pointing to a name another party can register. In controlled tests, researchers reclaimed abandoned namespaces, recreated expected model paths, and made Vertex AI and Azure AI Foundry deployments load reverse-shell models. The original publisher account was not compromised. Defenders should bind deployments to immutable digests and signers, monitor namespace lifecycles, mirror approved artifacts internally, and isolate model loading.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">A representative cloud model-deployment pipeline matching the controlled Unit 42 tests: a stale Hugging Face name is resolved by Vertex AI or Azure AI Foundry and loaded with the runtime permissions of the deployment endpoint.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">The original publishers, who were not compromised; digest-pinned internal mirrors; and any current cloud safeguard not independently tested against the same namespace lifecycle.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Standalone LLM / Generative AI (decision tree Q2) —
+      The boundary loads and serves a generative model artifact but does not require autonomous tool planning for the demonstrated reverse-shell outcome.
+      <strong class="text-navy">Tier 1:</strong> Tier 1 because substituted model bytes execute in a cloud deployment path with credential, network, and service reach.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>The dependency survives after its owner disappears. Model names remain in default arguments, notebooks, documentation, repositories, and cloud catalogs after an author deletes a namespace or transfers a model.</li><li>Namespace reuse changes what the same name resolves to. A new registrant can recreate a deleted author and model path. For a transferred model, deleting and reclaiming the former author&#x27;s namespace can also displace the redirect that preserved the original path.</li><li>Downstream automation loads the substitute. Unit 42 registered abandoned namespaces, published controlled reverse-shell models, and showed stale references resolving into Vertex AI and Azure AI Foundry deployment paths.</li><li>The demonstrated foothold was bounded. The shell ran with the permissions available to the affected endpoint or container; the research did not compromise the original publisher account or report malicious exploitation in the wild.</li><li>One provider added a safeguard. Unit 42 says Google added daily orphan scans and blocks deployment when model verification fails. The article still describes a broader registry and downstream-reference lifecycle risk.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>The controlled foothold remained bounded by the affected endpoint or container permissions; the original publisher account was not compromised.</li><li>Unit 42 reported that Google added daily orphan scans and blocks deployment when model verification fails.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–0.80</strong> (midpoint 0.40), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Ro-4</span><span class="block text-[11px] text-gray-500">Poisoning Attack Resistance</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>The 0.00 anchor: an untrusted replacement artifact was admitted through a trusted name with no effective digest, signer, or ownership-lifecycle gate in the demonstrated path.</td><td>Researchers reclaimed abandoned author namespaces, recreated expected model paths, and caused stale cloud deployment references to load controlled reverse-shell models.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.05–0.85</strong> (midpoint 0.45), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.55</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Tr-4</span><span class="block text-[11px] text-gray-500">Model Lineage Disclosure</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>The 0.25 anchor: source naming existed, while version, digest, signer, and ownership continuity were incomplete and could silently resolve to a new party.</td><td>The familiar author/model name survived deletion or transfer, but downstream references did not bind the artifact to immutable bytes, signer identity, or a tombstone state.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.04–0.88</strong> (midpoint 0.46), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.65</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.16</span></td><td>The 0.25 anchor: the endpoint or container bounded the foothold, but the load boundary did not prevent unapproved code or outbound callback behavior.</td><td>The substituted model obtained the permissions and network reach available to the affected endpoint or container and produced a reverse-shell callback in controlled tests.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 20 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill mid">0.50</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.35</span></td><td>Placed from the demonstrated decision and action authority of the assessed boundary; public evidence supports this bounded level but not a broader claim about current product defaults.</td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">0.75</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Placed from who can supply the initiating content or protocol message and from the trust status of that source in the documented configuration.</td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>No verified System Dependency Graph with DGC at least 0.90 is public for this boundary, so the specification&#x27;s worst-case graph default governs rather than an assessor-estimated blast radius.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: worst-case default — no verified dependency graph published</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.15</span></td><td>Placed from the documented remediation class: deterministic package/configuration change where available, otherwise provider, architecture, or multi-layer changes. It does not assert fleet-wide closure.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 1 (dimensions strictly above 0.75) &rarr; CRM = 1.00.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill mid">0.35</span></td><td>The public record identifies the affected product or representative configuration, attack path, and principal control boundaries, but does not provide a complete asset manifest, verified dependency graph, configuration export, or assessment evidence manifest.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.12</span></td><td>coverage 0.13 (3 of 23 applicable sub-metrics) &times; independence 1.00 &times; fidelity 0.95. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill low">0.00</span></td><td>Evidence dated <a href="https://unit42.paloaltonetworks.com/model-namespace-reuse/" target="_blank" rel="noopener noreferrer">2025-09-03</a>; age 344 days on the workpaper reference date. Components: T_calendar 0.00 · C_monitor 0.65 · C_event 0.65 · C_evidence 0.85. Binding term: <strong>T_calendar</strong>. Evidence age is measured from 2025-09-03 to the 2026-08-13 workpaper reference date. Public sources do not provide a passing containment or behavioral re-attestation receipt; event, monitoring, and unresolved-evidence caps remain diagnostic only.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.02</strong> &mdash; diagnostic status: Invalid as assessment-of-record evidence. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.35(0.50) + 0.25(0.75) + 0.25(1.00) + 0.15(0.25) = <strong>0.650</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 1 &rarr; <strong>1.00</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.650 × 1.00 = <strong>0.650</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.30(0.40) + 0.25(0.50) + 0.15(0.45) + 0.20(0.50) + 0.10(0.46) = <strong>0.459</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.459) = <strong>0.610</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.025 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 0.650 × 0.610 × 1/1.000 × 10) = <strong>4.0</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>1.5–6.4</strong>; 20 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-003.006</td><td>Model SBOM &amp; Provenance Attestation<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Bind every approved model to its exact artifact digest, signer identity, source URL, author namespace, source commit, format, and loader in a signed model SBOM. Admission and reload checks should reject any new bytes or signer behind the same familiar name and deny use when a verified upstream namespace or owner tombstone applies. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-003.002</td><td>CI/CD Release Gating, Model Artifact Signing &amp; Secure Distribution<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Production systems should never pull a model directly from a public namespace by name. Mirror reviewed bytes into an internal registry, pin their immutable digest, and require the promotion gate to re-verify owner, source, redirects, signature, model format, loader policy, and tombstone state before deployment or hot reload. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-001.004</td><td>Sandbox Network Egress Restrictions<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Load and evaluate third-party model candidates in a sandbox with default-deny outbound traffic and only narrowly approved destinations. The demonstrated payload required an outbound reverse-shell callback, so an enforcement point outside the model process can stop that connection even after malicious code starts. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-001.002</td><td>MicroVM &amp; Low-Level Sandboxing<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Place first load and evaluation inside a stronger-than-container boundary with no production secrets, shared home directory, host mounts, or broad syscall access. If a substituted model executes code, the microVM or userspace-kernel sandbox keeps the foothold away from the deployment host, internal services, and credential stores. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-004.004</td><td>Model Source &amp; Namespace Drift Detection<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. During model curation, alert when an external model reference starts returning 404 or 3xx responses because those lifecycle changes can precede namespace replacement. Independently monitor production DNS and egress for unexpected contact with public model hubs, preserving the source URL and prior ownership state needed to investigate drift. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">A familiar model name is not an identity: deployment admission must bind approved bytes, signer, source ownership, and loader policy before first load and every reload.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-08/002-model-namespace-reuse-supply-chain-attack.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action — Model Namespace Reuse Turns a Trusted Name Into a Supply-Chain Redirect</a> · <a href="https://unit42.paloaltonetworks.com/model-namespace-reuse/" class="text-navy hover:underline underline-offset-2">Primary source — Model Namespace Reuse: An AI Supply-Chain Attack Exploiting Model Name Trust</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/ro-4-poisoning-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-4: Poisoning Attack Resistance</a><a href="/submetrics/tr-4-model-lineage-disclosure" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4: Model Lineage Disclosure</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a><a href="/submetrics/pr-2-inference-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-2: Inference Attack Resistance</a><a href="/submetrics/tr-3-audit-trail-completeness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-3: Audit Trail Completeness</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/mercor-litelllm-poisoned-dependency-breach" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Tool-Calling LLM / Connected GenAI · Tier 3</span><h3 class="mt-1 font-bold text-navy">LiteLLM Fallout: How a Poisoned AI Dependency Reached Mercor</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 4.2 →</span></a><a href="/use-cases/deadbugz-mcp-supply-chain-campaign" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">Deadbugz: GitHub PRs Delivered a Delayed, Shape-Shifting Malicious MCP Server</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 6.4 →</span></a><a href="/use-cases/sglang-zmq-pickle-deserialization-rce" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Standalone LLM / Generative AI · Tier 1</span><h3 class="mt-1 font-bold text-navy">SGLang&#x27;s ZMQ and Pickle Paths Show Why Internal AI Messages Need a Trust Boundary</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 3.5 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

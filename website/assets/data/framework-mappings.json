@@ -1,0 +1,288 @@
+{
+  "schema": "AITBM external-framework mapping index",
+  "verified": "2026-08-13",
+  "mappings": [
+    {
+      "slug": "owasp-llm",
+      "title": "OWASP Top 10 for LLMs",
+      "tier": 1,
+      "kind": "Vulnerability catalogue",
+      "summary": "Routes the released OWASP LLM risks to AITBM tests and evidence without assigning generic risk scores.",
+      "url": "/mappings/owasp-llm",
+      "representativeSubmetrics": [
+        "Ro-1",
+        "Cn-1",
+        "Cn-2",
+        "Cn-3",
+        "Cn-6",
+        "Pr-1",
+        "Pr-2",
+        "Pr-3"
+      ]
+    },
+    {
+      "slug": "owasp-agentic-top10",
+      "title": "OWASP Agentic AI Threats and Mitigations",
+      "tier": 1,
+      "kind": "Agentic threat taxonomy",
+      "summary": "Maps agentic threats and the companion Top 10 to AITBM containment, robustness, privacy, and operational-risk evidence.",
+      "url": "/mappings/owasp-agentic-top10",
+      "representativeSubmetrics": [
+        "Ro-4",
+        "Cn-1",
+        "Cn-2",
+        "Cn-7",
+        "Ro-3",
+        "Tr-2",
+        "Ro-1",
+        "Cn-5"
+      ]
+    },
+    {
+      "slug": "owasp-aisvs",
+      "title": "OWASP AISVS",
+      "tier": 1,
+      "kind": "Control verification standard",
+      "summary": "Shows how AISVS control-verification results can supply evidence for AITBM's 23 measured sub-metrics.",
+      "url": "/mappings/owasp-aisvs",
+      "representativeSubmetrics": [
+        "Ro-4",
+        "Tr-4",
+        "Pr-1",
+        "Ro-1",
+        "Cn-1",
+        "Cn-3",
+        "Cn-5",
+        "Pr-2"
+      ]
+    },
+    {
+      "slug": "mitre-atlas",
+      "title": "MITRE ATLAS",
+      "tier": 1,
+      "kind": "Adversarial threat knowledge base",
+      "summary": "Uses released ATLAS tactics and techniques to select AITBM tests while keeping system scoring deployment-specific.",
+      "url": "/mappings/mitre-atlas",
+      "representativeSubmetrics": [
+        "Pr-1",
+        "Pr-2",
+        "Tr-4",
+        "Ro-1",
+        "Ro-4",
+        "Tr-3",
+        "Cn-1",
+        "Cn-5"
+      ]
+    },
+    {
+      "slug": "aiuc-1",
+      "title": "AIUC-1",
+      "tier": 1,
+      "kind": "Certification and insurance standard",
+      "summary": "Relates AIUC-1 requirements to AITBM evidence, assurance, and operational-risk inputs without treating certification as a score.",
+      "url": "/mappings/aiuc-1",
+      "representativeSubmetrics": [
+        "Pr-1",
+        "Pr-2",
+        "Pr-3",
+        "Pr-4",
+        "Ro-1",
+        "Cn-1",
+        "Cn-2",
+        "Cn-3"
+      ]
+    },
+    {
+      "slug": "aidefend",
+      "title": "AIDEFEND",
+      "tier": 1,
+      "kind": "Defensive technique catalogue",
+      "summary": "Connects defensive techniques to the AITBM sub-metrics they may evidence when deployed effectiveness is measured.",
+      "url": "/mappings/aidefend",
+      "representativeSubmetrics": [
+        "Tr-4",
+        "Ro-4",
+        "Cn-1",
+        "Cn-2",
+        "Cn-5",
+        "Cn-6",
+        "Ro-1",
+        "Cn-3"
+      ]
+    },
+    {
+      "slug": "nist-ai-rmf",
+      "title": "NIST AI RMF",
+      "tier": 2,
+      "kind": "Risk management framework",
+      "summary": "Maps GOVERN, MAP, MEASURE, and MANAGE activities to AITBM assessment evidence and decision outputs.",
+      "url": "/mappings/nist-ai-rmf",
+      "representativeSubmetrics": [
+        "Ro-2",
+        "Ro-3",
+        "Tr-2",
+        "Cn-1",
+        "Cn-3",
+        "Cn-2",
+        "Ro-1",
+        "Ro-4"
+      ]
+    },
+    {
+      "slug": "iso-42001",
+      "title": "ISO/IEC 42001 and 42005",
+      "tier": 2,
+      "kind": "AI management and impact assessment",
+      "summary": "Relates management-system and impact-assessment evidence to AITBM scoring, governance, and assurance inputs.",
+      "url": "/mappings/iso-42001",
+      "representativeSubmetrics": [
+        "Tr-3",
+        "Tr-4"
+      ]
+    },
+    {
+      "slug": "eu-ai-act",
+      "title": "EU AI Act",
+      "tier": 2,
+      "kind": "Binding regulation",
+      "summary": "Maps relevant legal obligations to evidence routes while making clear that AITBM is not a legal-compliance determination.",
+      "url": "/mappings/eu-ai-act",
+      "representativeSubmetrics": [
+        "Pr-1",
+        "Pr-3",
+        "Pr-4",
+        "Fa-3",
+        "Tr-4",
+        "Tr-3",
+        "Tr-1",
+        "Cn-2"
+      ]
+    },
+    {
+      "slug": "csa-ai",
+      "title": "CSA AI Security",
+      "tier": 2,
+      "kind": "Cloud AI security framework",
+      "summary": "Connects CSA MAESTRO and AICM controls to AITBM test selection and deployment evidence.",
+      "url": "/mappings/csa-ai",
+      "representativeSubmetrics": [
+        "Ro-1",
+        "Ro-4",
+        "Pr-1",
+        "Pr-2",
+        "Tr-4",
+        "Pr-3",
+        "Pr-4",
+        "Tr-3"
+      ]
+    },
+    {
+      "slug": "nist-ir8596",
+      "title": "NIST Cyber AI Profile (IR 8596)",
+      "tier": 3,
+      "kind": "Cyber-AI CSF profile",
+      "summary": "Relates the Cyber AI Profile's outcomes to AITBM's measured properties, context, and evidence confidence.",
+      "url": "/mappings/nist-ir8596",
+      "representativeSubmetrics": [
+        "Ro-1",
+        "Ro-4",
+        "Cn-1",
+        "Cn-2",
+        "Cn-4",
+        "Pr-1",
+        "Pr-2",
+        "Tr-3"
+      ]
+    },
+    {
+      "slug": "aima",
+      "title": "OWASP AIMA",
+      "tier": 3,
+      "kind": "AI security maturity model",
+      "summary": "Shows how maturity practices can support AITBM evidence without converting maturity levels directly into ERS.",
+      "url": "/mappings/aima",
+      "representativeSubmetrics": [
+        "Fa-1",
+        "Fa-2",
+        "Fa-3",
+        "Fa-4",
+        "Tr-1",
+        "Tr-3",
+        "Tr-4",
+        "Pr-1"
+      ]
+    },
+    {
+      "slug": "compass",
+      "title": "COMPASS",
+      "tier": 3,
+      "kind": "Security maturity and prioritization",
+      "summary": "Maps COMPASS practices to AITBM threat prioritization, evidence collection, and scoring inputs.",
+      "url": "/mappings/compass",
+      "representativeSubmetrics": [
+        "Ro-1",
+        "Cn-1",
+        "Pr-1",
+        "Pr-4",
+        "Cn-2",
+        "Cn-5",
+        "Cn-6",
+        "Ro-3"
+      ]
+    },
+    {
+      "slug": "d3fend",
+      "title": "MITRE D3FEND",
+      "tier": 3,
+      "kind": "Defensive countermeasure ontology",
+      "summary": "Uses defensive countermeasures to organize evidence routes while AITBM tests determine the actual score.",
+      "url": "/mappings/d3fend",
+      "representativeSubmetrics": [
+        "Tr-4",
+        "Cn-1",
+        "Ro-1",
+        "Cn-3",
+        "Cn-5",
+        "Cn-4",
+        "Ro-4",
+        "Tr-3"
+      ]
+    },
+    {
+      "slug": "cvss",
+      "title": "CVSS",
+      "tier": 3,
+      "kind": "Vulnerability scoring prior art",
+      "summary": "Explains where CVSS complements AITBM and why AI system risk still requires multidimensional and confidence-aware assessment.",
+      "url": "/mappings/cvss",
+      "representativeSubmetrics": [
+        "Pr-1",
+        "Pr-2",
+        "Pr-4",
+        "Cn-3",
+        "Ro-3",
+        "Ro-4",
+        "Cn-1",
+        "Cn-5"
+      ]
+    },
+    {
+      "slug": "gpai-cop",
+      "title": "GPAI Code of Practice",
+      "tier": 4,
+      "kind": "GPAI governance",
+      "summary": "Relates transparency, safety, security, and copyright commitments to AITBM evidence and assessment boundaries.",
+      "url": "/mappings/gpai-cop",
+      "representativeSubmetrics": [
+        "Tr-4",
+        "Tr-1",
+        "Tr-3",
+        "Pr-1",
+        "Pr-3",
+        "Ro-1",
+        "Ro-4",
+        "Ro-3"
+      ]
+    }
+  ]
+}

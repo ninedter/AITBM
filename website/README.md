@@ -1,32 +1,47 @@
 # AITBM Website
 
-**Date:** 2026-08-02
+**Date:** 2026-08-13
 **Purpose:** Document the public static website for the AI Trust Benchmarking and Maturity Framework
 **Status:** Active; publication requires the project publishing procedure
 
 ## Site Inventory
 
-The site contains ten public pages plus a not-found page:
+The site contains ten discovery/application pages, 103 dedicated reference pages,
+and a not-found page. The sitemap therefore contains 113 indexable URLs.
 
 | Path | Purpose |
 |---|---|
 | `index.html` | Framework overview and project entry point |
 | `framework.html` | IVP, ORP, ACI, ERS, tiers, and assessment pathways |
-| `submetrics.html` | All 23 IVP sub-metrics |
-| `use-cases.html` | Evidence-bounded AIDEFEND in Action companion scenarios |
+| `submetrics.html` | Discovery hub for all 23 IVP sub-metrics |
+| `submetrics/*.html` | 23 canonical definitions, five-level rubrics, and required test methods |
+| `use-cases.html` | Search and discovery hub for public-evidence cases |
+| `use-cases/*.html` | 64 complete case-study or research-note evidence records |
 | `gap-analysis.html` | Twelve-gap analysis and remediation status |
 | `aidefend.html` | AIDEFEND integration and control-to-evidence guidance |
-| `mappings.html` | External framework mappings |
+| `mappings.html` | Discovery hub for external framework mappings |
+| `mappings/*.html` | 16 reviewed framework crosswalks with dedicated canonical URLs |
 | `calculator.html` | Quick and detailed scoring calculators |
 | `glossary.html` | Framework terminology |
 | `resources.html` | Documents, references, and project resources |
 | `404.html` | Styled not-found response |
 
-Shared assets are under `assets/`. The site uses precompiled Tailwind CSS, project CSS, vanilla JavaScript, SVG logo assets, an Open Graph image, the generated `assets/data/use-case-scores.json` dataset, and the generated global search index.
+Shared assets are under `assets/`. Generated machine-readable files include the
+use-case scores, the global search index, the sub-metric JSON/CSV reference, and the
+framework-mapping JSON/CSV index. `feed.xml` publishes use-case discovery updates.
 
 ## Runtime and URL Model
 
-The website is static. Cloudflare Pages serves the public site with extensionless URLs such as `/framework`; each page carries an absolute canonical URL and matching Open Graph URL for `https://aitbm.org`.
+The website is static. Cloudflare Pages serves extensionless URLs such as `/framework`,
+`/use-cases/<slug>`, `/mappings/<slug>`, and `/submetrics/<slug>`. Every public page
+carries one absolute canonical URL, a matching Open Graph URL, one H1, descriptive
+metadata, breadcrumbs, and JSON-LD. The detail pages use `Article` or `TechArticle`
+semantics without claiming unsupported rich-result features.
+
+The canonical hostname is `https://aitbm.org`. Cloudflare must maintain a zone-level
+permanent redirect from `www.aitbm.org` to the apex while preserving path and query.
+Cloudflare Pages `_redirects` cannot perform hostname redirects, so this is a dashboard
+or API setting and is verified after every public release.
 
 The included nginx and Docker files provide a production-like local preview with clean URL handling and the project security headers. The public deployment configuration is managed by the `publish-AITBM` procedure rather than this source directory alone.
 
@@ -49,22 +64,24 @@ docker compose up --build
 
 ## Generated Content and Assets
 
-Use the repository scripts rather than editing generated data by hand:
+Run the complete deterministic build rather than editing generated HTML or data by hand:
 
 ```bash
-python3 scripts/site/build_use_cases_page.py
-python3 scripts/site/build_survey_data_js.py
-python3 scripts/site/apply_shared_navigation.py
-python3 scripts/site/build_search_index.py
-python3 scripts/site/generate_sitemap.py
-python3 scripts/site/cachebust.py site
+python3 scripts/site/build_all.py
 ```
 
-- Run `generate_sitemap.py` after adding or removing a public page.
+- `build_mapping_pages.py` uses the reviewed website fragments under
+  `scripts/site/fragments/mappings/` and produces the mapping hub, 16 detail pages,
+  and JSON/CSV indexes.
+- `build_submetric_pages.py` reads the canonical working specification and produces
+  the sub-metric hub, all 23 rubric pages, and JSON/CSV references.
+- `build_use_cases_page.py` reads `docs/use-cases/*.json` and produces the use-case
+  hub, all 64 detail pages, the score dataset, and RSS feed.
 - Edit `scripts/site/fragments/site_header.html`, then run `apply_shared_navigation.py`; do not hand-edit repeated page headers.
-- Run `build_search_index.py` after changing public page content, use-case data, or search indexing logic.
-- Run `cachebust.py` after changing any local JavaScript or CSS file. It stamps the first eight hexadecimal characters of each asset's SHA-1 digest into every HTML reference.
-- Rebuild the use-case page and JSON together when the scenario workpapers or scoring outputs change.
+- `build_all.py` then rebuilds global search, recursively stamps CSS/JS hashes, and
+  regenerates the 113-URL sitemap with content-aware modification dates.
+- `_headers` gives versioned CSS/JS immutable caching, shorter data-file caching, and
+  `noindex, nofollow` protection to Cloudflare Pages preview hostnames.
 
 ## Validation
 
@@ -74,7 +91,11 @@ Run the deterministic site and repository audit before committing:
 python3 scripts/analysis/audit_repository.py
 ```
 
-It verifies the eleven-page inventory, local links, fragment targets, unique IDs, canonical and Open Graph URLs, sitemap parity, asset hashes, shared-header equivalence, global-search coverage and result targets, required collaboration files, and canonical deliverables.
+It verifies the 114-file HTML inventory, exact detail-page counts, local links,
+fragment targets, unique IDs, one H1 per public URL, canonical and Open Graph URLs,
+structured data, 113-URL sitemap parity and last-modified dates, asset hashes,
+shared-header equivalence, global-search coverage, preview noindex/cache rules,
+required collaboration files, and canonical deliverables.
 
 The scoring engines have separate tests:
 
@@ -90,4 +111,8 @@ Google Analytics is configured with measurement ID `G-K7VDS29BQ0`. Cloudflare We
 
 ## Publishing
 
-Publishing is a separate, user-approved operation to the public `ninedter/AITBM` repository. Use the `publish-AITBM` procedure, which stages the allowlisted deliverables, checks source completeness, removes assistant-specific material, validates links and anchors, and records the public commit. A commit to `AITBM-SRC` does not publish the public site.
+Publishing is a separate, user-approved operation to the public `ninedter/AITBM`
+repository. Use the `publish-AITBM` procedure. It rebuilds and validates the SEO tree,
+stages only allowlisted deliverables, checks the public hostname redirect and live
+canonical URLs after deployment, and calls out sitemap resubmission in Google Search
+Console after material URL changes. A commit to `AITBM-SRC` does not publish the site.

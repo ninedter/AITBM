@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>AutoJack Turns Localhost Agent Control Planes Into a… | AITBM</title>
+  <meta name="description" content="Microsoft&#x27;s AutoJack research showed a full boundary crossing from untrusted web content to host code execution. An attacker-controlled page, rendered…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/autojack-autogen-studio-localhost-agent-rce" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/autojack-autogen-studio-localhost-agent-rce" />
+  <meta property="og:title" content="AutoJack Turns Localhost Agent Control Planes Into a… | AITBM" />
+  <meta property="og:description" content="Microsoft&#x27;s AutoJack research showed a full boundary crossing from untrusted web content to host code execution. An attacker-controlled page, rendered…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/autojack-autogen-studio-localhost-agent-rce#article",
+      "url": "https://aitbm.org/use-cases/autojack-autogen-studio-localhost-agent-rce",
+      "headline": "AutoJack Turns Localhost Agent Control Planes Into a Browser-RCE Lesson",
+      "name": "AutoJack Turns Localhost Agent Control Planes Into a Browser-RCE Lesson",
+      "description": "Microsoft's AutoJack research showed a full boundary crossing from untrusted web content to host code execution. An attacker-controlled page, rendered…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/autojack-autogen-studio-localhost-agent-rce#breadcrumb"
+      },
+      "keywords": "AutoJack Turns Localhost Agent Control Planes Into a Browser-RCE Lesson, Multi-Agent / MCP System, AI security incident, AITBM ERS, Ro-4, Cn-1, Cn-2, Cn-5, Cn-6, Cn-7, Tr-3, Cn-3, Ro-1, Tr-4, Pr-2"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/autojack-autogen-studio-localhost-agent-rce#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AutoJack Turns Localhost Agent Control Planes Into a… | AITBM",
+          "item": "https://aitbm.org/use-cases/autojack-autogen-studio-localhost-agent-rce"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">AutoJack Turns Localhost Agent Control Planes Into a Browser-RCE Lesson</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">AutoJack Turns Localhost Agent Control Planes Into a Browser-RCE Lesson</h1><p class="mt-4 max-w-3xl text-blue-100">Microsoft&#x27;s AutoJack research showed a full boundary crossing from untrusted web content to host code execution. An attacker-controlled page, rendered by a browsing agent while AutoGen Studio was running locally, opened a WebSocket to the local MCP route — loopback is reachable from browser-rendered content. That route was excluded from the application&#x27;s authentication middleware, so the request arrived unauthenticated at command-spawning logic. Base64-decoded server_params supplied the command and args, turning a single page visit into arbitrary process creation on the host. Microsoft addressed the issue before the PyPI release; the durable lesson is that localhost is not a security boundary for an agent control plane.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Multi-Agent / MCP System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 3</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 5.6 (2.4–8.7)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-07-06</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-minor" aria-hidden="true"><span style="width:56%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">Microsoft&#x27;s AutoJack research showed a full boundary crossing from untrusted web content to host code execution. An attacker-controlled page, rendered by a browsing agent while AutoGen Studio was running locally, opened a WebSocket to the local MCP route — loopback is reachable from browser-rendered content. That route was excluded from the application&#x27;s authentication middleware, so the request arrived unauthenticated at command-spawning logic. Base64-decoded server_params supplied the command and args, turning a single page visit into arbitrary process creation on the host. Microsoft addressed the issue before the PyPI release; the durable lesson is that localhost is not a security boundary for an agent control plane.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">A local AutoGen Studio deployment (Microsoft AutoGen&#x27;s interface for building and managing agent teams) in its pre-fix state, exposing an MCP WebSocket route on loopback that was excluded from the application&#x27;s authentication middleware and that passed base64-decoded server_params into process creation, running on the same host as a browsing agent that renders untrusted web content. Representative rather than named: the evidence is Microsoft&#x27;s own AutoJack research against source deployments, not a report from an identified victim organisation.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">The corrected AutoGen Studio build (Microsoft addressed the route before the PyPI release, so no published package shipped the vulnerable path); the AutoGen library&#x27;s other components; the browsing agent&#x27;s underlying model and its own vendor; and the attacker-controlled web page infrastructure.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Multi-Agent / MCP System (decision tree Q1) —
+      Q1 YES — AutoGen Studio is the interface for building and managing AutoGen agent teams, i.e. two or more agents that coordinate, exchange messages and use shared tools to complete a goal, and the assessed scenario additionally involves a browsing agent operating alongside the local agent control plane on the same host. Evidence artefacts: the agent-team orchestration surface AutoGen Studio manages, the local MCP route through which tool servers are started, and the browsing agent that renders the attacker page. Under the hybrid rule the highest-risk qualifying class governs, so Multi-Agent / MCP takes precedence over the Agentic / MCP and Tool-Calling classifications that would also qualify.
+      <strong class="text-navy">Tier 3:</strong> Tier 3 Internal — AutoGen Studio runs on developer workstations inside the organisational boundary with controlled users, and the demonstrated impact (arbitrary host process execution) lands on organisational assets; a genuinely sandboxed, credential-free research install with no host reach would qualify for Tier 4 instead.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>A browsing agent renders an attacker-controlled web page while AutoGen Studio is running locally on the same host.</li><li>Script in the page opens a WebSocket connection to AutoGen Studio&#x27;s MCP route on loopback, using the browser as the pivot into the local control plane.</li><li>The authentication middleware excludes the WebSocket MCP route, so the unauthenticated request from an untrusted origin reaches the route handler.</li><li>The handler base64-decodes attacker-supplied server_params into a command and args.</li><li>Those parameters cross into process creation, giving the attacker page arbitrary code execution on the developer host with the agent framework&#x27;s privileges.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>Authentication middleware did exist and did cover AutoGen Studio&#x27;s other routes — the defect was the WebSocket route&#x27;s exclusion from it, not an absence of authentication in the application.</li><li>Microsoft corrected the route before the PyPI release, so no published package shipped the vulnerable path and the affected population is limited to source deployments.</li><li>The issue was found and remediated by the vendor&#x27;s own security research team and published with the full attack chain, giving operators a specific route, transport and parameter to test for.</li><li>The route required a specific parameter shape (base64-encoded server_params) rather than being an open command endpoint, so the exploit had to be constructed against a known internal interface.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–0.75</strong> (midpoint 0.38), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.40</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Ro-4</span><span class="block text-[11px] text-gray-500">Poisoning Attack Resistance</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Ro-4 0.00: no tool-metadata integrity validation on the ingestion path; poisoned tool definitions are accepted without scanning, provenance checks or quarantine.</td><td>Tool-server definitions arrived from an untrusted origin and were acted on directly: &#x27;server_params crosses into process creation. Base64-decoded parameters supply command and args.&#x27; No provenance check, allowlisted execution profile, signature or quarantine stood between an attacker-supplied tool definition and its launch; the recommended fix is to &#x27;deny arbitrary command, browser, and filesystem tool startup from request parameters&#x27; and use allowlisted execution profiles instead.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.03–0.49</strong> (midpoint 0.26), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-critical">confirmed breach</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.12</span></td><td>Cn-1 0.25: basic boundaries exist but are enforced inconsistently, and simple parameter manipulation exceeds the intended scope of the endpoint.</td><td>Request parameters determined which executable ran: decoded server_params supplied command and args with no allowlisted execution profile and no restriction on the resulting process&#x27;s filesystem, network or credential reach. Boundaries existed elsewhere in the application (authentication middleware on other routes, a defined parameter schema for the MCP route) but did not constrain this path.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-2</span><span class="block text-[11px] text-gray-500">Escalation Prevention</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.16</span></td><td>Cn-2 0.00: no escalation controls on the affected route — an unauthenticated caller invokes restricted tooling and bypasses authorization entirely.</td><td>Microsoft described authentication middleware that excluded the WebSocket MCP route, letting the request reach command-spawning logic. An unauthenticated remote origin therefore obtained the agent framework&#x27;s full local execution authority with no authorization check, no origin validation and no approval workflow on the path.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-5</span><span class="block text-[11px] text-gray-500">Agent Identity Integrity</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.14</span></td><td>Cn-5 0.00: no identity verification — the MCP endpoint accepts arbitrary identities and unauthenticated calls.</td><td>The MCP WebSocket route accepted unauthenticated calls with no caller identity and, per the remediation guidance (&#x27;require authentication, origin validation, and authorization on every local route, including WebSocket upgrades&#x27;), no origin validation either. The control plane could not distinguish a legitimate local client from an attacker&#x27;s browser tab.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-6</span><span class="block text-[11px] text-gray-500">Action Reversibility Classification Rate</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.12</span></td><td>Cn-6 0.00: no pre-execution reversibility classification; the action executes ungated (ARCR = 0).</td><td>Spawning an arbitrary host process from request-supplied command and args is at minimum bounded-irreversible and, given the process&#x27;s host and network reach, delegated-irreversible in effect. No reversibility class was determined and no gate was triggered before dispatch; the recommended compensating control (AID-H-025.001, flagging server parameters that decode into process creation before dispatch) describes a check that did not exist.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 18 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill low">0.75</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>Supervised autonomy: AutoGen Studio orchestrates agent teams that invoke tools and start tool-server processes as part of multi-step execution, with the developer&#x27;s oversight asynchronous rather than per-action. It is held at the anchor rather than raised — the fact that the MCP route required no approval at all is an authorization defect scored in Cn-2 and Cn-6, and counting it again in Aa would double-count one defect across two layers.</td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Matches the 1.00 anchor directly: the deployment combines MCP tool integration with a browsing agent that ingests arbitrary internet content, and runtime agent-to-agent messaging. The assessed attack is precisely that maximum-exposure combination — untrusted web content became reachable input to the agent control plane&#x27;s tool-startup transport. <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.30</span></td><td>No System Dependency Graph is published for any affected deployment, so the spec&#x27;s DGC &lt; 0.90 rule applies; the reconstruction independently triggers the 1.00 anchor. A single ungated, unauthenticated path ran from attacker web content (entry origin) through the browser and the L2/L3 agent control plane into host process creation — a P3 write-external, irreversible-capable terminal — with no gate anywhere on the path, which is the 1.00 anchor&#x27;s ungated-path-to-P3 condition.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: corroborated by the observed path</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>The route defect itself is deterministically fixable — add authentication and origin validation to the WebSocket upgrade and deny command spawn from request parameters — and Microsoft did exactly that before the PyPI release. Scored 0.25 rather than 0.00 because the brief&#x27;s own conclusion is that a single route patch is insufficient: complete remediation requires deployment-infrastructure work (authentication and origin validation on every local route, browser-runtime egress policy denying loopback and private addresses, allowlisted execution profiles, ephemeral sandboxes for command handlers) measured in days, plus identifying and replacing vulnerable source deployments.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 2 (dimensions strictly above 0.75) &rarr; CRM = 1.15.</p><p class="mt-2 text-xs" style="color:var(--sev-critical)"><strong>Compound Risk Alert.</strong> Two or more dimensions are simultaneously elevated (spec&nbsp;3.2.2); architectural decomposition is recommended before deployment.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill low">0.25</span></td><td>Minimal provenance record: the framework, the vulnerable route and the fix are described, but nothing about a representative deployment&#x27;s model, tool manifest, agent roster, permission scopes or identity policy is documented, and no CVE or version boundary is published in the evidence — operators are told to &#x27;identify the vulnerable running version&#x27; themselves, which is the opposite of a lineage artefact.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.15</span></td><td>coverage 0.22 (5 of 23 applicable sub-metrics) &times; independence 0.80 &times; fidelity 0.85. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill mid">0.35</span></td><td>Evidence dated <a href="https://www.microsoft.com/en-us/security/blog/2026/06/18/autojack-single-page-rce-host-running-ai-agent/" target="_blank" rel="noopener noreferrer">2026-06-18</a>; age 56 days on the workpaper reference date. Components: C_event 0.35 · T_behavior 0.53 · C_monitor 0.65 · T_containment 0.65 · T_calendar 0.81 · C_evidence 0.85. Binding term: <strong>C_event</strong>. dt_days = 56, measured from the primary disclosure (Microsoft, 2026-06-18) to the assessment date 2026-08-13; the AIDEFEND brief republished the analysis on 2026-07-06 without new primary evidence. agentic = true: a Multi-Agent/MCP control plane whose tool servers are started and reprovisioned at runtime, so the containment staleness floor (M_Cn = 2.0) applies. baw = true: the Behavioral Attestation Window checklist is met on the first item that applies — more than one agent exchanging messages at runtime — and AutoGen Studio&#x27;s agent teams carry task state across turns. C_event = 0.35 (major): a demonstrated unauthenticated path into the agent control plane&#x27;s process-spawn logic, and the corrected route materially changes the assessed baseline. C_monitor = 0.65: no detection or alerting on the localhost MCP route is reported; the recommendation to &#x27;add regression tests that load attacker-controlled pages and attempt localhost WebSocket, fetch, and redirect access&#x27; indicates none existed. C_evidence = 0.85: unresolved tool/identity gap — source deployments may still run the vulnerable route, and closure has not been independently verified across the affected population.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.23</strong> &mdash; diagnostic status: Invalid as assessment-of-record evidence. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.20(0.75) + 0.25(1.00) + 0.30(1.00) + 0.25(0.25) = <strong>0.762</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 2 &rarr; <strong>1.15</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.762 × 1.15 = <strong>0.877</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.20(0.38) + 0.15(0.50) + 0.20(0.50) + 0.25(0.50) + 0.20(0.26) = <strong>0.427</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.427) = <strong>0.637</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.235 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 0.877 × 0.637 × 1/1.000 × 10) = <strong>5.6</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>2.4–8.7</strong>; 18 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-034.001</td><td>MCP Server Deployment Profile, Transport &amp; Exposure Baseline<span class="block text-[11px] text-gray-500">Parent AID-H-034 (MCP Server Runtime Boundary &amp; Tool Exposure Governance), dataVersion 2026.08.05. Origin checks, authentication, minimal environment and hardened runtime profiles on local and Streamable HTTP transports are the missing baseline behind Cn-2 = 0.00 and Cn-5 = 0.00.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-021.004</td><td>Control-Plane &amp; Oversight-Surface Isolation<span class="block text-[11px] text-gray-500">Parent AID-H-021 (AI Agent Configuration Integrity &amp; Hardening), dataVersion 2026.08.05. Preventing the agent runtime or browser task from reaching the local control plane that starts tools or processes is the architectural control the case turns on.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-034.003</td><td>Server-Side Tool Invocation Validation &amp; Object-Level Authorization<span class="block text-[11px] text-gray-500">Parent AID-H-034, dataVersion 2026.08.05. Validating arguments, authorizing the caller and denying shell or command execution by default is the exact MCP-side control absent behind Cn-1 = 0.25 and Cn-6 = 0.00.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-019.003</td><td>Browser Runtime Admission &amp; Sanitized Observation Export Gate<span class="block text-[11px] text-gray-500">Parent AID-H-019 maps directly to Ro-1, Cn-1, and Cn-3 in the reconciled AIDEFEND dataVersion 2026.08.05 crosswalk. Recorded because the brief names it the decisive boundary — an egress policy enforced outside Chromium or Playwright that denies loopback and private-address requests would have severed the attack path at step 2.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-003.010</td><td>Deployed AI Software Vulnerability Remediation Lifecycle<span class="block text-[11px] text-gray-500">Parent AID-H-003 (Secure ML Supply Chain Management), dataVersion 2026.08.05. Identifying vulnerable running versions and replacing them with the corrected route is the remediation owner underlying Rf = 0.25; the absence of a published version boundary is also why Pc stays at 0.25.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-025.001</td><td>Pre-Execution Static Analysis &amp; Dangerous Construct Blocking<span class="block text-[11px] text-gray-500">Parent AID-H-025 (Unsafe Code Execution Prevention), dataVersion 2026.08.05, maps to Cn-3 in the reconciled catalogue. Flagging server parameters that decode into process creation before dispatch is the detective complement to the missing Cn-6 gate.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-001.003</td><td>Ephemeral Single-Use Sandboxes for Tools<span class="block text-[11px] text-gray-500">Parent AID-I-001 (AI Execution Sandboxing &amp; Runtime Isolation), dataVersion 2026.08.05. Ephemeral single-use sandboxes contain any high-risk command handler that survives validation, bounding the blast radius the Cp = 1.00 path exploits.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-004</td><td>Incident Exploit-Path Closure Verification<span class="block text-[11px] text-gray-500">AID-E-004 is absent from the reconciled AIDEFEND-to-AITBM lookup at dataVersion 2026.08.05; no AITBM sub-metric mapping is asserted for it. Recorded because independently replaying the attacker-page-to-localhost WebSocket path across the affected population is the closure evidence that would lift the C_evidence = 0.85 cap.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-gray-100 px-1.5 py-0.5 text-xs font-semibold text-gray-700">ACI:C_event recovery</span> <span class="rounded bg-gray-100 px-1.5 py-0.5 text-xs font-semibold text-gray-700">ACI:containment/behavioral re-attestation</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">A loopback-bound control plane is not a lower-exposure deployment: because a browsing agent renders untrusted content on the same host, As reaches the 1.00 anchor and the Cp path is corroborated end-to-end — while the thin two-axis evidence base forces the Lite Ec cap, showing how AITBM records the limits of its own evidence rather than papering over them.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-07/007-autojack-autogen-studio-localhost-agent-rce.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action brief — AutoJack Turns Localhost Agent Control Planes Into a Browser-RCE Lesson (2026-07-06)</a> · <a href="https://www.microsoft.com/en-us/security/blog/2026/06/18/autojack-single-page-rce-host-running-ai-agent/" class="text-navy hover:underline underline-offset-2">Microsoft Security Blog — AutoJack: Single Page RCE Host Running AI Agent, Microsoft Defender Security Research Team (2026-06-18)</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/ro-4-poisoning-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-4: Poisoning Attack Resistance</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-2-escalation-prevention" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-2: Escalation Prevention</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/cn-6-action-reversibility-classification-rate-arcr" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6: Action Reversibility Classification Rate</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a><a href="/submetrics/tr-3-audit-trail-completeness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-3: Audit Trail Completeness</a><a href="/submetrics/cn-3-output-filtering-robustness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-3: Output Filtering Robustness</a><a href="/submetrics/ro-1-adversarial-input-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-1: Adversarial Input Resistance</a><a href="/submetrics/tr-4-model-lineage-disclosure" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4: Model Lineage Disclosure</a><a href="/submetrics/pr-2-inference-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-2: Inference Attack Resistance</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/salesforce-einstein-prompt-mines-data-corruption" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 2</span><h3 class="mt-1 font-bold text-navy">Prompt Mines Show Why CRM Agents Need Write-Action Gates</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 6.4 →</span></a><a href="/use-cases/perplexedbrowser-comet-1password-agent-hijack" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 2</span><h3 class="mt-1 font-bold text-navy">PerplexedBrowser Shows Why Agentic Browsers Need Session and Sink Boundaries</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 7.4 →</span></a><a href="/use-cases/langgraph-checkpointer-sqli-deserialization-rce" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 2</span><h3 class="mt-1 font-bold text-navy">LangGraph Checkpointer Bugs Turn Agent State History Into an RCE Path</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 5.2 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>Entra Agent ID Administrator Scope Gap: Agent Roles… | AITBM</title>
+  <meta name="description" content="Silverfort reported that Microsoft Entra&#x27;s Agent ID Administrator role — documented as scoped to agent-related objects — could add an owner to…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/entra-agent-id-admin-service-principal-takeover" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/entra-agent-id-admin-service-principal-takeover" />
+  <meta property="og:title" content="Entra Agent ID Administrator Scope Gap: Agent Roles… | AITBM" />
+  <meta property="og:description" content="Silverfort reported that Microsoft Entra&#x27;s Agent ID Administrator role — documented as scoped to agent-related objects — could add an owner to…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/entra-agent-id-admin-service-principal-takeover#article",
+      "url": "https://aitbm.org/use-cases/entra-agent-id-admin-service-principal-takeover",
+      "headline": "Entra Agent ID Administrator Scope Gap: Agent Roles Reaching Service Principals",
+      "name": "Entra Agent ID Administrator Scope Gap: Agent Roles Reaching Service Principals",
+      "description": "Silverfort reported that Microsoft Entra's Agent ID Administrator role — documented as scoped to agent-related objects — could add an owner to…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/entra-agent-id-admin-service-principal-takeover#breadcrumb"
+      },
+      "keywords": "Entra Agent ID Administrator Scope Gap: Agent Roles Reaching Service Principals, Agentic / MCP System, AI security incident, AITBM ERS, Tr-4, Cn-1, Cn-2, Cn-5, Cn-6, Cn-7, Tr-3"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/entra-agent-id-admin-service-principal-takeover#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Entra Agent ID Administrator Scope Gap: Agent Roles… | AITBM",
+          "item": "https://aitbm.org/use-cases/entra-agent-id-admin-service-principal-takeover"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Entra Agent ID Administrator Scope Gap: Agent Roles Reaching Service Principals</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">Entra Agent ID Administrator Scope Gap: Agent Roles Reaching Service Principals</h1><p class="mt-4 max-w-3xl text-blue-100">Silverfort reported that Microsoft Entra&#x27;s Agent ID Administrator role — documented as scoped to agent-related objects — could add an owner to non-agent service principals in the same tenant. Once owner, the researcher could add credentials to the target principal and then authenticate as it; where that principal held privileged directory roles or high-impact Microsoft Graph permissions, the result was privilege escalation. Silverfort also noted that the Entra UI did not present the role as privileged even though the documentation described it that way, which can reduce the review applied to its assignment. Microsoft fixed the issue across clouds by 2026-04-09, blocking Agent ID Administrator from managing owners on non-agent service principals. The assessment below scores only the pre-fix configuration.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Agentic / MCP System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 1</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 3.8 (1.2–6.3)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-04-29</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-pass" aria-hidden="true"><span style="width:38%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">Silverfort reported that Microsoft Entra&#x27;s Agent ID Administrator role — documented as scoped to agent-related objects — could add an owner to non-agent service principals in the same tenant. Once owner, the researcher could add credentials to the target principal and then authenticate as it; where that principal held privileged directory roles or high-impact Microsoft Graph permissions, the result was privilege escalation. Silverfort also noted that the Entra UI did not present the role as privileged even though the documentation described it that way, which can reduce the review applied to its assignment. Microsoft fixed the issue across clouds by 2026-04-09, blocking Agent ID Administrator from managing owners on non-agent service principals. The assessment below scores only the pre-fix configuration.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">The Microsoft Entra Agent ID agent-identity control plane as it stood before Microsoft&#x27;s fix completed across clouds on 2026-04-09: specifically the Agent ID Administrator directory role, the authorization enforcement applied to its actions over Entra application and service-principal objects, and the credential-issuance and ownership operations reachable through Microsoft Graph. This is the identity, credential and authorization substrate on which AI agent identities in a tenant are built, which is the surface AITBM&#x27;s Cn-5 (Agent Identity Integrity) is defined over.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">The post-fix Entra configuration (Microsoft blocked the role from managing owners on non-agent service principals across clouds by 2026-04-09); the rest of Entra ID outside the agent-identity role and the service-principal objects it could reach; the AI agents and models that authenticate using these identities, their prompts, tools and behaviour; and any specific customer tenant&#x27;s role assignments. This assessment scores a point-in-time platform configuration reported by an external researcher, not Microsoft&#x27;s identity platform generally.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Agentic / MCP System (decision tree Q2) —
+      Q1 = NO: the brief evidences no two-or-more agents coordinating, delegating, sharing memory or exchanging messages — Entra Agent ID issues identities, it does not orchestrate agents. Q2 = YES: Entra Agent ID exists to give AI agents (blueprints, agent identities, agent users) first-class workload identities that authenticate and invoke Microsoft Graph and connected tools without explicit human approval for each call, and the assessed component is the permission and credential boundary of that agentic platform. The brief&#x27;s own framing — &#x27;agent identities still sit on familiar Entra application and service-principal objects&#x27; — is the evidence that the agentic identity plane and the general service-principal plane share primitives. Evidence artefacts available: Silverfort&#x27;s described role behaviour, Microsoft&#x27;s role documentation as reported, and the fix scope.
+      <strong class="text-navy">Tier 1:</strong> Tier 1 Critical: enterprise identity infrastructure is infrastructure control in the spec&#x27;s sense — takeover of a service principal holding privileged directory roles or high-impact Graph permissions yields immediate, at-scale unauthorised access across every workload that authenticates to the tenant; a Tier 3 reading (organisational boundary, administrator users only) is defensible on the user population but understates the consequence test the tier definition actually applies.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>A principal holds the Entra Agent ID Administrator role — an administrator-assignable directory role that the Entra UI did not label as privileged.</li><li>Using that role, add an owner to a non-agent service principal: an object class outside the role&#x27;s documented resource boundary, but not outside its enforced one.</li><li>As owner of the target service principal, add a new client secret or certificate credential to it.</li><li>Authenticate as the target service principal using the attacker-added credential.</li><li>Inherit that principal&#x27;s directory roles and Microsoft Graph permissions; where those are privileged, an agent-management role has become a tenant privilege-escalation path.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>Microsoft shipped a fix across all clouds by 2026-04-09 that blocks Agent ID Administrator from managing owners on non-agent service principals, so the documented boundary is now the enforced boundary.</li><li>The path was not reachable by an unauthenticated or unprivileged actor: it required an existing assignment of an administrative directory role, so the failure is escalation between administrative scopes rather than an open door.</li><li>The response guidance recommends correlating role assignment, owner change, credential creation, and sign-in. That guidance does not prove each event was recorded with the necessary identity fields in the assessed configuration, so it receives no positive scoring credit.</li><li>Microsoft&#x27;s written documentation did classify the role as privileged; the mismatch Silverfort reported was with the Entra UI&#x27;s risk labelling, not with the guidance itself.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.05–0.85</strong> (midpoint 0.45), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.55</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Tr-4</span><span class="block text-[11px] text-gray-500">Model Lineage Disclosure</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>Placed at 0.25 rather than 0.50 under the conflicting-evidence rule. Documentation of the effective permission surface existed for the major component (0.50 language: documented but not linked to evaluation evidence), but it materially misstated the enforced boundary, which is worse than a stale-update gap; the lower of the two plausible anchors is taken. Scored against the disclosed authorisation/configuration surface of the agent-identity plane, not model lineage, which is out of scope here.</td><td>&#x27;The role said &quot;agent objects,&quot; but enforcement reached broader service principals. Agent ID Administrator was documented as scoped to agent-related objects, yet Silverfort showed it could add an owner to non-agent service principals.&#x27; Additionally &#x27;the role was documented as privileged, but the Entra UI did not show it that way.&#x27; The brief&#x27;s closing recommendation is to build a pre-adoption test harness exercising each new agent role against every inherited directory object type — i.e. no such validation evidence was linked to the published scope.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.10–0.69</strong> (midpoint 0.40), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.65</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.12</span></td><td>0.25 anchor: basic boundaries exist and are real — the role is scoped RBAC, not unrestricted directory administration — but enforcement was inconsistent, and straightforward parameter manipulation (pointing the same operation at a different object subtype) exceeded the intended scope. Not 0.00, because scope boundaries did exist and constrained most operations.</td><td>The documented resource boundary of the Agent ID Administrator role was not the enforced one: a direct Graph owner-assignment call against a non-agent service principal succeeded. The brief states the core failure as &#x27;an authorization policy that did not enforce the documented resource boundary&#x27; and specifies the correct behaviour as &#x27;Agent ID Administrator may update owners on agent-backed service principals, but must fail closed on non-agent service principals.&#x27;<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-2</span><span class="block text-[11px] text-gray-500">Escalation Prevention</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.16</span></td><td>0.25 anchor: basic role checks existed (the actor needed the Agent ID Administrator assignment) but were vulnerable to role confusion — the role&#x27;s identity as an &#x27;agent&#x27; role did not match the object classes it could act on — and the two-step owner-then-credential chain proceeded without an approval gate or execution-time re-check.</td><td>&#x27;Ownership became a takeover primitive. After becoming owner, the researcher could add credentials and authenticate as the target principal. If that principal held privileged directory roles or high-impact Graph permissions, the result became privilege escalation.&#x27; The brief notes both sensitive steps — become owner, then add credentials — completed without re-authorisation at execution time, which is why it maps Continuous Authorization Verification (anti-TOCTOU) to the case.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-5</span><span class="block text-[11px] text-gray-500">Agent Identity Integrity</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.14</span></td><td>Disputed between the 0.50 anchor (token-based identity with scoped permissions and partial verification, no cryptographic binding to workload or session — a fair description of service-principal identity in general) and 0.25. The lower value is taken per the conflicting-evidence rule: on the demonstrated path, identity spoofing succeeded outright because possession of a credential the attacker could mint was sufficient to be the principal, with no workload attestation and no agent-to-agent verification. <span class="sev sev-major">disputed</span></td><td>Agent identities are built on Entra application and service-principal objects. An actor who could add itself as owner could then mint a new secret or certificate on the target principal and authenticate as it — a full identity assumption, with no attestation binding the credential to an actual workload. The brief&#x27;s remediation set is credential eviction at the authoritative issuer plus revocation of delegated grants, because &#x27;Removing the attacker-added secret alone is insufficient if the principal can mint replacement access.&#x27;<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 19 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill low">0.75</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.35</span></td><td>Supervised autonomy. Two facets: the agent identities this plane issues authenticate and call Microsoft Graph on their own without per-call human approval — that is the purpose of Entra Agent ID — and the control plane itself applies high-consequence changes (owner assignment, credential creation) immediately on a valid API call, with human oversight only asynchronous through audit review and access reviews. Not 1.00: each administrative change is still initiated by a human-held principal, and there is no evidence of the plane autonomously deciding to grant authority.</td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill mid">0.50</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Internet-reachable with authentication and validation. The Microsoft Graph control plane is globally reachable and multi-tenant, but the demonstrated path required an authenticated principal already holding a specific administrative role, and the brief evidences no untrusted-content ingestion, external agent communication or MCP tool integration into the assessed component. More exposed than an internal-only plane (0.25), well short of the maximum-exposure anchor.</td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>No System Dependency Graph is published for the assessed configuration, so the spec&#x27;s worst-case default applies — but the reconstruction independently triggers the 1.00 anchor on its merits. The observed path is ungated and terminates at a credential- and permission-issuing node (P4): owning a service principal permits minting credentials for it, and the target class explicitly includes principals holding privileged directory roles and high-impact Graph permissions. That is &#x27;an ungated path reaches a P3/P4 node&#x27;, with privilege amplification from an agent-scoped administrative origin to arbitrary service-principal authority.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: corroborated by the observed path</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill high">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.15</span></td><td>Deterministic fix, already shipped. Microsoft closed the path across clouds by 2026-04-09 with an authorization-policy change blocking the role from managing owners on non-agent service principals — a server-side code/policy correction requiring no retraining and no customer-side model change. Tenant-side follow-up (inventorying role assignments, auditing recent owner and credential changes) is operational hygiene rather than remediation difficulty.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 1 (dimensions strictly above 0.75) &rarr; CRM = 1.00.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill low">0.25</span></td><td>Minimal provenance in the evidence available. The vendor, platform, role name, affected object classes, exploitation steps and fix date are documented at a high level by the researcher and the vendor&#x27;s fix notice. There is no AIBOM, no agent or tool inventory, no identity-policy artefact, no per-tenant configuration record, and no cryptographic or independently reviewed evidence tied to a specific assessed deployment.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.17</span></td><td>coverage 0.17 (4 of 23 applicable sub-metrics) &times; independence 1.00 &times; fidelity 1.00. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill low">0.01</span></td><td>Evidence dated <a href="https://www.silverfort.com/blog/agent-id-administrator-scope-overreach-service-principal-takeover-in-entra-id/" target="_blank" rel="noopener noreferrer">2026-04-23</a>; age 112 days on the workpaper reference date. Components: T_containment 0.01 · T_calendar 0.08 · C_event 0.35 · C_monitor 0.65 · C_evidence 0.85. Binding term: <strong>T_containment</strong>. dt_days = 112, measured from Silverfort&#x27;s primary disclosure dated 2026-04-23 to the 2026-08-13 evidence reference date; the AIDEFEND brief republished the analysis on 2026-04-29. agentic = true: Entra Agent ID is a mutable permission boundary by design — roles, owners, credentials and Graph grants can all be reissued at runtime — so the containment staleness floor (M_Cn = 2.0) applies and no boundary re-attestation has occurred since. baw = false: the brief evidences none of the four Behavioral Attestation Window checklist items for the assessed component — no cross-session memory writable by a model or agent, no live agent-to-agent messaging, no self-modifying prompts or configuration, and no closed feedback loop; the assessed surface is an authorization control plane, not a behavioural runtime. C_monitor = 0.65: a detection gap is evidenced — the brief has to recommend alerting on an Agent ID Administrator adding owners or credentials to non-agent service principals, and states the takeover &#x27;is easy to miss when those events are viewed separately&#x27;. C_event = 0.35: Microsoft&#x27;s fix is an identity-boundary change to the assessed configuration, which is an enumerated model-or-architecture event; the evidence therefore describes a superseded state. C_evidence = 0.85: the class of gap remains open — the brief&#x27;s own conclusion is that every other new AI-agent identity role still needs testing against the directory object types it inherits.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.06</strong> &mdash; diagnostic status: Invalid as assessment-of-record evidence. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.35(0.75) + 0.25(0.50) + 0.25(1.00) + 0.15(0.00) = <strong>0.637</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 1 &rarr; <strong>1.00</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.637 × 1.00 = <strong>0.637</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.30(0.50) + 0.25(0.50) + 0.15(0.45) + 0.20(0.50) + 0.10(0.40) = <strong>0.482</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.482) = <strong>0.590</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.063 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 0.637 × 0.590 × 1/1.000 × 10) = <strong>3.8</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>1.2–6.3</strong>; 19 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-M-009.003</td><td>Agent Identity, Delegation Lineage &amp; Authorization Context<span class="block text-[11px] text-gray-500">Parent AID-M-009 &#x27;Agent Autonomy &amp; Authority Governance&#x27; (dataVersion 2026.08.05). Produces the delegation-lineage record — who assigned the role, target object, original authority, delegated scope, exact action — that Cn-5 is scored on; Cn-6 evidence is listed by the lookup but this case supplies no action-classification trace, so Cn-6 was not scored.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.002</td><td>Policy-Based Access Control<span class="block text-[11px] text-gray-500">Parent AID-H-018 &#x27;Tool Authorization &amp; Capability Scoping&#x27; (dataVersion 2026.08.05). The directly failing control: a policy engine evaluating actor role, target object type and subtype would have failed closed on non-agent service principals. This is the Cn-1 evidence source.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.006</td><td>Continuous Authorization Verification (Anti-TOCTOU)<span class="block text-[11px] text-gray-500">Parent AID-H-018 (dataVersion 2026.08.05). Addresses the two-step chain — become owner, then add credentials — where the second step inherited the authorisation decision of the first; evidence for Cn-2 in substance as well as the mapped Cn-1.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-004.001</td><td>User &amp; Privileged Access Management<span class="block text-[11px] text-gray-500">Parent AID-H-004 &#x27;Identity, Access &amp; Trusted Communication for AI Systems&#x27; (dataVersion 2026.08.05). Eligible-not-standing assignment, step-up authentication and periodic review of who may hold Agent ID Administrator; the UI&#x27;s failure to label the role privileged is what made this hygiene less likely to be applied.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-001.003</td><td>AI Agent &amp; Workload Principal and Issuance Disablement<span class="block text-[11px] text-gray-500">Parent AID-E-001 &#x27;Compromised Credential, Session, Principal &amp; Grant Eviction&#x27; (dataVersion 2026.08.05). Response-side Cn-5 evidence: disabling the compromised principal at every issuance path, since removing one attacker-added secret leaves the ability to mint replacements.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-001.004</td><td>Delegated Grant &amp; Connected-App Authorization Revocation<span class="block text-[11px] text-gray-500">Parent AID-E-001 (dataVersion 2026.08.05). Revoking OAuth grants, connected-app consents and app-role assignments that survive ordinary secret rotation — the persistence half of the takeover.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-011.004</td><td>Non-Human Identity &amp; Delegated Token Abuse Detection<span class="block text-[11px] text-gray-500">Parent AID-D-011 &#x27;Registered Agent Behavior, Interaction &amp; Identity-Abuse Detection&#x27; (dataVersion 2026.08.05). The precise missing telemetry: correlating new credential issuance on a privileged service principal with the sign-in that follows. Its absence is the basis for the C_monitor cap.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-005.004</td><td>Specialized Agent &amp; Session Logging<span class="block text-[11px] text-gray-500">Parent AID-D-005 &#x27;AI Activity Logging, Monitoring &amp; Threat Hunting&#x27; (dataVersion 2026.08.05). Direct Tr-3 evidence source: preserving correlation IDs across role assignment, Graph call, owner addition, credential creation and authentication.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-001.001</td><td>Root &amp; Long-Lived Credential Object Eviction<span class="block text-[11px] text-gray-500">Parent AID-E-001 (dataVersion 2026.08.05). Removal of the unauthorised service-principal secrets or certificates at the authoritative issuer.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">An AI system can fail the Containment axis with no model in the loop at all: Cn-5 is scored on the enforced authorization boundary around agent identities, so a directory role whose documented scope and effective scope diverge is an agent-identity finding, not merely an IAM bug.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-04/017-entra-agent-id-admin-service-principal-takeover.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action brief — Entra Agent ID Administrator Scope Gap: Agent Roles Reaching Service Principals (published 2026-04-29)</a> · <a href="https://www.silverfort.com/blog/agent-id-administrator-scope-overreach-service-principal-takeover-in-entra-id/" class="text-navy hover:underline underline-offset-2">Primary source — Noa Ariel, Silverfort: Agent ID Administrator scope overreach: Service Principal takeover in Entra ID (2026-04-23)</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/tr-4-model-lineage-disclosure" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4: Model Lineage Disclosure</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-2-escalation-prevention" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-2: Escalation Prevention</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/cn-6-action-reversibility-classification-rate-arcr" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6: Action Reversibility Classification Rate</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a><a href="/submetrics/tr-3-audit-trail-completeness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-3: Audit Trail Completeness</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/salesforce-einstein-prompt-mines-data-corruption" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 2</span><h3 class="mt-1 font-bold text-navy">Prompt Mines Show Why CRM Agents Need Write-Action Gates</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 6.4 →</span></a><a href="/use-cases/perplexedbrowser-comet-1password-agent-hijack" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 2</span><h3 class="mt-1 font-bold text-navy">PerplexedBrowser Shows Why Agentic Browsers Need Session and Sink Boundaries</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 7.4 →</span></a><a href="/use-cases/langgraph-checkpointer-sqli-deserialization-rce" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 2</span><h3 class="mt-1 font-bold text-navy">LangGraph Checkpointer Bugs Turn Agent State History Into an RCE Path</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 5.2 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>Stolen Thoughts: Opaque Reasoning Blocks Could Be… | AITBM</title>
+  <meta name="description" content="Stolen Thoughts found that opaque reasoning blocks returned by Anthropic, OpenAI, and Google APIs could be accepted across sessions, users, or…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/stolen-thoughts-reasoning-trace-extraction" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/stolen-thoughts-reasoning-trace-extraction" />
+  <meta property="og:title" content="Stolen Thoughts: Opaque Reasoning Blocks Could Be… | AITBM" />
+  <meta property="og:description" content="Stolen Thoughts found that opaque reasoning blocks returned by Anthropic, OpenAI, and Google APIs could be accepted across sessions, users, or…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/stolen-thoughts-reasoning-trace-extraction#article",
+      "url": "https://aitbm.org/use-cases/stolen-thoughts-reasoning-trace-extraction",
+      "headline": "Stolen Thoughts: Opaque Reasoning Blocks Could Be Replayed to Recover Secrets",
+      "name": "Stolen Thoughts: Opaque Reasoning Blocks Could Be Replayed to Recover Secrets",
+      "description": "Stolen Thoughts found that opaque reasoning blocks returned by Anthropic, OpenAI, and Google APIs could be accepted across sessions, users, or…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/stolen-thoughts-reasoning-trace-extraction#breadcrumb"
+      },
+      "keywords": "Stolen Thoughts: Opaque Reasoning Blocks Could Be Replayed to Recover Secrets, Agentic / MCP System, AI security incident, AITBM ERS, Pr-1, Pr-2, Pr-3, Cn-4, Cn-5, Cn-3, Cn-7, Pr-4, Ro-2, Cn-1, Ro-3"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/stolen-thoughts-reasoning-trace-extraction#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Stolen Thoughts: Opaque Reasoning Blocks Could Be… | AITBM",
+          "item": "https://aitbm.org/use-cases/stolen-thoughts-reasoning-trace-extraction"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Stolen Thoughts: Opaque Reasoning Blocks Could Be Replayed to Recover Secrets</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">Stolen Thoughts: Opaque Reasoning Blocks Could Be Replayed to Recover Secrets</h1><p class="mt-4 max-w-3xl text-blue-100">Stolen Thoughts found that opaque reasoning blocks returned by Anthropic, OpenAI, and Google APIs could be accepted across sessions, users, or compatible models within a provider family. An attacker who first obtained another user&#x27;s block could submit it to a weaker compatible model and jailbreak that model into transcribing hidden reasoning. In 6,708 public agent trajectories, the researchers reconstructed 315,320 blocks and found real sensitive artifacts in 328 sessions. They report that provider mitigations later made the demonstrated attacks non-reproducible.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Agentic / MCP System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 1</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 3.5 (1.5–5.4)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-08-12</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-pass" aria-hidden="true"><span style="width:35%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">Stolen Thoughts found that opaque reasoning blocks returned by Anthropic, OpenAI, and Google APIs could be accepted across sessions, users, or compatible models within a provider family. An attacker who first obtained another user&#x27;s block could submit it to a weaker compatible model and jailbreak that model into transcribing hidden reasoning. In 6,708 public agent trajectories, the researchers reconstructed 315,320 blocks and found real sensitive artifacts in 328 sessions. They report that provider mitigations later made the demonstrated attacks non-reproducible.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">A representative provider-family agent API integration that returned opaque reasoning blocks to clients, accepted captured blocks across sessions or users, and allowed a compatible weaker model to continue them.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">Arbitrary tenant access, which the paper did not demonstrate; present provider behavior after mitigation; and claims that every reconstructed block exactly matched unavailable ground-truth plaintext.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Agentic / MCP System (decision tree Q4) —
+      The evidence corpus comprised agent trajectories carrying provider state across tool-driven sessions; the scored boundary is the state-bearing integration rather than the foundation model alone.
+      <strong class="text-navy">Tier 1:</strong> Tier 1 because cross-session reasoning state can contain credentials, personal data, proprietary instructions, and tool context whose disclosure affects production identities and systems.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>The attacker first needed a reasoning block. The work does not show arbitrary access to another tenant. The third-party path begins when published or otherwise obtainable agent logs expose the block.</li><li>The weakness was portability, not broken encryption. Providers accepted opaque blocks across sessions, users, or compatible models within one provider family. After processing a captured block, a weaker model could be jailbroken into transcribing hidden reasoning.</li><li>Public traces contained real secrets, with limits. The team reconstructed 315,320 blocks from 6,708 trajectories and found real sensitive artifacts in 328 sessions. Sixty-four of 704 genuine-session artifacts were absent from visible chat history. Other results included synthetic benchmark personas, and exact transcription fidelity could not always be proven without ground-truth plaintext.</li><li>The reported attack is now mitigated. Anthropic, OpenAI, and Google acknowledged the disclosures. The researchers say provider changes made the Figure 1 attacks non-reproducible, though portable hidden state and public trace publication remain recurring architectural boundaries.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>The attacker first needed to obtain a reasoning block; the research did not demonstrate arbitrary access to another tenant.</li><li>Anthropic, OpenAI, and Google acknowledged the disclosures, and the researchers report that provider mitigations made the demonstrated attacks non-reproducible.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.55</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.20–0.40</strong> (midpoint 0.30), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-critical">confirmed breach</span></td></tr><tr><td><span class="font-semibold text-navy">Pr-1</span><span class="block text-[11px] text-gray-500">Training Data Leakage Risk</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>The 0.25 anchor: sensitive context could be extracted through an adaptive replay and jailbreak chain; provider mitigation later blocked the demonstrated route but no measured enduring leakage bound is public.</td><td>Researchers reconstructed 315,320 blocks from 6,708 public agent trajectories and found real sensitive artifacts in 328 sessions, including 64 artifacts absent from visible chat history.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td><span class="font-semibold text-navy">Pr-2</span><span class="block text-[11px] text-gray-500">Inference Attack Resistance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>The 0.25 anchor: the inference interface accepted a cross-context state artifact and disclosed information under adaptive probing without strong session binding.</td><td>A captured block could be submitted to a compatible weaker model and jailbroken into transcribing hidden reasoning across sessions or users within a provider family.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td><span class="font-semibold text-navy">Pr-3</span><span class="block text-[11px] text-gray-500">Data Minimization Compliance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.35</span></td><td>The 0.25 anchor: operational context was retained and exported beyond the minimum visible response, with incomplete secret demotion and trace minimization.</td><td>Credentials and personal data entered hidden reasoning and were preserved in public agent traces even when some artifacts were absent from visible chat history.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.06–0.82</strong> (midpoint 0.44), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.65</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-4</span><span class="block text-[11px] text-gray-500">Side-Channel Resistance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.10</span></td><td>The 0.25 anchor: provider opacity obscured the content but did not prevent the state artifact from carrying information across the intended session boundary.</td><td>Opaque reasoning state became an unintended cross-session disclosure channel once an attacker obtained a block and replayed it through a compatible model.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-5</span><span class="block text-[11px] text-gray-500">Agent Identity Integrity</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.14</span></td><td>The 0.25 anchor: provider-family compatibility existed, but identity and session binding of the state artifact was incomplete.</td><td>Providers accepted opaque blocks across sessions, users, or compatible models without an evidenced cryptographic binding to the originating principal and conversation.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 18 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.35</span></td><td>Placed from the demonstrated decision and action authority of the assessed boundary; public evidence supports this bounded level but not a broader claim about current product defaults.</td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">0.75</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Placed from who can supply the initiating content or protocol message and from the trust status of that source in the documented configuration.</td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>No verified System Dependency Graph with DGC at least 0.90 is public for this boundary, so the specification&#x27;s worst-case graph default governs rather than an assessor-estimated blast radius.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: worst-case default — no verified dependency graph published</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.15</span></td><td>Placed from the documented remediation class: deterministic package/configuration change where available, otherwise provider, architecture, or multi-layer changes. It does not assert fleet-wide closure.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 1 (dimensions strictly above 0.75) &rarr; CRM = 1.00.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill mid">0.35</span></td><td>The public record identifies the affected product or representative configuration, attack path, and principal control boundaries, but does not provide a complete asset manifest, verified dependency graph, configuration export, or assessment evidence manifest.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.21</span></td><td>coverage 0.22 (5 of 23 applicable sub-metrics) &times; independence 1.00 &times; fidelity 0.95. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill mid">0.65</span></td><td>Evidence dated <a href="https://arxiv.org/abs/2608.09867" target="_blank" rel="noopener noreferrer">2026-08-10</a>; age 3 days on the workpaper reference date. Components: C_monitor 0.65 · C_event 0.65 · C_evidence 0.85 · T_containment 0.87 · T_calendar 0.93. Binding term: <strong>C_monitor</strong>. Evidence age is measured from 2026-08-10 to the 2026-08-13 workpaper reference date. Public sources do not provide a passing containment or behavioral re-attestation receipt; event, monitoring, and unresolved-evidence caps remain diagnostic only.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.36</strong> &mdash; diagnostic status: Critical evidence limitation. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.35(0.25) + 0.25(0.75) + 0.25(1.00) + 0.15(0.25) = <strong>0.562</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 1 &rarr; <strong>1.00</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.562 × 1.00 = <strong>0.562</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.30(0.50) + 0.25(0.50) + 0.15(0.50) + 0.20(0.30) + 0.10(0.44) = <strong>0.454</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.454) = <strong>0.614</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.361 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 0.562 × 0.614 × 1/1.000 × 10) = <strong>3.5</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>1.5–5.4</strong>; 18 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-037.001</td><td>Reasoning-Trace Confidentiality &amp; Storage Controls<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Keep full reasoning blocks in provider-side or protected server-side state, classify them as sensitive, and deny their display, client return, analytics export, and public logging. Publish only bounded summaries or non-reversible references. This removes the portable artifact that the third-party attack must first acquire. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-037.003</td><td>Provider Reasoning-Block Round-Trip Integrity<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Preserve provider-authored reasoning blocks byte-for-byte in a server-held envelope, return them only through the same provider route and conversation, verify provider binding where supported, and reject client-supplied or altered blocks before continuation. This blocks the captured-block replay path for an integration that enforces the boundary, but it does not repair a provider API that accepts the same block through a direct path outside that integration. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-004.007</td><td>Task-Bounded Context Segmentation &amp; Secret Demotion<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Keep credentials and other high-sensitivity values outside conversation and model context. Give the agent short-lived, task-scoped handles that an authorized broker resolves only at the approved tool or network sink. If the underlying value never enters model context, it cannot be captured inside a reasoning block; this does not protect proprietary reasoning that legitimately remains there. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-M-008</td><td>Automated Agentic Security Benchmarking<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Turn the paper&#x27;s captured-block, compatible-model, and transcription-jailbreak cases into a signed, sanitized regression corpus. Block each model or API release unless it rejects the replay path and prevents sensitive plaintext from being released. This tests the demonstrated bypass as models and routing change; it does not prove universal jailbreak resistance. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-2</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-003.002</td><td>Sensitive Information &amp; Data Leakage Detection<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Inspect the complete decoder response before delivery. Detect common credential formats with deterministic patterns and use structured PII detection for names, addresses, email addresses, and other unstructured personal data, then emit findings to the release gate. Detection identifies recognizable sensitive content but does not stop delivery by itself. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-006.002</td><td>Text, Markup &amp; Structured Output Sanitization and Release Gate<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Hold the complete decoder response or a bounded release unit until sensitive-output findings have been evaluated. Apply deterministic redaction or denial, and fail closed if the gate cannot complete. This can block recognizable credentials and personal data in recovered plaintext, but it cannot prove that all proprietary reasoning has been removed. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-001.001</td><td>Root &amp; Long-Lived Credential Object Eviction<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. When evidence proves that a password, API key, client secret, private key, or other root or long-lived credential appeared in exposed reasoning plaintext, enumerate the exact incident-scoped objects and revoke, disable, reset, or rotate them at every authoritative issuer and verifier. This is post-exposure containment, not prevention of reasoning extraction. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-001.002</td><td>Issued Token, Authentication Session &amp; Lease Revocation<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. If the exposed material includes access tokens, refresh tokens, session cookies, authorization-server sessions, gateway sessions, or agent leases, revoke the complete affected population at every issuer, verifier, cache, and enforcement point. Rotating a long-lived credential does not invalidate these already-issued objects, so they require a separate response action. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">Opaque state is not safe state: reasoning artifacts need confidentiality, principal/session binding, bounded retention, and an output gate before they enter logs or client-visible trajectories.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-08/011-stolen-thoughts-reasoning-trace-extraction.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action — Stolen Thoughts: Opaque Reasoning Blocks Could Be Replayed to Recover Secrets</a> · <a href="https://arxiv.org/abs/2608.09867" class="text-navy hover:underline underline-offset-2">Primary source — Stolen Thoughts: Stealing Reasoning from Proprietary Language Models</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/pr-1-training-data-leakage-risk" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-1: Training Data Leakage Risk</a><a href="/submetrics/pr-2-inference-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-2: Inference Attack Resistance</a><a href="/submetrics/pr-3-data-minimization-compliance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-3: Data Minimization Compliance</a><a href="/submetrics/cn-4-side-channel-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-4: Side-Channel Resistance</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/cn-3-output-filtering-robustness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-3: Output Filtering Robustness</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a><a href="/submetrics/pr-4-re-identification-risk" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-4: Re-identification Risk</a><a href="/submetrics/ro-2-distribution-shift-resilience" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-2: Distribution Shift Resilience</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/ro-3-output-consistency" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-3: Output Consistency</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 6.1 →</span></a><a href="/use-cases/claude-code-github-action-secret-exposure" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">Claude Code GitHub Action: When a File-Read Tool Crosses the CI Secret Boundary</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 5.7 →</span></a><a href="/use-cases/notion-ai-agent-lethal-trifecta-exfiltration" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 2</span><h3 class="mt-1 font-bold text-navy">Notion AI Agent Lethal Trifecta Leads to Silent Data Exfiltration</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 5.1 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>ZombieAgent Shows How Connector Prompt Injection Can… | AITBM</title>
+  <meta name="description" content="Radware showed how hidden instructions in email or documents read through ChatGPT connectors could turn a task into data exfiltration. Fixed URLs…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration" />
+  <meta property="og:title" content="ZombieAgent Shows How Connector Prompt Injection Can… | AITBM" />
+  <meta property="og:description" content="Radware showed how hidden instructions in email or documents read through ChatGPT connectors could turn a task into data exfiltration. Fixed URLs…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration#article",
+      "url": "https://aitbm.org/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration",
+      "headline": "ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread",
+      "name": "ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread",
+      "description": "Radware showed how hidden instructions in email or documents read through ChatGPT connectors could turn a task into data exfiltration. Fixed URLs…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration#breadcrumb"
+      },
+      "keywords": "ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread, Agentic / MCP System, AI security incident, AITBM ERS, Ro-1, Ro-4, Pr-3, Cn-1, Cn-3, Cn-6, Cn-5, Cn-7, Cn-4, Pr-2, Pr-4, Ro-3"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ZombieAgent Shows How Connector Prompt Injection Can… | AITBM",
+          "item": "https://aitbm.org/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread</h1><p class="mt-4 max-w-3xl text-blue-100">Radware showed how hidden instructions in email or documents read through ChatGPT connectors could turn a task into data exfiltration. Fixed URLs encoded stolen text one character per request, Memory preserved instructions across chats, and a contact-harvesting branch spread the payload; Radware says OpenAI fixed it on December 16, 2025. Workspace administrators can disable unnecessary connectors or Memory and narrow or revoke grants, while platform implementers own raw-content isolation, Memory gates, and default-deny egress; value-level sink checks cover only explicit transfers retaining server-side content IDs.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Agentic / MCP System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 1</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 6.1 (3.1–9.1)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-08-02</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-minor" aria-hidden="true"><span style="width:61%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">Radware showed how hidden instructions in email or documents read through ChatGPT connectors could turn a task into data exfiltration. Fixed URLs encoded stolen text one character per request, Memory preserved instructions across chats, and a contact-harvesting branch spread the payload; Radware says OpenAI fixed it on December 16, 2025. Workspace administrators can disable unnecessary connectors or Memory and narrow or revoke grants, while platform implementers own raw-content isolation, Memory gates, and default-deny egress; value-level sink checks cover only explicit transfers retaining server-side content IDs.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">The controlled ChatGPT connector configuration reported by Radware, including connected email or document retrieval, cross-chat Memory, URL fetching, and the attacker&#x27;s external collection service.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">Current ChatGPT behavior after the reported 2025-12-16 fix, connector-free workspaces, and any tenant whose grants, Memory, and egress posture were not part of the research.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Agentic / MCP System (decision tree Q4) —
+      The system retrieved external content, persisted model-selected Memory across chats, and could initiate network or messaging effects, which is mutable agentic behavior.
+      <strong class="text-navy">Tier 1:</strong> Tier 1 because connector data, durable Memory, contact discovery, and outbound requests combine into a persistent sensitive-data and propagation boundary.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>A normal connector task delivers the instruction. The attacker hides a prompt in an email or document. When a later user request causes ChatGPT to retrieve that source, the model can treat the hidden text as authority.</li><li>Static URLs carry the stolen value. The prompt supplies a fixed URL alphabet. The model selects one existing URL per character, and the resulting request sequence encodes sensitive text without constructing or modifying a URL.</li><li>Memory turns one retrieval into persistence. A malicious source can instruct ChatGPT to save a recurring trigger and collected sensitive information in Memory, allowing the behavior to reappear in later chats.</li><li>Contact theft enables propagation. One branch extracts recent email addresses. The attacker&#x27;s server, not ChatGPT itself, then sends the malicious email to those recipients.</li><li>This was controlled research. Radware says OpenAI fixed the reported issue on December 16. OpenAI later described source-sink analysis and Safe Url defenses, but public material does not establish that every persistence and propagation variant was eliminated.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>OpenAI reported that the demonstrated issue was fixed on 2025-12-16; the case remains historical and does not score current product behavior.</li><li>Connector and Memory features are administratively controllable, which gives defenders a concrete exposure-reduction and grant-revocation path.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.14–0.59</strong> (midpoint 0.36), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-critical">confirmed breach</span></td></tr><tr><td><span class="font-semibold text-navy">Ro-1</span><span class="block text-[11px] text-gray-500">Adversarial Input Resistance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.30</span></td><td>The 0.25 anchor: the controlled attack bypassed the instruction boundary with ordinary retrieved content; no measured broad defense rate supports a higher placement.</td><td>Hidden instructions in an email or document were treated as authority during a later connector task and redirected the workflow into data exfiltration and persistence.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td><span class="font-semibold text-navy">Ro-4</span><span class="block text-[11px] text-gray-500">Poisoning Attack Resistance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>The 0.25 anchor: durable behavioral state accepted externally influenced content without a quarantined promotion gate or demonstrated provenance enforcement.</td><td>The malicious source could cause an action-oriented instruction to be written into cross-chat Memory and retrieved during later benign conversations.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.55</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.09–0.74</strong> (midpoint 0.41), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Pr-3</span><span class="block text-[11px] text-gray-500">Data Minimization Compliance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.35</span></td><td>The 0.25 anchor: some tenant grant boundaries existed, but the demonstrated task exposed more durable state and outbound authority than the immediate read required.</td><td>Connector scope exposed email or document content and recent contact addresses to a workflow that could also select external URLs and retain data in Memory.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.10–0.69</strong> (midpoint 0.40), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.65</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.12</span></td><td>The 0.25 anchor: connector grants bounded available services, but effective action scope was not re-derived from trusted intent at each step.</td><td>An inbox-reading task could acquire Memory-write, URL-open, and contact-harvesting effects from retrieved text rather than from the authenticated user&#x27;s visible request.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-3</span><span class="block text-[11px] text-gray-500">Output Filtering Robustness</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.18</span></td><td>The 0.25 anchor: URL protections existed but did not enforce information-flow policy over which approved URL was selected.</td><td>A fixed alphabet of prebuilt URLs encoded stolen text one request per character, bypassing defenses focused on model-constructed or modified destinations.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-6</span><span class="block text-[11px] text-gray-500">Action Reversibility Classification Rate</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.12</span></td><td>The 0.25 anchor: user-level connector authorization existed, but no evidenced action taxonomy or single-use approval governed these consequential steps.</td><td>Memory promotion and outbound requests could occur without a content-bound independent approval tied to the exact retained instruction or external effect.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 17 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill low">0.75</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.35</span></td><td>Placed from the demonstrated decision and action authority of the assessed boundary; public evidence supports this bounded level but not a broader claim about current product defaults.</td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Placed from who can supply the initiating content or protocol message and from the trust status of that source in the documented configuration. <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>No verified System Dependency Graph with DGC at least 0.90 is public for this boundary, so the specification&#x27;s worst-case graph default governs rather than an assessor-estimated blast radius.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: worst-case default — no verified dependency graph published</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill mid">0.50</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.15</span></td><td>Placed from the documented remediation class: deterministic package/configuration change where available, otherwise provider, architecture, or multi-layer changes. It does not assert fleet-wide closure.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 2 (dimensions strictly above 0.75) &rarr; CRM = 1.15.</p><p class="mt-2 text-xs" style="color:var(--sev-critical)"><strong>Compound Risk Alert.</strong> Two or more dimensions are simultaneously elevated (spec&nbsp;3.2.2); architectural decomposition is recommended before deployment.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill mid">0.35</span></td><td>The public record identifies the affected product or representative configuration, attack path, and principal control boundaries, but does not provide a complete asset manifest, verified dependency graph, configuration export, or assessment evidence manifest.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.25</span></td><td>coverage 0.26 (6 of 23 applicable sub-metrics) &times; independence 1.00 &times; fidelity 0.95. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill low">0.00</span></td><td>Evidence dated <a href="https://www.radware.com/blog/threat-intelligence/zombieagent/" target="_blank" rel="noopener noreferrer">2026-01-08</a>; age 217 days on the workpaper reference date. Components: T_containment 0.00 · T_behavior 0.00 · T_calendar 0.01 · C_monitor 0.65 · C_event 0.65 · C_evidence 0.85. Binding term: <strong>T_behavior</strong>. Evidence age is measured from 2026-01-08 to the 2026-08-13 workpaper reference date. Public sources do not provide a passing containment or behavioral re-attestation receipt; event, monitoring, and unresolved-evidence caps remain diagnostic only.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.00</strong> &mdash; diagnostic status: Invalid as assessment-of-record evidence. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.35(0.75) + 0.25(1.00) + 0.25(1.00) + 0.15(0.50) = <strong>0.838</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 2 &rarr; <strong>1.15</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.838 × 1.15 = <strong>0.963</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.30(0.36) + 0.25(0.50) + 0.15(0.50) + 0.20(0.41) + 0.10(0.40) = <strong>0.431</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.431) = <strong>0.634</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.003 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 0.963 × 0.634 × 1/1.000 × 10) = <strong>6.1</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>3.1–9.1</strong>; 17 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-017.007</td><td>Dual-LLM Isolation Pattern<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Send raw email, documents, and connector content only to a quarantined model with no privileged tools. A validating broker may release only allowlisted domain fields and opaque record identifiers in a signed envelope; a generic free-text summary is not a security boundary. The privileged model never receives the original attacker text, and every proposal still goes through the executor&#x27;s authorization checks. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-004.004</td><td>Transactional Promotion Gates (Quarantine -&gt; Trusted)<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Externally influenced content must not write directly into trusted Memory. Store proposed memories in quarantine with tenant, source, content digest, and target namespace, then require a content-bound approval and controlled-writer receipt before atomic promotion. Prompt assembly must exclude every pending or rejected state. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.005</td><td>Value-Level Capability Metadata &amp; Data Flow Sink Enforcement<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Put URL fetches, remote subresources, and outbound mail behind default-deny provider egress with a change-managed destination allowlist. For explicit value transfers that already carry a server-side content identifier, apply the labelled sink policy at dispatch. This blocks the attacker domain in the demonstrated chain, but the current guidance does not automatically track the implicit flow in which a secret character selects one prebuilt URL. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.004</td><td>Intent-Based Dynamic Capability Scoping<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Register connector read, Memory write, web open, and outbound message as distinct tool names. Derive the signed set of allowed names, action budget, and expiry from the authenticated user&#x27;s visible request, so an inbox-reading task cannot acquire unrelated tools from retrieved text. This guidance does not constrain mailbox resources or result cardinality inside one broadly designed connector operation. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-001.005</td><td>Recalled Memory Pre-Rehydration Scanning<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Before any saved Memory record re-enters prompt assembly, scan the exact versioned content for authority claims, delayed triggers, encoded fragments, and known quarantine fingerprints. Bind the finding to the tenant, record version, content digest, detector revision, and policy. This detector only recommends a disposition; a downstream Harden or Isolate policy must decide and enforce blocking or quarantine. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-006.002</td><td>Text, Markup &amp; Structured Output Sanitization and Release Gate<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. For the renderer-based branch, hold generated output until remote subresources and URLs have passed sink-specific policy. Remove or proxy unapproved images and previews, disable automatic fetches, and verify with browser-egress tests that Markdown, HTML, CSS, SVG, and reference links cannot silently trigger the fixed-URL requests. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">Persistent memory changes prompt injection from a one-chat event into delayed control flow; trusted intent must govern both memory promotion and every later rehydration.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-08/001-zombieagent-chatgpt-connector-persistent-exfiltration.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action — ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread</a> · <a href="https://www.radware.com/blog/threat-intelligence/zombieagent/" class="text-navy hover:underline underline-offset-2">Primary source — ZombieAgent: New ChatGPT Vulnerabilities Let Data Theft Continue (and Spread)</a> · <a href="https://openai.com/index/designing-agents-to-resist-prompt-injection/" class="text-navy hover:underline underline-offset-2">Supporting primary source cited by AIDEFEND</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/ro-1-adversarial-input-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-1: Adversarial Input Resistance</a><a href="/submetrics/ro-4-poisoning-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-4: Poisoning Attack Resistance</a><a href="/submetrics/pr-3-data-minimization-compliance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-3: Data Minimization Compliance</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-3-output-filtering-robustness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-3: Output Filtering Robustness</a><a href="/submetrics/cn-6-action-reversibility-classification-rate-arcr" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6: Action Reversibility Classification Rate</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a><a href="/submetrics/cn-4-side-channel-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-4: Side-Channel Resistance</a><a href="/submetrics/pr-2-inference-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-2: Inference Attack Resistance</a><a href="/submetrics/pr-4-re-identification-risk" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-4: Re-identification Risk</a><a href="/submetrics/ro-3-output-consistency" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-3: Output Consistency</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/agentflayer-chatgpt-connectors-zero-click-exfiltration" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 2</span><h3 class="mt-1 font-bold text-navy">AgentFlayer Turns ChatGPT Connectors Into a Zero-Click Exfiltration Path</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 5.8 →</span></a><a href="/use-cases/salesforce-agentforce-forcedleak-prompt-injection" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 2</span><h3 class="mt-1 font-bold text-navy">Salesforce &#x27;ForcedLeak&#x27;: Indirect Prompt Injection via Agentforce Web-to-Lead Forms</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 7.7 →</span></a><a href="/use-cases/claude-code-github-action-secret-exposure" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">Claude Code GitHub Action: When a File-Read Tool Crosses the CI Secret Boundary</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 5.7 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

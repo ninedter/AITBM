@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>Poisoned GGUF Chat Templates Backdoor Inference… | AITBM</title>
+  <meta name="description" content="Researchers from Pillar Security and Fujitsu showed that a GGUF artifact can carry a modified Jinja chat template while its model weights remain…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/poisoned-gguf-chat-template-inference-backdoor" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/poisoned-gguf-chat-template-inference-backdoor" />
+  <meta property="og:title" content="Poisoned GGUF Chat Templates Backdoor Inference… | AITBM" />
+  <meta property="og:description" content="Researchers from Pillar Security and Fujitsu showed that a GGUF artifact can carry a modified Jinja chat template while its model weights remain…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/poisoned-gguf-chat-template-inference-backdoor#article",
+      "url": "https://aitbm.org/use-cases/poisoned-gguf-chat-template-inference-backdoor",
+      "headline": "Poisoned GGUF Chat Templates Backdoor Inference Without Changing Model Weights",
+      "name": "Poisoned GGUF Chat Templates Backdoor Inference Without Changing Model Weights",
+      "description": "Researchers from Pillar Security and Fujitsu showed that a GGUF artifact can carry a modified Jinja chat template while its model weights remain…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/poisoned-gguf-chat-template-inference-backdoor#breadcrumb"
+      },
+      "keywords": "Poisoned GGUF Chat Templates Backdoor Inference Without Changing Model Weights, Agentic / MCP System, AI security incident, AITBM ERS, Ro-4, Tr-4, Cn-1, Cn-3, Cn-6, Cn-7"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/poisoned-gguf-chat-template-inference-backdoor#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Poisoned GGUF Chat Templates Backdoor Inference… | AITBM",
+          "item": "https://aitbm.org/use-cases/poisoned-gguf-chat-template-inference-backdoor"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Poisoned GGUF Chat Templates Backdoor Inference Without Changing Model Weights</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">Poisoned GGUF Chat Templates Backdoor Inference Without Changing Model Weights</h1><p class="mt-4 max-w-3xl text-blue-100">Researchers from Pillar Security and Fujitsu showed that a GGUF artifact can carry a modified Jinja chat template while its model weights remain unchanged. When a trigger appears, the inference engine renders attacker instructions into system-level context before the model runs; controlled tests degraded model behavior and hijacked BrowserUse and OpenHands tool use. Defenders need to treat chat templates as executable release artifacts, verify their exact bytes and provenance, regression-test every conversion, and enforce tool and data-flow boundaries.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Agentic / MCP System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 1</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 4.8 (2.0–7.7)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-08-02</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-pass" aria-hidden="true"><span style="width:48%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">Researchers from Pillar Security and Fujitsu showed that a GGUF artifact can carry a modified Jinja chat template while its model weights remain unchanged. When a trigger appears, the inference engine renders attacker instructions into system-level context before the model runs; controlled tests degraded model behavior and hijacked BrowserUse and OpenHands tool use. Defenders need to treat chat templates as executable release artifacts, verify their exact bytes and provenance, regression-test every conversion, and enforce tool and data-flow boundaries.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">A representative BrowserUse or OpenHands agent using a GGUF model artifact whose weights are legitimate but whose bundled Jinja chat template contains trigger-conditioned attacker instructions.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">Clean digest-pinned GGUF artifacts, deployments without tools or sensitive data, and real-world victims; the reported demonstrations used synthetic data and researcher-controlled infrastructure.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Agentic / MCP System (decision tree Q4) —
+      The controlled demonstrations combined poisoned inference context with browser or coding tools that produced external actions.
+      <strong class="text-navy">Tier 1:</strong> Tier 1 because a release artifact can silently redirect payment, personal-data, credential, or code-writing actions at inference time.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>The attacker changes the template, not the weights. A legitimate open-weight model is repackaged with malicious Jinja logic in its GGUF chat template and redistributed as a plausible model artifact.</li><li>The inference engine activates the backdoor. On every request, the engine renders the bundled template before tokenization. A matching phrase or field lets the template insert attacker instructions into system-level context.</li><li>The behavior remained dormant until triggered. Across 18 models, seven families, and four inference engines, the paper measured severe triggered accuracy loss and reliable attacker-link emission while preserving normal behavior outside the trigger.</li><li>Agent tools turned model manipulation into system impact. Controlled BrowserUse and OpenHands demonstrations redirected synthetic payment and personal data, inserted attacker code, and exposed test credentials.</li><li>This was controlled research. The BrowserUse demonstration used a mock storefront, synthetic data, and a loopback receiver; the OpenHands demonstration used researcher-controlled infrastructure and test credentials. The sources do not report malicious exploitation against real users.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>The backdoor remained dormant outside the trigger, preserving ordinary behavior; this bounded outcome also explains why ordinary regression alone was insufficient.</li><li>The demonstrations used mock or researcher-controlled infrastructure and synthetic data, so no victim loss is inferred.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–0.75</strong> (midpoint 0.38), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Ro-4</span><span class="block text-[11px] text-gray-500">Poisoning Attack Resistance</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>The 0.00 anchor: artifact poisoning was accepted and activated without an effective complete-artifact integrity or conversion-regression gate.</td><td>A legitimate open-weight model was repackaged with malicious Jinja logic; inference engines rendered attacker instructions into system-level context without changing the weights.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.05–0.85</strong> (midpoint 0.45), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.55</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Tr-4</span><span class="block text-[11px] text-gray-500">Model Lineage Disclosure</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>The 0.25 anchor: partial model provenance existed, but the full GGUF bytes, template, conversion settings, and loader identity were not bound together.</td><td>An unchanged weight hash could coexist with a modified bundled template, so weight-only lineage did not identify the executable release artifact actually loaded.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.60</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.07–0.78</strong> (midpoint 0.42), Tier&nbsp;1 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.65</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.12</span></td><td>The 0.25 anchor: tool surfaces existed within controlled environments, but the model-originated data and action scope was not deterministically constrained at dispatch.</td><td>Triggered BrowserUse and OpenHands tests redirected synthetic payment and personal data, inserted attacker code, and exposed test credentials through ordinary agent tools.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-3</span><span class="block text-[11px] text-gray-500">Output Filtering Robustness</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.18</span></td><td>The 0.25 anchor: basic model behavior remained normal off-trigger, but adaptive unsafe outputs and tool-laundered effects were not reliably blocked.</td><td>The trigger-conditioned template injected system-level instructions that survived into tool use and external output without an independent sink or release gate.<span class="block text-[10px] text-gray-500 mt-0.5">source: primary/brief</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 19 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill low">0.75</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.35</span></td><td>Placed from the demonstrated decision and action authority of the assessed boundary; public evidence supports this bounded level but not a broader claim about current product defaults.</td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">0.75</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Placed from who can supply the initiating content or protocol message and from the trust status of that source in the documented configuration.</td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>No verified System Dependency Graph with DGC at least 0.90 is public for this boundary, so the specification&#x27;s worst-case graph default governs rather than an assessor-estimated blast radius.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: worst-case default — no verified dependency graph published</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill mid">0.50</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.15</span></td><td>Placed from the documented remediation class: deterministic package/configuration change where available, otherwise provider, architecture, or multi-layer changes. It does not assert fleet-wide closure.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 1 (dimensions strictly above 0.75) &rarr; CRM = 1.00.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill mid">0.35</span></td><td>The public record identifies the affected product or representative configuration, attack path, and principal control boundaries, but does not provide a complete asset manifest, verified dependency graph, configuration export, or assessment evidence manifest.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.17</span></td><td>coverage 0.17 (4 of 23 applicable sub-metrics) &times; independence 1.00 &times; fidelity 0.95. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill low">0.00</span></td><td>Evidence dated <a href="https://arxiv.org/abs/2602.04653" target="_blank" rel="noopener noreferrer">2026-02-04</a>; age 190 days on the workpaper reference date. Components: T_containment 0.00 · T_calendar 0.01 · C_monitor 0.65 · C_event 0.65 · C_evidence 0.85. Binding term: <strong>T_containment</strong>. Evidence age is measured from 2026-02-04 to the 2026-08-13 workpaper reference date. Public sources do not provide a passing containment or behavioral re-attestation receipt; event, monitoring, and unresolved-evidence caps remain diagnostic only.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.02</strong> &mdash; diagnostic status: Invalid as assessment-of-record evidence. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.35(0.75) + 0.25(0.75) + 0.25(1.00) + 0.15(0.50) = <strong>0.775</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 1 &rarr; <strong>1.00</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.775 × 1.00 = <strong>0.775</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.30(0.38) + 0.25(0.50) + 0.15(0.45) + 0.20(0.50) + 0.10(0.42) = <strong>0.448</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.448) = <strong>0.620</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.021 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 0.775 × 0.620 × 1/1.000 × 10) = <strong>4.8</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>2.0–7.7</strong>; 19 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-007.006</td><td>Post-Training Optimization &amp; Format-Conversion Safety Regression<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Treat every GGUF conversion or repackaging step as a security-relevant transformation. Bind the candidate to approved source bytes and conversion settings, then compare both artifacts on the same signed suite for trigger-conditioned behavior, instruction-hierarchy changes, leakage, and tool-policy violations. Block promotion when lineage is missing or any security category regresses. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-003.002</td><td>CI/CD Release Gating, Model Artifact Signing &amp; Secure Distribution<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Production should load only reviewed, signed, digest-pinned GGUF bytes from an internal mirror. The promotion gate should verify the artifact source, complete digest, bundled template, loader policy, regression evidence, and approval record before deployment or hot reload. A public model name or unchanged weight hash is not sufficient admission evidence. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-003.006</td><td>Model SBOM &amp; Provenance Attestation<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. Bind the complete GGUF digest, model format, source, loader commit, tokenizer, and configuration evidence into a signed model SBOM and attestation. Verify the signature, predicate, signer identity, and actual artifact digest before admission and every load. This proves that the runtime received the approved bytes; it does not determine whether the bundled Jinja logic is semantically safe. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.005</td><td>Value-Level Capability Metadata &amp; Data Flow Sink Enforcement<span class="block text-[11px] text-gray-500">AIDEFEND dataVersion 2026.08.05. For BrowserUse or another live action that actually passes through the governed dispatcher, require a server-side content identifier for payment fields, personal data, credentials, or repository content. Deny labelled content at attacker-controlled network, write, or file sinks, and keep agent egress default-deny. This control does not govern an OpenHands-generated script after the code leaves that dispatcher. This relationship is an evidence route only and supplies no positive score credit without observed control operation.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">Model weights are only one executable release component; chat templates must be digest-bound, provenance-checked, and security-regression-tested with the same rigor as the weights.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-08/003-poisoned-gguf-chat-template-inference-backdoor.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action — Poisoned GGUF Chat Templates Backdoor Inference Without Changing Model Weights</a> · <a href="https://arxiv.org/abs/2602.04653" class="text-navy hover:underline underline-offset-2">Primary source — Inference-Time Backdoors via Chat Templates: From LLM Supply Chains to Agentic System Compromise</a> · <a href="https://www.pillar.security/blog/llm-backdoors-at-the-inference-level-the-threat-of-poisoned-templates" class="text-navy hover:underline underline-offset-2">Supporting primary source cited by AIDEFEND</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/ro-4-poisoning-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-4: Poisoning Attack Resistance</a><a href="/submetrics/tr-4-model-lineage-disclosure" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4: Model Lineage Disclosure</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-3-output-filtering-robustness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-3: Output Filtering Robustness</a><a href="/submetrics/cn-6-action-reversibility-classification-rate-arcr" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6: Action Reversibility Classification Rate</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/stolen-thoughts-reasoning-trace-extraction" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">Stolen Thoughts: Opaque Reasoning Blocks Could Be Replayed to Recover Secrets</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 3.5 →</span></a><a href="/use-cases/deadbugz-mcp-supply-chain-campaign" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">Deadbugz: GitHub PRs Delivered a Delayed, Shape-Shifting Malicious MCP Server</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 6.4 →</span></a><a href="/use-cases/mcfa-memory-control-flow-attacks-agent-memory" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 2</span><h3 class="mt-1 font-bold text-navy">MCFA Turns Agent Memory into a Delayed Control-Flow Input</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 4.7 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

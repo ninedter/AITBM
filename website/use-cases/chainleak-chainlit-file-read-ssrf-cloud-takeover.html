@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>ChainLeak Shows How AI Framework Helper APIs Can… | AITBM</title>
+  <meta name="description" content="Zafran&#x27;s ChainLeak research found Chainlit issues enabling arbitrary file read, cross-user prompt and response cache exposure, and server-side request…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/chainleak-chainlit-file-read-ssrf-cloud-takeover" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/chainleak-chainlit-file-read-ssrf-cloud-takeover" />
+  <meta property="og:title" content="ChainLeak Shows How AI Framework Helper APIs Can… | AITBM" />
+  <meta property="og:description" content="Zafran&#x27;s ChainLeak research found Chainlit issues enabling arbitrary file read, cross-user prompt and response cache exposure, and server-side request…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/chainleak-chainlit-file-read-ssrf-cloud-takeover#article",
+      "url": "https://aitbm.org/use-cases/chainleak-chainlit-file-read-ssrf-cloud-takeover",
+      "headline": "ChainLeak Shows How AI Framework Helper APIs Can Expose Prompts, Files, and Cloud Keys",
+      "name": "ChainLeak Shows How AI Framework Helper APIs Can Expose Prompts, Files, and Cloud Keys",
+      "description": "Zafran's ChainLeak research found Chainlit issues enabling arbitrary file read, cross-user prompt and response cache exposure, and server-side request…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/chainleak-chainlit-file-read-ssrf-cloud-takeover#breadcrumb"
+      },
+      "keywords": "ChainLeak Shows How AI Framework Helper APIs Can Expose Prompts, Files, and Cloud Keys, Tool-Calling LLM / Connected GenAI, AI security incident, AITBM ERS, Pr-3, Cn-1, Cn-2, Pr-1, Pr-4, Cn-3, Ro-1, Fa-1, Fa-3, Ro-4, Tr-4, Cn-4, Cn-5"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/chainleak-chainlit-file-read-ssrf-cloud-takeover#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ChainLeak Shows How AI Framework Helper APIs Can… | AITBM",
+          "item": "https://aitbm.org/use-cases/chainleak-chainlit-file-read-ssrf-cloud-takeover"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">ChainLeak Shows How AI Framework Helper APIs Can Expose Prompts, Files, and Cloud Keys</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">ChainLeak Shows How AI Framework Helper APIs Can Expose Prompts, Files, and Cloud Keys</h1><p class="mt-4 max-w-3xl text-blue-100">Zafran&#x27;s ChainLeak research found Chainlit issues enabling arbitrary file read, cross-user prompt and response cache exposure, and server-side request forgery through element handling. Because the affected code is framework plumbing sitting next to prompts, uploaded files and application configuration, arbitrary file access can reveal prompt caches, responses, environment variables, API keys, internal paths and deployment metadata. The SSRF path turns element URL fetching into reach toward internal services, cloud metadata endpoints and cloud control-plane targets where no safe-fetch policy exists. Chained, leaked environment secrets and internal endpoint data enable credential reuse, lateral movement and cloud resource access — the researchers&#x27; &#x27;cloud takeover&#x27; framing. Remediation requires both upgrading Chainlit and adding deployment controls: strict parameter validation, per-user and per-tenant object authorization, safe fetch, secret storage and egress monitoring.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Tool-Calling LLM / Connected GenAI</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 2</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 3.8 (1.3–6.3)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-07-06</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-pass" aria-hidden="true"><span style="width:38%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">Zafran&#x27;s ChainLeak research found Chainlit issues enabling arbitrary file read, cross-user prompt and response cache exposure, and server-side request forgery through element handling. Because the affected code is framework plumbing sitting next to prompts, uploaded files and application configuration, arbitrary file access can reveal prompt caches, responses, environment variables, API keys, internal paths and deployment metadata. The SSRF path turns element URL fetching into reach toward internal services, cloud metadata endpoints and cloud control-plane targets where no safe-fetch policy exists. Chained, leaked environment secrets and internal endpoint data enable credential reuse, lateral movement and cloud resource access — the researchers&#x27; &#x27;cloud takeover&#x27; framing. Remediation requires both upgrading Chainlit and adding deployment controls: strict parameter validation, per-user and per-tenant object authorization, safe fetch, secret storage and egress monitoring.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">A representative internet-facing LLM chat/agent application built on an affected, pre-patch version of Chainlit, in the state Zafran&#x27;s ChainLeak research documented: element-handling helper APIs and data-layer endpoints reachable without per-user, per-tenant object authorization, no path validation on element/file parameters, no safe-fetch policy on element URL retrieval, and API keys and cloud credentials held in environment files on the application host. Representative rather than named: the research is framework-level and the brief directs operators to find their own internet-facing Chainlit applications; no victim organisation is identified.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">Patched Chainlit releases and applications that already enforce object-level authorization, path validation, safe fetch and secret-store credentials; the underlying LLM and model provider; the cloud provider&#x27;s metadata service and IAM configuration; and any specific organisation&#x27;s Chainlit deployment.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Tool-Calling LLM / Connected GenAI (decision tree Q3) —
+      Q1 NO and Q2 NO — no agent topology, planner loop or autonomous multi-step workflow is evidenced for the assessed configuration; Chainlit is described as a framework for building LLM chat and agent apps, and only the chat/element surface is evidenced here. Q3 YES — the application&#x27;s server-side helper APIs perform outbound URL fetches on behalf of the session (the SSRF path) and read and write a persistent data layer holding prompt and response caches and uploaded elements; Q3 explicitly covers connectors, databases and browsers &#x27;even if execution is user-triggered or single-step&#x27;. Evidence artefacts: the element URL-fetch path, the element/file/cache and data-layer APIs the brief tells operators to test for object authorization, and the uploaded-element store. Deployments of Chainlit that host agent apps would classify higher under the hybrid rule.
+      <strong class="text-navy">Tier 2:</strong> Tier 2 Consumer — the assessed configuration is an internet-facing chat application in direct interaction with individual users, and the realised harm (cross-user prompt and response cache exposure) affects those individuals&#x27; data directly; internal-only Chainlit deployments behind authentication would be Tier 3.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>Attacker interacts with an internet-facing application built on an affected Chainlit version.</li><li>Crafted element identifiers, file paths or filters are submitted to element and data-layer helper APIs that apply no strict schema or bounds validation.</li><li>Arbitrary file read returns prompt caches, stored responses, environment variables containing API keys, internal paths and deployment metadata.</li><li>Missing per-user and per-tenant object authorization on the same APIs exposes other users&#x27; prompt and response caches and uploaded elements.</li><li>Element URL fetching is abused as SSRF, with no allowlist, private-IP block, redirect or DNS-rebinding check, to reach internal services and the cloud metadata endpoint.</li><li>Recovered long-lived cloud keys and internal endpoint knowledge are reused for lateral movement and cloud resource access.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>Patched Chainlit releases are available and the issues were disclosed through coordinated advisories, giving operators a concrete upgrade target rather than an open-ended architectural problem.</li><li>The response guidance recommends searching web and egress records for suspicious paths and destinations. It does not prove those records existed in the assessed deployment, so it receives no positive scoring credit.</li><li>The exposure is bounded by deployment choices the operator controls — applications already using short-lived workload identities and a secret store instead of environment files, or an egress-controlled network, do not hand the file-read and SSRF paths a credential to steal.</li><li>The affected surface is framework plumbing rather than the model or its safety behaviour, so remediation does not depend on model changes and no model-side property had to be relied upon.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;2 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;2 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.55</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;2 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.06–0.81</strong> (midpoint 0.44), Tier&nbsp;2 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.55</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Pr-3</span><span class="block text-[11px] text-gray-500">Data Minimization Compliance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Pr-3 0.25: minimisation controls do not cover the retained prompt/response cache or the credential material co-located with it; unnecessary sensitive fields persist on paths that a single validation failure exposes.</td><td>The application retained prompt and response caches and uploaded files in locations reachable from unvalidated helper APIs, and held API keys and cloud credentials in environment files on the same host — the remediation is to &#x27;move API keys and cloud credentials out of environment files where possible; prefer short-lived workload identities and secret stores&#x27;. Arbitrary file read therefore yielded not only user prompts and responses but also environment variables, internal paths and deployment metadata from a single application host.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.04–0.72</strong> (midpoint 0.38), Tier&nbsp;2 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.55</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.16</span></td><td>Cn-1 0.00: no effective scope boundary — the system can reach unauthorised data and unauthorised network destinations from ordinary request parameters.</td><td>Two boundaries were absent simultaneously. On the filesystem, element/file parameters produced arbitrary file read — no path canonicalisation or bounds check confined the application to its own data. On the network, element URL fetching reached internal services, metadata endpoints and cloud control-plane targets because no safe-fetch policy, private-IP block, allowlist or redirect check existed.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-2</span><span class="block text-[11px] text-gray-500">Escalation Prevention</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.16</span></td><td>Cn-2 0.25: basic role/session checks exist but are defeated by object-level role confusion, letting a caller reach data outside its authorised role. Taken as the lower of the plausible band because the evidence does not establish how strong the surrounding session authentication was.</td><td>Cross-user prompt and response cache exposure means the session boundary existed but object-level authorization did not: a caller legitimately holding one session reached objects belonging to other users. The direct remediation, AID-H-029.002 (Very High), is to ensure &#x27;prompt caches, user files, uploaded elements, and generated artifacts are authorized per user, tenant, and object before access&#x27;, and operators are told to test element, file, cache and data-layer APIs for exactly that.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 20 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill mid">0.50</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Human-on-the-loop: the application performs routine server-side actions autonomously within pre-defined boundaries — element URL fetches, cache reads and writes, data-layer persistence — with no per-action human approval, and its generated output is consumed by a human user. It executes no consequential external transactions and holds no independent decision authority, so it sits well below the supervised-autonomy anchor.</td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">0.75</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.35</span></td><td>Matches the 0.75 anchor: an internet-facing application ingesting external, untrusted content via user prompts, uploaded files and user-supplied element URLs that it fetches server-side. It is not raised to 1.00 because no multi-agent communication, external agent channel or MCP tool integration is evidenced for the assessed configuration. Noted explicitly: 0.75 sits on the CRM elevated boundary but is not counted as elevated, since N_elevated counts dimensions scoring strictly above 0.75.</td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>No System Dependency Graph is published for any affected deployment, so the spec&#x27;s DGC &lt; 0.90 rule applies; the reconstruction independently triggers the 1.00 anchor. Two ungated paths from an entry-exposed origin reach credential-issuing (P4) capability: arbitrary file read of environment files containing long-lived cloud keys, and SSRF to the cloud metadata endpoint, which mints credentials by design. The researchers&#x27; documented escalation from application data to cloud takeover is the same path traced end to end.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: corroborated by the observed path</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>Deterministic upstream fixes exist — upgrade Chainlit to the patched versions — which alone would argue for 0.00. Scored 0.25 because the brief is explicit that &#x27;these bugs require both patching and deployment controls&#x27;: strict parameter validation, object authorization, SSRF-safe fetch wrappers with private-IP, metadata, redirect and DNS-rebinding checks, moving credentials into a secret store or short-lived workload identity, and egress monitoring — deployment-infrastructure work measured in days, plus rotation of any credential the file-read or SSRF path could have reached.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 1 (dimensions strictly above 0.75) &rarr; CRM = 1.00.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill low">0.25</span></td><td>Minimal provenance record: the framework, the vendor and the affected component surface are identified through published advisories, but nothing about a representative deployment&#x27;s model, prompt lineage, data-layer contents, corpus, tool inventory or identity policy is documented — and the incident itself shows that per-object ownership of the persisted prompt and response cache was not tracked in a reviewable way.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.12</span></td><td>coverage 0.13 (3 of 23 applicable sub-metrics) &times; independence 1.00 &times; fidelity 0.95. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill low">0.01</span></td><td>Evidence dated <a href="https://www.zafran.io/resources/chainleak-critical-ai-framework-vulnerabilities-expose-data-enable-cloud-takeover" target="_blank" rel="noopener noreferrer">2026-01-20</a>; age 205 days on the workpaper reference date. Components: T_behavior 0.01 · T_containment 0.04 · T_calendar 0.21 · C_event 0.35 · C_monitor 0.65 · C_evidence 0.85. Binding term: <strong>T_behavior</strong>. dt_days = 205, measured from the primary disclosure (Zafran, 2026-01-20) to the assessment date 2026-08-13. This is the load-bearing difference between this case and the rest of the batch: the AIDEFEND brief republished the analysis on 2026-07-06, but republication is not new evidence, and the underlying research is more than six months old. agentic = true: a Tool-Calling / Connected GenAI application whose outbound fetch and data-layer permission boundaries are runtime-mutable, so the containment staleness floor (M_Cn = 2.0) applies. baw = true on the Behavioral Attestation Window checklist item one — cross-session persistent state written from model output: the data layer persists prompts and responses and re-loads them into resumed conversations, which is the very cache the incident exposed. With no Behavioral Attestation Battery in evidence, the behavioural floor T_behavior binds hard at this elapsed time, and the resulting ACI should be read as the spec intends — evidence this old about a stateful consumer-facing system cannot support an assurance claim and calls for reassessment, not for treating the number as precise risk. C_event = 0.35 (major): a critical file-read and SSRF disclosure with credential exposure, and the patched releases have since superseded the assessed configuration. C_monitor = 0.65: no detection of cross-user cache access or metadata-endpoint requests is reported; the prescribed action is retrospective log hunting. C_evidence = 0.85: unresolved credential gap — long-lived keys held in environment files remain valid until rotated.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.06</strong> &mdash; diagnostic status: Invalid as assessment-of-record evidence. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.25(0.50) + 0.35(0.75) + 0.20(1.00) + 0.20(0.25) = <strong>0.637</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 1 &rarr; <strong>1.00</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.637 × 1.00 = <strong>0.637</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.25(0.50) + 0.30(0.50) + 0.15(0.50) + 0.20(0.44) + 0.10(0.38) = <strong>0.475</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.475) = <strong>0.596</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.065 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 0.637 × 0.596 × 1/1.000 × 10) = <strong>3.8</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>1.3–6.3</strong>; 20 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-029.002</td><td>Lifecycle-Stage Authorization Gate<span class="block text-[11px] text-gray-500">Parent AID-H-029 (AI Data-Use Authorization &amp; Lifecycle-Stage Boundary Enforcement), dataVersion 2026.08.05. Authorizing prompt caches, user files, uploaded elements and generated artefacts per user, tenant and object before access is the missing control behind Cn-2 = 0.25 and the retained-cache half of Pr-3 = 0.25.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-019.001</td><td>URL Normalization &amp; Allowlist Filtering<span class="block text-[11px] text-gray-500">Parent AID-H-019 maps directly to Ro-1, Cn-1, and Cn-3 in the reconciled AIDEFEND dataVersion 2026.08.05 crosswalk. Recorded because it is the direct SSRF control for element URL fetching — blocking private IPs, metadata services, unsafe redirects and non-approved destinations — and its absence is half of the Cn-1 = 0.00 finding.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-002.002</td><td>Inference-Time Prompt &amp; Input Validation<span class="block text-[11px] text-gray-500">Parent AID-H-002 (AI-Contextualized Data Sanitization &amp; Input Validation), dataVersion 2026.08.05. The catalogue maps this parent to Fa-1, Fa-3 and Ro-1; in this case its operational relevance is strict schema and bounds validation on element IDs, file paths and filters, which is the other half of the Cn-1 = 0.00 finding. No Cn-1 mapping is asserted beyond the lookup, and no Fairness or Ro-1 score is claimed, since the incident produces no evidence about model-level adversarial behaviour.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-003.010</td><td>Deployed AI Software Vulnerability Remediation Lifecycle<span class="block text-[11px] text-gray-500">Parent AID-H-003 (Secure ML Supply Chain Management), dataVersion 2026.08.05. Reconciling deployed Chainlit versions against the file-read and SSRF advisories and verifying by runtime readback that no vulnerable digest remains is the evidence behind the patch half of Rf = 0.25.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-002.002</td><td>Secure External AI Service Connectivity<span class="block text-[11px] text-gray-500">Parent AID-I-002 (Network Segmentation &amp; Isolation for AI Systems), dataVersion 2026.08.05. Egress controls constrain what the application can call even when an SSRF path is reachable, which is what would break the metadata-endpoint leg of the corroborated Cp path.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-001.001</td><td>Root &amp; Long-Lived Credential Object Eviction<span class="block text-[11px] text-gray-500">Parent AID-E-001 (Compromised Credential, Session, Principal &amp; Grant Eviction), dataVersion 2026.08.05. Revoking or rotating the exact cloud access keys, API keys, client secrets and long-lived certificates exposed by file read or SSRF is what would lift the C_evidence = 0.85 cap.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-004</td><td>Incident Exploit-Path Closure Verification<span class="block text-[11px] text-gray-500">AID-E-004 is absent from the reconciled AIDEFEND-to-AITBM lookup at dataVersion 2026.08.05; no AITBM sub-metric mapping is asserted for it. Recorded because independently replaying the exact file-read and SSRF requests against the affected population is the closure evidence the assessment lacks.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-gray-100 px-1.5 py-0.5 text-xs font-semibold text-gray-700">ACI:C_event recovery</span> <span class="rounded bg-gray-100 px-1.5 py-0.5 text-xs font-semibold text-gray-700">ACI:containment/behavioral re-attestation</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">Two AITBM behaviours meet in this case: As sitting exactly on 0.75 keeps N_elevated at one and CRM at 1.00 even though the cascade path is corroborated all the way to a credential-issuing node, and 191-day-old evidence about a stateful consumer-facing app drives the behavioural freshness floor low enough that the honest conclusion is &#x27;reassess&#x27;, not &#x27;here is a precise score&#x27;.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-07/008-chainleak-chainlit-file-read-ssrf-cloud-takeover.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action brief — ChainLeak Shows How AI Framework Helper APIs Can Expose Prompts, Files, and Cloud Keys (2026-07-06)</a> · <a href="https://www.zafran.io/resources/chainleak-critical-ai-framework-vulnerabilities-expose-data-enable-cloud-takeover" class="text-navy hover:underline underline-offset-2">Zafran Labs — ChainLeak: Critical AI Framework Vulnerabilities Expose Data, Enable Cloud Takeover, Gal Zaban &amp; Ido Shani (2026-01-20)</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/pr-3-data-minimization-compliance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-3: Data Minimization Compliance</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-2-escalation-prevention" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-2: Escalation Prevention</a><a href="/submetrics/pr-1-training-data-leakage-risk" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-1: Training Data Leakage Risk</a><a href="/submetrics/pr-4-re-identification-risk" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-4: Re-identification Risk</a><a href="/submetrics/cn-3-output-filtering-robustness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-3: Output Filtering Robustness</a><a href="/submetrics/ro-1-adversarial-input-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-1: Adversarial Input Resistance</a><a href="/submetrics/fa-1-demographic-parity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Fa-1: Demographic Parity</a><a href="/submetrics/fa-3-representation-bias" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Fa-3: Representation Bias</a><a href="/submetrics/ro-4-poisoning-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-4: Poisoning Attack Resistance</a><a href="/submetrics/tr-4-model-lineage-disclosure" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4: Model Lineage Disclosure</a><a href="/submetrics/cn-4-side-channel-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-4: Side-Channel Resistance</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/sglang-zmq-pickle-deserialization-rce" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Standalone LLM / Generative AI · Tier 1</span><h3 class="mt-1 font-bold text-navy">SGLang&#x27;s ZMQ and Pickle Paths Show Why Internal AI Messages Need a Trust Boundary</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 3.5 →</span></a><a href="/use-cases/difytap-cross-tenant-ai-data-exposure" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Tool-Calling LLM / Connected GenAI · Tier 2</span><h3 class="mt-1 font-bold text-navy">DifyTap Turns Multi-Tenant AI App Plumbing Into a Data Exposure Problem</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 4.9 →</span></a><a href="/use-cases/amazon-q-mcp-auto-execution-cloud-credential-theft" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 3</span><h3 class="mt-1 font-bold text-navy">Amazon Q&#x27;s MCP Auto-Load Bug Made Cloned Repos a Cloud Credential Risk</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 5.4 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

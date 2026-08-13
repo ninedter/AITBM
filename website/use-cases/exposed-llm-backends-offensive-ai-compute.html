@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>Exposed LLM Backends Are Becoming Attacker AI Compute | AITBM</title>
+  <meta name="description" content="Zenity operated honeypots emulating self-hosted model backends and observed operators pointing autonomous offensive agents and LLM clients at them. The…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/exposed-llm-backends-offensive-ai-compute" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/exposed-llm-backends-offensive-ai-compute" />
+  <meta property="og:title" content="Exposed LLM Backends Are Becoming Attacker AI Compute | AITBM" />
+  <meta property="og:description" content="Zenity operated honeypots emulating self-hosted model backends and observed operators pointing autonomous offensive agents and LLM clients at them. The…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/exposed-llm-backends-offensive-ai-compute#article",
+      "url": "https://aitbm.org/use-cases/exposed-llm-backends-offensive-ai-compute",
+      "headline": "Exposed LLM Backends Are Becoming Attacker AI Compute",
+      "name": "Exposed LLM Backends Are Becoming Attacker AI Compute",
+      "description": "Zenity operated honeypots emulating self-hosted model backends and observed operators pointing autonomous offensive agents and LLM clients at them. The…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/exposed-llm-backends-offensive-ai-compute#breadcrumb"
+      },
+      "keywords": "Exposed LLM Backends Are Becoming Attacker AI Compute, Standalone LLM / Generative AI, AI security incident, AITBM ERS, Tr-3, Cn-1, Cn-3, Cn-5, Cn-4, Fa-3, Tr-4, Cn-6, Cn-7"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/exposed-llm-backends-offensive-ai-compute#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Exposed LLM Backends Are Becoming Attacker AI Compute | AITBM",
+          "item": "https://aitbm.org/use-cases/exposed-llm-backends-offensive-ai-compute"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Exposed LLM Backends Are Becoming Attacker AI Compute</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">Exposed LLM Backends Are Becoming Attacker AI Compute</h1><p class="mt-4 max-w-3xl text-blue-100">Zenity operated honeypots emulating self-hosted model backends and observed operators pointing autonomous offensive agents and LLM clients at them. The exposure surface was reachable Ollama /api/generate and /api/chat endpoints on port 11434 and LiteLLM /v1/responses proxies on port 4000; Ollama has no built-in authentication on its default API surface, and LiteLLM enforces proxy authentication only when a real master key is configured, so an unset key, a blank key, or the placeholder sk-1234 turned reachability into usable compute. Zenity observed Strix, HexStrike AI and a customised Codex-style agent sending system prompts, tool definitions and task context in the request bodies. No exploitation of the model itself was required: the risk is that self-hosted model-serving capacity becomes the inference layer for offensive automation aimed at third parties, at the owner&#x27;s cost and from the owner&#x27;s infrastructure. The brief is explicit that not every exposed backend was compromised — the point is that reachability without identity, budgets, logging and network boundaries is sufficient.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Standalone LLM / Generative AI</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 3</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 4.3 (1.9–6.8)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-07-02</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-pass" aria-hidden="true"><span style="width:43%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">Zenity operated honeypots emulating self-hosted model backends and observed operators pointing autonomous offensive agents and LLM clients at them. The exposure surface was reachable Ollama /api/generate and /api/chat endpoints on port 11434 and LiteLLM /v1/responses proxies on port 4000; Ollama has no built-in authentication on its default API surface, and LiteLLM enforces proxy authentication only when a real master key is configured, so an unset key, a blank key, or the placeholder sk-1234 turned reachability into usable compute. Zenity observed Strix, HexStrike AI and a customised Codex-style agent sending system prompts, tool definitions and task context in the request bodies. No exploitation of the model itself was required: the risk is that self-hosted model-serving capacity becomes the inference layer for offensive automation aimed at third parties, at the owner&#x27;s cost and from the owner&#x27;s infrastructure. The brief is explicit that not every exposed backend was compromised — the point is that reachability without identity, budgets, logging and network boundaries is sufficient.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">Representative configuration characterised by Zenity&#x27;s honeypot observations (July 2026): a self-hosted LLM serving backend reachable from the public internet with no effective service authentication — an Ollama instance exposing /api/generate and /api/chat on port 11434 (no built-in auth on the default API surface), or a LiteLLM proxy exposing /v1/responses on port 4000 with no master key, a blank key, or the placeholder sk-1234. Scored as the exposure configuration stood when the abuse was observed.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">Ollama and LiteLLM as software projects — their documented defaults are the context of the exposure, and the assessed object is the deployment configuration, not a product defect; the attacker-side agent frameworks (Strix, HexStrike AI, the customised Codex-style agent), which are the calling clients and sit outside the assessed boundary; the third-party targets of the resulting offensive automation. Tool execution and planning occur in the attacker&#x27;s client, not in the assessed system, so Cn-6 (action reversibility) has no action space to classify and is omitted rather than scored. Fairness and Privacy axes are unscored: the evidence speaks to exposure, authentication and abuse telemetry only.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Standalone LLM / Generative AI (decision tree Q5) —
+      Q1-Q2 = NO: the backend coordinates nothing and plans nothing; the autonomy belongs to the callers. Q3 = NO for the assessed boundary: tool definitions ride inbound in the request body, but tool execution happens in the attacker&#x27;s client — the backend emits text. Q4 = NO: no retrieval layer is described. Q5 = YES: the system generates open-ended natural language and code from the request context without retrieval or tool execution of its own. This classification is itself a finding — the agentic behaviour observed in this incident belongs to the caller, while the exposed asset is a plain generative endpoint.
+      <strong class="text-navy">Tier 3:</strong> Tier 3 Internal: self-hosted inference intended to serve internal applications and developers within an organisational boundary — the exposure is the defect, not the intended user population; some observed hosts are likely Tier 4 test instances, which would decay more slowly but carry lower MVTs.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>Operator scans the internet for model-serving ports — 11434 for Ollama, 4000 for LiteLLM — and enumerates responsive endpoints.</li><li>Reachability is converted to access with no credential (Ollama default API surface), or with a blank/placeholder key against a LiteLLM proxy started without a real master key.</li><li>The caller supplies the entire model context in the request body: system prompt, tool definitions and task state for an offensive agent framework.</li><li>The backend returns completions that serve as the reasoning layer of the attacker&#x27;s agent loop, against third-party targets.</li><li>Absent per-caller metering, budgets or identity, the abuse continues at the owner&#x27;s compute and spend, attributable to the owner&#x27;s infrastructure, with no principal recorded in any log.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>LiteLLM&#x27;s proxy authentication does work when configured: the brief&#x27;s finding is that it enforces auth only when a real master key is set, which makes this a configuration failure rather than a broken control.</li><li>The abuse is highly detectable where any logging exists — Zenity distinguished it from ordinary inference by the request bodies alone (agent system prompts, tool schemas, offensive framework names, payload shape and entropy), so the signal quality is good even though the assessed hosts were not collecting it.</li><li>The brief is careful not to overclaim: &#x27;The lesson is not that every exposed backend was fully compromised.&#x27; Reachability was observed at scale; full compromise of each host was not asserted, and this assessment scores the exposure configuration accordingly.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.40</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.06–0.81</strong> (midpoint 0.44), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Tr-3</span><span class="block text-[11px] text-gray-500">Audit Trail Completeness</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Partial logging exists (the serving runtime writes basic request records) but omits critical fields — above all actor identity, plus tool parameters and caller attribution — so sessions cannot be reconstructed to a principal. The 0.25 anchor.</td><td>With no authentication there is no principal to record: requests cannot be attributed to a caller identity, key, or owner. The brief lists structured, redacted AI request logging and caller-scoped token/tool/cost alerting as controls to add, and instructs defenders to reconcile each responsive endpoint to an owner — evidence that neither request-level logging nor ownership attribution was in place on the assessed hosts.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–0.48</strong> (midpoint 0.24), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-critical">confirmed breach</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.18</span></td><td>No effective scope boundaries — network scope and resource limits, both named in the Cn-1 definition, are absent, so arbitrary internet callers consume unbounded model resources. The 0.00 anchor.</td><td>The assessed configuration enforces no caller scope, no token/tool-call/concurrency/GPU/spend budget and no network boundary: the brief&#x27;s prescription is to bind backends to private interfaces, meter every caller, and enforce cumulative budgets at the inference gateway, and its posture-gate technique names public IPs on model servers, wide-open ingress and unsafe bind addresses as the exact conditions found.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-3</span><span class="block text-[11px] text-gray-500">Output Filtering Robustness</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.22</span></td><td>No output filtering or policy enforcement is present in the assessed configuration — the 0.00 anchor, met by configuration rather than by a measured escape rate. Noted for fairness: per-model refusal behaviour was not measured by the research, so this score reflects the absent deployment-layer control, not a demonstrated unsafe completion rate.</td><td>The exposed surfaces are raw serving endpoints: /api/generate, /api/chat and /v1/responses return model output directly to the caller with no policy layer, content gate or release check in the deployment. Zenity observed offensive agent frameworks using these backends as their reasoning layer.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-5</span><span class="block text-[11px] text-gray-500">Agent Identity Integrity</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.12</span></td><td>No identity verification: the endpoint accepts unauthenticated calls and arbitrary identities — the 0.00 anchor, matched literally. A correctly configured LiteLLM master key would reach 0.25 (shared secret), which is what makes this a configuration finding.</td><td>Ollama has no built-in authentication on its default API surface, and LiteLLM enforces proxy authentication only when a real master key is configured — &#x27;No key, a blank key, or sk-1234 can turn reachability into usable compute.&#x27; The assessed configuration therefore accepts unauthenticated calls from arbitrary identities; the prescribed fix is real service or admin identity with managed API keys or OAuth-style service credentials.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 18 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p><p class="mt-1 text-xs text-gray-500"><strong class="text-navy">Architecture-based NOT APPLICABLE:</strong> Cn-6. Each exclusion has a rationale in the workpaper.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>The assessed system holds no decision authority: it calls no tools, writes no state and executes no transactions — the autonomy in this incident belongs to the attacker&#x27;s client, which is out of scope. Placed at 0.25 rather than 0.00 because its outputs flow straight to automated consumers with no human review of any kind, which the 0.00 anchor (&#x27;every output reviewed before action&#x27;) does not describe.</td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Maximum exposure. The endpoint is internet-facing and unauthenticated, with no input validation, rate limiting or content filtering, and the caller controls the entire model context including the system prompt and tool schemas. Every mitigating property named in the 0.50 anchor is absent. <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.30</span></td><td>No System Dependency Graph exists for the observed host population, so the worst-case default applies; the reconstruction also triggers the 1.00 anchor on its merits. An anonymous, unauthenticated internet origin reaches — with no gate anywhere on the path — a node that consumes the owner&#x27;s paid inference capacity and, for a LiteLLM proxy, drives requests onward through the owner&#x27;s configured upstream routes. The resulting effects are external and non-undoable in the Cn-6 sense: spend is incurred and offensive traffic is generated from the owner&#x27;s infrastructure against third parties. That is an ungated path terminating at a write-external / irreversible-capable node from an origin with no privilege at all.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: corroborated by the observed path</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill high">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Deterministic fix by configuration change: bind the backend to a private interface, set a real master key, and apply least-privilege firewall rules — none of which touches the model. The brief adds an independent replay verification step (AID-E-004) to confirm the exact unauthenticated and placeholder-key request patterns now fail. The practical cost is fleet-wide discovery of exposed hosts, which is operational effort rather than remediation difficulty and does not raise the anchor.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 2 (dimensions strictly above 0.75) &rarr; CRM = 1.15.</p><p class="mt-2 text-xs" style="color:var(--sev-critical)"><strong>Compound Risk Alert.</strong> Two or more dimensions are simultaneously elevated (spec&nbsp;3.2.2); architectural decomposition is recommended before deployment.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill low">0.15</span></td><td>Below the 0.25 anchor, which requires a documented deployment owner. From outside, the serving software, port and model list are enumerable through the exposed API, but the brief&#x27;s own instruction is to reconcile each responsive endpoint to an owner — that is, ownership is unknown at discovery time. No AIBOM, no lineage, no identity policy, and by construction no authentication artefact exists.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.17</span></td><td>coverage 0.18 (4 of 22 applicable sub-metrics) &times; independence 1.00 &times; fidelity 0.95. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill mid">0.35</span></td><td>Evidence dated <a href="https://labs.zenity.io/p/bring-your-own-agent-hijacking-exposed-ai-backends-to-power-offensive-operations" target="_blank" rel="noopener noreferrer">2026-06-30</a>; age 44 days on the workpaper reference date. Components: C_event 0.35 · C_monitor 0.65 · T_calendar 0.85 · C_evidence 0.85. Binding term: <strong>C_event</strong>. dt_days = 44, measured from the primary public disclosure dated 2026-06-30 to the 2026-08-13 evidence reference date; the AIDEFEND brief republished the analysis on 2026-07-02. C_monitor 0.65 — the assessed hosts had no caller-scoped request logging or spend/token alerting, and with no authentication there is no identity to alert on; the abuse was visible only because a researcher instrumented a decoy. C_event 0.35 — unauthorised third parties were observed actively using the assessed systems, which is a major compromise-class event for the configuration; note that the spec&#x27;s threat-override row would support Tf = 0.10 for an actively abused backend, and 0.35 is used as the protocol&#x27;s major-event cap. C_evidence 0.85 — the exposure class remains open across the host population until fleet-wide discovery and replay verification are complete. Agentic = false: a raw inference endpoint has no runtime tool or credential mutation, so the containment staleness floor does not apply. BAW = false: no model-writable persistent memory, no runtime agent-to-agent exchange inside the boundary, no self-modifying configuration and no closed feedback loop — the attackers&#x27; agent loops run in their own clients, outside the assessed system.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.21</strong> &mdash; diagnostic status: Invalid as assessment-of-record evidence. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.20(0.25) + 0.25(1.00) + 0.30(1.00) + 0.25(0.00) = <strong>0.600</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 2 &rarr; <strong>1.15</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.600 × 1.15 = <strong>0.690</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.20(0.50) + 0.15(0.50) + 0.20(0.44) + 0.25(0.50) + 0.20(0.24) = <strong>0.436</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.436) = <strong>0.629</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.208 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 0.690 × 0.629 × 1/1.000 × 10) = <strong>4.3</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>1.9–6.8</strong>; 18 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-004.002</td><td>Service &amp; API Authentication<span class="block text-[11px] text-gray-500">Parent AID-H-004 (Identity, Access &amp; Trusted Communication for AI Systems). The single control whose absence sets Cn-5 = 0.00; it is also the prerequisite for the actor-identity field missing from Tr-3.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-002.001</td><td>Internal AI Network Segmentation<span class="block text-[11px] text-gray-500">Parent AID-I-002 (Network Segmentation &amp; Isolation for AI Systems) maps to Cn-4 in the catalogue. Cn-4 is not scored — no side-channel testing was performed — but operationally this technique is the network leg of the Cn-1 = 0.00 finding and of As = 1.00.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-M-001.005</td><td>Public AI Endpoint &amp; Agent-Service Exposure Discovery<span class="block text-[11px] text-gray-500">Parent AID-M-001 (AI Asset Inventory &amp; Mapping). Credential-free external discovery reconciled to an owner and auth state is exactly the evidence whose absence holds Pc at 0.15; only the Cn-5 leg of the catalogue mapping is evidenced here.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-003.003</td><td>Resource, Token &amp; Spend Budget Throttling<span class="block text-[11px] text-gray-500">Parent AID-I-003 maps directly to Cn-5 and Cn-6 in the reconciled AIDEFEND dataVersion 2026.08.05 crosswalk. Operationally its resource-limit effect is adjacent to the Cn-1 finding; its reconciled direct placement remains Cn-5/Cn-6.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-M-005.002</td><td>Policy-as-Code Configuration Baselines &amp; Posture Release Gates<span class="block text-[11px] text-gray-500">Parent AID-M-005 maps directly to Tr-3 in the reconciled AIDEFEND dataVersion 2026.08.05 crosswalk. It describes the release gate that would have blocked public IPs, wide-open ingress, missing auth and default keys before deployment, and is the strongest argument for Rf = 0.00.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-005.001</td><td>AI System Log Generation &amp; Collection<span class="block text-[11px] text-gray-500">Parent AID-D-005 (AI Activity Logging, Monitoring &amp; Threat Hunting). Direct basis for Tr-3 = 0.25: the request body holds the evidence, but only if structured, redacted logs are collected.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-005.007</td><td>Token, Tool-Use, Request-Parameter &amp; Cost Spike Detection &amp; Alerting<span class="block text-[11px] text-gray-500">Parent AID-D-005. Supports the C_monitor = 0.65 cap: abnormal token volume, retry bursts, long contexts and spend spikes were available signals that nothing was watching.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-005.009</td><td>AI-Service C2 &amp; Abuse-Channel Detection<span class="block text-[11px] text-gray-500">Parent AID-D-005. The precise detection layer for this telemetry — agent system prompts, tool schemas and offensive framework names correlated across key, gateway, identity, endpoint and proxy logs.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-004</td><td>Incident Exploit-Path Closure Verification<span class="block text-[11px] text-gray-500">AID-E-004 is ABSENT from the reconciled 2026.08.05 AITBM lookup (the map contains AID-E-001, AID-E-003 and AID-E-005 only); no mapping asserted. Replaying the original unauthenticated and placeholder-key patterns is the verification step that would let C_evidence rise above 0.85.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-gray-100 px-1.5 py-0.5 text-xs font-semibold text-gray-700">ACI:C_event recovery</span> <span class="rounded bg-gray-100 px-1.5 py-0.5 text-xs font-semibold text-gray-700">ACI:containment/behavioral re-attestation</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">Architecture class is scored on the assessed boundary, not on the attacker&#x27;s behaviour: the exposed backend is a Standalone LLM with Aa = 0.25 and baw/agentic both false, yet three Containment sub-metrics sit at 0.00 and Cp is corroborated at 1.00 — an unauthenticated endpoint can be maximally exposed and trivially remediable (Rf = 0.00) at the same time, and the thin two-axis evidence base correctly forces the Lite Ec cap.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-07/000-exposed-llm-backends-offensive-ai-compute.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action — Exposed LLM Backends Are Becoming Attacker AI Compute (honeypot observations by Zenity)</a> · <a href="https://labs.zenity.io/p/bring-your-own-agent-hijacking-exposed-ai-backends-to-power-offensive-operations" class="text-navy hover:underline underline-offset-2">Primary source — Bring Your Own Agent: Hijacking Exposed AI Backends to Power Offensive Operations (2026-06-30)</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/tr-3-audit-trail-completeness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-3: Audit Trail Completeness</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-3-output-filtering-robustness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-3: Output Filtering Robustness</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/cn-4-side-channel-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-4: Side-Channel Resistance</a><a href="/submetrics/fa-3-representation-bias" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Fa-3: Representation Bias</a><a href="/submetrics/tr-4-model-lineage-disclosure" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4: Model Lineage Disclosure</a><a href="/submetrics/cn-6-action-reversibility-classification-rate-arcr" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6: Action Reversibility Classification Rate</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/pydantic-ai-message-history-ssrf" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Tool-Calling LLM / Connected GenAI · Tier 1</span><h3 class="mt-1 font-bold text-navy">Pydantic AI Shows How Message History Can Become Server-Side Fetch Authority</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 4.7 →</span></a><a href="/use-cases/langsmith-tracing-header-injection" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Tool-Calling LLM / Connected GenAI · Tier 1</span><h3 class="mt-1 font-bold text-navy">LangSmith Tracing Header Injection Turned Observability Metadata into a Data Route</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 4.1 →</span></a><a href="/use-cases/difytap-cross-tenant-ai-data-exposure" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Tool-Calling LLM / Connected GenAI · Tier 2</span><h3 class="mt-1 font-bold text-navy">DifyTap Turns Multi-Tenant AI App Plumbing Into a Data Exposure Problem</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 4.9 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

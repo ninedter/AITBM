@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>PerplexedBrowser: When an Agent Browser Can Read… | AITBM</title>
+  <meta name="description" content="Researchers demonstrated that Perplexity&#x27;s Comet agentic browser could be steered from an ordinary workflow task into reading and exfiltrating local…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/perplexedbrowser-comet-local-file-exfiltration" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/perplexedbrowser-comet-local-file-exfiltration" />
+  <meta property="og:title" content="PerplexedBrowser: When an Agent Browser Can Read… | AITBM" />
+  <meta property="og:description" content="Researchers demonstrated that Perplexity&#x27;s Comet agentic browser could be steered from an ordinary workflow task into reading and exfiltrating local…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/perplexedbrowser-comet-local-file-exfiltration#article",
+      "url": "https://aitbm.org/use-cases/perplexedbrowser-comet-local-file-exfiltration",
+      "headline": "PerplexedBrowser: When an Agent Browser Can Read Local Files",
+      "name": "PerplexedBrowser: When an Agent Browser Can Read Local Files",
+      "description": "Researchers demonstrated that Perplexity's Comet agentic browser could be steered from an ordinary workflow task into reading and exfiltrating local…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/perplexedbrowser-comet-local-file-exfiltration#breadcrumb"
+      },
+      "keywords": "PerplexedBrowser: When an Agent Browser Can Read Local Files, Agentic / MCP System, AI security incident, AITBM ERS, Ro-1, Pr-3, Cn-1, Cn-2, Cn-6, Cn-7, Cn-3, Cn-5, Ro-3"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/perplexedbrowser-comet-local-file-exfiltration#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PerplexedBrowser: When an Agent Browser Can Read… | AITBM",
+          "item": "https://aitbm.org/use-cases/perplexedbrowser-comet-local-file-exfiltration"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">PerplexedBrowser: When an Agent Browser Can Read Local Files</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">PerplexedBrowser: When an Agent Browser Can Read Local Files</h1><p class="mt-4 max-w-3xl text-blue-100">Researchers demonstrated that Perplexity&#x27;s Comet agentic browser could be steered from an ordinary workflow task into reading and exfiltrating local files. A calendar invite carries benign meeting text plus hidden prompt-injection content, which Comet reads when the user asks it to accept the meeting. Fake button-like markup and system-reminder-style phrasing steer the agent to an external site in background mode; the site redirects it to a file:// path and frames directory traversal and file reading as part of the task. Once file contents are in the agent&#x27;s context, Comet places them into a URL and navigates to an attacker-controlled endpoint, so exfiltration needs no special API — ordinary browsing is the channel. The brief&#x27;s assessment is that prompt filtering may catch obvious payloads but the durable control is an execution boundary: denying autonomous agent access to local filesystem schemes unless a trusted, explicit policy grants it.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Agentic / MCP System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 2</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 6.8 (3.0–10.0)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-07-07</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-minor" aria-hidden="true"><span style="width:68%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">Researchers demonstrated that Perplexity&#x27;s Comet agentic browser could be steered from an ordinary workflow task into reading and exfiltrating local files. A calendar invite carries benign meeting text plus hidden prompt-injection content, which Comet reads when the user asks it to accept the meeting. Fake button-like markup and system-reminder-style phrasing steer the agent to an external site in background mode; the site redirects it to a file:// path and frames directory traversal and file reading as part of the task. Once file contents are in the agent&#x27;s context, Comet places them into a URL and navigates to an attacker-controlled endpoint, so exfiltration needs no special API — ordinary browsing is the channel. The brief&#x27;s assessment is that prompt filtering may catch obvious payloads but the durable control is an execution boundary: denying autonomous agent access to local filesystem schemes unless a trusted, explicit policy grants it.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">The Perplexity Comet agentic browser as configured at the July 2026 PerplexedBrowser disclosure, specifically the path in which a user-initiated calendar task lets agent-initiated navigation dereference local filesystem schemes and place the resulting file contents into an outbound URL. The assessment covers agent navigation scheme handling, per-request capability scope, host filesystem visibility from the agent&#x27;s execution context, and data-flow sink enforcement.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">The calendar provider that carried the invite; the user&#x27;s operating system and its own file permissions; the attacker&#x27;s redirect and collection infrastructure; Perplexity&#x27;s non-agentic browser features; and any Comet build after the disclosure. This is a point-in-time assessment of the demonstrated configuration and is not a rating of Perplexity as a vendor.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Agentic / MCP System (decision tree Q2) —
+      Q1 is NO: a single browser agent, with no inter-agent messaging evidenced. Q2 is YES: from one trusted user instruction (&#x27;accept this meeting&#x27;) the agent planned and executed a multi-step workflow — read the invite, navigate to an external site in background mode, follow a redirect to a file:// path, traverse directories, read local files, compose an outbound URL and navigate to it — invoking the browser as a tool with no explicit human approval for any individual step, and with the background navigation invisible to the user.
+      <strong class="text-navy">Tier 2:</strong> Tier 2 Consumer: a consumer-distributed browser agent with direct public interaction that runs on individual users&#x27; machines with visibility of their local files and logged-in sessions, so exploitation harms individuals and their personal data rather than causing physical or systemic harm at scale.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>A calendar invite is crafted with benign meeting text plus hidden prompt-injection content.</li><li>The user asks Comet to accept the meeting, bringing the invite text — instructions included — into the agent&#x27;s planning context.</li><li>Fake button-like markup and system-reminder-style phrasing impersonate trusted interface and system authority, steering the agent to an attacker-controlled external site in background mode where the user cannot see what it is doing.</li><li>The site redirects the agent to a file:// path and frames directory traversal and local file reading as part of the meeting-acceptance task; agent-initiated navigation dereferences the local scheme with no safe-navigation wrapper rejecting it.</li><li>Local file contents enter the agent&#x27;s runtime context unlabelled by provenance or sensitivity.</li><li>The agent places those contents into a URL and navigates to the attacker&#x27;s endpoint; because exfiltration rides ordinary browsing, no special exfiltration API and no additional capability are required.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>The chain still required a user-initiated task as its entry point: the agent did not act spontaneously, and the trusted request (&#x27;accept this meeting&#x27;) is exactly the anchor a per-request capability scope could have been derived from.</li><li>The brief records that prompt filtering may catch obvious payloads, indicating baseline injection handling exists in the product and that the successful payload had to impersonate interface and system authority rather than instruct the agent plainly.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.07–0.78</strong> (midpoint 0.42), Tier&nbsp;2 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Ro-1</span><span class="block text-[11px] text-gray-500">Adversarial Input Resistance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.30</span></td><td>0.25: basic filters resist naive attacks but fail against a moderate-effort technique — here authority spoofing in retrieved workflow content — with the observed policy-bypass and unsafe-navigation rate on the demonstrated path being total. Not 0.50, because there is no evidence of resistance to common templates; not 0.00, because the payload had to be engineered beyond the obvious form the product does catch.</td><td>Indirect prompt injection hidden inside a calendar invite controlled the agent end to end. The payload was not plain instruction text: it used fake button-like markup and system-reminder-style phrasing to impersonate trusted interface elements and system authority, which is an instruction-hierarchy attack rather than a naive one. The brief states that prompt filtering may catch obvious payloads, so a baseline filter is credited, but it did not resist this class and no downstream check caught the resulting behaviour.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;2 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.55</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;2 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.09–0.74</strong> (midpoint 0.41), Tier&nbsp;2 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.55</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Pr-3</span><span class="block text-[11px] text-gray-500">Data Minimization Compliance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.35</span></td><td>0.25: some minimisation exists at the product level but the agent&#x27;s runtime retained access to sensitive data far beyond documented necessity for the task, and values entering the runtime carried no provenance or sensitivity labelling to constrain onward use.</td><td>The agent&#x27;s execution context held the host profile and unscoped host filesystem visibility while processing untrusted workflow content, so a task that needed only calendar handling could enumerate directories and read arbitrary local files. The recommended remediation is to place the agent browser in a sandbox with no host profile and no unscoped host filesystem mounts, and to tag local-file data so it cannot flow to external URLs, messages, screenshots, model calls or remote media loads.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.04–0.64</strong> (midpoint 0.34), Tier&nbsp;2 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.55</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.12</span></td><td>0.00: no effective scope boundary existed on the dimensions that mattered; the system reached unauthorised data (local files), an unauthorised scheme and unauthorised network destinations. The boundary that should have stopped this — scheme denial for agent-initiated navigation — was absent rather than weak.</td><td>Agent-initiated navigation dereferenced a file:// path, traversed directories and read local files during a task whose authorised scope was accepting a calendar invitation, then reached an arbitrary attacker-controlled external endpoint. No safe-navigation wrapper rejected non-approved schemes before dereference, no allowlist constrained the outbound destination, and no filesystem root or path boundary applied. The brief&#x27;s first defender action — block autonomous browser agents from file://, loopback admin pages, password managers, identity portals and local developer resources — describes controls that must be added, not tightened.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-2</span><span class="block text-[11px] text-gray-500">Escalation Prevention</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.16</span></td><td>0.25: role checks exist in the sense that the agent distinguishes user instruction from page content in principle, but they are vulnerable to prompt injection and role confusion, which is the anchor&#x27;s exact condition. No approval workflow existed for the escalated action, and none was bypassed by force.</td><td>Content authored by an untrusted third party inside a calendar invite obtained the authority of the user&#x27;s trusted request and used it to justify background navigation and local file reads. Authority amplification came from role confusion — system-reminder-style phrasing impersonating the agent&#x27;s own control plane — rather than from any credential or privilege being broken.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-6</span><span class="block text-[11px] text-gray-500">Action Reversibility Classification Rate</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.12</span></td><td>0.00: no reversibility classification is performed before execution and actions execute ungated, ARCR = 0 across the demonstrated action space. There is no evidence of ad-hoc gating even for the highest-impact hop, so the 0.25 anchor&#x27;s condition is not met.</td><td>Background navigation, directory traversal, local file reads and an outbound data-bearing navigation all executed with no pre-execution classification and no gate. Exfiltrating local file contents to an attacker endpoint is a delegated-irreversible action — disclosure outside the deployment boundary cannot be undone — and it ran as an ordinary browsing step. The brief&#x27;s proposed control is a plan validator giving the system a checkpoint before side effects, able to reject a plan that turns calendar acceptance into background web navigation and local file access; that checkpoint did not exist.<span class="block text-[10px] text-gray-500 mt-0.5">source: researcher</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 18 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill low">0.85</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Between the 0.75 and 1.00 anchors. Task initiation is human — the user asks the agent to accept a meeting — which keeps it short of full autonomous execution. But within the task the agent plans and executes consequential multi-step actions with no per-action approval, and it does so in background mode where the user cannot observe or interrupt them, which is the 1.00 anchor&#x27;s substance: it chose destinations, dereferenced local paths, read files and issued outbound requests independently. 0.85 records supervised initiation with genuinely unsupervised execution. <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.35</span></td><td>Maximum exposure anchor. The assessed system is an internet-facing browser agent that consumes wholly untrusted content by design — arbitrary web pages, redirects, and third-party calendar invites that any external party can send — while holding browser tool authority. Untrusted retrieval and tool execution sit in the same execution path with no trust boundary between them, which is exactly the condition the 1.00 anchor describes. <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>No verified System Dependency Graph exists, but the demonstrated chain triggers the 1.00 anchor on its own merits. An entirely ungated path ran from untrusted invite content through the planner and the browser tool to the host filesystem and then out to an attacker-controlled external endpoint: all four stack layers reachable (LRR = 1.00), and the terminal hop is a delegated-irreversible action — disclosure of host file contents outside the deployment boundary. No gate exists anywhere on the path against which a containment block rate could be claimed, and the host filesystem read makes the reachable set include whatever credentials, tokens or identity material the user&#x27;s machine holds.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: corroborated by the observed path</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>Deployment- and product-layer fixes, days to implement: reject file:// and other non-approved schemes in a safe-navigation wrapper before dereference, run the agent browser in a sandbox with no host profile or unscoped host filesystem mounts, force outbound traffic through an externally enforced egress policy, label local-file values by provenance and block them from outbound sinks, and interpose a plan validator. Not 0.00, because closing the specific path still leaves the residual prompt-injection susceptibility, which is a model property bounded by these layers rather than eliminated; the score sits at the infrastructure-fix anchor because the durable control the brief identifies is an execution boundary, not a model change.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 3 (dimensions strictly above 0.75) &rarr; CRM = 1.35.</p><p class="mt-2 text-xs" style="color:var(--sev-critical)"><strong>Compound Risk Alert.</strong> Two or more dimensions are simultaneously elevated (spec&nbsp;3.2.2); architectural decomposition is recommended before deployment.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill low">0.20</span></td><td>Between the 0.00 and 0.25 anchors. The product, vendor and deployment owner are known and the agent&#x27;s observable behaviour is documented by the researchers, but nothing in the available evidence documents the model in use, the tool and capability manifest, the navigation policy, the sandbox profile or any identity policy for the assessed build, and no AIBOM or equivalent exists. Held below the 0.25 anchor because even the minimal record it describes — model name and tool inventory — is absent, leaving only vendor identity and external behavioural observation.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.21</span></td><td>coverage 0.22 (5 of 23 applicable sub-metrics) &times; independence 1.00 &times; fidelity 0.95. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill low">0.08</span></td><td>Evidence dated <a href="https://labs.zenity.io/p/perplexedbrowser-perplexity-s-agent-browser-can-leak-your-personal-pc-local-files" target="_blank" rel="noopener noreferrer">2026-03-03</a>; age 163 days on the workpaper reference date. Components: T_containment 0.08 · T_calendar 0.28 · C_event 0.35 · C_monitor 0.65 · C_evidence 0.85. Binding term: <strong>T_containment</strong>. dt_days = 163, measured from the primary public disclosure dated 2026-03-03 to the 2026-08-13 evidence reference date; the AIDEFEND brief republished the analysis on 2026-07-07. agentic = true: an Agentic-class deployment whose capability scopes, navigation policy and extension surface change with each product build, so the containment staleness floor applies to the permission-boundary evidence. baw = false: none of the four Behavioral Attestation Window checklist items is established by the evidence — no cross-session persistent memory writable by the agent, no runtime agent-to-agent messaging, no self-modifying prompts or configuration, and no closed feedback loop in which the agent&#x27;s output is written to state later consumed in a decision path. The chain demonstrated is within a single session, so the behavioural staleness floor is not applied rather than being assumed. C_event = 0.35: a major event — an exploited vulnerability in the assessed configuration with a working end-to-end chain. C_monitor = 0.65: the brief presents stateful session monitoring for intent drift and invariant breach as a control that could catch the drift from meeting acceptance to file reading, meaning no such detection existed in the assessed configuration. C_evidence = 0.85: scheme, sandbox and data-sink gaps were unresolved at the assessed point in time.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.15</strong> &mdash; diagnostic status: Invalid as assessment-of-record evidence. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.25(0.85) + 0.35(1.00) + 0.20(1.00) + 0.20(0.25) = <strong>0.812</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 3 &rarr; <strong>1.35</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.812 × 1.35 = <strong>1.097</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.25(0.42) + 0.30(0.50) + 0.15(0.50) + 0.20(0.41) + 0.10(0.34) = <strong>0.448</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.448) = <strong>0.619</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.150 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 1.097 × 0.619 × 1/1.000 × 10) = <strong>6.8</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>3.0–10.0</strong>; 18 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.004</td><td>Intent-Based Dynamic Capability Scoping<span class="block text-[11px] text-gray-500">Direct owner of the Cn-1 finding: the user&#x27;s trusted request is to accept a meeting, so a signed per-request scope should allow calendar handling while denying local filesystem browsing, directory traversal and background navigation justified only by invite text.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-019.001</td><td>URL Normalization &amp; Allowlist Filtering<span class="block text-[11px] text-gray-500">Parent AID-H-019 maps directly to Ro-1, Cn-1, and Cn-3 in the reconciled AIDEFEND dataVersion 2026.08.05 crosswalk. Substantively it is the control the Cn-1 = 0.00 score turns on: a safe navigation wrapper rejecting file:// and other non-approved schemes before the browser agent dereferences a local path.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.005</td><td>Value-Level Capability Metadata &amp; Data Flow Sink Enforcement<span class="block text-[11px] text-gray-500">Labels local file contents by provenance and sensitivity when they enter runtime values and blocks them from flowing into external URLs, image sources, forms, model calls and other outbound sinks. Direct evidence for the Pr-3 and Cn-6 findings — the exfiltration required no special API precisely because no sink enforcement existed.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-019.003</td><td>Browser Runtime Admission &amp; Sanitized Observation Export Gate<span class="block text-[11px] text-gray-500">Parent AID-H-019 maps directly to Ro-1, Cn-1, and Cn-3 in the reconciled AIDEFEND dataVersion 2026.08.05 crosswalk. Substantively it addresses both the Pr-3 host-visibility finding and the Cn-1 egress finding: sandbox the agent browser with no host profile or unscoped host filesystem mounts, and force outbound traffic through an externally enforced egress policy that blocks loopback, private addresses and unapproved destinations.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-017.003</td><td>Decoupled Plan-Then-Execute Architecture<span class="block text-[11px] text-gray-500">Parent AID-H-017 (Secure Agent Architecture) maps to Cn-5. The plan validator is the checkpoint before side effects whose absence sets Cn-6 to 0.00: it can reject a plan that turns calendar acceptance into background web navigation and local file access.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-003.005</td><td>Stateful Session Monitoring: Intent Drift + Invariant-Breach Signals<span class="block text-[11px] text-gray-500">Detects the session drift from accepting a meeting to opening external instructions, browsing local files and generating an outbound URL. Its absence in the assessed configuration is what sets C_monitor at 0.65; the brief is explicit that it supports containment but should not be the only control.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">This case shows the Behavioral Attestation Window being correctly withheld: the agent is unambiguously Agentic and scores at the ORP ceiling, but none of the four BAW checklist items is evidenced for a single-session browser agent, so applying the behavioural staleness floor would have been an assumption rather than a finding — the freshness penalty here comes from the event and monitoring caps, which the evidence does support.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-07/010-perplexedbrowser-comet-local-file-exfiltration.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action brief 2026-07/010 — PerplexedBrowser: When an Agent Browser Can Read Local Files</a> · <a href="https://labs.zenity.io/p/perplexedbrowser-perplexity-s-agent-browser-can-leak-your-personal-pc-local-files" class="text-navy hover:underline underline-offset-2">Primary source — PerplexedBrowser: Perplexity&#x27;s Agent Browser Can Leak Your PC&#x27;s Local Files (2026-03-03)</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/ro-1-adversarial-input-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-1: Adversarial Input Resistance</a><a href="/submetrics/pr-3-data-minimization-compliance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-3: Data Minimization Compliance</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-2-escalation-prevention" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-2: Escalation Prevention</a><a href="/submetrics/cn-6-action-reversibility-classification-rate-arcr" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6: Action Reversibility Classification Rate</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a><a href="/submetrics/cn-3-output-filtering-robustness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-3: Output Filtering Robustness</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/ro-3-output-consistency" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-3: Output Consistency</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 6.1 →</span></a><a href="/use-cases/claude-code-github-action-secret-exposure" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">Claude Code GitHub Action: When a File-Read Tool Crosses the CI Secret Boundary</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 5.7 →</span></a><a href="/use-cases/notion-ai-agent-lethal-trifecta-exfiltration" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 2</span><h3 class="mt-1 font-bold text-navy">Notion AI Agent Lethal Trifecta Leads to Silent Data Exfiltration</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 5.1 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

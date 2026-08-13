@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>Malicious Hugging Face Models: When Loading a Model… | AITBM</title>
+  <meta name="description" content="JFrog reported a malicious PyTorch model hosted on the Hugging Face Hub whose pickle payload executed during torch.load() deserialization, opening a…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/hugging-face-malicious-model-backdoor" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/hugging-face-malicious-model-backdoor" />
+  <meta property="og:title" content="Malicious Hugging Face Models: When Loading a Model… | AITBM" />
+  <meta property="og:description" content="JFrog reported a malicious PyTorch model hosted on the Hugging Face Hub whose pickle payload executed during torch.load() deserialization, opening a…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/hugging-face-malicious-model-backdoor#article",
+      "url": "https://aitbm.org/use-cases/hugging-face-malicious-model-backdoor",
+      "headline": "Malicious Hugging Face Models: When Loading a Model Opens a Backdoor",
+      "name": "Malicious Hugging Face Models: When Loading a Model Opens a Backdoor",
+      "description": "JFrog reported a malicious PyTorch model hosted on the Hugging Face Hub whose pickle payload executed during torch.load() deserialization, opening a…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/hugging-face-malicious-model-backdoor#breadcrumb"
+      },
+      "keywords": "Malicious Hugging Face Models: When Loading a Model Opens a Backdoor, Traditional ML / Classifier, AI security incident, AITBM ERS, Ro-4, Tr-3, Tr-4, Cn-1, Cn-2, Cn-7, Pr-2, Cn-5, Fa-3"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/hugging-face-malicious-model-backdoor#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Malicious Hugging Face Models: When Loading a Model… | AITBM",
+          "item": "https://aitbm.org/use-cases/hugging-face-malicious-model-backdoor"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Malicious Hugging Face Models: When Loading a Model Opens a Backdoor</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">Malicious Hugging Face Models: When Loading a Model Opens a Backdoor</h1><p class="mt-4 max-w-3xl text-blue-100">JFrog reported a malicious PyTorch model hosted on the Hugging Face Hub whose pickle payload executed during torch.load() deserialization, opening a reverse shell to an attacker-controlled external host. Hugging Face labels unsafe pickle-serialized models, but the label is advisory: marked artifacts remain downloadable and loadable, so the warning is not a control boundary. Any host that loaded the artifact inherited that process&#x27;s context — cloud keys, dataset access, SSH material and internal network reachability. JFrog reported comparable payloads in other repositories and noted that other model formats also expose code-execution paths; the specific repository has since been removed.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Traditional ML / Classifier</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 3</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 4.8 (2.3–7.4)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-04-24</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-pass" aria-hidden="true"><span style="width:48%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">JFrog reported a malicious PyTorch model hosted on the Hugging Face Hub whose pickle payload executed during torch.load() deserialization, opening a reverse shell to an attacker-controlled external host. Hugging Face labels unsafe pickle-serialized models, but the label is advisory: marked artifacts remain downloadable and loadable, so the warning is not a control boundary. Any host that loaded the artifact inherited that process&#x27;s context — cloud keys, dataset access, SSH material and internal network reachability. JFrog reported comparable payloads in other repositories and noted that other model formats also expose code-execution paths; the specific repository has since been removed.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">The third-party model-consumption path JFrog observed: a PyTorch model artifact published to a public Hugging Face namespace whose pickle payload executed during torch.load(), together with the representative model-loading environment that consumed it — a data-science laptop, notebook server, CI runner, or shared GPU host that pulls models from a public hub by name, with no pre-load artifact scanning, no signature or digest pinning, no execution sandbox and no egress restriction. The configuration assessed is the one described in JFrog&#x27;s February 2024 research and re-published as a standing pattern in the April 2026 brief.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">Hugging Face&#x27;s platform as it stands today (the specific repository was removed and the hub does label unsafe pickle-serialized artifacts); the safetensors and ONNX formats and any deployment that already mandates them; JFrog&#x27;s own detection tooling; any named enterprise victim (none is identified in the evidence); and the behaviour, accuracy or content of the model weights themselves, which are irrelevant to this failure mode.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Traditional ML / Classifier (decision tree Q6) —
+      The decision tree resolves at Q6 by elimination. Q1 (no two or more coordinating agents), Q2 (no autonomous planner, task state or unapproved tool invocation), Q3 (no function, API, plugin or MCP calling by the model — the code execution occurs in the loader, not through model tool-calling), Q4 (no inference-time retrieval layer) and Q5 (the evidence never establishes a generative interface) are all NO on the published evidence. What is described is a serialized PyTorch artifact consumed by notebooks, experiments, CI jobs, training pipelines and inference services, i.e. a bounded model-inference pipeline with deterministic application logic. Classifier intra-axis weights therefore apply, and Cn-5 and Cn-6 are marked NOT APPLICABLE per the Section 4.4 rule that agent-specific sub-metrics may be excluded only where no tool, retrieval or autonomous component exists.
+      <strong class="text-navy">Tier 3:</strong> Tier 3 Internal: the loading environments named in the evidence — laptops, notebook servers, CI runners and shared GPU boxes — sit inside the organisational boundary and are operated by controlled engineering users, matching the Tier 3 examples (workflow automation, code and data tooling); the credentials reachable from those hosts can enable escalation, but the assessed system itself neither interacts with the public nor causes immediate physical or financial harm at scale.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>Attacker publishes a PyTorch model artifact to a public Hugging Face namespace with executable content embedded in the serialized pickle object graph.</li><li>A consumer pulls the model by namespace and name, with no pre-load scan, no signature verification and no digest pin.</li><li>torch.load() reconstructs the pickle object graph; pickle reconstruction hooks execute attacker-controlled Python during deserialization.</li><li>The payload opens an outbound reverse-shell connection to an external host from the loading environment, which applies no default-deny egress policy.</li><li>The shell inherits the loading process&#x27;s ambient authority: cloud keys, dataset access, SSH material and internal network reachability.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>Hugging Face&#x27;s own unsafe-pickle detection did fire and label the artifact, so a machine-readable risk signal existed and was visible to consumers before download; what was missing was a fail-closed admission gate on the consuming side, not the signal itself.</li><li>External research (JFrog) identified the payload and the repository was taken down, so the specific artifact did not persist in the public namespace.</li><li>The payload&#x27;s reach was bounded by the operating-system account under which the loader ran; no privilege elevation beyond that account is reported.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.04–0.89</strong> (midpoint 0.46), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.40</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Ro-4</span><span class="block text-[11px] text-gray-500">Poisoning Attack Resistance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.15</span></td><td>Ro-4 = 0.25 — a basic format-level check exists (the hub&#x27;s unsafe-serialization label) but there is no adversarial screening, and poisoning of the artifact channel succeeds with limited effort, with PASR far above the 40% threshold. It is above 0.00 only because a detection signal existed in the consumption path rather than none at all.</td><td>The assessed consumption path accepts a third-party model artifact from an anonymous public namespace and executes it on load. The hub&#x27;s advisory unsafe-pickle label is the only screening in the path; there is no scanning of pickle globals, archive members, embedded code, custom loaders or shell/socket behaviour, no provenance check and no quarantine. For the observed artifact the poisoning attempt succeeded on load (effective PASR = 100% for that artifact), and JFrog reported similar payloads elsewhere.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.10–0.70</strong> (midpoint 0.40), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Tr-3</span><span class="block text-[11px] text-gray-500">Audit Trail Completeness</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>Tr-3 = 0.25 — partial logging exists (host and hub-side logs) but the critical fields are absent: model artifact digest, loader path, consuming host and actor identity are not recorded, so a model-load session cannot be reconstructed or correlated with egress at incident time.</td><td>The brief&#x27;s incident-response guidance — inventory every model with commit or revision, file hashes, format, loader path and owner, and treat a model-load event followed by a new external connection as a high-priority signal — describes records that did not exist. AID-M-001.002 is mapped precisely because defenders could not enumerate which notebooks, training jobs, containers, inference services and CI runners had consumed a given model.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td><span class="font-semibold text-navy">Tr-4</span><span class="block text-[11px] text-gray-500">Model Lineage Disclosure</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>Tr-4 = 0.25 — limited lineage artifacts exist for the artifact itself (hub namespace, file list and revision are retrievable) but there is no attestation, signature, loader-flag record or change history, so lineage is asserted by an anonymous publisher rather than disclosed and verifiable.</td><td>Production consumption pulls directly from a public namespace by name. The brief&#x27;s remediation asks for a model SBOM and signed provenance attestation recording exact model bytes, hashes, format, tokenizer, config, loader commit, source URL and loader flags such as trust_remote_code — none of which was present, which is why namespace drift, silent replacement and namesake substitution could not be detected.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.06–0.56</strong> (midpoint 0.31), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill low">0.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Cn-1 = 0.00 — no effective scope boundary. Loading an untrusted artifact gave access to credentials, datasets, filesystem and outbound network that the task never required, and no boundary denied, logged or reviewed the access.</td><td>The payload executed with the full ambient authority of the loading process and reached the external network unimpeded: the brief states a malicious model opened on a laptop, notebook server, CI runner or shared GPU box &#x27;can inherit cloud keys, dataset access, SSH material, and internal network reachability&#x27;, and the recommended controls — microVM or low-level sandboxing, no long-lived secrets, no shared home directory, minimal syscall capability and default-deny egress — are all described as absent from the observed loading environments.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-2</span><span class="block text-[11px] text-gray-500">Escalation Prevention</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Cn-2 = 0.25 — basic role separation exists (the payload is bounded by the operating-system account of the loader and no elevation beyond it is reported) but that boundary is defeated by role confusion between data and code, so an untrusted input acquires the full authority delegated to the workload.</td><td>The deserialization path converts an artifact that the pipeline treats as data into code running with the consuming workload&#x27;s own identity and secrets — the brief&#x27;s framing that &#x27;a model repository can look like data, but the loader may treat parts of it like code&#x27;. No just-in-time authorization, credential-scoping or approval step stands between artifact ingestion and execution with the loader&#x27;s authority.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 16 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p><p class="mt-1 text-xs text-gray-500"><strong class="text-navy">Architecture-based NOT APPLICABLE:</strong> Cn-5, Cn-6. Each exclusion has a rationale in the workpaper.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill mid">0.50</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>The assessed system does not itself decide or transact, but artifact ingestion and load are automated inside pre-defined pipelines: the brief states production systems &#x27;should not pull directly from a public Hugging Face namespace by name&#x27; and that an acceptance gate should be required &#x27;before deployment or hot reload&#x27;, which is the control that was missing. Routine loading therefore proceeds autonomously within pipeline boundaries with human monitoring available — the human-on-the-loop anchor — rather than requiring per-artifact confirmation.</td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">0.80</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Above the 0.75 anchor and below 1.00. The deployment exposes no inbound interface to external users and has no multi-agent or MCP surface, which rules out the maximum-exposure anchor; but its one ingestion channel carries anonymous, fully untrusted, executable third-party content from the public internet, which is stronger than the 0.75 anchor&#x27;s &#x27;partially trusted&#x27; external data ingestion. Scored 0.80 to record that the ingested content is executed, not merely read. <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.30</span></td><td>No System Dependency Graph is published for any consuming environment, so the DGC gate is not met and the Section 3.2 worst-case default applies. The 1.00 anchor is also independently triggered on the reconstruction&#x27;s own merits: an ungated path runs from the entry-exposed origin (the untrusted L1 artifact at load time) through the loading process to nodes holding cloud keys and SSH material — credential-issuing and write-external capable resources (P3/P4) — with no declared gate anywhere on the path, since sandboxing and egress restriction are both absent. Fault propagation was total for the observed artifact: every step from deserialization to outbound callback executed.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: corroborated by the observed path</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Remediation is deployment-infrastructure work, not model work, and is measured in days: block pickle-backed loading by default, prefer safetensors or ONNX, add model-aware static scanning to the release gate, pin digests and mirror through an internal registry, sandbox first load and apply default-deny egress. Nothing about the model itself must change and no retraining is involved.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 2 (dimensions strictly above 0.75) &rarr; CRM = 1.15.</p><p class="mt-2 text-xs" style="color:var(--sev-critical)"><strong>Compound Risk Alert.</strong> Two or more dimensions are simultaneously elevated (spec&nbsp;3.2.2); architectural decomposition is recommended before deployment.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill low">0.15</span></td><td>Below the 0.25 anchor. The artifact&#x27;s format, hosting namespace and loader entry point are known, but there is no AIBOM or equivalent for the consuming deployment: the publisher is anonymous so there is no vendor of record, no deployment owner is identified, training data and model lineage are entirely unknown, and no tool inventory, identity policy or cryptographic evidence exists for the loading environment. Scored 0.15 rather than 0.25 because the 0.25 anchor&#x27;s &#x27;model name, vendor, and deployment owner documented&#x27; is only one-third satisfied.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.23</span></td><td>coverage 0.24 (5 of 21 applicable sub-metrics) &times; independence 1.00 &times; fidelity 0.95. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill low">0.03</span></td><td>Evidence dated <a href="https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/" target="_blank" rel="noopener noreferrer">2024-02-27</a>; age 898 days on the workpaper reference date. Components: T_calendar 0.03 · C_event 0.35 · C_monitor 0.65 · C_evidence 0.85. Binding term: <strong>T_calendar</strong>. dt_days is measured from the disclosure date of the underlying research (JFrog, 2024-02-27) to the assessment date 2026-08-13 = 884 days, not from the 2026-04-24 brief that re-published the pattern; the assessed configuration is the one observed in February 2024, and the calendar term consequently dominates every other freshness signal. agentic = false: a Traditional ML / Classifier pipeline has no runtime tool reprovisioning or credential reissuance, so the containment staleness floor does not apply. baw = false: no cross-session writable memory, no runtime agent-to-agent messaging, no self-modifying configuration and no closed feedback loop — the artifact is static. C_monitor = 0.65 because the loading environments produced no detection: the compromise was found by an external researcher, and the brief has to recommend hunting for model-load events followed by new outbound connections, which is telemetry that was not being correlated. C_event = 0.35 because introducing an unvetted third-party artifact into the pipeline is a major model-change event of exactly the class the drift table enumerates (new artifact of unknown provenance replacing a reviewed one), and here that event was also a compromise. C_evidence = 0.85 because the underlying exposure is unresolved: the brief records comparable payloads in other repositories and notes that other serialization formats expose the same code-execution path.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.10</strong> &mdash; diagnostic status: Invalid as assessment-of-record evidence. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.20(0.50) + 0.25(0.80) + 0.30(1.00) + 0.25(0.25) = <strong>0.662</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 2 &rarr; <strong>1.15</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.662 × 1.15 = <strong>0.762</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.20(0.46) + 0.15(0.50) + 0.20(0.40) + 0.25(0.50) + 0.20(0.31) = <strong>0.435</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.435) = <strong>0.631</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.104 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 0.762 × 0.631 × 1/1.000 × 10) = <strong>4.8</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>2.3–7.4</strong>; 16 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-003.009</td><td>Model Artifact Static Malware &amp; Unsafe-Serialization Scanning<span class="block text-[11px] text-gray-500">Parent AID-H-003 (Secure ML Supply Chain Management) maps to Ro-4 and Tr-4 in the 2026.08.05 catalogue. This is the control whose absence sets Ro-4 = 0.25: a scan that inspects pickle globals, archive members, embedded code and socket/shell behaviour, treated as a release blocker, stops the artifact before deserialization.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-003.006</td><td>Model SBOM &amp; Provenance Attestation<span class="block text-[11px] text-gray-500">Direct evidence source for Tr-4: a digest-bound SBOM recording bytes, hashes, format, tokenizer, config, loader commit, source URL and loader flags is exactly the lineage record the assessed configuration lacked.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-003.002</td><td>CI/CD Release Gating, Model Artifact Signing &amp; Secure Distribution<span class="block text-[11px] text-gray-500">The missing fail-closed admission gate. Its absence is what turns the hub&#x27;s advisory unsafe-pickle label into a non-boundary.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-001.004</td><td>Sandbox Network Egress Restrictions<span class="block text-[11px] text-gray-500">The 2026.08.05 lookup maps parent AID-I-001 (AI Execution Sandboxing &amp; Runtime Isolation) to Pr-2 only. In this case the control&#x27;s operational effect is on the egress leg of the scope boundary scored under Cn-1; that relationship is recorded here rather than mapped, since inventing a Cn-1 mapping would misstate the catalogue.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-001.002</td><td>MicroVM &amp; Low-Level Sandboxing<span class="block text-[11px] text-gray-500">Same parent mapping caveat as AID-I-001.004. Operationally this is the control whose absence produced Cn-1 = 0.00 — first load of a third-party artifact occurred on hosts holding long-lived secrets and a shared home directory.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-004.001</td><td>Static Artifact Hash &amp; Signature Verification<span class="block text-[11px] text-gray-500">Parent AID-D-004 (AI Artifact, Runtime Configuration, Route &amp; Lifecycle Integrity Monitoring). Supports both the poisoning-resistance score and the audit-trail score: hash and signature checks are what would bind a load event to an approved artifact.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-M-001.002</td><td>AI System Dependency Mapping<span class="block text-[11px] text-gray-500">Parent AID-M-001 (AI Asset Inventory &amp; Mapping). Only the Tr-4 leg is evidenced here; Cn-5 and Fa-3 are catalogue mappings that this incident does not exercise. The dependency map is also the artefact whose absence would have prevented a graph-derived Cp from being computed at all.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">An artifact-supply-chain incident with no agent, no prompt and no model output is still fully scorable — the evidence lands on Ro-4, Tr-3/Tr-4 and Cn-1/Cn-2 — and because the assessed configuration was observed in February 2024, Temporal Freshness rather than the attack itself is what collapses assurance confidence, which is the temporal layer behaving exactly as designed.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-04/010-hugging-face-malicious-model-backdoor.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action brief: Malicious Hugging Face Models: When Loading a Model Opens a Backdoor (2026-04-24)</a> · <a href="https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/" class="text-navy hover:underline underline-offset-2">JFrog (David Cohen), Data Scientists Targeted by Malicious Hugging Face ML Models with Silent Backdoor (2024-02-27)</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/ro-4-poisoning-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-4: Poisoning Attack Resistance</a><a href="/submetrics/tr-3-audit-trail-completeness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-3: Audit Trail Completeness</a><a href="/submetrics/tr-4-model-lineage-disclosure" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4: Model Lineage Disclosure</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-2-escalation-prevention" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-2: Escalation Prevention</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a><a href="/submetrics/pr-2-inference-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-2: Inference Attack Resistance</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/fa-3-representation-bias" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Fa-3: Representation Bias</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/deadbugz-mcp-supply-chain-campaign" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">Deadbugz: GitHub PRs Delivered a Delayed, Shape-Shifting Malicious MCP Server</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 6.4 →</span></a><a href="/use-cases/pydantic-ai-message-history-ssrf" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Tool-Calling LLM / Connected GenAI · Tier 1</span><h3 class="mt-1 font-bold text-navy">Pydantic AI Shows How Message History Can Become Server-Side Fetch Authority</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 4.7 →</span></a><a href="/use-cases/langsmith-tracing-header-injection" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Tool-Calling LLM / Connected GenAI · Tier 1</span><h3 class="mt-1 font-bold text-navy">LangSmith Tracing Header Injection Turned Observability Metadata into a Data Route</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 4.1 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

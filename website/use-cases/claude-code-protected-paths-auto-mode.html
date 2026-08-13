@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>Claude Code Protected Paths and Auto Mode: Why… | AITBM</title>
+  <meta name="description" content="A 2026-03-31 article documented that Claude Code 2.1.78 and later introduced protected-path overrides - writes to directories such as .git/, .claude/,…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/claude-code-protected-paths-auto-mode" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/claude-code-protected-paths-auto-mode" />
+  <meta property="og:title" content="Claude Code Protected Paths and Auto Mode: Why… | AITBM" />
+  <meta property="og:description" content="A 2026-03-31 article documented that Claude Code 2.1.78 and later introduced protected-path overrides - writes to directories such as .git/, .claude/,…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/claude-code-protected-paths-auto-mode#article",
+      "url": "https://aitbm.org/use-cases/claude-code-protected-paths-auto-mode",
+      "headline": "Claude Code Protected Paths and Auto Mode: Why Bypass Is No Longer a Stable Control Boundary",
+      "name": "Claude Code Protected Paths and Auto Mode: Why Bypass Is No Longer a Stable Control Boundary",
+      "description": "A 2026-03-31 article documented that Claude Code 2.1.78 and later introduced protected-path overrides - writes to directories such as .git/, .claude/,…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/claude-code-protected-paths-auto-mode#breadcrumb"
+      },
+      "keywords": "Claude Code Protected Paths and Auto Mode: Why Bypass Is No Longer a Stable Control Boundary, Agentic / MCP System, AI security incident, AITBM ERS, Cn-1, Cn-2, Cn-6, Cn-5, Cn-7, Cn-4, Pr-2, Pr-4, Fa-2, Tr-2"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/claude-code-protected-paths-auto-mode#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Claude Code Protected Paths and Auto Mode: Why… | AITBM",
+          "item": "https://aitbm.org/use-cases/claude-code-protected-paths-auto-mode"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Claude Code Protected Paths and Auto Mode: Why Bypass Is No Longer a Stable Control Boundary</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">Claude Code Protected Paths and Auto Mode: Why Bypass Is No Longer a Stable Control Boundary</h1><p class="mt-4 max-w-3xl text-blue-100">A 2026-03-31 article documented that Claude Code 2.1.78 and later introduced protected-path overrides - writes to directories such as .git/, .claude/, and .claude/skills/ are withheld even from the bypass-permissions mode - and that later releases added a classifier-based auto mode in place of blanket bypass. No exploit, bypass, or compromise is reported anywhere in the evidence. The security consequence identified is semantic rather than exploitative: the effective authority of an unattended coding agent changed while operators continued to expect the previous full-bypass behaviour, and the brief raises the possibility that the same named mode does not enforce identically across the CLI, VS Code, desktop, and remote-runner clients. The brief&#x27;s operational conclusion is that agent configuration, Git metadata, CI definitions, and skill registries are control-plane surfaces rather than ordinary project files. This assessment scores that unattended configuration as described in the evidence; it is not a finding of a defect.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Agentic / MCP System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 3</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 6.1 (2.0–10.0)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-04-16</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-minor" aria-hidden="true"><span style="width:61%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">A 2026-03-31 article documented that Claude Code 2.1.78 and later introduced protected-path overrides - writes to directories such as .git/, .claude/, and .claude/skills/ are withheld even from the bypass-permissions mode - and that later releases added a classifier-based auto mode in place of blanket bypass. No exploit, bypass, or compromise is reported anywhere in the evidence. The security consequence identified is semantic rather than exploitative: the effective authority of an unattended coding agent changed while operators continued to expect the previous full-bypass behaviour, and the brief raises the possibility that the same named mode does not enforce identically across the CLI, VS Code, desktop, and remote-runner clients. The brief&#x27;s operational conclusion is that agent configuration, Git metadata, CI definitions, and skill registries are control-plane surfaces rather than ordinary project files. This assessment scores that unattended configuration as described in the evidence; it is not a finding of a defect.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">Representative deployment: a developer workstation running Claude Code (Anthropic&#x27;s AI coding agent) at release 2.1.78 or later in unattended operation - either bypass-permissions mode with the protected-path override list in force, or the later classifier-gated auto mode - with write access to a working repository including .git/, .claude/, and .claude/skills/, as described in the 2026-03-31 article the brief analyses. No single customer deployment is named in the evidence, so the assessment is explicitly representative of that configuration class.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">Anthropic&#x27;s current Claude Code release and any behaviour shipped after the article; the underlying foundation model&#x27;s properties; any specific organisation&#x27;s Claude Code rollout; CI runners and IDE extensions beyond the interface-parity concern the brief raises; the security of user-authored skills themselves.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Agentic / MCP System (decision tree Q2) —
+      The brief describes an agent that executes multi-step coding workflows unattended, maintains persistent task and configuration state under .claude/ (policy files, skill registry, persistent identity files), and invokes file-write and shell tools without explicit human approval for each action - Q2 = YES. Q1 was answered NO: the brief documents installed skills and local automations, not two or more agents coordinating or exchanging messages at runtime, so the Multi-Agent class is not evidenced.
+      <strong class="text-navy">Tier 3:</strong> Tier 3 Internal: spec section 4 lists code assistants as the canonical Tier 3 example, and the assessed configuration runs inside a development organisation on controlled developer workstations with no direct public interaction.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>No exploited attack path is reported. The brief analyses a control-boundary change, not a compromise, and records no bypass of the protected-path list or the auto-mode classifier.</li><li>Hypothesised control-plane path that the protected-path list exists to close: an unattended agent writes .claude/ policy files or .claude/skills/ content, altering the rules that govern its own later actions (self-amplification of authority).</li><li>Second hypothesised path: an unattended agent mutates .git/ state - history rewrite or branch mutation - which is not cleanly undoable within the deployment boundary.</li><li>Residual uncertainty the brief raises: an operator&#x27;s mental model of what a named mode permits may not match the client actually in use, because CLI, IDE, desktop, and remote runners are not verified to enforce identical semantics.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>Protected-path overrides are enforced against the highest-privilege mode: writes to .git/, .claude/, and .claude/skills/ are withheld even under bypass-permissions, so the mode that previously implied unrestricted write authority no longer grants control-plane write authority.</li><li>Auto mode replaces blanket bypass with a classifier-gated approval layer, meaning a pre-execution risk decision now exists on a surface that previously had none.</li><li>No exploit, bypass, or compromise of either control is reported in the evidence - the brief is explicit that this is not a traditional bypass exploit.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.40</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.17–0.77</strong> (midpoint 0.47), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill mid">0.50</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.12</span></td><td>0.50 - core scope controls block the primary violation class (control-plane writes) but edge cases remain in delegated workflows and across client surfaces. Not 0.75, because scope is not shown to be enforced consistently across data, tools, network and delegation paths, and interface parity is unverified; not 0.25, because the protected-path deny list is a real enforced boundary rather than an inconsistently applied one, and no manipulation is reported to have exceeded it.</td><td>Directories such as .git/, .claude/, and .claude/skills/ are treated as protected paths and are not writable even in bypass-permissions mode. The brief records no demonstrated violation of that boundary. It does raise, conditionally, that CLI, VS Code, desktop, and future wrappers may enforce permissions differently, so cross-client parity of the boundary is unverified in the evidence.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-2</span><span class="block text-[11px] text-gray-500">Escalation Prevention</span></td><td class="num"><span class="score-pill mid">0.50</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.16</span></td><td>0.50 - privilege boundaries block the common escalation path (agent self-modification of its control plane), but delegated authority through installed skills and local automations is not manifest-validated, so multi-step escalation through a delegated component remains possible. Not 0.75, which requires escalation controls enforced across roles, tools and workflows with explicit approval for unauthorised attempts.</td><td>The self-amplification escalation path - an agent rewriting the policy, skill, or persistent-identity files that shape its own future authority - is blocked by the protected-path list. The brief nonetheless recommends AID-H-018.007 (require installed skills and local automations to declare whether they can touch protected state, then deny undeclared writes at runtime), indicating that manifest-based validation of delegated skill authority is not enforced in the assessed configuration, and recommends splitting approval tiers so config changes, branch or history mutation, and skill installation re-enter explicit approval.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-6</span><span class="block text-[11px] text-gray-500">Action Reversibility Classification Rate</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.12</span></td><td>0.25 - ad-hoc classification of selected high-impact actions against a fixed scope threshold (the protected-path list), with no formal three-class reversibility taxonomy. The 0.50 anchor requires a formal three-class taxonomy to be adopted, which the evidence does not show; the auto-mode classifier broadens the classified action space but is a risk gate, not a reversibility classification, and its false-negative rate is explicitly unmeasured.</td><td>Two pre-execution gates are documented: a fixed protected-path list (writes to .git/, .claude/, skill folders) and, in auto mode, a classifier that decides whether an action needs approval. Neither is presented as a reversibility taxonomy. The brief flags that defenders &#x27;now need evidence that it behaves safely under their real workflows&#x27; and recommends benchmarking classifier false negatives and interruption patterns before treating auto mode as a safe unattended control. No chain-level composition rule is described for multi-step tool sequences.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 20 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill low">0.85</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>The assessed configuration executes file edits and shell actions unattended with no per-action human approval; escalation applies only to the protected-path exception set and, in auto mode, to classifier-flagged actions. That is above the 0.75 supervised-autonomy anchor because oversight is not merely asynchronous but absent during an unattended run, and below the 1.00 anchor because a non-empty mandatory exception set exists that even the highest-privilege mode cannot override. <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>The brief does not characterise the agent&#x27;s input trust boundary at all, so the spec section 3.2 rule applies and the worst-case default of 1.00 is assigned. The default is also consistent with the deployment class on its merits: the configuration supports installable skills and local automations from sources the operator did not author, and a coding agent&#x27;s working context is repository and dependency content rather than curated input. Labelled as a spec-mandated default, not a finding. <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.30</span></td><td>No System Dependency Graph is published for any Claude Code deployment, so DGC cannot be established and the spec&#x27;s worst-case default applies (Cp = 1.00). The reconstruction does not independently reach the 1.00 anchor: the brief documents no ungated path reaching a P3/P4 node, because both the protected-path list and the auto-mode classifier were in force and neither is reported bypassed. With a verified graph, a developer-workstation coding agent that can run shell commands and push to remotes would plausibly show all four stack layers reachable (LRR = 1.00), placing it near the 0.75 anchor; 1.00 is applied here as the documented worst-case default rather than as a measured result.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: worst-case default — no verified dependency graph published</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>Every remediation the brief names is infrastructure or configuration work measured in days: protected-path list contents, client-side permission enforcement, interface-parity regression tests, write-protection and drift alerts on agent config and Git metadata, and skill permission manifests. None requires model change. It is not 0.00 because the auto-mode classifier is a probabilistic approval layer whose residual false-negative behaviour cannot be closed by a deterministic patch, only benchmarked and bounded.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 3 (dimensions strictly above 0.75) &rarr; CRM = 1.35.</p><p class="mt-2 text-xs" style="color:var(--sev-critical)"><strong>Compound Risk Alert.</strong> Two or more dimensions are simultaneously elevated (spec&nbsp;3.2.2); architectural decomposition is recommended before deployment.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill low">0.25</span></td><td>The vendor, product, and affected release line (2.1.78 and later) are documented, and the permission modes and protected-path semantics are described. Nothing else in the supply chain is: no AIBOM, no underlying model or tokenizer identity for the assessed configuration, no skill or MCP tool inventory, no identity policy, no signed or reviewed artefacts. That matches the 0.25 anchor - minimal provenance with vendor and owner documented and tooling described only at a high level.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.12</span></td><td>coverage 0.13 (3 of 23 applicable sub-metrics) &times; independence 1.00 &times; fidelity 0.95. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill low">0.21</span></td><td>Evidence dated <a href="https://www.roborhythms.com/claude-code-bypass-permissions-broken-2026/" target="_blank" rel="noopener noreferrer">2026-03-31</a>; age 135 days on the workpaper reference date. Components: T_behavior 0.21 · C_event 0.35 · T_containment 0.36 · C_behavior 0.40 · T_calendar 0.60 · C_evidence 0.65 · C_monitor 0.70. Binding term: <strong>T_behavior</strong>. dt_days = 135, measured from the 2026-03-31 article that discloses the behaviour to the 2026-08-13 assessment date (the brief&#x27;s own publication date, 2026-04-16, is a re-publication, not the disclosure). agentic = true: Claude Code is an Agentic/MCP class deployment with runtime-mutable tool and permission surfaces (skills and local automations can be installed), so the containment staleness floor with M_Cn = 2.0 applies. baw = true: the BAW applicability checklist is met on the self-modifying-configuration item - agent-written state under .claude/ is precisely what protected paths exist to restrain - and on writable cross-session memory files. C_event = 0.35: the change the brief documents is a change to the agent&#x27;s authority boundary and the addition of a new approval mechanism, which is the spec&#x27;s &#x27;identity-boundary change or new tool authority&#x27; trigger. C_monitor = 0.70: no telemetry evidence exists for the assessed configuration and the brief recommends adding write-protection and drift alerts on agent config, Git metadata, and persistent state, indicating they are not present by default; 0.70 is the Tier 3 no-usable-telemetry band. C_behavior = 0.40 (Band 0): no canaries, registered invariants, or maintained drift baseline are evidenced - the spec&#x27;s worst-case house rule for unavailable evidence, not a finding of absence. C_evidence = 0.65 follows automatically from the Band 0 cold-start rule.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.19</strong> &mdash; diagnostic status: Invalid as assessment-of-record evidence. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.20(0.85) + 0.25(1.00) + 0.30(1.00) + 0.25(0.25) = <strong>0.782</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 3 &rarr; <strong>1.35</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.782 × 1.35 = <strong>1.056</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.20(0.50) + 0.15(0.50) + 0.20(0.50) + 0.25(0.50) + 0.20(0.47) = <strong>0.494</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.494) = <strong>0.580</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.188 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 1.056 × 0.580 × 1/1.000 × 10) = <strong>6.1</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>2.0–10.0</strong>; 20 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-M-009.002</td><td>Authority Envelope &amp; Action Risk Classification<span class="block text-[11px] text-gray-500">Parent AID-M-009 (Agent Autonomy &amp; Authority Governance). Classifying writes to .git/, .claude/, skill folders, CI definitions, and policy files as control-plane actions is the machine-checkable input a Cn-6 reversibility gate consumes; it is the control whose absence holds Cn-6 at the 0.25 anchor.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-021.001</td><td>Client-Side Configuration Enforcement<span class="block text-[11px] text-gray-500">Parent AID-H-021 (AI Agent Configuration Integrity &amp; Hardening). Blocking insecure permission settings and unsafe wrapper configs at the endpoint addresses the cross-client enforcement drift that keeps Cn-1 and Cn-2 at 0.50.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-004.006</td><td>Agent Identity &amp; Persistent State File Write Protection<span class="block text-[11px] text-gray-500">Parent AID-I-004 (Agent Memory &amp; State Isolation). The reconciled lookup maps this parent to Cn-4/Pr-2/Pr-4; in this case its operative effect is on the Cn-1 and Cn-2 control-plane boundary, which is the sub-metric pair the protected-path list actually raises.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-M-009.006</td><td>Capability-Tier Control-Profile Binding &amp; Assurance Gate<span class="block text-[11px] text-gray-500">Parent AID-M-009. Requiring an assurance evidence package (enforced protected paths, current approval rules, immutable policy files, usable logs, rollback paths) before promoting an agent to unattended operation is the AITBM ACI evidence pack in AIDEFEND form.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-021.004</td><td>Control-Plane &amp; Oversight-Surface Isolation<span class="block text-[11px] text-gray-500">Parent AID-H-021. Preventing the running agent from reading, modifying, disabling, or bypassing the policy resources that decide its permissions is the escalation control credited in the Cn-2 = 0.50 score.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-M-009.004</td><td>Runtime Trust-State Demotion &amp; Autonomy Narrowing<span class="block text-[11px] text-gray-500">Parent AID-M-009. Publishing a signed, freshness-bounded Restricted trust state when an agent pivots into protected-path writes is the runtime analogue of the ORP Aa dimension being narrowed mid-run.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.007</td><td>Skill-Level Permission Manifest Validation &amp; Runtime Enforcement<span class="block text-[11px] text-gray-500">Parent AID-H-018 (Tool Authorization &amp; Capability Scoping). The absence of declared skill permission manifests is the specific delegated-authority gap that prevents Cn-2 rising above 0.50.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-017.001</td><td>Interruptible Agent Control Loops &amp; Structured State Auditability<span class="block text-[11px] text-gray-500">Parent AID-H-017 (Secure Agent Architecture). An external orchestrator able to pause, demote, or terminate before a protected-path mutation commits is the pre-execution gate a 0.75-or-higher Cn-6 would require.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-015</td><td>High-Risk Approval Bypass &amp; HITL Activity Detection<span class="block text-[11px] text-gray-500">Independently joining each protected-path mutation or auto-mode high-risk action to its signed approval, action digest, policy version, and execution record is the tamper-evident audit trail the Cn-6 = 1.00 anchor requires.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-2</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-2</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">A case with no exploit still moves the AITBM score: a change to an agent&#x27;s authority boundary trips the C_event &lt;= 0.35 cap and, with mutable behavioural state, the M_Em = 3.0 behavioural staleness floor - so &#x27;nothing was breached&#x27; does not mean &#x27;the prior assessment is still fresh&#x27;. It is also a clean example of Cp = 1.00 by default rather than by corroboration, because the gates in force were never shown to be bypassed.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-04/000-claude-code-protected-paths-auto-mode.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action brief: Claude Code Protected Paths and Auto Mode (2026-04-16)</a> · <a href="https://www.roborhythms.com/claude-code-bypass-permissions-broken-2026/" class="text-navy hover:underline underline-offset-2">RoboRhythms: Claude Code Just Broke Bypass Permissions (2026-03-31)</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-2-escalation-prevention" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-2: Escalation Prevention</a><a href="/submetrics/cn-6-action-reversibility-classification-rate-arcr" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6: Action Reversibility Classification Rate</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a><a href="/submetrics/cn-4-side-channel-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-4: Side-Channel Resistance</a><a href="/submetrics/pr-2-inference-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-2: Inference Attack Resistance</a><a href="/submetrics/pr-4-re-identification-risk" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-4: Re-identification Risk</a><a href="/submetrics/fa-2-calibration-consistency" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Fa-2: Calibration Consistency</a><a href="/submetrics/tr-2-confidence-calibration" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-2: Confidence Calibration</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/deadbugz-mcp-supply-chain-campaign" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">Deadbugz: GitHub PRs Delivered a Delayed, Shape-Shifting Malicious MCP Server</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 6.4 →</span></a><a href="/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 6.1 →</span></a><a href="/use-cases/claude-code-github-action-secret-exposure" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">Claude Code GitHub Action: When a File-Read Tool Crosses the CI Secret Boundary</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 5.7 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>

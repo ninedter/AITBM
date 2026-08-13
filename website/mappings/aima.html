@@ -1,0 +1,219 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>OWASP AIMA to AITBM Mapping</title>
+  <meta name="description" content="Shows how maturity practices can support AITBM evidence without converting maturity levels directly into ERS." />
+  <link rel="canonical" href="https://aitbm.org/mappings/aima" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/mappings/aima" />
+  <meta property="og:title" content="OWASP AIMA to AITBM Mapping" />
+  <meta property="og:description" content="Shows how maturity practices can support AITBM evidence without converting maturity levels directly into ERS." />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://aitbm.org/mappings/aima#article",
+      "url": "https://aitbm.org/mappings/aima",
+      "headline": "OWASP AIMA to AITBM Mapping",
+      "name": "OWASP AIMA to AITBM Mapping",
+      "description": "Shows how maturity practices can support AITBM evidence without converting maturity levels directly into ERS.",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/mappings/aima#breadcrumb"
+      },
+      "keywords": "OWASP AIMA, AITBM mapping, AI security maturity model, AI security crosswalk"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/mappings/aima#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Framework mappings",
+          "item": "https://aitbm.org/mappings"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "OWASP AIMA to AITBM Mapping",
+          "item": "https://aitbm.org/mappings/aima"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">OWASP AIMA</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">TIER 3 · AI SECURITY MATURITY MODEL</p><h1 class="mt-2 text-4xl font-bold">OWASP AIMA to AITBM Mapping</h1><p class="mt-4 max-w-3xl text-blue-100">Shows how maturity practices can support AITBM evidence without converting maturity levels directly into ERS.</p><div class="mt-5 flex flex-wrap gap-2"><a href="/submetrics/fa-1-demographic-parity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Fa-1</a><a href="/submetrics/fa-2-calibration-consistency" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Fa-2</a><a href="/submetrics/fa-3-representation-bias" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Fa-3</a><a href="/submetrics/fa-4-counterfactual-fairness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Fa-4</a><a href="/submetrics/tr-1-explainability-depth" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-1</a><a href="/submetrics/tr-3-audit-trail-completeness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-3</a><a href="/submetrics/tr-4-model-lineage-disclosure" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4</a><a href="/submetrics/pr-1-training-data-leakage-risk" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-1</a></div></div></section>
+<div class="mx-auto max-w-6xl px-4 sm:px-6 py-14"><div class="mb-7 rounded-xl border border-gray-200 bg-gray-50 p-5"><h2 class="font-bold text-navy">How to use this crosswalk</h2><p class="mt-2 text-sm text-muted">External requirements, controls, threats, and practices identify evidence to collect or tests to run. Only measured evidence from the assessed deployment determines AITBM rubric placements, IVP, ORP, ACI, MVT findings, and ERS.</p><p class="mt-2 text-xs text-gray-500">Mapping content last verified 2026-08-13. No endorsement by the external framework owner is implied.</p></div>
+<div class="mapping-detail"><article id="aima" class="min-w-0 rounded-xl border border-gray-200 p-6">
+        <div class="flex flex-wrap items-baseline justify-between gap-2">
+          <h3 class="text-xl font-bold text-navy">AIMA</h3>
+          <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Maturity model</span>
+        </div>
+        <p class="mt-1 text-xs text-muted">OWASP AI Maturity Assessment (AIMA) &middot; OWASP Foundation</p>
+        <p class="mt-3 text-sm text-muted">OWASP AIMA grades an organization&#x27;s AI-program maturity qualitatively across eight lifecycle domains, while AITBM operationalizes that maturity quantitatively - turning the maturity grade into Tiered Assessment Pathway eligibility and, through the ACI components (Pc/Ec/Tf), into the confidence and freshness of a per-system ERS.</p>
+        <div class="mt-5 overflow-x-auto">
+          <table class="spec-table w-full border-collapse text-sm">
+            <thead><tr>
+              <th class="px-4 py-3 text-left">AIMA Domain</th>
+              <th class="px-4 py-3 text-left">Primary AITBM Sub-Metrics</th>
+              <th class="px-4 py-3 text-left">Evidence Use / Notes</th>
+            </tr></thead>
+            <tbody class="text-muted">
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Responsible AI</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-1</span></span></td><td class="px-4 py-3">Fairness/explainability artifacts; raises Ec</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Governance</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td><td class="px-4 py-3">Pc and deployment-tier assignment</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Data Management</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td><td class="px-4 py-3">Data lineage is the canonical Pc source</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Privacy</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-4</span></span></td><td class="px-4 py-3">Privacy-by-design; Ec and tier assignment</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Design</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-2</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-2</span></span></td><td class="px-4 py-3">Threat modeling sets containment boundaries</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Implementation</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">Secure build provenance; agentic identity binding</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Verification</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td><td class="px-4 py-3">Red-team/eval reports; strongest Ec + Tf driver</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">Operations</span></td><td class="px-4 py-3"><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td><td class="px-4 py-3">Monitoring keeps Tf fresh; incident-response improves Rf</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
+        <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
+                <li>AIMA maturity provides organizational-process context. It does not assign an AITBM pathway or ACI range; only the system&#x27;s applicable provenance, evaluation, monitoring, and freshness evidence determines those values.</li>
+                <li>The two-organization example is a dated illustration. An AIMA level alone cannot justify its displayed ACI or ERS; a current assessment must score the underlying evidence independently.</li>
+                <li>AIMA practices may produce evaluation, monitoring, and provenance artifacts relevant to ACI. Practice maturity is contextual and never substitutes for AITBM admissibility, coverage, or freshness checks.</li>
+                <li>The frameworks operate at different levels: AIMA assesses organizational maturity and process, while AITBM assesses a deployed system. AIMA v1.0 and Toolkit 1.0.1 use eight lifecycle domains and do not define an ERS, IVP/ORP/ACI profile, or Cn-5 metric.</li>
+        </ul>
+        <p class="mt-4 text-sm"><a href="https://owasp.org/www-project-ai-maturity-assessment/" class="font-semibold text-navy hover:underline underline-offset-4">AIMA reference &rarr;</a></p>
+      </article></div>
+<nav class="mt-10 flex flex-wrap gap-4 border-t border-gray-200 pt-6 text-sm"><a href="/mappings" class="font-semibold text-navy hover:underline">← All framework mappings</a><a href="/submetrics" class="font-semibold text-navy hover:underline">Browse AITBM rubrics →</a></nav></div></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. External frameworks guide evidence collection; they do not set AITBM scores.</div></div>
+</footer>  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script></body></html>

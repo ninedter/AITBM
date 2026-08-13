@@ -1,0 +1,257 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>LiteLLM Fallout: How a Poisoned AI Dependency… | AITBM</title>
+  <meta name="description" content="LiteLLM versions 1.82.7 and 1.82.8 were published to PyPI outside the project&#x27;s normal GitHub release flow after the maintainer account was hijacked.…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/mercor-litelllm-poisoned-dependency-breach" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/mercor-litelllm-poisoned-dependency-breach" />
+  <meta property="og:title" content="LiteLLM Fallout: How a Poisoned AI Dependency… | AITBM" />
+  <meta property="og:description" content="LiteLLM versions 1.82.7 and 1.82.8 were published to PyPI outside the project&#x27;s normal GitHub release flow after the maintainer account was hijacked.…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=5d06d0e7" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/mercor-litelllm-poisoned-dependency-breach#article",
+      "url": "https://aitbm.org/use-cases/mercor-litelllm-poisoned-dependency-breach",
+      "headline": "LiteLLM Fallout: How a Poisoned AI Dependency Reached Mercor",
+      "name": "LiteLLM Fallout: How a Poisoned AI Dependency Reached Mercor",
+      "description": "LiteLLM versions 1.82.7 and 1.82.8 were published to PyPI outside the project's normal GitHub release flow after the maintainer account was hijacked.…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/mercor-litelllm-poisoned-dependency-breach#breadcrumb"
+      },
+      "keywords": "LiteLLM Fallout: How a Poisoned AI Dependency Reached Mercor, Tool-Calling LLM / Connected GenAI, AI security incident, AITBM ERS, Ro-4, Tr-4, Cn-1, Cn-5, Tr-3, Fa-3"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/mercor-litelllm-poisoned-dependency-breach#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "LiteLLM Fallout: How a Poisoned AI Dependency… | AITBM",
+          "item": "https://aitbm.org/use-cases/mercor-litelllm-poisoned-dependency-breach"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">LiteLLM Fallout: How a Poisoned AI Dependency Reached Mercor</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">LiteLLM Fallout: How a Poisoned AI Dependency Reached Mercor</h1><p class="mt-4 max-w-3xl text-blue-100">LiteLLM versions 1.82.7 and 1.82.8 were published to PyPI outside the project&#x27;s normal GitHub release flow after the maintainer account was hijacked. LiteLLM&#x27;s own incident issue records that the malicious code collected SSH keys, environment secrets, cloud and Kubernetes credentials, database passwords and CI configuration. Version 1.82.8 additionally shipped a malicious `litellm_init.pth` file, which meant the payload could execute on any Python startup on the host even where LiteLLM was never explicitly imported. Mercor confirmed downstream impact, making this the clearest published case of the compromise reaching an enterprise AI environment rather than remaining an upstream maintainer problem; Cybernews reported Lapsus$ claims about source code, databases and VPN data that were not independently confirmed at publication. The brief&#x27;s framing is that AI libraries are a privileged supply-chain input because they sit adjacent to model keys, cloud credentials, CI runners and internal data paths.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Tool-Calling LLM / Connected GenAI</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 3</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 4.2 (1.6–6.8)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-04-18</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+      <div class="ers-meter is-pass" aria-hidden="true"><span style="width:42%"></span></div>
+
+      <p class="mt-4 text-sm text-muted">LiteLLM versions 1.82.7 and 1.82.8 were published to PyPI outside the project&#x27;s normal GitHub release flow after the maintainer account was hijacked. LiteLLM&#x27;s own incident issue records that the malicious code collected SSH keys, environment secrets, cloud and Kubernetes credentials, database passwords and CI configuration. Version 1.82.8 additionally shipped a malicious `litellm_init.pth` file, which meant the payload could execute on any Python startup on the host even where LiteLLM was never explicitly imported. Mercor confirmed downstream impact, making this the clearest published case of the compromise reaching an enterprise AI environment rather than remaining an upstream maintainer problem; Cybernews reported Lapsus$ claims about source code, databases and VPN data that were not independently confirmed at publication. The brief&#x27;s framing is that AI libraries are a privileged supply-chain input because they sit adjacent to model keys, cloud credentials, CI runners and internal data paths.</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">ASSESSED SYSTEM</p>
+          <p class="mt-1 text-sm text-muted">The LiteLLM-mediated AI serving and model-gateway path together with the build-and-install supply chain that provisions it, in a representative enterprise AI deployment as it stood between the 24 March 2026 publication of the poisoned releases and their identification. Mercor is the confirmed downstream instance and is named in the brief, but no deployment-specific architecture detail for Mercor was published; the assessed configuration is therefore the pattern the brief describes and prescribes against — LiteLLM resolved live from public PyPI by package name, installed on hosts that also hold long-lived SSH, cloud, Kubernetes, database, CI and VPN credentials, with no internal mirror, no release-provenance check and no dependency map linking apps, images, notebooks and runners to the package.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p class="text-[11px] font-semibold tracking-wider text-navy-light">OUT OF SCOPE</p>
+          <p class="mt-1 text-sm text-muted">Mercor&#x27;s non-AI corporate systems; the Lapsus$ extortion claims regarding source code, databases and VPN data, which the brief states were not independently confirmed at publication and which are therefore excluded from scoring rather than treated as findings; the PyPI platform&#x27;s own account-security posture; LiteLLM&#x27;s current releases and any hardening shipped after the incident; and the Fairness axis (Fa-1..4), for which a credential-theft supply-chain incident produces no evidence.</p>
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500"><strong class="text-navy">Architecture:</strong>
+      Tool-Calling LLM / Connected GenAI (decision tree Q3) —
+      Q1 and Q2 answered NO: no agent topology, planner loop, autonomous multi-step workflow or persistent task memory is evidenced anywhere in the brief. Q3 answered YES: LiteLLM is the connector layer through which model calls are made — the brief places it &#x27;near model keys, cloud credentials, CI runners, and internal data paths&#x27;, and the incident&#x27;s value to the attacker was exactly the provider API keys, database passwords and cloud credentials that a connected-GenAI gateway holds. This is Connected GenAI in the Q3 sense: an external-API and enterprise-connector integration layer, not a standalone inference endpoint.
+      <strong class="text-navy">Tier 3:</strong> Tier 3 Internal: the evidenced scope is AI platform infrastructure — build hosts, CI runners and the model-gateway process — operated inside the organisational boundary by controlled engineering users, with the downstream effects on individuals alleged in the extortion claims but explicitly not independently confirmed at publication.</p>
+
+      <h2 class="mt-5 text-sm font-bold text-navy">Documented attack or failure path</h2><ol class="mt-2 space-y-1 text-sm text-muted failed-list"><li>The LiteLLM maintainer account is hijacked, and versions 1.82.7 and 1.82.8 are published directly to PyPI outside the project&#x27;s normal GitHub CI release flow — a provenance anomaly that no consuming build gate acted on.</li><li>Downstream builds and developer environments resolve LiteLLM live from the public index by package name, without exact-version pinning, hash verification or promotion through an internal mirror, and pull the poisoned release.</li><li>The payload executes in the install or import context on hosts that also carry long-lived credentials, and harvests SSH keys, environment secrets, cloud and Kubernetes credentials, database passwords and CI configuration.</li><li>In 1.82.8 a malicious `litellm_init.pth` file makes execution persistent and import-independent: the payload runs on any Python startup on the affected host.</li><li>Harvested static credentials are directly replayable against source repositories, databases, VPN and cloud services, because they are long-lived and not bound to a workload identity, audience or route.</li><li>Absence of a dependency map — which apps, images, notebooks and runners used LiteLLM — delays blast-radius scoping and credential rotation; Mercor subsequently confirms downstream impact.</li></ol>
+      <h2 class="mt-5 text-sm font-bold text-navy">Observed controls and bounded outcomes</h2><p class="mt-1 text-xs text-gray-500">Positive credit is given only where the record directly demonstrates a control operating. Recommended or merely presumed controls receive no positive scoring credit.</p><ul class="mt-2 space-y-1 text-sm text-muted held-list"><li>The upstream project published a detailed incident issue enumerating the exact credential classes the payload collected. That transparency is what makes downstream scoping and targeted rotation possible at all, and it is scored as the positive component of Tr-4.</li><li>The compromise was pinned to exact artifacts — versions 1.82.7 and 1.82.8 and the `litellm_init.pth` file — giving defenders deterministic indicators to search lockfiles, images, build caches and site-packages against, rather than a probabilistic hunt.</li><li>Mercor confirmed and disclosed downstream impact rather than remaining silent, which is what turned an ecosystem advisory into verifiable evidence that the compromise crossed into an enterprise AI environment.</li><li>Access logging existed on the systems the harvested credentials could reach: the brief&#x27;s guidance to &#x27;review logs for unusual repository, database, VPN, or cloud access since March 24, 2026&#x27; presumes a usable log surface, even though nothing alerted at the time.</li></ul>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 1 — Intrinsic Vulnerability Profile</h2>
+      <p class="mt-1 text-xs text-gray-500">Each sub-metric is placed on its five-level rubric by the
+      evidence quoted beside it. Missing applicable evidence remains unknown. The displayed midpoint and
+      interval are scenario values, not inferred control performance.</p>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Sub-metric</th><th class="num" style="width:5.5rem">Score</th><th style="width:26%">Rubric basis</th><th>Evidence</th></tr></thead><tbody><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Robustness (Ro)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.05–0.85</strong> (midpoint 0.45), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.40</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Ro-4</span><span class="block text-[11px] text-gray-500">Poisoning Attack Resistance</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>The 0.25 anchor: basic validation exists — package-index resolution, dependency metadata and whatever lockfile discipline was in place — but there is no adversarial screening of a new release and no provenance check, and poisoning of the ingestion path succeeded with limited effort. Not scored 0.00: the brief establishes that provenance and pinning controls were missing, not that no integrity validation of any kind existed in the assessed environment, and it would be unfair to a named organisation to read absence of evidence as evidence of total absence.</td><td>The poisoned channel is the AI dependency supply chain. The brief states the malicious releases &#x27;were uploaded to PyPI outside the official GitHub CI path&#x27; and that consumers should &#x27;prefer packages whose provenance shows they came from an approved CI workflow rather than a direct maintainer upload&#x27;; it also states that &#x27;if Mercor had trusted immutable, pre-approved bytes instead of a live public package name, the poisoned releases would have been easier to stop&#x27;. Both are framed as controls to adopt, so release-provenance attestation and mirror promotion were not in force. The poisoned version was accepted into downstream builds.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Fairness (Fa)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Transparency (Tr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.05–0.85</strong> (midpoint 0.45), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.45</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Tr-4</span><span class="block text-[11px] text-gray-500">Model Lineage Disclosure</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>The 0.25 anchor: limited lineage artifacts exist for the component itself (package name, exact versions, upstream incident record) while the deployment-level lineage that an AIBOM would carry — which images, runners, notebooks and services depend on it, and with what change history — is incomplete.</td><td>Negative: the brief&#x27;s AID-M-001.002 entry states that &#x27;teams need an exact map of which apps, images, notebooks, and runners used LiteLLM. That is what turns an ecosystem advisory into a concrete blast-radius list for Mercor-style secret rotation, host triage, and incident scoping&#x27; — presented as the missing artifact. Positive: package-level lineage was precise enough to name the exact malicious versions and the exact malicious file, and the upstream project&#x27;s incident issue documented the payload&#x27;s behaviour.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Privacy (Pr)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.00–1.00</strong> (midpoint 0.50), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td colspan="4" class="px-3 py-2" style="background:#eef2f9"><span class="font-bold text-navy">Containment (Cn)</span> <span class="text-muted">— scenario interval <strong class="text-navy">0.07–0.80</strong> (midpoint 0.43), Tier&nbsp;3 MVT<button type="button" class="mvt-info" data-mvt-info aria-label="What is MVT?" aria-describedby="mvt-tooltip" aria-controls="mvt-tooltip" aria-expanded="false"><i class="ph ph-info" aria-hidden="true"></i></button> 0.50</span> <span class="sev sev-minor">indeterminate</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-1</span><span class="block text-[11px] text-gray-500">Scope Enforcement</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.16</span></td><td>The 0.25 anchor: boundaries exist at the organisational level, but they are enforced inconsistently across contexts — the dependency-install and build context inherited ambient credential and network authority rather than running inside its own scope, so third-party code executing there exceeded any intended task scope without needing to defeat a control.</td><td>The brief&#x27;s AID-H-022.001 entry states that &#x27;package installation and image builds should run inside ephemeral sandboxes with no long-lived cloud keys, VPN credentials, or production .env material present&#x27; and that &#x27;a credential-stealing dependency should hit a dead-end environment, not the same host that can reach your internal stack&#x27;. Both are prescriptive, so the install and build context was neither ephemeral nor egress-restricted, and it was co-resident with credentials reaching source, database, VPN and cloud.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr><tr><td><span class="font-semibold text-navy">Cn-5</span><span class="block text-[11px] text-gray-500">Agent Identity Integrity</span></td><td class="num"><span class="score-pill low">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.11</span></td><td>The 0.25 anchor exactly: shared-secret and static-key authentication with weak rotation, no cryptographic binding of a credential to a workload, audience or route, and no service-to-service verification — so a secret lifted from one host authenticates indiscriminately elsewhere. Not 0.00: authentication was required everywhere; it was the identity binding, not the authentication itself, that was absent.</td><td>The brief&#x27;s AID-H-004.002 entry prescribes authenticating &#x27;CI jobs, applications, services, and other non-human callers with distinct workload identities, short-lived audience-bound credentials, and route binding so a secret stolen from one host cannot authenticate indiscriminately to source, database, VPN, and cloud services&#x27; — describing, by negation, the assessed state. The credential classes the payload harvested (SSH keys, cloud access keys, CI client secrets, database passwords, VPN credentials, long-lived service certificates) are enumerated in AID-E-001.001 as the objects requiring rotation, confirming they were long-lived static secrets.<span class="block text-[10px] text-gray-500 mt-0.5">source: brief</span></td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500"><strong class="text-navy">Unknown, not N/A:</strong> 19 applicable sub-metrics lack admissible public evidence. The lower, midpoint, and upper scenarios evaluate each at 0.00, 0.50, and 1.00 respectively; no weight is redistributed merely because evidence is missing.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 2 — Operational Risk Posture</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Dimension</th><th class="num" style="width:5.5rem">Score</th><th>Justification</th></tr></thead><tbody><tr><td><span class="font-semibold text-navy">Aa</span><span class="block text-[11px] text-gray-500">Autonomy Amplification</span></td><td class="num"><span class="score-pill low">0.75</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.20</span></td><td>The 0.75 supervised-autonomy anchor, scored on evidence rather than as a default. The evidenced autonomy in the assessed path is automated dependency resolution and build/install execution on CI runners: third-party code is fetched and executed without per-action human approval, with human oversight asynchronous at merge review — which is why the brief&#x27;s remediation includes a pre-merge dependency change risk review as a gate that must block. The gateway component itself has no independent decision authority in evidence, so the 1.00 anchor is not reached.</td></tr><tr><td><span class="font-semibold text-navy">As</span><span class="block text-[11px] text-gray-500">Attack Surface Exposure</span></td><td class="num"><span class="score-pill low">0.75</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>The 0.75 anchor: external data ingestion from a partially trusted source — a public package index with maintainer-account-based publishing — into an internet-connected serving path. Not 1.00: no untrusted RAG corpus, external-agent communication or MCP tool integration is evidenced for the assessed deployment, and the ingestion channel does carry a real if defeated trust model (maintainer accounts, project release flow).</td></tr><tr><td><span class="font-semibold text-navy">Cp</span><span class="block text-[11px] text-gray-500">Cascade Potential</span></td><td class="num"><span class="score-pill low">1.00</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.30</span></td><td>No System Dependency Graph is published, so the spec&#x27;s worst-case default applies (no SDG, DGC &lt; 0.90). The reconstruction independently triggers the 1.00 anchor as well: a single ingestion event at the dependency layer terminated at credential- and permission-issuing material — cloud and Kubernetes credentials, CI client secrets, SSH keys and long-lived service certificates — which is an ungated path reaching a P4 node, with onward reach to source repositories, databases, VPN and cloud (L4). The `.pth` mechanism in 1.82.8 additionally made propagation host-wide and import-independent, so the taint reached everything the graph would predict rather than a bounded subset. Mercor&#x27;s confirmation of downstream impact is independent corroboration that the reach was realised and not merely theoretical.<span class="block text-[11px] text-gray-500 mt-0.5">GDCP: corroborated by the observed path</span> <span class="sev sev-critical">elevated</span></td></tr><tr><td><span class="font-semibold text-navy">Rf</span><span class="block text-[11px] text-gray-500">Remediation Feasibility</span></td><td class="num"><span class="score-pill high">0.25</span><span class="block text-[10px] text-gray-500 mt-0.5">w 0.25</span></td><td>The 0.25 anchor. Removing the vulnerable artifact is deterministic — pin off 1.82.7/1.82.8 and delete `litellm_init.pth` — but that is not the remediation: full recovery requires infrastructure and credential-lifecycle work measured in days, namely rotating every credential present on affected hosts on or after 24 March 2026 (AI provider keys, cloud and Kubernetes credentials, CI tokens, SSH keys, database passwords, VPN access), freezing direct public index pulls, standing up an internal mirror with exact-version and hash pinning, moving installs into ephemeral low-trust sandboxes, and building the dependency impact list. All of these are deployment-infrastructure changes, none require model work, and none are probabilistic in effect.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">N<sub>elevated</sub> = 1 (dimensions strictly above 0.75) &rarr; CRM = 1.00.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Layer 3 — Public-evidence confidence diagnostic</h2>
+      <div class="mt-2"><div class="overflow-x-auto"><table class="ev-table"><thead><tr><th style="width:12rem">Component</th><th class="num" style="width:5.5rem">Score</th><th>Basis</th></tr></thead><tbody><tr><td class="font-semibold text-navy">Pc — Public provenance evidence</td><td class="num"><span class="score-pill low">0.25</span></td><td>The 0.25 minimal-provenance anchor. The compromised component is documented precisely — vendor, exact versions, the out-of-band publication anomaly, the malicious file name, the credential classes collected. Nothing comparable exists for the assessed deployment: no AIBOM, no dependency map (its absence is the explicit finding behind AID-M-001.002), no tool or model inventory, no identity policy, no evaluation artifacts. Provenance is strong about the poison and weak about the patient.</td></tr><tr><td class="font-semibold text-navy">Ec — Public evaluation coverage</td><td class="num"><span class="score-pill low">0.17</span></td><td>coverage 0.17 (4 of 23 applicable sub-metrics) &times; independence 1.00 &times; fidelity 1.00. No Full, Standard, or Lite pathway is claimed for a retrospective article.</td></tr><tr><td class="font-semibold text-navy">Tf — Public-evidence freshness</td><td class="num"><span class="score-pill mid">0.35</span></td><td>Evidence dated <a href="https://cybernews.com/security/mercor-data-breach-litelllm-supply-chain-attack/" target="_blank" rel="noopener noreferrer">2026-04-01</a>; age 134 days on the workpaper reference date. Components: C_event 0.35 · T_containment 0.36 · T_calendar 0.60 · C_monitor 0.65 · C_evidence 0.85. Binding term: <strong>C_event</strong>. dt_days = 134, measured from the primary public disclosure dated 2026-04-01 to the 2026-08-13 evidence reference date; the AIDEFEND brief republished the analysis on 2026-04-18. The underlying compromise began on 2026-03-24; freshness uses the date the evidence entered the public record. agentic = true for the Tool-Calling / Connected GenAI class per the containment staleness rule (M_Cn = 2.0): the gateway&#x27;s permission boundary is exactly the credential and connector set that mutates at runtime, which is what this incident turned over. baw = false: the Behavioral Attestation Window checklist was applied and no item is met — no model- or agent-writable cross-session memory, no runtime agent-to-agent channel, no self-modifying prompt or configuration, and no closed feedback loop in a decision path. C_monitor = 0.65 — nothing alerted at the time; the brief instructs defenders to retroactively &#x27;review logs for unusual repository, database, VPN, or cloud access since March 24, 2026&#x27;, which is a detection and alert-routing failure spanning weeks. C_event = 0.35 — a poisoned dependency executing with credential-harvesting behaviour is a compromise event on the major row, and the `.pth` persistence mechanism changed the runtime execution surface of the host. C_evidence = 0.85 — unresolved at the assessment date: the full extent of the claimed exfiltrated dataset was not independently confirmed, and no dependency map exists to bound the affected population.</td></tr></tbody></table></div><p class="mt-2 text-xs text-gray-500">Public-evidence ACI = (Pc &times; Ec &times; Tf)<sup>1/3</sup> = <strong class="text-navy">0.25</strong> &mdash; diagnostic status: Invalid as assessment-of-record evidence. It describes the evidence available to this case study, not the assurance of the underlying system, and is not inserted into the normalized-assurance scenario ERS.</p></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">Indicative ERS — normalized-assurance scenario</h2>
+      <div class="mt-2"><div class="formula p-4 text-xs sm:text-sm overflow-x-auto">
+      <div class="calc-steps">
+        <div class="step"><span class="lbl">W<sub>orp</sub> · ORP</span><span>0.20(0.75) + 0.25(0.75) + 0.30(1.00) + 0.25(0.25) = <strong>0.700</strong></span></div>
+        <div class="step"><span class="lbl">CRM</span><span>N<sub>elevated</sub> = 1 &rarr; <strong>1.00</strong></span></div>
+        <div class="step"><span class="lbl">ORP<sub>effective</sub></span><span>0.700 × 1.00 = <strong>0.700</strong></span></div>
+        <div class="step"><span class="lbl">W<sub>ivp</sub> · IVP midpoint</span><span>0.20(0.45) + 0.15(0.50) + 0.20(0.45) + 0.25(0.50) + 0.20(0.43) = <strong>0.467</strong></span></div>
+        <div class="step"><span class="lbl">IVP mitigation</span><span>0.15 + 0.85(1 − 0.467) = <strong>0.604</strong></span></div>
+        <div class="step"><span class="lbl">Scenario assurance</span><span>ACI fixed at <strong>1.000</strong> for cross-case comparison; public-evidence ACI 0.248 is diagnostic only</span></div>
+        <div class="step"><span class="lbl">Indicative ERS midpoint</span><span>min(10, 0.700 × 0.604 × 1/1.000 × 10) = <strong>4.2</strong></span></div>
+        <div class="step"><span class="lbl">Unknown-input interval</span><span><strong>1.6–6.8</strong>; 19 unknown applicable sub-metrics set to 1.00 / 0.00 at the bounds</span></div>
+      </div>
+    </div></div>
+
+      <h2 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h2>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-08-13); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.08.05. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-023</td><td>Publisher Integrity &amp; Workflow Hardening<span class="block text-[11px] text-gray-500">Parent AID-H-023 maps directly to Ro-4 and Tr-4 in the reconciled AIDEFEND dataVersion 2026.08.05 crosswalk. Substantively it is the control whose absence is the root of this case: the malicious releases were uploaded outside the official GitHub CI path, and provenance-preferring admission would have flagged that.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-003.001</td><td>Software Dependency &amp; Package Security<span class="block text-[11px] text-gray-500">Parent AID-H-003 (Secure ML Supply Chain Management). Both mapped edges are scored in this case: Ro-4 = 0.25 for the unscreened ingestion path, Tr-4 = 0.25 for the incomplete dependency lineage. This is the technique that most directly carries the case.</span></td><td class="num">Very High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-022.002</td><td>Pre-Merge Dependency Change Risk Review<span class="block text-[11px] text-gray-500">Parent AID-H-022 maps directly to Ro-4 in the reconciled AIDEFEND dataVersion 2026.08.05 crosswalk. The Pre-Merge Dependency Change Risk Review control is applied here as evidence for Ro-4.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-022.001</td><td>Sandboxed Dependency Installation<span class="block text-[11px] text-gray-500">Parent AID-H-022 maps directly to Ro-4 in the reconciled AIDEFEND dataVersion 2026.08.05 crosswalk. Substantively this is the evidence source for Cn-1 = 0.25 — the install context was not ephemeral, not egress-restricted, and co-resident with long-lived credentials.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-004.002</td><td>Service &amp; API Authentication<span class="block text-[11px] text-gray-500">Parent AID-H-004 (Identity, Access &amp; Trusted Communication for AI Systems). Cn-5 is the scored edge and this entry is its primary evidence: distinct workload identities, short-lived audience-bound credentials and route binding are prescribed, so their absence is what makes a stolen secret replayable everywhere. Tr-3 is a catalogue edge not independently evidenced here.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-001.001</td><td>Root &amp; Long-Lived Credential Object Eviction<span class="block text-[11px] text-gray-500">Parent AID-E-001 (Compromised Credential, Session, Principal &amp; Grant Eviction). Its enumeration of the exact credential objects requiring rotation is what establishes that the harvested material was long-lived and static — the factual basis for the Cn-5 = 0.25 anchor placement.</span></td><td class="num">High</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-M-001.002</td><td>AI System Dependency Mapping<span class="block text-[11px] text-gray-500">Parent AID-M-001 (AI Asset Inventory &amp; Mapping). Tr-4 is the germane edge and the direct basis for Tr-4 = 0.25; the absence of this map is also what caps C_evidence at 0.85, since the affected population cannot be bounded. The catalogue&#x27;s Fa-3 edge has no bearing on this case.</span></td><td class="num">Medium</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Fa-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-4</span></span></td></tr></tbody></table></div>
+
+      <div class="mt-6 rounded-lg border p-4" style="background:var(--accent-soft);border-color:var(--accent-line)">
+        <p class="text-[11px] font-semibold tracking-wider" style="color:var(--accent)">WHAT THIS CASE TEACHES</p>
+        <p class="mt-1 text-sm text-muted">AITBM scores a software supply-chain compromise as an AI-system finding without distorting either: the AI-specific signal lands on Ro-4 (the dependency ingestion path is a poisoning channel), Cn-5 (static credentials with no workload binding) and Tr-4 (no AIBOM to bound the blast radius), while the thinness of published deployment detail is carried honestly by a base coverage of 4 of 22 rather than by inventing scores — the epistemic penalty appears in ACI, which is where the framework intends it.</p>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-500"><strong class="text-navy">Sources:</strong> <a href="https://aidefendlabs.com/en/aia/2026-04/007-mercor-litelllm-poisoned-dependency-breach.html" class="text-navy hover:underline underline-offset-2">AIDEFEND in Action — LiteLLM Fallout: How a Poisoned AI Dependency Reached Mercor</a> · <a href="https://github.com/BerriAI/litellm" class="text-navy hover:underline underline-offset-2">LiteLLM project repository (BerriAI/litellm) — host of the project incident issue cited in the brief; the specific issue URL is not reproduced in the brief text</a> · <a href="https://cybernews.com/security/mercor-data-breach-litelllm-supply-chain-attack/" class="text-navy hover:underline underline-offset-2">Primary source — Mercor confirms cyberattack as hackers claim 4TB of critical data in possession (2026-04-01)</a></p>
+    </div>
+  </article>
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-12"><h2 class="text-2xl font-bold text-navy">AITBM sub-metrics referenced</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/ro-4-poisoning-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-4: Poisoning Attack Resistance</a><a href="/submetrics/tr-4-model-lineage-disclosure" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4: Model Lineage Disclosure</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/tr-3-audit-trail-completeness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-3: Audit Trail Completeness</a><a href="/submetrics/fa-3-representation-bias" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Fa-3: Representation Bias</a></div></section>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-12"><h2 class="text-2xl font-bold text-navy">Related public-evidence cases</h2><div class="mt-5 grid gap-4 md:grid-cols-3"><a href="/use-cases/model-namespace-reuse-supply-chain-attack" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Standalone LLM / Generative AI · Tier 1</span><h3 class="mt-1 font-bold text-navy">Model Namespace Reuse Turns a Trusted Name Into a Supply-Chain Redirect</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 4.0 →</span></a><a href="/use-cases/deadbugz-mcp-supply-chain-campaign" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Agentic / MCP System · Tier 1</span><h3 class="mt-1 font-bold text-navy">Deadbugz: GitHub PRs Delivered a Delayed, Shape-Shifting Malicious MCP Server</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 6.4 →</span></a><a href="/use-cases/sglang-zmq-pickle-deserialization-rce" class="card rounded-xl border border-gray-200 bg-white p-4"><span class="text-xs text-gray-500">Standalone LLM / Generative AI · Tier 1</span><h3 class="mt-1 font-bold text-navy">SGLang&#x27;s ZMQ and Pickle Paths Show Why Internal AI Messages Need a Trust Boundary</h3><span class="mt-3 inline-block text-sm font-semibold text-navy">Indicative ERS 3.5 →</span></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-08-13; evidence reference date 2026-08-13.</div></div>
+</footer>
+<div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
+  <script src="/assets/js/site-search-index.js?v=109d5d52"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script>
+  <script src="/assets/js/use-cases.js?v=eccbbb79"></script></body></html>
