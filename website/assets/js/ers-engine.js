@@ -29,7 +29,8 @@
     "Cn-3": { name: "Output Filtering Robustness",     axis: "Cn", base: 0.10 },
     "Cn-4": { name: "Side-Channel Resistance",         axis: "Cn", base: 0.20 },
     "Cn-5": { name: "Agent Identity Integrity",        axis: "Cn", base: 0.20 },
-    "Cn-6": { name: "Action Reversibility Classification Rate", axis: "Cn", base: 0.10 }
+    "Cn-6": { name: "Action Reversibility Classification Rate", axis: "Cn", base: 0.10 },
+    "Cn-7": { name: "Resource and Execution-Loop Containment",  axis: "Cn", base: 0.10 }
   };
 
   var WEIGHTS = {
@@ -39,28 +40,29 @@
   };
 
   var CONTROLS = [
-    { id: "AID-M-001", name: "AI Asset Inventory & Mapping",              tactic: "Model",   impacts: { "Tr-4": 0.75, "Cn-1": 0.60 }, ers: 2.6 },
-    { id: "AID-M-002", name: "Data Provenance & Lineage Tracking",        tactic: "Model",   impacts: { "Ro-4": 0.70, "Tr-4": 0.80, "Pr-3": 0.70 }, ers: 3.7 },
-    { id: "AID-M-003", name: "Model Behavior Baseline & Documentation",   tactic: "Model",   impacts: { "Ro-3": 0.70, "Tr-1": 0.60, "Tr-2": 0.75 }, ers: 2.9 },
-    { id: "AID-M-006", name: "Human-in-the-Loop Control Points",          tactic: "Model",   impacts: { "Cn-2": 0.70, "Cn-1": 0.75, "Cn-6": 0.80 }, ers: 4.3 },
-    { id: "AID-M-009", name: "Agent Autonomy Level Governance",           tactic: "Model",   impacts: { "Cn-1": 0.80, "Cn-2": 0.75, "Cn-5": 0.70, "Cn-6": 0.75 }, ers: 5.4 },
-    { id: "AID-H-001", name: "Adversarial Robustness Training",           tactic: "Harden",  impacts: { "Ro-1": 0.70, "Ro-4": 0.65 }, ers: 3.4 },
-    { id: "AID-H-002", name: "Input Sanitization & Validation",           tactic: "Harden",  impacts: { "Ro-1": 0.65, "Cn-3": 0.60 }, ers: 3.3 },
-    { id: "AID-H-006", name: "Output Content Filtering & Validation",     tactic: "Harden",  impacts: { "Cn-3": 0.75, "Pr-1": 0.60, "Tr-2": 0.70 }, ers: 3.5 },
-    { id: "AID-H-019", name: "Agent Permission & Capability Restriction", tactic: "Harden",  impacts: { "Cn-1": 0.80, "Cn-2": 0.75, "Cn-5": 0.70, "Cn-6": 0.60 }, ers: 5.8 },
-    { id: "AID-H-021", name: "Secure RAG Pipeline Implementation",        tactic: "Harden",  impacts: { "Ro-4": 0.70, "Pr-2": 0.65, "Cn-3": 0.70 }, ers: 3.9 },
-    { id: "AID-H-031", name: "Agentic Skill Admission Control",           tactic: "Harden",  impacts: { "Cn-1": 0.65, "Ro-4": 0.55 }, ers: 1.8 },
-    { id: "AID-H-032", name: "AI-Generated Code Admission Control",       tactic: "Harden",  impacts: { "Cn-3": 0.65, "Ro-4": 0.55 }, ers: 1.6 },
-    { id: "AID-H-034", name: "AI Gateway Routing Integrity",              tactic: "Harden",  impacts: { "Cn-1": 0.60, "Cn-4": 0.55 }, ers: 1.4 },
-    { id: "AID-D-001", name: "Real-Time Prompt Injection Detection",      tactic: "Detect",  impacts: { "Ro-1": 0.75, "Tr-3": 0.65 }, ers: 1.4 },
-    { id: "AID-D-002", name: "Model Drift & Anomaly Detection",           tactic: "Detect",  impacts: { "Ro-3": 0.65, "Ro-4": 0.55, "Tr-2": 0.60 }, ers: 2.6 },
-    { id: "AID-D-003", name: "Sensitive Data Leakage Detection",          tactic: "Detect",  impacts: { "Pr-1": 0.70, "Pr-3": 0.65, "Cn-3": 0.70 }, ers: 3.0 },
-    { id: "AID-D-011", name: "Agent Behavior Monitoring & Attestation",   tactic: "Detect",  impacts: { "Cn-1": 0.75, "Cn-2": 0.70, "Cn-5": 0.80, "Cn-6": 0.55 }, ers: 3.6 },
-    { id: "AID-I-002", name: "AI System Network Segmentation",            tactic: "Isolate", impacts: { "Cn-1": 0.60, "Cn-4": 0.55 }, ers: 1.4 },
-    { id: "AID-I-007", name: "Client-Side AI Execution Isolation",        tactic: "Isolate", impacts: { "Cn-1": 0.70, "Cn-3": 0.65, "Cn-4": 0.60 }, ers: 2.6 },
-    { id: "AID-I-008", name: "Browser Session & Origin Isolation",        tactic: "Isolate", impacts: { "Cn-1": 0.65, "Cn-4": 0.60 }, ers: 1.5 },
-    { id: "AID-DV-001", name: "AI Honeypot & Canary Deployment",          tactic: "Deceive", impacts: { "Tr-3": 0.75 }, ers: 0.7 },
-    { id: "AID-E-005", name: "Automated Threat Response & Termination",   tactic: "Evict",   impacts: { "Cn-2": 0.65 }, ers: 1.1 }
+    { id: "AID-M-001", name: "AI Asset Inventory & Mapping",              tactic: "Model",   impacts: { "Fa-3": 0.60, "Tr-4": 0.75, "Cn-5": 0.60 }, ers: 2.6 },
+    { id: "AID-M-002", name: "Data, Artifact & Knowledge Provenance, Integrity & Risk Characterization", tactic: "Model", impacts: { "Ro-4": 0.70, "Fa-3": 0.65, "Tr-3": 0.70, "Tr-4": 0.80, "Pr-3": 0.70 }, ers: 3.7 },
+    { id: "AID-M-003", name: "Model Behavior Baseline & Documentation",   tactic: "Model",   impacts: { "Ro-2": 0.70, "Fa-2": 0.65, "Fa-4": 0.60, "Tr-1": 0.60, "Tr-2": 0.75 }, ers: 2.9 },
+    { id: "AID-M-006", name: "Human-in-the-Loop Control Design & Readiness", tactic: "Model", impacts: { "Cn-2": 0.70, "Cn-6": 0.80 }, ers: 4.3 },
+    { id: "AID-M-009", name: "Agent Autonomy & Authority Governance",      tactic: "Model",   impacts: { "Cn-1": 0.80, "Cn-5": 0.70, "Cn-6": 0.75, "Cn-7": 0.75 }, ers: 5.4 },
+    { id: "AID-H-001", name: "Adversarial Robustness Training",           tactic: "Harden",  impacts: { "Ro-1": 0.70 }, ers: 3.4 },
+    { id: "AID-H-002", name: "AI-Contextualized Data Sanitization & Input Validation", tactic: "Harden", impacts: { "Ro-1": 0.65, "Fa-1": 0.60, "Fa-3": 0.60 }, ers: 3.3 },
+    { id: "AID-H-006", name: "AI Output Hardening & Sanitization",         tactic: "Harden",  impacts: { "Ro-3": 0.70, "Cn-3": 0.75 }, ers: 3.5 },
+    { id: "AID-H-018", name: "Tool Authorization & Capability Scoping",   tactic: "Harden",  impacts: { "Cn-1": 0.80, "Cn-6": 0.75 }, ers: 1.8 },
+    { id: "AID-H-019", name: "Safe Fetch & Web Content Admission for Agents", tactic: "Harden", impacts: { "Ro-1": 0.65, "Cn-1": 0.80, "Cn-3": 0.60 }, ers: 5.8 },
+    { id: "AID-H-020", name: "RAG Index Hygiene & Signing",               tactic: "Harden",  impacts: { "Ro-4": 0.70, "Pr-3": 0.70 }, ers: 3.9 },
+    { id: "AID-H-021", name: "AI Agent Configuration Integrity & Hardening", tactic: "Harden", impacts: { "Cn-2": 0.70, "Cn-5": 0.70 }, ers: 3.9 },
+    { id: "AID-H-031", name: "AI-Generated Code Admission Control & Safe Promotion", tactic: "Harden", impacts: { "Ro-1": 0.55, "Tr-3": 0.60, "Cn-2": 0.65, "Cn-3": 0.65 }, ers: 1.8 },
+    { id: "AID-H-032", name: "Multi-Tenant Inference Isolation & Leakage Prevention", tactic: "Harden", impacts: { "Pr-2": 0.65, "Pr-4": 0.65, "Cn-4": 0.65 }, ers: 1.6 },
+    { id: "AID-H-034", name: "MCP Server Runtime Boundary & Tool Exposure Governance", tactic: "Harden", impacts: { "Cn-1": 0.60, "Cn-2": 0.65, "Cn-5": 0.65, "Cn-6": 0.60, "Cn-7": 0.70, "Tr-3": 0.60 }, ers: 1.4 },
+    { id: "AID-D-001", name: "Adversarial Input, Prompt Injection & Signal-Authenticity Detection", tactic: "Detect", impacts: { "Ro-1": 0.75 }, ers: 1.4 },
+    { id: "AID-D-002", name: "AI Model Anomaly & Performance Drift Detection", tactic: "Detect", impacts: { "Ro-2": 0.65, "Fa-1": 0.60, "Fa-2": 0.65, "Tr-2": 0.60 }, ers: 2.6 },
+    { id: "AID-D-003", name: "AI Output Monitoring & Policy-Violation Detection", tactic: "Detect", impacts: { "Ro-3": 0.65, "Cn-1": 0.60, "Cn-3": 0.70, "Cn-7": 0.60 }, ers: 3.0 },
+    { id: "AID-D-011", name: "Registered Agent Behavior, Interaction & Identity-Abuse Detection", tactic: "Detect", impacts: { "Cn-5": 0.80, "Cn-6": 0.55 }, ers: 3.6 },
+    { id: "AID-I-002", name: "Network Segmentation & Isolation for AI Systems", tactic: "Isolate", impacts: { "Cn-4": 0.55 }, ers: 1.4 },
+    { id: "AID-I-007", name: "Client-Side AI Execution Isolation",        tactic: "Isolate", impacts: { "Cn-1": 0.70, "Cn-4": 0.60 }, ers: 2.6 },
+    { id: "AID-I-008", name: "Task-Scoped Browser & Computer-Use Workspace Isolation for Agents", tactic: "Isolate", impacts: { "Pr-2": 0.65, "Cn-1": 0.65, "Cn-4": 0.60 }, ers: 1.5 },
+    { id: "AID-E-005", name: "Compromised Durable Application Session & Agent State Teardown", tactic: "Evict", impacts: { "Pr-3": 0.65 }, ers: 1.1 }
   ];
 
   function severity(ers) {

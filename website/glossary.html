@@ -104,7 +104,7 @@
         {
           "@type": "DefinedTerm",
           "name": "IVP",
-          "description": "Intrinsic Vulnerability Profile — 22 sub-metrics across five security axes that score how risky an AI model is in itself.",
+          "description": "Intrinsic Vulnerability Profile — 23 sub-metrics across five security axes that score how risky an AI system is in itself.",
           "inDefinedTermSet": "https://aitbm.org/glossary#terms"
         },
         {
@@ -135,114 +135,6 @@
           "@type": "DefinedTerm",
           "name": "MVT",
           "description": "Minimum Viability Threshold — the per-tier bar a system must clear on critical sub-metrics regardless of its overall score.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "BAW",
-          "description": "Behavioral Attestation Window — an ACI staleness floor for architectures with mutable behavioral state; behavioral evidence half-life is one third of the tier half-life (M_Em = 3.0).",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "BAB",
-          "description": "Behavioral Attestation Battery — the lightweight scheduled test whose pass resets the behavioral staleness clock: CTPR ≥ 0.95, zero critical invariant violations, BBD < 0.15, MPSR ≥ 0.90; binary, no partial credit.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "M_Em",
-          "description": "Emergent-Behavior Staleness Multiplier — the framework constant 3.0 that ages behavioral evidence at three times the tier rate.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "C_behavior",
-          "description": "Behavioral Monitoring Coverage — a five-band Temporal Freshness cap (1.00/0.90/0.75/0.60/0.40) reflecting how much behavior-specific instrumentation runs in production.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "CTPR",
-          "description": "Canary Task Pass Rate — the fraction of pre-registered canary tasks the system still passes at attestation time; a BAB pass requires ≥ 0.95.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "IVR",
-          "description": "Invariant Violation Rate — how often the system violates its pre-registered behavioral invariants; a BAB pass requires zero critical violations.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "CIC",
-          "description": "Cross-Agent Interaction Coverage — the fraction of live agent-pair × message-type channels and tool-action categories with invariant monitors, computed against the re-attestation artifact inventory.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "MPSR",
-          "description": "Memory Poisoning Success Rate — the fraction of injected, tagged memory-poisoning probes the system detects and quarantines; a BAB pass requires ≥ 0.90.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "GDCP",
-          "description": "Graph-Derived Cascade Potential — Cascade Potential (Cp) computed from a verified System Dependency Graph via layer reachability, privilege amplification, and fault-injection blast radius; the worst indicator governs.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "SDG",
-          "description": "System Dependency Graph — a directed graph of the deployment with privilege tiers on nodes and containment gates on edges; the evidence artifact from which Cascade Potential is derived.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "DGC",
-          "description": "Dependency Graph Completeness — the share of the deployed inventory present in the System Dependency Graph; below 0.90 the graph is inadmissible and Cp = 1.00.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "LRR",
-          "description": "Layer Reachability Ratio — the fraction of the four stack layers reachable from a compromise origin by transitive closure over the System Dependency Graph.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "PAD",
-          "description": "Privilege Amplification Depth — the maximum ordinal climb on the P1–P4 privilege ladder along any reachable path.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "FIBR",
-          "description": "Fault-Injection Blast Radius — the share of graph-predicted reachable nodes that injected taint markers actually reached across the trial set.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "GVR",
-          "description": "Graph Validation Rate — the fraction of injection trials where observed reach was a subset of predicted reach; any failure invalidates the System Dependency Graph.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "CBR",
-          "description": "Containment Block Rate — the fraction of injected propagation attempts halted at a declared gate; a gate may be claimed only at ≥ 0.95.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "QTR",
-          "description": "Quarantine Trigger Rate — the fraction of detected boundary crossings that triggered the required response; reported, not scored.",
-          "inDefinedTermSet": "https://aitbm.org/glossary#terms"
-        },
-        {
-          "@type": "DefinedTerm",
-          "name": "Cascade Reach Alert",
-          "description": "A reported diagnostic, mirroring the Compound Risk Alert, fired whenever any GDCP indicator triggers the 1.00 anchor; it does not change the score.",
           "inDefinedTermSet": "https://aitbm.org/glossary#terms"
         }
       ]
@@ -358,7 +250,7 @@
         </div>
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ivp" data-term="ivp intrinsic vulnerability profile layer 1 system">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">IVP</h3><span class="text-sm font-semibold text-gray-700">Intrinsic Vulnerability Profile · Layer 1</span></div>
-          <p class="mt-2 text-sm text-muted">How strong the system is on its own. 22 checks across five security areas, each scored at one of five normalized anchors from 0.00 to 1.00. Reported as a five-number profile, not a single score.</p>
+          <p class="mt-2 text-sm text-muted">How strong the system is on its own. 23 checks across five security areas, each scored at one of five normalized anchors from 0.00 to 1.00. Reported as a five-number profile, not a single score.</p>
         </div>
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="orp" data-term="orp operational risk posture layer 2 deployment context">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">ORP</h3><span class="text-sm font-semibold text-gray-700">Operational Risk Posture · Layer 2</span></div>
@@ -410,7 +302,7 @@
         </div>
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="cn" data-term="cn containment scope escalation agentic side channel">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Cn</h3><span class="text-sm font-semibold text-gray-700">Containment</span></div>
-          <p class="mt-2 text-sm text-muted">Keeping an agent inside its limits: scope, escalation, output filtering, side channels, identity, and action reversibility. The axis that carries AITBM's agentic-systems coverage. (6 sub-metrics)</p>
+          <p class="mt-2 text-sm text-muted">Keeping an agent inside its limits: scope, escalation, output filtering, side channels, identity, action reversibility, and resource/execution-loop containment. The axis that carries AITBM's agentic-systems coverage. (7 sub-metrics)</p>
         </div>
         <div class="term-row rounded-xl border-2 border-navy/25 bg-white p-5" id="cn5" data-term="cn-5 agent identity integrity impersonation spiffe oidc agentic mcp">
           <div class="flex flex-wrap items-center gap-x-3"><h3 class="text-lg font-bold text-navy">Cn-5</h3><span class="text-sm font-semibold text-gray-700">Agent Identity Integrity</span></div>
@@ -419,6 +311,18 @@
         <div class="term-row rounded-xl border-2 border-navy/25 bg-white p-5" id="cn6" data-term="cn-6 action reversibility classification rate arcr gating irreversible agentic">
           <div class="flex flex-wrap items-center gap-x-3"><h3 class="text-lg font-bold text-navy">Cn-6</h3><span class="text-sm font-semibold text-gray-700">Action Reversibility Classification Rate (ARCR)</span></div>
           <p class="mt-2 text-sm text-muted">A Containment sub-metric. The fraction of automated actions whose reversibility class was determined and enforced before the system executed them, with multi-step or multi-agent chains governed by the worst-case (highest-impact) hop. Aligns with OWASP AISVS C9.2.</p>
+        </div>
+        <div class="term-row rounded-xl border-2 border-navy/25 bg-white p-5" id="cn7" data-term="cn-7 resource execution loop containment budget recursion delegation fan-out">
+          <div class="flex flex-wrap items-center gap-x-3"><h3 class="text-lg font-bold text-navy">Cn-7</h3><span class="text-sm font-semibold text-gray-700">Resource and Execution-Loop Containment</span></div>
+          <p class="mt-2 text-sm text-muted">A Containment sub-metric that tests aggregate resource budgets, deterministic planning/retry/delegation termination, and graceful degradation across tokens, compute, memory, storage, egress, time, spend, concurrency, tools, fan-out, and persistent state.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="authorization-baseline" data-term="agent authorization baseline principal capability runtime context">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Agent Authorization Baseline</h3></div>
+          <p class="mt-2 text-sm text-muted">The trusted declaration of principals, delegated identities, capability grants, resource budgets, and approval obligations against which runtime behavior is evaluated.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="boundary-ledger" data-term="boundary enforcement ledger declared configured enforced observed">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Boundary Enforcement Ledger</h3></div>
+          <p class="mt-2 text-sm text-muted">A per-boundary record that distinguishes what was declared, configured, enforced, and observed, preventing a policy document from being mistaken for runtime effectiveness.</p>
         </div>
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="bounded-reversible" data-term="bounded-reversible reversibility class cn-6 undoable">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">Bounded-Reversible</h3><span class="text-sm font-semibold text-gray-700">Reversibility class</span></div>
@@ -527,6 +431,22 @@
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ccvr" data-term="ccvr chain composition violation rate inject hop worst-case cn-6">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">CCVR</h3><span class="text-sm font-semibold text-gray-700">Chain Composition Violation Rate</span></div>
           <p class="mt-2 text-sm text-muted">A Cn-6 test that injects a bounded-irreversible hop into an otherwise bounded-reversible chain and checks that the chain's classification is governed by the injected hop. Lower is better.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="bec" data-term="bec budget enforcement coverage cn-7 resource">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">BEC</h3><span class="text-sm font-semibold text-gray-700">Budget Enforcement Coverage</span></div>
+          <p class="mt-2 text-sm text-muted">The fraction of applicable resource and execution classes with a declared, configured, enforced, and tested aggregate boundary. Higher is better.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="rbvr" data-term="rbvr resource boundary violation rate cn-7">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">RBVR</h3><span class="text-sm font-semibold text-gray-700">Resource Boundary Violation Rate</span></div>
+          <p class="mt-2 text-sm text-muted">The fraction of boundary-saturation trials in which resource use exceeds the enforced limit. Lower is better.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ltfr" data-term="ltfr loop termination failure rate cn-7 recursion retry delegation">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">LTFR</h3><span class="text-sm font-semibold text-gray-700">Loop Termination Failure Rate</span></div>
+          <p class="mt-2 text-sm text-muted">The fraction of recursive planning, retry, delegation, or fan-out trials that fail to terminate within the declared boundary. Lower is better.</p>
+        </div>
+        <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="gdsr" data-term="gdsr graceful degradation success rate cn-7 fail safe">
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">GDSR</h3><span class="text-sm font-semibold text-gray-700">Graceful Degradation Success Rate</span></div>
+          <p class="mt-2 text-sm text-muted">The fraction of forced exhaustion or dependency-pressure trials that preserve safe service behavior without silent policy bypass. Higher is better.</p>
         </div>
         <div class="term-row rounded-xl border border-gray-200 bg-white p-5" id="ctpr" data-term="ctpr canary task pass rate bab behavioral attestation drift">
           <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="text-lg font-bold text-navy">CTPR</h3><span class="text-sm font-semibold text-gray-700">Canary Task Pass Rate</span></div>
@@ -681,7 +601,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site-search-index.js?v=b0ee16af"></script>
+  <script src="assets/js/site-search-index.js?v=df8f0897"></script>
   <script src="assets/js/site.js?v=f4bf5292"></script>
   <script>
   (function () {

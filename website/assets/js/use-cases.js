@@ -31,7 +31,7 @@
       query: "",
       filter: "",
       filterLabel: "",
-      sort: "ers-desc",
+      sort: "date-desc",
       page: 1,
       pageSize: 10,
       view: "list"
@@ -565,7 +565,10 @@
     });
 
     matched.sort(function (a, b) {
-      if (state.sort === "date-desc") return b.dataset.date.localeCompare(a.dataset.date);
+      if (state.sort === "date-desc") {
+        return b.dataset.date.localeCompare(a.dataset.date) ||
+          b.dataset.briefUrl.localeCompare(a.dataset.briefUrl);
+      }
       if (state.sort === "title-asc") {
         return a.querySelector(".case-directory-title").textContent.localeCompare(
           b.querySelector(".case-directory-title").textContent);

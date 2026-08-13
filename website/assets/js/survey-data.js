@@ -17,7 +17,7 @@ window.AITBM_SURVEY = {
         {
           "id": "B",
           "title": "Safeguards in place",
-          "blurb": "Answer Yes only for protections you have actually implemented."
+          "blurb": "Answer Yes only when the protection is implemented and its protected path, bypass resistance, fail-safe behavior, and representative adversarial tests have been verified."
         },
         {
           "id": "C",
@@ -67,7 +67,7 @@ window.AITBM_SURVEY = {
           "section": "B",
           "kind": "safeguard",
           "controls": [
-            "AID-H-019",
+            "AID-H-018",
             "AID-M-009"
           ],
           "text": "Is the agent restricted to least-privilege — limited actions, tools, and systems it can reach?",
@@ -98,11 +98,11 @@ window.AITBM_SURVEY = {
           "section": "B",
           "kind": "safeguard",
           "controls": [
-            "AID-H-031",
+            "AID-H-018",
             "AID-H-034"
           ],
-          "text": "Do you control which tools/skills the agent may use, and route its calls through a vetted gateway?",
-          "fix": "Add tool/skill admission control and route agent calls through a vetted gateway."
+          "text": "Do tool calls pass through an enforced runtime boundary with authorization, aggregate resource budgets, and recursion/delegation limits?",
+          "fix": "Enforce tool authorization plus root-task budgets and recursion/delegation limits at the runtime boundary."
         },
         {
           "id": "s5",
@@ -194,7 +194,7 @@ window.AITBM_SURVEY = {
         {
           "id": "B",
           "title": "Safeguards in place",
-          "blurb": "Answer Yes only for protections you have actually implemented."
+          "blurb": "Answer Yes only when the protection is implemented and its protected path, bypass resistance, fail-safe behavior, and representative adversarial tests have been verified."
         },
         {
           "id": "C",
@@ -244,7 +244,7 @@ window.AITBM_SURVEY = {
           "section": "B",
           "kind": "safeguard",
           "controls": [
-            "AID-H-021"
+            "AID-H-020"
           ],
           "text": "Is your RAG pipeline secured — retrieved content validated and access-controlled before use?",
           "fix": "Secure the RAG pipeline: validate and access-control retrieved content before it reaches the model."
@@ -368,7 +368,7 @@ window.AITBM_SURVEY = {
         {
           "id": "B",
           "title": "Safeguards in place",
-          "blurb": "Answer Yes only for protections you have actually implemented."
+          "blurb": "Answer Yes only when the protection is implemented and its protected path, bypass resistance, fail-safe behavior, and representative adversarial tests have been verified."
         },
         {
           "id": "C",

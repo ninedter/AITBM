@@ -12,7 +12,7 @@ The site contains ten public pages plus a not-found page:
 |---|---|
 | `index.html` | Framework overview and project entry point |
 | `framework.html` | IVP, ORP, ACI, ERS, tiers, and assessment pathways |
-| `submetrics.html` | All 22 IVP sub-metrics |
+| `submetrics.html` | All 23 IVP sub-metrics |
 | `use-cases.html` | Evidence-bounded AIDEFEND in Action companion scenarios |
 | `gap-analysis.html` | Twelve-gap analysis and remediation status |
 | `aidefend.html` | AIDEFEND integration and control-to-evidence guidance |

@@ -14,7 +14,7 @@ Temporally explicit: Behavioral monitoring, baseline requirements, cold-start ru
 
 Accessibility-oriented: Tiered pathways include conditional Tier 2 Lite eligibility for qualifying smaller organizations.
 
-Reproducibility-oriented: The jurisdictional fairness protocol narrows scope ambiguity and conflict-resolution rules document evidence precedence. Inter-rater reliability remains a roadmap validation item.
+Reproducibility-oriented: The jurisdictional fairness protocol narrows scope ambiguity; conflict-resolution rules document evidence precedence; and the Agent Authorization Baseline, Boundary Enforcement Ledger, control-operation gates, evidence manifest, and causal finding chain make agentic evidence inspectable. Inter-rater reliability remains a roadmap validation item.
 
 The Effective Risk Score is a derived convenience. The true output of AITBM is the full assessment profile: a multi-layered view that tells organizations not just how risky their AI systems are, but how much they know about that risk, and precisely where the trade-offs lie.
 

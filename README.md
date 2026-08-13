@@ -6,7 +6,7 @@ AITBM is a bias-resistant, multi-dimensional evaluation framework for AI system 
 
 | | |
 |---|---|
-| **22** IVP sub-metrics | **5** security axes |
+| **23** IVP sub-metrics | **5** security axes |
 | **3** assessment layers | **0.00--1.00** rubric with fixed anchors |
 
 ---
@@ -37,7 +37,7 @@ Single scores collapse important trade-offs. AITBM keeps the signal across three
 
 ### Layer 1: IVP -- Intrinsic Vulnerability Profile
 
-22 sub-metrics across five axes. Each is scored at one of five normalized anchors from 0.00 to 1.00 against a fully specified rubric, narrowing the space for assessor interpretation while keeping evidence and judgment traceable. Architecture-specific weights apply -- agentic and MCP systems weight Containment more heavily; RAG systems weight Privacy.
+23 sub-metrics across five axes. Each is scored at one of five normalized anchors from 0.00 to 1.00 against a fully specified rubric, narrowing the space for assessor interpretation while keeping evidence and judgment traceable. Architecture-specific weights apply -- agentic and MCP systems weight Containment more heavily; RAG systems weight Privacy.
 
 | Axis | Sub-Metrics |
 |---|---|
@@ -45,7 +45,7 @@ Single scores collapse important trade-offs. AITBM keeps the signal across three
 | **Fairness (Fa)** | Fa-1 Demographic Parity, Fa-2 Calibration Consistency, Fa-3 Representation Bias, Fa-4 Counterfactual Fairness |
 | **Transparency (Tr)** | Tr-1 Explainability Depth, Tr-2 Confidence Calibration, Tr-3 Audit Trail Completeness, Tr-4 Model Lineage Disclosure |
 | **Privacy (Pr)** | Pr-1 Training Data Leakage Risk, Pr-2 Inference Attack Resistance, Pr-3 Data Minimization Compliance, Pr-4 Re-identification Risk |
-| **Containment (Cn)** | Cn-1 Scope Enforcement, Cn-2 Escalation Prevention, Cn-3 Output Filtering Robustness, Cn-4 Side-Channel Resistance, Cn-5 Agent Identity Integrity, Cn-6 Action Reversibility Classification Rate |
+| **Containment (Cn)** | Cn-1 Scope Enforcement, Cn-2 Escalation Prevention, Cn-3 Output Filtering Robustness, Cn-4 Side-Channel Resistance, Cn-5 Agent Identity Integrity, Cn-6 Action Reversibility Classification Rate, Cn-7 Resource and Execution-Loop Containment |
 
 ### Layer 2: ORP -- Operational Risk Posture
 
@@ -79,10 +79,10 @@ where alpha = 0.15 (residual risk floor -- AI risk cannot be zeroed out)
 - **Rubric-constrained scoring** -- Five fully specified levels per sub-metric narrow inter-assessor variance and make disagreements auditable.
 - **Multi-dimensional signal** -- IVP / ORP / ACI are never silently collapsed into one number without justification.
 - **Operational context, mathematically** -- The CRM encodes deployment risk so critical systems separate from low-stakes ones.
-- **Agentic-native** -- Cn-5 (Agent Identity Integrity), Cn-6 (Action Reversibility Classification Rate), and the Containment axis address MCP, tool-use, and multi-agent threats.
+- **Agentic-native** -- Cn-5 (Agent Identity Integrity), Cn-6 (Action Reversibility Classification Rate), Cn-7 (Resource and Execution-Loop Containment), and the wider Containment axis address MCP, tool-use, and multi-agent threats.
 - **Evidence-aware** -- The ACI penalizes opaque systems and stale assessments rather than trusting them at face value.
 - **Tiered pathways** -- Full, Standard, and Lite assessment tracks so startups and SMEs can participate alongside enterprises.
-- **AIDEFEND integration** -- 76 of AIDEFEND's 92 techniques (data version 2026.07.28) contribute 152 evidence placements spanning all 22 sub-metrics.
+- **AIDEFEND integration** -- 77 of AIDEFEND's 92 technique families (data version 2026.08.05) contribute 168 evidence placements spanning all 23 sub-metrics; Cn-7 routes to 29 actionable selectors across 16 families.
 - **Complementary framework crosswalks** -- Sixteen external frameworks and standards are crosswalked to relevant AITBM sub-metrics and evidence roles; the mappings do not imply endorsement or replace the source frameworks.
 
 ---
@@ -146,7 +146,7 @@ AITBM/
 └── website/                           Project website (static HTML + Tailwind CSS)
     ├── index.html            Overview and landing page
     ├── framework.html        Three-layer architecture (IVP/ORP/ACI/ERS)
-    ├── submetrics.html       The 22 sub-metrics reference
+    ├── submetrics.html       The 23 sub-metrics reference
     ├── use-cases.html        Evidence-bounded incident scenarios with uncertainty ranges
     ├── gap-analysis.html     12 structural gaps across 4 domains
     ├── aidefend.html         AIDEFEND mapping and worked examples
@@ -179,16 +179,16 @@ The site is static HTML with Tailwind CSS (CDN) and vanilla JavaScript -- no bui
 | Framework | Relationship to AITBM |
 |---|---|
 | OWASP AISVS | Requirement-verification evidence source |
-| OWASP Top 10 for LLMs | Threat coverage alignment |
+| OWASP Top 10 for LLMs 2026 | Current ten-risk evidence and test-selection crosswalk |
 | OWASP Agentic AI — Threats and Mitigations v1.1 | T1--T17 threat-taxonomy crosswalk; companion ASI01--ASI10 Top 10 alignment |
-| MITRE ATLAS | Threat taxonomy alignment, test selection, and case study sourcing |
+| MITRE ATLAS v2026.07 | All 16 tactics routed for test selection; 178 techniques, 37 mitigations, and 68 case studies tracked |
 | OWASP AIVSS | Prior art for agentic vulnerability severity; AITBM separately assesses broader system properties |
 | ISO 42001 / 42005 | Governance alignment; impact assessment methodology |
 | NIST AI RMF | Risk management framework alignment |
 | NIST Cyber AI Profile IR 8596 | Cyber-AI intersection alignment |
 | EU AI Act | Regulatory crosswalk and potential evidence support; not a compliance determination |
-| AIDEFEND | Defensive countermeasure evidence mapping (152 placements / 76 of 92 techniques, data version 2026.07.28) |
-| D3FEND 1.0 | Version-pinned defensive countermeasure crosswalk; current D3FEND release status is disclosed in the mapping |
+| AIDEFEND | Defensive countermeasure evidence mapping (168 placements / 77 of 92 technique families, data version 2026.08.05); 64 AIDEFEND in Action analyses represented on the website |
+| D3FEND 1.0 | Version-pinned defensive countermeasure crosswalk; latest 1.5.0 release status is disclosed separately |
 
 All of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the GPAI Code of Practice — are crosswalked to relevant AITBM sub-metrics and evidence roles on the [Framework Mappings](website/mappings.html) page and in the [External Framework Mappings](specification/sections/external_framework_mappings.md) section of the specification.
 
