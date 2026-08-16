@@ -170,7 +170,7 @@ Key findings:
 
 AIUC-1 (Artificial Intelligence Underwriting Company Standard 1). Maintained by Artificial Intelligence Underwriting Company (AIUC).
 
-AIUC-1 is a pass/fail, Lloyd's-insured certification standard for AI agents. Its July 15, 2026 edition has 51 active requirements (43 mandatory and 8 optional); current total control counts are not published. The official roster lists six auditors, including Sensiba with provisional status. AITBM adds a quantitative, multi-dimensional, confidence-graded system assessment that a binary certificate does not express.
+AIUC-1 is a pass/fail, Lloyd's-insured certification standard for AI agents. Its July 15, 2026 edition has 51 active requirements (43 mandatory and 8 optional); current total control counts are not published. The official roster lists seven auditors, including provisional A-LIGN and Sensiba. AITBM adds a quantitative, multi-dimensional, confidence-graded system assessment that a binary certificate does not express.
 
 *Table 112: AIUC-1 to AITBM Mapping*
 

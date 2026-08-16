@@ -1,0 +1,246 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>Prompt Injection Case Studies and AI Security Evaluations | AITBM</title>
+  <meta name="description" content="Indirect and direct prompt injection case studies across copilots, connectors, browser agents, assistants, RAG, and operating-system AI." />
+  <link rel="canonical" href="https://aitbm.org/use-case-topics/prompt-injection" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-case-topics/prompt-injection" />
+  <meta property="og:title" content="Prompt Injection Case Studies and AI Security Evaluations | AITBM" />
+  <meta property="og:description" content="Indirect and direct prompt injection case studies across copilots, connectors, browser agents, assistants, RAG, and operating-system AI." />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=792bb8a8" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://aitbm.org/use-case-topics/prompt-injection#article",
+      "url": "https://aitbm.org/use-case-topics/prompt-injection",
+      "headline": "Prompt Injection Case Studies and AI Security Evaluations",
+      "name": "Prompt Injection Case Studies and AI Security Evaluations",
+      "description": "Indirect and direct prompt injection case studies across copilots, connectors, browser agents, assistants, RAG, and operating-system AI.",
+      "datePublished": "2026-08-16",
+      "dateModified": "2026-08-16",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-case-topics/prompt-injection#breadcrumb"
+      },
+      "keywords": "Prompt injection, AI security case studies, AI safety evaluation references, Ro-1, Ro-3, Pr-1, Pr-3, Cn-1, Cn-3"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-case-topics/prompt-injection#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI security use cases",
+          "item": "https://aitbm.org/ai-security-use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Prompt Injection Case Studies and AI Security Evaluations | AITBM",
+          "item": "https://aitbm.org/use-case-topics/prompt-injection"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://aitbm.org/use-case-topics/prompt-injection#cases",
+      "name": "Prompt injection public-evidence references",
+      "numberOfItems": 7,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread",
+          "url": "https://aitbm.org/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Prompt Mines Show Why CRM Agents Need Write-Action Gates",
+          "url": "https://aitbm.org/use-cases/salesforce-einstein-prompt-mines-data-corruption"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AgentFlayer Turns ChatGPT Connectors Into a Zero-Click Exfiltration Path",
+          "url": "https://aitbm.org/use-cases/agentflayer-chatgpt-connectors-zero-click-exfiltration"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Gemini Voice Assistant: When Phone Notifications Become Prompt Injection",
+          "url": "https://aitbm.org/use-cases/gemini-notification-idpi-fake-context-alignment"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Web-Based IDPI in the Wild: When Webpages Become Agent Prompt Delivery",
+          "url": "https://aitbm.org/use-cases/web-based-idpi-agent-prompt-injection"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Apple Intelligence Hijack: Prompt Injection Against an OS-Level Local LLM",
+          "url": "https://aitbm.org/use-cases/apple-intelligence-neural-exec-prompt-injection"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Salesforce 'ForcedLeak': Indirect Prompt Injection via Agentforce Web-to-Lead Forms",
+          "url": "https://aitbm.org/use-cases/salesforce-agentforce-forcedleak-prompt-injection"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="explore-link" role="menuitem">AI Safety Benchmark</a>
+              <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="explore-link" role="menuitem">Security Assessment</a>
+              <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="explore-link" role="menuitem">Evaluation Methods</a>
+              <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="explore-link" role="menuitem">Framework Comparison</a>
+              <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="explore-link" role="menuitem">Case Reference Library</a>
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AI Safety Benchmark</a>
+        <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Security Assessment</a>
+        <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Evaluation Methods</a>
+        <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework Comparison</a>
+        <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Case Reference Library</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/ai-security-use-cases" class="hover:text-navy">AI security use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Prompt injection</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE TOPIC COLLECTION</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">Prompt Injection Case Studies and AI Security Evaluations</h1><p class="mt-4 max-w-3xl text-blue-100">Indirect and direct prompt injection case studies across copilots, connectors, browser agents, assistants, RAG, and operating-system AI.</p><p class="mt-5 text-sm font-semibold text-white">7 matched references · all link to complete source and scoring records</p></div></section>
+<section class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><div class="grid gap-8 lg:grid-cols-2"><article><h2 class="text-2xl font-bold text-navy">Why this topic matters</h2><p class="mt-3 text-muted">Prompt injection becomes a system security problem when instructions from email, webpages, documents, notifications, connectors, or retrieved data can reach privileged tools or sensitive context. These records preserve the complete path from untrusted content to outcome.</p><div class="mt-5 flex flex-wrap gap-2"><a href="/submetrics?search=Ro-1" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-1</a><a href="/submetrics?search=Ro-3" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-3</a><a href="/submetrics?search=Pr-1" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-1</a><a href="/submetrics?search=Pr-3" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-3</a><a href="/submetrics?search=Cn-1" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1</a><a href="/submetrics?search=Cn-3" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-3</a></div></article><article class="rounded-xl border border-gray-200 bg-gray-50 p-6"><h2 class="text-2xl font-bold text-navy">Evaluation questions</h2><ul class="mt-4 space-y-3 text-sm text-muted"><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Which untrusted content channels can enter the model context without a trust label?</span></li><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Can content change plans, tool arguments, output destinations, or approval prompts?</span></li><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Are sensitive sources and external sinks reachable within the same execution path?</span></li><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Do defenses hold under indirect, encoded, delayed, and multi-turn instruction delivery?</span></li></ul></article></div><p class="mt-8 text-sm text-muted"><strong class="text-navy">Framework routes:</strong> <a href="/mappings/owasp-llm" class="font-semibold text-navy hover:underline">OWASP LLM Top 10</a> · <a href="/mappings/mitre-atlas" class="font-semibold text-navy hover:underline">MITRE ATLAS</a>. External frameworks guide threat, control, and evidence selection; measured deployment evidence determines AITBM scores.</p></section>
+<section class="border-y border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><h2 class="text-3xl font-bold text-navy">Prompt injection case library</h2><p class="mt-3 max-w-3xl text-muted">Use these records as incident references, test-design inputs, and examples of evidence-to-rubric reasoning. They are retrospective scenarios, not current vendor ratings or assessments of record.</p><div class="mt-8 grid gap-5 lg:grid-cols-2"><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-08-02 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration">ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread</a></h3><p class="mt-2 text-sm text-muted">Persistent memory changes prompt injection from a one-chat event into delayed control flow; trusted intent must govern both memory promotion and every later rehydration.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.1 · 3.1–9.1</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-07 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/salesforce-einstein-prompt-mines-data-corruption">Prompt Mines Show Why CRM Agents Need Write-Action Gates</a></h3><p class="mt-2 text-sm text-muted">This is the cleanest Cn-6 = 0.00 in the set and shows why AITBM separates Cn-6 from Cn-1: the agent never exceeded its granted CRM permissions, so a permission-only assessment would find nothing wrong, yet the absence of any pre-execution reversibility classification let an ungated bounded-irreversible write execute repeatedly on the authority of anonymous external text.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.4 · 2.8–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-07 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/agentflayer-chatgpt-connectors-zero-click-exfiltration">AgentFlayer Turns ChatGPT Connectors Into a Zero-Click Exfiltration Path</a></h3><p class="mt-2 text-sm text-muted">AgentFlayer is the batch&#x27;s clearest case of a control that half-held changing two scores at once: because a URL reputation check existed and had to be bypassed, Cn-3 sits at the rubric&#x27;s bypass anchor (0.25) rather than its absence anchor — yet under the GDCP rule that a gate may only be claimed at CBR &gt;= 0.95, that same demonstrated bypass invalidates the gate for cascade purposes and makes Cp corroborated rather than defaulted. The 358-day evidence age is the second lesson: it drives Temporal Freshness toward zero and, per spec 3.3.4, that is the framework declaring the assessment stale rather than declaring the product risky.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.8 · 2.8–8.8</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-06-09 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/gemini-notification-idpi-fake-context-alignment">Gemini Voice Assistant: When Phone Notifications Become Prompt Injection</a></h3><p class="mt-2 text-sm text-muted">A confirmation gate that exists but is not bound to a canonical action summary earns Cn-6 = 0.25, not credit for human-in-the-loop control — and because the gate cannot be claimed at CBR &gt;= 0.95, the same defect forces Cp to the corroborated 1.00 anchor by making an otherwise-gated path to a write-external node effectively ungated.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.3 · 2.5–8.1</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-25 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/web-based-idpi-agent-prompt-injection">Web-Based IDPI in the Wild: When Webpages Become Agent Prompt Delivery</a></h3><p class="mt-2 text-sm text-muted">A population study can be scored honestly as a representative configuration, but only if the assurance layer carries the cost: Pc = 0.10 and a class-level Cp classified as default rather than corroborated are what keep the case from overclaiming — and the ORP shows the strict-inequality boundary at work, with Aa and Rf sitting exactly at 0.75 and therefore not counting toward N_elevated.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.4 · 3.2–9.7</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-25 · Tool-Calling LLM / Connected GenAI</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/apple-intelligence-neural-exec-prompt-injection">Apple Intelligence Hijack: Prompt Injection Against an OS-Level Local LLM</a></h3><p class="mt-2 text-sm text-muted">Controls that held move the numbers as much as the ones that failed: a measured 76% attack success rate coexists with Cn-1 and Cn-2 at 0.50 (the OS app sandbox bounded the blast radius) and Rf at 0.25 (a platform patch shipped), so only Cascade Potential is elevated, N_elevated stays at one and no Compound Risk Alert is raised — a profile a failure-only assessment would have got badly wrong.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 3.9 · 1.8–6.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-16 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/salesforce-agentforce-forcedleak-prompt-injection">Salesforce &#x27;ForcedLeak&#x27;: Indirect Prompt Injection via Agentforce Web-to-Lead Forms</a></h3><p class="mt-2 text-sm text-muted">ForcedLeak shows why Cp = 1.00 here is corroborated rather than defaulted: a sink gate that a researcher&#x27;s payload was observed crossing cannot be claimed at CBR &gt;= 0.95, so the path counts as ungated to a P3 node on its own merits - and it shows a control can be simultaneously credited (Cn-1 = 0.25 not 0.00, because the CSP constrained the attacker) and defeated, which is what a two-sided assessment looks like.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 7.7 · 4.0–10.0</p></article></div></div></section>
+<section class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><h2 class="text-2xl font-bold text-navy">Use the evidence, not just the incident name</h2><p class="mt-3 max-w-4xl text-muted">Each record distinguishes observed controls, missing evidence, architecture-based exclusions, operational risk, confidence limits, and the uncertainty interval. When using a case as a reference, compare the documented path to your own system boundary and rerun the applicable test methods rather than copying its indicative ERS.</p><div class="mt-6 flex flex-wrap gap-4 text-sm font-semibold"><a href="/ai-security-use-cases" class="text-navy hover:underline">All topic collections →</a><a href="/use-cases" class="text-navy hover:underline">Search all 64 records →</a><a href="/ai-evaluation-methods" class="text-navy hover:underline">Evaluation methods →</a></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Topic collection generated from the reviewed public-evidence library on 2026-08-16.</div></div>
+</footer>  <script src="/assets/js/site-search-index.js?v=30ef8f6d"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script></body></html>

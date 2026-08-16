@@ -2,11 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aitbm.org/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/ai-safety-benchmark</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/ai-security-assessment</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/ai-evaluation-methods</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/ai-framework-comparison</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/ai-security-use-cases</loc>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/framework</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/submetrics</loc>
@@ -18,11 +38,11 @@
   </url>
   <url>
     <loc>https://aitbm.org/gap-analysis</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/aidefend</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/mappings</loc>
@@ -30,15 +50,15 @@
   </url>
   <url>
     <loc>https://aitbm.org/calculator</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/glossary</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/resources</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/mappings/aidefend</loc>
@@ -195,6 +215,38 @@
   <url>
     <loc>https://aitbm.org/submetrics/tr-4-model-lineage-disclosure</loc>
     <lastmod>2026-08-13</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-case-topics/agentic-ai-security</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-case-topics/ai-coding-agent-security</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-case-topics/ai-data-exposure</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-case-topics/ai-model-security</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-case-topics/ai-supply-chain-security</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-case-topics/mcp-security</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-case-topics/prompt-injection</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-case-topics/rag-security</loc>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/agent-session-smuggling-a2a-systems</loc>

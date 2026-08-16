@@ -1,0 +1,228 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>MCP Security Case Studies, Threats, and Evaluation References | AITBM</title>
+  <meta name="description" content="MCP security case studies covering malicious servers, unsafe tool configuration, command execution, credential theft, and agent hijacking." />
+  <link rel="canonical" href="https://aitbm.org/use-case-topics/mcp-security" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-case-topics/mcp-security" />
+  <meta property="og:title" content="MCP Security Case Studies, Threats, and Evaluation References | AITBM" />
+  <meta property="og:description" content="MCP security case studies covering malicious servers, unsafe tool configuration, command execution, credential theft, and agent hijacking." />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=792bb8a8" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://aitbm.org/use-case-topics/mcp-security#article",
+      "url": "https://aitbm.org/use-case-topics/mcp-security",
+      "headline": "MCP Security Case Studies, Threats, and Evaluation References",
+      "name": "MCP Security Case Studies, Threats, and Evaluation References",
+      "description": "MCP security case studies covering malicious servers, unsafe tool configuration, command execution, credential theft, and agent hijacking.",
+      "datePublished": "2026-08-16",
+      "dateModified": "2026-08-16",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-case-topics/mcp-security#breadcrumb"
+      },
+      "keywords": "MCP security, AI security case studies, AI safety evaluation references, Ro-4, Tr-3, Tr-4, Cn-1, Cn-5, Cn-6"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-case-topics/mcp-security#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI security use cases",
+          "item": "https://aitbm.org/ai-security-use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "MCP Security Case Studies, Threats, and Evaluation References | AITBM",
+          "item": "https://aitbm.org/use-case-topics/mcp-security"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://aitbm.org/use-case-topics/mcp-security#cases",
+      "name": "MCP security public-evidence references",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Deadbugz: GitHub PRs Delivered a Delayed, Shape-Shifting Malicious MCP Server",
+          "url": "https://aitbm.org/use-cases/deadbugz-mcp-supply-chain-campaign"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Amazon Q's MCP Auto-Load Bug Made Cloned Repos a Cloud Credential Risk",
+          "url": "https://aitbm.org/use-cases/amazon-q-mcp-auto-execution-cloud-credential-theft"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Agentjacking: How Fake Sentry Errors Turn MCP Telemetry into Agent Code Execution",
+          "url": "https://aitbm.org/use-cases/agentjacking-sentry-mcp-coding-agent-hijack"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Anthropic MCP STDIO Command Execution: When Tool Configuration Becomes an RCE Primitive",
+          "url": "https://aitbm.org/use-cases/anthropic-mcp-stdio-command-execution"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="explore-link" role="menuitem">AI Safety Benchmark</a>
+              <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="explore-link" role="menuitem">Security Assessment</a>
+              <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="explore-link" role="menuitem">Evaluation Methods</a>
+              <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="explore-link" role="menuitem">Framework Comparison</a>
+              <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="explore-link" role="menuitem">Case Reference Library</a>
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AI Safety Benchmark</a>
+        <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Security Assessment</a>
+        <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Evaluation Methods</a>
+        <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework Comparison</a>
+        <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Case Reference Library</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/ai-security-use-cases" class="hover:text-navy">AI security use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">MCP security</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE TOPIC COLLECTION</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">MCP Security Case Studies, Threats, and Evaluation References</h1><p class="mt-4 max-w-3xl text-blue-100">MCP security case studies covering malicious servers, unsafe tool configuration, command execution, credential theft, and agent hijacking.</p><p class="mt-5 text-sm font-semibold text-white">4 matched references · all link to complete source and scoring records</p></div></section>
+<section class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><div class="grid gap-8 lg:grid-cols-2"><article><h2 class="text-2xl font-bold text-navy">Why this topic matters</h2><p class="mt-3 text-muted">Model Context Protocol deployments join models to tools, local processes, data, and credentials. The cases in this collection show why server trust, tool authorization, configuration integrity, transport boundaries, and least-privilege execution must be evaluated together.</p><div class="mt-5 flex flex-wrap gap-2"><a href="/submetrics?search=Ro-4" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-4</a><a href="/submetrics?search=Tr-3" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-3</a><a href="/submetrics?search=Tr-4" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4</a><a href="/submetrics?search=Cn-1" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1</a><a href="/submetrics?search=Cn-5" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5</a><a href="/submetrics?search=Cn-6" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6</a></div></article><article class="rounded-xl border border-gray-200 bg-gray-50 p-6"><h2 class="text-2xl font-bold text-navy">Evaluation questions</h2><ul class="mt-4 space-y-3 text-sm text-muted"><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Can a repository, package, configuration file, or remote server alter MCP tool behavior?</span></li><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Does every tool call carry a narrowly scoped identity and authorization decision?</span></li><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Can STDIO, shell, network, or filesystem capabilities cross the intended deployment boundary?</span></li><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Are server changes, new capabilities, and sensitive actions independently verified and logged?</span></li></ul></article></div><p class="mt-8 text-sm text-muted"><strong class="text-navy">Framework routes:</strong> <a href="/mappings/owasp-agentic-top10" class="font-semibold text-navy hover:underline">OWASP Agentic AI</a> · <a href="/mappings/mitre-atlas" class="font-semibold text-navy hover:underline">MITRE ATLAS</a>. External frameworks guide threat, control, and evidence selection; measured deployment evidence determines AITBM scores.</p></section>
+<section class="border-y border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><h2 class="text-3xl font-bold text-navy">MCP security case library</h2><p class="mt-3 max-w-3xl text-muted">Use these records as incident references, test-design inputs, and examples of evidence-to-rubric reasoning. They are retrospective scenarios, not current vendor ratings or assessments of record.</p><div class="mt-8 grid gap-5 lg:grid-cols-2"><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-08-12 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/deadbugz-mcp-supply-chain-campaign">Deadbugz: GitHub PRs Delivered a Delayed, Shape-Shifting Malicious MCP Server</a></h3><p class="mt-2 text-sm text-muted">MCP onboarding cannot be a one-time trust decision: clients must bind descriptor and prompt semantics, detect drift, and re-authorize every consequential action against current user intent.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.4 · 3.2–9.6</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-06 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/amazon-q-mcp-auto-execution-cloud-credential-theft">Amazon Q&#x27;s MCP Auto-Load Bug Made Cloned Repos a Cloud Credential Risk</a></h3><p class="mt-2 text-sm text-muted">When a client treats repository content as configuration, the poisoning surface is the tool manifest rather than the model — Ro-4 and Cn-5 both collapse to 0.00 on the same evidence, and a shipped, version-boundaried vendor fix earns Rf = 0.00 without moving any IVP score, which is exactly the layer separation AITBM is built to preserve.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.4 · 2.9–7.8</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-06-22 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/agentjacking-sentry-mcp-coding-agent-hijack">Agentjacking: How Fake Sentry Errors Turn MCP Telemetry into Agent Code Execution</a></h3><p class="mt-2 text-sm text-muted">A tool integration that is read-only by design can still drive an agent to code execution: the boundary that failed is the MCP output boundary, not the model, which is why Ro-1 stays at 0.25 while five Containment sub-metrics sit at the ad-hoc anchor and Cp is corroborated at 1.00 by an ungated path from an anonymous event submitter to host credential material.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 7.4 · 4.3–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-22 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/anthropic-mcp-stdio-command-execution">Anthropic MCP STDIO Command Execution: When Tool Configuration Becomes an RCE Primitive</a></h3><p class="mt-2 text-sm text-muted">The scoring turns on an evidentiary rule rather than a judgement call: the 0.50 Ro-1 anchor describes this case qualitatively — common attacks resisted, multi-step tool-mediated attacks still effective — but its ASR-below-50% precondition is unmeasured, so the quantitative precondition fails and 0.25 governs; meanwhile Cn-6 = 0.00 is the cleanest reading in the batch, because a system that treats spawning an arbitrary OS process as routine tool setup has an Action Reversibility Classification Rate of exactly zero.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.8 · 3.0–8.6</p></article></div></div></section>
+<section class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><h2 class="text-2xl font-bold text-navy">Use the evidence, not just the incident name</h2><p class="mt-3 max-w-4xl text-muted">Each record distinguishes observed controls, missing evidence, architecture-based exclusions, operational risk, confidence limits, and the uncertainty interval. When using a case as a reference, compare the documented path to your own system boundary and rerun the applicable test methods rather than copying its indicative ERS.</p><div class="mt-6 flex flex-wrap gap-4 text-sm font-semibold"><a href="/ai-security-use-cases" class="text-navy hover:underline">All topic collections →</a><a href="/use-cases" class="text-navy hover:underline">Search all 64 records →</a><a href="/ai-evaluation-methods" class="text-navy hover:underline">Evaluation methods →</a></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Topic collection generated from the reviewed public-evidence library on 2026-08-16.</div></div>
+</footer>  <script src="/assets/js/site-search-index.js?v=30ef8f6d"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script></body></html>

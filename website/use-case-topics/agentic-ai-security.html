@@ -1,0 +1,450 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>Agentic AI Security Case Studies and Evaluation References | AITBM</title>
+  <meta name="description" content="Public-evidence agentic AI security cases covering autonomous actions, tool use, identity, memory, delegation, and containment failures." />
+  <link rel="canonical" href="https://aitbm.org/use-case-topics/agentic-ai-security" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-case-topics/agentic-ai-security" />
+  <meta property="og:title" content="Agentic AI Security Case Studies and Evaluation References | AITBM" />
+  <meta property="og:description" content="Public-evidence agentic AI security cases covering autonomous actions, tool use, identity, memory, delegation, and containment failures." />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=792bb8a8" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://aitbm.org/use-case-topics/agentic-ai-security#article",
+      "url": "https://aitbm.org/use-case-topics/agentic-ai-security",
+      "headline": "Agentic AI Security Case Studies and Evaluation References",
+      "name": "Agentic AI Security Case Studies and Evaluation References",
+      "description": "Public-evidence agentic AI security cases covering autonomous actions, tool use, identity, memory, delegation, and containment failures.",
+      "datePublished": "2026-08-16",
+      "dateModified": "2026-08-16",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-case-topics/agentic-ai-security#breadcrumb"
+      },
+      "keywords": "Agentic AI security, AI security case studies, AI safety evaluation references, Ro-1, Cn-1, Cn-2, Cn-5, Cn-6, Cn-7"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-case-topics/agentic-ai-security#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI security use cases",
+          "item": "https://aitbm.org/ai-security-use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Agentic AI Security Case Studies and Evaluation References | AITBM",
+          "item": "https://aitbm.org/use-case-topics/agentic-ai-security"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://aitbm.org/use-case-topics/agentic-ai-security#cases",
+      "name": "Agentic AI security public-evidence references",
+      "numberOfItems": 41,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Stolen Thoughts: Opaque Reasoning Blocks Could Be Replayed to Recover Secrets",
+          "url": "https://aitbm.org/use-cases/stolen-thoughts-reasoning-trace-extraction"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Deadbugz: GitHub PRs Delivered a Delayed, Shape-Shifting Malicious MCP Server",
+          "url": "https://aitbm.org/use-cases/deadbugz-mcp-supply-chain-campaign"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "hTAG's Browser-Agent Benchmark Shows Why Model Refusal Is Not Authorization",
+          "url": "https://aitbm.org/use-cases/htag-browser-agent-abuse-benchmark"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "MCFA Turns Agent Memory into a Delayed Control-Flow Input",
+          "url": "https://aitbm.org/use-cases/mcfa-memory-control-flow-attacks-agent-memory"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "IDEsaster Shows How Agent File Writes Can Activate Trusted IDE Features",
+          "url": "https://aitbm.org/use-cases/idesaster-ai-ide-native-feature-abuse"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread",
+          "url": "https://aitbm.org/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Poisoned GGUF Chat Templates Backdoor Inference Without Changing Model Weights",
+          "url": "https://aitbm.org/use-cases/poisoned-gguf-chat-template-inference-backdoor"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Claude Code GitHub Action: When a File-Read Tool Crosses the CI Secret Boundary",
+          "url": "https://aitbm.org/use-cases/claude-code-github-action-secret-exposure"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "AgentForger Turned One ChatGPT Link Into a Scheduled Autonomous Insider",
+          "url": "https://aitbm.org/use-cases/agentforger-chatgpt-workspace-agent-autonomous-insider"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Frontier Lab Agent Intrusion into Hugging Face: Technical Reconstruction and Defensive Priorities",
+          "url": "https://aitbm.org/use-cases/openai-evaluation-agent-hugging-face-production-breach"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Notion AI Agent Lethal Trifecta Leads to Silent Data Exfiltration",
+          "url": "https://aitbm.org/use-cases/notion-ai-agent-lethal-trifecta-exfiltration"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Prompt Mines Show Why CRM Agents Need Write-Action Gates",
+          "url": "https://aitbm.org/use-cases/salesforce-einstein-prompt-mines-data-corruption"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "PerplexedBrowser: When an Agent Browser Can Read Local Files",
+          "url": "https://aitbm.org/use-cases/perplexedbrowser-comet-local-file-exfiltration"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Moltbook Shows How Agent Social Feeds Can Become a Global Callback Surface",
+          "url": "https://aitbm.org/use-cases/moltbook-agent-network-callback-map"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "AgentFlayer Turns ChatGPT Connectors Into a Zero-Click Exfiltration Path",
+          "url": "https://aitbm.org/use-cases/agentflayer-chatgpt-connectors-zero-click-exfiltration"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "PerplexedBrowser Shows Why Agentic Browsers Need Session and Sink Boundaries",
+          "url": "https://aitbm.org/use-cases/perplexedbrowser-comet-1password-agent-hijack"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "LangGraph Checkpointer Bugs Turn Agent State History Into an RCE Path",
+          "url": "https://aitbm.org/use-cases/langgraph-checkpointer-sqli-deserialization-rce"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "JADEPUFFER Shows Agentic Ransomware Moving From AI RCE to Database Extortion",
+          "url": "https://aitbm.org/use-cases/jadepuffer-agentic-ransomware-langflow-database-extortion"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "AutoJack Turns Localhost Agent Control Planes Into a Browser-RCE Lesson",
+          "url": "https://aitbm.org/use-cases/autojack-autogen-studio-localhost-agent-rce"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "Amazon Q's MCP Auto-Load Bug Made Cloned Repos a Cloud Credential Risk",
+          "url": "https://aitbm.org/use-cases/amazon-q-mcp-auto-execution-cloud-credential-theft"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "A Clean Repo Can Still Turn an AI Coding Agent Into a Reverse Shell",
+          "url": "https://aitbm.org/use-cases/clean-repo-claude-code-dns-reverse-shell"
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "name": "Lingua Ex Machina: When the AI Monitor Cannot See What the Executor Sees",
+          "url": "https://aitbm.org/use-cases/lingua-ex-machina-tokenizer-monitor-blind-spots"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "Agentjacking: How Fake Sentry Errors Turn MCP Telemetry into Agent Code Execution",
+          "url": "https://aitbm.org/use-cases/agentjacking-sentry-mcp-coding-agent-hijack"
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "name": "Gemini Voice Assistant: When Phone Notifications Become Prompt Injection",
+          "url": "https://aitbm.org/use-cases/gemini-notification-idpi-fake-context-alignment"
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "name": "TrapDoor: Poisoned .cursorrules and CLAUDE.md Turn AI Coding Assistants Into Credential Stealers",
+          "url": "https://aitbm.org/use-cases/trapdoor-ai-assistant-config-poisoning-supply-chain"
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "name": "Agent Session Smuggling: Hidden Instructions Across A2A Agent Sessions",
+          "url": "https://aitbm.org/use-cases/agent-session-smuggling-a2a-systems"
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "name": "System-Level Agent Defenses: Why Indirect Prompt Injection Needs Plan and Policy Boundaries",
+          "url": "https://aitbm.org/use-cases/ai-agent-system-level-idpi-defenses"
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "name": "AI App Misconfigurations: Public Agent Endpoints as RCE and Credential-Leak Paths",
+          "url": "https://aitbm.org/use-cases/ai-agent-app-misconfigurations-rce-credential-leakage"
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "name": "PromptMink: Malicious Packages Built to Persuade AI Coding Agents",
+          "url": "https://aitbm.org/use-cases/promptmink-ai-coding-agent-malicious-dependencies"
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "name": "PocketOS Cursor Agent Data Wipe: Destructive Actions Need Runtime Boundaries, Not Prompt Rules",
+          "url": "https://aitbm.org/use-cases/pocketos-cursor-agent-database-wipe"
+        },
+        {
+          "@type": "ListItem",
+          "position": 31,
+          "name": "OpenAI Codex Command Injection: Malicious GitHub Branch Names as a Token-Theft Path",
+          "url": "https://aitbm.org/use-cases/openai-codex-github-branch-token-theft"
+        },
+        {
+          "@type": "ListItem",
+          "position": 32,
+          "name": "CursorJacking: Rogue Cursor Extensions Can Steal AI API Keys",
+          "url": "https://aitbm.org/use-cases/cursorjacking-cursor-extension-api-key-theft"
+        },
+        {
+          "@type": "ListItem",
+          "position": 33,
+          "name": "Entra Agent ID Administrator Scope Gap: Agent Roles Reaching Service Principals",
+          "url": "https://aitbm.org/use-cases/entra-agent-id-admin-service-principal-takeover"
+        },
+        {
+          "@type": "ListItem",
+          "position": 34,
+          "name": "Your Agent Is Mine: Malicious LLM API Routers as an Agent Supply-Chain Boundary",
+          "url": "https://aitbm.org/use-cases/malicious-llm-api-router-agent-supply-chain"
+        },
+        {
+          "@type": "ListItem",
+          "position": 35,
+          "name": "Web-Based IDPI in the Wild: When Webpages Become Agent Prompt Delivery",
+          "url": "https://aitbm.org/use-cases/web-based-idpi-agent-prompt-injection"
+        },
+        {
+          "@type": "ListItem",
+          "position": 36,
+          "name": "Vertex AI Double Agents: When Service-Agent Defaults Become an Agentic Cloud Boundary",
+          "url": "https://aitbm.org/use-cases/vertex-ai-double-agents-service-agent-permissions"
+        },
+        {
+          "@type": "ListItem",
+          "position": 37,
+          "name": "Anthropic MCP STDIO Command Execution: When Tool Configuration Becomes an RCE Primitive",
+          "url": "https://aitbm.org/use-cases/anthropic-mcp-stdio-command-execution"
+        },
+        {
+          "@type": "ListItem",
+          "position": 38,
+          "name": "OpenClaw 'ClawJacked': Website-to-Local Agent Takeover via Loopback Trust and WebSocket Abuse",
+          "url": "https://aitbm.org/use-cases/openclaw-browser-to-local-agent-takeover"
+        },
+        {
+          "@type": "ListItem",
+          "position": 39,
+          "name": "ClawHub `google-qx4`: Malicious SKILL.md Prerequisites as Agent-Driven Social Engineering",
+          "url": "https://aitbm.org/use-cases/clawhub-google-qx4-fake-prerequisite-malware"
+        },
+        {
+          "@type": "ListItem",
+          "position": 40,
+          "name": "Salesforce 'ForcedLeak': Indirect Prompt Injection via Agentforce Web-to-Lead Forms",
+          "url": "https://aitbm.org/use-cases/salesforce-agentforce-forcedleak-prompt-injection"
+        },
+        {
+          "@type": "ListItem",
+          "position": 41,
+          "name": "Claude Code Protected Paths and Auto Mode: Why Bypass Is No Longer a Stable Control Boundary",
+          "url": "https://aitbm.org/use-cases/claude-code-protected-paths-auto-mode"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="explore-link" role="menuitem">AI Safety Benchmark</a>
+              <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="explore-link" role="menuitem">Security Assessment</a>
+              <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="explore-link" role="menuitem">Evaluation Methods</a>
+              <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="explore-link" role="menuitem">Framework Comparison</a>
+              <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="explore-link" role="menuitem">Case Reference Library</a>
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AI Safety Benchmark</a>
+        <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Security Assessment</a>
+        <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Evaluation Methods</a>
+        <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework Comparison</a>
+        <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Case Reference Library</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/ai-security-use-cases" class="hover:text-navy">AI security use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Agentic AI security</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE TOPIC COLLECTION</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">Agentic AI Security Case Studies and Evaluation References</h1><p class="mt-4 max-w-3xl text-blue-100">Public-evidence agentic AI security cases covering autonomous actions, tool use, identity, memory, delegation, and containment failures.</p><p class="mt-5 text-sm font-semibold text-white">41 matched references · all link to complete source and scoring records</p></div></section>
+<section class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><div class="grid gap-8 lg:grid-cols-2"><article><h2 class="text-2xl font-bold text-navy">Why this topic matters</h2><p class="mt-3 text-muted">Agentic systems turn model output into action. Their security therefore depends on authorization, identity, execution boundaries, reversible actions, aggregate budgets, and evidence that those controls hold across multi-step paths—not only on whether a model refuses a malicious prompt.</p><div class="mt-5 flex flex-wrap gap-2"><a href="/submetrics?search=Ro-1" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-1</a><a href="/submetrics?search=Cn-1" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1</a><a href="/submetrics?search=Cn-2" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-2</a><a href="/submetrics?search=Cn-5" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5</a><a href="/submetrics?search=Cn-6" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6</a><a href="/submetrics?search=Cn-7" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7</a></div></article><article class="rounded-xl border border-gray-200 bg-gray-50 p-6"><h2 class="text-2xl font-bold text-navy">Evaluation questions</h2><ul class="mt-4 space-y-3 text-sm text-muted"><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Can untrusted content influence a plan, tool selection, delegated agent, or persistent memory?</span></li><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Are agent and service identities cryptographically bound to the authority they exercise?</span></li><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Do irreversible actions require verifiable approval, and does the highest-impact step govern a chain?</span></li><li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-navy"></span><span>Are retries, fan-out, token use, tool calls, and execution loops bounded at the aggregate level?</span></li></ul></article></div><p class="mt-8 text-sm text-muted"><strong class="text-navy">Framework routes:</strong> <a href="/mappings/owasp-agentic-top10" class="font-semibold text-navy hover:underline">OWASP Agentic AI</a> · <a href="/mappings/owasp-aisvs" class="font-semibold text-navy hover:underline">OWASP AISVS</a>. External frameworks guide threat, control, and evidence selection; measured deployment evidence determines AITBM scores.</p></section>
+<section class="border-y border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><h2 class="text-3xl font-bold text-navy">Agentic AI security case library</h2><p class="mt-3 max-w-3xl text-muted">Use these records as incident references, test-design inputs, and examples of evidence-to-rubric reasoning. They are retrospective scenarios, not current vendor ratings or assessments of record.</p><div class="mt-8 grid gap-5 lg:grid-cols-2"><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-08-12 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/stolen-thoughts-reasoning-trace-extraction">Stolen Thoughts: Opaque Reasoning Blocks Could Be Replayed to Recover Secrets</a></h3><p class="mt-2 text-sm text-muted">Opaque state is not safe state: reasoning artifacts need confidentiality, principal/session binding, bounded retention, and an output gate before they enter logs or client-visible trajectories.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 3.5 · 1.5–5.4</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-08-12 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/deadbugz-mcp-supply-chain-campaign">Deadbugz: GitHub PRs Delivered a Delayed, Shape-Shifting Malicious MCP Server</a></h3><p class="mt-2 text-sm text-muted">MCP onboarding cannot be a one-time trust decision: clients must bind descriptor and prompt semantics, detect drift, and re-authorize every consequential action against current user intent.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.4 · 3.2–9.6</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-08-05 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/htag-browser-agent-abuse-benchmark">hTAG&#x27;s Browser-Agent Benchmark Shows Why Model Refusal Is Not Authorization</a></h3><p class="mt-2 text-sm text-muted">The benchmark aggregates 20 scenarios across five browser-agent products and reports vendor-level completion counts without a complete prompt-and-trace corpus, exact reproducible builds, or repeated-run counts. It is useful evidence for authorization testing, but not one bounded deployment. A single score would average incompatible products, account states, tools, and transaction effects and would therefore manufacture a system that was never assessed.</p><p class="mt-4 text-xs font-semibold text-navy">Research note · no ERS</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-08-05 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/mcfa-memory-control-flow-attacks-agent-memory">MCFA Turns Agent Memory into a Delayed Control-Flow Input</a></h3><p class="mt-2 text-sm text-muted">Long-term memory is persistent control input: every write needs provenance and promotion policy, and every recall must be re-authorized against the current task before it can influence tools.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 4.7 · 2.2–7.2</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-08-05 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/idesaster-ai-ide-native-feature-abuse">IDEsaster Shows How Agent File Writes Can Activate Trusted IDE Features</a></h3><p class="mt-2 text-sm text-muted">The source reports a vulnerability class spanning more than ten AI IDE products, over 30 findings, and 24 CVEs. It does not define one product version, workspace trust state, enabled native feature set, agent tool policy, or deployment boundary from which a single IVP/ORP/ACI result can be calculated. Selecting one representative configuration would require an assessor choice not made by the source, so the analysis is preserved with its AIDEFEND routes but carries no ERS.</p><p class="mt-4 text-xs font-semibold text-navy">Research note · no ERS</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-08-02 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration">ZombieAgent Shows How Connector Prompt Injection Can Persist and Spread</a></h3><p class="mt-2 text-sm text-muted">Persistent memory changes prompt injection from a one-chat event into delayed control flow; trusted intent must govern both memory promotion and every later rehydration.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.1 · 3.1–9.1</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-08-02 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/poisoned-gguf-chat-template-inference-backdoor">Poisoned GGUF Chat Templates Backdoor Inference Without Changing Model Weights</a></h3><p class="mt-2 text-sm text-muted">Model weights are only one executable release component; chat templates must be digest-bound, provenance-checked, and security-regression-tested with the same rigor as the weights.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 4.8 · 2.0–7.7</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-08-02 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/claude-code-github-action-secret-exposure">Claude Code GitHub Action: When a File-Read Tool Crosses the CI Secret Boundary</a></h3><p class="mt-2 text-sm text-muted">A sandbox is only as strong as its least-governed sibling tool: the Bash boundary held, but the in-process Read path crossed the same CI-secret boundary without equivalent enforcement.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.7 · 2.6–8.8</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-27 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/agentforger-chatgpt-workspace-agent-autonomous-insider">AgentForger Turned One ChatGPT Link Into a Scheduled Autonomous Insider</a></h3><p class="mt-2 text-sm text-muted">A platform can ship an approval gate and still score Cn-6 = 0.00 when that gate is writable by the very workflow it governs — AITBM scores the exercised configuration, not the nominal capability — and because the forged agent constitutes an identity-boundary change with new tool authority, the C_event &lt;= 0.35 cap, not the seven-day calendar age, is what sets Temporal Freshness.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 7.4 · 4.5–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-22 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/openai-evaluation-agent-hugging-face-production-breach">Frontier Lab Agent Intrusion into Hugging Face: Technical Reconstruction and Defensive Priorities</a></h3><p class="mt-2 text-sm text-muted">A case can have eight or nine genuinely effective controls — an SSRF allowlist that never failed, 84 straight denials at the credential store, digest verification that kept the supply chain clean — and still sit at the ceiling of the ORP layer, because AITBM scores boundaries independently rather than crediting an incident for the boundaries that happened not to be on the attacker&#x27;s path: one ungated escalation route from an entry-exposed workload to credential-issuing nodes forces Cp to 1.00 on its own merits, and no number of denials elsewhere reduces it.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 7.0 · 4.1–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-11 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/notion-ai-agent-lethal-trifecta-exfiltration">Notion AI Agent Lethal Trifecta Leads to Silent Data Exfiltration</a></h3><p class="mt-2 text-sm text-muted">A human-approval gate only counts for as much of the chain as it actually governs: Notion&#x27;s page-edit approval was real enough to raise Aa to 0.50 and hold Cn-6 above zero, yet the render hop that fired before the gate carried the data out, which is exactly the worst-case chain-composition condition Cn-6&#x27;s upper anchors require and the reason Cp still resolves to 1.00.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.1 · 2.4–7.7</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-07 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/salesforce-einstein-prompt-mines-data-corruption">Prompt Mines Show Why CRM Agents Need Write-Action Gates</a></h3><p class="mt-2 text-sm text-muted">This is the cleanest Cn-6 = 0.00 in the set and shows why AITBM separates Cn-6 from Cn-1: the agent never exceeded its granted CRM permissions, so a permission-only assessment would find nothing wrong, yet the absence of any pre-execution reversibility classification let an ungated bounded-irreversible write execute repeatedly on the authority of anonymous external text.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.4 · 2.8–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-07 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/perplexedbrowser-comet-local-file-exfiltration">PerplexedBrowser: When an Agent Browser Can Read Local Files</a></h3><p class="mt-2 text-sm text-muted">This case shows the Behavioral Attestation Window being correctly withheld: the agent is unambiguously Agentic and scores at the ORP ceiling, but none of the four BAW checklist items is evidenced for a single-session browser agent, so applying the behavioural staleness floor would have been an assumption rather than a finding — the freshness penalty here comes from the event and monitoring caps, which the evidence does support.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.8 · 3.0–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-07 · Multi-Agent / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/moltbook-agent-network-callback-map">Moltbook Shows How Agent Social Feeds Can Become a Global Callback Surface</a></h3><p class="mt-2 text-sm text-muted">This is the reference case for cp_basis = default: the agents are maximally exposed and their navigation action is entirely ungated, yet the measured terminal impact is a benign HTTP request, so Cp = 1.00 is the spec&#x27;s worst-case default for a missing System Dependency Graph rather than a finding the evidence corroborates — and saying which of the two applies is what keeps a published ERS honest.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 7.1 · 3.0–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-07 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/agentflayer-chatgpt-connectors-zero-click-exfiltration">AgentFlayer Turns ChatGPT Connectors Into a Zero-Click Exfiltration Path</a></h3><p class="mt-2 text-sm text-muted">AgentFlayer is the batch&#x27;s clearest case of a control that half-held changing two scores at once: because a URL reputation check existed and had to be bypassed, Cn-3 sits at the rubric&#x27;s bypass anchor (0.25) rather than its absence anchor — yet under the GDCP rule that a gate may only be claimed at CBR &gt;= 0.95, that same demonstrated bypass invalidates the gate for cascade purposes and makes Cp corroborated rather than defaulted. The 358-day evidence age is the second lesson: it drives Temporal Freshness toward zero and, per spec 3.3.4, that is the framework declaring the assessment stale rather than declaring the product risky.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.8 · 2.8–8.8</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-06 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/perplexedbrowser-comet-1password-agent-hijack">PerplexedBrowser Shows Why Agentic Browsers Need Session and Sink Boundaries</a></h3><p class="mt-2 text-sm text-muted">PerplexedBrowser is the case where the assessed system&#x27;s own security controls were largely irrelevant to the outcome: the vault held, the model filter partly held, and the system still failed — because Cn-1, Cn-3 and Cn-6 were all measuring boundaries that simply did not exist between an untrusted-content task and an authenticated session sharing one agent context, which is why Cp is corroborated at 1.00 rather than defaulted.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 7.4 · 3.5–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-06 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/langgraph-checkpointer-sqli-deserialization-rce">LangGraph Checkpointer Bugs Turn Agent State History Into an RCE Path</a></h3><p class="mt-2 text-sm text-muted">LangGraph is the cleanest available demonstration that agent memory is an Ro-4 poisoning surface rather than a storage detail: an attacker-planted checkpoint row promoted straight into trusted agent state with no signature, type guarantee or quarantine gate scores Ro-4 = 0.00 outright — and because the checkpointer is exactly the cross-session model-writable memory the BAW checklist describes, the same fact that sets Ro-4 also switches on the behavioural staleness floor.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.2 · 2.4–8.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-06 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/jadepuffer-agentic-ransomware-langflow-database-extortion">JADEPUFFER Shows Agentic Ransomware Moving From AI RCE to Database Extortion</a></h3><p class="mt-2 text-sm text-muted">JADEPUFFER is the case that forces the assessor to keep the attacker out of the assessed system: the agentic behaviour that compressed the kill chain to 31-second self-repair belonged to the offence, so it drives no ORP or BAW score here — what AITBM scores is a Tier 1 workflow host with Cn-1, Cn-2 and Cn-5 all at 0.00 and a corroborated Cp = 1.00 traced from an unauthenticated origin to a P4 backdoor-administrator terminal.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.9 · 3.0–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-06 · Multi-Agent / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/autojack-autogen-studio-localhost-agent-rce">AutoJack Turns Localhost Agent Control Planes Into a Browser-RCE Lesson</a></h3><p class="mt-2 text-sm text-muted">A loopback-bound control plane is not a lower-exposure deployment: because a browsing agent renders untrusted content on the same host, As reaches the 1.00 anchor and the Cp path is corroborated end-to-end — while the thin two-axis evidence base forces the Lite Ec cap, showing how AITBM records the limits of its own evidence rather than papering over them.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.6 · 2.4–8.7</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-06 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/amazon-q-mcp-auto-execution-cloud-credential-theft">Amazon Q&#x27;s MCP Auto-Load Bug Made Cloned Repos a Cloud Credential Risk</a></h3><p class="mt-2 text-sm text-muted">When a client treats repository content as configuration, the poisoning surface is the tool manifest rather than the model — Ro-4 and Cn-5 both collapse to 0.00 on the same evidence, and a shipped, version-boundaried vendor fix earns Rf = 0.00 without moving any IVP score, which is exactly the layer separation AITBM is built to preserve.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.4 · 2.9–7.8</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-07-06 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/clean-repo-claude-code-dns-reverse-shell">A Clean Repo Can Still Turn an AI Coding Agent Into a Reverse Shell</a></h3><p class="mt-2 text-sm text-muted">This is the batch&#x27;s only case with no patch to point at, and it lands where AITBM says it should: Rf = 0.75 rather than 0.00 because every remedy is an external containment layer, while Cn-6 = 0.00 for a subtler reason than a missing gate — the payload arrived over DNS at runtime, so the action&#x27;s reversibility class was undeterminable at the only moment a gate could have fired.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.6 · 3.8–9.4</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-06-27 · Multi-Agent / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/lingua-ex-machina-tokenizer-monitor-blind-spots">Lingua Ex Machina: When the AI Monitor Cannot See What the Executor Sees</a></h3><p class="mt-2 text-sm text-muted">Detection capability and evidence freshness are scored in different layers, and this case separates them cleanly: the monitor&#x27;s blindness is a point-in-time IVP finding at Ro-1 and Cn-3, while the same sensor loss independently caps ACI Temporal Freshness through C_monitor and Band 0 C_behavior — and because the report measured visibility rather than consequence, Cn-1 and Cn-6 are correctly omitted instead of guessed.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.0 · 2.0–8.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-06-22 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/agentjacking-sentry-mcp-coding-agent-hijack">Agentjacking: How Fake Sentry Errors Turn MCP Telemetry into Agent Code Execution</a></h3><p class="mt-2 text-sm text-muted">A tool integration that is read-only by design can still drive an agent to code execution: the boundary that failed is the MCP output boundary, not the model, which is why Ro-1 stays at 0.25 while five Containment sub-metrics sit at the ad-hoc anchor and Cp is corroborated at 1.00 by an ungated path from an anonymous event submitter to host credential material.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 7.4 · 4.3–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-06-09 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/gemini-notification-idpi-fake-context-alignment">Gemini Voice Assistant: When Phone Notifications Become Prompt Injection</a></h3><p class="mt-2 text-sm text-muted">A confirmation gate that exists but is not bound to a canonical action summary earns Cn-6 = 0.25, not credit for human-in-the-loop control — and because the gate cannot be claimed at CBR &gt;= 0.95, the same defect forces Cp to the corroborated 1.00 anchor by making an otherwise-gated path to a write-external node effectively ungated.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.3 · 2.5–8.1</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-06-01 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/trapdoor-ai-assistant-config-poisoning-supply-chain">TrapDoor: Poisoned .cursorrules and CLAUDE.md Turn AI Coding Assistants Into Credential Stealers</a></h3><p class="mt-2 text-sm text-muted">Ro-4 poisoning resistance is not only about training data and RAG corpora: an agent&#x27;s own instruction and configuration files are an ingestion channel, and where they are read as authoritative guidance with no provenance, signature or hidden-character check, Ro-4 sits at the 0.00 anchor regardless of how well the training pipeline is protected.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.7 · 3.8–9.7</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-05-27 · Multi-Agent / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/agent-session-smuggling-a2a-systems">Agent Session Smuggling: Hidden Instructions Across A2A Agent Sessions</a></h3><p class="mt-2 text-sm text-muted">Authentication is not authorisation: a cryptographically valid, correctly authenticated peer session still scores Cn-5 low, because Cn-5 measures whether identity is bound to instruction provenance and tool invocation — not merely whether the counterparty is who it claims to be.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 8.0 · 4.3–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-05-18 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/ai-agent-system-level-idpi-defenses">System-Level Agent Defenses: Why Indirect Prompt Injection Needs Plan and Policy Boundaries</a></h3><p class="mt-2 text-sm text-muted">There is no assessed deployment. The brief summarises an academic position paper (arXiv 2603.30016, &#x27;Architecting Secure AI Agents: Perspectives on System-Level Defenses Against Indirect Prompt Injection&#x27;) that argues for plan, policy, approval, execution, and feedback boundaries in general-purpose agents. It reports no incident, no victim system, no observed configuration, and no measurement of any deployment — every statement is an architectural proposal or a critique of benchmark methodology. Scoring it would require inventing a system&#x27;s IVP, ORP, and ACI inputs from prescriptive text, which the protocol forbids. The brief is retained for its AIDEFEND mapping and for what its benchmark critique implies about AITBM&#x27;s own evidence-quality machinery.</p><p class="mt-4 text-xs font-semibold text-navy">Research note · no ERS</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-05-15 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/ai-agent-app-misconfigurations-rce-credential-leakage">AI App Misconfigurations: Public Agent Endpoints as RCE and Credential-Leak Paths</a></h3><p class="mt-2 text-sm text-muted">Nothing in this case reaches the model — there is no prompt, no injection, and no Robustness-1 signal at all — so AITBM&#x27;s not-applicable redistribution rule carries the whole assessment on Containment, identity, and posture evidence, which is the correct answer for an incident where, as the brief puts it, security was lost before the model saw any prompt.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 7.2 · 3.4–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-05-08 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/promptmink-ai-coding-agent-malicious-dependencies">PromptMink: Malicious Packages Built to Persuade AI Coding Agents</a></h3><p class="mt-2 text-sm text-muted">The adversary never touched the model — it optimised the documentation the model reads — so the scoring weight lands on Ro-4 ingestion integrity and Cn-1/Cn-6 execution gating rather than on jailbreak resistance, and the case shows why AITBM scores the pipeline configuration rather than the assistant that proposed the change.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.1 · 3.8–8.4</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-05-03 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/pocketos-cursor-agent-database-wipe">PocketOS Cursor Agent Data Wipe: Destructive Actions Need Runtime Boundaries, Not Prompt Rules</a></h3><p class="mt-2 text-sm text-muted">There is no adversary in this case at all, and AITBM still scores it as a Containment collapse — Cn-1, Cn-2 and Cn-6 are driven by what the agent was technically able to do, not by whether anyone attacked it, which is why an assessment that only looks for attack success rates would have missed this deployment entirely.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 4.9 · 2.0–7.7</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-05-03 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/openai-codex-github-branch-token-theft">OpenAI Codex Command Injection: Malicious GitHub Branch Names as a Token-Theft Path</a></h3><p class="mt-2 text-sm text-muted">The exploited input never reached the model, which is exactly why Ro-1 must be scored over the agent&#x27;s whole task-setup surface rather than its prompt: an agent&#x27;s adversarial-input resistance is only as good as the least-validated field in the request that provisions its container.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 4.0 · 1.9–6.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-05-03 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/cursorjacking-cursor-extension-api-key-theft">CursorJacking: Rogue Cursor Extensions Can Steal AI API Keys</a></h3><p class="mt-2 text-sm text-muted">Containment can score 0.00 on an AI product whose model behaved perfectly: the assessed boundary here is the extension host and the credential store, so a client-side trust-boundary failure lands squarely on Cn-1 and Cn-5 — and demonstrates that a &#x27;no model involvement&#x27; incident is still an AI security finding, not an exemption from scoring.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 4.0 · 1.8–6.3</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-29 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/entra-agent-id-admin-service-principal-takeover">Entra Agent ID Administrator Scope Gap: Agent Roles Reaching Service Principals</a></h3><p class="mt-2 text-sm text-muted">An AI system can fail the Containment axis with no model in the loop at all: Cn-5 is scored on the enforced authorization boundary around agent identities, so a directory role whose documented scope and effective scope diverge is an agent-identity finding, not merely an IAM bug.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 3.8 · 1.2–6.3</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-25 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/malicious-llm-api-router-agent-supply-chain">Your Agent Is Mine: Malicious LLM API Routers as an Agent Supply-Chain Boundary</a></h3><p class="mt-2 text-sm text-muted">The trust boundary that fails here is neither the model nor the tool but the transport intermediary between them, and AITBM localises it precisely — Cn-5 = 0.25 for an unverifiable response origin under API-key-only identity and Cn-6 = 0.00 for ARCR = 0 under auto-approve — a failure that no model-layer sub-metric and no prompt-injection test would have surfaced.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 7.8 · 4.8–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-25 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/web-based-idpi-agent-prompt-injection">Web-Based IDPI in the Wild: When Webpages Become Agent Prompt Delivery</a></h3><p class="mt-2 text-sm text-muted">A population study can be scored honestly as a representative configuration, but only if the assurance layer carries the cost: Pc = 0.10 and a class-level Cp classified as default rather than corroborated are what keep the case from overclaiming — and the ORP shows the strict-inequality boundary at work, with Aa and Rf sitting exactly at 0.75 and therefore not counting toward N_elevated.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.4 · 3.2–9.7</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-25 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/vertex-ai-double-agents-service-agent-permissions">Vertex AI Double Agents: When Service-Agent Defaults Become an Agentic Cloud Boundary</a></h3><p class="mt-2 text-sm text-muted">Authentication succeeded and the provider&#x27;s write boundary held, so the failure has to be located precisely rather than described as &#x27;broken identity&#x27;: AITBM puts it in Cn-5 = 0.40 (a valid managed token with no binding to agent instance, session or invocation) and Cn-1 = 0.25 (flat reachability across three project boundaries), while Tr-3 stays at 0.50 because cloud audit logging did record the calls it could not attribute.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.2 · 2.9–7.5</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-22 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/anthropic-mcp-stdio-command-execution">Anthropic MCP STDIO Command Execution: When Tool Configuration Becomes an RCE Primitive</a></h3><p class="mt-2 text-sm text-muted">The scoring turns on an evidentiary rule rather than a judgement call: the 0.50 Ro-1 anchor describes this case qualitatively — common attacks resisted, multi-step tool-mediated attacks still effective — but its ASR-below-50% precondition is unmeasured, so the quantitative precondition fails and 0.25 governs; meanwhile Cn-6 = 0.00 is the cleanest reading in the batch, because a system that treats spawning an arbitrary OS process as routine tool setup has an Action Reversibility Classification Rate of exactly zero.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.8 · 3.0–8.6</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-18 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/openclaw-browser-to-local-agent-takeover">OpenClaw &#x27;ClawJacked&#x27;: Website-to-Local Agent Takeover via Loopback Trust and WebSocket Abuse</a></h3><p class="mt-2 text-sm text-muted">Cn-5 is the case&#x27;s hinge and shows why a mechanism-only reading of the rubric is wrong: the gateway had real authentication (pairing, device tokens, a password), which is the 0.25 anchor, but the measured Identity Spoofing Success Rate approached 1.00, so the precedence rule — quantitative floor, qualitative ceiling — drives the score to 0.10, and it is the identity failure rather than any single missing feature that turns a loopback listener into an internet-reachable admin API.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.5 · 2.8–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-18 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/clawhub-google-qx4-fake-prerequisite-malware">ClawHub `google-qx4`: Malicious SKILL.md Prerequisites as Agent-Driven Social Engineering</a></h3><p class="mt-2 text-sm text-muted">A containment control can hold and the deployment still be compromised: the agent sandbox blocked in-runtime execution, which is why Cn-1 is scored up to 0.50 rather than down at a failure anchor, while the compromise travelled the one path the sandbox never covered — an instruction relayed through the human. AITBM captures this only because Cn-1&#x27;s 0.50 anchor names delegated workflows explicitly, and because the assessment is required to score the control that held alongside the ones that did not.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 5.9 · 2.7–9.2</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-16 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/salesforce-agentforce-forcedleak-prompt-injection">Salesforce &#x27;ForcedLeak&#x27;: Indirect Prompt Injection via Agentforce Web-to-Lead Forms</a></h3><p class="mt-2 text-sm text-muted">ForcedLeak shows why Cp = 1.00 here is corroborated rather than defaulted: a sink gate that a researcher&#x27;s payload was observed crossing cannot be claimed at CBR &gt;= 0.95, so the path counts as ungated to a P3 node on its own merits - and it shows a control can be simultaneously credited (Cn-1 = 0.25 not 0.00, because the CSP constrained the attacker) and defeated, which is what a two-sided assessment looks like.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 7.7 · 4.0–10.0</p></article><article class="rounded-xl border border-gray-200 bg-white p-5"><p class="text-xs font-semibold tracking-wide text-gray-500">2026-04-16 · Agentic / MCP System</p><h3 class="mt-2 text-lg font-bold text-navy"><a class="hover:underline" href="/use-cases/claude-code-protected-paths-auto-mode">Claude Code Protected Paths and Auto Mode: Why Bypass Is No Longer a Stable Control Boundary</a></h3><p class="mt-2 text-sm text-muted">A case with no exploit still moves the AITBM score: a change to an agent&#x27;s authority boundary trips the C_event &lt;= 0.35 cap and, with mutable behavioural state, the M_Em = 3.0 behavioural staleness floor - so &#x27;nothing was breached&#x27; does not mean &#x27;the prior assessment is still fresh&#x27;. It is also a clean example of Cp = 1.00 by default rather than by corroboration, because the gates in force were never shown to be bypassed.</p><p class="mt-4 text-xs font-semibold text-navy">Indicative ERS 6.1 · 2.0–10.0</p></article></div></div></section>
+<section class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><h2 class="text-2xl font-bold text-navy">Use the evidence, not just the incident name</h2><p class="mt-3 max-w-4xl text-muted">Each record distinguishes observed controls, missing evidence, architecture-based exclusions, operational risk, confidence limits, and the uncertainty interval. When using a case as a reference, compare the documented path to your own system boundary and rerun the applicable test methods rather than copying its indicative ERS.</p><div class="mt-6 flex flex-wrap gap-4 text-sm font-semibold"><a href="/ai-security-use-cases" class="text-navy hover:underline">All topic collections →</a><a href="/use-cases" class="text-navy hover:underline">Search all 64 records →</a><a href="/ai-evaluation-methods" class="text-navy hover:underline">Evaluation methods →</a></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Topic collection generated from the reviewed public-evidence library on 2026-08-16.</div></div>
+</footer>  <script src="/assets/js/site-search-index.js?v=30ef8f6d"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script></body></html>

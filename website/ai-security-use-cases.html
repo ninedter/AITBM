@@ -1,0 +1,252 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>AI Security Use Cases and Incident Reference Library — AITBM</title>
+  <meta name="description" content="Explore 64 public-evidence AI security cases by prompt injection, agents, MCP, RAG, data exposure, coding agents, supply chain, and model security." />
+  <link rel="canonical" href="https://aitbm.org/ai-security-use-cases" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/ai-security-use-cases" />
+  <meta property="og:title" content="AI Security Use Cases and Incident Reference Library — AITBM" />
+  <meta property="og:description" content="Explore 64 public-evidence AI security cases by prompt injection, agents, MCP, RAG, data exposure, coding agents, supply chain, and model security." />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=792bb8a8" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://aitbm.org/ai-security-use-cases#article",
+      "url": "https://aitbm.org/ai-security-use-cases",
+      "headline": "AI security use cases and incident reference library",
+      "name": "AI security use cases and incident reference library",
+      "description": "Explore 64 public-evidence AI security cases by prompt injection, agents, MCP, RAG, data exposure, coding agents, supply chain, and model security.",
+      "datePublished": "2026-08-16",
+      "dateModified": "2026-08-16",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/ai-security-use-cases#breadcrumb"
+      },
+      "keywords": "AI security use cases, AI security case studies, AI incident library, AI attack examples, AI safety evaluation references"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/ai-security-use-cases#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Security Use Cases and Incident Reference Library — AITBM",
+          "item": "https://aitbm.org/ai-security-use-cases"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://aitbm.org/ai-security-use-cases#topics",
+      "name": "AITBM AI security use-case topics",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Agentic AI security",
+          "url": "https://aitbm.org/use-case-topics/agentic-ai-security"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "MCP security",
+          "url": "https://aitbm.org/use-case-topics/mcp-security"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Prompt injection",
+          "url": "https://aitbm.org/use-case-topics/prompt-injection"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "AI data exposure",
+          "url": "https://aitbm.org/use-case-topics/ai-data-exposure"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "AI supply-chain security",
+          "url": "https://aitbm.org/use-case-topics/ai-supply-chain-security"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "AI coding agent security",
+          "url": "https://aitbm.org/use-case-topics/ai-coding-agent-security"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "RAG security",
+          "url": "https://aitbm.org/use-case-topics/rag-security"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "AI model security",
+          "url": "https://aitbm.org/use-case-topics/ai-model-security"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="explore-link" role="menuitem">AI Safety Benchmark</a>
+              <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="explore-link" role="menuitem">Security Assessment</a>
+              <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="explore-link" role="menuitem">Evaluation Methods</a>
+              <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="explore-link" role="menuitem">Framework Comparison</a>
+              <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="explore-link" role="menuitem">Case Reference Library</a>
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AI Safety Benchmark</a>
+        <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Security Assessment</a>
+        <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Evaluation Methods</a>
+        <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework Comparison</a>
+        <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Case Reference Library</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Topic library</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">AI SECURITY REFERENCE LIBRARY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">AI security use cases and incident reference library</h1><p class="mt-4 max-w-3xl text-lg text-blue-100">Explore 64 public-evidence analyses as threat-specific reference collections. Every case links to its sources, deployment boundary, rubric evidence, uncertainty, and—where the evidence permits—an indicative AITBM risk scenario.</p></div></section>
+<section class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><div class="grid gap-5 sm:grid-cols-3"><article class="rounded-xl border border-gray-200 p-5"><strong class="text-3xl text-navy">64</strong><h2 class="mt-1 font-bold text-navy">Complete records</h2><p class="mt-2 text-sm text-muted">Scored case scenarios and unscored research notes remain distinct.</p></article><article class="rounded-xl border border-gray-200 p-5"><strong class="text-3xl text-navy">8</strong><h2 class="mt-1 font-bold text-navy">Searchable themes</h2><p class="mt-2 text-sm text-muted">Threat and architecture collections built from the reviewed library.</p></article><article class="rounded-xl border border-gray-200 p-5"><strong class="text-3xl text-navy">23</strong><h2 class="mt-1 font-bold text-navy">Evaluation rubrics</h2><p class="mt-2 text-sm text-muted">Evidence routes connect incidents to reusable safety and security tests.</p></article></div><div class="mt-8 rounded-xl border border-gray-200 bg-gray-50 p-6"><h2 class="text-2xl font-bold text-navy">How to use the library</h2><p class="mt-3 text-muted">Search by a named incident when you need a source-backed reference. Browse a topic when designing a test plan or threat model. Open the complete record before quoting a score: unknown evidence, system boundaries, and uncertainty determine what the scenario can support.</p><p class="mt-3 text-sm"><a href="/use-cases" class="font-semibold text-navy hover:underline">Search every case, technique, and sub-metric →</a></p></div></section>
+<section class="border-y border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><h2 class="text-3xl font-bold text-navy">Browse by threat and system type</h2><div class="mt-8 grid gap-5 lg:grid-cols-2"><a href="/use-case-topics/agentic-ai-security" class="card rounded-xl border border-gray-200 bg-white p-6"><p class="text-xs font-semibold tracking-wider text-navy-light">41 REFERENCES</p><h2 class="mt-2 text-xl font-bold text-navy">Agentic AI security</h2><p class="mt-3 text-sm text-muted">Public-evidence agentic AI security cases covering autonomous actions, tool use, identity, memory, delegation, and containment failures.</p><span class="mt-5 inline-block text-sm font-semibold text-navy">Open topic collection →</span></a><a href="/use-case-topics/mcp-security" class="card rounded-xl border border-gray-200 bg-white p-6"><p class="text-xs font-semibold tracking-wider text-navy-light">4 REFERENCES</p><h2 class="mt-2 text-xl font-bold text-navy">MCP security</h2><p class="mt-3 text-sm text-muted">MCP security case studies covering malicious servers, unsafe tool configuration, command execution, credential theft, and agent hijacking.</p><span class="mt-5 inline-block text-sm font-semibold text-navy">Open topic collection →</span></a><a href="/use-case-topics/prompt-injection" class="card rounded-xl border border-gray-200 bg-white p-6"><p class="text-xs font-semibold tracking-wider text-navy-light">7 REFERENCES</p><h2 class="mt-2 text-xl font-bold text-navy">Prompt injection</h2><p class="mt-3 text-sm text-muted">Indirect and direct prompt injection case studies across copilots, connectors, browser agents, assistants, RAG, and operating-system AI.</p><span class="mt-5 inline-block text-sm font-semibold text-navy">Open topic collection →</span></a><a href="/use-case-topics/ai-data-exposure" class="card rounded-xl border border-gray-200 bg-white p-6"><p class="text-xs font-semibold tracking-wider text-navy-light">18 REFERENCES</p><h2 class="mt-2 text-xl font-bold text-navy">AI data exposure</h2><p class="mt-3 text-sm text-muted">AI data exposure cases involving connectors, cross-tenant access, credentials, local files, private prompts, cloud data, and exfiltration paths.</p><span class="mt-5 inline-block text-sm font-semibold text-navy">Open topic collection →</span></a><a href="/use-case-topics/ai-supply-chain-security" class="card rounded-xl border border-gray-200 bg-white p-6"><p class="text-xs font-semibold tracking-wider text-navy-light">8 REFERENCES</p><h2 class="mt-2 text-xl font-bold text-navy">AI supply-chain security</h2><p class="mt-3 text-sm text-muted">AI supply-chain security cases covering malicious models, packages, extensions, routers, agent configuration, dependencies, and namespace reuse.</p><span class="mt-5 inline-block text-sm font-semibold text-navy">Open topic collection →</span></a><a href="/use-case-topics/ai-coding-agent-security" class="card rounded-xl border border-gray-200 bg-white p-6"><p class="text-xs font-semibold tracking-wider text-navy-light">10 REFERENCES</p><h2 class="mt-2 text-xl font-bold text-navy">AI coding agent security</h2><p class="mt-3 text-sm text-muted">AI coding agent security cases involving repositories, IDE features, CI secrets, packages, shell execution, database deletion, and developer credentials.</p><span class="mt-5 inline-block text-sm font-semibold text-navy">Open topic collection →</span></a><a href="/use-case-topics/rag-security" class="card rounded-xl border border-gray-200 bg-white p-6"><p class="text-xs font-semibold tracking-wider text-navy-light">5 REFERENCES</p><h2 class="mt-2 text-xl font-bold text-navy">RAG security</h2><p class="mt-3 text-sm text-muted">RAG security cases covering retrieval authorization, vector databases, poisoned content, cross-user data, prompt-layer compromise, and cloud takeover paths.</p><span class="mt-5 inline-block text-sm font-semibold text-navy">Open topic collection →</span></a><a href="/use-case-topics/ai-model-security" class="card rounded-xl border border-gray-200 bg-white p-6"><p class="text-xs font-semibold tracking-wider text-navy-light">10 REFERENCES</p><h2 class="mt-2 text-xl font-bold text-navy">AI model security</h2><p class="mt-3 text-sm text-muted">AI model security cases covering malicious model loading, inference backdoors, tokenizer blind spots, exposed inference, namespace reuse, and distillation.</p><span class="mt-5 inline-block text-sm font-semibold text-navy">Open topic collection →</span></a></div></div></section>
+<section class="mx-auto max-w-6xl px-4 py-14 sm:px-6"><h2 class="text-2xl font-bold text-navy">From reference to evaluation</h2><p class="mt-3 max-w-4xl text-muted">A case study identifies a plausible path and the evidence that exposed it. An assessment must retest that path against your own deployment, include architecture-specific controls, derive operational risk from the real dependency graph, and use current evidence confidence.</p><div class="mt-6 flex flex-wrap gap-4 text-sm font-semibold"><a href="/ai-security-assessment" class="text-navy hover:underline">Assessment methodology →</a><a href="/ai-evaluation-methods" class="text-navy hover:underline">Evaluation methods →</a><a href="/ai-safety-benchmark" class="text-navy hover:underline">AI safety benchmark →</a></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Cases are evidence references and retrospective scenarios, not vendor ratings.</div></div>
+</footer>  <script src="/assets/js/site-search-index.js?v=30ef8f6d"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script></body></html>

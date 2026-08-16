@@ -1,0 +1,195 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>AI Safety and Security Evaluation Methods — AITBM</title>
+  <meta name="description" content="Select measurable AI safety and security evaluation methods for robustness, privacy, fairness, transparency, containment, and deployment risk." />
+  <link rel="canonical" href="https://aitbm.org/ai-evaluation-methods" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/ai-evaluation-methods" />
+  <meta property="og:title" content="AI Safety and Security Evaluation Methods — AITBM" />
+  <meta property="og:description" content="Select measurable AI safety and security evaluation methods for robustness, privacy, fairness, transparency, containment, and deployment risk." />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=792bb8a8" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://aitbm.org/ai-evaluation-methods#article",
+      "url": "https://aitbm.org/ai-evaluation-methods",
+      "headline": "AI safety and security evaluation methods",
+      "name": "AI safety and security evaluation methods",
+      "description": "Select measurable AI safety and security evaluation methods for robustness, privacy, fairness, transparency, containment, and deployment risk.",
+      "datePublished": "2026-08-16",
+      "dateModified": "2026-08-16",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/ai-evaluation-methods#breadcrumb"
+      },
+      "keywords": "AI evaluation methods, AI safety evaluation, AI security testing methods, LLM evaluation framework, AI benchmark methodology"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/ai-evaluation-methods#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Framework",
+          "item": "https://aitbm.org/framework"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Safety and Security Evaluation Methods — AITBM",
+          "item": "https://aitbm.org/ai-evaluation-methods"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="explore-link" role="menuitem">AI Safety Benchmark</a>
+              <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="explore-link" role="menuitem">Security Assessment</a>
+              <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="explore-link" role="menuitem">Evaluation Methods</a>
+              <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="explore-link" role="menuitem">Framework Comparison</a>
+              <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="explore-link" role="menuitem">Case Reference Library</a>
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AI Safety Benchmark</a>
+        <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Security Assessment</a>
+        <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Evaluation Methods</a>
+        <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework Comparison</a>
+        <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Case Reference Library</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-14"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/framework" class="hover:text-navy">Framework</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">AI safety and security evaluation methods</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">EVALUATION METHODS</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">AI safety and security evaluation methods</h1><p class="mt-4 max-w-3xl text-lg text-blue-100">AITBM organizes AI evaluation methods into 23 measurable sub-metrics. Each uses five fixed scoring anchors and named test methods so assessors can connect a test result to a repeatable rubric placement instead of an unconstrained label.</p></div></section>
+<div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem]"><article class="space-y-10"><section class="scroll-mt-24"><h2 class="text-2xl font-bold text-navy">Five evaluation areas</h2><p class="mt-3 text-muted">Robustness covers adversarial inputs, distribution shift, output consistency, and poisoning. Fairness covers demographic parity, calibration consistency, representation bias, and counterfactual fairness. Transparency covers explainability, confidence calibration, audit trails, and lineage. Privacy covers leakage, inference attacks, minimization, and re-identification. Containment covers scope, escalation, output filtering, side channels, agent identity, action reversibility, and resource or execution-loop boundaries.</p></section><section class="scroll-mt-24"><h2 class="text-2xl font-bold text-navy">Methods must produce admissible evidence</h2><p class="mt-3 text-muted">Useful methods include adversarial test suites, counterfactual probes, calibration error measurement, lineage verification, membership and model-inversion testing, cross-tenant retrieval tests, identity-spoofing trials, chain-composition tests, resource-budget violation tests, and repeated boundary attestations. A claimed control earns no credit until the assessed deployment demonstrates its effectiveness.</p></section><section class="scroll-mt-24"><h2 class="text-2xl font-bold text-navy">Match depth to risk</h2><p class="mt-3 text-muted">Full, Standard, and Lite pathways change assessment depth, not the meaning of the rubrics. Deployment tiers set minimum thresholds and reassessment cadence. Agentic systems require additional accumulated-state, identity, action, containment, and behavioral evidence because a one-turn model test cannot establish multi-session safety.</p></section><section class="rounded-xl border border-gray-200 bg-gray-50 p-6"><h2 class="text-2xl font-bold text-navy">A practical next step</h2><p class="mt-3 text-muted">Choose one system boundary, document the architecture and deployment tier, and test the evidence required by the applicable sub-metrics. Record unknown evidence explicitly instead of treating it as a passing control.</p></section></article><aside><div class="sticky top-24 rounded-xl border border-gray-200 bg-white p-5"><h2 class="font-bold text-navy">Explore the evidence</h2><div class="mt-4 space-y-3 text-sm"><a class="block font-semibold text-navy hover:underline" href="/submetrics">Open the sub-metric directory →</a><a class="block font-semibold text-navy hover:underline" href="/ai-framework-comparison">Compare AI frameworks →</a><a class="block font-semibold text-navy hover:underline" href="/ai-security-use-cases">See methods applied to cases →</a></div></div></aside></div>
+<section class="border-t border-gray-200 bg-gray-50"><div class="mx-auto max-w-6xl px-4 py-12 sm:px-6"><h2 class="text-2xl font-bold text-navy">Related AITBM resources</h2><div class="mt-6 grid gap-4 md:grid-cols-3"><a href="/submetrics" class="card rounded-xl border border-gray-200 bg-white p-5"><h3 class="font-bold text-navy">Open the sub-metric directory →</h3><p class="mt-2 text-sm text-muted">Continue with the complete AITBM reference.</p></a><a href="/ai-framework-comparison" class="card rounded-xl border border-gray-200 bg-white p-5"><h3 class="font-bold text-navy">Compare AI frameworks →</h3><p class="mt-2 text-sm text-muted">Continue with the complete AITBM reference.</p></a><a href="/ai-security-use-cases" class="card rounded-xl border border-gray-200 bg-white p-5"><h3 class="font-bold text-navy">See methods applied to cases →</h3><p class="mt-2 text-sm text-muted">Continue with the complete AITBM reference.</p></a></div></div></section></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. AITBM is an assessment framework, not a certification or legal-compliance determination.</div></div>
+</footer>  <script src="/assets/js/site-search-index.js?v=30ef8f6d"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script></body></html>

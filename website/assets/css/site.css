@@ -326,6 +326,7 @@ abbr[title] {
 .explore-panel {
   position: absolute; top: calc(100% + .85rem); left: 50%; transform: translateX(-50%);
   width: 13rem; padding: .4rem; border: 1px solid var(--line); border-radius: .65rem;
+  max-height: calc(100vh - 5rem); overflow-y: auto;
   background: #fff; box-shadow: 0 18px 40px -18px rgba(21, 39, 67, .42); z-index: 70;
 }
 .explore-link { display: block; border-radius: .4rem; padding: .55rem .65rem; color: #4b5563; }

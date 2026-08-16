@@ -145,9 +145,18 @@ AITBM/
 │       └── external_framework_mappings.md          Sixteen external frameworks mapped to AITBM
 └── website/                           Project website (static HTML + Tailwind CSS)
     ├── index.html            Overview and landing page
+    ├── ai-safety-benchmark.html      Deployed-system AI safety benchmark guide
+    ├── ai-security-assessment.html   AI security assessment methodology
+    ├── ai-evaluation-methods.html    Safety and security evaluation methods
+    ├── ai-framework-comparison.html  Neutral comparison of framework roles
+    ├── ai-security-use-cases.html    Topic hub for the 64-record case library
     ├── framework.html        Three-layer architecture (IVP/ORP/ACI/ERS)
     ├── submetrics.html       The 23 sub-metrics reference
     ├── use-cases.html        Evidence-bounded incident scenarios with uncertainty ranges
+    ├── use-cases/            64 complete case-study and research-note records
+    ├── use-case-topics/      Eight threat and architecture reference collections
+    ├── mappings/             Sixteen complete external-framework crosswalks
+    ├── submetrics/           Twenty-three canonical rubric and test-method pages
     ├── gap-analysis.html     12 structural gaps across 4 domains
     ├── aidefend.html         AIDEFEND mapping and worked examples
     ├── mappings.html         Sixteen external frameworks mapped to AITBM

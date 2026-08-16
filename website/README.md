@@ -1,22 +1,28 @@
 # AITBM Website
 
-**Date:** 2026-08-13
+**Date:** 2026-08-16
 **Purpose:** Document the public static website for the AI Trust Benchmarking and Maturity Framework
 **Status:** Active; publication requires the project publishing procedure
 
 ## Site Inventory
 
-The site contains ten discovery/application pages, 103 dedicated reference pages,
-and a not-found page. The sitemap therefore contains 113 indexable URLs.
+The site contains fifteen discovery/application pages, 111 dedicated reference pages,
+and a not-found page. The sitemap therefore contains 126 indexable URLs.
 
 | Path | Purpose |
 |---|---|
 | `index.html` | Framework overview and project entry point |
+| `ai-safety-benchmark.html` | Deployed-system AI safety benchmark guide |
+| `ai-security-assessment.html` | AI security assessment methodology guide |
+| `ai-evaluation-methods.html` | Safety and security evaluation-method selection guide |
+| `ai-framework-comparison.html` | Neutral comparison of framework roles and AITBM's measurement layer |
+| `ai-security-use-cases.html` | Topic hub for the 64-record incident reference library |
 | `framework.html` | IVP, ORP, ACI, ERS, tiers, and assessment pathways |
 | `submetrics.html` | Discovery hub for all 23 IVP sub-metrics |
 | `submetrics/*.html` | 23 canonical definitions, five-level rubrics, and required test methods |
 | `use-cases.html` | Search and discovery hub for public-evidence cases |
 | `use-cases/*.html` | 64 complete case-study or research-note evidence records |
+| `use-case-topics/*.html` | 8 evidence-rich collections for agentic AI, MCP, prompt injection, data exposure, supply chain, coding agents, RAG, and model security |
 | `gap-analysis.html` | Twelve-gap analysis and remediation status |
 | `aidefend.html` | AIDEFEND integration and control-to-evidence guidance |
 | `mappings.html` | Discovery hub for external framework mappings |
@@ -35,8 +41,10 @@ framework-mapping JSON/CSV index. `feed.xml` publishes use-case discovery update
 The website is static. Cloudflare Pages serves extensionless URLs such as `/framework`,
 `/use-cases/<slug>`, `/mappings/<slug>`, and `/submetrics/<slug>`. Every public page
 carries one absolute canonical URL, a matching Open Graph URL, one H1, descriptive
-metadata, breadcrumbs, and JSON-LD. The detail pages use `Article` or `TechArticle`
-semantics without claiming unsupported rich-result features.
+metadata, an explicit indexing/snippet policy, breadcrumbs, and JSON-LD. The detail
+pages use `Article` or `TechArticle` semantics without claiming unsupported rich-result
+features. Topic pages use `CollectionPage` and `ItemList`; the use-case hub also carries
+Google-compatible `Dataset` metadata for the published JSON distribution.
 
 The canonical hostname is `https://aitbm.org`. Cloudflare must maintain a zone-level
 permanent redirect from `www.aitbm.org` to the apex while preserving path and query.
@@ -76,10 +84,12 @@ python3 scripts/site/build_all.py
 - `build_submetric_pages.py` reads the canonical working specification and produces
   the sub-metric hub, all 23 rubric pages, and JSON/CSV references.
 - `build_use_cases_page.py` reads `docs/use-cases/*.json` and produces the use-case
-  hub, all 64 detail pages, the score dataset, and RSS feed.
+  hub, all 64 detail pages, the score dataset, Dataset/ItemList metadata, and RSS feed.
+- `build_search_intent_pages.py` produces four assessment guides, the case-reference
+  topic hub, and eight evidence-rich topic collections from the same generated case data.
 - Edit `scripts/site/fragments/site_header.html`, then run `apply_shared_navigation.py`; do not hand-edit repeated page headers.
 - `build_all.py` then rebuilds global search, recursively stamps CSS/JS hashes, and
-  regenerates the 113-URL sitemap with content-aware modification dates.
+  regenerates the 126-URL sitemap with content-aware modification dates.
 - `_headers` gives versioned CSS/JS immutable caching, shorter data-file caching, and
   `noindex, nofollow` protection to Cloudflare Pages preview hostnames.
 
@@ -91,9 +101,9 @@ Run the deterministic site and repository audit before committing:
 python3 scripts/analysis/audit_repository.py
 ```
 
-It verifies the 114-file HTML inventory, exact detail-page counts, local links,
+It verifies the 127-file HTML inventory, exact detail-page counts, local links,
 fragment targets, unique IDs, one H1 per public URL, canonical and Open Graph URLs,
-structured data, 113-URL sitemap parity and last-modified dates, asset hashes,
+structured data, indexing/snippet policy, 126-URL sitemap parity and last-modified dates, asset hashes,
 shared-header equivalence, global-search coverage, preview noindex/cache rules,
 required collaboration files, and canonical deliverables.
 
