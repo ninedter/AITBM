@@ -32,6 +32,6 @@
 
 [16] OWASP. (2026). AIVSS Scoring System for OWASP Agentic AI Core Security Risks v0.8. Retrieved from https://aivss.owasp.org/
 
-[17] Artificial Intelligence Underwriting Company. (2026). AIUC-1: The Certification Standard for AI Agents. Retrieved from https://www.aiuc-1.com/
+[17] Artificial Intelligence Underwriting Company. (2026). AIUC-1: The Certification Standard for AI Agents; AIUC company and insurance overview. Retrieved from https://www.aiuc-1.com/ and https://aiuc.com/
 
 [18] OWASP. (2025). Agentic AI - Threats and Mitigations 1.1. Retrieved from https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/

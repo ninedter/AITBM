@@ -13,8 +13,8 @@
 
     gtag('config', 'G-K7VDS29BQ0');
   </script>
-  <title>AI Risk Score (ERS) Calculator — AITBM</title>
-  <meta name="description" content="Free AI security risk calculator: evaluate controls and deployment context to see AITBM's Effective Risk Score change across IVP, ORP, and ACI." />
+  <title>One-Shot AI Risk Score (ERS) Calculator — AITBM</title>
+  <meta name="description" content="Free, no-login AITBM one-shot calculator with Quick and Detailed paths for an immediate, clearly qualified AI security risk estimate." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
@@ -42,7 +42,22 @@
     .range-input { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 9999px; background: #e5e7eb; outline: none; }
     .range-input::-webkit-slider-thumb { -webkit-appearance: none; height: 18px; width: 18px; border-radius: 50%; background: var(--navy); cursor: pointer; border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
     .range-input::-moz-range-thumb { height: 18px; width: 18px; border-radius: 50%; background: var(--navy); cursor: pointer; border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+    .answer-button:focus-visible, .calculator-action:focus-visible, .range-input:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
+    .question-locked { opacity: .45; }
+    #detailed-view { scroll-margin-top: 5rem; }
+    .handoff-notice { background: #eff6ff; border-color: #bfdbfe; color: #172554; }
+    .baseline-notice { background: #fffbeb; border-color: #fde68a; color: #451a03; }
+    .status-pending { color: #b45309; }
+    .status-complete { color: #047857; }
     @media (max-width: 1023px) { .results-panel { position: relative !important; top: auto !important; } }
+    @media print {
+      [data-site-header], footer, [data-no-print], #site-search-dialog { display: none !important; }
+      body { background: #fff !important; }
+      #quick-view.hidden, #detailed-view.hidden { display: none !important; }
+      .results-panel { position: static !important; }
+      .lg\:grid-cols-3 { grid-template-columns: 2fr 1fr !important; }
+      a { color: inherit !important; text-decoration: none !important; }
+    }
   </style>
   <script type="application/ld+json" data-seo>
 {
@@ -76,8 +91,8 @@
       "@type": "WebPage",
       "@id": "https://aitbm.org/calculator#webpage",
       "url": "https://aitbm.org/calculator",
-      "name": "AI Risk Score (ERS) Calculator — AITBM",
-      "description": "Free AI security risk calculator: evaluate controls and deployment context to see AITBM's Effective Risk Score change across IVP, ORP, and ACI.",
+      "name": "One-Shot AI Risk Score (ERS) Calculator — AITBM",
+      "description": "Free, no-login AITBM one-shot calculator with Quick and Detailed paths for an immediate, clearly qualified AI security risk estimate.",
       "isPartOf": {
         "@id": "https://aitbm.org/#website"
       },
@@ -112,7 +127,7 @@
     {
       "@type": "WebApplication",
       "@id": "https://aitbm.org/calculator#app",
-      "name": "AITBM ERS Risk Score Calculator",
+      "name": "AITBM One-Shot ERS Risk Score Calculator",
       "url": "https://aitbm.org/calculator",
       "applicationCategory": "SecurityApplication",
       "operatingSystem": "Web",
@@ -125,7 +140,7 @@
         "price": "0",
         "priceCurrency": "USD"
       },
-      "description": "Free AI security risk calculator: evaluate controls and deployment context to see AITBM's Effective Risk Score change across IVP, ORP, and ACI."
+      "description": "Free, no-login AITBM one-shot calculator with Quick and Detailed paths for an immediate, clearly qualified AI security risk estimate."
     }
   ]
 }
@@ -204,21 +219,21 @@
   <!-- Page header -->
   <section class="bg-navy text-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 py-10">
-      <h1 class="text-3xl font-bold">ERS Calculator</h1>
+      <h1 class="text-3xl font-bold">One-Shot ERS Calculator</h1>
       <p class="mt-2 max-w-2xl text-blue-100 text-sm">
-        Estimate your AI system's Effective Risk Score (<abbr title="Effective Risk Score — AITBM's final 0–10 composite" class="text-blue-100">ERS</abbr>) using either a plain-language <strong>Quick check (Yes/No)</strong> or the full <strong>Detailed calculator</strong> — switch between them with the toggle below.
+        Get an immediate, no-login Effective Risk Score (<abbr title="Effective Risk Score — AITBM's final 0–10 composite" class="text-blue-100">ERS</abbr>) estimate. Use <strong>Quick</strong> for guided Yes/No questions or <strong>Detailed</strong> when you can enter deployment context and verified AIDEFEND controls.
         <a href="glossary" class="underline underline-offset-2 hover:text-white">Unfamiliar with a term?</a>
       </p>
     </div>
   </section>
 
   <!-- Mode toggle -->
-  <section class="bg-white border-b border-gray-200">
+  <section class="bg-white border-b border-gray-200" data-no-print>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 py-3 flex items-center gap-2">
       <span class="text-sm font-semibold text-navy mr-1">Mode:</span>
-      <div class="inline-flex rounded-lg border border-gray-300 p-0.5 bg-gray-50">
-        <button id="mode-quick" type="button" class="rounded-md px-3 py-1.5 text-sm font-semibold bg-navy text-white">Quick check (Yes/No)</button>
-        <button id="mode-detailed" type="button" class="rounded-md px-3 py-1.5 text-sm font-semibold text-gray-600">Detailed calculator</button>
+      <div class="inline-flex rounded-lg border border-gray-300 p-0.5 bg-gray-50" role="tablist" aria-label="Calculator mode">
+        <button id="mode-quick" type="button" role="tab" aria-selected="true" aria-controls="quick-view" class="rounded-md px-3 py-1.5 text-sm font-semibold bg-navy text-white">Quick (about 3 minutes)</button>
+        <button id="mode-detailed" type="button" role="tab" aria-selected="false" aria-controls="detailed-view" class="rounded-md px-3 py-1.5 text-sm font-semibold text-gray-600">Detailed (about 10 minutes)</button>
       </div>
     </div>
   </section>
@@ -231,12 +246,19 @@
         <!-- Questions -->
         <div class="lg:col-span-2 space-y-6">
           <div class="rounded-xl border border-gray-200 p-5 bg-blue-50/40">
-            <p class="text-sm text-gray-700">Pick the scenario closest to your system, then answer <span class="font-semibold">Yes</span> or <span class="font-semibold">No</span> to each statement. The questions adapt to the scenario, and your risk score updates live on the right. Nothing is sent anywhere — this runs entirely in your browser.</p>
+            <p class="text-sm text-gray-700">Pick the scenario closest to your system, then answer each applicable question. Your score appears after the four deployment-context questions and becomes complete when every applicable question is answered. Unanswered or unverified safeguards receive no credit. Nothing is sent anywhere.</p>
           </div>
-          <div class="rounded-xl border border-gray-200 p-4 flex flex-wrap items-center gap-3">
-            <label for="survey-arch" class="text-sm font-semibold text-navy">Scenario:</label>
-            <select id="survey-arch" class="rounded border border-gray-300 px-3 py-1.5 text-sm bg-white"></select>
-            <span id="survey-arch-hint" class="text-xs text-muted">The 15 questions are tailored to the architecture you choose.</span>
+          <div class="rounded-xl border border-gray-200 p-4 space-y-3">
+            <div class="flex flex-wrap items-center gap-3">
+              <label for="survey-arch" class="text-sm font-semibold text-navy">Scenario:</label>
+              <select id="survey-arch" class="rounded border border-gray-300 px-3 py-1.5 text-sm bg-white"></select>
+              <span id="survey-arch-hint" class="text-xs text-muted">The 15 questions are tailored to the architecture you choose.</span>
+              <button id="q-reset" type="button" class="calculator-action ml-auto rounded border border-gray-300 px-3 py-1.5 text-xs font-semibold text-gray-600 hover:bg-gray-100">Start over</button>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs text-muted"><span id="q-progress-label">0 of 15 applicable questions answered</span><span id="q-progress-percent">0%</span></div>
+              <div class="mt-1 h-2 rounded-full bg-gray-200" role="progressbar" aria-label="Quick assessment progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="q-progress-bar" class="bar-fill h-2 rounded-full bg-navy" style="width:0%"></div></div>
+            </div>
           </div>
           <div id="survey-panel" class="space-y-6"></div>
         </div>
@@ -244,31 +266,33 @@
         <!-- Result -->
         <div class="lg:col-span-1">
           <div class="results-panel lg:sticky lg:top-24 space-y-5">
-            <div class="rounded-xl border-2 border-gray-200 p-6 text-center">
+            <div class="rounded-xl border-2 border-gray-200 p-6 text-center" aria-live="polite">
               <p class="text-xs font-semibold tracking-wider text-muted">EFFECTIVE RISK SCORE (ERS)</p>
+              <p id="q-result-status" class="status-pending mt-2 text-xs font-semibold">Answer the four context questions to calculate</p>
               <div class="mt-3 flex items-center justify-center">
                 <svg width="160" height="160" viewBox="0 0 160 160" class="transform -rotate-90">
                   <circle cx="80" cy="80" r="70" fill="none" stroke="#e5e7eb" stroke-width="10" />
                   <circle id="q-score-ring" cx="80" cy="80" r="70" fill="none" stroke="#1F3864" stroke-width="10" stroke-dasharray="440" stroke-dashoffset="44" stroke-linecap="round" class="score-ring" />
                 </svg>
                 <div class="absolute flex flex-col items-center">
-                  <span id="q-ers-value" class="text-5xl font-bold text-navy">5.8</span>
+                  <span id="q-ers-value" class="text-5xl font-bold text-navy">—</span>
                   <span class="text-xs text-muted">/10.0</span>
                 </div>
               </div>
-              <div id="q-severity-badge" class="severity-badge mt-4 inline-block rounded-full px-4 py-1.5 text-sm font-bold bg-yellow-500 text-gray-900">Moderate</div>
-              <p id="q-tier-label" class="mt-2 text-xs text-muted">Tier II — Standard assessment</p>
+              <div id="q-severity-badge" class="severity-badge mt-4 inline-block rounded-full px-4 py-1.5 text-sm font-bold bg-gray-200 text-gray-700">Not calculated</div>
+              <p id="q-tier-label" class="mt-2 text-xs text-muted">No result yet</p>
             </div>
 
             <div class="rounded-xl border border-gray-200 p-5">
               <h3 class="text-sm font-bold text-navy mb-2">What this means</h3>
-              <p id="q-interpretation" class="text-sm text-gray-700 leading-relaxed"></p>
+              <p id="q-interpretation" class="text-sm text-gray-700 leading-relaxed">Complete the four “About your system” questions first. The remaining answers refine the result and recommendations.</p>
             </div>
 
             <div class="rounded-xl border border-gray-200 p-5">
               <h3 class="text-sm font-bold text-navy mb-3">Top things to improve</h3>
-              <ol id="q-fixes" class="space-y-2 text-sm text-gray-700 list-decimal list-inside"></ol>
+              <ol id="q-fixes" class="hidden space-y-2 text-sm text-gray-700 list-decimal list-inside"></ol>
               <p id="q-fixes-empty" class="hidden text-sm text-muted">No high-impact gaps detected from your answers.</p>
+              <p id="q-fixes-pending" class="text-sm text-muted">Recommendations appear with your first result.</p>
             </div>
 
             <div class="rounded-xl border border-gray-200 p-5">
@@ -285,7 +309,14 @@
             </div>
 
             <div class="rounded-xl border border-gray-200 p-5">
-              <p class="text-xs text-muted">This is a simplified, educational estimate calibrated to the AITBM Framework Specification (§5) and the Finbot validation case. Use the full specification for assessments of record. <a href="framework" class="underline underline-offset-2 hover:text-navy">Learn more</a></p>
+              <div class="grid gap-2" data-no-print>
+                <button id="q-open-detailed" type="button" class="calculator-action rounded bg-navy px-4 py-2 text-sm font-semibold text-white hover:bg-navy-light">Continue in Detailed</button>
+                <div class="grid grid-cols-2 gap-2">
+                  <button id="q-download" type="button" disabled class="calculator-action rounded border border-gray-300 px-3 py-2 text-xs font-semibold text-gray-600 disabled:cursor-not-allowed disabled:opacity-40">Download JSON</button>
+                  <button id="q-print" type="button" disabled class="calculator-action rounded border border-gray-300 px-3 py-2 text-xs font-semibold text-gray-600 disabled:cursor-not-allowed disabled:opacity-40">Print / PDF</button>
+                </div>
+              </div>
+              <p class="mt-3 text-xs text-muted">This is a simplified, self-attested estimate calibrated to the AITBM Framework Specification (§5) and the Finbot validation case. It is not an assessment of record. <a href="framework" class="underline underline-offset-2 hover:text-navy">Learn more</a></p>
             </div>
           </div>
         </div>
@@ -304,18 +335,18 @@
         </div>
         <div class="flex gap-3">
           <div class="step-chip">2</div>
-          <div><h3 class="text-sm font-bold text-navy">Add verified control evidence</h3><p class="mt-0.5 text-xs text-muted">Toggle a technique only after all six AITBM operation gates pass: present, enabled, invoked, bypass-resistant, fail-safe, and effective in representative tests.</p></div>
+          <div><h3 class="text-sm font-bold text-navy">Add verified control evidence</h3><p class="mt-0.5 text-xs text-muted">Select only AIDEFEND techniques supported by current, in-scope evidence and the AITBM control-operation gates. Each tag shows the sub-metrics it improves.</p></div>
         </div>
         <div class="flex gap-3">
           <div class="step-chip">3</div>
-          <div><h3 class="text-sm font-bold text-navy">Read the result</h3><p class="mt-0.5 text-xs text-muted">Watch the ERS, severity, and layer breakdown update live on the right as risk drops.</p></div>
+          <div><h3 class="text-sm font-bold text-navy">Review and export</h3><p class="mt-0.5 text-xs text-muted">The result updates live. Review every input, then download the one-shot result or print it to PDF.</p></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Config bar -->
-  <section class="border-b border-gray-200 bg-gray-50">
+  <section class="border-b border-gray-200 bg-gray-50" data-no-print>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 py-4 flex flex-wrap items-center gap-4">
       <div class="flex items-center gap-2 text-sm">
         <label for="arch-select" class="font-semibold text-navy">Architecture:</label>
@@ -327,8 +358,8 @@
       </div>
       <div class="flex gap-2 ml-auto">
         <button id="btn-preset-finbot" class="rounded border border-navy px-3 py-1.5 text-xs font-semibold text-navy hover:bg-navy hover:text-white">Finbot preset</button>
-        <button id="btn-preset-baseline" class="rounded border border-gray-300 px-3 py-1.5 text-xs font-semibold text-gray-600 hover:bg-gray-200">Reset baseline</button>
-        <button id="btn-select-all" class="rounded border border-gray-300 px-3 py-1.5 text-xs font-semibold text-gray-600 hover:bg-gray-200">Mark all verified</button>
+        <button id="btn-preset-baseline" class="rounded border border-gray-300 px-3 py-1.5 text-xs font-semibold text-gray-600 hover:bg-gray-200">Start over</button>
+        <button id="btn-clear-controls" class="rounded border border-gray-300 px-3 py-1.5 text-xs font-semibold text-gray-600 hover:bg-gray-200">Clear verified controls</button>
       </div>
     </div>
   </section>
@@ -340,10 +371,18 @@
       <!-- Left: controls + ORP/ACI -->
       <div class="lg:col-span-2 space-y-6">
 
+        <div id="detailed-transfer-notice" class="handoff-notice hidden rounded-xl border p-4 text-sm" role="status">
+          Deployment context was transferred from Quick. Safeguard answers were not converted into verified controls; select controls below only when you have supporting evidence.
+        </div>
+
+        <div class="baseline-notice rounded-xl border p-4 text-sm">
+          <span class="font-semibold">One-shot estimate:</span> the default values are a starting baseline, not facts about your system. Review the architecture, all seven sliders, and every selected control before using the result.
+        </div>
+
         <!-- AIDEFEND Controls -->
         <div>
           <div class="flex items-center justify-between mb-4">
-            <h2 class="text-xl font-bold text-navy">Verified AIDEFEND Evidence</h2>
+            <div><h2 class="text-xl font-bold text-navy">Verified AIDEFEND Evidence</h2><p class="mt-1 text-xs text-muted">A control earns credit only when it is implemented, applicable, and supported by current evidence.</p></div>
             <span id="ctrl-count" class="text-sm text-muted">0 / 23 verified</span>
           </div>
           <div id="controls-panel" class="space-y-3"></div>
@@ -357,22 +396,22 @@
           </div>
           <div class="grid gap-5 sm:grid-cols-2">
             <div>
-              <div class="flex justify-between text-sm mb-1"><label class="font-semibold text-gray-700">Autonomy Level (Aa)</label><span id="orp-aa-val" class="text-navy font-bold">0.75</span></div>
+              <div class="flex justify-between text-sm mb-1"><label for="orp-aa" class="font-semibold text-gray-700">Autonomy Level (Aa)</label><span id="orp-aa-val" class="text-navy font-bold">0.75</span></div>
               <input type="range" id="orp-aa" min="0" max="100" value="75" class="range-input w-full" />
               <p class="text-xs text-muted mt-1">L0 manual &rarr; L5 full autonomy</p>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1"><label class="font-semibold text-gray-700">Attack Surface (As)</label><span id="orp-as-val" class="text-navy font-bold">0.85</span></div>
+              <div class="flex justify-between text-sm mb-1"><label for="orp-as" class="font-semibold text-gray-700">Attack Surface (As)</label><span id="orp-as-val" class="text-navy font-bold">0.85</span></div>
               <input type="range" id="orp-as" min="0" max="100" value="85" class="range-input w-full" />
               <p class="text-xs text-muted mt-1">Internal-only &rarr; internet-facing + APIs</p>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1"><label class="font-semibold text-gray-700">Cascade Potential (Cp)</label><span id="orp-cp-val" class="text-navy font-bold">0.80</span></div>
+              <div class="flex justify-between text-sm mb-1"><label for="orp-cp" class="font-semibold text-gray-700">Cascade Potential (Cp)</label><span id="orp-cp-val" class="text-navy font-bold">0.80</span></div>
               <input type="range" id="orp-cp" min="0" max="100" value="80" class="range-input w-full" />
               <p class="text-xs text-muted mt-1">Isolated impact &rarr; systemic financial/safety. Enter the GDCP graph-derived value (see the <a href="framework" class="underline underline-offset-2 hover:text-navy">framework page</a>) &mdash; the calculator does not compute the dependency graph.</p>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1"><label class="font-semibold text-gray-700">Remediation Feasibility (Rf)</label><span id="orp-rf-val" class="text-navy font-bold">0.85</span></div>
+              <div class="flex justify-between text-sm mb-1"><label for="orp-rf" class="font-semibold text-gray-700">Remediation Feasibility (Rf)</label><span id="orp-rf-val" class="text-navy font-bold">0.85</span></div>
               <input type="range" id="orp-rf" min="0" max="100" value="85" class="range-input w-full" />
               <p class="text-xs text-muted mt-1">Instant rollback &rarr; weeks to retrain</p>
             </div>
@@ -387,17 +426,17 @@
           </div>
           <div class="grid gap-5 sm:grid-cols-3">
             <div>
-              <div class="flex justify-between text-sm mb-1"><label class="font-semibold text-gray-700">Provenance (Pc)</label><span id="aci-pc-val" class="text-navy font-bold">0.20</span></div>
+              <div class="flex justify-between text-sm mb-1"><label for="aci-pc" class="font-semibold text-gray-700">Provenance (Pc)</label><span id="aci-pc-val" class="text-navy font-bold">0.20</span></div>
               <input type="range" id="aci-pc" min="0" max="100" value="20" class="range-input w-full" />
               <p class="text-xs text-muted mt-1">No AIBOM &rarr; full lineage</p>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1"><label class="font-semibold text-gray-700">Evaluation (Ec)</label><span id="aci-ec-val" class="text-navy font-bold">0.50</span></div>
+              <div class="flex justify-between text-sm mb-1"><label for="aci-ec" class="font-semibold text-gray-700">Evaluation (Ec)</label><span id="aci-ec-val" class="text-navy font-bold">0.50</span></div>
               <input type="range" id="aci-ec" min="0" max="100" value="50" class="range-input w-full" />
               <p class="text-xs text-muted mt-1">Minimal testing &rarr; comprehensive suite</p>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1"><label class="font-semibold text-gray-700">Freshness (Tf)</label><span id="aci-tf-val" class="text-navy font-bold">0.80</span></div>
+              <div class="flex justify-between text-sm mb-1"><label for="aci-tf" class="font-semibold text-gray-700">Freshness (Tf)</label><span id="aci-tf-val" class="text-navy font-bold">0.80</span></div>
               <input type="range" id="aci-tf" min="0" max="100" value="80" class="range-input w-full" />
               <p class="text-xs text-muted mt-1">Stale assessment &rarr; recently validated</p>
             </div>
@@ -411,8 +450,9 @@
         <div class="results-panel lg:sticky lg:top-24 space-y-5">
 
           <!-- ERS score -->
-          <div class="rounded-xl border-2 border-gray-200 p-6 text-center">
+          <div class="rounded-xl border-2 border-gray-200 p-6 text-center" aria-live="polite">
             <p class="text-xs font-semibold tracking-wider text-muted">EFFECTIVE RISK SCORE (ERS)</p>
+            <p id="d-result-status" class="status-pending mt-2 text-xs font-semibold">Baseline estimate — review all inputs</p>
             <div class="mt-3 flex items-center justify-center">
               <svg width="160" height="160" viewBox="0 0 160 160" class="transform -rotate-90">
                 <circle cx="80" cy="80" r="70" fill="none" stroke="#e5e7eb" stroke-width="10" />
@@ -485,6 +525,14 @@
             <p class="mt-2 text-xs text-muted">This calculator uses a simplified affine calibration of the normative ERS formula (Framework Specification &sect;5), anchored to the Finbot validation case (ERS = 10.0). Use the specification formula for assessments of record.</p>
           </div>
 
+          <div class="rounded-xl border border-gray-200 p-5" data-no-print>
+            <div class="grid grid-cols-2 gap-2">
+              <button id="d-download" type="button" class="calculator-action rounded border border-gray-300 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50">Download JSON</button>
+              <button id="d-print" type="button" class="calculator-action rounded border border-gray-300 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50">Print / PDF</button>
+            </div>
+            <p class="mt-3 text-xs text-muted">The export records your inputs, calculated layers, qualification, and timestamp. It remains a self-attested estimate, not an approved assessment.</p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -536,8 +584,8 @@
 
   <script src="assets/js/ers-engine.js?v=a08a4bf7"></script>
   <script src="assets/js/survey-data.js?v=fcdd3088"></script>
-  <script src="assets/js/survey.js?v=7c874d60"></script>
-  <script src="assets/js/site-search-index.js?v=30ef8f6d"></script>
+  <script src="assets/js/survey.js?v=1ecdf407"></script>
+  <script src="assets/js/site-search-index.js?v=50e6f117"></script>
   <script src="assets/js/site.js?v=f4bf5292"></script>
   <script>
   (function () {
@@ -549,6 +597,8 @@
     var CONTROLS = ENG.CONTROLS;
     var severity = ENG.severity;
     var severityColor = ENG.severityColor;
+    var detailedQualification = "baseline-estimate";
+    var lastDetailed = null;
 
     var WEIGHT_HINTS = {
       agentic:    "Agentic weights: Cn 45%, Ro 15%",
@@ -619,22 +669,25 @@
 
     /* ── Attach listeners ── */
     var checkboxes = document.querySelectorAll(".ctrl-check");
-    checkboxes.forEach(function (cb) { cb.addEventListener("change", recalc); });
+    checkboxes.forEach(function (cb) { cb.addEventListener("change", function () { markConfigured(); recalc(); }); });
 
     ["orp-aa", "orp-as", "orp-cp", "orp-rf", "aci-pc", "aci-ec", "aci-tf"].forEach(function (id) {
-      document.getElementById(id).addEventListener("input", recalc);
+      document.getElementById(id).addEventListener("input", function () { markConfigured(); recalc(); });
     });
-    document.getElementById("arch-select").addEventListener("change", recalc);
+    document.getElementById("arch-select").addEventListener("change", function () { markConfigured(); recalc(); });
 
     /* ── Presets ── */
     document.getElementById("btn-preset-baseline").addEventListener("click", function () {
       checkboxes.forEach(function (cb) { cb.checked = false; });
       setSliders({ aa: 75, as: 85, cp: 80, rf: 85, pc: 20, ec: 50, tf: 80 });
       document.getElementById("arch-select").value = "agentic";
+      document.getElementById("detailed-transfer-notice").classList.add("hidden");
+      setDetailedQualification("baseline-estimate", "Baseline estimate — review all inputs");
       recalc();
     });
-    document.getElementById("btn-select-all").addEventListener("click", function () {
-      checkboxes.forEach(function (cb) { cb.checked = true; });
+    document.getElementById("btn-clear-controls").addEventListener("click", function () {
+      checkboxes.forEach(function (cb) { cb.checked = false; });
+      markConfigured();
       recalc();
     });
     document.getElementById("btn-preset-finbot").addEventListener("click", function () {
@@ -642,6 +695,8 @@
       /* Calibrated sliders (not raw spec values): tracks spec §9 Finbot Table 9.3 — Ec 0.40→0.37 (ec 45→42), Tf 0.79→0.71 (BAW behavioral staleness floor, T_behavior binds; tf 70→63), Cp 0.85→1.00 (GDCP graph-derived: ungated sub-$50K path, LRR = 1.00, FIBR > 0.60). */
       setSliders({ aa: 80, as: 90, cp: 100, rf: 90, pc: 15, ec: 42, tf: 63 });
       document.getElementById("arch-select").value = "agentic";
+      document.getElementById("detailed-transfer-notice").classList.add("hidden");
+      setDetailedQualification("finbot-example", "Finbot worked-example inputs");
       recalc();
     });
 
@@ -654,6 +709,43 @@
       document.getElementById("aci-ec").value = v.ec;
       document.getElementById("aci-tf").value = v.tf;
     }
+
+    function setDetailedQualification(value, label) {
+      detailedQualification = value;
+      document.getElementById("d-result-status").textContent = label;
+      document.getElementById("d-result-status").className = (value === "configured-self-attested-estimate" ? "status-complete" : "status-pending") + " mt-2 text-xs font-semibold";
+    }
+
+    function markConfigured() {
+      setDetailedQualification("configured-self-attested-estimate", "Configured self-attested estimate");
+    }
+
+    window.addEventListener("aitbm:quick-to-detailed", function (event) {
+      var detail = event.detail || {};
+      checkboxes.forEach(function (cb) { cb.checked = false; });
+      if (detail.arch) document.getElementById("arch-select").value = detail.arch;
+      if (detail.hasContext && detail.orp && detail.aci) {
+        setSliders({
+          aa: Math.round(detail.orp.aa * 100),
+          as: Math.round(detail.orp.as * 100),
+          cp: Math.round(detail.orp.cp * 100),
+          rf: Math.round(detail.orp.rf * 100),
+          pc: Math.round(detail.aci.pc * 100),
+          ec: Math.round(detail.aci.ec * 100),
+          tf: Math.round(detail.aci.tf * 100)
+        });
+      }
+      var transferNotice = document.getElementById("detailed-transfer-notice");
+      transferNotice.textContent = detail.hasContext ?
+        "Deployment context was transferred from Quick. Safeguard answers were not converted into verified controls; select controls below only when you have supporting evidence." :
+        "Architecture was transferred from Quick. Review all seven detailed sliders and select controls only when you have supporting evidence.";
+      transferNotice.classList.remove("hidden");
+      setDetailedQualification(
+        detail.hasContext ? "transferred-self-attested-estimate" : "baseline-estimate",
+        detail.hasContext ? "Quick context transferred — verify detailed inputs" : "Architecture transferred — review all detailed inputs"
+      );
+      recalc();
+    });
 
     /* ── Core calculation ── */
     function recalc() {
@@ -685,6 +777,16 @@
       var crm = res.crm;
       var aci = res.aci;
       var ers = res.ers;
+      lastDetailed = {
+        qualification: detailedQualification,
+        inputs: {
+          arch: arch,
+          controlIds: enabledIds,
+          orp: { aa: aa, as: as_, cp: cp, rf: rf },
+          aci: { pc: pc, ec: ec, tf: tf }
+        },
+        outputs: res
+      };
 
       /* ── Update UI ── */
       /* Slider labels */
@@ -733,6 +835,31 @@
       /* Weight hint */
       document.getElementById("weight-hint").textContent = WEIGHT_HINTS[arch];
     }
+
+    function downloadDetailed() {
+      if (!lastDetailed) return;
+      var payload = {
+        schema: "aitbm-one-shot-result",
+        mode: "detailed",
+        qualification: lastDetailed.qualification,
+        generatedAt: new Date().toISOString(),
+        inputs: lastDetailed.inputs,
+        outputs: lastDetailed.outputs,
+        disclaimer: "Simplified one-shot estimate; not an assessment of record."
+      };
+      var blob = new Blob([JSON.stringify(payload, null, 2) + "\n"], { type: "application/json" });
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement("a");
+      link.href = url;
+      link.download = "aitbm-detailed-result.json";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    document.getElementById("d-download").addEventListener("click", downloadDetailed);
+    document.getElementById("d-print").addEventListener("click", function () { window.print(); });
 
     /* Initial calculation */
     recalc();

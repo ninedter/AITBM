@@ -1,6 +1,6 @@
 {
   "schema": "AITBM external-framework mapping index",
-  "verified": "2026-08-13",
+  "verified": "2026-08-23",
   "mappings": [
     {
       "slug": "owasp-llm",

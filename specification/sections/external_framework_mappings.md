@@ -170,7 +170,7 @@ Key findings:
 
 AIUC-1 (Artificial Intelligence Underwriting Company Standard 1). Maintained by Artificial Intelligence Underwriting Company (AIUC).
 
-AIUC-1 is a pass/fail, Lloyd's-insured certification standard for AI agents. Its July 15, 2026 edition has 51 active requirements (43 mandatory and 8 optional); current total control counts are not published. The official roster lists seven auditors, including provisional A-LIGN and Sensiba. AITBM adds a quantitative, multi-dimensional, confidence-graded system assessment that a binary certificate does not express.
+AIUC-1 is a pass/fail certification standard for AI agents. Its July 15, 2026 edition has 51 active requirements (43 mandatory and 8 optional); current total control counts are not published. The official roster lists seven auditors, six with provisional status. AIUC separately offers certification-linked insurance; its current public materials do not identify a general carrier, limit, or pricing formula. AITBM adds a quantitative, multi-dimensional, confidence-graded system assessment that a binary certificate does not express.
 
 *Table 112: AIUC-1 to AITBM Mapping*
 
@@ -185,7 +185,7 @@ AIUC-1 is a pass/fail, Lloyd's-insured certification standard for AI agents. Its
 
 Key findings:
 
-- AIUC-1's insurance mechanism and AITBM's residual-risk floor address different questions: risk transfer versus risk quantification. Their coexistence is conceptually consistent with non-zero residual risk, but it does not validate AITBM's selected alpha=0.15 value.
+- AIUC's associated insurance offering and AITBM's residual-risk floor address different questions: policy-specific risk transfer versus system-risk quantification. Their coexistence is conceptually consistent with non-zero residual risk, but it does not validate AITBM's selected alpha=0.15 value or establish that insurers use ERS.
 
 - The official AIVSS-AIUC-1 crosswalk maps only about two controls each to Agent Identity Impersonation (E016, F001) and Multi-Agent Orchestration (B006, E010); this coverage is thin and policy-and-disclosure oriented rather than a graduated cryptographic-identity rubric - the depth that AITBM's Cn-5 (Agent Identity Integrity) and agentic/MCP weighting add.
 
