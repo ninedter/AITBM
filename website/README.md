@@ -1,6 +1,6 @@
 # AITBM Website
 
-**Date:** 2026-08-16
+**Date:** 2026-08-31
 **Purpose:** Document the public static website for the AI Trust Benchmarking and Maturity Framework
 **Status:** Active; publication requires the project publishing procedure
 
@@ -27,7 +27,7 @@ and a not-found page. The sitemap therefore contains 126 indexable URLs.
 | `aidefend.html` | AIDEFEND integration and control-to-evidence guidance |
 | `mappings.html` | Discovery hub for external framework mappings |
 | `mappings/*.html` | 16 reviewed framework crosswalks with dedicated canonical URLs |
-| `calculator.html` | Quick and detailed scoring calculators |
+| `calculator.html` | Quick, AIDEFEND, and Full-pathway Framework Evaluation calculators; the framework mode resolves all 23 IVP criteria, four ORP dimensions, and ACI inputs through non-persistent controls before calculating normative ERS |
 | `glossary.html` | Framework terminology |
 | `resources.html` | Documents, references, and project resources |
 | `404.html` | Styled not-found response |
@@ -111,6 +111,8 @@ The scoring engines have separate tests:
 
 ```bash
 node tests/ers-engine.test.cjs
+node --test tests/normative-ers-engine.test.cjs
+python3 -m unittest tests.test_framework_calculator
 python3 tests/test_survey_engine.py
 python3 scripts/analysis/validate_use_cases.py
 ```

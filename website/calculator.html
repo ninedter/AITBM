@@ -13,14 +13,14 @@
 
     gtag('config', 'G-K7VDS29BQ0');
   </script>
-  <title>One-Shot AI Risk Score (ERS) Calculator — AITBM</title>
-  <meta name="description" content="Free, no-login AITBM one-shot calculator with Quick and Detailed paths for an immediate, clearly qualified AI security risk estimate." />
+  <title>AITBM ERS Calculators — Quick, AIDEFEND &amp; Framework Evaluation</title>
+  <meta name="description" content="Free AITBM calculators: a quick guided estimate, AIDEFEND control exploration, and a Full-pathway evaluation across all 23 criteria with normative ERS." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
   <meta property="og:url" content="https://aitbm.org/calculator" />
-  <meta property="og:title" content="ERS Calculator — AI Trust Benchmarking and Maturity Framework" />
-  <meta property="og:description" content="Record verified AIDEFEND evidence and see an educational AITBM risk estimate." />
+  <meta property="og:title" content="AITBM ERS Calculators — Quick, AIDEFEND &amp; Framework Evaluation" />
+  <meta property="og:description" content="Explore quick, AIDEFEND, and Full-pathway AITBM calculations, including the normative ERS across all 23 evaluation criteria." />
   <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -91,8 +91,8 @@
       "@type": "WebPage",
       "@id": "https://aitbm.org/calculator#webpage",
       "url": "https://aitbm.org/calculator",
-      "name": "One-Shot AI Risk Score (ERS) Calculator — AITBM",
-      "description": "Free, no-login AITBM one-shot calculator with Quick and Detailed paths for an immediate, clearly qualified AI security risk estimate.",
+      "name": "AITBM ERS Calculators — Quick, AIDEFEND and Framework Evaluation",
+      "description": "Free AITBM calculators with Quick, AIDEFEND, and Full-pathway Framework Evaluation modes, including normative ERS calculation across all 23 criteria.",
       "isPartOf": {
         "@id": "https://aitbm.org/#website"
       },
@@ -101,7 +101,7 @@
       },
       "primaryImageOfPage": "https://aitbm.org/assets/og-image.png",
       "inLanguage": "en",
-      "keywords": "AI risk calculator, AI security risk score, Effective Risk Score, AIDEFEND controls, agentic AI security",
+      "keywords": "AI risk calculator, AI security risk score, Effective Risk Score, AITBM evaluation criteria, AIDEFEND controls, agentic AI security",
       "breadcrumb": {
         "@id": "https://aitbm.org/calculator#breadcrumb"
       }
@@ -127,7 +127,7 @@
     {
       "@type": "WebApplication",
       "@id": "https://aitbm.org/calculator#app",
-      "name": "AITBM One-Shot ERS Risk Score Calculator",
+      "name": "AITBM ERS Evaluation Calculators",
       "url": "https://aitbm.org/calculator",
       "applicationCategory": "SecurityApplication",
       "operatingSystem": "Web",
@@ -140,7 +140,7 @@
         "price": "0",
         "priceCurrency": "USD"
       },
-      "description": "Free, no-login AITBM one-shot calculator with Quick and Detailed paths for an immediate, clearly qualified AI security risk estimate."
+      "description": "Free AITBM calculators with Quick, AIDEFEND, and Full-pathway Framework Evaluation modes, including normative ERS calculation across all 23 criteria."
     }
   ]
 }
@@ -219,9 +219,9 @@
   <!-- Page header -->
   <section class="bg-navy text-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 py-10">
-      <h1 class="text-3xl font-bold">One-Shot ERS Calculator</h1>
-      <p class="mt-2 max-w-2xl text-blue-100 text-sm">
-        Get an immediate, no-login Effective Risk Score (<abbr title="Effective Risk Score — AITBM's final 0–10 composite" class="text-blue-100">ERS</abbr>) estimate. Use <strong>Quick</strong> for guided Yes/No questions or <strong>Detailed</strong> when you can enter deployment context and verified AIDEFEND controls.
+      <h1 class="text-3xl font-bold">AITBM Evaluation Calculators</h1>
+      <p class="mt-2 max-w-3xl text-blue-100 text-sm">
+        Use <strong>Quick</strong> for a guided estimate, <strong>AIDEFEND</strong> to explore verified defensive-control evidence, or <strong>Framework Evaluation</strong> to work through all current AITBM criteria and calculate the normative Effective Risk Score (<abbr title="Effective Risk Score — AITBM's final 0–10 derived score" class="text-blue-100">ERS</abbr>).
         <a href="glossary" class="underline underline-offset-2 hover:text-white">Unfamiliar with a term?</a>
       </p>
     </div>
@@ -229,11 +229,12 @@
 
   <!-- Mode toggle -->
   <section class="bg-white border-b border-gray-200" data-no-print>
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-3 flex items-center gap-2">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-3 flex flex-wrap items-center gap-2">
       <span class="text-sm font-semibold text-navy mr-1">Mode:</span>
-      <div class="inline-flex rounded-lg border border-gray-300 p-0.5 bg-gray-50" role="tablist" aria-label="Calculator mode">
+      <div class="inline-flex flex-wrap rounded-lg border border-gray-300 p-0.5 bg-gray-50" role="tablist" aria-label="Calculator mode">
         <button id="mode-quick" type="button" role="tab" aria-selected="true" aria-controls="quick-view" class="rounded-md px-3 py-1.5 text-sm font-semibold bg-navy text-white">Quick (about 3 minutes)</button>
-        <button id="mode-detailed" type="button" role="tab" aria-selected="false" aria-controls="detailed-view" class="rounded-md px-3 py-1.5 text-sm font-semibold text-gray-600">Detailed (about 10 minutes)</button>
+        <button id="mode-detailed" type="button" role="tab" aria-selected="false" aria-controls="detailed-view" class="rounded-md px-3 py-1.5 text-sm font-semibold text-gray-600">AIDEFEND (about 10 minutes)</button>
+        <button id="mode-framework" type="button" role="tab" aria-selected="false" aria-controls="framework-view" class="rounded-md px-3 py-1.5 text-sm font-semibold text-gray-600">Framework Evaluation</button>
       </div>
     </div>
   </section>
@@ -540,6 +541,99 @@
 
   </div><!-- /#detailed-view -->
 
+  <div id="framework-view" class="hidden">
+    <section class="border-b border-gray-200 bg-blue-50/40">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+        <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <h2 class="text-2xl font-bold text-navy">Full AITBM Framework Evaluation</h2>
+              <span class="rounded bg-navy px-2 py-1 text-xs font-semibold text-white">Normative calculation</span>
+            </div>
+            <p class="mt-2 max-w-3xl text-sm leading-relaxed text-gray-700">Calculate ERS across all 23 IVP sub-metrics, the four ORP dimensions, and the complete ACI freshness model. Scores start unresolved and the ERS remains withheld until every applicable slider and assurance input is complete.</p>
+          </div>
+          <div class="rounded-lg border border-blue-200 bg-white p-4 text-xs leading-relaxed text-gray-700">
+            <p class="font-semibold text-navy">Calculation only</p>
+            <p class="mt-1">Nothing is uploaded, stored, or saved. Select the rubric criteria that your organization can support; keep evidence and approvals in your own assessment system.</p>
+          </div>
+        </div>
+        <div class="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900"><strong>Pathway boundary:</strong> this calculator implements the Full pathway because the canonical normative engine requires all five IVP axes and all four ORP dimensions. It does not invent missing-dimension composition rules for Standard or Lite assessments.</div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+      <div class="grid gap-8 lg:grid-cols-3">
+        <div class="space-y-7 lg:col-span-2">
+          <section class="rounded-xl border border-gray-200 p-6" aria-labelledby="fw-setup-title">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div><h2 id="fw-setup-title" class="text-xl font-bold text-navy">1. Calculation profile</h2><p class="mt-1 text-sm text-muted">Choose the architecture and deployment impact that control the normative weights and thresholds.</p></div>
+              <span class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700">Full pathway</span>
+            </div>
+            <div class="mt-5 grid gap-4 sm:grid-cols-2">
+              <div><label for="fw-architecture" class="text-sm font-semibold text-gray-700">Architecture class</label><select id="fw-architecture" class="mt-1 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm"><option value="">Select using the decision tree</option><option>Multi-Agent / MCP System</option><option>Agentic / MCP System</option><option>Tool-Calling LLM / Connected GenAI</option><option>RAG / Retrieval-Augmented System</option><option>Standalone LLM / Generative AI</option><option>Traditional ML / Classifier</option></select></div>
+              <div><label for="fw-tier" class="text-sm font-semibold text-gray-700">Deployment tier</label><select id="fw-tier" class="mt-1 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm"><option value="">Select deployment impact</option><option value="1">Tier 1 — Critical</option><option value="2">Tier 2 — Consumer</option><option value="3">Tier 3 — Internal</option><option value="4">Tier 4 — Research</option></select></div>
+              <div class="sm:col-span-2 rounded-lg border border-blue-100 bg-blue-50/50 p-3 text-xs leading-relaxed text-gray-700"><strong class="text-navy">Before calculating:</strong> define the evaluated model, retrieval stores, agents, tools, identities, data flows, and downstream systems in your organization’s own assessment record. Select the first architecture decision-tree question answered YES.</div>
+            </div>
+          </section>
+
+          <section class="rounded-xl border border-gray-200 p-6" aria-labelledby="fw-ivp-title">
+            <div class="flex flex-wrap items-start justify-between gap-4">
+              <div><h2 id="fw-ivp-title" class="text-xl font-bold text-navy">2. IVP — Intrinsic Vulnerability Profile</h2><p class="mt-1 text-sm text-muted">Apply the fixed five-anchor rubric to admissible test evidence. Lower defensible evidence governs.</p></div>
+              <span id="fw-ivp-count" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">0 / 23 resolved</span>
+            </div>
+            <div class="mt-4"><div class="flex justify-between text-xs text-muted"><span id="fw-progress-label">0 of 5 calculation gates complete</span><span id="fw-progress-percent">0%</span></div><div class="mt-1 h-2 rounded-full bg-gray-200" role="progressbar" aria-label="Framework evaluation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="fw-progress-bar" class="h-2 rounded-full bg-navy" style="width:0%"></div></div></div>
+            <div id="fw-load-error" class="mt-4 hidden rounded border border-red-200 bg-red-50 p-3 text-sm text-red-800" role="alert"></div>
+            <div id="fw-ivp-panel" class="mt-5 space-y-4"><p class="text-sm text-muted">Loading the canonical 23 sub-metric rubrics…</p></div>
+          </section>
+
+          <section class="rounded-xl border border-gray-200 p-6" aria-labelledby="fw-orp-title">
+            <div class="flex flex-wrap items-start justify-between gap-4"><div><h2 id="fw-orp-title" class="text-xl font-bold text-navy">3. ORP — Operational Risk Posture</h2><p class="mt-1 text-sm text-muted">Higher scores mean greater deployment risk. Unknown evidence defaults to 1.00; Cp must come from a verified System Dependency Graph.</p></div><span id="fw-orp-count" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">0 / 4 resolved</span></div>
+            <div id="fw-orp-panel" class="mt-5 space-y-4"></div>
+          </section>
+
+          <section class="rounded-xl border border-gray-200 p-6" aria-labelledby="fw-aci-title">
+            <div><h2 id="fw-aci-title" class="text-xl font-bold text-navy">4. ACI — Assurance Confidence Index</h2><p class="mt-1 text-sm text-muted">Evaluation Coverage is derived from resolved applicable sub-metrics × independence × environment fidelity. Temporal Freshness uses the most restrictive decay term or cap.</p></div>
+            <div class="mt-5 grid gap-4 sm:grid-cols-2">
+              <div class="sm:col-span-2"><div class="flex items-center justify-between gap-3"><label for="fw-pc" class="text-sm font-semibold text-gray-700">Provenance Completeness (Pc)</label><span id="fw-pc-value" class="rounded bg-gray-100 px-2 py-1 text-xs font-bold text-gray-600">Unresolved</span></div><input id="fw-pc" type="range" min="0" max="1" step="0.25" value="0.5" data-resolved="false" aria-valuetext="Unresolved; move the slider to select a score" class="fw-static-range mt-3 w-full accent-navy opacity-40"/><div class="mt-1 flex justify-between text-[10px] text-muted"><span>0.00</span><span>0.25</span><span>0.50</span><span>0.75</span><span>1.00</span></div><div class="mt-2 flex justify-end"><button id="fw-pc-clear" type="button" class="hidden text-xs font-semibold text-navy underline">Clear score</button></div><details class="mt-3 rounded border border-gray-200 bg-gray-50 p-3"><summary class="cursor-pointer text-xs font-semibold text-navy">How to choose the Pc score</summary><div class="mt-3 space-y-2 text-xs text-gray-700"><p><strong>0.00</strong> — No verifiable provenance record.</p><p><strong>0.25</strong> — Minimal vendor and owner record.</p><p><strong>0.50</strong> — Partial model, data, prompt, and tool lineage.</p><p><strong>0.75</strong> — Substantially complete, internally reviewed deployment record.</p><p><strong>1.00</strong> — Complete, tamper-evident, independently reviewed lineage bound to the deployment.</p></div></details></div>
+              <div><label for="fw-independence" class="text-sm font-semibold text-gray-700">Assessment independence</label><select id="fw-independence" class="mt-1 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm"><option value="">Select evidence level</option><option value="0.6">0.60 — Self-assessed</option><option value="0.8">0.80 — Internal-independent</option><option value="1">1.00 — External-independent</option></select></div>
+              <div><label for="fw-fidelity" class="text-sm font-semibold text-gray-700">Environment fidelity</label><select id="fw-fidelity" class="mt-1 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm"><option value="">Select test environment</option><option value="0.7">0.70 — Development/test</option><option value="0.85">0.85 — Staging</option><option value="0.95">0.95 — Verified production-equivalent</option><option value="1">1.00 — Live production</option></select></div>
+              <div><label for="fw-signoff-date" class="text-sm font-semibold text-gray-700">Assessment sign-off / revalidation date</label><input id="fw-signoff-date" type="date" class="mt-1 w-full rounded border border-gray-300 px-3 py-2 text-sm" /></div>
+              <div id="fw-containment-date-wrap" class="hidden"><label for="fw-containment-date" class="text-sm font-semibold text-gray-700">Boundary re-attestation date</label><input id="fw-containment-date" type="date" class="mt-1 w-full rounded border border-gray-300 px-3 py-2 text-sm" /><p class="mt-1 text-xs text-muted">Required for tool/credential-mutable architectures.</p></div>
+              <div><label for="fw-tdi-band" class="text-sm font-semibold text-gray-700">Time Drift Index band</label><select id="fw-tdi-band" class="mt-1 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm"><option value="">Select from measured TDI</option><option value="stable">Stable (&lt;0.10) — M<sub>TDI</sub> 0.60</option><option value="normal">Normal (0.10–0.25) — 1.00</option><option value="elevated">Elevated (0.25–0.45) — 1.50</option><option value="significant">Significant (0.45–0.70) — 3.00</option><option value="critical">Critical (≥0.70) — Tf 0.10</option></select></div>
+              <div><label for="fw-threat" class="text-sm font-semibold text-gray-700">Threat state</label><select id="fw-threat" class="mt-1 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm"><option value="">Select threat state</option><option value="normal">Normal relevance — M<sub>threat</sub> 1.00</option><option value="high">High relevance — 1.50</option><option value="exploited">Known exploited relevance — 1.50 and Tf ≤ 0.50</option><option value="active">Active compromise — 1.50 and Tf ≤ 0.10</option></select></div>
+              <fieldset class="sm:col-span-2 rounded-lg border border-gray-200 bg-gray-50 p-4"><legend class="px-1 text-sm font-semibold text-gray-700">Behavioral Attestation Window applicability</legend><p class="mt-1 text-xs text-muted">Check every item that applies. If any answer is YES, behavioral evidence and its faster freshness window are required.</p><div class="mt-3 grid gap-2 sm:grid-cols-2"><label class="flex items-start gap-2 text-xs text-gray-700"><input id="fw-baw-memory" type="checkbox" class="fw-baw-item mt-0.5" value="memory"/><span>Model-writable cross-session memory</span></label><label class="flex items-start gap-2 text-xs text-gray-700"><input id="fw-baw-agents" type="checkbox" class="fw-baw-item mt-0.5" value="agents"/><span>More than one agent exchanges runtime messages</span></label><label class="flex items-start gap-2 text-xs text-gray-700"><input id="fw-baw-self-modifying" type="checkbox" class="fw-baw-item mt-0.5" value="self-modifying"/><span>Self-modifying prompts or configuration</span></label><label class="flex items-start gap-2 text-xs text-gray-700"><input id="fw-baw-feedback" type="checkbox" class="fw-baw-item mt-0.5" value="feedback"/><span>Closed model-to-environment feedback loop</span></label></div><label class="mt-3 flex items-start gap-2 border-t border-gray-200 pt-3 text-xs font-semibold text-gray-700"><input id="fw-baw-confirmed" type="checkbox" class="mt-0.5"/><span>I reviewed all four items; every unchecked item is NO for the assessed configuration.</span></label><div id="fw-behavior-date-wrap" class="mt-3 hidden"><label for="fw-behavior-date" class="text-sm font-semibold text-gray-700">Last passing BAB or full-assessment date</label><input id="fw-behavior-date" type="date" class="mt-1 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm" /></div></fieldset>
+              <div><label for="fw-cap-event" class="text-sm font-semibold text-gray-700">Event cap (C<sub>event</sub>)</label><select id="fw-cap-event" class="mt-1 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm"><option value="">Select and confirm event state</option><option value="1">1.00 — No triggering event</option><option value="0.85">0.85 — Minor system event</option><option value="0.65">0.65 — Moderate system/behavioral event</option><option value="0.35">0.35 — Major system/behavioral event</option><option value="0.1">0.10 — Active compromise/no targeted evidence</option></select></div>
+              <div><label for="fw-cap-monitor" class="text-sm font-semibold text-gray-700">Monitoring cap (C<sub>monitor</sub>)</label><select id="fw-cap-monitor" class="mt-1 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm"><option value="">Select and confirm monitoring state</option><option value="1">1.00 — ≥99% coverage, no gap</option><option value="0.95">0.95 — 95–99%</option><option value="0.85">0.85 — 80–95%</option><option value="0.7">0.70 — &lt;80%</option><option value="none">No usable telemetry — tier cap applies</option></select><p class="mt-1 text-xs text-muted">No usable telemetry caps Tf at 0.60 for Tiers 1–2 and 0.70 for Tiers 3–4. Stable TDI is eligible only with 1.00 continuous monitoring.</p></div>
+              <div id="fw-cap-behavior-wrap" class="hidden"><label for="fw-cap-behavior" class="text-sm font-semibold text-gray-700">Behavior monitoring cap (C<sub>behavior</sub>)</label><select id="fw-cap-behavior" class="mt-1 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm"><option value="">Select measured band</option><option value="1">Band 4 — 1.00</option><option value="0.9">Band 3 — 0.90</option><option value="0.75">Band 2 — 0.75</option><option value="0.6">Band 1 — 0.60</option><option value="0.4">Band 0/no evidence — 0.40</option></select></div>
+              <div><label for="fw-cap-evidence" class="text-sm font-semibold text-gray-700">Evidence cap (C<sub>evidence</sub>)</label><select id="fw-cap-evidence" class="mt-1 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm"><option value="">Select and confirm evidence state</option><option value="1">1.00 — No unresolved drift/cold-start cap</option><option value="0.85">0.85 — Elevated unresolved drift</option><option value="0.65">0.65 — Significant drift/cold start</option><option value="0.1">0.10 — Critical drift</option></select></div>
+              <div class="sm:col-span-2 rounded-lg border border-blue-100 bg-blue-50/50 p-3 text-xs leading-relaxed text-gray-700">Use assessment dates, measured drift, coverage, monitoring, event, and behavioral-attestation results maintained in your organization’s evidence system. This page calculates from those selections but does not collect the evidence itself.</div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="lg:col-span-1">
+          <div class="results-panel space-y-5 lg:sticky lg:top-24">
+            <section class="rounded-xl border-2 border-gray-200 p-6 text-center" aria-live="polite">
+              <p class="text-xs font-semibold tracking-wider text-muted">NORMATIVE EFFECTIVE RISK SCORE</p>
+              <p id="fw-result-status" class="status-pending mt-2 text-xs font-semibold">Incomplete — resolve every required input</p>
+              <div class="mt-3 flex items-center justify-center"><svg width="160" height="160" viewBox="0 0 160 160" class="-rotate-90 transform"><circle cx="80" cy="80" r="70" fill="none" stroke="#e5e7eb" stroke-width="10"/><circle id="fw-score-ring" cx="80" cy="80" r="70" fill="none" stroke="#1F3864" stroke-width="10" stroke-dasharray="440" stroke-dashoffset="440" stroke-linecap="round" class="score-ring"/></svg><div class="absolute flex flex-col items-center"><span id="fw-ers" class="text-5xl font-bold text-navy">—</span><span class="text-xs text-muted">/10.0</span></div></div>
+              <div id="fw-severity" class="mt-4 inline-block rounded-full bg-gray-200 px-4 py-1.5 text-sm font-bold text-gray-700">Not calculated</div>
+              <p id="fw-qualification" class="mt-3 text-xs leading-relaxed text-muted">Planning calculation only; evidence validation and approval occur outside this page.</p>
+            </section>
+            <section class="rounded-xl border border-gray-200 p-5"><h3 class="text-sm font-bold text-navy">Completion gate</h3><ul id="fw-readiness" class="mt-3 space-y-2 text-xs text-gray-700"></ul></section>
+            <section id="fw-results-breakdown" class="hidden space-y-5">
+              <div class="rounded-xl border border-gray-200 p-5"><h3 class="text-sm font-bold text-navy">Three-layer result</h3><dl class="mt-3 space-y-2 text-sm"><div class="flex justify-between"><dt>IVP composite</dt><dd id="fw-ivp-result" class="font-bold text-navy">—</dd></div><div class="flex justify-between"><dt>ORP weighted</dt><dd id="fw-worp-result" class="font-bold text-navy">—</dd></div><div class="flex justify-between"><dt>CRM / elevated</dt><dd id="fw-crm-result" class="font-bold text-navy">—</dd></div><div class="flex justify-between"><dt>ORP effective</dt><dd id="fw-orp-effective" class="font-bold text-navy">—</dd></div><div class="flex justify-between"><dt>Pc / Ec / Tf</dt><dd id="fw-aci-vector" class="font-bold text-navy">—</dd></div><div class="flex justify-between"><dt>ACI / status</dt><dd id="fw-aci-result" class="font-bold text-navy">—</dd></div></dl><p id="fw-alert" class="mt-3 hidden rounded border border-red-200 bg-red-50 p-2 text-xs font-semibold text-red-800"></p></div>
+              <div class="rounded-xl border border-gray-200 p-5"><h3 class="text-sm font-bold text-navy">IVP vector and MVT</h3><div id="fw-axis-results" class="mt-3 space-y-2"></div><p id="fw-mvt-result" class="mt-3 text-xs font-semibold"></p></div>
+              <div class="rounded-xl border border-gray-200 p-5"><h3 class="text-sm font-bold text-navy">Freshness terms</h3><dl id="fw-tf-results" class="mt-3 space-y-2 text-xs"></dl></div>
+              <div class="rounded-xl border border-gray-200 p-5"><h3 class="text-sm font-bold text-navy">Normative composition</h3><p class="mt-2 overflow-x-auto rounded bg-gray-50 p-3 font-mono text-xs">ERS = min(10, ORP<sub>effective</sub> × [0.15 + 0.85 × (1 − IVP)] × (1 / ACI) × 10)</p><p id="fw-formula-values" class="mt-2 text-xs leading-relaxed text-muted"></p></div>
+            </section>
+            <section class="rounded-xl border border-gray-200 p-5"><button id="fw-reset" type="button" class="w-full rounded border border-gray-300 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50">Reset calculation</button><p class="mt-3 text-xs text-muted">Selections exist only in this browser tab and are discarded when the page is closed or reset.</p></section>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div><!-- /#framework-view -->
+
   <!-- Footer -->
   <footer class="border-t border-gray-200 bg-gray-50">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
@@ -585,7 +679,9 @@
   <script src="assets/js/ers-engine.js?v=a08a4bf7"></script>
   <script src="assets/js/survey-data.js?v=fcdd3088"></script>
   <script src="assets/js/survey.js?v=1ecdf407"></script>
-  <script src="assets/js/site-search-index.js?v=50e6f117"></script>
+  <script src="assets/js/normative-ers-engine.js?v=695ab867"></script>
+  <script src="assets/js/framework-calculator.js?v=a5a2da92"></script>
+  <script src="assets/js/site-search-index.js?v=b8c6ee19"></script>
   <script src="assets/js/site.js?v=f4bf5292"></script>
   <script>
   (function () {
