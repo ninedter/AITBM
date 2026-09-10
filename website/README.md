@@ -51,7 +51,45 @@ permanent redirect from `www.aitbm.org` to the apex while preserving path and qu
 Cloudflare Pages `_redirects` cannot perform hostname redirects, so this is a dashboard
 or API setting and is verified after every public release.
 
-The included nginx and Docker files provide a production-like local preview with clean URL handling and the project security headers. The public deployment configuration is managed by the `publish-AITBM` procedure rather than this source directory alone.
+### Required zone-level Redirect Rule (Cloudflare, not in this repo)
+
+Search Console reports `https://www.aitbm.org/` as a redirect but
+`https://www.aitbm.org/calculator` as *indexed*, which means the existing redirect
+matches the root path only. Every path must redirect, or `www` keeps winning
+duplicate-selection against the apex canonical.
+
+Cloudflare dashboard → the `aitbm.org` zone → **Rules → Redirect Rules → Create rule**:
+
+| Field | Value |
+|---|---|
+| Rule name | `www and http to apex https` |
+| When incoming requests match | Custom filter expression |
+| Expression | `http.host eq "www.aitbm.org" or ssl ne true` |
+| URL redirect type | Dynamic |
+| Expression (target URL) | `concat("https://aitbm.org", http.request.uri.path)` |
+| Status code | `301` |
+| Preserve query string | enabled |
+
+`ssl ne true` covers `http://aitbm.org/*` and `http://www.aitbm.org/*` in the same
+rule. Keep `www.aitbm.org` attached to the Pages project — the rule runs ahead of
+Pages, and detaching the hostname would make the redirect unreachable.
+
+Verify after every public release (all four must return `301` with an apex
+`https://aitbm.org/...` `location`, not `200`):
+
+```bash
+for u in https://www.aitbm.org/ https://www.aitbm.org/calculator \
+         http://aitbm.org/ http://www.aitbm.org/mappings; do
+  curl -sSI "$u" | awk 'NR==1 || /^[Ll]ocation:/'
+done
+curl -sSI https://aitbm.org/calculator | head -1   # must be 200
+```
+
+The included nginx and Docker files apply the same host and scheme canonicalisation
+(`nginx.conf`) so the container deployment and the local preview behave like production;
+they serve extensionless URLs and the project security headers. The public deployment
+configuration is managed by the `publish-AITBM` procedure rather than this source
+directory alone.
 
 ## Local Preview
 
