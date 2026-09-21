@@ -209,6 +209,12 @@ All of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the 
 
 ---
 
+## Contributors
+
+- [Edward L.](https://www.linkedin.com/in/go-edwardlee/) -- Founder & CEO, AIDEFEND Labs
+
+---
+
 ## License
 
 This is a volunteer/community project. Target community: OWASP practitioners, AI security assessors, ML engineers, and compliance teams.

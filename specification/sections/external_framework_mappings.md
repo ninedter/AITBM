@@ -21,10 +21,10 @@ The sixteen mapped frameworks span threat taxonomies, control verification stand
 | EU AI Act | Tier 2 | Regulatory framework (binding law) | Pr-1, Pr-3, Pr-4, Fa-3, Tr-4, Tr-3 |
 | CSA AI Security | Tier 2 | Cloud AI security framework (threat model + controls) | Ro-1, Ro-4, Pr-1, Pr-2, Cn-1, Ro-2 |
 | NIST Cyber AI Profile (IR 8596) | Tier 3 | Cyber-AI CSF profile | Ro-1, Ro-4, Cn-1, Cn-2, Cn-4, Pr-1 |
-| AIMA | Tier 3 | Maturity model | Fa-1, Fa-2, Fa-3, Fa-4, Tr-1, Tr-3 |
-| COMPASS | Tier 3 | Security maturity / scoring (threat prioritization workflow) | Ro-1, Cn-1, Pr-1, Pr-4, Cn-2, Cn-5 |
+| AIMA | Tier 3 | Maturity model | Conditional evidence only; no automatic pathway, tier, ACI, CRM, ERS, or score transfer. |
+| COMPASS | Tier 3 | Security maturity / scoring (threat prioritization workflow) | Conditional planning evidence only; Likelihood, Impact, OODA, maturity, and priority have no numeric writeback. |
 | MITRE D3FEND | Tier 3 | Defensive countermeasure ontology | Tr-4, Cn-1, Ro-1, Cn-3, Cn-5, Cn-4 |
-| CVSS | Tier 3 | Vulnerability scoring (prior art) | Pr-1, Pr-2, Pr-4, Cn-3, Ro-3, Ro-4 |
+| CVSS | Tier 3 | Vulnerability scoring (prior art) | Conceptual metric context only; no CVSS metric or group transfers automatically to AITBM. |
 | GPAI Code of Practice | Tier 4 | GPAI governance | Tr-4, Tr-1, Tr-3, Pr-1, Pr-3, Ro-1 |
 
 ## Tier 1: Critical Frameworks
@@ -93,7 +93,7 @@ Key findings:
 
 - Cascade-and-autonomy threats (T5, T13, T14) map to ORP Aa (Autonomy Amplification) and Cp (Cascade Potential). In the dated identity/RCE scenarios, all four ORP dimensions were elevated, producing CRM 1.60 under the step table.
 
-- The companion OWASP Top 10 for Agentic Applications 2026 (ASI01-ASI10, released December 9, 2025) is crosswalked to T1-T17. Version 1.1 gives ASI04 a direct T17 supply-chain counterpart and extends ASI07 with T16 protocol abuse; ASI03, ASI07, and ASI10 remain Cn-5-led in the AITBM mapping.
+- The companion OWASP Top 10 for Agentic Applications 2026 (ASI01-ASI10, released December 9, 2025) is crosswalked to T1-T17. ASI05 is exactly named Unexpected Code Execution (RCE). Version 1.1 gives ASI04 a direct T17 supply-chain counterpart and extends ASI07 with T16 protocol abuse; ASI03, ASI07, and ASI10 remain Cn-5-led in the AITBM mapping.
 
 ### OWASP AISVS
 
@@ -133,14 +133,14 @@ Key findings:
 
 MITRE ATLAS (Adversarial Threat Landscape for Artificial Intelligence Systems). Maintained by MITRE Corporation.
 
-MITRE ATLAS is an ATT&CK-style knowledge base of adversarial AI tactics, techniques, and real-world case studies (released data version 2026.07: 16 tactics, 101 top-level techniques plus 77 sub-techniques, 37 mitigations, and 68 case studies). This AITBM-authored crosswalk maps ATLAS elements to IVP/ORP/ACI evidence for system-specific assessment.
+MITRE ATLAS is an ATT&CK-style knowledge base of adversarial AI tactics, techniques, and real-world case studies (released data version 2026.09: 16 tactics, 120 top-level techniques plus 88 sub-techniques, 40 mitigations, and 73 case studies). Relative to v2026.08, the released source adds 6 top-level and 5 sub-techniques (11 total), 1 mitigation, and 1 case; all remain evidence-planning context and create no automatic AITBM score route. The crosswalk maps ATLAS elements to IVP/ORP/ACI evidence for system-specific assessment.
 
 *Table 111: MITRE ATLAS to AITBM Mapping*
 
 | Released ATLAS Tactic | Primary AITBM Targets | Evidence Use / Boundary |
 | --- | --- | --- |
 | AML.TA0000 AI Model Access | Pr-1, Pr-2, Tr-4; As | Model-access paths select leakage, inference, lineage, and exposure tests |
-| AML.TA0001 AI Attack Staging | Ro-1, Ro-4, Tr-4 | Selects adversarial-input, poisoning, and provenance tests |
+| AML.TA0001 AI Attack Adaptation | Ro-1, Ro-4, Tr-4 | Selects adversarial-input, poisoning, and provenance tests; widened at v2026.08 to autonomous attack-path adaptation and orchestration, so coverage must include adaptive bypass rate |
 | AML.TA0002 Reconnaissance | Tr-3, Tr-4; As | Informs probing visibility and discoverable-origin evidence |
 | AML.TA0003 Resource Development | Ro-4, Tr-4; ACI Pc | Identifies malicious artifacts and provenance paths to test |
 | AML.TA0004 Initial Access | Cn-1, Cn-5, Pr-2; As | Selects trust-boundary, identity, and exposed-entry tests |
@@ -158,7 +158,7 @@ MITRE ATLAS is an ATT&CK-style knowledge base of adversarial AI tactics, techniq
 
 Key findings:
 
-- Technique examples select applicable AITBM tests. The detailed mapping does not claim an exhaustive 178-technique crosswalk, and no technique has a generic ERS or fixed remediation delta.
+- Technique examples select applicable AITBM tests. The detailed mapping does not claim an exhaustive 208-technique crosswalk, and no technique has a generic ERS or fixed remediation delta.
 
 - ATLAS threat and case evidence may support test selection and applicability. It does not determine AITBM anchors, weights, calibration, or ERS.
 
@@ -170,24 +170,24 @@ Key findings:
 
 AIUC-1 (Artificial Intelligence Underwriting Company Standard 1). Maintained by Artificial Intelligence Underwriting Company (AIUC).
 
-AIUC-1 is a pass/fail certification standard for AI agents. Its July 15, 2026 edition has 51 active requirements (43 mandatory and 8 optional); current total control counts are not published. The official roster lists seven auditors, six with provisional status. AIUC separately offers certification-linked insurance; its current public materials do not identify a general carrier, limit, or pricing formula. AITBM adds a quantitative, multi-dimensional, confidence-graded system assessment that a binary certificate does not express.
+AIUC-1 is a pass/fail certification standard for AI agents. Its current 51 active requirements comprise 43 Mandatory and 8 Supplemental requirements; E007 and E014 are retired historical source units. Current total control counts are not published. AIUC certification and insurance are context only and never convert directly to an AITBM score, tier, pathway, ACI, CRM, or ERS value.
 
 *Table 112: AIUC-1 to AITBM Mapping*
 
 | AIUC-1 Domain | Primary AITBM Sub-Metrics | Evidence Use / Boundary |
 | --- | --- | --- |
-| A - Data & Privacy (8 requirements) | Pr-1, Pr-2, Pr-3, Pr-4 | Verified privacy and data-handling evidence may support the listed rubrics; the domain does not assign a tier |
+| A - Data & Privacy (8 requirements) | Pr-1, Pr-2, Pr-3, Pr-4 | Verified evidence may support a rubric only when applicable; certification does not assign a tier or score. |
 | B - Security (10 requirements) | Ro-1, Cn-1, Cn-2 | Current adversarial-test evidence may support Ro-1 when coverage and effectiveness requirements are met |
 | C - Safety (12 requirements) | Cn-3, Fa-1, Fa-2, Fa-3, Fa-4, Ro-3 | Measured safety and bias-test evidence may support applicable Cn, Fa, and Ro rubrics |
 | D - Reliability (4 requirements) | Ro-3, Cn-1, Cn-2 | Reliability testing may support Ro-3 and may refresh covered evidence when AITBM admissibility rules are met |
-| E - Accountability (15 requirements) | Tr-1, Tr-3, Tr-4 | Current accountability and logging evidence may support Tr-3/Tr-4 and inform Rf |
+| E - Accountability (15 requirements) | Tr-1, Tr-3, Tr-4 | Current accountability/logging evidence may be assessed against the applicable rubric; E007/E014 are retired and certification does not set Rf. |
 | F - Society (2 requirements) | Cn-2, Cn-3, Tr-4 | Misuse scenarios provide assessment context; they do not assign a tier or ACI cap automatically |
 
 Key findings:
 
 - AIUC's associated insurance offering and AITBM's residual-risk floor address different questions: policy-specific risk transfer versus system-risk quantification. Their coexistence is conceptually consistent with non-zero residual risk, but it does not validate AITBM's selected alpha=0.15 value or establish that insurers use ERS.
 
-- The official AIVSS-AIUC-1 crosswalk maps only about two controls each to Agent Identity Impersonation (E016, F001) and Multi-Agent Orchestration (B006, E010); this coverage is thin and policy-and-disclosure oriented rather than a graduated cryptographic-identity rubric - the depth that AITBM's Cn-5 (Agent Identity Integrity) and agentic/MCP weighting add.
+- Historical AIUC crosswalk identifiers require quarterly verification: E007 and E014 are retired, and certification or an identifier alone never establishes Cn-5 or another AITBM input. AITBM's Cn-5 requires deployment-specific identity evidence and its own rubric/test-method criteria.
 
 - AIUC-1's quarterly third-party re-testing cadence can provide refresh evidence for covered sub-metrics. Tf resets only when the report satisfies the applicable AITBM evidence-quality, coverage, and event rules.
 
@@ -197,14 +197,14 @@ Key findings:
 
 AIDEFEND (AI Defense Framework). Maintained by Edward Lee (independent, community-driven; CC BY 4.0).
 
-AIDEFEND data version 2026.08.05 is an independent open-source catalogue of 92 technique families and 300 actionable controls across seven D3FEND-inspired tactics. Its current relationship layer uses OWASP LLM Top 10 2026 and ATLAS v2026.07. AITBM maps verified implementation and effectiveness evidence to applicable rubrics; catalog or relationship presence has no inherent anchor or fixed ERS reduction.
+AIDEFEND data version 2026.09.20 (schema 2.3) is an independent open-source catalogue of 93 technique families, 272 sub-techniques, 365 records, and 307 actionable controls across seven D3FEND-inspired tactics. Six core controls changed upstream and relationship arrays changed without a count change; the AITBM mapping remains 171 placements across 78 technique families. Its current relationship layer uses OWASP LLM Top 10 2026 and ATLAS v2026.09. Catalog or relationship presence has no inherent anchor or fixed ERS reduction.
 
 *Table 113: AIDEFEND to AITBM Mapping*
 
 | AIDEFEND Tactic | Primary AITBM Sub-Metrics | Evidence Use / Boundary |
 | --- | --- | --- |
 | Model (10 techniques) | Tr-4, Ro-4, Cn-1, Cn-2, Cn-5, Cn-6, Cn-7 | Asset, authority, provenance, identity, and action-governance evidence; no fixed score |
-| Harden (37 techniques) | Ro-1, Cn-1, Cn-2, Cn-3, Cn-5, Cn-6, Cn-7 | Measured hardening and permission-enforcement evidence; no fixed anchor or ERS change |
+| Harden (38 techniques) | Ro-1, Cn-1, Cn-2, Cn-3, Cn-5, Cn-6, Cn-7 | Measured hardening evidence only; no fixed anchor or ERS change. 2026.09.20 relationship changes create no placement. |
 | Detect (18 techniques) | Ro-1, Ro-3, Cn-1, Cn-2, Cn-5, Tr-3, Cn-6, Cn-7 | Behavior, detection, audit, and monitoring evidence subject to coverage and health rules |
 | Isolate (8 techniques) | Cn-1, Cn-4, Cn-7; As; SDG | Isolation informs boundaries, exposure, and graph reachability; Cp remains graph-derived |
 | Deceive (7 techniques) | Tr-3; ACI monitoring context | Decoy telemetry may support detection and audit evidence; no fixed ERS change |
@@ -219,9 +219,9 @@ Key findings:
 
 - Drift/anomaly-detection and Restore evidence may support ACI monitoring/freshness and ORP Remediation Feasibility when the deployment satisfies the applicable coverage, health, reset, and effectiveness rules.
 
-- AIDEFEND has weak Fairness coverage (only approximately two of the catalog's technique families address bias or fairness), a flagged gap. The AITBM mapping is revalidated against data version 2026.08.05 (92 technique families / 265 sub-techniques / 357 records / 300 actionable controls, schema 2.3). Relative to 2026.08.03, core control semantics and catalog counts are unchanged; external framework relationships and tool metadata changed. The prior Harden-tail renumbering and the 2026.07.28 coverage extension remain in force.
+- AIDEFEND has weak Fairness coverage (only approximately two of the catalog's technique families address bias or fairness), a flagged gap. The AITBM mapping is revalidated against data version 2026.09.20 (93 technique families / 272 sub-techniques / 365 records / 307 actionable controls, schema 2.3). The pinned delta records six changed core controls (AID-D-011.001, AID-H-002.002, AID-H-005.003, AID-H-006.003, AID-H-007.005, and AID-H-021.004) and 348 records with a changed relationship array; no new placement or automatic score credit follows. The synchronized AIDEFEND in Action corpus is 88 analyses (67 scored and 21 unscored).
 
-- The mapping now spans 168 sub-metric placements using 77 distinct technique families (average 7.3 per sub-metric), covering all 23 AITBM sub-metrics. Cn-6 retains nine families; Cn-7 uses 16 parent-family routing placements and 29 exact actionable selectors. Parent-family or control presence supplies candidate evidence only; observed implementation and effectiveness must satisfy the exact AITBM rubric and BEC, RBVR, LTFR, and GDSR test methods.
+- The mapping now spans 171 sub-metric placements using 78 distinct technique families (average 7.4 per sub-metric), covering all 23 AITBM sub-metrics. The one new top-level family, AID-H-038 (Inference Serving Runtime Surface and Privileged Capability Governance), is placed on Ro-4, Cn-1, and Cn-2; Cn-7 and Pr-2 were evaluated for it and declined, because it produces none of the BEC, RBVR, LTFR, or GDSR measurements Cn-7 is scored from and its own scope boundary excludes caller identity and network reachability. Cn-6 retains nine families; Cn-7 retains 16 parent-family routing placements and 29 exact actionable selectors. Parent-family or control presence supplies candidate evidence only; observed implementation and effectiveness must satisfy the exact AITBM rubric and BEC, RBVR, LTFR, and GDSR test methods.
 
 ## Tier 2: High-Priority Frameworks
 
@@ -381,28 +381,28 @@ Key findings:
 
 OWASP AI Maturity Assessment (AIMA). Maintained by OWASP Foundation.
 
-OWASP AIMA grades an organization's AI-program maturity qualitatively across eight lifecycle domains, while AITBM operationalizes that maturity quantitatively - turning the maturity grade into Tiered Assessment Pathway eligibility and, through the ACI components (Pc/Ec/Tf), into the confidence and freshness of a per-system ERS.
+OWASP AIMA grades organizational AI-program maturity across eight lifecycle domains, while AITBM assesses a specific deployed system from measured IVP, ORP, and ACI evidence. AIMA maturity, domains, and practices may identify evidence to inspect but never assign an AITBM pathway, tier, IVP/ORP value, ACI component, CRM, ERS, severity, or confidence band.
 
 *Table 119: AIMA to AITBM Mapping*
 
 | AIMA Domain | Primary AITBM Sub-Metrics | Illustrative Scenario Effect / Notes |
 | --- | --- | --- |
-| Responsible AI | Fa-1, Fa-2, Fa-3, Fa-4, Tr-1 | Fairness/explainability artifacts; raises Ec |
-| Governance | Tr-3, Tr-4, ORP Rf | Pc and deployment-tier assignment |
-| Data Management | Pr-1, Pr-3, Ro-4 | Data lineage is the canonical Pc source |
-| Privacy | Pr-1, Pr-2, Pr-3, Pr-4 | Privacy-by-design; Ec and tier assignment |
-| Design | Cn-1, Cn-2, Ro-2 | Threat modeling sets containment boundaries |
-| Implementation | Cn-3, Cn-4, Cn-5 | Secure build provenance; agentic identity binding |
-| Verification | Ro-1, Ro-3, Cn-3, Cn-5 | Red-team/eval reports; strongest Ec + Tf driver |
-| Operations | Tr-3, ORP Rf, ORP As | Monitoring keeps Tf fresh; incident-response improves Rf |
+| Responsible AI | Tr-1 (conditional) | Only worksheet cells 3.1.2.L2.A and 3.1.2.L3.A may support deployment-specific explanation evidence. |
+| Governance | Context only | No automatic provenance, tier, pathway, or Rf value. |
+| Data Management | Ro-4; Pr-3 (conditional) | Only retained worksheet cells with assessed-system evidence; no automatic Pc. |
+| Privacy | Pr-3 (conditional) | Only retained minimization cells with deployment evidence; no ACI or tier conversion. |
+| Design | Context only | Threat modeling identifies scope; it assigns no containment score. |
+| Implementation | Context only | Program maturity does not prove deployment controls or identity evidence. |
+| Verification | ACI Ec; ACI T_calendar (conditional) | Only cells 3.7.1.L2.B and 3.7.2.L3.A with admissible assessed evidence. |
+| Operations | ORP Rf; ACI C_monitor (conditional) | Only cells 3.8.1.L2.A and 3.8.2.L3.A with independently demonstrated conditions. |
 
 Key findings:
 
-- AIMA maturity maps to measurement confidence, not intrinsic risk: Level 1 to Lite/ACI ~0.30-0.55, Level 2 to Standard/ACI ~0.55-0.75, Level 3 to Full/ACI ~0.78-0.95 - a high AIMA score never zeros out a system's residual risk (alpha=0.15 floor stands), it makes the ERS complete, comparable, and current.
+- AIMA maturity is context only. The retained conditional routes are limited to deployment-specific evidence for Tr-1 (two cells), Ro-4 (one), Pr-3 (four), ACI Ec, ACI T_calendar, ORP Rf, and ACI C_monitor; every route remains subject to the exact AITBM rubric, evidence, and admissibility requirements.
 
-- The two-org worked example isolates the mechanism: an identical RAG system scores ERS ~4.9 at a Level-1 org versus ~4.0 at a Level-3 org purely through the ACI term (0.45 vs 0.90), since IVP and CRM are held identical - Level-1's score is fragile and decays fast while Level-3's is tight and self-refreshing.
+- No AIMA maturity-to-ACI or maturity-to-ERS worked conversion is valid. An AIMA practice may be complete while an assessed deployment still lacks the measured result, coverage, effectiveness, architecture applicability, or freshness required by AITBM.
 
-- AIMA's SAMM-derived streams map cleanly to ACI: 'Measure & Improve' is a direct Tf/Ec generator and 'Create & Promote' feeds Pc - this is the CVE/CVSS-vs-drift problem ACI exists to solve, since a one-time deep assessment from an immature org goes stale.
+- AIMA verification, monitoring, documentation, and governance records may guide evidence collection. They are not direct ACI generators: only the resulting deployment-specific evidence can be evaluated under AITBM's coverage, provenance, calendar, monitoring, and event rules.
 
 - The frameworks operate mainly at different levels: AIMA grades organizational maturity and process, while AITBM measures an assessed deployment. AIMA v1.0 and Toolkit 1.0.1 use eight lifecycle domains and do not provide an ERS, IVP/ORP/ACI profile, or a dedicated Cn-5 agent-identity metric.
 
@@ -410,37 +410,37 @@ Key findings:
 
 OWASP Threat Defense COMPASS. Maintained by OWASP GenAI Security Project.
 
-COMPASS supplies a fast OODA-loop threat-prioritization workflow that ranks known AI threats by Impact x Likelihood. AITBM can complement that workflow with multi-dimensional, confidence-graded system assessment; a COMPASS threat-row priority is not numerically interchangeable with an ERS.
+COMPASS supplies an OODA-loop threat-prioritization workflow that ranks known AI threats by Impact x Likelihood. AITBM complements it with deployment-specific, measured system assessment. COMPASS threat classes, Likelihood, Impact, OODA workflow, maturity wording, and register priority are planning context only and never convert directly to an AITBM input or ERS.
 
 *Table 120: COMPASS to AITBM Mapping*
 
 | COMPASS Dimension / Threat Class | Primary AITBM Targets | Evidence Use / Boundary |
 | --- | --- | --- |
-| Impact (1-5) dimension | IVP sub-metric severity + ORP Cp | Input construct; AITBM separates intrinsic evidence from graph-derived cascade context |
-| Likelihood (1-5) dimension | IVP sub-metric exposure + ORP As | Input construct; maps to exploitability and deployment exposure |
+| Impact (1-5) dimension | Context only | Does not set IVP, Cp, or any numeric AITBM input. |
+| Likelihood (1-5) dimension | Context only | Does not set As or any numeric AITBM input. |
 | Prompt injection (LLM01:2026) | Ro-1, Cn-1 | Evidence input; adversarial ASR and unauthorized-action tests; no generic ERS |
 | Sensitive disclosure (LLM02:2026) | Pr-1, Pr-4 | Evidence input; membership-inference and leakage tests; no generic ERS |
 | Excessive agency (LLM03:2026) | Cn-1, Cn-2, Cn-5, Cn-6, Cn-7 | Evidence input; authority, identity, reversibility, and budget tests; no generic ERS |
 | Misinformation (LLM07:2026) | Ro-3, Tr-2 | Evidence input; factuality, hallucination-rate, and calibration tests; no generic ERS |
 | Bias / discriminatory output | Fa-1, Fa-3, Fa-4 | Evidence input; demographic-parity and counterfactual-fairness tests; no generic ERS |
 | Agent impersonation / multi-agent trust | Cn-5 | Evidence input; ISSR and MTTQ tests; no generic ERS |
-| OODA cadence (continuous re-run) | ACI Tf (Temporal Freshness) | A qualifying re-run may refresh covered evidence; AITBM admissibility and event rules govern |
+| OODA cadence (continuous re-run) | Process context only | Does not establish Pc, Ec, Tf, pathway, or ERS. |
 
 Key findings:
 
-- COMPASS scores individual threat rows on two assessor-estimated 1-5 scales (Impact and Likelihood). In a combined workflow, AITBM supplements that priority cell with a system-level 0-10 ERS and preserved per-axis profile; it does not replace COMPASS's threat-prioritization output.
+- COMPASS scores individual threat rows on assessor-estimated 1-5 Impact and Likelihood scales. In a combined workflow, those values select questions and evidence to collect; AITBM independently derives its system profile and ERS from its own measured evidence and formulas.
 
-- A COMPASS Impact x Likelihood cell entangles failure severity, deployment context, and confidence; AITBM separates these into IVP, ORP/CRM, and ACI so remediation can target the weakest axis (e.g. Cn-1, Cn-5) rather than an opaque '4x4'.
+- No COMPASS field writes back to AITBM. Likelihood and Impact do not set As or graph-derived Cp; OODA records do not set Pc, Ec, Tf, pathway, or ERS; a threat row does not establish a measured resistance outcome.
 
-- There is no priority-to-ERS numeric crosswalk: COMPASS ranks one threat, ERS scores a whole system. The integration is evidence flow (score each row's sub-metric -> compose to ERS) and writing ERS-derived severity back into COMPASS.
+- There is no priority-to-ERS numeric crosswalk: COMPASS ranks one threat and ERS scores a whole system. The integration is planning context followed by independent AITBM evidence collection; neither score is written back into the other.
 
-- Agentic worked example: two interchangeable-looking 4x4 rows resolve to ERS 7.3 (High), with the Cn axis (0.34, driven by Cn-1 and Cn-5) dominating under Agentic 45% Containment weighting; remediation drops it to ~3.9.
+- COMPASS legacy labels translate by semantic identity and remain conditional evidence only: LLM01 Prompt Injection→LLM01:2026 (Ro-1, Cn-1, Cn-3; As); LLM02 Sensitive Information Disclosure→LLM02:2026 (Pr-1, Pr-2, Pr-4); LLM03 Supply Chain→LLM04:2026 (Tr-4, Ro-4; Pc); LLM04 Data and Model Poisoning→LLM05:2026 (Ro-4, Ro-2, Tr-3, Tr-4); LLM05 Improper Output Handling→LLM10:2026 (Cn-3, Cn-1, Cn-6, Ro-1); LLM06 Excessive Agency→LLM03:2026 (Cn-1, Cn-2, Cn-5, Cn-6, Cn-7; Aa); LLM07 System Prompt Leakage→LLM08:2026 Hidden Context Exposure (Pr-1, Cn-1, Cn-3, Tr-3); LLM08 Vector and Embedding Weaknesses→LLM09:2026 (Pr-2, Ro-4, Pr-3, Pr-4, Cn-1); LLM09 Misinformation→LLM07:2026 (Ro-3, Tr-1, Tr-2); LLM10 Unbounded Consumption→LLM06:2026 (Cn-7; As, Aa). Each route requires the stated measured evidence; T8 may provide partial Tr-3 evidence only when audit completeness is demonstrated.
 
 ### MITRE D3FEND
 
 MITRE D3FEND (Detection, Denial, and Disruption Framework Empowering Network Defense). Maintained by The MITRE Corporation.
 
-D3FEND supplies a formal seven-tactic ontology of general defensive countermeasures. The current ontology is 1.5.0, dated July 31, 2026, while this disclosed crosswalk remains intentionally pinned to the D3FEND 1.0 baseline. AITBM applies one evidence layer to D3FEND and the AI-specialized AIDEFEND catalogue and counts overlapping evidence only once.
+D3FEND supplies a formal seven-tactic ontology of general defensive countermeasures. The current ontology is 1.6.0, dated August 31, 2026, and its technique catalogue is unchanged at 271 rows across the same seven tactics, while this disclosed crosswalk remains intentionally pinned to the D3FEND 1.0 baseline. AITBM applies one evidence layer to D3FEND and the AI-specialized AIDEFEND catalogue and counts overlapping evidence only once.
 
 *Table 121: MITRE D3FEND to AITBM Mapping*
 
@@ -469,27 +469,27 @@ Key findings:
 
 Common Vulnerability Scoring System (CVSS). Maintained by FIRST.org (CVSS Special Interest Group).
 
-CVSS is the established 0-10 severity standard for discrete software vulnerabilities. AITBM is a complementary AI-system assessment framework, not a successor to CVSS; it adds fairness, transparency, AI-privacy, poisoning, drift, agent-identity, deployment-context, and evidence-confidence dimensions for risks that are not represented by a CVSS Base score.
+CVSS is the established 0-10 severity standard for discrete software vulnerabilities. AITBM is a complementary AI-system assessment framework, not a successor to CVSS. CVSS metrics provide vulnerability context only unless separate assessed-system evidence satisfies an AITBM rubric; no CVSS metric or group transfers automatically to an AITBM input.
 
 *Table 122: CVSS to AITBM Mapping*
 
 | CVSS Metric Group | Primary AITBM Sub-Metrics | Illustrative Scenario Effect / Notes |
 | --- | --- | --- |
-| Vulnerable System Confidentiality (VC/C) | Pr-1, Pr-2, Pr-4, Cn-3 | Loose; CVSS has no membership-inference / extraction concept |
-| Vulnerable System Integrity (VI/I) | Ro-3, Ro-4, Cn-1 | Loose; no probabilistic / poisoning corruption in CVSS |
-| Subsequent System / Scope (SC-SI-SA / S) | ORP Cp, Cn-5 | Partial; ORP Cp models multi-agent blast radius, not a binary flag |
-| Attack Vector / Complexity / Requirements (AV/AC/AT) | ORP As, Ro-1 | Partial; AI exploitability is empirical (attack-success-rate) |
-| Exploit Maturity (E, Threat group) | ACI Tf | Inverted; CVSS ages the exploit, ACI ages the defender's evidence |
-| Environmental group (Security Reqs, Modified Base) | ORP CRM + architecture-specific IVP weights | Closest analogue; applies deployment-specific modifications |
-| Supplemental: Safety / Automatable / Recovery (v4.0) | ORP Aa, Cp, Rf | Gestural and non-scoring in CVSS; first-class scoring inputs in AITBM |
+| Vulnerable System Confidentiality (VC/C) | Pr-1, Pr-2, Pr-4, Cn-3 | Conditional conceptual route only; separate assessed-system evidence is required. |
+| Vulnerable System Integrity (VI/I) | Ro-3, Ro-4, Cn-1 | Conditional conceptual route only; separate assessed-system evidence is required. |
+| Subsequent System / Scope (SC-SI-SA / S) | ORP Cp, Cn-5 | Conceptual context only; it never sets graph-derived Cp or Cn-5. |
+| Attack Vector / Complexity / Requirements (AV/AC/AT) | ORP As, Ro-1 | Conditional conceptual route only; AI exploitability remains empirical. |
+| Exploit Maturity (E, Threat group) | Context only | Not ACI Tf; E tracks exploit state, whereas ACI evaluates assessment evidence freshness. |
+| Environmental group (Security Reqs, Modified Base) | Context only | Never populates CRM, architecture weights, or another AITBM input. |
+| Supplemental: Safety / Automatable / Recovery (v4.0) | Context only | Never populates Aa, Cp, Rf, Cn-6, CRM, or another AITBM input. |
 | (No CVSS metric) | Fa-1..Fa-4 (Fairness), Tr-1..Tr-4 (Transparency) | No correspondence; CVSS has no bias or explainability axis |
 | (No CVSS metric) | Ro-2 (Distribution Shift), ACI Pc/Ec | No correspondence; CVSS cannot represent drift or assessment provenance |
 
 Key findings:
 
-- Scope distinction: a CVSS Base score describes a vulnerability's intrinsic severity and is stable unless the vulnerability facts change; CVSS v4.0 Threat and Environmental metrics can reflect exploitation state and deployment context. CVSS does not provide AITBM's fairness, transparency, AI-specific privacy, probabilistic poisoning, distribution-shift, agent-identity, multi-agent graph, or evidence-freshness dimensions, and its standardized formula is not architecture-weighted for AI systems.
+- Scope distinction: CVSS Base, Threat, Environmental, and Supplemental values describe a vulnerability and its context. Vulnerable-system Availability (VA) is context only, not Cn-4; Exploit Maturity (E) is context only, not ACI Tf; Environmental aggregates and Supplemental values never populate CRM, weights, Aa, Cp, Rf, Cn-6, or another AITBM input. AITBM requires independently assessed system evidence.
 
-- Founding motivation: a CVSS Base score is intentionally stable, while Threat and Environmental metrics may change with exploitation and deployment context. AITBM's ACI answers a different question by decaying confidence when the evidence supporting an AI-system assessment becomes stale.
+- Founding motivation: CVSS Threat and Environmental metrics may change with exploitation and deployment context. AITBM's ACI separately decays confidence when evidence supporting an assessed AI system becomes stale; the differing mechanisms are complementary, not a metric conversion.
 
 - Complementary, not competitive: CVSS remains correct for conventional CVEs inside an AI stack (an unpatched serving-stack CVE even feeds AITBM's ORP As); AITBM scores the AI-specific risk layer that has no CVE, patch, or static severity. Never average a CVSS Base score with an ERS.
 

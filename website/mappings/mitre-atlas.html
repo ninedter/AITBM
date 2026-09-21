@@ -182,14 +182,14 @@
         <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">MITRE ATLAS</li>
       </ol>
     </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">TIER 1 · ADVERSARIAL THREAT KNOWLEDGE BASE</p><h1 class="mt-2 text-4xl font-bold">MITRE ATLAS to AITBM Mapping</h1><p class="mt-4 max-w-3xl text-blue-100">Uses released ATLAS tactics and techniques to select AITBM tests while keeping system scoring deployment-specific.</p><div class="mt-5 flex flex-wrap gap-2"><a href="/submetrics/pr-1-training-data-leakage-risk" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-1</a><a href="/submetrics/pr-2-inference-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-2</a><a href="/submetrics/tr-4-model-lineage-disclosure" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-4</a><a href="/submetrics/ro-1-adversarial-input-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-1</a><a href="/submetrics/ro-4-poisoning-attack-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-4</a><a href="/submetrics/tr-3-audit-trail-completeness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-3</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5</a></div></div></section>
-<div class="mx-auto max-w-6xl px-4 sm:px-6 py-14"><div class="mb-7 rounded-xl border border-gray-200 bg-gray-50 p-5"><h2 class="font-bold text-navy">How to use this crosswalk</h2><p class="mt-2 text-sm text-muted">External requirements, controls, threats, and practices identify evidence to collect or tests to run. Only measured evidence from the assessed deployment determines AITBM rubric placements, IVP, ORP, ACI, MVT findings, and ERS.</p><p class="mt-2 text-xs text-gray-500">Mapping content last verified 2026-08-23. No endorsement by the external framework owner is implied.</p></div>
+<div class="mx-auto max-w-6xl px-4 sm:px-6 py-14"><div class="mb-7 rounded-xl border border-gray-200 bg-gray-50 p-5"><h2 class="font-bold text-navy">How to use this crosswalk</h2><p class="mt-2 text-sm text-muted">External requirements, controls, threats, and practices identify evidence to collect or tests to run. Only measured evidence from the assessed deployment determines AITBM rubric placements, IVP, ORP, ACI, MVT findings, and ERS.</p><p class="mt-2 text-xs text-gray-500">Changed-framework carriers reconciled 2026-09-21; stable-framework currency basis carried forward from 2026-09-09. No endorsement by the external framework owner is implied.</p></div>
 <div class="mapping-detail"><article id="mitre-atlas" class="min-w-0 rounded-xl border border-gray-200 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-xl font-bold text-navy">MITRE ATLAS</h3>
           <span class="rounded-full min-w-0 max-w-full break-words px-3 py-1 text-center text-xs font-semibold text-gray-600 bg-gray-100">Adversarial threat landscape</span>
         </div>
-        <p class="mt-1 text-xs text-muted">MITRE ATLAS data v2026.07 &middot; MITRE Corporation</p>
-        <p class="mt-3 text-sm text-muted">The current released basis contains 16 tactics, 101 top-level techniques plus 77 sub-techniques, 37 mitigations, and 68 case studies. This AITBM-authored crosswalk routes ATLAS elements to assessment evidence; no tactic, technique, mitigation, or case study has a deployment-independent ERS.</p>
+        <p class="mt-1 text-xs text-muted">MITRE ATLAS data v2026.09 &middot; MITRE Corporation</p>
+        <p class="mt-3 text-sm text-muted">The current released basis contains 16 tactics, 120 top-level techniques plus 88 sub-techniques (208 total), 40 mitigations, and 73 case studies. This AITBM-authored crosswalk routes ATLAS elements to assessment evidence; no tactic, technique, mitigation, or case study has a deployment-independent ERS.</p>
         <div class="mt-5 overflow-x-auto">
           <table class="spec-table w-full border-collapse text-sm">
             <thead><tr>
@@ -199,7 +199,7 @@
             </tr></thead>
             <tbody class="text-muted">
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0000 AI Model Access</span></td><td class="px-4 py-3">Pr-1, Pr-2, Tr-4; As</td><td class="px-4 py-3">Model-access paths select leakage, inference, lineage, and exposure tests</td></tr>
-              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0001 AI Attack Staging</span></td><td class="px-4 py-3">Ro-1, Ro-4, Tr-4</td><td class="px-4 py-3">Selects adversarial-input, poisoning, and provenance tests</td></tr>
+              <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0001 AI Attack Adaptation</span></td><td class="px-4 py-3">Ro-1, Ro-4, Tr-4</td><td class="px-4 py-3">Selects adversarial-input, poisoning, provenance, and adaptive red-team tests (renamed from AI Attack Staging at v2026.08)</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0002 Reconnaissance</span></td><td class="px-4 py-3">Tr-3, Tr-4; As</td><td class="px-4 py-3">Informs probing visibility and discoverable-origin evidence</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0003 Resource Development</span></td><td class="px-4 py-3">Ro-4, Tr-4; ACI Pc</td><td class="px-4 py-3">Identifies malicious artifacts and provenance paths to test</td></tr>
               <tr><td class="px-4 py-3"><span class="font-semibold text-gray-800">AML.TA0004 Initial Access</span></td><td class="px-4 py-3">Cn-1, Cn-5, Pr-2; As</td><td class="px-4 py-3">Selects trust-boundary, identity, and exposed-entry tests</td></tr>
@@ -219,12 +219,12 @@
         </div>
         <h4 class="mt-5 text-sm font-semibold text-navy">Key findings</h4>
         <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-muted">
-          <li>All 16 tactics in released data v2026.07 are accounted for; technique examples in the detailed mapping are illustrative, not a complete 178-technique crosswalk.</li>
+          <li>All 16 tactics in released data v2026.09 are accounted for; technique examples in the detailed mapping are illustrative, not a complete 208-technique crosswalk. Relative to v2026.08, the release adds six top-level techniques, five sub-techniques, one mitigation, and one case study; no AITBM relationship or score route changed.</li>
           <li>ATLAS provides threat and case-study context. AITBM scores only measured deployment evidence under its own rubrics and current Section 5 formula.</li>
-          <li>The released v2026.07 universe contains 101 top-level techniques, 77 sub-techniques, 37 mitigations, and 68 case studies.</li>
+          <li>The released v2026.09 universe contains 120 top-level techniques, 88 sub-techniques, 40 mitigations, and 73 case studies. AML.TA0001 was renamed from AI Attack Staging to AI Attack Adaptation in the prior v2026.08 release.</li>
           <li>AITBM does not create ATLAS-style identifiers for emerging MCP or agentic patterns and does not imply MITRE endorsement.</li>
         </ul>
-        <p class="mt-4 text-sm"><a href="https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.07" class="font-semibold text-navy hover:underline underline-offset-4">MITRE ATLAS v2026.07 reference &rarr;</a></p>
+        <p class="mt-4 text-sm"><a href="https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.09" class="font-semibold text-navy hover:underline underline-offset-4">MITRE ATLAS v2026.09 reference &rarr;</a></p>
       </article></div>
 <nav class="mt-10 flex flex-wrap gap-4 border-t border-gray-200 pt-6 text-sm"><a href="/mappings" class="font-semibold text-navy hover:underline">← All framework mappings</a><a href="/submetrics" class="font-semibold text-navy hover:underline">Browse AITBM rubrics →</a></nav></div></main>
 <footer class="border-t border-gray-200 bg-gray-50">
@@ -234,5 +234,5 @@
     <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
   </div>
   <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. External frameworks guide evidence collection; they do not set AITBM scores.</div></div>
-</footer>  <script src="/assets/js/site-search-index.js?v=b8c6ee19"></script>
+</footer>  <script src="/assets/js/site-search-index.js?v=19dfc7de"></script>
   <script src="/assets/js/site.js?v=f4bf5292"></script></body></html>

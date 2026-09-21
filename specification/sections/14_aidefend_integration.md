@@ -4,7 +4,7 @@ Mapping AIDEFEND Defensive Techniques to AITBM Sub-Metrics
 
 ## Overview
 
-AIDEFEND (https://aidefend.net/) is an independent open-source knowledge base of defensive countermeasures for AI systems, created by Edward Lee and not affiliated with OWASP or MITRE. The AIDEFEND data reviewed for this section (August 5, 2026) uses schema 2.3 and data version 2026.08.05. It contains 92 top-level technique families, 265 sub-techniques, 357 total records, and 300 actionable controls across tactics, pillars, lifecycle phases, and external framework mappings. Relative to data version 2026.08.03, core control semantics and catalog counts are unchanged; external framework relationships and tool metadata changed. This section maps AIDEFEND evidence to AITBM's 23 sub-metrics. Parent families provide navigation and coverage routing only; implementation evidence must resolve to an actionable standalone or leaf control, while AITBM remains the scoring framework.
+AIDEFEND (https://aidefend.net/) is an independent open-source knowledge base of defensive countermeasures for AI systems, created by Edward Lee and not affiliated with OWASP or MITRE. The AIDEFEND data reviewed for this section (September 8, 2026) uses schema 2.3 and data version 2026.09.08. It contains 93 top-level technique families, 272 sub-techniques, 365 total records, and 307 actionable controls across tactics, pillars, lifecycle phases, and external framework mappings. Relative to data version 2026.08.05, eight records were added and none removed, while 159 of the 357 shared records changed semantically, including four renames at a stable identifier. Neither identifiers nor names are stable across data versions and must never be cited without one. This section maps AIDEFEND evidence to AITBM's 23 sub-metrics. Parent families provide navigation and coverage routing only; implementation evidence must resolve to an actionable standalone or leaf control, while AITBM remains the scoring framework.
 
 1. Translate defensive implementations into AITBM evidence — Organizations can test mapped AIDEFEND controls against the applicable AITBM rubric criteria
 
@@ -16,14 +16,14 @@ AIDEFEND (https://aidefend.net/) is an independent open-source knowledge base of
 
 ## AIDEFEND Tactical Structure
 
-The reviewed data version organizes 92 top-level defensive techniques and 265 sub-techniques across 7 tactics:
+The reviewed data version organizes 93 top-level defensive techniques and 272 sub-techniques across 7 tactics:
 
 *Table 73: AIDEFEND Tactical Structure*
 
 | Tactic | Code | Techniques | Purpose |
 | --- | --- | --- | --- |
 | Model | M | 10 | Comprehensive understanding and mapping of AI assets, data flows, dependencies, behavior, and lifecycle state. |
-| Harden | H | 37 | Preventive hardening of models, data paths, agents, tools, gateways, skills, code, MCP servers, and execution surfaces. |
+| Harden | H | 38 | Preventive hardening of models, data paths, agents, tools, gateways, skills, code, MCP servers, and execution surfaces. |
 | Detect | D | 18 | Runtime monitoring, attestation, anomaly detection, policy enforcement, and threat hunting. |
 | Isolate | I | 8 | Containment of execution, memory, network, browser, interaction, and session boundaries. |
 | Deceive | DV | 7 | Canaries, decoys, telemetry traps, and controlled deception for high-confidence detection. |
@@ -52,13 +52,13 @@ The mapping rule is intentionally conservative: AIDEFEND identifies measurable d
 
 | Profile Element | Current AIDEFEND Value | AITBM Assessment Use |
 | --- | --- | --- |
-| Source baseline | Schema 2.3; data version 2026.08.05; 92 technique families, 265 sub-techniques, 357 records, and 300 actionable controls. | Records the baseline used for traceable AITBM mapping and future drift review. |
-| Technique depth | 92 top-level techniques; 265 sub-techniques; 357 total defensive records. | Top-level techniques define control families; sub-techniques define concrete evidence selectors. |
+| Source baseline | Schema 2.3; data version 2026.09.08; 93 technique families, 272 sub-techniques, 365 records, and 307 actionable controls. | Records the baseline used for traceable AITBM mapping and future drift review. |
+| Technique depth | 93 top-level techniques; 272 sub-techniques; 365 total defensive records. | Top-level techniques define control families; sub-techniques define concrete evidence selectors. |
 | Strategic views | Tactics, pillars, phases, and framework mappings. | Allows AITBM to map evidence by security objective, protected component, lifecycle timing, and threat rationale. |
-| Tactics | Model 10; Harden 37; Detect 18; Isolate 8; Deceive 7; Evict 5; Restore 7. | Separates preventive IVP evidence from operational ORP evidence and freshness-supporting ACI evidence. |
+| Tactics | Model 10; Harden 38; Detect 18; Isolate 8; Deceive 7; Evict 5; Restore 7. | Separates preventive IVP evidence from operational ORP evidence and freshness-supporting ACI evidence. |
 | Pillars | Data, Model, Infrastructure, and Application. | Aligns evidence collection to AITBM axes: Robustness, Fairness, Transparency, Privacy, and Containment. |
 | Lifecycle phases | Scoping, building, validation, operation, response, and improvement. | Determines when evidence must be collected and whether it remains fresh enough for ACI. |
-| External mappings | MITRE ATLAS v2026.07, MAESTRO, OWASP LLM Top 10 2026, OWASP ML 2023, OWASP Agentic AI 2026, NIST AML 2025, Cisco AI Security, Google SAIF 2.0, and Databricks DASF 3.0. | Supports threat traceability; does not replace AITBM scoring thresholds. |
+| External mappings | MITRE ATLAS v2026.08, MAESTRO, OWASP LLM Top 10 2026, OWASP ML 2023, OWASP Agentic AI 2026, NIST AML 2025, Cisco AI Security, Google SAIF 2.0, and Databricks DASF 3.0. | Supports threat traceability; does not replace AITBM scoring thresholds. |
 
 ### Depth Mapping Model
 
