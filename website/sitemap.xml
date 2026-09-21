@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aitbm.org/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/ai-safety-benchmark</loc>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://aitbm.org/framework</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/submetrics</loc>
@@ -34,31 +34,31 @@
   </url>
   <url>
     <loc>https://aitbm.org/use-cases</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/gap-analysis</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/aidefend</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/mappings</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-08-13</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/calculator</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/glossary</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/resources</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/mappings/aidefend</loc>
@@ -250,258 +250,354 @@
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/agent-session-smuggling-a2a-systems</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/agentflayer-chatgpt-connectors-zero-click-exfiltration</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/agentforger-chatgpt-workspace-agent-autonomous-insider</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/agentjacking-sentry-mcp-coding-agent-hijack</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/ai-agent-app-misconfigurations-rce-credential-leakage</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/ai-agent-system-level-idpi-defenses</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/ai-recommendation-poisoning-crafted-assistant-links</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/amazon-q-mcp-auto-execution-cloud-credential-theft</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/anthropic-mcp-stdio-command-execution</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/apple-intelligence-neural-exec-prompt-injection</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/atlassian-rovo-two-prompt-injection-paths</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/autojack-autogen-studio-localhost-agent-rce</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/bain-pyxis-ai-platform-compromise</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/chainleak-chainlit-file-read-ssrf-cloud-takeover</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/chatgphish-chatgpt-markdown-phishing</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/chatgpt-artifactory-cross-account-covert-channel</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/chromatoast-chromadb-pre-auth-rce</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/claude-code-github-action-secret-exposure</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/claude-code-protected-paths-auto-mode</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/claude-site-scripting-browser-session-account-takeover</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/clawhub-google-qx4-fake-prerequisite-malware</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/clean-repo-claude-code-dns-reverse-shell</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/computer-use-toctou-stale-click</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/copilot-word-hidden-prompt-document-worm</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/cosnitch-copilot-web-autorun-memory-poisoning</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/cryptographic-context-injection-grok-data-theft</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/cursorjacking-cursor-extension-api-key-theft</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/deadbugz-mcp-supply-chain-campaign</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/deepseek-harness-loopback-control-api-sandbox-escape</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/dialogflow-rogue-agent-shared-runtime</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/difytap-cross-tenant-ai-data-exposure</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/duneslide-cursor-sandbox-escape-rce</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/entra-agent-id-admin-service-principal-takeover</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/exposed-llm-backends-offensive-ai-compute</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/flowise-prompt-injection-pyodide-rce</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/gemini-notification-idpi-fake-context-alignment</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/gitspawn-ai-coding-agent-git-config-hijack</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/gtg1002-claude-code-task-fragmentation-espionage</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/htag-browser-agent-abuse-benchmark</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/hugging-face-malicious-model-backdoor</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/idesaster-ai-ide-native-feature-abuse</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/jadepuffer-agentic-ransomware-langflow-database-extortion</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/kimi-cross-user-resume-privacy-leak</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/langgraph-checkpointer-sqli-deserialization-rce</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/langsmith-tracing-header-injection</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/lingua-ex-machina-tokenizer-monitor-blind-spots</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/litellm-control-plane-active-exploitation</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/litellm-mcp-gateway-auth-bypass-command-injection</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/lmdeploy-vision-image-loader-ssrf</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/macos-gaslight-llm-malware-analysis-prompt-injection</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/malicious-llm-api-router-agent-supply-chain</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/mcfa-memory-control-flow-attacks-agent-memory</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/mckinsey-lilli-ai-platform-compromise</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/mercor-litelllm-poisoned-dependency-breach</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/miasma-ai-coding-agent-settings-worm</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/microsoft-365-copilot-searchleak-one-click-data-exfiltration</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/microsoft-echoleak-zero-click-prompt-injection</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/mlflow-ssrf-cloud-metadata-credential-theft</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/model-namespace-reuse-supply-chain-attack</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/moltbook-agent-network-callback-map</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/notion-ai-agent-lethal-trifecta-exfiltration</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/openai-codex-github-branch-token-theft</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/openai-evaluation-agent-hugging-face-production-breach</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/openclaw-browser-to-local-agent-takeover</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/orca-milvus-vector-database-exposure-auth-bypass</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/perplexedbrowser-comet-1password-agent-hijack</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/perplexedbrowser-comet-local-file-exfiltration</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/pocketos-cursor-agent-database-wipe</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/poisoned-gguf-chat-template-inference-backdoor</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/promptmink-ai-coding-agent-malicious-dependencies</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/pydantic-ai-message-history-ssrf</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/ray-dns-rebinding-api-remote-code-execution</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/real-attackers-adversarial-ml-threat-modeling</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/salesforce-agentforce-forcedleak-prompt-injection</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/salesforce-einstein-prompt-mines-data-corruption</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/sglang-zmq-pickle-deserialization-rce</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/shadow-ai-enterprise-data-governance</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/skilljack-trajectory-to-persistent-agent-skill-poisoning</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/skills-sh-reputation-farming-delayed-credential-theft</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/spyder-maxss-browser-extension-privilege-crossing</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/stolen-thoughts-reasoning-trace-extraction</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/subliminal-learning-distillation-trait-transfer</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/sysdig-marimo-llm-agent-post-exploitation</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/trapdoor-ai-assistant-config-poisoning-supply-chain</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/vertex-ai-double-agents-service-agent-permissions</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/web-based-idpi-agent-prompt-injection</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aitbm.org/use-cases/wiz-ai-infrastructure-honeypot-attack-patterns</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://aitbm.org/use-cases/zombieagent-chatgpt-connector-persistent-exfiltration</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
 </urlset>

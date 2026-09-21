@@ -1,0 +1,204 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>LiteLLM&#x27;s MCP Gateway Accepted Any Bearer Token, and… | AITBM</title>
+  <meta name="description" content="This public brief identifies a threat or control route but does not establish one bounded assessed deployment with an architecture, configuration,…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/litellm-mcp-gateway-auth-bypass-command-injection" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/litellm-mcp-gateway-auth-bypass-command-injection" />
+  <meta property="og:title" content="LiteLLM&#x27;s MCP Gateway Accepted Any Bearer Token, and… | AITBM" />
+  <meta property="og:description" content="This public brief identifies a threat or control route but does not establish one bounded assessed deployment with an architecture, configuration,…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=792bb8a8" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/litellm-mcp-gateway-auth-bypass-command-injection#article",
+      "url": "https://aitbm.org/use-cases/litellm-mcp-gateway-auth-bypass-command-injection",
+      "headline": "LiteLLM's MCP Gateway Accepted Any Bearer Token, and Its Test Endpoint Ran Attacker Commands",
+      "name": "LiteLLM's MCP Gateway Accepted Any Bearer Token, and Its Test Endpoint Ran Attacker Commands",
+      "description": "This public brief identifies a threat or control route but does not establish one bounded assessed deployment with an architecture, configuration,…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-09-21",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/litellm-mcp-gateway-auth-bypass-command-injection#breadcrumb"
+      },
+      "keywords": "LiteLLM's MCP Gateway Accepted Any Bearer Token, and Its Test Endpoint Ran Attacker Commands, Incident, AIDEFEND"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/litellm-mcp-gateway-auth-bypass-command-injection#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "LiteLLM's MCP Gateway Accepted Any Bearer Token, and… | AITBM",
+          "item": "https://aitbm.org/use-cases/litellm-mcp-gateway-auth-bypass-command-injection"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="explore-link" role="menuitem">AI Safety Benchmark</a>
+              <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="explore-link" role="menuitem">Security Assessment</a>
+              <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="explore-link" role="menuitem">Evaluation Methods</a>
+              <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="explore-link" role="menuitem">Framework Comparison</a>
+              <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="explore-link" role="menuitem">Case Reference Library</a>
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AI Safety Benchmark</a>
+        <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Security Assessment</a>
+        <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Evaluation Methods</a>
+        <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework Comparison</a>
+        <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Case Reference Library</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-5xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">LiteLLM&#x27;s MCP Gateway Accepted Any Bearer Token, and Its Test Endpoint Ran Attacker Commands</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">AI SECURITY RESEARCH NOTE · NO ERS</p><h1 class="mt-2 text-4xl font-bold">LiteLLM&#x27;s MCP Gateway Accepted Any Bearer Token, and Its Test Endpoint Ran Attacker Commands</h1><p class="mt-4 max-w-3xl text-blue-100">This source is retained for threat and defensive-evidence research, but AITBM does not manufacture a deployment score where no assessable system boundary exists.</p></div></section>
+<article class="mx-auto max-w-5xl px-4 sm:px-6 py-14"><section class="rounded-xl border border-gray-200 bg-gray-50 p-6"><h2 class="text-2xl font-bold text-navy">Why this analysis has no ERS</h2><p class="mt-3 text-muted">This public brief identifies a threat or control route but does not establish one bounded assessed deployment with an architecture, configuration, complete evidence set, and measured control performance. Assigning IVP, ORP, ACI, or ERS values would invent system-specific evidence. The exact upstream defense set is retained as candidate evidence routes only.</p><p class="mt-3 text-sm text-muted"><strong>Classification:</strong> Incident · source date 2026-09-15</p></section><section class="mt-10"><h2 class="text-2xl font-bold text-navy">AIDEFEND evidence routes</h2><div class="mt-4"><h4 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h4>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief (retrieved 2026-09-21); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.09.20. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-001.001</td><td>Root &amp; Long-Lived Credential Object Eviction<span class="block text-[11px] text-gray-500">Exact upstream page defense ID, verified against AIDEFEND dataVersion 2026.09.20. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="text-[11px] text-gray-500">mapping review required</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-003.010</td><td>Deployed AI Software Vulnerability Remediation Lifecycle<span class="block text-[11px] text-gray-500">Exact upstream page defense ID, verified against AIDEFEND dataVersion 2026.09.20. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="text-[11px] text-gray-500">mapping review required</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-004.002</td><td>Service &amp; API Authentication<span class="block text-[11px] text-gray-500">Exact upstream page defense ID, verified against AIDEFEND dataVersion 2026.09.20. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="text-[11px] text-gray-500">mapping review required</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-034.002</td><td>MCP Server OAuth Resource Boundary &amp; Delegation Safety<span class="block text-[11px] text-gray-500">Exact upstream page defense ID, verified against AIDEFEND dataVersion 2026.09.20. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="text-[11px] text-gray-500">mapping review required</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-034.003</td><td>Server-Side Tool Invocation Validation &amp; Object-Level Authorization<span class="block text-[11px] text-gray-500">Exact upstream page defense ID, verified against AIDEFEND dataVersion 2026.09.20. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="text-[11px] text-gray-500">mapping review required</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-002.002</td><td>Secure External AI Service Connectivity<span class="block text-[11px] text-gray-500">Exact upstream page defense ID, verified against AIDEFEND dataVersion 2026.09.20. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="text-[11px] text-gray-500">mapping review required</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-M-001.005</td><td>Public AI Endpoint &amp; Agent-Service Exposure Discovery<span class="block text-[11px] text-gray-500">Exact upstream page defense ID, verified against AIDEFEND dataVersion 2026.09.20. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="text-[11px] text-gray-500">mapping review required</span></span></td></tr></tbody></table></div></div></section><section class="mt-10"><h2 class="text-2xl font-bold text-navy">Related AITBM rubrics</h2><div class="mt-4 flex flex-wrap gap-2"><span class="text-sm text-muted">No direct IVP route recorded.</span></div></section><section class="mt-10"><h2 class="text-2xl font-bold text-navy">Sources</h2><ul class="mt-3 space-y-2 text-sm"><li><a href="https://aidefendlabs.com/en/aia/2026-09/005-litellm-mcp-gateway-auth-bypass-command-injection.html" class="font-semibold text-navy hover:underline" target="_blank" rel="noopener noreferrer">Official AIDEFEND in Action brief</a></li></ul></section></article></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Research notes are indexed for evidence discovery but intentionally carry no ERS.</div></div>
+</footer>  <script src="/assets/js/site-search-index.js?v=19dfc7de"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script></body></html>

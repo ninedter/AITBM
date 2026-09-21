@@ -1,6 +1,7 @@
 {
   "schema": "AITBM external-framework mapping index",
-  "verified": "2026-08-23",
+  "verified": "2026-09-21",
+  "verificationScope": "Changed-framework carriers reconciled 2026-09-21; stable-framework currency basis carried forward from 2026-09-09.",
   "mappings": [
     {
       "slug": "owasp-llm",
@@ -202,32 +203,27 @@
       "summary": "Shows how maturity practices can support AITBM evidence without converting maturity levels directly into ERS.",
       "url": "/mappings/aima",
       "representativeSubmetrics": [
-        "Fa-1",
-        "Fa-2",
-        "Fa-3",
-        "Fa-4",
         "Tr-1",
-        "Tr-3",
-        "Tr-4",
-        "Pr-1"
+        "Ro-4",
+        "Pr-3"
       ]
     },
     {
       "slug": "compass",
       "title": "COMPASS",
       "tier": 3,
-      "kind": "Security maturity and prioritization",
-      "summary": "Maps COMPASS practices to AITBM threat prioritization, evidence collection, and scoring inputs.",
+      "kind": "Threat-defense planning",
+      "summary": "Uses COMPASS threat classes to plan AITBM evidence collection without transferring priority or maturity values into scores.",
       "url": "/mappings/compass",
       "representativeSubmetrics": [
         "Ro-1",
         "Cn-1",
+        "Cn-3",
         "Pr-1",
+        "Pr-2",
         "Pr-4",
-        "Cn-2",
-        "Cn-5",
-        "Cn-6",
-        "Ro-3"
+        "Tr-4",
+        "Ro-4"
       ]
     },
     {

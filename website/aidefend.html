@@ -216,16 +216,16 @@
         <div class="rounded-xl border border-gray-200 bg-gray-50 p-6">
           <p class="text-sm font-semibold text-navy">Framework at a glance</p>
           <dl class="mt-4 space-y-3 text-sm">
-            <div class="flex justify-between"><dt class="text-muted">Total techniques</dt><dd class="font-bold text-navy">92</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">Total techniques</dt><dd class="font-bold text-navy">93</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Tactics</dt><dd class="font-bold text-navy">7</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Pillars</dt><dd class="font-bold text-navy">4</dd></div>
             <div class="flex justify-between"><dt class="text-muted">Lifecycle phases</dt><dd class="font-bold text-navy">6</dd></div>
             <div class="flex justify-between"><dt class="text-muted">External frameworks mapped</dt><dd class="font-bold text-navy">9</dd></div>
             <div class="flex justify-between"><dt class="text-muted">AITBM sub-metrics covered</dt><dd class="font-bold text-navy">23 / 23</dd></div>
           </dl>
-          <p class="mt-4 text-xs text-gray-500"><span class="font-semibold text-gray-700">Current basis:</span> reconciled against AIDEFEND data version 2026.08.05 (92 technique families, 265 sub-techniques, 357 records, and 300 actionable controls; schema 2.3). All actionable controls were audited for Cn-7. Sixteen parent families now route to 29 exact leaf or standalone evidence selectors, bringing the mapping to 168 placements across 77 distinct technique families and all 23 AITBM sub-metrics. Parent-family presence never sets an AITBM score; measured BEC, RBVR, LTFR, and GDSR results do.</p>
+          <p class="mt-4 text-xs text-gray-500"><span class="font-semibold text-gray-700">Current basis:</span> reconciled against AIDEFEND data version 2026.09.20 (93 technique families, 272 sub-techniques, 365 records, and 307 actionable controls; schema 2.3). The six changed core controls and 348 changed <code>defendsAgainst</code> arrays are evidence-route metadata only; the mapping remains 171 placements across 78 distinct technique families and all 23 AITBM sub-metrics. Parent-family presence never sets an AITBM score; measured BEC, RBVR, LTFR, and GDSR results do.</p>
           <p class="mt-2 text-xs text-gray-500"><span class="font-semibold text-gray-700">Cn-7 selectors:</span> AID-M-009.002; AID-H-017.001/.004/.006; AID-H-018.004; AID-H-028.005/.008; AID-H-033.002/.006; AID-H-034.001/.007/.008/.009; AID-H-037.002; AID-D-002.004; AID-D-003.004; AID-D-004.006; AID-D-005.001/.007; AID-I-001.001/.003; AID-I-003.001/.002/.003; AID-I-004.001/.005; AID-I-005; and AID-I-008.001/.004. Design and detective selectors provide partial evidence only.</p>
-          <p class="mt-4 text-xs text-gray-500"><span class="font-semibold text-gray-700">Relationship audit:</span> data version 2026.08.05 kept the same 357 records and core control semantics while changing external relationships and tools. All records now use OWASP LLM Top 10 2026; 293 changed their exact LLM item arrays, LLM references increased from 550 to 632, tool metadata changed on 192 records, and ATLAS metadata advanced to v2026.07. IDs are version-bound. These external relationships guide threat coverage and test selection only; they do not change the 168 AIDEFEND-to-AITBM placements or earn score credit.</p>
+          <p class="mt-4 text-xs text-gray-500"><span class="font-semibold text-gray-700">Relationship audit:</span> data version 2026.09.20 changed six core controls — AID-D-011.001, AID-H-002.002, AID-H-005.003, AID-H-006.003, AID-H-007.005, and AID-H-021.004 — and 348 <code>defendsAgainst</code> arrays. Identifiers and names are both version-bound and must never be cited without a data version. These external relationships guide threat coverage and test selection only; they do not change the 171 AIDEFEND-to-AITBM placements or earn score credit.</p>
         </div>
       </div>
     </div>
@@ -264,7 +264,7 @@
   <section id="tactics" class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
     <h2 class="text-3xl font-bold text-navy">Seven defensive tactics</h2>
     <p class="mt-3 text-muted">
-      AIDEFEND organizes 92 techniques across seven tactics aligned with MITRE D3FEND.
+      AIDEFEND organizes 93 techniques across seven tactics aligned with MITRE D3FEND.
       Each tactic maps to different AITBM layers and sub-metrics.
     </p>
     <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -412,7 +412,7 @@
   <section id="threat-coverage" class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
     <h2 class="text-3xl font-bold text-navy">OWASP LLM Top 10 2026 coverage</h2>
     <p class="mt-3 text-muted">
-      Counts are distinct AIDEFEND parent-family routes in data version 2026.08.05, not
+      Counts are distinct AIDEFEND parent-family routes in data version 2026.09.20, not
       implemented controls or automatic AITBM score credit. The assessed deployment still
       needs applicable, measured evidence against the AITBM rubrics.
     </p>
@@ -531,8 +531,8 @@
       evidence-to-score layer: implemented controls can support applicable sub-metric ratings in a system-specific assessment.
     </p>
     <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
-      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">MITRE ATLAS</span><p class="text-muted mt-0.5">v2026.07: 16 tactics, 101 top-level + 77 sub-techniques</p></div>
-      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">OWASP LLM Top 10 (2026)</span><p class="text-muted mt-0.5">Ten-risk catalog alignment; 632 relationship references</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">MITRE ATLAS</span><p class="text-muted mt-0.5">v2026.09: 16 tactics, 120 top-level + 88 sub-techniques</p></div>
+      <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">OWASP LLM Top 10 (2026)</span><p class="text-muted mt-0.5">Ten-risk catalog alignment; 571 relationship references</p></div>
       <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">OWASP Top 10 for Agentic Applications</span><p class="text-muted mt-0.5">ASI01–ASI10 risk alignment (2026 edition)</p></div>
       <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">MAESTRO (CSA)</span><p class="text-muted mt-0.5">Seven-layer threat-model alignment</p></div>
       <div class="rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold text-navy">NIST Adversarial ML 2025</span><p class="text-muted mt-0.5">Adversarial threat taxonomy</p></div>
@@ -588,7 +588,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site-search-index.js?v=b8c6ee19"></script>
+  <script src="assets/js/site-search-index.js?v=19dfc7de"></script>
   <script src="assets/js/site.js?v=f4bf5292"></script>
 </body>
 </html>
