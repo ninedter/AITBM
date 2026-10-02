@@ -4756,7 +4756,7 @@
       "ivp": {
         "midpoint": 0.4308,
         "bestSecurityBound": 0.7923,
-        "worstSecurityBound": 0.0693,
+        "worstSecurityBound": 0.0692,
         "axisBounds": {
           "Ro": {
             "lower": 0.1375,
@@ -8888,7 +8888,7 @@
         "weighted": 0.875,
         "crm": 1.35,
         "elevatedDimensions": 3,
-        "effective": 1.1813,
+        "effective": 1.1812,
         "compoundRiskAlert": true
       },
       "publicEvidenceDiagnostic": {
@@ -9617,7 +9617,7 @@
         "capped": false
       },
       "ivp": {
-        "midpoint": 0.4528,
+        "midpoint": 0.4527,
         "bestSecurityBound": 0.8605,
         "worstSecurityBound": 0.045,
         "axisBounds": {
@@ -11312,8 +11312,8 @@
       },
       "ivp": {
         "midpoint": 0.4442,
-        "bestSecurityBound": 0.8327,
-        "worstSecurityBound": 0.0558,
+        "bestSecurityBound": 0.8328,
+        "worstSecurityBound": 0.0557,
         "axisBounds": {
           "Ro": {
             "lower": 0.075,
@@ -11383,7 +11383,7 @@
         "weighted": 0.735,
         "crm": 1.15,
         "elevatedDimensions": 2,
-        "effective": 0.8452,
+        "effective": 0.8453,
         "compoundRiskAlert": true
       },
       "publicEvidenceDiagnostic": {
@@ -15295,7 +15295,7 @@
         "capped": false
       },
       "ivp": {
-        "midpoint": 0.4788,
+        "midpoint": 0.4787,
         "bestSecurityBound": 0.857,
         "worstSecurityBound": 0.1005,
         "axisBounds": {
@@ -16378,7 +16378,7 @@
         "weighted": 0.775,
         "crm": 1.35,
         "elevatedDimensions": 3,
-        "effective": 1.0463,
+        "effective": 1.0462,
         "compoundRiskAlert": true
       },
       "publicEvidenceDiagnostic": {

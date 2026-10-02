@@ -616,3 +616,27 @@ button:focus-visible, a:focus-visible, select:focus-visible, summary:focus-visib
   .case-card > summary::after, .filter-btn { display: none; }
   .case-card > div { display: block !important; }
 }
+
+/* Shared editorial layout for every individual use-case page. */
+.use-case-detail main > section > div,
+.use-case-detail main > article,
+.use-case-detail main > section.mx-auto {
+  width: min(100%, 72rem);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2rem);
+  box-sizing: border-box;
+}
+.use-case-detail main > section:first-child { padding-block: 1rem; }
+.use-case-detail h1 { max-width: 60rem; font-size: clamp(1.8rem, 3vw, 2.75rem); line-height: 1.2; }
+.use-case-detail main > article { padding-block: 2.5rem; }
+.use-case-detail .case-narrative { max-width: 70ch; line-height: 1.75; }
+.use-case-detail .case-narrative p { margin-block: 1rem; }
+.use-case-detail p, .use-case-detail li, .use-case-detail td { overflow-wrap: anywhere; }
+.use-case-detail table { width: 100%; text-align: left; }
+.use-case-detail th, .use-case-detail td { vertical-align: top; }
+.use-case-detail .overflow-x-auto { overflow-x: auto; }
+.use-case-detail main h2 { line-height: 1.35; }
+.use-case-detail main > section:first-child [aria-label="Breadcrumb"],
+.use-case-detail main > section:first-child [aria-label="Breadcrumb"] a { color: #cbd9ef; }
+.use-case-detail main > section:first-child [aria-label="Breadcrumb"] span { color: #cbd9ef; }
+.use-case-detail main > section:first-child [aria-label="Breadcrumb"] li { color: #cbd9ef; }

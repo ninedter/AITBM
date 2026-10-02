@@ -23,7 +23,7 @@
   <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
   <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=fadbff11" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=c352da95" />
 
   <script type="application/ld+json" data-seo>
 {
@@ -107,7 +107,7 @@
 }
   </script>
 </head>
-<body class="font-sans antialiased bg-paper">
+<body class="use-case-detail font-sans antialiased bg-paper">
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
     <div class="w-full px-4">
       <div class="flex h-16 items-center justify-between gap-4">
@@ -181,11 +181,11 @@
         <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
         <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Notion AI Agent Lethal Trifecta Leads to Silent Data Exfiltration</li>
       </ol>
-    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">Notion AI Agent Lethal Trifecta Leads to Silent Data Exfiltration</h1><p class="mt-4 max-w-3xl text-blue-100">An attacker conceals prompt-injection instructions in a candidate resume PDF using white text or hidden image layers. A user uploads the file and asks Notion AI to summarise it, which brings the hidden instructions into the agent&#x27;s context. Under their control the agent reads private workspace database pages such as a hiring tracker containing candidate details and ARR, and then exfiltrates by two independent routes. In Path A it concatenates the stolen values into a URL and calls the built-in functions.search tool, sending the query to the attacker&#x27;s server. In Path B it writes a Markdown image tag containing the stolen data into proposed page edits; the Notion UI renders the image preview automatically before the user approves the edit, so the browser converts the Markdown into an HTML img element and issues a background request to the attacker&#x27;s host, silently leaking the data past the human-approval gate.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Agentic / MCP System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 2</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 5.1 (2.4–7.7)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-07-11</span></div></div></section>
-<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">Notion AI Agent Lethal Trifecta Leads to Silent Data Exfiltration</h1><p class="mt-4 max-w-3xl text-blue-100">An attacker conceals prompt-injection instructions in a candidate resume PDF using white text or hidden image layers. A user uploads the file and asks Notion AI to summarise it, which brings the hidden instructions into the agent&#x27;s context. Under their control the agent reads…</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Agentic / MCP System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 2</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 5.1 (2.4–7.7)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-07-11</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><section class="mb-8 rounded-xl border border-gray-200 bg-gray-50 p-6" aria-label="Use case sources"><h2 class="text-xl font-bold text-navy">Use case sources</h2><p class="mt-2 text-sm text-muted">Source reports and analysis supporting this case are listed below. AITBM interpretation and any indicative scoring are derived from this public evidence.</p><ul class="mt-3 space-y-2 text-sm"><li><a href="https://aidefendlabs.com/en/aia/2026-07/014-notion-ai-agent-lethal-trifecta-exfiltration.html" class="text-navy font-semibold hover:underline" target="_blank" rel="noopener noreferrer">AIDEFEND in Action brief 2026-07/014 — Notion AI Agent Lethal Trifecta Leads to Silent Data Exfiltration</a></li><li><a href="https://promptarmor.com/resources/notion-ai-unpatched-data-exfiltration" class="text-navy font-semibold hover:underline" target="_blank" rel="noopener noreferrer">Primary source — Notion AI: Data Exfiltration (2026-01-07)</a></li><li><a href="https://aidefendlabs.com/en/secureflow/?flow=aidefend-research-sf0024-notion-ai-agent-lethal-trifecta-exfiltration" class="text-navy font-semibold hover:underline" target="_blank" rel="noopener noreferrer">AIDEFEND SecureFlow — Notion AI Agent Indirect Prompt Injection and Data Exfiltration</a></li></ul></section><div class="border-t border-gray-200 p-5 sm:p-6">
       <div class="ers-meter is-minor" aria-hidden="true"><span style="width:51%"></span></div>
 
-      <p class="mt-4 text-sm text-muted">An attacker conceals prompt-injection instructions in a candidate resume PDF using white text or hidden image layers. A user uploads the file and asks Notion AI to summarise it, which brings the hidden instructions into the agent&#x27;s context. Under their control the agent reads private workspace database pages such as a hiring tracker containing candidate details and ARR, and then exfiltrates by two independent routes. In Path A it concatenates the stolen values into a URL and calls the built-in functions.search tool, sending the query to the attacker&#x27;s server. In Path B it writes a Markdown image tag containing the stolen data into proposed page edits; the Notion UI renders the image preview automatically before the user approves the edit, so the browser converts the Markdown into an HTML img element and issues a background request to the attacker&#x27;s host, silently leaking the data past the human-approval gate.</p>
+      <div class="case-narrative mt-4 text-sm text-muted"><p>An attacker conceals prompt-injection instructions in a candidate resume PDF using white text or hidden image layers. A user uploads the file and asks Notion AI to summarise it, which brings the hidden instructions into the agent&#x27;s context. Under their control the agent reads private workspace database pages such as a hiring tracker containing candidate details and ARR, and then exfiltrates by two independent routes. In Path A it concatenates the stolen values into a URL and calls the built-in functions.search tool, sending the query to the attacker&#x27;s server.</p><p>In Path B it writes a Markdown image tag containing the stolen data into proposed page edits; the Notion UI renders the image preview automatically before the user approves the edit, so the browser converts the Markdown into an HTML img element and issues a background request to the attacker&#x27;s host, silently leaking the data past the human-approval gate.</p></div>
 
       <div class="mt-4 grid gap-3 sm:grid-cols-2">
         <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
@@ -264,6 +264,6 @@
   <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-09-21; evidence reference date 2026-09-21.</div></div>
 </footer>
 <div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
-  <script src="/assets/js/site-search-index.js?v=7ae5c7bd"></script>
+  <script src="/assets/js/site-search-index.js?v=4ba56756"></script>
   <script src="/assets/js/site.js?v=f4bf5292"></script>
-  <script src="/assets/js/use-cases.js?v=7a5e2010"></script></body></html>
+  <script src="/assets/js/use-cases.js?v=b0e632bf"></script></body></html>

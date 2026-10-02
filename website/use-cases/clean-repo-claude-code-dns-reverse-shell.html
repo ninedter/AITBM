@@ -23,7 +23,7 @@
   <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
   <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=fadbff11" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=c352da95" />
 
   <script type="application/ld+json" data-seo>
 {
@@ -107,7 +107,7 @@
 }
   </script>
 </head>
-<body class="font-sans antialiased bg-paper">
+<body class="use-case-detail font-sans antialiased bg-paper">
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
     <div class="w-full px-4">
       <div class="flex h-16 items-center justify-between gap-4">
@@ -181,11 +181,11 @@
         <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
         <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">A Clean Repo Can Still Turn an AI Coding Agent Into a Reverse Shell</li>
       </ol>
-    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">A Clean Repo Can Still Turn an AI Coding Agent Into a Reverse Shell</h1><p class="mt-4 max-w-3xl text-blue-100">0DIN demonstrated a repository that looks clean at rest but converts an AI coding agent into a reverse shell at runtime. The malicious logic is not present as obvious source code: the setup path fetches instructions from DNS TXT records while it executes. A package failure plus a plausible setup note socially steers the agent into running an initialization command as an ordinary debugging step, and once that shell execution happens the DNS-fetched content becomes a reverse shell running under the developer account. The payload then holds the developer&#x27;s context — environment variables, local files, cloud sessions, source checkouts and network access. The research&#x27;s central point for defenders is that static repository review cannot see this: the dangerous content only exists at runtime, so inspection has to cover runtime fetches, DNS lookups, install hooks and outbound egress before agent-executed commands run with real privileges.</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Agentic / MCP System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 3</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 6.6 (3.8–9.4)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-07-06</span></div></div></section>
-<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><div class="border-t border-gray-200 p-5 sm:p-6">
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">PUBLIC-EVIDENCE AI SECURITY CASE STUDY</p><h1 class="mt-2 max-w-4xl text-4xl font-bold">A Clean Repo Can Still Turn an AI Coding Agent Into a Reverse Shell</h1><p class="mt-4 max-w-3xl text-blue-100">0DIN demonstrated a repository that looks clean at rest but converts an AI coding agent into a reverse shell at runtime. The malicious logic is not present as obvious source code: the setup path fetches instructions from DNS TXT records while it executes. A package failure plus…</p><div class="mt-6 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-white/10 px-3 py-1">Agentic / MCP System</span><span class="rounded-full bg-white/10 px-3 py-1">Tier 3</span><span class="rounded-full bg-white/10 px-3 py-1">Indicative ERS 6.6 (3.8–9.4)</span><span class="rounded-full bg-white/10 px-3 py-1">Evidence source date 2026-07-06</span></div></div></section>
+<article class="case-card mx-auto max-w-6xl px-4 sm:px-6 py-12"><section class="mb-8 rounded-xl border border-gray-200 bg-gray-50 p-6" aria-label="Use case sources"><h2 class="text-xl font-bold text-navy">Use case sources</h2><p class="mt-2 text-sm text-muted">Source reports and analysis supporting this case are listed below. AITBM interpretation and any indicative scoring are derived from this public evidence.</p><ul class="mt-3 space-y-2 text-sm"><li><a href="https://aidefendlabs.com/en/aia/2026-07/006-clean-repo-claude-code-dns-reverse-shell.html" class="text-navy font-semibold hover:underline" target="_blank" rel="noopener noreferrer">AIDEFEND in Action brief — A Clean Repo Can Still Turn an AI Coding Agent Into a Reverse Shell (2026-07-06)</a></li><li><a href="https://0din.ai/blog/clone-this-repo-and-i-own-your-machine" class="text-navy font-semibold hover:underline" target="_blank" rel="noopener noreferrer">0DIN — Clone This Repo and I Own Your Machine, Andre Hall &amp; Miller Engelbrecht (2026-06-25)</a></li><li><a href="https://aidefendlabs.com/en/secureflow/?flow=aidefend-research-sf0013-clean-repo-claude-code-dns-reverse-shell" class="text-navy font-semibold hover:underline" target="_blank" rel="noopener noreferrer">AIDEFEND SecureFlow — Clean Repository to DNS-Fetched Reverse Shell in an AI Coding Agent</a></li></ul></section><div class="border-t border-gray-200 p-5 sm:p-6">
       <div class="ers-meter is-minor" aria-hidden="true"><span style="width:66%"></span></div>
 
-      <p class="mt-4 text-sm text-muted">0DIN demonstrated a repository that looks clean at rest but converts an AI coding agent into a reverse shell at runtime. The malicious logic is not present as obvious source code: the setup path fetches instructions from DNS TXT records while it executes. A package failure plus a plausible setup note socially steers the agent into running an initialization command as an ordinary debugging step, and once that shell execution happens the DNS-fetched content becomes a reverse shell running under the developer account. The payload then holds the developer&#x27;s context — environment variables, local files, cloud sessions, source checkouts and network access. The research&#x27;s central point for defenders is that static repository review cannot see this: the dangerous content only exists at runtime, so inspection has to cover runtime fetches, DNS lookups, install hooks and outbound egress before agent-executed commands run with real privileges.</p>
+      <div class="case-narrative mt-4 text-sm text-muted"><p>0DIN demonstrated a repository that looks clean at rest but converts an AI coding agent into a reverse shell at runtime. The malicious logic is not present as obvious source code: the setup path fetches instructions from DNS TXT records while it executes. A package failure plus a plausible setup note socially steers the agent into running an initialization command as an ordinary debugging step, and once that shell execution happens the DNS-fetched content becomes a reverse shell running under the developer account. The payload then holds the developer&#x27;s context — environment variables, local files, cloud sessions, source checkouts and network access.</p><p>The research&#x27;s central point for defenders is that static repository review cannot see this: the dangerous content only exists at runtime, so inspection has to cover runtime fetches, DNS lookups, install hooks and outbound egress before agent-executed commands run with real privileges.</p></div>
 
       <div class="mt-4 grid gap-3 sm:grid-cols-2">
         <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
@@ -264,6 +264,6 @@
   <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Method revised 2026-09-21; evidence reference date 2026-09-21.</div></div>
 </footer>
 <div id="mvt-tooltip" class="mvt-tooltip" role="tooltip" hidden>MVT — Minimum Viability Threshold. It is the per-tier minimum each assessed IVP axis must meet. A breach sets an independent severity floor, so Critical MVT does not automatically mean Critical ERS.</div>
-  <script src="/assets/js/site-search-index.js?v=7ae5c7bd"></script>
+  <script src="/assets/js/site-search-index.js?v=4ba56756"></script>
   <script src="/assets/js/site.js?v=f4bf5292"></script>
-  <script src="/assets/js/use-cases.js?v=7a5e2010"></script></body></html>
+  <script src="/assets/js/use-cases.js?v=b0e632bf"></script></body></html>
