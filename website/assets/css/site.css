@@ -500,6 +500,7 @@ body.site-search-open { overflow: hidden; }
 
 .case-directory { scroll-margin-top: 8.5rem; border: 1px solid var(--line); border-radius: .65rem; overflow: hidden; background: #fff; }
 .case-directory-row { display: grid; grid-template-columns: minmax(0, 1fr) 7.2rem 9rem 2rem; gap: 1rem; align-items: center; min-height: 8.1rem; padding: .85rem 1rem; background: #fff; }
+.case-directory-row[hidden] { display: none; }
 .case-directory-row + .case-directory-row { border-top: 1px solid var(--line); }
 .case-directory-row:hover { background: #fbfcfe; }
 .case-directory-kicker { color: #667085; font-size: .62rem; }

@@ -11,6 +11,11 @@
       }
     }
 
+    data.cases = data.cases.concat(data.notScored || []);
+    data.cases.forEach(function (item) {
+      item.techniques = (item.techniques || []).map(function (ref) { return data.techniques[ref]; });
+    });
+
     var directory = document.querySelector("[data-directory]");
     var rows = directory ? Array.prototype.slice.call(directory.querySelectorAll("[data-case-row]")) : [];
     var casesBySlug = Object.create(null);
@@ -248,9 +253,9 @@
       var title = el("strong");
       appendHighlighted(title, item.title, query);
       top.appendChild(title);
-      top.appendChild(el("span", "search-option-ers", item.ers.toFixed(1) + " ERS"));
+      top.appendChild(el("span", "search-option-ers", typeof item.ers === "number" ? item.ers.toFixed(1) + " ERS" : "No ERS"));
       option.appendChild(top);
-      option.appendChild(el("span", "search-option-meta", item.architecture + " · Tier " + item.tier));
+      option.appendChild(el("span", "search-option-meta", item.architecture + (item.tier == null ? " · Not scored" : " · Tier " + item.tier)));
       var source = item.finding || item.summary || "";
       var clean = source.length > 150 ? source.slice(0, 147).replace(/\s+\S*$/, "") + "…" : source;
       var snippet = el("span", "search-option-snippet");
@@ -355,7 +360,7 @@
       }).slice(0, 3);
 
       if (matches.length) {
-        addGroup("Incidents");
+        addGroup("Records");
         matches.slice(0, 5).forEach(function (entry, index) {
           addCaseOption(entry.item, input.value.trim(), index);
         });
@@ -374,7 +379,7 @@
       footer.id = "case-search-view-all";
       footer.setAttribute("role", "option");
       footer.appendChild(el("span", "", matches.length ?
-        "View all " + matches.length + " matching cases" : "No case title matches — search the full evidence text"));
+        "View all " + matches.length + " matching records" : "No case title matches — search the full evidence text"));
       footer.appendChild(el("span", "", "View directory →"));
       footer.addEventListener("click", function () {
         closePanel();
@@ -456,11 +461,6 @@
       button.setAttribute("aria-pressed", "false");
       button.addEventListener("click", function () {
         var key = button.dataset.browse;
-        if (key === "not-scored") {
-          var section = document.getElementById("not-scored");
-          if (section) section.scrollIntoView({ block: "start", behavior: "smooth" });
-          return;
-        }
         var reselect = state.filter === key;
         state.filter = reselect ? "" : key;
         state.filterLabel = reselect ? "" : button.querySelector("strong").textContent;
@@ -552,7 +552,10 @@
       var searchData = window.__aitbmSearchCases;
       if (!searchData && dataNode) {
         try {
-          searchData = JSON.parse(dataNode.textContent).cases.reduce(function (map, entry) {
+          searchData = (function (payload) { return payload.cases.concat(payload.notScored || []).map(function (entry) {
+            entry.techniques = (entry.techniques || []).map(function (ref) { return payload.techniques[ref]; });
+            return entry;
+          }); })(JSON.parse(dataNode.textContent)).reduce(function (map, entry) {
             map[entry.slug] = normalize([
               entry.title, entry.architecture, entry.summary, entry.finding,
               (entry.tags || []).join(" "),
@@ -577,7 +580,8 @@
         return a.querySelector(".case-directory-title").textContent.localeCompare(
           b.querySelector(".case-directory-title").textContent);
       }
-      return Number(b.dataset.ers) - Number(a.dataset.ers) || b.dataset.date.localeCompare(a.dataset.date);
+      return (b.dataset.ers === "" ? -Infinity : Number(b.dataset.ers)) -
+        (a.dataset.ers === "" ? -Infinity : Number(a.dataset.ers)) || b.dataset.date.localeCompare(a.dataset.date);
     });
     matched.forEach(function (row) { directory.appendChild(row); });
 
@@ -597,7 +601,7 @@
       var parts = [];
       if (state.filterLabel) parts.push(state.filterLabel);
       if (state.query) parts.push('search "' + state.query + '"');
-      status.textContent = parts.length ? parts.join(" · ") : "All case-study scenarios";
+      status.textContent = parts.length ? parts.join(" · ") : "All library records";
     }
 
     var active = document.querySelector("[data-active-filter]");
