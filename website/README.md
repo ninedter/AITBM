@@ -7,7 +7,7 @@
 ## Site Inventory
 
 The site contains fifteen discovery/application pages, 111 dedicated reference pages,
-and a not-found page. The sitemap therefore contains 126 indexable URLs.
+and a not-found page. The sitemap therefore contains 219 indexable URLs.
 
 | Path | Purpose |
 |---|---|
@@ -16,12 +16,12 @@ and a not-found page. The sitemap therefore contains 126 indexable URLs.
 | `ai-security-assessment.html` | AI security assessment methodology guide |
 | `ai-evaluation-methods.html` | Safety and security evaluation-method selection guide |
 | `ai-framework-comparison.html` | Neutral comparison of framework roles and AITBM's measurement layer |
-| `ai-security-use-cases.html` | Topic hub for the 64-record incident reference library |
+| `ai-security-use-cases.html` | Topic hub for the 157-record incident and attack-flow reference library |
 | `framework.html` | IVP, ORP, ACI, ERS, tiers, and assessment pathways |
 | `submetrics.html` | Discovery hub for all 23 IVP sub-metrics |
 | `submetrics/*.html` | 23 canonical definitions, five-level rubrics, and required test methods |
 | `use-cases.html` | Search and discovery hub for public-evidence cases |
-| `use-cases/*.html` | 64 complete case-study or research-note evidence records |
+| `use-cases/*.html` | 157 complete case-study, research-note, or SecureFlow attack-flow evidence records (88 AIDEFEND in Action analyses + 69 SecureFlow records) |
 | `use-case-topics/*.html` | 8 evidence-rich collections for agentic AI, MCP, prompt injection, data exposure, supply chain, coding agents, RAG, and model security |
 | `gap-analysis.html` | Twelve-gap analysis and remediation status |
 | `aidefend.html` | AIDEFEND integration and control-to-evidence guidance |
@@ -122,12 +122,12 @@ python3 scripts/site/build_all.py
 - `build_submetric_pages.py` reads the canonical working specification and produces
   the sub-metric hub, all 23 rubric pages, and JSON/CSV references.
 - `build_use_cases_page.py` reads `docs/use-cases/*.json` and produces the use-case
-  hub, all 64 detail pages, the score dataset, Dataset/ItemList metadata, and RSS feed.
+  hub, all 157 detail pages, the score dataset, Dataset/ItemList metadata, and RSS feed.
 - `build_search_intent_pages.py` produces four assessment guides, the case-reference
   topic hub, and eight evidence-rich topic collections from the same generated case data.
 - Edit `scripts/site/fragments/site_header.html`, then run `apply_shared_navigation.py`; do not hand-edit repeated page headers.
 - `build_all.py` then rebuilds global search, recursively stamps CSS/JS hashes, and
-  regenerates the 126-URL sitemap with content-aware modification dates.
+  regenerates the 219-URL sitemap with content-aware modification dates.
 - `_headers` gives versioned CSS/JS immutable caching, shorter data-file caching, and
   `noindex, nofollow` protection to Cloudflare Pages preview hostnames.
 
@@ -141,7 +141,7 @@ python3 scripts/analysis/audit_repository.py
 
 It verifies the 127-file HTML inventory, exact detail-page counts, local links,
 fragment targets, unique IDs, one H1 per public URL, canonical and Open Graph URLs,
-structured data, indexing/snippet policy, 126-URL sitemap parity and last-modified dates, asset hashes,
+structured data, indexing/snippet policy, 219-URL sitemap parity and last-modified dates, asset hashes,
 shared-header equivalence, global-search coverage, preview noindex/cache rules,
 required collaboration files, and canonical deliverables.
 

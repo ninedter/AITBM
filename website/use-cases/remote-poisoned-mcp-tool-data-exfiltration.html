@@ -1,0 +1,206 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>Data Exfiltration via Remote Poisoned MCP Tool | AITBM</title>
+  <meta name="description" content="This AIDEFEND SecureFlow record converts MITRE ATLAS case study AML.CS0054 into a defense-mapped attack flow. It documents the observed attack path and…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/remote-poisoned-mcp-tool-data-exfiltration" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/remote-poisoned-mcp-tool-data-exfiltration" />
+  <meta property="og:title" content="Data Exfiltration via Remote Poisoned MCP Tool | AITBM" />
+  <meta property="og:description" content="This AIDEFEND SecureFlow record converts MITRE ATLAS case study AML.CS0054 into a defense-mapped attack flow. It documents the observed attack path and…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=792bb8a8" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/remote-poisoned-mcp-tool-data-exfiltration#article",
+      "url": "https://aitbm.org/use-cases/remote-poisoned-mcp-tool-data-exfiltration",
+      "headline": "Data Exfiltration via Remote Poisoned MCP Tool",
+      "name": "Data Exfiltration via Remote Poisoned MCP Tool",
+      "description": "This AIDEFEND SecureFlow record converts MITRE ATLAS case study AML.CS0054 into a defense-mapped attack flow. It documents the observed attack path and…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-09-21",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/remote-poisoned-mcp-tool-data-exfiltration#breadcrumb"
+      },
+      "keywords": "Data Exfiltration via Remote Poisoned MCP Tool, Research, AIDEFEND, AML.CS0054, AML.CS0054, AML.T0065, AML.T0115.002, AML.T0010.005, AML.T0110.000, AML.T0011.002, AML.T0051.001, AML.T0053, AML.T0055, AML.T0098, AML.T0086, AML.T0048.003, MITRE ATLAS, AIDEFEND SecureFlow, Cn-5, Ro-1, Cn-7, Cn-1, Cn-6, Cn-3, Ro-3, Pr-1"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/remote-poisoned-mcp-tool-data-exfiltration#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Data Exfiltration via Remote Poisoned MCP Tool | AITBM",
+          "item": "https://aitbm.org/use-cases/remote-poisoned-mcp-tool-data-exfiltration"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="explore-link" role="menuitem">AI Safety Benchmark</a>
+              <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="explore-link" role="menuitem">Security Assessment</a>
+              <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="explore-link" role="menuitem">Evaluation Methods</a>
+              <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="explore-link" role="menuitem">Framework Comparison</a>
+              <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="explore-link" role="menuitem">Case Reference Library</a>
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AI Safety Benchmark</a>
+        <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Security Assessment</a>
+        <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Evaluation Methods</a>
+        <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework Comparison</a>
+        <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Case Reference Library</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-5xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">Data Exfiltration via Remote Poisoned MCP Tool</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">AIDEFEND SECUREFLOW ATTACK-FLOW RECORD · NO ERS</p><h1 class="mt-2 text-4xl font-bold">Data Exfiltration via Remote Poisoned MCP Tool</h1><p class="mt-4 max-w-3xl text-blue-100">Researchers at Invariant Labs demonstrated that AI agents configured with remote Model Context Protocol (MCP) Tools can be vulnerable to model poisoning attacks. They show that an MCP Tool can contain malicious prompts in its docstring description, which is ingested into the AI agent&#x27;s context, modifying its behavior.
+
+They demonstrate this attack with a proof-of-concept MCP Tool that instructs the agent to perform additional actions before using the tool. The agent is instructed to read files containing credentials from the victim&#x27;s machine and store their contents in one of the input variables to the tool. When the tool runs, the victim&#x27;s credentials are exfiltrated to the poisoned MCP server.</p></div></section>
+<article class="mx-auto max-w-5xl px-4 sm:px-6 py-14"><section class="rounded-xl border border-gray-200 bg-gray-50 p-6"><h2 class="text-2xl font-bold text-navy">Why this record has no ERS</h2><p class="mt-3 text-muted">This AIDEFEND SecureFlow record converts MITRE ATLAS case study AML.CS0054 into a defense-mapped attack flow. It documents the observed attack path and the applicable AIDEFEND controls, but it does not establish one bounded assessed deployment with a configuration, a complete evidence set, and measured control performance. Assigning IVP, ORP, ACI, or ERS values would invent system-specific evidence. The attack steps, ATLAS technique references, and the exact upstream defense set are retained as candidate evidence routes only.</p><p class="mt-3 text-sm text-muted"><strong>Classification:</strong> Research · source date 2026-08-06 · primary evidence date 2025-04-01</p></section><section class="mt-10"><h2 class="text-2xl font-bold text-navy">SecureFlow attack flow</h2><p class="mt-2 text-sm text-muted">This record mirrors an <a href="https://aidefendlabs.com/en/secureflow/?flow=atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration" class="font-semibold text-navy hover:underline" target="_blank" rel="noopener noreferrer">AIDEFEND SecureFlow</a> flow (MITRE ATLAS case-study conversion): an ordered attack path with MITRE ATLAS tactic and technique labels and the AIDEFEND controls matched to each step. The flow documents what happened and which controls apply; it does not establish an assessed deployment.</p><div class="mt-4 overflow-x-auto"><table class="text-sm"><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">MITRE ATLAS case study</th><td class="py-1 text-sm text-muted"><a href="https://atlas.mitre.org/studies/AML.CS0054" class="text-navy hover:underline" target="_blank" rel="noopener noreferrer">AML.CS0054</a> (exercise)</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">Target</th><td class="py-1 text-sm text-muted">Model Context Protocol</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">Actor</th><td class="py-1 text-sm text-muted">Invariant Labs</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">Primary evidence date</th><td class="py-1 text-sm text-muted">2025-04-01</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">SecureFlow record updated</th><td class="py-1 text-sm text-muted">2026-08-06</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">AI layers</th><td class="py-1 text-sm text-muted">Autonomous agents, Tool integrations / MCP</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">Risk impact</th><td class="py-1 text-sm text-muted">Data exfiltration, Credential and identity theft</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">Affected components</th><td class="py-1 text-sm text-muted">remote MCP server, MCP tool description and docstring, AI agent tool dispatcher, local credential files, MCP tool parameter channel</td></tr></table></div><h3 class="mt-6 text-lg font-bold text-navy">Attack steps</h3><div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr><th class="num" style="width:3rem">#</th><th>Step</th><th style="width:9rem">ATLAS tactic / technique</th></tr></thead><tbody><tr><td class="num">1</td><td><strong class="text-navy">Craft Credential-Theft Tool Prompt</strong><span class="block text-sm text-muted">The researchers crafted a prompt that instructs an AI agent to discover and read user credentials files and store them in an input parameter of an MCP tool.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0003<br>AML.T0065</td></tr><tr><td class="num">2</td><td><strong class="text-navy">Host Poisoned MCP Server</strong><span class="block text-sm text-muted">The researchers hosted a poisoned MCP server that contains the malicious instructions hidden in the docstring of one of the provided tools.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0003<br>AML.T0115.002</td></tr><tr><td class="num">3</td><td><strong class="text-navy">Connect Agent to Adversary-Controlled MCP Server</strong><span class="block text-sm text-muted">The victim configured their AI agent to connect to the adversary-controlled remote MCP server, introducing the poisoned tool definition into the agent&#x27;s available tool set.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0004<br>AML.T0010.005</td></tr><tr><td class="num">4</td><td><strong class="text-navy">Embed Credential-Theft Instructions in Tool Definition</strong><span class="block text-sm text-muted">The MCP tool&#x27;s model-visible docstring contained malicious instructions directing the agent to read credential files, conceal the additional actions from the user, and place the credential contents in an otherwise unnecessary tool parameter.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0006<br>AML.T0110.000</td></tr><tr><td class="num">5</td><td><strong class="text-navy">Trigger Poisoned MCP Tool</strong><span class="block text-sm text-muted">When the user made a request that represented the poisoned tool&#x27;s functionality, the agent invoked the poisoned MCP tool and acted on the malicious instructions contained in its definition.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0005<br>AML.T0011.002</td></tr><tr><td class="num">6</td><td><strong class="text-navy">Execute Tool-Definition Prompt Injection</strong><span class="block text-sm text-muted">The agent ingested and followed malicious instructions supplied through the remote tool&#x27;s model-visible definition rather than directly through an adversary-authored user message.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0005<br>AML.T0051.001</td></tr><tr><td class="num">7</td><td><strong class="text-navy">Invoke File-Reading Agent Tool</strong><span class="block text-sm text-muted">The prompt invoked an agent tool capable of reading files from the victim&#x27;s filesystem.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0005<br>AML.T0053</td></tr><tr><td class="num">8</td><td><strong class="text-navy">Read Local SSH Private Key</strong><span class="block text-sm text-muted">The prompt instructed the AI agent to read the user&#x27;s SSH keys at `~/.ssh/id_rsa`.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0013<br>AML.T0055</td></tr><tr><td class="num">9</td><td><strong class="text-navy">Read MCP Configuration Credentials</strong><span class="block text-sm text-muted">The prompt instructed the AI agent to read `mcp.json`, which often contains credentials for other MCP servers.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0013<br>AML.T0098</td></tr><tr><td class="num">10</td><td><strong class="text-navy">Exfiltrate Credentials via Tool Parameter</strong><span class="block text-sm text-muted">The prompt instructed the AI agent to store the credentials files in an extraneous MCP tool parameter to exfiltrate them via the MCP connection.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0010<br>AML.T0086</td></tr><tr><td class="num">11</td><td><strong class="text-navy">Expose User Private Data</strong><span class="block text-sm text-muted">The user&#x27;s private data was exposed to remote MCP server.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0011<br>AML.T0048.003</td></tr></tbody></table></div><h3 class="mt-6 text-lg font-bold text-navy">Threat references</h3><div class="mt-2 flex flex-wrap gap-2"><a href="https://atlas.mitre.org/studies/AML.CS0054" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.CS0054: Data Exfiltration via Remote Poisoned MCP Tool</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0065</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0115.002</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0010.005</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0110.000</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0011.002</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0051.001</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0053</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0055</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0098</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0086</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0048.003</a></div><p class="mt-4 text-xs text-gray-500">Summary and attack steps reproduced from AIDEFEND SecureFlow (https://aidefendlabs.com/en/secureflow/?flow=atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration; AIDEFEND content CC BY 4.0), converted from MITRE ATLAS case study AML.CS0054 (Apache License 2.0; MITRE ATLAS is a trademark of The MITRE Corporation).</p></section><section class="mt-10"><h2 class="text-2xl font-bold text-navy">AIDEFEND evidence routes</h2><div class="mt-4"><h4 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h4>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief or in the AIDEFEND SecureFlow defense map (retrieved 2026-09-21); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.09.20. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-024.001</td><td>Fully Qualified Tool ID &amp; Version Pinning<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-3. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-024.002</td><td>MCP Tool Descriptor Hash Binding &amp; Drift Detection<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-4. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-024.004</td><td>Approved Tool Contract Semantics &amp; Change Admission<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-4. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-016.001</td><td>System Prompt Structure &amp; Instruction/Data Separation<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-6. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-001.001</td><td>Per-Prompt Content, Intent &amp; Obfuscation Analysis<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-6. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-1</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-017.007</td><td>Dual-LLM Isolation Pattern<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-6. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-017.002</td><td>Least-Privilege Tool Architecture<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-7. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.004</td><td>Intent-Based Dynamic Capability Scoping<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-7. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.002</td><td>Policy-Based Access Control<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack steps step-8, step-9, step-10. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.003</td><td>High-Impact Independent Validation &amp; Approval Gate<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack steps step-8, step-10. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-003.002</td><td>Sensitive Information &amp; Data Leakage Detection<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack steps step-8, step-10. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-3</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Ro-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-028.002</td><td>Client Credential Secure Storage &amp; Lifecycle Management<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-9. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-DV-002</td><td>Honey Data, Decoy Artifacts &amp; Canary Tokens for AI<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-9. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Pr-1</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-H-018.005</td><td>Value-Level Capability Metadata &amp; Data Flow Sink Enforcement<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-10. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-1</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-001.001</td><td>Root &amp; Long-Lived Credential Object Eviction<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-11. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-E-001.002</td><td>Issued Token, Authentication Session &amp; Lease Revocation<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-11. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-R-004</td><td>Fleet Remediation Propagation &amp; Technical Recurrence Prevention<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-11. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-gray-100 px-1.5 py-0.5 text-xs font-semibold text-gray-700">ORP:Rf remediation evidence</span></span></td></tr></tbody></table></div></div></section><section class="mt-10"><h2 class="text-2xl font-bold text-navy">Related AITBM rubrics</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/ro-1-adversarial-input-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-1: Adversarial Input Resistance</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a><a href="/submetrics/cn-1-scope-enforcement" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-1: Scope Enforcement</a><a href="/submetrics/cn-6-action-reversibility-classification-rate-arcr" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6: Action Reversibility Classification Rate</a><a href="/submetrics/cn-3-output-filtering-robustness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-3: Output Filtering Robustness</a><a href="/submetrics/ro-3-output-consistency" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Ro-3: Output Consistency</a><a href="/submetrics/pr-1-training-data-leakage-risk" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Pr-1: Training Data Leakage Risk</a></div></section><section class="mt-10"><h2 class="text-2xl font-bold text-navy">Sources</h2><ul class="mt-3 space-y-2 text-sm"><li><a href="https://aidefendlabs.com/en/secureflow/?flow=atlas-aml-cs0054-remote-poisoned-mcp-tool-data-exfiltration" class="font-semibold text-navy hover:underline" target="_blank" rel="noopener noreferrer">AIDEFEND SecureFlow — Data Exfiltration via Remote Poisoned MCP Tool</a></li><li><a href="https://atlas.mitre.org/studies/AML.CS0054" class="font-semibold text-navy hover:underline" target="_blank" rel="noopener noreferrer">MITRE ATLAS case study AML.CS0054</a></li><li><a href="https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks" class="font-semibold text-navy hover:underline" target="_blank" rel="noopener noreferrer">MCP Security Notification: Tool Poisoning Attacks (invariantlabs.ai)</a></li></ul></section></article></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Research notes are indexed for evidence discovery but intentionally carry no ERS.</div></div>
+</footer>  <script src="/assets/js/site-search-index.js?v=cbc0808f"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script></body></html>
