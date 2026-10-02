@@ -213,7 +213,7 @@
     var input = document.getElementById("case-search-input");
     var panel = document.getElementById("case-search-panel");
     var clear = wrap.querySelector("[data-search-clear]");
-    var techniques = collectTechniques(data.cases);
+    var techniques = [];
     var activeIndex = -1;
 
     function closePanel() {
@@ -332,7 +332,12 @@
         return;
       }
 
-      var matches = data.cases.map(function (item) {
+      techniques = collectTechniques(data.cases.filter(function (item) {
+        return state.filter === "not-scored" ? item.scored === false : item.scored !== false;
+      }));
+      var matches = data.cases.filter(function (item) {
+        return state.filter === "not-scored" ? item.scored === false : item.scored !== false;
+      }).map(function (item) {
         return { item: item, rank: caseRank(item, query) };
       }).filter(function (entry) { return entry.rank >= 0; })
         .sort(function (a, b) { return b.rank - a.rank || b.item.ers - a.item.ers; });
@@ -379,7 +384,7 @@
       footer.id = "case-search-view-all";
       footer.setAttribute("role", "option");
       footer.appendChild(el("span", "", matches.length ?
-        "View all " + matches.length + " matching records" : "No case title matches — search the full evidence text"));
+        "View all " + matches.length + " matching records" : "No title matches — search summaries and AIDEFEND techniques"));
       footer.appendChild(el("span", "", "View directory →"));
       footer.addEventListener("click", function () {
         closePanel();
@@ -548,6 +553,9 @@
       var tags = (row.dataset.tags || "").split(/\s+/);
       var filterMatch = !state.filter || tags.indexOf(state.filter) !== -1;
       if (!filterMatch) return false;
+      // The research archive is an explicit mode, never mixed into scored results.
+      var archive = state.filter === "not-scored";
+      if (archive !== (row.dataset.ers === "")) return false;
       if (!state.query) return true;
       var searchData = window.__aitbmSearchCases;
       if (!searchData && dataNode) {
@@ -601,7 +609,7 @@
       var parts = [];
       if (state.filterLabel) parts.push(state.filterLabel);
       if (state.query) parts.push('search "' + state.query + '"');
-      status.textContent = parts.length ? parts.join(" · ") : "All library records";
+      status.textContent = parts.length ? parts.join(" · ") : "ERS-scored use cases";
     }
 
     var active = document.querySelector("[data-active-filter]");
