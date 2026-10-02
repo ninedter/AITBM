@@ -1,0 +1,206 @@
+<!doctype html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7VDS29BQ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K7VDS29BQ0');</script>
+  <title>SesameOp: Novel backdoor uses OpenAI Assistants API… | AITBM</title>
+  <meta name="description" content="This AIDEFEND SecureFlow record converts MITRE ATLAS case study AML.CS0042 into a defense-mapped attack flow. It documents the observed attack path and…" />
+  <link rel="canonical" href="https://aitbm.org/use-cases/sesameop-openai-assistants-api-c2" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AITBM use cases" href="/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Trust Benchmarking and Maturity Framework" />
+  <meta property="og:url" content="https://aitbm.org/use-cases/sesameop-openai-assistants-api-c2" />
+  <meta property="og:title" content="SesameOp: Novel backdoor uses OpenAI Assistants API… | AITBM" />
+  <meta property="og:description" content="This AIDEFEND SecureFlow record converts MITRE ATLAS case study AML.CS0042 into a defense-mapped attack flow. It documents the observed attack path and…" />
+  <meta property="og:image" content="https://aitbm.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AITBM — AI Trust Benchmarking and Maturity Framework" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aitbm.org/assets/og-image.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9b4cd2c4" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=792bb8a8" />
+
+  <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aitbm.org/#org",
+      "name": "AITBM",
+      "alternateName": "AI Trust Benchmarking and Maturity Framework",
+      "url": "https://aitbm.org/",
+      "logo": "https://aitbm.org/assets/logo/aitbm-icon-dark.svg",
+      "sameAs": [
+        "https://github.com/ninedter/AITBM",
+        "https://www.linkedin.com/in/ninedter/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aitbm.org/#website",
+      "name": "AI Trust Benchmarking and Maturity Framework",
+      "alternateName": "AITBM",
+      "url": "https://aitbm.org/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aitbm.org/use-cases/sesameop-openai-assistants-api-c2#article",
+      "url": "https://aitbm.org/use-cases/sesameop-openai-assistants-api-c2",
+      "headline": "SesameOp: Novel backdoor uses OpenAI Assistants API for command and control",
+      "name": "SesameOp: Novel backdoor uses OpenAI Assistants API for command and control",
+      "description": "This AIDEFEND SecureFlow record converts MITRE ATLAS case study AML.CS0042 into a defense-mapped attack flow. It documents the observed attack path and…",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-09-21",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Henry Hu",
+        "url": "https://www.linkedin.com/in/ninedter/"
+      },
+      "publisher": {
+        "@id": "https://aitbm.org/#org"
+      },
+      "isPartOf": {
+        "@id": "https://aitbm.org/#website"
+      },
+      "image": "https://aitbm.org/assets/og-image.png",
+      "breadcrumb": {
+        "@id": "https://aitbm.org/use-cases/sesameop-openai-assistants-api-c2#breadcrumb"
+      },
+      "keywords": "SesameOp: Novel backdoor uses OpenAI Assistants API for command and control, Incident, AIDEFEND, AML.CS0042, AML.CS0042, AML.T0096, MITRE ATLAS, AIDEFEND SecureFlow, Cn-4, Cn-7, Tr-3, Cn-5, Cn-6"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aitbm.org/use-cases/sesameop-openai-assistants-api-c2#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitbm.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use cases",
+          "item": "https://aitbm.org/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SesameOp: Novel backdoor uses OpenAI Assistants API… | AITBM",
+          "item": "https://aitbm.org/use-cases/sesameop-openai-assistants-api-c2"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="font-sans antialiased bg-paper">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200" data-site-header>
+    <div class="w-full px-4">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="AITBM overview">
+          <img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" />
+          <span class="leading-tight">
+            <span class="block font-bold text-navy tracking-tight">AITBM</span>
+            <span class="hidden sm:block text-[11px] text-muted -mt-0.5">AI Trust Benchmarking &amp; Maturity</span>
+          </span>
+        </a>
+        <nav class="site-primary-nav hidden lg:flex items-center gap-6 text-sm text-gray-700" aria-label="Primary navigation">
+          <a href="/" data-nav="index" class="nav-link hover:text-navy">Overview</a>
+          <a href="/framework" data-nav="framework" class="nav-link hover:text-navy">Framework</a>
+          <a href="/use-cases" data-nav="use-cases" class="nav-link hover:text-navy">Use Cases</a>
+          <div class="relative" data-explore-menu>
+            <button type="button" class="nav-link inline-flex items-center gap-1 hover:text-navy"
+                    data-explore-toggle aria-expanded="false" aria-controls="site-explore-panel">
+              Explore <i class="ph ph-caret-down text-xs" aria-hidden="true"></i>
+            </button>
+            <div id="site-explore-panel" data-explore-panel class="explore-panel hidden" role="menu">
+              <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="explore-link" role="menuitem">AI Safety Benchmark</a>
+              <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="explore-link" role="menuitem">Security Assessment</a>
+              <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="explore-link" role="menuitem">Evaluation Methods</a>
+              <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="explore-link" role="menuitem">Framework Comparison</a>
+              <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="explore-link" role="menuitem">Case Reference Library</a>
+              <a href="/gap-analysis" data-nav="gap-analysis" class="explore-link" role="menuitem">Gap Analysis</a>
+              <a href="/aidefend" data-nav="aidefend" class="explore-link" role="menuitem">AIDEFEND</a>
+              <a href="/mappings" data-nav="mappings" class="explore-link" role="menuitem">Mappings</a>
+              <a href="/calculator" data-nav="calculator" class="explore-link" role="menuitem">Calculator</a>
+              <a href="/glossary" data-nav="glossary" class="explore-link" role="menuitem">Glossary</a>
+            </div>
+          </div>
+          <a href="/resources" data-nav="resources" class="nav-link hover:text-navy">Resources</a>
+          <button type="button" data-site-search-open class="global-search-jump" aria-label="Search all AITBM content"
+                  aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>Search AITBM</span>
+            <kbd>/</kbd>
+          </button>
+          <a href="https://github.com/ninedter/AITBM" class="rounded-md bg-navy px-3 py-1.5 text-white hover:bg-navy-light">GitHub</a>
+        </nav>
+        <button data-nav-toggle aria-expanded="false" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center rounded p-2 text-navy">
+          <i class="ph ph-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div data-nav-menu class="hidden lg:hidden pb-4 space-y-1 text-sm">
+        <a href="/" data-nav="index" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Overview</a>
+        <a href="/framework" data-nav="framework" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework</a>
+        <a href="/use-cases" data-nav="use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Use Cases</a>
+        <a href="/ai-safety-benchmark" data-nav="ai-safety-benchmark" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AI Safety Benchmark</a>
+        <a href="/ai-security-assessment" data-nav="ai-security-assessment" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Security Assessment</a>
+        <a href="/ai-evaluation-methods" data-nav="ai-evaluation-methods" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Evaluation Methods</a>
+        <a href="/ai-framework-comparison" data-nav="ai-framework-comparison" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Framework Comparison</a>
+        <a href="/ai-security-use-cases" data-nav="ai-security-use-cases" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Case Reference Library</a>
+        <a href="/gap-analysis" data-nav="gap-analysis" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Gap Analysis</a>
+        <a href="/aidefend" data-nav="aidefend" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">AIDEFEND</a>
+        <a href="/mappings" data-nav="mappings" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Mappings</a>
+        <a href="/calculator" data-nav="calculator" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Calculator</a>
+        <a href="/glossary" data-nav="glossary" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Glossary</a>
+        <a href="/resources" data-nav="resources" class="mobile-link block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">Resources</a>
+        <button type="button" data-site-search-open class="mobile-link flex w-full items-center gap-2 rounded px-3 py-2 text-left text-gray-700 hover:bg-gray-50"
+                aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search all AITBM content
+        </button>
+        <a href="https://github.com/ninedter/AITBM" class="block rounded px-3 py-2 text-gray-700 hover:bg-gray-50">GitHub</a>
+      </div>
+    </div>
+  </header>
+<main><section class="bg-navy text-white"><div class="mx-auto max-w-5xl px-4 sm:px-6 py-12"><nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-navy">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="/use-cases" class="hover:text-navy">Use cases</a></li>
+        <li aria-hidden="true">/</li><li aria-current="page" class="text-gray-700">SesameOp: Novel backdoor uses OpenAI Assistants API for command and control</li>
+      </ol>
+    </nav><p class="mt-8 text-xs font-semibold tracking-wider text-blue-200">AIDEFEND SECUREFLOW ATTACK-FLOW RECORD · NO ERS</p><h1 class="mt-2 text-4xl font-bold">SesameOp: Novel backdoor uses OpenAI Assistants API for command and control</h1><p class="mt-4 max-w-3xl text-blue-100">The Microsoft Incident Response - Detection and Response Team (DART) investigated a compromised system where a threat actor utilized SesameOp, a backdoor implant that abuses the OpenAI Assistants API as a covert command and control channel, for espionage activities. The SesameOp malware used the OpenAI API to fetch and execute the threat actor&#x27;s commands and to exfiltrate encrypted results from the victim system.
+
+The threat actor had maintained a presence on the compromised system for several months. They had control of multiple internal web shells which executed commands from malicious processes that relied on compromised Visual Studio utilities. Investigation of other Visual Studio utilities led to the discovery of the novel SesameOp backdoor.</p></div></section>
+<article class="mx-auto max-w-5xl px-4 sm:px-6 py-14"><section class="rounded-xl border border-gray-200 bg-gray-50 p-6"><h2 class="text-2xl font-bold text-navy">Why this record has no ERS</h2><p class="mt-3 text-muted">This AIDEFEND SecureFlow record converts MITRE ATLAS case study AML.CS0042 into a defense-mapped attack flow. It documents the observed attack path and the applicable AIDEFEND controls, but it does not establish one bounded assessed deployment with a configuration, a complete evidence set, and measured control performance. Assigning IVP, ORP, ACI, or ERS values would invent system-specific evidence. The attack steps, ATLAS technique references, and the exact upstream defense set are retained as candidate evidence routes only.</p><p class="mt-3 text-sm text-muted"><strong>Classification:</strong> Incident · source date 2026-08-06 · primary evidence date 2025-07-01</p></section><section class="mt-10"><h2 class="text-2xl font-bold text-navy">SecureFlow attack flow</h2><p class="mt-2 text-sm text-muted">This record mirrors an <a href="https://aidefendlabs.com/en/secureflow/?flow=atlas-aml-cs0042-sesameop-openai-assistants-api-c2" class="font-semibold text-navy hover:underline" target="_blank" rel="noopener noreferrer">AIDEFEND SecureFlow</a> flow (MITRE ATLAS case-study conversion): an ordered attack path with MITRE ATLAS tactic and technique labels and the AIDEFEND controls matched to each step. The flow documents what happened and which controls apply; it does not establish an assessed deployment.</p><div class="mt-4 overflow-x-auto"><table class="text-sm"><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">MITRE ATLAS case study</th><td class="py-1 text-sm text-muted"><a href="https://atlas.mitre.org/studies/AML.CS0042" class="text-navy hover:underline" target="_blank" rel="noopener noreferrer">AML.CS0042</a> (incident)</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">Target</th><td class="py-1 text-sm text-muted">OpenAI Assistants API</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">Actor</th><td class="py-1 text-sm text-muted">Unknown Threat Actor</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">Reporter</th><td class="py-1 text-sm text-muted">Microsoft Incident Response - Detection and Response Team (DART)</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">Primary evidence date</th><td class="py-1 text-sm text-muted">2025-07-01</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">SecureFlow record updated</th><td class="py-1 text-sm text-muted">2026-08-06</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">AI layers</th><td class="py-1 text-sm text-muted">Autonomous agents</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">Risk impact</th><td class="py-1 text-sm text-muted">System compromise / RCE, Resource hijacking / cost</td></tr><tr><th class="text-left align-top pr-4 py-1 text-xs font-semibold text-navy whitespace-nowrap">Affected components</th><td class="py-1 text-sm text-muted">OpenAI Assistants API, SesameOp backdoor implant, compromised Windows host, external AI service egress path</td></tr></table></div><h3 class="mt-6 text-lg font-bold text-navy">Attack steps</h3><div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr><th class="num" style="width:3rem">#</th><th>Step</th><th style="width:9rem">ATLAS tactic / technique</th></tr></thead><tbody><tr><td class="num">1</td><td><strong class="text-navy">Relay C2 via OpenAI Assistants API</strong><span class="block text-sm text-muted">The threat actor abused the OpenAI Assistants API to relay commands to the SesameOp malware, which executed them on the victim system, and sent the results back to the threat actor via the same channel. Both commands and results are encrypted. SesameOp cleaned up its tracks by deleting the Assistants and Messages it created and used for communication.</span></td><td class="font-mono text-[11px] whitespace-nowrap">AML.TA0014<br>AML.T0096</td></tr></tbody></table></div><h3 class="mt-6 text-lg font-bold text-navy">Threat references</h3><div class="mt-2 flex flex-wrap gap-2"><a href="https://atlas.mitre.org/studies/AML.CS0042" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.CS0042: SesameOp: Novel backdoor uses OpenAI Assistants API for command and control</a><a href="https://atlas.mitre.org/" class="rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-200" target="_blank" rel="noopener noreferrer">AML.T0096</a></div><p class="mt-4 text-xs text-gray-500">Summary and attack steps reproduced from AIDEFEND SecureFlow (https://aidefendlabs.com/en/secureflow/?flow=atlas-aml-cs0042-sesameop-openai-assistants-api-c2; AIDEFEND content CC BY 4.0), converted from MITRE ATLAS case study AML.CS0042 (Apache License 2.0; MITRE ATLAS is a trademark of The MITRE Corporation).</p></section><section class="mt-10"><h2 class="text-2xl font-bold text-navy">AIDEFEND evidence routes</h2><div class="mt-4"><h4 class="mt-6 text-sm font-bold text-navy">AIDEFEND defences &rarr; AITBM sub-metrics</h4>
+    <p class="mt-1 text-xs text-gray-500">Identifiers are quoted as they appear on the AIDEFEND in Action
+    brief or in the AIDEFEND SecureFlow defense map (retrieved 2026-09-21); the sub-metric mapping is AITBM's own, from the specification's
+    AIDEFEND tables reconciled at catalogue data version 2026.09.20. AIDEFEND renumbers
+    identifiers between releases, so the data version travels with every mapping and neither side's IDs
+    should be cited without one. A mapping identifies a possible evidence route; a recommendation does
+    not prove that the control was implemented or effective and receives no scoring credit by itself.</p>
+    <div class="mt-2 overflow-x-auto"><table class="ev-table"><thead><tr>
+      <th style="width:8rem">Technique</th><th>Defence</th>
+      <th class="num" style="width:6rem">Priority</th><th style="width:9rem">Evidences</th>
+    </tr></thead><tbody><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-002.002</td><td>Secure External AI Service Connectivity<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0042-sesameop-openai-assistants-api-c2), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-1. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-4</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-D-005.009</td><td>AI-Service C2 &amp; Abuse-Channel Detection<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0042-sesameop-openai-assistants-api-c2), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-1. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Tr-3</span></span></td></tr><tr><td class="font-mono text-[11px] whitespace-nowrap">AID-I-003.001</td><td>Detection-Driven Quarantine &amp; Safe-Mode Downgrade<span class="block text-[11px] text-gray-500">Exact SecureFlow defense-map identifier (flow atlas-aml-cs0042-sesameop-openai-assistants-api-c2), verified against AIDEFEND dataVersion 2026.09.20; matched to attack step step-1. Presence supplies no score credit.</span></td><td class="num">Candidate evidence route</td><td><span class="inline-flex flex-wrap gap-1"><span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-5</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-6</span> <span class="rounded bg-navy/10 px-1.5 py-0.5 text-xs font-semibold text-navy">Cn-7</span></span></td></tr></tbody></table></div></div></section><section class="mt-10"><h2 class="text-2xl font-bold text-navy">Related AITBM rubrics</h2><div class="mt-4 flex flex-wrap gap-2"><a href="/submetrics/cn-4-side-channel-resistance" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-4: Side-Channel Resistance</a><a href="/submetrics/cn-7-resource-and-execution-loop-containment" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-7: Resource and Execution-Loop Containment</a><a href="/submetrics/tr-3-audit-trail-completeness" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Tr-3: Audit Trail Completeness</a><a href="/submetrics/cn-5-agent-identity-integrity" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-5: Agent Identity Integrity</a><a href="/submetrics/cn-6-action-reversibility-classification-rate-arcr" class="rounded bg-navy/10 px-2 py-1 text-xs font-semibold text-navy">Cn-6: Action Reversibility Classification Rate</a></div></section><section class="mt-10"><h2 class="text-2xl font-bold text-navy">Sources</h2><ul class="mt-3 space-y-2 text-sm"><li><a href="https://aidefendlabs.com/en/secureflow/?flow=atlas-aml-cs0042-sesameop-openai-assistants-api-c2" class="font-semibold text-navy hover:underline" target="_blank" rel="noopener noreferrer">AIDEFEND SecureFlow — SesameOp: Novel backdoor uses OpenAI Assistants API for command and control</a></li><li><a href="https://atlas.mitre.org/studies/AML.CS0042" class="font-semibold text-navy hover:underline" target="_blank" rel="noopener noreferrer">MITRE ATLAS case study AML.CS0042</a></li><li><a href="https://www.microsoft.com/en-us/security/blog/2025/11/03/sesameop-novel-backdoor-uses-openai-assistants-api-for-command-and-control/" class="font-semibold text-navy hover:underline" target="_blank" rel="noopener noreferrer">SesameOp: Novel backdoor uses OpenAI Assistants API for command and control (microsoft.com)</a></li></ul></section></article></main>
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+    <div><div class="flex items-center gap-2.5"><img src="/assets/logo/aitbm-icon-dark.svg" alt="" class="h-9 w-9" /><span><span class="block font-bold text-navy">AITBM</span><span class="block text-[11px] text-muted">AI Trust Benchmarking &amp; Maturity</span></span></div><p class="mt-3 text-sm text-muted max-w-xs">An open, evidence-bound framework for assessing AI security risk.</p></div>
+    <div><h2 class="text-sm font-semibold text-navy">Explore</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="/framework" class="hover:text-navy">Framework</a></li><li><a href="/use-cases" class="hover:text-navy">Use cases</a></li><li><a href="/submetrics" class="hover:text-navy">Sub-metrics</a></li><li><a href="/mappings" class="hover:text-navy">Framework mappings</a></li><li><a href="/calculator" class="hover:text-navy">ERS calculator</a></li></ul></div>
+    <div><h2 class="text-sm font-semibold text-navy">Project</h2><ul class="mt-3 space-y-2 text-sm text-muted"><li><a href="https://github.com/ninedter/AITBM" class="hover:text-navy">GitHub repository</a></li><li><a href="https://www.linkedin.com/in/ninedter/" class="hover:text-navy">Project lead</a></li></ul></div>
+  </div>
+  <div class="border-t border-gray-200"><div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs text-gray-500">© <span data-year>2026</span> AITBM. Released under the MIT License. Research notes are indexed for evidence discovery but intentionally carry no ERS.</div></div>
+</footer>  <script src="/assets/js/site-search-index.js?v=cbc0808f"></script>
+  <script src="/assets/js/site.js?v=f4bf5292"></script></body></html>
