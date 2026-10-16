@@ -122,64 +122,39 @@ See [specification/sections/09_worked_example_finbot.md](specification/sections/
 ```
 AITBM/
 ├── README.md                          This file
-├── specification/                     The framework specification, in every form
-│   ├── AITBM_Framework_Specification.pdf        Read it as one document
-│   ├── AITBM_Framework_Specification.docx       Editable Word source
-│   └── sections/                                The same spec, section by section (Markdown)
-│       ├── README.md                            Section index
-│       ├── 00_revision_history.md
-│       ├── 01_executive_summary.md
-│       ├── 02_design_principles.md
-│       ├── 03_three_layer_architecture.md
-│       ├── 04_deployment_tier_classification.md
-│       ├── 05_effective_risk_score.md
-│       ├── 06_minimum_viability_thresholds.md
-│       ├── 07_behavioral_baseline_deviation.md
-│       ├── 08_tiered_assessment_pathways.md
-│       ├── 09_worked_example_finbot.md
-│       ├── 10_framework_comparison.md
-│       ├── 11_implementation_roadmap.md
-│       ├── 12_conclusion.md
-│       ├── 13_references.md
-│       ├── 14_aidefend_integration.md
-│       └── external_framework_mappings.md          Sixteen external frameworks mapped to AITBM
-└── website/                           Project website (static HTML + Tailwind CSS)
-    ├── index.html            Overview and landing page
-    ├── ai-safety-benchmark.html      Deployed-system AI safety benchmark guide
-    ├── ai-security-assessment.html   AI security assessment methodology
-    ├── ai-evaluation-methods.html    Safety and security evaluation methods
-    ├── ai-framework-comparison.html  Neutral comparison of framework roles
-    ├── ai-security-use-cases.html    Topic hub for the 64-record case library
-    ├── framework.html        Three-layer architecture (IVP/ORP/ACI/ERS)
-    ├── submetrics.html       The 23 sub-metrics reference
-    ├── use-cases.html        Evidence-bounded incident scenarios with uncertainty ranges
-    ├── use-cases/            64 complete case-study and research-note records
-    ├── use-case-topics/      Eight threat and architecture reference collections
-    ├── mappings/             Sixteen complete external-framework crosswalks
-    ├── submetrics/           Twenty-three canonical rubric and test-method pages
-    ├── gap-analysis.html     12 structural gaps across 4 domains
-    ├── aidefend.html         AIDEFEND mapping and worked examples
-    ├── mappings.html         Sixteen external frameworks mapped to AITBM
-    ├── calculator.html       ERS calculator -- quick yes/no survey + detailed mode
-    ├── glossary.html         AI security terms and acronyms
-    ├── resources.html        Documentation links and standards alignment
-    ├── assets/               CSS and JavaScript assets
-    ├── Dockerfile            Docker container configuration
-    └── docker-compose.yml    Local development (docker compose up --build)
+└── specification/                     The framework specification, in every form
+    ├── AITBM_Framework_Specification.pdf        Read it as one document
+    ├── AITBM_Framework_Specification.docx       Editable Word source
+    └── sections/                                The same spec, section by section (Markdown)
+        ├── README.md                            Section index
+        ├── 00_revision_history.md
+        ├── 01_executive_summary.md
+        ├── 02_design_principles.md
+        ├── 03_three_layer_architecture.md
+        ├── 04_deployment_tier_classification.md
+        ├── 05_effective_risk_score.md
+        ├── 06_minimum_viability_thresholds.md
+        ├── 07_behavioral_baseline_deviation.md
+        ├── 08_tiered_assessment_pathways.md
+        ├── 09_worked_example_finbot.md
+        ├── 10_framework_comparison.md
+        ├── 11_implementation_roadmap.md
+        ├── 12_conclusion.md
+        ├── 13_references.md
+        ├── 14_aidefend_integration.md
+        └── external_framework_mappings.md          Sixteen external frameworks mapped to AITBM
 ```
 
 ---
 
-## Running the Website Locally
+## Website
 
-```bash
-cd website
-docker compose up --build -d
-```
+The project website is published at **https://aitbm.org** — the framework,
+the 23 sub-metrics, the ERS calculator, the case library, and the external
+framework crosswalks, all browsable.
 
-Then open http://localhost:8080.
-
-The site is static HTML with Tailwind CSS (CDN) and vanilla JavaScript -- no build step required.
+The website sources are maintained in the private working repository and are
+not distributed here; this repository carries the specification deliverables.
 
 ---
 
@@ -199,7 +174,7 @@ The site is static HTML with Tailwind CSS (CDN) and vanilla JavaScript -- no bui
 | AIDEFEND | Defensive countermeasure evidence mapping (168 placements / 77 of 92 technique families, data version 2026.08.05); 64 AIDEFEND in Action analyses represented on the website |
 | D3FEND 1.0 | Version-pinned defensive countermeasure crosswalk; latest 1.5.0 release status is disclosed separately |
 
-All of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the GPAI Code of Practice — are crosswalked to relevant AITBM sub-metrics and evidence roles on the [Framework Mappings](website/mappings.html) page and in the [External Framework Mappings](specification/sections/external_framework_mappings.md) section of the specification.
+All of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the GPAI Code of Practice — are crosswalked to relevant AITBM sub-metrics and evidence roles on the [Framework Mappings](https://aitbm.org/mappings) page and in the [External Framework Mappings](specification/sections/external_framework_mappings.md) section of the specification.
 
 ---
 
