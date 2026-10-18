@@ -165,13 +165,13 @@ not distributed here; this repository carries the specification deliverables.
 | OWASP AISVS | Requirement-verification evidence source |
 | OWASP Top 10 for LLMs 2026 | Current ten-risk evidence and test-selection crosswalk |
 | OWASP Agentic AI — Threats and Mitigations v1.1 | T1--T17 threat-taxonomy crosswalk; companion ASI01--ASI10 Top 10 alignment |
-| MITRE ATLAS v2026.07 | All 16 tactics routed for test selection; 178 techniques, 37 mitigations, and 68 case studies tracked |
+| MITRE ATLAS v2026.09 | All 16 tactics routed for test selection; 208 techniques (120 top-level + 88 sub-techniques), 40 mitigations, and 73 case studies tracked |
 | OWASP AIVSS | Prior art for agentic vulnerability severity; AITBM separately assesses broader system properties |
 | ISO 42001 / 42005 | Governance alignment; impact assessment methodology |
 | NIST AI RMF | Risk management framework alignment |
 | NIST Cyber AI Profile IR 8596 | Cyber-AI intersection alignment |
 | EU AI Act | Regulatory crosswalk and potential evidence support; not a compliance determination |
-| AIDEFEND | Defensive countermeasure evidence mapping (168 placements / 77 of 92 technique families, data version 2026.08.05); 64 AIDEFEND in Action analyses represented on the website |
+| AIDEFEND | Defensive countermeasure evidence mapping (171 placements / 78 of 93 technique families, data version 2026.09.20); all 88 AIDEFEND in Action analyses and 69 SecureFlow attack flows represented on the website as a 157-record library, 114 of them with evidence-bounded AITBM scenarios |
 | D3FEND 1.0 | Version-pinned defensive countermeasure crosswalk; latest 1.5.0 release status is disclosed separately |
 
 All of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the GPAI Code of Practice — are crosswalked to relevant AITBM sub-metrics and evidence roles on the [Framework Mappings](https://aitbm.org/mappings) page and in the [External Framework Mappings](specification/sections/external_framework_mappings.md) section of the specification.
