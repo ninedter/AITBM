@@ -10,14 +10,14 @@ At initial deployment and after each full assessment, a behavioral baseline is e
 
 Minimum Baseline Validity Requirements
 
-*Table 66: 7.1 Baseline Establishment*
+*Table 71: 7.1 Baseline Establishment*
 
 | Requirement | Tier 1 | Tier 2 | Tier 3 |
 | --- | --- | --- | --- |
 | Minimum observation period | 14 days | 21 days | 30 days |
 | Minimum decision samples | 1,000 | 500 | 200 |
 | Minimum unique user sessions | 100 | 50 | 20 |
-| Minimum JS divergence confidence | 95% (p < 0.05) | 90% (p < 0.10) |  |
+| Minimum JS divergence confidence | 95% (p < 0.05) | 90% (p < 0.10) | 90% (p < 0.10) |
 
 Cold-Start Protocol: Until the minimum baseline validity requirements above are met, drift classification is suspended and monitoring operates in observation-only mode: no M_TDI = 0.60 credit may be claimed, and Tf is capped at 0.85. If twice the minimum observation period elapses without a valid baseline, the system is treated as unbaselined and C_evidence <= 0.65 applies until baseline establishment completes.
 
@@ -35,13 +35,13 @@ Variables. P_baseline is the behavioral distribution recorded at assessment (dec
 
 Why this form. Jensen-Shannon divergence is chosen over alternatives such as Kullback-Leibler divergence for three reasons. It is symmetric, so drift measured baseline-to-current equals current-to-baseline, which matters when neither distribution is privileged as 'true'. It is bounded on the [0, 1] interval (with log base 2), so fixed thresholds such as 0.15, 0.35, and 0.60 stay stable and comparable across systems, whereas an unbounded measure could not anchor them. And it stays finite even when one distribution assigns zero probability to an event the other allows, a common situation when a new tool-call target or a novel output appears, where Kullback-Leibler divergence would diverge to infinity. This operationalizes the principle that risk is cumulative and monitored continuously, not captured only at assessment time (Design Principle 2.5).
 
-*Table 67: 7.2 Drift Detection*
+*Table 72: 7.2 Drift Detection*
 
 | BBD Threshold | Classification | Automated Action | ACI Impact |
 | --- | --- | --- | --- |
-| BBD < 0.15 | Normal Variance | Continue monitoring | Tf decay slowed if < 0.10 |
-| 0.15 <= BBD < 0.35 | Elevated Deviation | Alert + increased monitoring | Tf reduced by 25% |
-| 0.35 <= BBD < 0.60 | Significant Drift | Alert + mandatory reassessment 72h | Tf reduced by 60% |
-| BBD >= 0.60 | Critical Deviation | Alert + auto quarantine (HITL) + full reassessment | Tf reset to 0.10 |
+| BBD < 0.15 | Normal Variance | Continue monitoring | Per the Section 3.3.3.3 BBD treatment (M_TDI and C_evidence caps); no separate Tf reduction |
+| 0.15 <= BBD < 0.35 | Elevated Deviation | Alert + increased monitoring | Per the Section 3.3.3.3 BBD treatment (M_TDI and C_evidence caps); no separate Tf reduction |
+| 0.35 <= BBD < 0.60 | Significant Drift | Alert + mandatory reassessment 72h | Per the Section 3.3.3.3 BBD treatment (M_TDI and C_evidence caps); no separate Tf reduction |
+| BBD >= 0.60 | Critical Deviation | Alert + auto quarantine (HITL) + full reassessment | Per the Section 3.3.3.3 BBD treatment (M_TDI and C_evidence caps); no separate Tf reduction |
 
 The Behavioral Attestation Battery (BAB, Section 3.3.3) reuses the BBD thresholds above unchanged; the Behavioral Attestation Window changes only how often a baseline comparison must occur.
