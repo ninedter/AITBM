@@ -2,7 +2,7 @@
 
 Deployment tiers eliminate subjective weight selection. Organizations classify each AI deployment into exactly one tier, and all weights, thresholds, and decay constants are deterministically derived.
 
-*Table 57: 4. Deployment Tier Classification*
+*Table 60: 4. Deployment Tier Classification*
 
 | Tier | Definition | Examples | Cadence |
 | --- | --- | --- | --- |
@@ -15,22 +15,22 @@ Deployment tiers eliminate subjective weight selection. Organizations classify e
 
 IVP axis weights are deployment-tier-specific. The following profiles are applied when compositing the IVP score across the five axes.
 
-*Table 58: 4.1 IVP Weight Profiles (W_ivp)*
+*Table 61: 4.1 IVP Weight Profiles (W_ivp)*
 
 | Axis | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
 | --- | --- | --- | --- | --- |
 | Robustness | 0.30 | 0.25 | 0.20 | 0.15 |
 | Fairness | 0.25 | 0.30 | 0.15 | 0.10 |
-| Transparency | 0.15 |  | 0.20 | 0.30 |
-| Privacy | 0.20 |  | 0.25 | 0.15 |
-| Containment | 0.10 |  | 0.20 | 0.30 |
-| Sum | 1.00 |  |  |  |
+| Transparency | 0.15 | 0.15 | 0.20 | 0.30 |
+| Privacy | 0.20 | 0.20 | 0.25 | 0.15 |
+| Containment | 0.10 | 0.10 | 0.20 | 0.30 |
+| Sum | 1.00 | 1.00 | 1.00 | 1.00 |
 
 ## 4.2 ORP Weight Profiles (W_orp)
 
 ORP dimension weights are deployment-tier-specific. The following profiles are applied when compositing the ORP score across the four dimensions.
 
-*Table 59: 4.2 ORP Weight Profiles (W_orp)*
+*Table 62: 4.2 ORP Weight Profiles (W_orp)*
 
 | Dimension | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
 | --- | --- | --- | --- | --- |
@@ -38,7 +38,7 @@ ORP dimension weights are deployment-tier-specific. The following profiles are a
 | Attack Surface | 0.25 | 0.35 | 0.25 | 0.20 |
 | Cascade Potential | 0.25 | 0.20 | 0.30 | 0.25 |
 | Remediation Feas. | 0.15 | 0.20 | 0.25 | 0.40 |
-| Sum | 1.00 |  |  |  |
+| Sum | 1.00 | 1.00 | 1.00 | 1.00 |
 
 ## 4.3 ACI Weight Profile (W_aci)
 
@@ -56,14 +56,14 @@ Variables. w_pc, w_ec, and w_tf are the weights of Provenance Completeness, Eval
 
 Why this form. A weighted geometric mean preserves the weakest-link behavior of the equal-weight version while leaving room for future, empirically justified re-weighting. The weights are held equal and tier-independent on purpose: deployment criticality is already carried by Tf through its decay constant and caps, so moving it into the ACI weights as well would count the same factor twice and make scores from different tiers no longer comparable.
 
-*Table 60: 4.3 ACI Weight Profile (W_aci)*
+*Table 63: 4.3 ACI Weight Profile (W_aci)*
 
 | ACI Component | Tier 1 | Tier 2 | Tier 3 | Tier 4 | Rationale |
 | --- | --- | --- | --- | --- | --- |
-| Provenance Completeness (Pc) | 1/3 |  |  |  | Unknown model, data, tool, or identity provenance undermines confidence at every tier. |
-| Evaluation Coverage (Ec) | 1/3 |  |  |  | Incomplete testing cannot be offset by fresh telemetry or strong provenance. |
-| Temporal Freshness (Tf) | 1/3 |  |  |  | Freshness is equally weighted, while tier-specific urgency is applied through lambda and caps. |
-| Sum | 1.00 |  |  |  | Weights are fixed to preserve cross-tier comparability. |
+| Provenance Completeness (Pc) | 1/3 | 1/3 | 1/3 | 1/3 | Unknown model, data, tool, or identity provenance undermines confidence at every tier. |
+| Evaluation Coverage (Ec) | 1/3 | 1/3 | 1/3 | 1/3 | Incomplete testing cannot be offset by fresh telemetry or strong provenance. |
+| Temporal Freshness (Tf) | 1/3 | 1/3 | 1/3 | 1/3 | Freshness is equally weighted, while tier-specific urgency is applied through lambda and caps. |
+| Sum | 1.00 | 1.00 | 1.00 | 1.00 | Weights are fixed to preserve cross-tier comparability. |
 
 Operational Rule: Deployment tier changes Tf behavior, not W_aci. Tier 1 systems decay faster and face stricter event and monitoring caps; Tier 4 systems decay more slowly. The component composition remains equal because Pc, Ec, and Tf represent independent assurance prerequisites.
 
@@ -71,7 +71,7 @@ Operational Rule: Deployment tier changes Tf behavior, not W_aci. Tier 1 systems
 
 The assessor answers the following questions in order. The first YES answer assigns the architecture class. If all questions are answered NO until Q6, classify the system as Traditional ML / Classifier. Evidence for each answer must be documented in the assessment workpapers.
 
-*Table 61: 4.4 Architecture Classification Decision Tree*
+*Table 64: 4.4 Architecture Classification Decision Tree*
 
 | Question | Classification if YES | Required Evidence | Examples |
 | --- | --- | --- | --- |
@@ -86,16 +86,16 @@ Hybrid System Rule
 
 Systems spanning multiple categories are classified by the highest-risk qualifying architecture. Order: Multi-Agent / MCP > Agentic / MCP > Tool-Calling LLM > RAG > Standalone LLM / GenAI > Traditional ML / Classifier. Components excluded from scope must be documented with an explicit boundary statement.
 
-*Table 62: 4.4 Architecture Weighting Guidance*
+*Table 65: 4.4 Architecture Classification Decision Tree*
 
-| Architecture Class | Primary Risk Emphasis | Weighting Guidance |
+| Architecture Class | Primary Risk Emphasis | Assessment Emphasis |
 | --- | --- | --- |
-| Traditional ML / Classifier | Data quality, robustness, calibration, fairness, privacy. | Apply baseline IVP/ORP weights. Agent-specific sub-metrics may be marked NOT APPLICABLE only when no tool, retrieval, or autonomous component exists. |
-| Standalone LLM / Generative AI | Prompt injection, adversarial inputs, hallucination, output filtering, privacy leakage. | Increase Robustness and Transparency emphasis. Containment remains applicable for output boundaries and policy enforcement. |
-| RAG / Retrieval-Augmented System | Corpus poisoning, retrieval manipulation, provenance, privacy leakage, stale or unauthorized context. | Increase Robustness, Privacy, and Transparency emphasis. Require RAG provenance and retrieval drift evidence in ACI. |
-| Tool-Calling LLM / Connected GenAI | Tool poisoning, excessive permission, unsafe API invocation, auditability, data exfiltration. | Increase Containment and Transparency emphasis. Cn-1, Cn-2, Cn-3, Cn-7, Tr-3, and Ro-4 are mandatory unless formally out of scope. |
-| Agentic / MCP System | Autonomous goal drift, multi-step escalation, memory poisoning, identity spoofing, MCP/tool supply chain, runaway loops, and aggregate resource or spend exhaustion. | Apply agentic weights. Cn-1 through Cn-7 are mandatory; ORP Attack Surface and graph-derived Cascade Potential must account for tool authority, autonomy, fan-out, and downstream reach. |
-| Multi-Agent / MCP System | Cross-agent collusion, cascading failure, shared-memory poisoning, delegated authority, identity-boundary failure, recursive delegation, and fan-out exhaustion. | Apply highest-risk agentic weights plus explicit graph-derived cascade review. Cn-2, Cn-5, Cn-6, Cn-7, Tr-3, and ACI behavioral-drift monitoring are mandatory; resource accounting must aggregate at the root task. |
+| Traditional ML / Classifier | Data quality, robustness, calibration, fairness, privacy. | Apply baseline IVP/ORP weights. Agent-specific sub-metrics may be marked NOT APPLICABLE on a documented architecture rationale; Cn-8 and Cn-9 are NOT APPLICABLE by design. Ro-5 applies to model files and dependencies. |
+| Standalone LLM / Generative AI | Prompt injection, adversarial inputs, hallucination, output filtering, privacy leakage. | Increase Robustness and Transparency emphasis. Containment remains applicable for output boundaries and untrusted-context isolation (Cn-8); Ro-5 applies to model and template artifacts; Cn-9 applies where persistent memory or user-modifiable instruction state exists. |
+| RAG / Retrieval-Augmented System | Corpus poisoning, retrieval manipulation, provenance, privacy leakage, stale or unauthorized context. | Increase Robustness, Privacy, and Transparency emphasis. Require RAG provenance and retrieval trust labelling (Cn-8), corpus content integrity (Ro-4), and index artifact admission (Ro-5); Cn-9 applies where memory or instruction state is writable. |
+| Tool-Calling LLM / Connected GenAI | Tool poisoning, excessive permission, unsafe API invocation, auditability, data exfiltration. | Increase Containment and Transparency emphasis. Cn-1, Cn-2, Cn-3, Cn-7, Cn-8, Cn-9, Tr-3, Ro-4, and Ro-5 are mandatory unless formally out of scope. |
+| Agentic / MCP System | Autonomous goal drift, multi-step escalation, memory poisoning, identity spoofing, MCP/tool supply chain, runaway loops, aggregate resource or spend exhaustion, untrusted-context injection, and self-modification of instructions, skills, or memory. | Apply agentic weights. Cn-1 through Cn-9 and Ro-5 are mandatory; ORP Attack Surface and graph-derived Cascade Potential must account for tool authority, autonomy, fan-out, and downstream reach. |
+| Multi-Agent / MCP System | Cross-agent collusion, cascading failure, shared-memory poisoning, delegated authority, identity-boundary failure, recursive delegation, and fan-out exhaustion. | Apply highest-risk agentic weights plus explicit graph-derived cascade review. Cn-2, Cn-5, Cn-6, Cn-7, Cn-8, Cn-9, Tr-3, and ACI behavioral-drift monitoring are mandatory; resource accounting must aggregate at the root task. |
 
 Classification Output Format
 
@@ -104,3 +104,18 @@ Assessors must record: Architecture Class, YES question number, evidence artifac
 Weight Derivation Basis
 
 Architecture-specific weights are deterministic after classification. They are derived from the deployment tier, architecture class, and mandatory applicability rules above; assessors may not manually adjust weights outside the documented NOT APPLICABLE redistribution rule.
+
+The decision tree assigns each architecture class to exactly one intra-axis weight set (Section 3) and states whether the class is connected or agentic for the Tier 1 Containment MVT rule (Section 6.1). The assignment is fixed; assessors may not select a different weight set.
+
+*Table 66: 4.4 Architecture Classification Decision Tree*
+
+| Architecture Class | Decision Tree | Intra-Axis Weight Set | Connected or Agentic |
+| --- | --- | --- | --- |
+| Multi-Agent / MCP System | Q1 | Agentic | Yes |
+| Agentic / MCP System | Q2 | Agentic | Yes |
+| Tool-Calling LLM / Connected GenAI | Q3 | LLM/GenAI | Yes |
+| RAG / Retrieval-Augmented System | Q4 | LLM/GenAI | Yes |
+| Standalone LLM / Generative AI | Q5 | LLM/GenAI | No |
+| Traditional ML / Classifier | Q6 | Classifier/ML | No |
+
+Assignment basis. The Agentic weight set applies only where the system plans or executes multi-step work autonomously (Q1, Q2); single-step tool calling (Q3) keeps the LLM/GenAI set because the Q2 and Q3 boundary is autonomy, and its additional Containment exposure is carried by the mandatory sub-metrics above and by the connected designation. A class is connected when it acts on, or ingests content from, systems outside the model boundary at inference time (tools, connectors, retrieval, or other agents). Axis weights depend on the deployment tier only; the Assessment Emphasis column above states where evidence must concentrate and does not alter any numerical weight. Cn-8 (Untrusted Context Isolation) and Cn-9 (Self-Modification and Persistent-State Containment) carry no Classifier/ML weight and are NOT APPLICABLE by design for Q6; Ro-5 (Supply-Chain Artifact Admission Integrity) applies to every class.

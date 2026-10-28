@@ -2,7 +2,7 @@
 
 [1] OWASP GenAI Security Project. (2026). OWASP Top 10 for LLM Applications 2026. Retrieved from https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/
 
-[2] OWASP. (2026). OWASP Top 10 for Agentic AI Applications 2026. Retrieved from https://genai.owasp.org/
+[2] OWASP. (2026). OWASP Top 10 for Agentic AI Applications 2026. Retrieved from https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
 
 [3] MITRE Corporation. (2026). MITRE ATLAS: Adversarial Threat Landscape for Artificial-Intelligence Systems, data version 2026.09. Retrieved from https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.09
 
@@ -20,7 +20,7 @@
 
 [10] European Union. (2024, amended 2026). Regulation (EU) 2024/1689 on Artificial Intelligence, as amended by Regulation (EU) 2026/1744. Official Journal of the European Union.
 
-[11] OWASP. (2026). AI Security Verification Standard (AISVS) 1.0. Retrieved from https://github.com/OWASP/AISVS
+[11] OWASP. (2026). AI Security Verification Standard (AISVS) 1.01. Retrieved from https://github.com/OWASP/AISVS
 
 [12] AIDEFEND Framework. (2026). AI Defense Framework for Security Controls. Retrieved from https://aidefend.net/
 

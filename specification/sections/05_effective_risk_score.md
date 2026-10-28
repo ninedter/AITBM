@@ -28,3 +28,19 @@ How the Residual Risk Floor Works:
 When W_ivp · IVP = 0 (no intrinsic security): mitigation factor = 1.0 (full operational risk). When W_ivp · IVP = 1.0 (perfect): mitigation factor = 0.15 (15% of operational risk always persists). This ensures a system deployed with high operational risk always registers meaningful ERS regardless of intrinsic quality.
 
 Boundary Conditions: ERS is capped at 10.0. Perfect IVP cannot reduce operational risk below the alpha floor. If ACI approaches zero, the assessment is invalid and must be refreshed rather than treated as precise risk inflation.
+
+## 5.2 ERS Severity Bands
+
+The published ERS is assigned to one of five severity bands. The band is read from the published one-decimal value, so the number and the label shown to a reader always agree.
+
+*Table 67: 5.2 ERS Severity Bands*
+
+| Severity Band | Published ERS | Interpretation |
+| --- | --- | --- |
+| Critical | 9.0 - 10.0 | Operational risk is largely unmitigated, compounded, or under-assured; includes every result at the 10.0 cap. |
+| High | 7.0 - 8.9 | Material residual risk that requires prioritized remediation before expansion of scope or autonomy. |
+| Moderate | 5.0 - 6.9 | Residual risk that requires a tracked remediation plan within the tier review cadence. |
+| Low-Moderate | 3.0 - 4.9 | Residual risk within tolerance for most tiers when the MVT result and ACI status are acceptable. |
+| Low | 0.0 - 2.9 | Residual risk near the alpha floor for the assessed operational posture. |
+
+Band rules. Intervals are closed below and open above on the published value (for example, 6.95 publishes as 7.0 and is High); exact one-decimal ties round half-up. The Critical and High boundaries align with the CVSS and OWASP AIVSS qualitative scales for interoperability; AITBM divides their broad Medium range into Moderate and Low-Moderate, and has no None band because the residual risk floor keeps ERS above zero whenever operational risk exists. The ERS band is independent of the MVT severity in Section 6.1: a system can be Low-Moderate on ERS and still fail an MVT. Public-evidence scenarios report the band of the indicative midpoint only, together with its interval.

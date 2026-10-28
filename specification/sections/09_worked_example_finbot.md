@@ -10,7 +10,7 @@ Architecture Classification: Agentic / MCP System (Decision Tree Q2: YES - auton
 
 The IVP assessment scores each of Finbot's five axes, comparing the score against the Tier-1 MVT and noting the key finding per axis.
 
-*Table 69: 9.1 IVP Assessment*
+*Table 74: 9.1 IVP Assessment*
 
 | Axis | Score | MVT | Result | Key Finding |
 | --- | --- | --- | --- | --- |
@@ -18,7 +18,7 @@ The IVP assessment scores each of Finbot's five axes, comparing the score agains
 | Fairness | 0.82 | 0.60 | PASS | Meets demographic parity per JPGR (US) |
 | Transparency | 0.60 | 0.55 | PASS | Audit trail incomplete for tool calls |
 | Privacy | 0.55 | 0.60 | FAIL - Minor | Email ingested without PII scrubbing |
-| Containment | 0.25 | 0.65 | FAIL - Critical | No permission broker for transactions; Cn-6 = 0.25 (ad-hoc >$50K gate); no admissible token, spend, tool-call, retry, recursion, delegation, or root-task aggregate budget evidence (Cn-7 = 0.00). |
+| Containment | 0.25 | 0.65 | FAIL - Critical | No permission broker for transactions; Cn-6 = 0.25 (ad-hoc >$50K gate); no admissible token, spend, tool-call, retry, recursion, delegation, or root-task aggregate budget evidence (Cn-7 = 0.00); email content admitted to active context as trusted instruction (Cn-8 = 0.00); writable RAG memory whose writes are visible after the fact but not gated (Cn-9 = 0.25). |
 
 MVT Severity: Critical - Containment is 0.40 below the Tier 1 MVT and three axes fall below required thresholds.
 
@@ -26,7 +26,7 @@ MVT Severity: Critical - Containment is 0.40 below the Tier 1 MVT and three axes
 
 The ORP assessment scores Finbot's four operational dimensions, which combine via the weight profile and the Compound Risk Multiplier.
 
-*Table 70: 9.2 ORP Assessment*
+*Table 75: 9.2 ORP Assessment*
 
 | Dimension | Score | Justification |
 | --- | --- | --- |
@@ -41,12 +41,12 @@ CRM Assessment: N_elevated = 3 (Aa=0.95, As=0.85, Cp=1.00 all > 0.75). CRM = 1.3
 
 The ACI assessment scores how much is known about Finbot's evidence across provenance, evaluation coverage, and temporal freshness.
 
-*Table 71: 9.3 ACI Assessment*
+*Table 76: 9.3 ACI Assessment*
 
 | Component | Score | Justification |
 | --- | --- | --- |
 | Provenance Completeness (Pc) | 0.60 | Partial AIBOM exists: base model documented (GPT-4 via API), but RAG corpus provenance incomplete. Email ingestion pipeline has no data lineage. Completeness ~60%. |
-| Evaluation Coverage (Ec) | 0.35 | Self-assessed (Independence Multiplier = 0.60) with Base_Coverage approximately 0.70 (16 of 23 sub-metrics tested) in staging (Fidelity Factor = 0.85). Cn-7 has no admissible execution-budget or loop-control test evidence. Ec = (16/23) x 0.60 x 0.85 = 0.355, rounded to 0.35. |
+| Evaluation Coverage (Ec) | 0.35 | Self-assessed (Independence Multiplier = 0.60) with Base_Coverage approximately 0.69 (18 of 26 sub-metrics tested) in staging (Fidelity Factor = 0.85). Cn-7 has no admissible execution-budget or loop-control test evidence and Ro-5 has no artifact-admission test evidence. Ec = (18/26) x 0.60 x 0.85 = 0.353, rounded to 0.35. |
 | Temporal Freshness (Tf) | 0.71 | Assessment evidence is 5 days old. Tier 1 lambda = 0.0231, so T_calendar = e^(-0.0231 x 5) = 0.891. Agentic architecture: containment staleness floor T_containment = e^(-2.0 x 0.0231 x 5) = 0.794. Writable RAG memory trips the Behavioral Attestation Window checklist; no BAB program exists, so delta_t_beh = 5 and the behavioral staleness floor T_behavior = e^(-3.0 x 0.0231 x 5) = 0.71. Behavioral instrumentation is limited to the >$50K exception gate plus a staging-time drift baseline: C_behavior Band 2 (cap 0.75). Unresolved identity/tool gaps cap C_evidence at 0.85. Tf = min(0.891, 0.794, 0.71, 0.75, 0.85) = 0.71. |
 
 ## 9.4 ERS Calculation
