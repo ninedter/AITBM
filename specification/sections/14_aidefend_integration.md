@@ -4,7 +4,7 @@ Mapping AIDEFEND Defensive Techniques to AITBM Sub-Metrics
 
 ## Overview
 
-AIDEFEND (https://aidefend.net/) is an independent open-source knowledge base of defensive countermeasures for AI systems, created by Edward Lee and not affiliated with OWASP or MITRE. The AIDEFEND data reviewed for this section (October 18, 2026) uses schema 2.3 and data version 2026.10.15. It contains 93 top-level technique families, 274 sub-techniques, 367 total records, and 309 actionable controls across tactics, pillars, lifecycle phases, and external framework mappings. Relative to data version 2026.09.20, two sub-techniques were added (AID-H-004.006 and AID-H-004.007, which inherit the AID-H-004 placements) and none removed, while 77 existing records changed, including two renames at a stable identifier; no placement changed. Neither identifiers nor names are stable across data versions and must never be cited without one. This section maps AIDEFEND evidence to AITBM's 26 sub-metrics. Parent families provide navigation and coverage routing only; implementation evidence must resolve to an actionable standalone or leaf control, while AITBM remains the scoring framework.
+AIDEFEND (https://aidefend.net/) is an independent open-source knowledge base of defensive countermeasures for AI systems, created by Edward Lee and not affiliated with OWASP or MITRE. The AIDEFEND data reviewed for this section (November 17, 2026) uses schema 2.3 and data version 2026.11.15. It contains 93 top-level technique families, 276 sub-techniques, 369 total records, and 311 actionable controls across tactics, pillars, lifecycle phases, and external framework mappings. Relative to data version 2026.10.15, two sub-techniques were added (AID-D-003.009 and AID-H-017.008, which inherit their parent placements) and none removed or renamed, while 140 records changed a relationship array and 41 changed control text; no placement changed. Neither identifiers nor names are stable across data versions and must never be cited without one. This section maps AIDEFEND evidence to AITBM's 26 sub-metrics. Parent families provide navigation and coverage routing only; implementation evidence must resolve to an actionable standalone or leaf control, while AITBM remains the scoring framework.
 
 1. Translate defensive implementations into AITBM evidence — Organizations can test mapped AIDEFEND controls against the applicable AITBM rubric criteria
 
@@ -16,7 +16,7 @@ AIDEFEND (https://aidefend.net/) is an independent open-source knowledge base of
 
 ## AIDEFEND Tactical Structure
 
-The reviewed data version organizes 93 top-level defensive techniques and 274 sub-techniques across 7 tactics:
+The reviewed data version organizes 93 top-level defensive techniques and 276 sub-techniques across 7 tactics:
 
 *Table 78: AIDEFEND Tactical Structure*
 
@@ -52,13 +52,13 @@ The mapping rule is intentionally conservative: AIDEFEND identifies measurable d
 
 | Profile Element | Current AIDEFEND Value | AITBM Assessment Use |
 | --- | --- | --- |
-| Source baseline | Schema 2.3; data version 2026.10.15; 93 technique families, 274 sub-techniques, 367 records, and 309 actionable controls. | Records the baseline used for traceable AITBM mapping and future drift review. |
-| Technique depth | 93 top-level techniques; 274 sub-techniques; 367 total defensive records. | Top-level techniques define control families; sub-techniques define concrete evidence selectors. |
+| Source baseline | Schema 2.3; data version 2026.11.15; 93 technique families, 276 sub-techniques, 369 records, and 311 actionable controls. | Records the baseline used for traceable AITBM mapping and future drift review. |
+| Technique depth | 93 top-level techniques; 276 sub-techniques; 369 total defensive records. | Top-level techniques define control families; sub-techniques define concrete evidence selectors. |
 | Strategic views | Tactics, pillars, phases, and framework mappings. | Allows AITBM to map evidence by security objective, protected component, lifecycle timing, and threat rationale. |
 | Tactics | Model 10; Harden 38; Detect 18; Isolate 8; Deceive 7; Evict 5; Restore 7. | Separates preventive IVP evidence from operational ORP evidence and freshness-supporting ACI evidence. |
 | Pillars | Data, Model, Infrastructure, and Application. | Aligns evidence collection to AITBM axes: Robustness, Fairness, Transparency, Privacy, and Containment. |
 | Lifecycle phases | Scoping, building, validation, operation, response, and improvement. | Determines when evidence must be collected and whether it remains fresh enough for ACI. |
-| External mappings | MITRE ATLAS v2026.09, MAESTRO, OWASP LLM Top 10 2026, OWASP ML 2023, OWASP Agentic AI 2026, NIST AML 2025, Cisco AI Security, Google SAIF 2.0, and Databricks DASF 3.0. | Supports threat traceability; does not replace AITBM scoring thresholds. |
+| External mappings | MITRE ATLAS v2026.10, MAESTRO, OWASP LLM Top 10 2026, OWASP ML 2023, OWASP Agentic AI 2026, NIST AML 2025, Cisco AI Security, Google SAIF 2.0, and Databricks DASF 3.0. | Supports threat traceability; does not replace AITBM scoring thresholds. |
 
 ### Depth Mapping Model
 
@@ -133,6 +133,8 @@ The current AIDEFEND data adds or clarifies several agentic, gateway, generated-
 | AID-H-038 Inference Serving Runtime Surface & Privileged Capability Governance (new technique family, mapped 2026-09-09) | Added to Ro-4, Cn-1, and Cn-2; 171 placements across 78 families. | Serving-runtime surface reduction and privileged-capability governance are inspectable evidence for those sub-metrics; Cn-7 and Pr-2 were evaluated and not mapped. |
 | Sub-metric expansion to 26 (2026-10-18) | AID-D-004, AID-H-022 and AID-H-023 re-routed from Ro-4 to Ro-5; AID-H-019 from Ro-1 to Cn-8; Ro-5, Cn-8 and Cn-9 placements added; 185 placements across 78 families. | The new Ro-5, Cn-8 and Cn-9 sub-metrics take the artifact-admission, untrusted-context and persistent-state evidence that the earlier sub-metrics carried. |
 | AIDEFEND data version 2026.10.15 re-pin | No placement change; AID-H-004.006 and AID-H-004.007 inherit AID-H-004 placements; 185 placements across 78 families. | An item-level review of the 2026.09.20 to 2026.10.15 delta found renamed records and changed relationship arrays but no change requiring a new placement. |
+| AIDEFEND data version 2026.11.15 re-pin | No placement change; AID-D-003.009 inherits AID-D-003 placements and AID-H-017.008 inherits AID-H-017 placements; 185 placements across 78 families. | An item-level review of the 2026.10.15 to 2026.11.15 delta found two added sub-techniques, ATLAS v2026.10 relationship relabels, and changed control text, but no change requiring a new placement. |
+| Pr-2, Cn-4, and Cn-7 placement validation (2026-11-21) | AID-H-006 and AID-H-033 added to Pr-2 (evidence through AID-H-006.003 and AID-H-033.006 only); AID-H-033 added to Cn-4 (evidence through AID-H-033.006 only); AID-H-017.008 added as a partial Cn-7 selector; 188 placements across 78 families; Cn-7 30 selectors. | Both Pr-2 sub-techniques act on the information a query-access attacker receives, which the Pr-2 inference and extraction tests measure; AID-H-033.006 also restricts (denies or clamps) the token-probability channel named in the Cn-4 test method; the run-lease bound is the external-resource counterpart of the existing lifetime and teardown selectors. |
 
 ### Sub-Technique Evidence Examples
 
@@ -146,13 +148,15 @@ The examples below show how AIDEFEND sub-techniques become measurable AITBM evid
 | Ro-3 / Tr-3 | AID-H-033.001 Requested-vs-Effective Model Binding Records; AID-H-033.004 Route Policy Bundle Versioning, Approval, Canary & Rollback. | Verify output consistency, model routing integrity, policy rollback, and audit trail completeness. |
 | Ro-4 | AID-H-020.001 Chunk-Level Integrity Signing; AID-DV-007 Training-Data Provenance & Behavioral Canaries. | Measure poisoning detection rate, corpus tamper detection, and canary-trigger coverage. |
 | Pr-2 / Cn-4 | AID-I-004.002 Persistent Memory Partitioning (Trust & Tenant Isolation); AID-I-008.001 Ephemeral Browser Context Lifecycle & Storage Partitioning. | Measure tenant, memory, browser-session, and origin-isolation leakage under adversarial tests. |
+| Pr-2 extraction and inference | AID-H-006.003 Prediction Response Minimization & Extraction-Resistance Validation; AID-H-033.006 Effective Invocation Configuration Resolution & Enforcement. | Measure MEA and score-based membership-inference AUC on the deployed response profile; partial evidence that does not replace the Pr-2 tests or limit replication from sampled text output. |
+| Cn-4 token-probability leakage | AID-H-033.006 Effective Invocation Configuration Resolution & Enforcement. | Measure token-probability leakage (SCLR and distinguishability) on public generative routes with the exposed probability and bias fields requested; partial evidence for that channel only. |
 | Pr-3 | AID-H-029.003 Consent Scope Tracking, Expiry Enforcement & Withdrawal Response; AID-M-010.001 Cryptographic Erasure & Media Sanitization. | Verify data-use authorization, deletion, consent expiry, and minimization evidence. |
 | Cn-1 / Cn-5 | AID-H-018.007 Skill-Level Permission Manifest Validation & Runtime Enforcement; AID-H-028.001 MCP Server Authenticity Validation & Connection Pinning. | Measure tool-scope enforcement, MCP identity validation, and unauthorized tool invocation failure rate. |
 | Cn-5 / ACI | AID-M-001.003 Agentic Skill & Instruction Asset Inventory; AID-I-004.006 Agent Identity & Persistent State File Write Protection. | Verify agent or skill inventory completeness, identity binding, ownership, stale-skill remediation, and persistent-state protection. |
 | Cn-2 Escalation Prevention | AID-H-021.004 Control-Plane & Oversight-Surface Isolation. | Evidence that the agent cannot administer its own supervision (monitoring rules, kill-switch, audit streams). |
 | Pr-3 Data Minimization Compliance | AID-H-020.003 Document/Chunk-Level Permission-Aware Retrieval. | Chunk-entitlement enforcement rate before context assembly. |
 | ACI C_monitor / Cn-5 MTTQ | AID-D-017 detection SLOs (dwell time, triage time, coverage ratio). | Measured monitoring-continuity evidence replacing assessor attestation. |
-| Cn-7 preventive enforcement | AID-H-017.001/.004/.006; AID-H-018.004; AID-H-028.005/.008; AID-H-033.002/.006; AID-H-034.001/.007/.008/.009; AID-H-037.002; AID-I-001.001/.003; AID-I-003.001/.002/.003; AID-I-004.001/.005; AID-I-005; AID-I-008.001/.004. | Measure BEC, RBVR, LTFR, and GDSR across all applicable resource, lifecycle, loop, failover, halt, and architecture-specific classes. |
+| Cn-7 preventive enforcement | AID-H-017.001/.004/.006/.008; AID-H-018.004; AID-H-028.005/.008; AID-H-033.002/.006; AID-H-034.001/.007/.008/.009; AID-H-037.002; AID-I-001.001/.003; AID-I-003.001/.002/.003; AID-I-004.001/.005; AID-I-005; AID-I-008.001/.004. | Measure BEC, RBVR, LTFR, and GDSR across all applicable resource, lifecycle, loop, failover, halt, and architecture-specific classes. |
 | Cn-7 detection and safe termination | AID-M-009.002; AID-D-002.004; AID-D-003.004; AID-D-004.006; AID-D-005.001/.007. | Use baseline and telemetry evidence to substantiate applicable classes, overruns, loops, failover drift, and outcomes; these partial-evidence selectors do not prove enforcement. |
 
 ## AIDEFEND-to-AITBM Evaluation Process
@@ -449,14 +453,18 @@ Mapped AIDEFEND Techniques (6):
 
 ##### Pr-2: Inference Attack Resistance
 
-Mapped AIDEFEND Techniques (5):
+Mapped AIDEFEND Techniques (7):
+
+AID-H-006 and AID-H-033 were added on November 21, 2026 as partial evidence routes only: AID-H-006.003 releases contract-bounded classifier or numeric prediction detail after a query suite shows reduced extraction signal, and AID-H-033.006 denies or clamps log-probability and logit-bias fields on public generative routes. Neither replaces the required inference-attack and model-extraction (MEA) tests, and AID-H-033.006 does not limit replication from sampled text output; the other sub-techniques of both families carry no Pr-2 evidence.
 
 *Table 103: Pr-2 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name |
 | --- | --- |
+| AID-H-006 | AI Output Hardening & Sanitization — evidence: AID-H-006.003 only (partial) |
 | AID-H-027 | Inference Cache Integrity, Partitioning & Safe Reuse |
 | AID-H-032 | Multi-Tenant Inference Isolation & Leakage Prevention |
+| AID-H-033 | AI Gateway Routing Integrity & Policy-Preserving Failover — evidence: AID-H-033.006 only (partial) |
 | AID-I-001 | AI Execution Sandboxing & Runtime Isolation |
 | AID-I-004 | Agent Memory & State Isolation |
 | AID-I-008 | Task-Scoped Browser & Computer-Use Workspace Isolation for Agents |
@@ -551,7 +559,9 @@ Mapped AIDEFEND Techniques (8):
 
 ##### Cn-4: Side-Channel Resistance
 
-Mapped AIDEFEND Techniques (7):
+Mapped AIDEFEND Techniques (8):
+
+AID-H-033 was added on November 21, 2026 as a partial evidence route only: AID-H-033.006 denies or clamps log-probability, top-log-probability, logit-bias, prompt-log-probability, and echo fields on public generative routes, which addresses the token-probability channel named in the Cn-4 test method. It supplies no evidence for the timing, error-message, rate-limit, cache, resource-observation, log, telemetry, or shared-accelerator channels, cannot by itself support any Cn-4 anchor, applies only where the gateway mediates every public route, and does not replace the Cn-4 leakage tests; the other sub-techniques of the family carry no Cn-4 evidence.
 
 *Table 109: Cn-4 - AIDEFEND Mapping*
 
@@ -559,6 +569,7 @@ Mapped AIDEFEND Techniques (7):
 | --- | --- |
 | AID-H-009 | AI Accelerator & Hardware Integrity |
 | AID-H-032 | Multi-Tenant Inference Isolation & Leakage Prevention |
+| AID-H-033 | AI Gateway Routing Integrity & Policy-Preserving Failover — evidence: AID-H-033.006 only (partial) |
 | AID-H-037 | Reasoning-State Security & Compute Controls |
 | AID-I-002 | Network Segmentation & Isolation for AI Systems |
 | AID-I-004 | Agent Memory & State Isolation |
@@ -610,16 +621,16 @@ Published upstream on 2026-07-04, AID-H-035 independently corroborates the desig
 
 ##### Cn-7: Resource and Execution-Loop Containment
 
-Mapped AIDEFEND Technique Families (16; 29 actionable selectors):
+Mapped AIDEFEND Technique Families (16; 30 actionable selectors):
 
-These family routes identify 29 exact actionable evidence selectors. Direct, partial, design, and detective roles remain distinct. Credit requires deployed-path evidence and the Cn-7 BEC, RBVR, LTFR, and GDSR tests; neither parent-family nor actionable-control presence sets an anchor.
+These family routes identify 30 exact actionable evidence selectors. Direct, partial, design, and detective roles remain distinct. Credit requires deployed-path evidence and the Cn-7 BEC, RBVR, LTFR, and GDSR tests; neither parent-family nor actionable-control presence sets an anchor.
 
 *Table 112: Cn-7 - AIDEFEND Mapping*
 
 | AIDEFEND ID | Defensive Technique Name and Actionable Selector | Relevance to Cn-7 |
 | --- | --- | --- |
 | AID-M-009 | Agent Autonomy & Authority Governance — selector: AID-M-009.002 | Partial IVP evidence: declares budget and delegation-depth policy; runtime enforcement and effectiveness remain unproven. |
-| AID-H-017 | Secure Agent Architecture — selectors: AID-H-017.001, .004, .006 | Direct IVP evidence for interruptible loops, bounded state retention, and delegation-graph limits. |
+| AID-H-017 | Secure Agent Architecture — selectors: AID-H-017.001, .004, .006, .008 | Direct IVP evidence for interruptible loops, bounded state retention, and delegation-graph limits; partial IVP evidence from .008 for run-bound external-resource lifetime, provisioning fencing, and independent cleanup, which bounds lifetime but not resource count or spend. |
 | AID-H-018 | Tool Authorization & Capability Scoping — selector: AID-H-018.004 | Direct IVP evidence for signed action budgets enforced atomically at the authoritative dispatcher. |
 | AID-H-028 | MCP & Tool Client Security Hardening — selectors: AID-H-028.005, .008 | Direct and partial IVP evidence for MCP client-state expiry and deprecated sampling token, request, iteration, tool, and cost budgets. |
 | AID-H-033 | AI Gateway Routing Integrity & Policy-Preserving Failover — selectors: AID-H-033.002, .006 | Direct and partial IVP evidence for safety-preserving failover and effective output-token limits. |

@@ -133,7 +133,7 @@ Key findings:
 
 MITRE ATLAS (Adversarial Threat Landscape for Artificial Intelligence Systems). Maintained by MITRE Corporation.
 
-MITRE ATLAS is an ATT&CK-style knowledge base of adversarial AI tactics, techniques, and real-world case studies (released data version 2026.09: 16 tactics, 120 top-level techniques plus 88 sub-techniques, 40 mitigations, and 73 case studies). Relative to v2026.08, the released source adds 6 top-level and 5 sub-techniques (11 total), 1 mitigation, and 1 case; all remain evidence-planning context and create no automatic AITBM score route. The crosswalk maps ATLAS elements to IVP/ORP/ACI evidence for system-specific assessment.
+MITRE ATLAS is an ATT&CK-style knowledge base of adversarial AI tactics, techniques, and real-world case studies (released data version 2026.10: 16 tactics, 129 top-level techniques plus 92 sub-techniques, 44 mitigations, and 77 case studies). Relative to v2026.09, the released source adds 18 techniques, removes 5, renames 8, and adds 4 mitigations and 4 cases. Membership, property, and inversion inference and memorized-data extraction moved from Exfiltration to Collection, and LLM Prompt Propagation was added under Lateral Movement; the Collection row therefore adds Pr-2 and the Lateral Movement row adds Cn-8. All remain evidence-planning context and create no automatic AITBM score route. The crosswalk maps ATLAS elements to IVP/ORP/ACI evidence for system-specific assessment.
 
 *Table 119: MITRE ATLAS*
 
@@ -148,13 +148,13 @@ MITRE ATLAS is an ATT&CK-style knowledge base of adversarial AI tactics, techniq
 | AML.TA0006 Persistence | Cn-2, Cn-5, Tr-3; Rf | Selects persistent-state, credential, audit, eviction, and recovery tests |
 | AML.TA0007 Defense Evasion | Cn-3, Cn-4, Tr-2, Tr-3; ACI C_monitor | Selects bypass, detection-evasion, logging, and monitoring-health tests |
 | AML.TA0008 Discovery | Pr-1, Pr-2, Tr-4; As | Selects model, data, service, and exposure discovery tests |
-| AML.TA0009 Collection | Pr-1, Pr-3, Pr-4; Tr-3 | Selects collection, minimization, re-identification, and audit tests |
-| AML.TA0010 Exfiltration | Pr-1, Pr-2, Pr-4, Cn-1, Cn-3; Tr-3 | Selects leakage, inference-API extraction (membership, inversion, model extraction), egress, release-gate, and detection tests |
+| AML.TA0009 Collection | Pr-1, Pr-2, Pr-3, Pr-4; Tr-3 | Selects collection, minimization, re-identification, and audit tests; since v2026.10 also training-data inference and model-internals recovery (Pr-2 added November 17, 2026) |
+| AML.TA0010 Exfiltration | Pr-1, Pr-2, Pr-4, Cn-1, Cn-3; Tr-3 | Selects leakage, exfiltration through the inference API and the AI user interface, egress, release-gate, and detection tests; inference and inversion sub-techniques moved to Collection in v2026.10 |
 | AML.TA0011 Impact | Ro-2, Ro-3, Ro-4; Cp, Rf | Selects integrity, availability, behavior, cascade, and recovery tests; Cp remains graph-derived |
 | AML.TA0012 Privilege Escalation | Cn-1, Cn-2, Cn-5, Cn-6 | Selects authority, delegated-identity, escalation, and gating tests |
 | AML.TA0013 Credential Access | Cn-5, Pr-2, Tr-3 | Selects token, key, workload-identity, and credential-use tests |
 | AML.TA0014 Command and Control | Cn-1, Cn-2, Tr-3; As | Selects outbound-control, session, egress, and command-channel tests |
-| AML.TA0015 Lateral Movement | Cn-1, Cn-2, Cn-5; Cp | Selects segmentation, delegated-access, identity, and graph-reachability tests |
+| AML.TA0015 Lateral Movement | Cn-1, Cn-2, Cn-5, Cn-8; Cp | Selects segmentation, delegated-access, identity, and graph-reachability tests; LLM Prompt Propagation selects Cn-8 tests at each receiving boundary (Cn-8 added November 17, 2026) |
 
 Key findings:
 
@@ -170,7 +170,7 @@ Key findings:
 
 AIUC-1 (Artificial Intelligence Underwriting Company Standard 1). Maintained by Artificial Intelligence Underwriting Company (AIUC).
 
-AIUC-1 is a pass/fail certification standard for AI agents. Its current October 15, 2026 release has 50 active requirements: 42 Mandatory and 8 Optional; E007, E014, C011, C012, and D002 are retired historical source units. Seven accredited auditors are listed, five of them provisional. Current total control counts are not published. AIUC certification and insurance are context only and never convert directly to an AITBM score, tier, pathway, ACI, CRM, or ERS value.
+AIUC-1 is a pass/fail certification standard for AI agents. Its current October 15, 2026 release has 50 active requirements: 42 Mandatory and 8 Optional; E007, E014, C011, C012, and D002 are retired historical source units. Seven accredited auditors are listed, three of them provisional. Current total control counts are not published. AIUC certification and insurance are context only and never convert directly to an AITBM score, tier, pathway, ACI, CRM, or ERS value.
 
 *Table 120: AIUC-1 Structure*
 
@@ -197,14 +197,14 @@ Key findings:
 
 AIDEFEND (AI Defense Framework). Maintained by Edward Lee (independent, community-driven; CC BY 4.0).
 
-AIDEFEND data version 2026.10.15 (schema 2.3) is an independent open-source catalogue of 93 technique families, 274 sub-techniques, 367 records, and 309 actionable controls across seven D3FEND-inspired tactics. Two sub-techniques were added and 77 existing records changed upstream since data version 2026.09.20; the AITBM mapping remains 185 placements across 78 technique families. Its current relationship layer uses OWASP LLM Top 10 2026 and ATLAS v2026.09. Catalog or relationship presence has no inherent anchor or fixed ERS reduction.
+AIDEFEND data version 2026.11.15 (schema 2.3) is an independent open-source catalogue of 93 technique families, 276 sub-techniques, 369 records, and 311 actionable controls across seven D3FEND-inspired tactics. Two sub-techniques were added and 140 existing records changed a relationship array upstream since data version 2026.10.15; the AITBM mapping is 188 placements across 78 technique families after the November 21, 2026 placement validation added two Pr-2 placements and one Cn-4 placement. Its current relationship layer uses OWASP LLM Top 10 2026 and ATLAS v2026.10. Catalog or relationship presence has no inherent anchor or fixed ERS reduction.
 
 *Table 121: AIDEFEND Structure*
 
 | AIDEFEND Tactic | Primary AITBM Sub-Metrics | Evidence Use / Boundary |
 | --- | --- | --- |
 | Model (10 techniques) | Tr-4, Ro-4, Ro-5, Cn-1, Cn-2, Cn-5, Cn-6, Cn-7, Cn-9 | Asset, authority, provenance, identity, and action-governance evidence; no fixed score |
-| Harden (38 techniques) | Ro-1, Ro-5, Cn-1, Cn-2, Cn-3, Cn-5, Cn-6, Cn-7, Cn-8, Cn-9 | Measured hardening evidence only; no fixed anchor or ERS change. 2026.10.15 record and relationship changes create no placement. |
+| Harden (38 techniques) | Ro-1, Ro-5, Cn-1, Cn-2, Cn-3, Cn-5, Cn-6, Cn-7, Cn-8, Cn-9 | Measured hardening evidence only; no fixed anchor or ERS change. 2026.11.15 record and relationship changes create no placement. |
 | Detect (18 techniques) | Ro-1, Ro-3, Ro-5, Cn-1, Cn-2, Cn-5, Tr-3, Cn-6, Cn-7, Cn-9 | Behavior, detection, audit, and monitoring evidence subject to coverage and health rules |
 | Isolate (8 techniques) | Cn-1, Cn-4, Cn-7, Cn-8, Cn-9; As; SDG | Isolation informs boundaries, exposure, and graph reachability; Cp remains graph-derived |
 | Deceive (7 techniques) | Tr-3; ACI monitoring context | Decoy telemetry may support detection and audit evidence; no fixed ERS change |
@@ -219,9 +219,9 @@ Key findings:
 
 - Drift/anomaly-detection and Restore evidence may support ACI monitoring/freshness and ORP Remediation Feasibility when the deployment satisfies the applicable coverage, health, reset, and effectiveness rules.
 
-- Fairness is a narrow area of the AIDEFEND catalog, which is consistent with its security scope; the Fairness routes are those listed in the Section 14 tables. The AITBM mapping is revalidated against data version 2026.10.15 (93 technique families / 274 sub-techniques / 367 records / 309 actionable controls, schema 2.3). The pinned delta from data version 2026.09.20 records two added sub-techniques (AID-H-004.006 and AID-H-004.007), 35 records with changed control text, and 60 records with a changed relationship array; no new placement or automatic score credit follows. The synchronized AIDEFEND in Action corpus contains 88 analyses; their current scoring status is recorded in the published case library.
+- Fairness is a narrow area of the AIDEFEND catalog, which is consistent with its security scope; the Fairness routes are those listed in the Section 14 tables. The AITBM mapping is revalidated against data version 2026.11.15 (93 technique families / 276 sub-techniques / 369 records / 311 actionable controls, schema 2.3). The pinned delta from data version 2026.10.15 records two added sub-techniques (AID-D-003.009 and AID-H-017.008), 41 records with changed control text, and 140 records with a changed relationship array; no new placement or automatic score credit follows. The synchronized AIDEFEND in Action corpus contains 88 analyses; their current scoring status is recorded in the published case library.
 
-- The mapping now spans 185 sub-metric placements using 78 distinct technique families (average 7.1 per sub-metric), covering all 26 AITBM sub-metrics. The 2026-10-18 sub-metric expansion routed AID-D-004, AID-H-022, and AID-H-023 from Ro-4 to Ro-5 and AID-H-019 from Ro-1 to Cn-8, and added Ro-5 (AID-H-002, AID-H-003, AID-M-002), Cn-8 (AID-H-002, AID-H-020, AID-I-004, AID-I-008), and Cn-9 (AID-D-004, AID-E-005, AID-H-021, AID-H-031, AID-I-004, AID-M-002, AID-M-005) placements. The one new top-level family, AID-H-038 (Inference Serving Runtime Surface and Privileged Capability Governance), is placed on Ro-4, Cn-1, and Cn-2; Cn-7 and Pr-2 were evaluated for it and declined, because it produces none of the BEC, RBVR, LTFR, or GDSR measurements Cn-7 is scored from and its own scope boundary excludes caller identity and network reachability. Cn-6 retains nine families; Cn-7 retains 16 parent-family routing placements and 29 exact actionable selectors. Parent-family or control presence supplies candidate evidence only; observed implementation and effectiveness must satisfy the exact AITBM rubric and BEC, RBVR, LTFR, and GDSR test methods.
+- The mapping now spans 188 sub-metric placements using 78 distinct technique families (average 7.2 per sub-metric), covering all 26 AITBM sub-metrics. The 2026-10-18 sub-metric expansion routed AID-D-004, AID-H-022, and AID-H-023 from Ro-4 to Ro-5 and AID-H-019 from Ro-1 to Cn-8, and added Ro-5 (AID-H-002, AID-H-003, AID-M-002), Cn-8 (AID-H-002, AID-H-020, AID-I-004, AID-I-008), and Cn-9 (AID-D-004, AID-E-005, AID-H-021, AID-H-031, AID-I-004, AID-M-002, AID-M-005) placements. The one new top-level family, AID-H-038 (Inference Serving Runtime Surface and Privileged Capability Governance), is placed on Ro-4, Cn-1, and Cn-2; Cn-7 and Pr-2 were evaluated for it and declined, because it produces none of the BEC, RBVR, LTFR, or GDSR measurements Cn-7 is scored from and its own scope boundary excludes caller identity and network reachability. The November 21, 2026 placement validation added AID-H-006 and AID-H-033 to Pr-2 as partial evidence through AID-H-006.003 and AID-H-033.006 only, added AID-H-033 to Cn-4 as partial evidence through AID-H-033.006 only, and added AID-H-017.008 as a partial Cn-7 selector. Cn-6 retains nine families; Cn-7 retains 16 parent-family routing placements with 30 exact actionable selectors. Parent-family or control presence supplies candidate evidence only; observed implementation and effectiveness must satisfy the exact AITBM rubric and BEC, RBVR, LTFR, and GDSR test methods.
 
 ## Tier 2: High-Priority Frameworks
 
