@@ -158,7 +158,7 @@ MITRE ATLAS is an ATT&CK-style knowledge base of adversarial AI tactics, techniq
 
 Key findings:
 
-- Technique examples select applicable AITBM tests. The detailed mapping does not claim an exhaustive 208-technique crosswalk, and no technique has a generic ERS or fixed remediation delta.
+- Technique examples select applicable AITBM tests. The detailed mapping does not claim an exhaustive crosswalk of every ATLAS technique, and no technique has a generic ERS or fixed remediation delta.
 
 - ATLAS threat and case evidence may support test selection and applicability. It does not determine AITBM anchors, weights, calibration, or ERS.
 
