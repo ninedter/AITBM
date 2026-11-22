@@ -15,7 +15,7 @@ AITBM is a bias-resistant, multi-dimensional evaluation framework for AI system 
 
 The AITBM comparison identifies recurring limitations across CVSS-based AI adaptations, OWASP AIVSS, and threat catalogs such as the OWASP Top 10 for LLMs. These artifacts have different scopes, so a limitation in a scoring capability is not necessarily a defect in the source framework:
 
-- **Assessor subjectivity:** In the largest published CVSS consistency study, 68% of assessors changed at least one metric when re-scoring identical vulnerabilities (Wunder et al., IEEE S&amp;P 2024).
+- **Assessor subjectivity:** In a survey study of 196 CVSS users, specific metrics were scored inconsistently for widespread vulnerability types, and in a 59-participant follow-up 68% gave different severity ratings for the same vulnerabilities (Wunder et al., IEEE S&amp;P 2024).
 - **Context blindness:** A Base-only or otherwise context-blind score can assign the same result to a medical-diagnosis model and a recipe chatbot with identical intrinsic flaws despite different operational consequences.
 - **Scope blindness:** Static-model assumptions miss agentic and MCP threats -- tool poisoning, rogue agents, identity spoofing.
 - **Zero-risk fallacy:** Some scoring formulations permit a zero-risk result after controls; AITBM instead retains an explicit residual-risk floor.
@@ -37,7 +37,7 @@ Single scores collapse important trade-offs. AITBM keeps the signal across three
 
 ### Layer 1: IVP -- Intrinsic Vulnerability Profile
 
-26 sub-metrics across five axes. Each is scored at one of five normalized anchors from 0.00 to 1.00 against a fully specified rubric, narrowing the space for assessor interpretation while keeping evidence and judgment traceable. Architecture-specific weights apply -- agentic and MCP systems weight Containment more heavily; RAG systems weight Privacy. An axis with no measurable referent for the assessed system (for example Fairness, when outputs never allocate, rank, price, classify, recommend, or describe natural persons and no protected-class proxies influence them) is declared not applicable with a written rationale, and its weight is redistributed.
+26 sub-metrics across five axes. Each is scored against five normalized anchors from 0.00 to 1.00 in a fully specified rubric (an intermediate value requires documented justification), narrowing the space for assessor interpretation while keeping evidence and judgment traceable. Deployment tier sets the axis weights, and the architecture class selects a fixed intra-axis sub-metric weight set -- autonomous agentic and MCP systems use the Agentic set, which places more of the Containment weight on Cn-5 through Cn-9. An axis with no measurable referent for the assessed system (for example Fairness, when outputs never allocate, deny, rank, price, classify, recommend, or describe natural persons and no protected-class attributes or proxies are plausibly present in inputs that influence them) is declared not applicable with a written rationale, and its weight is redistributed.
 
 | Axis | Sub-Metrics |
 |---|---|
@@ -58,7 +58,7 @@ Four deployment-context dimensions produce a Compound Risk Multiplier (CRM). The
 
 ### Layer 3: ACI -- Assurance Confidence Index
 
-Beta-Binomial-informed temporal decay models how evidence goes stale, with tier-specific re-assessment triggers:
+Exponential temporal decay models how evidence goes stale, accelerated by measured drift and threat modifiers, with tier-specific decay rates and review cadences:
 
 - **Provenance Completeness (Pc)** -- supply chain and AIBOM documentation
 - **Evaluation Coverage (Ec)** -- breadth and independence of testing
@@ -77,13 +77,13 @@ where alpha = 0.15 (residual risk floor -- AI risk cannot be zeroed out) and S =
 
 ## What Makes AITBM Different
 
-- **Rubric-constrained scoring** -- Five fully specified levels per sub-metric narrow inter-assessor variance and make disagreements auditable.
+- **Rubric-constrained scoring** -- Five fully specified levels per sub-metric are designed to narrow inter-assessor variance and make disagreements auditable.
 - **Multi-dimensional signal** -- IVP / ORP / ACI are never silently collapsed into one number without justification.
 - **Operational context, mathematically** -- The CRM encodes deployment risk so critical systems separate from low-stakes ones.
 - **Agentic-native** -- Cn-5 (Agent Identity Integrity), Cn-6 (Action Reversibility Classification Rate), Cn-7 (Resource and Execution-Loop Containment), Cn-8 (Untrusted Context Isolation), Cn-9 (Self-Modification and Persistent-State Containment), and the wider Containment axis address MCP, tool-use, and multi-agent threats; Ro-5 (Supply-Chain Artifact Admission Integrity) covers the models, dependencies, MCP servers, and skills an agent loads.
 - **Evidence-aware** -- The ACI penalizes opaque systems and stale assessments rather than trusting them at face value.
 - **Tiered pathways** -- Full, Standard, and Lite assessment tracks so startups and SMEs can participate alongside enterprises.
-- **AIDEFEND integration** -- 78 of AIDEFEND's 93 technique families (data version 2026.10.15) contribute 185 evidence placements spanning all 26 sub-metrics; Cn-7 routes to 29 actionable selectors across 16 families.
+- **AIDEFEND integration** -- 78 of AIDEFEND's 93 technique families (data version 2026.11.15) contribute 188 evidence placements spanning all 26 sub-metrics; Cn-7 routes to 30 actionable selectors across 16 families.
 - **Complementary framework crosswalks** -- Sixteen external frameworks and standards are crosswalked to relevant AITBM sub-metrics and evidence roles; the mappings do not imply endorsement or replace the source frameworks.
 
 ---
@@ -112,7 +112,7 @@ The **Finbot** worked example is the framework's internal calculation anchor and
 - **Tier:** Tier 1 -- Critical (autonomous financial transaction execution)
 - **Architecture:** Agentic / MCP System
 - **Result:** ERS = 10.0, CRM = 1.35, Severity = Critical MVT
-- Containment failure (Cn = 0.25 vs the Tier 1 MVT of 0.65) and compound operational risk drive the maximum score.
+- Containment failure (Cn = 0.25 vs the Tier 1 MVT of 0.65), compound operational risk, and low assurance confidence (ACI = 0.53) drive the maximum score.
 
 See [specification/sections/09_worked_example_finbot.md](specification/sections/09_worked_example_finbot.md) for the full worked example.
 
@@ -122,6 +122,7 @@ See [specification/sections/09_worked_example_finbot.md](specification/sections/
 
 ```
 AITBM/
+├── LICENSE                            MIT License
 ├── README.md                          This file
 └── specification/                     The framework specification, in every form
     ├── AITBM_Framework_Specification.pdf        Read it as one document
@@ -166,16 +167,16 @@ not distributed here; this repository carries the specification deliverables.
 | OWASP AISVS 1.01 | Requirement-verification evidence source (213 active requirements across 12 chapters) |
 | OWASP Top 10 for LLMs 2026 | Current ten-risk evidence and test-selection crosswalk |
 | OWASP Agentic AI — Threats and Mitigations v1.1 | T1--T17 threat-taxonomy crosswalk; companion ASI01--ASI10 Top 10 alignment |
-| MITRE ATLAS v2026.09 | All 16 tactics routed for test selection; 208 techniques (120 top-level + 88 sub-techniques), 40 mitigations, and 73 case studies tracked |
+| MITRE ATLAS v2026.10 | All 16 tactics routed for test selection; 221 techniques (129 top-level + 92 sub-techniques), 44 mitigations, and 77 case studies tracked |
 | OWASP AIVSS | Prior art for agentic vulnerability severity; AITBM separately assesses broader system properties |
 | ISO 42001 / 42005 | Governance alignment; impact assessment methodology |
 | NIST AI RMF | Risk management framework alignment |
 | NIST Cyber AI Profile IR 8596 | Cyber-AI intersection alignment |
 | EU AI Act | Regulatory crosswalk and potential evidence support; not a compliance determination |
-| AIDEFEND | Defensive countermeasure evidence mapping (185 placements / 78 of 93 technique families, data version 2026.10.15); the website's 280-record public-evidence case library, which includes AIDEFEND in Action analyses and SecureFlow attack flows, has 50 records with an indicative ERS |
+| AIDEFEND | Defensive countermeasure evidence mapping (188 placements / 78 of 93 technique families, data version 2026.11.15); the website's 540-record public-evidence case library (as of November 21, 2026), which includes AIDEFEND in Action analyses and SecureFlow attack flows, has 70 records with an indicative ERS |
 | D3FEND 1.0 | Version-pinned defensive countermeasure crosswalk; the current 1.6.0 ontology (August 31, 2026) is disclosed separately |
 
-All of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the GPAI Code of Practice — are crosswalked to relevant AITBM sub-metrics and evidence roles on the [Framework Mappings](https://aitbm.org/mappings) page and in the [External Framework Mappings](specification/sections/external_framework_mappings.md) section of the specification.
+Except OWASP AIVSS, which the specification treats in its Framework Comparison section, all of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the GPAI Code of Practice — are crosswalked to relevant AITBM sub-metrics and evidence roles on the [Framework Mappings](https://aitbm.org/mappings) page and in the [External Framework Mappings](specification/sections/external_framework_mappings.md) section of the specification.
 
 ---
 
@@ -192,5 +193,7 @@ All of the above — plus AIUC-1, CSA AI Security, AIMA, COMPASS, CVSS, and the 
 ---
 
 ## License
+
+Released under the MIT License; see [LICENSE](LICENSE).
 
 This is a volunteer/community project. Target community: OWASP practitioners, AI security assessors, ML engineers, and compliance teams.
