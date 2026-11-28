@@ -204,13 +204,27 @@ Except OWASP AIVSS, which the specification treats in its Framework Comparison s
 - Chapter Leader, BSides Taiwan
 - Committee Member, DEF CON AI Village
 
-[GitHub](https://github.com/ninedter) · [LinkedIn](https://www.linkedin.com/in/ninedter/)
+[GitHub](https://github.com/ninedter) · [LinkedIn](https://www.linkedin.com/in/ninedter/) · [Blog](https://ninedter.github.io/)
 
 ---
 
 ## Contributors
 
-- [Edward L.](https://www.linkedin.com/in/go-edwardlee/) -- Founder & CEO, AIDEFEND Labs
+**Edward Lee** -- Founder & CEO, AIDEFEND Labs
+
+- Creator and maintainer, [AIDEFEND](https://aidefend.net) AI Defense Framework
+
+[GitHub](https://github.com/edward-playground) · [LinkedIn](https://www.linkedin.com/in/go-edwardlee/)
+
+**Mohamed AbuMuslim** -- Security Researcher and Offensive Security Engineer (Egypt)
+
+- Committee Member, DEF CON AI Village
+- Conference Organizer, BSides Albuquerque
+- Board Member, OWASP Cairo Chapter
+
+[GitHub](https://github.com/m19o) · [LinkedIn](https://www.linkedin.com/in/m19o/) · [Blog](https://m19o.github.io/)
+
+Meet the team at [aitbm.org/team](https://aitbm.org/team).
 
 ---
 
