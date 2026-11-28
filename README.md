@@ -1,6 +1,22 @@
-# AITBM -- AI Trust Benchmarking and Maturity Framework
+<p align="center">
+  <a href="https://aitbm.org">
+    <img src="https://aitbm.org/assets/logo/aitbm-icon-dark.svg" alt="AITBM logo" width="120">
+  </a>
+</p>
 
-**Quantify AI security risk with constrained, evidence-backed judgment.**
+<h1 align="center">AITBM -- AI Trust Benchmarking and Maturity Framework</h1>
+
+<p align="center">
+  <strong>Quantify AI security risk with constrained, evidence-backed judgment.</strong>
+</p>
+
+<p align="center">
+  <a href="https://aitbm.org">Website</a> ·
+  <a href="specification/AITBM_Framework_Specification.pdf">Specification (PDF)</a> ·
+  <a href="https://aitbm.org/calculator">ERS Calculator</a> ·
+  <a href="https://aitbm.org/use-cases">Case Library</a> ·
+  <a href="https://aitbm.org/mappings">Framework Mappings</a>
+</p>
 
 AITBM is a bias-resistant, multi-dimensional evaluation framework for AI system security. It constrains subjective "low / medium / high" judgments with granular five-level scoring rubrics, a three-layer architecture that preserves signal, and a mathematically grounded composite score.
 
@@ -182,7 +198,13 @@ Except OWASP AIVSS, which the specification treats in its Framework Comparison s
 
 ## Author
 
-**Henry Hu** -- CEO & Founder, Auriga Security, Inc. / OWASP Taiwan Chapter Leader
+**[Henry Hu](https://github.com/ninedter)** -- CEO & Founder, Auriga Security, Inc. (Taipei, Taiwan)
+
+- Chapter Leader, OWASP Taiwan
+- Chapter Leader, BSides Taiwan
+- Committee Member, DEF CON AI Village
+
+[GitHub](https://github.com/ninedter) · [LinkedIn](https://www.linkedin.com/in/ninedter/)
 
 ---
 
